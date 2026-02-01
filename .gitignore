@@ -1,0 +1,5 @@
+# Credentials - never commit
+.credentials/
+
+# OS files
+.DS_Store
