@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { sampleTasks, agents } from '../data';
+import { agents } from '../data';
 import type { Task } from '../types';
+import { useTasks } from '../hooks/useTasks';
 
 const columns = [
   { key: 'inbox', label: 'Inbox', icon: '📥' },
@@ -19,7 +20,7 @@ const priorityDot: Record<string, string> = {
 
 export function TaskBoard() {
   const [filter, setFilter] = useState<string>('all');
-  const [tasks] = useState(sampleTasks);
+  const { tasks, loading, error } = useTasks();
 
   const filteredTasks = filter === 'all' ? tasks : tasks.filter(t => t.status === filter);
 
@@ -27,29 +28,51 @@ export function TaskBoard() {
     <div className="space-y-4">
       <h2 className="text-lg font-semibold">Tasks</h2>
       
+      {/* Loading State */}
+      {loading && (
+        <div className="flex items-center justify-center py-12">
+          <div className="text-center">
+            <div className="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+            <p className="text-sm text-text-muted">Loading tasks...</p>
+          </div>
+        </div>
+      )}
+      
+      {/* Error State */}
+      {error && (
+        <div className="bg-danger/10 border border-danger/20 rounded-xl p-4">
+          <p className="text-sm text-danger font-medium">⚠️ Error loading tasks</p>
+          <p className="text-xs text-text-muted mt-1">{error}</p>
+        </div>
+      )}
+      
       {/* Filter chips - horizontal scroll on mobile */}
-      <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1">
-        <FilterChip active={filter === 'all'} onClick={() => setFilter('all')} label="All" count={tasks.length} />
-        {columns.map(col => (
-          <FilterChip
-            key={col.key}
-            active={filter === col.key}
-            onClick={() => setFilter(col.key)}
-            label={col.label}
-            count={tasks.filter(t => t.status === col.key).length}
-            icon={col.icon}
-          />
-        ))}
-      </div>
+      {!loading && !error && (
+        <>
+          <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1">
+            <FilterChip active={filter === 'all'} onClick={() => setFilter('all')} label="All" count={tasks.length} />
+            {columns.map(col => (
+              <FilterChip
+                key={col.key}
+                active={filter === col.key}
+                onClick={() => setFilter(col.key)}
+                label={col.label}
+                count={tasks.filter(t => t.status === col.key).length}
+                icon={col.icon}
+              />
+            ))}
+          </div>
 
-      {/* Task list (mobile-friendly vertical list) */}
-      <div className="space-y-2">
-        {filteredTasks.length === 0 ? (
-          <div className="text-center py-12 text-text-muted">No tasks here</div>
-        ) : (
-          filteredTasks.map(task => <TaskRow key={task.id} task={task} />)
-        )}
-      </div>
+          {/* Task list (mobile-friendly vertical list) */}
+          <div className="space-y-2">
+            {filteredTasks.length === 0 ? (
+              <div className="text-center py-12 text-text-muted">No tasks here</div>
+            ) : (
+              filteredTasks.map(task => <TaskRow key={task.id} task={task} />)
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

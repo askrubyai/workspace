@@ -1,6 +1,7 @@
-import { agents, sampleTasks, sampleActivity } from '../data';
+import { agents } from '../data';
 import type { View } from '../types';
 import { useWorkingMemory } from '../hooks/useApi';
+import { useTasks } from '../hooks/useTasks';
 
 const statusColors = {
   active: 'bg-success',
@@ -19,20 +20,42 @@ function timeAgo(iso: string) {
 
 export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
   const workingData = useWorkingMemory();
+  const { tasks, activity, loading, error } = useTasks();
+  
   const activeAgents = agents.filter(a => a.status === 'active').length;
-  const inProgress = sampleTasks.filter(t => t.status === 'in_progress').length;
-  const blocked = sampleTasks.filter(t => t.status === 'blocked').length;
-  const done = sampleTasks.filter(t => t.status === 'done').length;
+  const inProgress = tasks.filter(t => t.status === 'in_progress').length;
+  const blocked = tasks.filter(t => t.status === 'blocked').length;
+  const done = tasks.filter(t => t.status === 'done').length;
 
   return (
     <div className="space-y-5">
+      {/* Loading State */}
+      {loading && (
+        <div className="flex items-center justify-center py-8">
+          <div className="text-center">
+            <div className="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+            <p className="text-sm text-text-muted">Loading Mission Control...</p>
+          </div>
+        </div>
+      )}
+      
+      {/* Error State */}
+      {error && (
+        <div className="bg-danger/10 border border-danger/20 rounded-xl p-4">
+          <p className="text-sm text-danger font-medium">⚠️ Error loading tasks</p>
+          <p className="text-xs text-text-muted mt-1">{error}</p>
+        </div>
+      )}
+      
       {/* Stats Row */}
-      <div className="grid grid-cols-2 gap-3">
-        <StatCard label="Active Agents" value={`${activeAgents}/${agents.length}`} color="text-success" />
-        <StatCard label="In Progress" value={String(inProgress)} color="text-info" />
-        <StatCard label="Blocked" value={String(blocked)} color="text-danger" />
-        <StatCard label="Completed" value={String(done)} color="text-accent" />
-      </div>
+      {!loading && (
+        <div className="grid grid-cols-2 gap-3">
+          <StatCard label="Active Agents" value={`${activeAgents}/${agents.length}`} color="text-success" />
+          <StatCard label="In Progress" value={String(inProgress)} color="text-info" />
+          <StatCard label="Blocked" value={String(blocked)} color="text-danger" />
+          <StatCard label="Completed" value={String(done)} color="text-accent" />
+        </div>
+      )}
 
       {/* Squad Status */}
       <section>
@@ -56,19 +79,27 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
       </section>
 
       {/* Active Tasks */}
-      <section>
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Active Tasks</h2>
-          <button onClick={() => onNavigate('tasks')} className="text-xs text-accent">View all →</button>
-        </div>
-        <div className="space-y-2">
-          {sampleTasks
-            .filter(t => ['in_progress', 'review', 'blocked'].includes(t.status))
-            .map(task => (
-              <TaskCard key={task.id} task={task} />
-            ))}
-        </div>
-      </section>
+      {!loading && (
+        <section>
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Active Tasks</h2>
+            <button onClick={() => onNavigate('tasks')} className="text-xs text-accent">View all →</button>
+          </div>
+          <div className="space-y-2">
+            {tasks.length === 0 ? (
+              <div className="text-center py-8 text-text-muted text-sm">
+                No active tasks found
+              </div>
+            ) : (
+              tasks
+                .filter(t => ['in_progress', 'review', 'blocked'].includes(t.status))
+                .map(task => (
+                  <TaskCard key={task.id} task={task} />
+                ))
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Live Working Memory */}
       {workingData && (
@@ -83,24 +114,32 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
       )}
 
       {/* Recent Activity */}
-      <section>
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Recent Activity</h2>
-          <button onClick={() => onNavigate('activity')} className="text-xs text-accent">View all →</button>
-        </div>
-        <div className="space-y-1">
-          {sampleActivity.slice(0, 4).map(item => (
-            <div key={item.id} className="flex items-start gap-3 py-2 px-3 rounded-lg hover:bg-surface-1 transition-colors">
-              <span className="text-xs text-text-muted mt-0.5 w-12 flex-shrink-0">{timeAgo(item.timestamp)}</span>
-              <div className="min-w-0">
-                <span className="text-xs font-semibold text-accent">{item.agent}</span>
-                <span className="text-xs text-text-muted mx-1">{item.action}</span>
-                <span className="text-xs text-text-secondary">{item.detail}</span>
+      {!loading && (
+        <section>
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Recent Activity</h2>
+            <button onClick={() => onNavigate('activity')} className="text-xs text-accent">View all →</button>
+          </div>
+          <div className="space-y-1">
+            {activity.length === 0 ? (
+              <div className="text-center py-4 text-text-muted text-sm">
+                No recent activity
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ) : (
+              activity.slice(0, 4).map(item => (
+                <div key={item.id} className="flex items-start gap-3 py-2 px-3 rounded-lg hover:bg-surface-1 transition-colors">
+                  <span className="text-xs text-text-muted mt-0.5 w-12 flex-shrink-0">{timeAgo(item.timestamp)}</span>
+                  <div className="min-w-0">
+                    <span className="text-xs font-semibold text-accent">{item.agent}</span>
+                    <span className="text-xs text-text-muted mx-1">{item.action}</span>
+                    <span className="text-xs text-text-secondary">{item.detail}</span>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
@@ -130,7 +169,7 @@ const statusBadge = {
   blocked: { bg: 'bg-danger/10', text: 'text-danger', label: 'Blocked' },
 };
 
-function TaskCard({ task }: { task: typeof sampleTasks[0] }) {
+function TaskCard({ task }: { task: { id: string; title: string; status: string; priority: string; assignee?: string; issueNumber?: string; labels: string[]; description?: string } }) {
   const badge = statusBadge[task.status];
   return (
     <div className="bg-surface-1 rounded-xl p-4 border border-border-subtle active:scale-[0.98] transition-transform">
