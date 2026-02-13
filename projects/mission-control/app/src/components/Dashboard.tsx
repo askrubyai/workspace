@@ -18,6 +18,25 @@ function timeAgo(iso: string) {
   return `${hrs}h ago`;
 }
 
+function truncateAtParagraph(text: string, maxChars: number): string {
+  if (text.length <= maxChars) return text;
+  
+  // Try to truncate at last paragraph break (double newline) before maxChars
+  const lastParagraph = text.lastIndexOf('\n\n', maxChars);
+  if (lastParagraph > maxChars * 0.7) { // Only use if we're getting at least 70% of content
+    return text.slice(0, lastParagraph) + '\n\n...';
+  }
+  
+  // Fallback: truncate at last sentence (period + space) before maxChars
+  const lastSentence = text.lastIndexOf('. ', maxChars);
+  if (lastSentence > maxChars * 0.7) {
+    return text.slice(0, lastSentence + 1) + '\n...';
+  }
+  
+  // Final fallback: hard cut with ellipsis
+  return text.slice(0, maxChars) + '...';
+}
+
 export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
   const workingData = useWorkingMemory();
   const { tasks, activity, loading, error } = useTasks();
@@ -111,7 +130,7 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
           <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-3">Live Status</h2>
           <div className="bg-surface-1 rounded-xl p-4 border border-border-subtle">
             <pre className="text-xs text-text-secondary whitespace-pre-wrap leading-relaxed font-mono max-h-48 overflow-y-auto">
-              {workingData.working.slice(0, 1500)}
+              {truncateAtParagraph(workingData.working, 1500)}
             </pre>
           </div>
         </section>

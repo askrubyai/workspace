@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { agents } from '../data';
 import type { Task } from '../types';
 import { useTasks } from '../hooks/useTasks';
@@ -19,8 +19,26 @@ const priorityDot: Record<string, string> = {
 };
 
 export function TaskBoard() {
-  const [filter, setFilter] = useState<string>('all');
+  // Read filter from URL or default to 'all'
+  const getInitialFilter = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('status') || 'all';
+  };
+  
+  const [filter, setFilter] = useState<string>(getInitialFilter());
   const { tasks, loading, error } = useTasks();
+  
+  // Update URL when filter changes
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (filter === 'all') {
+      params.delete('status');
+    } else {
+      params.set('status', filter);
+    }
+    const newUrl = params.toString() ? `?${params.toString()}` : window.location.pathname;
+    window.history.replaceState({}, '', newUrl);
+  }, [filter]);
 
   const filteredTasks = filter === 'all' ? tasks : tasks.filter(t => t.status === filter);
 
