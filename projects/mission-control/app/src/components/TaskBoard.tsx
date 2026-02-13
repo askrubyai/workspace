@@ -143,15 +143,18 @@ function FilterChip({ active, onClick, label, count, icon }: { active: boolean; 
   return (
     <button
       onClick={onClick}
-      className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+      className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
         active
           ? 'bg-accent text-white'
           : 'bg-surface-2 text-text-secondary hover:bg-surface-3'
       }`}
+      aria-label={`Filter by ${label} (${count} tasks)`}
+      aria-pressed={active}
+      role="tab"
     >
-      {icon && <span className="text-xs">{icon}</span>}
+      {icon && <span className="text-xs" role="img" aria-hidden="true">{icon}</span>}
       {label}
-      <span className={`ml-0.5 ${active ? 'text-white/70' : 'text-text-muted'}`}>{count}</span>
+      <span className={`ml-0.5 ${active ? 'text-white/70' : 'text-text-muted'}`} aria-label={`${count} tasks`}>{count}</span>
     </button>
   );
 }
@@ -160,13 +163,29 @@ function TaskRow({ task }: { task: Task }) {
   const [expanded, setExpanded] = useState(false);
   const assignee = agents.find(a => a.id === task.assignee);
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setExpanded(!expanded);
+    }
+  };
+
   return (
     <div
-      className="bg-surface-1 rounded-xl border border-border-subtle overflow-hidden transition-all"
+      className="bg-surface-1 rounded-xl border border-border-subtle overflow-hidden transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       onClick={() => setExpanded(!expanded)}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-expanded={expanded}
+      aria-label={`Task: ${task.title}. ${task.priority} priority. ${assignee?.name || 'Unassigned'}. Press Enter to expand.`}
     >
       <div className="p-4 flex items-start gap-3">
-        <span className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${priorityDot[task.priority]}`} />
+        <span 
+          className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${priorityDot[task.priority]}`} 
+          aria-label={`${task.priority} priority`}
+          role="img"
+        />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <span className="text-xs text-text-muted font-mono">{task.issueNumber}</span>
@@ -174,24 +193,26 @@ function TaskRow({ task }: { task: Task }) {
           </div>
           <div className="flex items-center gap-3 mt-1.5">
             {assignee && (
-              <span className="text-xs text-text-muted">{assignee.emoji} {assignee.name}</span>
+              <span className="text-xs text-text-muted">
+                <span role="img" aria-label={assignee.name}>{assignee.emoji}</span> {assignee.name}
+              </span>
             )}
-            <div className="flex gap-1">
+            <div className="flex gap-1" role="list" aria-label="Task labels">
               {task.labels.map(l => (
-                <span key={l} className="text-[10px] px-1.5 py-0.5 rounded bg-surface-2 text-text-muted">{l}</span>
+                <span key={l} className="text-[10px] px-1.5 py-0.5 rounded bg-surface-2 text-text-muted" role="listitem">{l}</span>
               ))}
             </div>
           </div>
         </div>
-        <span className="text-text-muted text-xs">{expanded ? '▲' : '▼'}</span>
+        <span className="text-text-muted text-xs" aria-hidden="true">{expanded ? '▲' : '▼'}</span>
       </div>
       {expanded && task.description && (
         <div className="px-4 pb-4 pt-0 ml-5">
           <p className="text-xs text-text-secondary leading-relaxed">{task.description}</p>
-          <div className="flex gap-2 mt-3">
-            <ActionButton label="Start" icon="▶" />
-            <ActionButton label="Assign" icon="👤" />
-            <ActionButton label="Priority" icon="⬆" />
+          <div className="flex gap-2 mt-3" role="group" aria-label="Task actions">
+            <ActionButton label="Start" icon="▶" ariaLabel="Start this task" />
+            <ActionButton label="Assign" icon="👤" ariaLabel="Assign this task" />
+            <ActionButton label="Priority" icon="⬆" ariaLabel="Change priority" />
           </div>
         </div>
       )}
@@ -199,10 +220,13 @@ function TaskRow({ task }: { task: Task }) {
   );
 }
 
-function ActionButton({ label, icon }: { label: string; icon: string }) {
+function ActionButton({ label, icon, ariaLabel }: { label: string; icon: string; ariaLabel?: string }) {
   return (
-    <button className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-2 text-xs text-text-secondary hover:bg-surface-3 transition-colors">
-      <span>{icon}</span> {label}
+    <button 
+      className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-2 text-xs text-text-secondary hover:bg-surface-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      aria-label={ariaLabel || label}
+    >
+      <span role="img" aria-hidden="true">{icon}</span> {label}
     </button>
   );
 }

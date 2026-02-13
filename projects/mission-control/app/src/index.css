@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Dark mode theme (default) */
 @theme {
   --color-surface: #0a0a0f;
   --color-surface-1: #12121a;
@@ -18,6 +19,25 @@
   --color-info: #3b82f6;
 }
 
+/* Light mode theme */
+:root:not(.dark) {
+  --color-surface: #ffffff;
+  --color-surface-1: #f8f8fa;
+  --color-surface-2: #f0f0f5;
+  --color-surface-3: #e8e8f0;
+  --color-border: #d0d0e0;
+  --color-border-subtle: #e0e0ea;
+  --color-text-primary: #1a1a25;
+  --color-text-secondary: #555570;
+  --color-text-muted: #8888a0;
+  --color-accent: #6366f1;
+  --color-accent-hover: #818cf8;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -27,6 +47,27 @@ body {
   color: var(--color-text-primary);
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Global keyboard focus styles */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Ensure buttons and interactive elements are keyboard accessible */
+button, a, [role="button"] {
+  cursor: pointer;
+}
+
+button:disabled, a:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 ::-webkit-scrollbar {
@@ -47,4 +88,17 @@ body {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Screen reader only (visually hidden but accessible) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

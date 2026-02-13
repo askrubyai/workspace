@@ -77,20 +77,35 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
       )}
 
       {/* Squad Status */}
-      <section>
+      <section aria-labelledby="squad-status-heading">
         <div className="flex items-center justify-between mb-3">
-          <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Squad Status</h2>
-          <button onClick={() => onNavigate('agents')} className="text-xs text-accent">View all →</button>
+          <h2 id="squad-status-heading" className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Squad Status</h2>
+          <button 
+            onClick={() => onNavigate('agents')} 
+            className="text-xs text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-2 py-1"
+            aria-label="View all agents"
+          >
+            View all →
+          </button>
         </div>
         <div className="relative">
-          <div className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-hide">
+          <div className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-hide" role="list" aria-label="Agent status list">
             {agents.map(agent => (
-              <div key={agent.id} className="flex-shrink-0 flex flex-col items-center gap-1.5">
+              <div 
+                key={agent.id} 
+                className="flex-shrink-0 flex flex-col items-center gap-1.5"
+                role="listitem"
+                aria-label={`${agent.name}, status: ${agent.status}`}
+              >
                 <div className="relative">
                   <div className="w-11 h-11 rounded-full bg-surface-2 flex items-center justify-center text-lg border border-border">
-                    {agent.emoji}
+                    <span role="img" aria-label={agent.name}>{agent.emoji}</span>
                   </div>
-                  <span className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-surface-1 ${statusColors[agent.status]}`} />
+                  <span 
+                    className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-surface-1 ${statusColors[agent.status]}`} 
+                    aria-label={`${agent.status} status`}
+                    role="status"
+                  />
                 </div>
                 <span className="text-[10px] text-text-secondary font-medium">{agent.name}</span>
               </div>
@@ -103,10 +118,16 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
 
       {/* Active Tasks */}
       {!loading && (
-        <section>
+        <section aria-labelledby="active-tasks-heading">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Active Tasks</h2>
-            <button onClick={() => onNavigate('tasks')} className="text-xs text-accent">View all →</button>
+            <h2 id="active-tasks-heading" className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Active Tasks</h2>
+            <button 
+              onClick={() => onNavigate('tasks')} 
+              className="text-xs text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-2 py-1"
+              aria-label="View all tasks"
+            >
+              View all →
+            </button>
           </div>
           <div className="space-y-2">
             {tasks.length === 0 ? (
@@ -126,10 +147,14 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
 
       {/* Live Working Memory */}
       {workingData && (
-        <section>
-          <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-3">Live Status</h2>
+        <section aria-labelledby="live-status-heading">
+          <h2 id="live-status-heading" className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-3">Live Status</h2>
           <div className="bg-surface-1 rounded-xl p-4 border border-border-subtle">
-            <pre className="text-xs text-text-secondary whitespace-pre-wrap leading-relaxed font-mono max-h-48 overflow-y-auto">
+            <pre 
+              className="text-xs text-text-secondary whitespace-pre-wrap leading-relaxed font-mono max-h-48 overflow-y-auto"
+              role="region"
+              aria-label="Current working memory status"
+            >
               {truncateAtParagraph(workingData.working, 1500)}
             </pre>
           </div>
@@ -138,10 +163,16 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
 
       {/* Recent Activity */}
       {!loading && (
-        <section>
+        <section aria-labelledby="recent-activity-heading">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Recent Activity</h2>
-            <button onClick={() => onNavigate('activity')} className="text-xs text-accent">View all →</button>
+            <h2 id="recent-activity-heading" className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Recent Activity</h2>
+            <button 
+              onClick={() => onNavigate('activity')} 
+              className="text-xs text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-2 py-1"
+              aria-label="View all activity"
+            >
+              View all →
+            </button>
           </div>
           <div className="space-y-1">
             {activity.length === 0 ? (
@@ -169,9 +200,14 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
 
 function StatCard({ label, value, color }: { label: string; value: string; color: string }) {
   return (
-    <div className="bg-surface-1 rounded-xl p-4 border border-border-subtle">
-      <div className={`text-2xl font-bold ${color}`}>{value}</div>
-      <div className="text-xs text-text-muted mt-1">{label}</div>
+    <div 
+      className="bg-surface-1 rounded-xl p-4 border border-border-subtle"
+      role="region"
+      aria-label={`${label}: ${value}`}
+    >
+      <div className={`text-2xl font-bold ${color}`} aria-hidden="true">{value}</div>
+      <div className="text-xs text-text-muted mt-1" aria-hidden="true">{label}</div>
+      <span className="sr-only">{label}: {value}</span>
     </div>
   );
 }
