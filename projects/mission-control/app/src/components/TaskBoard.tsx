@@ -49,30 +49,74 @@ export function TaskBoard() {
       {/* Filter chips - horizontal scroll on mobile */}
       {!loading && !error && (
         <>
-          <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1">
-            <FilterChip active={filter === 'all'} onClick={() => setFilter('all')} label="All" count={tasks.length} />
-            {columns.map(col => (
-              <FilterChip
-                key={col.key}
-                active={filter === col.key}
-                onClick={() => setFilter(col.key)}
-                label={col.label}
-                count={tasks.filter(t => t.status === col.key).length}
-                icon={col.icon}
-              />
-            ))}
+          <div className="relative">
+            <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-hide">
+              <FilterChip active={filter === 'all'} onClick={() => setFilter('all')} label="All" count={tasks.length} />
+              {columns.map(col => (
+                <FilterChip
+                  key={col.key}
+                  active={filter === col.key}
+                  onClick={() => setFilter(col.key)}
+                  label={col.label}
+                  count={tasks.filter(t => t.status === col.key).length}
+                  icon={col.icon}
+                />
+              ))}
+            </div>
+            {/* Scroll indicator - fade on right edge */}
+            <div className="absolute right-0 top-0 bottom-2 w-12 bg-gradient-to-l from-surface to-transparent pointer-events-none" />
+          </div>
+
+          {/* Priority Legend */}
+          <div className="flex items-center gap-4 text-[10px] text-text-muted -mt-1">
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-danger" />
+              Critical
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-warning" />
+              High
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-info" />
+              Medium
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-text-muted" />
+              Low
+            </span>
           </div>
 
           {/* Task list (mobile-friendly vertical list) */}
           <div className="space-y-2">
             {filteredTasks.length === 0 ? (
-              <div className="text-center py-12 text-text-muted">No tasks here</div>
+              <EmptyState filter={filter} />
             ) : (
               filteredTasks.map(task => <TaskRow key={task.id} task={task} />)
             )}
           </div>
         </>
       )}
+    </div>
+  );
+}
+
+function EmptyState({ filter }: { filter: string }) {
+  const messages: Record<string, { emoji: string; text: string; subtext?: string }> = {
+    all: { emoji: '✨', text: 'No tasks yet', subtext: 'Create your first task to get started' },
+    inbox: { emoji: '🎉', text: 'All caught up!', subtext: 'No new tasks in inbox' },
+    in_progress: { emoji: '💤', text: 'Nothing in progress', subtext: 'Start a task to see it here' },
+    review: { emoji: '👀', text: 'Nothing to review', subtext: 'Completed tasks will appear here' },
+    blocked: { emoji: '✨', text: 'No blockers!', subtext: 'Everything is flowing smoothly' },
+    done: { emoji: '🚀', text: 'No completed tasks yet', subtext: 'Finish a task to see it here' },
+  };
+  const msg = messages[filter] || messages.all;
+  
+  return (
+    <div className="text-center py-12">
+      <div className="text-4xl mb-3">{msg.emoji}</div>
+      <p className="text-sm text-text-secondary font-medium">{msg.text}</p>
+      {msg.subtext && <p className="text-xs text-text-muted mt-1">{msg.subtext}</p>}
     </div>
   );
 }

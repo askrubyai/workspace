@@ -63,18 +63,22 @@ export function Dashboard({ onNavigate }: { onNavigate: (v: View) => void }) {
           <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wider">Squad Status</h2>
           <button onClick={() => onNavigate('agents')} className="text-xs text-accent">View all →</button>
         </div>
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1">
-          {agents.map(agent => (
-            <div key={agent.id} className="flex-shrink-0 flex flex-col items-center gap-1.5">
-              <div className="relative">
-                <div className="w-11 h-11 rounded-full bg-surface-2 flex items-center justify-center text-lg border border-border">
-                  {agent.emoji}
+        <div className="relative">
+          <div className="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 scrollbar-hide">
+            {agents.map(agent => (
+              <div key={agent.id} className="flex-shrink-0 flex flex-col items-center gap-1.5">
+                <div className="relative">
+                  <div className="w-11 h-11 rounded-full bg-surface-2 flex items-center justify-center text-lg border border-border">
+                    {agent.emoji}
+                  </div>
+                  <span className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-surface-1 ${statusColors[agent.status]}`} />
                 </div>
-                <span className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-surface-1 ${statusColors[agent.status]}`} />
+                <span className="text-[10px] text-text-secondary font-medium">{agent.name}</span>
               </div>
-              <span className="text-[10px] text-text-secondary font-medium">{agent.name}</span>
-            </div>
-          ))}
+            ))}
+          </div>
+          {/* Scroll indicator - fade on right edge */}
+          <div className="absolute right-0 top-0 bottom-2 w-16 bg-gradient-to-l from-surface to-transparent pointer-events-none" />
         </div>
       </section>
 
