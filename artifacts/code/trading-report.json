@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-02-03T10:29:07.741Z",
+  "wallet": "0x81123E35C441C1B463503AE1B25D4b870c945751",
+  "startingBalance": 0,
+  "endingBalance": 0,
+  "metrics": {
+    "totalTrades": 0,
+    "wins": 0,
+    "losses": 0,
+    "totalProfit": 0,
+    "maxDrawdown": 0,
+    "currentDrawdown": 0
+  },
+  "trades": []
+}

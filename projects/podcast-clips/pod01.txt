@@ -1,0 +1,262 @@
+Precision predictive markets is just like a new term once like a common term by precision
+We simply mean that you predict a real-world number so instead of saying yes or no up or down you actually put in an exact number
+It's a 149 and my PR tool will be based on how close I am to the final number is that right what if I am the first one in a market
+Who has takes in the pool is the one who you better get
+Can I predict 149.11 something like that?
+Basically
+Hi everyone and welcome to a new pod today we have Anum Anum has been working in Solana for a while
+We know each other for a while from the super team days
+So we'll talk to her journey of how she got into Solana the kind of gigs she's done in the past and her current role at Trepa
+She's currently working at Trepa as a blockchain engineer
+Trepa is a prediction market that was launched recently on Solana
+So we'll understand what goes behind the technicals of building a prediction market and her journey into becoming a blockchain engineer over the past few years
+With that Anum would love an intro from your side as well
+Hi everyone I'm Anum Ansari I work at Trepa which is a precision prediction market platform
+And I have been involved in the Solana ecosystem for about three or four years now
+And I think I got involved in the ecosystem when I was in the second year of my undergrad
+When I got selected as an MLH Fellow and I interned at Hubble Protocol back then
+Why are that Fellowship?
+And just right after the Fellowship I got the opportunity to visit Solana Hacker house
+I guess it was sponsored by Foundation as well itself
+So that's where I met the entire super team community and I saw like the scale of opportunity the ecosystem had
+And as a new student who's been into tech as well as the web3 ecosystem
+It kind of stuck with me that I wanted to continue in this space
+So I just started building more into the smart contract side, the backend side
+And I eventually worked with six to seven projects as a freelance developer as well
+And I also interned at Solana Foundation for a while as a DevRel intern
+And in my last year of undergrad I got a full time role at Helius as a DevEx Engineer
+And after working there for some time I realized I wanted to take harder problems and bigger ownership
+And that's when I decided to switch roles and go more into an engineering side
+Rather than doubling both engineering and DevRel at the same time
+And eventually I ended up aligning a job at Trepa
+And ever since I think I joined here back in September and it has been a great time till now
+Perfect, that sounds great. I think you mentioned three major milestones
+One which is working with the Foundation as an intern
+Working at Helius as a DevRel advocate and then now at Trepa
+Do you briefly want to touch upon your journey and your day-to-day at the Foundation and at Helius?
+So at Foundation I did like a three-month internship where I used to mostly work on writing modules for Solana Workshop
+Most of my time went into that and after that I took those workshops with the help of Vishal
+Which was also an intern at that time with me
+And at Helius my work was of my work had two pillars
+One was the DevRel side of things where I would talk with our customers or users at Helius
+And help them resolve any issues that they had
+And the second fold was basically helping them indirectly via updating the SDK, citing the documentation
+So that was my day-to-day life at Helius
+And right now at Trepa I mostly handle everything related to blockchain, the integration at the back end
+And anything that relates to how Trepa works internally, I work on that
+Got it, that sounds perfect. Let's dive into your Trepa journey now
+Very interested to mention the term decision predictive markets
+Is this like a new term? It's like a common term that I only know predictive markets prediction markets for now
+So we're trying to build a new primitive in the prediction market space
+And by precision we simply mean that you predict a real-world number
+So instead of saying yes or no, up or down, you actually put in an exact number
+Or somewhat closer to what you feel the outcome would be
+So it's not something like you need to actually get this exact number to win
+It's like how close you are to the outcome, your rewards are essentially calculated in that way
+Correct, so if I go to polymarker or calcium, I can only select if so above 150 or below 150
+But on Trepa I can predict the number, let's say 149
+And my payoff will be based on how close I am to the final number, is that right?
+So you just need to enter like whatever number you believe or you're convicted
+That okay, I want to put in this number, let's say 149 dollars for soul
+I know it's not the case right now
+But let's say you put in 149 dollars for soul
+And you also put in some stake
+And at the end what we do is at Trepa we have
+Accuracy weighted mechanism in a paramitual pool system
+I'll just break it down in simpler terms
+So by paramitual what we mean is whoever who has entered into this pool and takes some money
+If you win, you get from that pool itself
+So you're essentially betting against everyone who is inside that pool
+So that's how you get rewarded
+And the amount that you get rewarded is based on three things
+One is how accurate you are, so we get a normalized error for your
+After the outcome is reached
+And after the accuracy we look into how much stake you put in
+So if you put in a higher stake and you're
+You were more accurate than you get more payout
+And the last thing is you also have a time edge
+So if you predicted quite early then you also have that edge
+So it's a function of accuracy, your stake and time
+So these three things involved in a complex calculation decides your payout
+And it's a very convex payout curve
+So it could somehow if you're very accurate
+It feels like a jackpot because you were the closest one
+Got it. That makes sense
+I can already think of a few challenges in building something like this
+A lot of polymarket or a car she I think I would need to be
+So you're essentially trading against someone else
+You both get some sort of stocks which eventually land up to a zero or a one
+So fairly predictable
+One very first sort of contention that I get is
+What if I am the first one in a market
+I get a thousand dollars worth of stake
+I predicted a price of 149
+Let's say it landed 150 and no one else ended up participating in this market
+So what happens here is Trepa, Ultavati
+So you're not betting against us
+If you were the only one in the pool obviously you'll get the money back
+We won't add any we won't add any bets from our side
+Or it's not like you're playing against us
+It's just more where stakes in the pool is the one you bet against
+So it might happen I might be extremely precisely correct
+But if no one else participated in the market I'll just get back my money
+Not make anything on it
+Got it
+Which might lead to a bunch of significant challenges
+If you don't have enough fingers then you know there's not enough incentive for someone to play
+So a little more of I guess questions around marketing
+Is there anything specific around you know how you are trying to challenge this
+You know tackle this specific challenge of you probably need it you know
+At least a hundred people participating on a market for it to be liquid
+Are you doing market making yourself participating in markets yourself
+Or you know are you getting other market makers
+You know has it been tough to convince market makers or already on products like
+Calcy and a quality market to come over to you know and you permit them like this
+So we don't have any market-made kinks
+Currently just you play with whoever predicts in the pool
+And then this 50% of the stake-mitted median gets to be the winner
+So it's not just one winner who's the most accurate
+What we do is we order them based on the accuracy
+And then we get the cumulative stake
+And whoever is the like anyone about the median 50% stake weight would be the winner
+And then the payout will be calculated after that
+And yeah there's no market-making involved at this point right now
+Got it make sense
+And when can I predict like 149.111 something like that
+Basically when we create a pool on our platform we also set the value of precision
+So we set the number of decimals you can predict too
+Because we don't want any mathematical issue at the R& or the client side
+It does not mean that you don't get to be accurate
+It's just there so that you don't end up putting seven or six decimals at the end of your number
+So it highly depends on the value that you're predicting
+So let's say you're predicting a population data or GDP
+Which can be a very big number right?
+So we have steps added which could make sure that you just predict like 4 billion or 4.1 billion or 4.2 billion
+You don't actually enter a very big number instead and similarly for sole price
+So let's say for Solana we I think have like two decimal places so you can predict 140.62
+And for Bitcoin we don't have that much precision because it's a very big numbers
+I think somewhere around 50-60K right now
+So we have like I guess a step of one or ten dollars maybe
+So we have two things we have steps and we have a precision as well based on the decimal that you can put in
+So I heard that you've gone through a few you know through a few upgrades in the last few months
+You had you launched Draper V1 in the last three months you moved to V2
+There's like a very big change to you know change things at the protocol level
+So what do you think went wrong with version 1 that you had to start over and you know create a new version to even before you know any traction
+So when I joined Draper we already had a version 1 which was Draper V1 DevNet and we had a lot of better testers
+So version 1 was very good to validate the idea because before we kind of stuck into precision prediction
+We like pivoted a lot and experimented a lot with different ideas like social prediction and everything
+So V1 was built in stealth mode where you're shipping just to validate that if this works or not
+And once we once actually looked over the code we realized there were a few things that could be improved
+And that's why it needed we needed to start it over instead of just iterating over the current version
+If you don't mind me getting more technical inside it so basically first thing I noticed is the account layout structure that we have
+We had an anchor program so the structure that we have for like a PD account it was very restrictive
+You cannot put in more it didn't have any reserved bytes so that you can't expand the account structure in future
+And I know you can just create a new contract but for let's say small feature upgrades
+Because we added a step feature I guess a month back even after we launched so that is something that we were able to incorporate without creating a new contract
+We could increase the account we could add new variables in the account structure
+So that's the first thing that I wanted to change
+And second thing was related to scaling as it's a consumer platform where users will be clicking a lot of patterns
+Making a lot of transaction let's say for predicting updating the state claiming the rewards
+It also means that data is getting stored on chain so we need to be mindful of what we store
+I know when we write a contract we tend to write put everything on chain like let's put everything related to the user
+At some point you need to draw a line of what you actually end up storing on chain what will help in your logic and what is like redundant data
+So these were the two things that I wanted to make sure that we think through and we take in the cost so I actually sat down
+And at that time I guess sold was $200 so I did some calculations based on how much it will cost to store user prediction
+And we also ended up adding a new instruction to close prediction accounts
+So after the pool is over after some time we close the accounts I was not needed and then claim the fees pack
+If we are sponsoring the claim it for ourselves if the user is sponsoring they get it back automatically
+So you are saying changes are made more around optimizing the existing contract and not in terms of how the contract works or the math
+Yeah
+Have you gone through a security audit and what was the process like specifically because this is a new sort of a primitive that you created
+Was it hard for the auditors to be able to understand the project or the new set of attack vectors where it comes to a new primitive like this
+So before I launched we went through an audit with our labs and we got a contract as well as a utility library which basically calls a contract audited
+And it was a very amazing experience the team is really great at our labs with prediction market we had an onboarding call
+Because it's very different from what polymarket call she is
+It's basically running on math and you have a very different set of logic where money is going inside a single pool and it's coming out from that
+You're not creating tokens or trading with those tokens right
+So I feel like the team the auditors at our labs are really good at understanding what we're building
+They did a great job with our audit itself
+We were we didn't find any critical issue with the contract at all I know it's a kind of like a self complement
+The only important one which I I didn't know personally and I got to know after the audit was emitting CPI
+So basically on Solana you could emit program logs and I was actually relying on them to get the prediction a user made
+Because it to me then made sense to put it on chain you only put take amount on chain and in a period
+And you're emitting the the data the prediction that a user was making making via program logs and we had an indexer which will scoop up everything
+And store it in our database so that it reflects on our UI itself
+One thing I didn't realize that RPC providers they can actually truncate your program logs I guess somewhere around 12 kb they allow
+And that could be an issue we could end up missing some predictions that users made
+So the alternative to that is just using an emits CPI macro instead of an emits macro
+This way it's it's a very no op struck that you add what it does it calls the same instruction again with the instruction data as the like the log that you wanted to pass
+You pass it as an instruction data so it's there you can always face the transaction and get all the data that you want directly instead of relying on the logs
+So that is something which was quite I opening that I saw that I noticed that this could be an issue
+All right very interesting you mentioned a very intriguing architecture right now which is you decide what to store what not to store on chain and there are things that are logged in the program
+All in an instruction that you actually scoop up through and can you talk to maybe specifically as to you know a few examples of maybe not interrupt or maybe interrupt
+But this architecture sort of sense because mostly from what I can tell or you know most places I've seen you just store everything on chain
+And you know to want to avoid the complexity and to use sort of our for more complete at least you're offloading the rent to be a user
+So it doesn't matter if you're storing more I think in your case it's prep us for the gas if I'm not wrong
+So I'd love to know one specific use case you know this architecture specifically makes sense
+You said the prediction right you mentioned yes not yes or no sorry in your case like a number that is so that prediction is never stored on chain in a struct it is just logged in a program is that correct
+Yeah so there are a lot of questions here I'll just start with what I had in my mind
+So what we wanted to do that from the start we had the idea that we would sponsor the gas fees given the predictions are made in USTC
+We weren't want a user to come in and put two types of tokens like soul and USTC because it's very confusing for the user
+So we decided that will sponsor the fees but sponsoring fees is a very different issue where you need to make sure that the cost is optimized for yourself as well
+You don't end up paying for a lot so that's why we needed I needed to be very deliberate with how the account structure is so that we only store what matters
+Now I would have personally stored the stake amount of chain like a not of chain in the instruction as well the only reason I stored it on chain in a PDF account is because we also have a feature of updating our stake value
+So that that's why if you want to update a stake you we checked with the previous stake to increase the stake amount right
+So that's the reason why I've saved it if it was not there I would have just had an empty PDF maybe with a bump value for prediction estimate now
+It might feel like it's a very dicey architecture where it's not saved on chain but you can always fetch the transaction and see like if you want soul scan right now
+And in the setting you paste any ideal and if that ideal has this self CPI you can parse it easily and see the prediction value that is being put
+It's not like it's not completely on chain it's still there in the instruction data or the transaction that you just call
+And when we resolve the pools we make sure that the indexer is not lagging we're not missing any transactions so we make sure of that as well
+I feel like this architecture is very good for consumer applications and even deep and protocols right where you save certain if you're like I let's say you're saving certain kind of data on chain for deep into catch rewards
+So at the end I feel like have you heard I guess at helium they have this library called tock to like reclaim and I don't remember it quite well
+Cost actually becomes a very big measure thing once you scale and you have that that many users and you're making so much you can't keep on doing so much data on chain
+So even if we sponsor fees we need to make sure that we don't end up sponsoring so much that sponsor wallet keeps running out time to time and it doesn't affect the users
+So I don't think so there's any issue with the architecture will miss any predictions I hope I answered a question because they're like multiple questions if I miss something
+Can just let me know do you answer most of it is this like common patterns on to log things and not so them on chain you know through indexes to them
+Or something novel that you saw over here I feel like the fire protocols do that as well
+I might have taken inspiration for some there because I've always looked at to like the fire protocols that are there on chain or if they're open source their code
+But I feel like some do like a met CPI logs via the instruction data itself I realized it later when I was looking at some defire protocols
+I'm not sure if they're critical data but they might be something which is of use for the if they might have some indexing services as well
+All right mix and on that note I would love to know three you know top contracts you've read that you think people can learn a lot from defi or otherwise
+Three contracts which you could learn from I think Camino is open source right now K length I've always referred to that I mean I used to like look at a lot
+I think so it's a very clean architecture wise but you get to know a lot of things of how like a protocol such big scale and stuff right there code
+And also squads protocol is very clean like their code is at very good quality that you could look at so K length squads apart from that
+Yeah I don't think so I would recommend it here the contracts apart from these two
+Yeah all right I think I have one more question which is what's next for Trevor what are you doing on right now
+So we're working on something called as flash pools I guess it's going to come out soon maybe by the end of the month
+It's basically price predictions where you predict in a very shorter window I know people would like to see the price chart move up and down and predict really quick
+And then just get to know what they if they want or not instead of waiting for more time so this is something that we're actively working on right now
+So what is the timeline of this as in the flash straight like is it I get it every 20 seconds what will so price be the next 20 seconds something like that
+Right now I'm not sure if it's changed it but I feel like it's it's going to be like a two minute pool cycle where you predict for one minute wait for one minute
+And so you just predict for the next two minutes for it make sense and there's a lot of interesting things like UI wise you could do here
+Have you seen the tile trading mean the you for your thing?
+Yeah I have where you can just click on a bunch of tiles and if the if the line move your tile you make money
+It's quite good like clicking on small tiles it just I think from UI wise we need to make sure that users knows what they're predicting and there's just like clicking random things
+Ruben has a very whole idea about the UI staff
+Got it make sense how big is the team right now how many engineers you have?
+So we the team entire team is like for full time we have six people it's a very small team and for technical engineering side of us test me this Ruben then there's a seat you on
+So we all three work together to ship things fast and I think we are doing good at this point
+Got it and in the future if you're ever highly what should people you know expect in the interview process what should they have the resume to you know to be able to get an interview or
+If there's any role that you feel like would help trap you could always DM our CEO and telegram or Twitter or maybe just DM me if I see something I could always forward for hiring
+I don't think so we have done like an official hiring where we announced it's always been like I met the co founder John at network school last year
+And I got involved as a contract was worked first and then I got offered the full time rule and for Ruben I guess I referred him via someone so it's very unofficial process
+But if there's something that you could help out with us just reach out on to John on his Twitter
+Got it and I'm assuming that you didn't have an interview process but it wouldn't have an interview process to you generally have an interview process for new engineers
+I mean yeah if we hire again will have an interview process for me I got started helping them with something they get to decentralizing their workflow
+And then I had few calls with them back and forth there was no particular like technical round per se it was mostly discussion on how I think things could be implemented or what kind of architecture I can use
+So I believe there was no technical DSA round or a coding round as such
+Got it but if someone joins now they probably expect to go through a standard interview process
+Yeah I don't think so there will be a DSA round but maybe take a home assignment or building something
+Got it makes sense that's all the questions I had thank you so much I'm fair time is there anything else would like to add for the audience
+People who are currently thinking about getting into Solana or you know I'll specifically want to be maybe you know blockchain engineer or smart contract engineers
+Because it's hard to find people who you don't specifically work on smart contracts
+For me I would say like if you are someone who's getting started particularly in writing Solana smart contracts
+Just start with anchor you don't have to go through the steep learning curve of learning rust by heart or something
+Or just follow some basic tutorials and last start with anchor it's a very good framework and a lot of good protocols you use it
+Because it's good for consumer applications right unless until you restart level where you need to optimize everything by computer units
+Then go with Pinocchio or native rust or something like that but if you start optimizing I'd just begin a level where you have
+You're still running rust and you're writing like Pinocchio will just end up confusing yourself start with anchor make something work when something clicks
+You get more excited and you start looking into how to optimize this now right so for it's a very niche user base
+I'm just saying that if you're looking into writing Solana smart contracts start with anchor I'll go framework
+Alright make sense on that note thank you so much and I'm for your time hopefully with an interesting part for the audience
+And see you guys the next one thank you bye bye

@@ -1,0 +1,42 @@
+{
+  "startTime": "2026-02-12T15:39:51.388Z",
+  "runtime": 1,
+  "bankroll": {
+    "starting": 23,
+    "current": 23
+  },
+  "stats": {
+    "totalSignals": 0,
+    "totalTrades": 0,
+    "totalWins": 0,
+    "totalLosses": 0,
+    "totalPnL": 0,
+    "edgesFound": [],
+    "dailyPnL": 0,
+    "byAsset": {
+      "BTC": {
+        "signals": 0,
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "pnl": 0
+      },
+      "ETH": {
+        "signals": 0,
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "pnl": 0
+      },
+      "SOL": {
+        "signals": 0,
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "pnl": 0
+      }
+    }
+  },
+  "positions": [],
+  "trades": []
+}

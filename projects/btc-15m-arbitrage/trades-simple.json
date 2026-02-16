@@ -1,0 +1,60 @@
+{
+  "stats": {
+    "signals": 22,
+    "trades": 4,
+    "wins": 4,
+    "losses": 0,
+    "pending": 4
+  },
+  "trades": [
+    {
+      "id": "0x40cd6bd37e45dd0e38f468ba5b87762f1cddedb36122d23ae3ffa5f2b090296c",
+      "timestamp": "2026-02-04T10:52:32.354Z",
+      "symbol": "XRP",
+      "direction": "DOWN",
+      "market": "XRP Up or Down - February 4, 5:45AM-6:00AM ET",
+      "marketEndDate": "2026-02-04T11:00:00.000Z",
+      "limitPrice": 0.53045,
+      "positionSize": 4.0175485,
+      "expectedShares": 7.573849561692903,
+      "status": "pending"
+    },
+    {
+      "id": "0xb7c23c295160965471b93cbec0ede4fef4957c2e8e8c87c7670612add0c27c20",
+      "timestamp": "2026-02-04T10:52:33.867Z",
+      "symbol": "ETH",
+      "direction": "DOWN",
+      "market": "Ethereum Up or Down - February 4, 5:45AM-6:00AM ET",
+      "marketEndDate": "2026-02-04T11:00:00.000Z",
+      "limitPrice": 0.48924999999999996,
+      "positionSize": 4.0175485,
+      "expectedShares": 8.211647419519673,
+      "status": "pending"
+    },
+    {
+      "id": "0xcfec0c2a75417b7c18e06e548a3eb0a1679c42a7d1079a7c26ba9d34854099da",
+      "timestamp": "2026-02-04T10:52:34.776Z",
+      "symbol": "BTC",
+      "direction": "DOWN",
+      "market": "Bitcoin Up or Down - February 4, 5:45AM-6:00AM ET",
+      "marketEndDate": "2026-02-04T11:00:00.000Z",
+      "limitPrice": 0.5716500000000001,
+      "positionSize": 4.0175485,
+      "expectedShares": 7.027986530219539,
+      "status": "pending"
+    },
+    {
+      "id": "0xf1cec75da2e109454f98ab70aacc3b88e487f27b968d3e6e8835b7277546fee8",
+      "timestamp": "2026-02-04T10:52:54.806Z",
+      "symbol": "SOL",
+      "direction": "DOWN",
+      "market": "Solana Up or Down - February 4, 5:45AM-6:00AM ET",
+      "marketEndDate": "2026-02-04T11:00:00.000Z",
+      "limitPrice": 0.60255,
+      "positionSize": 4.0175485,
+      "expectedShares": 6.667576964567256,
+      "status": "pending"
+    }
+  ],
+  "lastBalance": 16.070194
+}

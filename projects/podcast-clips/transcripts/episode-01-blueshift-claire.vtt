@@ -1,0 +1,3624 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.670 align:start position:0%
+ 
+Hi<00:00:00.160><c> everyone</c><00:00:00.400><c> and</c><00:00:00.640><c> welcome</c><00:00:00.719><c> to</c><00:00:00.880><c> a</c><00:00:00.960><c> new</c><00:00:01.120><c> pod.</c><00:00:01.520><c> In</c>
+
+00:00:01.670 --> 00:00:01.680 align:start position:0%
+Hi everyone and welcome to a new pod. In
+ 
+
+00:00:01.680 --> 00:00:04.150 align:start position:0%
+Hi everyone and welcome to a new pod. In
+this<00:00:01.760><c> pod</c><00:00:02.080><c> we</c><00:00:02.320><c> have</c><00:00:02.560><c> CLA.</c><00:00:03.040><c> Claire</c><00:00:03.520><c> recently</c>
+
+00:00:04.150 --> 00:00:04.160 align:start position:0%
+this pod we have CLA. Claire recently
+ 
+
+00:00:04.160 --> 00:00:06.309 align:start position:0%
+this pod we have CLA. Claire recently
+made<00:00:04.400><c> a</c><00:00:04.640><c> project</c><00:00:04.880><c> called</c><00:00:05.040><c> eBPF</c><00:00:05.680><c> linker</c><00:00:06.160><c> that</c>
+
+00:00:06.309 --> 00:00:06.319 align:start position:0%
+made a project called eBPF linker that
+ 
+
+00:00:06.319 --> 00:00:08.070 align:start position:0%
+made a project called eBPF linker that
+became<00:00:06.640><c> very</c><00:00:06.879><c> viral</c><00:00:07.120><c> on</c><00:00:07.359><c> Twitter.</c><00:00:07.759><c> If</c><00:00:08.000><c> you</c>
+
+00:00:08.070 --> 00:00:08.080 align:start position:0%
+became very viral on Twitter. If you
+ 
+
+00:00:08.080 --> 00:00:10.470 align:start position:0%
+became very viral on Twitter. If you
+want<00:00:08.160><c> to</c><00:00:08.320><c> know</c><00:00:08.480><c> more</c><00:00:08.800><c> about</c><00:00:09.040><c> how</c><00:00:09.280><c> ebpf</c><00:00:10.080><c> works</c>
+
+00:00:10.470 --> 00:00:10.480 align:start position:0%
+want to know more about how ebpf works
+ 
+
+00:00:10.480 --> 00:00:12.549 align:start position:0%
+want to know more about how ebpf works
+compiler<00:00:11.120><c> engineering</c><00:00:11.840><c> um</c><00:00:12.080><c> if</c><00:00:12.240><c> you</c><00:00:12.400><c> want</c><00:00:12.480><c> to</c>
+
+00:00:12.549 --> 00:00:12.559 align:start position:0%
+compiler engineering um if you want to
+ 
+
+00:00:12.559 --> 00:00:14.549 align:start position:0%
+compiler engineering um if you want to
+understand<00:00:12.880><c> slightly</c><00:00:13.280><c> more</c><00:00:13.519><c> low-level</c><00:00:14.000><c> stuff</c>
+
+00:00:14.549 --> 00:00:14.559 align:start position:0%
+understand slightly more low-level stuff
+ 
+
+00:00:14.559 --> 00:00:16.470 align:start position:0%
+understand slightly more low-level stuff
+specific<00:00:15.120><c> to</c><00:00:15.360><c> Solana</c><00:00:15.839><c> in</c><00:00:16.000><c> this</c><00:00:16.080><c> case</c><00:00:16.240><c> but</c>
+
+00:00:16.470 --> 00:00:16.480 align:start position:0%
+specific to Solana in this case but
+ 
+
+00:00:16.480 --> 00:00:18.390 align:start position:0%
+specific to Solana in this case but
+generally<00:00:16.720><c> I</c><00:00:16.880><c> think</c><00:00:17.039><c> this</c><00:00:17.199><c> is</c><00:00:17.680><c> more</c><00:00:18.000><c> Linux</c>
+
+00:00:18.390 --> 00:00:18.400 align:start position:0%
+generally I think this is more Linux
+ 
+
+00:00:18.400 --> 00:00:20.470 align:start position:0%
+generally I think this is more Linux
+stuff<00:00:18.720><c> than</c><00:00:18.960><c> Solana</c><00:00:19.439><c> stuff</c><00:00:19.840><c> then</c><00:00:20.000><c> this</c><00:00:20.160><c> mod</c><00:00:20.400><c> is</c>
+
+00:00:20.470 --> 00:00:20.480 align:start position:0%
+stuff than Solana stuff then this mod is
+ 
+
+00:00:20.480 --> 00:00:22.150 align:start position:0%
+stuff than Solana stuff then this mod is
+for<00:00:20.640><c> you.</c><00:00:20.880><c> With</c><00:00:21.039><c> that</c><00:00:21.279><c> let's</c><00:00:21.439><c> get</c><00:00:21.600><c> into</c><00:00:21.760><c> it.</c>
+
+00:00:22.150 --> 00:00:22.160 align:start position:0%
+for you. With that let's get into it.
+ 
+
+00:00:22.160 --> 00:00:25.429 align:start position:0%
+for you. With that let's get into it.
+When<00:00:22.400><c> I</c><00:00:22.640><c> started</c><00:00:23.680><c> uh</c><00:00:24.240><c> studying</c><00:00:24.640><c> CS</c><00:00:25.039><c> when</c><00:00:25.199><c> I</c><00:00:25.359><c> was</c>
+
+00:00:25.429 --> 00:00:25.439 align:start position:0%
+When I started uh studying CS when I was
+ 
+
+00:00:25.439 --> 00:00:28.390 align:start position:0%
+When I started uh studying CS when I was
+in<00:00:25.680><c> the</c><00:00:25.920><c> CS</c><00:00:26.320><c> program,</c><00:00:26.880><c> compilers</c><00:00:27.599><c> give</c><00:00:27.920><c> me</c><00:00:28.080><c> a</c>
+
+00:00:28.390 --> 00:00:28.400 align:start position:0%
+in the CS program, compilers give me a
+ 
+
+00:00:28.400 --> 00:00:30.790 align:start position:0%
+in the CS program, compilers give me a
+shortcut<00:00:28.880><c> to</c><00:00:29.119><c> learn</c><00:00:29.359><c> things.</c><00:00:30.000><c> When</c><00:00:30.240><c> you</c><00:00:30.640><c> work</c>
+
+00:00:30.790 --> 00:00:30.800 align:start position:0%
+shortcut to learn things. When you work
+ 
+
+00:00:30.800 --> 00:00:33.270 align:start position:0%
+shortcut to learn things. When you work
+with<00:00:31.119><c> compilers,</c><00:00:31.760><c> you</c><00:00:32.000><c> need</c><00:00:32.160><c> to</c><00:00:32.719><c> get</c><00:00:32.960><c> involved</c>
+
+00:00:33.270 --> 00:00:33.280 align:start position:0%
+with compilers, you need to get involved
+ 
+
+00:00:33.280 --> 00:00:35.830 align:start position:0%
+with compilers, you need to get involved
+with<00:00:33.760><c> two</c><00:00:34.079><c> things</c><00:00:34.480><c> at</c><00:00:35.120><c> different</c><00:00:35.440><c> side</c><00:00:35.600><c> of</c>
+
+00:00:35.830 --> 00:00:35.840 align:start position:0%
+with two things at different side of
+ 
+
+00:00:35.840 --> 00:00:36.630 align:start position:0%
+with two things at different side of
+spectrum.
+
+00:00:36.630 --> 00:00:36.640 align:start position:0%
+spectrum.
+ 
+
+00:00:36.640 --> 00:00:38.950 align:start position:0%
+spectrum.
+&gt;&gt; Anyone<00:00:37.120><c> wants</c><00:00:37.360><c> to</c><00:00:37.600><c> get</c><00:00:37.760><c> involved</c><00:00:38.160><c> in</c><00:00:38.559><c> the</c>
+
+00:00:38.950 --> 00:00:38.960 align:start position:0%
+&gt;&gt; Anyone wants to get involved in the
+ 
+
+00:00:38.960 --> 00:00:41.670 align:start position:0%
+&gt;&gt; Anyone wants to get involved in the
+contribute<00:00:39.440><c> to</c><00:00:39.600><c> SPF</c><00:00:40.160><c> flinker</c><00:00:40.640><c> project</c><00:00:40.960><c> or</c><00:00:41.520><c> you</c>
+
+00:00:41.670 --> 00:00:41.680 align:start position:0%
+contribute to SPF flinker project or you
+ 
+
+00:00:41.680 --> 00:00:45.190 align:start position:0%
+contribute to SPF flinker project or you
+know<00:00:42.160><c> uh</c><00:00:42.719><c> even</c><00:00:43.440><c> work</c><00:00:44.399><c> bring</c><00:00:44.640><c> some</c><00:00:44.800><c> of</c><00:00:44.960><c> their</c>
+
+00:00:45.190 --> 00:00:45.200 align:start position:0%
+know uh even work bring some of their
+ 
+
+00:00:45.200 --> 00:00:48.150 align:start position:0%
+know uh even work bring some of their
+compiler<00:00:46.079><c> skills</c><00:00:46.719><c> to</c><00:00:46.960><c> Salano.</c><00:00:47.600><c> What</c><00:00:47.840><c> what</c><00:00:48.000><c> are</c>
+
+00:00:48.150 --> 00:00:48.160 align:start position:0%
+compiler skills to Salano. What what are
+ 
+
+00:00:48.160 --> 00:00:50.150 align:start position:0%
+compiler skills to Salano. What what are
+some<00:00:48.399><c> places</c><00:00:48.640><c> that</c><00:00:48.879><c> they</c><00:00:49.120><c> can</c><00:00:49.280><c> contribute</c><00:00:49.760><c> to?</c>
+
+00:00:50.150 --> 00:00:50.160 align:start position:0%
+some places that they can contribute to?
+ 
+
+00:00:50.160 --> 00:00:51.910 align:start position:0%
+some places that they can contribute to?
+So<00:00:50.320><c> that's</c><00:00:50.640><c> also</c><00:00:50.960><c> another</c><00:00:51.280><c> reason</c><00:00:51.440><c> why</c><00:00:51.680><c> I</c>
+
+00:00:51.910 --> 00:00:51.920 align:start position:0%
+So that's also another reason why I
+ 
+
+00:00:51.920 --> 00:00:53.430 align:start position:0%
+So that's also another reason why I
+enjoy<00:00:52.239><c> working</c><00:00:52.399><c> on</c><00:00:52.559><c> compilers.</c><00:00:53.039><c> I</c><00:00:53.199><c> kind</c><00:00:53.360><c> of</c>
+
+00:00:53.430 --> 00:00:53.440 align:start position:0%
+enjoy working on compilers. I kind of
+ 
+
+00:00:53.440 --> 00:00:56.869 align:start position:0%
+enjoy working on compilers. I kind of
+use<00:00:53.600><c> this</c><00:00:53.840><c> as</c><00:00:54.079><c> a</c><00:00:54.320><c> core</c><00:00:54.719><c> skill</c><00:00:55.199><c> to</c><00:00:55.920><c> to</c><00:00:56.399><c> explore</c>
+
+00:00:56.869 --> 00:00:56.879 align:start position:0%
+use this as a core skill to to explore
+ 
+
+00:00:56.879 --> 00:00:59.430 align:start position:0%
+use this as a core skill to to explore
+many<00:00:57.440><c> different</c><00:00:57.840><c> technology.</c><00:00:58.879><c> My</c><00:00:59.199><c> first</c>
+
+00:00:59.430 --> 00:00:59.440 align:start position:0%
+many different technology. My first
+ 
+
+00:00:59.440 --> 00:01:01.910 align:start position:0%
+many different technology. My first
+compiler<00:00:59.920><c> gig</c><00:01:00.239><c> was</c><00:01:00.719><c> at</c><00:01:01.280><c> uh</c><00:01:01.440><c> a</c><00:01:01.600><c> quantum</c>
+
+00:01:01.910 --> 00:01:01.920 align:start position:0%
+compiler gig was at uh a quantum
+ 
+
+00:01:01.920 --> 00:01:05.350 align:start position:0%
+compiler gig was at uh a quantum
+computing<00:01:02.320><c> lab</c><00:01:02.960><c> working</c><00:01:03.359><c> on</c><00:01:03.680><c> a</c><00:01:04.080><c> compiler</c><00:01:05.040><c> for</c>
+
+00:01:05.350 --> 00:01:05.360 align:start position:0%
+computing lab working on a compiler for
+ 
+
+00:01:05.360 --> 00:01:07.670 align:start position:0%
+computing lab working on a compiler for
+a<00:01:05.600><c> quantum</c><00:01:05.920><c> computing</c><00:01:06.320><c> language</c><00:01:06.960><c> to</c><00:01:07.280><c> compile</c>
+
+00:01:07.670 --> 00:01:07.680 align:start position:0%
+a quantum computing language to compile
+ 
+
+00:01:07.680 --> 00:01:09.670 align:start position:0%
+a quantum computing language to compile
+it<00:01:07.840><c> to</c><00:01:08.080><c> CASM</c><00:01:08.560><c> quantum</c><00:01:08.960><c> assembly.</c>
+
+00:01:09.670 --> 00:01:09.680 align:start position:0%
+it to CASM quantum assembly.
+ 
+
+00:01:09.680 --> 00:01:11.670 align:start position:0%
+it to CASM quantum assembly.
+&gt;&gt; Our<00:01:09.920><c> program</c><00:01:10.320><c> can</c><00:01:10.640><c> programmers</c><00:01:11.119><c> like</c><00:01:11.360><c> create</c>
+
+00:01:11.670 --> 00:01:11.680 align:start position:0%
+&gt;&gt; Our program can programmers like create
+ 
+
+00:01:11.680 --> 00:01:14.710 align:start position:0%
+&gt;&gt; Our program can programmers like create
+sana<00:01:12.640><c> programs</c><00:01:13.119><c> using</c><00:01:13.520><c> any</c><00:01:13.840><c> language.</c><00:01:14.320><c> Now</c>
+
+00:01:14.710 --> 00:01:14.720 align:start position:0%
+sana programs using any language. Now
+ 
+
+00:01:14.720 --> 00:01:16.630 align:start position:0%
+sana programs using any language. Now
+hello<00:01:15.040><c> everyone</c><00:01:15.439><c> welcome</c><00:01:15.680><c> to</c><00:01:15.920><c> another</c>
+
+00:01:16.630 --> 00:01:16.640 align:start position:0%
+hello everyone welcome to another
+ 
+
+00:01:16.640 --> 00:01:18.870 align:start position:0%
+hello everyone welcome to another
+episode<00:01:17.280><c> of</c><00:01:17.520><c> the</c><00:01:17.840><c> one</c><00:01:17.920><c> day</c><00:01:18.159><c> devs</c><00:01:18.479><c> podcast.</c>
+
+00:01:18.870 --> 00:01:18.880 align:start position:0%
+episode of the one day devs podcast.
+ 
+
+00:01:18.880 --> 00:01:21.830 align:start position:0%
+episode of the one day devs podcast.
+Today<00:01:19.119><c> we</c><00:01:19.360><c> have</c><00:01:19.520><c> with</c><00:01:19.680><c> us</c><00:01:20.400><c> Claire</c><00:01:21.119><c> from</c><00:01:21.520><c> Blue</c>
+
+00:01:21.830 --> 00:01:21.840 align:start position:0%
+Today we have with us Claire from Blue
+ 
+
+00:01:21.840 --> 00:01:25.429 align:start position:0%
+Today we have with us Claire from Blue
+Shift.<00:01:22.640><c> Claire</c><00:01:23.119><c> is</c><00:01:23.360><c> also</c><00:01:23.600><c> the</c><00:01:23.920><c> creator</c><00:01:24.320><c> of</c><00:01:24.960><c> SBP</c>
+
+00:01:25.429 --> 00:01:25.439 align:start position:0%
+Shift. Claire is also the creator of SBP
+ 
+
+00:01:25.439 --> 00:01:28.230 align:start position:0%
+Shift. Claire is also the creator of SBP
+of<00:01:25.600><c> Flinker</c><00:01:26.080><c> Project</c><00:01:26.400><c> which</c><00:01:26.720><c> went</c><00:01:27.119><c> extremely</c>
+
+00:01:28.230 --> 00:01:28.240 align:start position:0%
+of Flinker Project which went extremely
+ 
+
+00:01:28.240 --> 00:01:31.670 align:start position:0%
+of Flinker Project which went extremely
+vital<00:01:29.040><c> on</c><00:01:29.439><c> Twitter</c><00:01:29.759><c> and</c><00:01:30.000><c> also</c><00:01:30.240><c> on</c><00:01:30.560><c> GitHub</c><00:01:31.360><c> a</c>
+
+00:01:31.670 --> 00:01:31.680 align:start position:0%
+vital on Twitter and also on GitHub a
+ 
+
+00:01:31.680 --> 00:01:34.230 align:start position:0%
+vital on Twitter and also on GitHub a
+couple<00:01:31.840><c> of</c><00:01:32.079><c> weeks</c><00:01:32.320><c> ago</c><00:01:32.960><c> and</c><00:01:33.280><c> we</c><00:01:33.520><c> are</c><00:01:33.680><c> very</c><00:01:33.920><c> very</c>
+
+00:01:34.230 --> 00:01:34.240 align:start position:0%
+couple of weeks ago and we are very very
+ 
+
+00:01:34.240 --> 00:01:36.870 align:start position:0%
+couple of weeks ago and we are very very
+excited<00:01:34.560><c> to</c><00:01:34.720><c> have</c><00:01:34.880><c> you</c><00:01:35.040><c> on</c><00:01:35.280><c> the</c><00:01:35.840><c> show</c><00:01:36.320><c> today</c>
+
+00:01:36.870 --> 00:01:36.880 align:start position:0%
+excited to have you on the show today
+ 
+
+00:01:36.880 --> 00:01:38.469 align:start position:0%
+excited to have you on the show today
+CLA.<00:01:37.520><c> Welcome</c><00:01:37.840><c> to</c><00:01:38.000><c> the</c><00:01:38.159><c> show.</c>
+
+00:01:38.469 --> 00:01:38.479 align:start position:0%
+CLA. Welcome to the show.
+ 
+
+00:01:38.479 --> 00:01:40.950 align:start position:0%
+CLA. Welcome to the show.
+&gt;&gt; Yeah,<00:01:39.200><c> thanks</c><00:01:39.520><c> for</c><00:01:39.759><c> having</c><00:01:40.000><c> me.</c><00:01:40.240><c> I'm</c><00:01:40.479><c> happy</c><00:01:40.720><c> to</c>
+
+00:01:40.950 --> 00:01:40.960 align:start position:0%
+&gt;&gt; Yeah, thanks for having me. I'm happy to
+ 
+
+00:01:40.960 --> 00:01:44.469 align:start position:0%
+&gt;&gt; Yeah, thanks for having me. I'm happy to
+be<00:01:41.040><c> here.</c><00:01:41.920><c> This</c><00:01:42.079><c> is</c><00:01:42.240><c> my</c><00:01:42.720><c> first</c><00:01:43.040><c> ever</c><00:01:43.360><c> podcast.</c>
+
+00:01:44.469 --> 00:01:44.479 align:start position:0%
+be here. This is my first ever podcast.
+ 
+
+00:01:44.479 --> 00:01:47.830 align:start position:0%
+be here. This is my first ever podcast.
+&gt;&gt; So<00:01:45.439><c> this</c><00:01:45.680><c> is</c><00:01:45.920><c> kind</c><00:01:46.159><c> of</c><00:01:46.320><c> our</c><00:01:46.960><c> podcast</c><00:01:47.439><c> edition.</c>
+
+00:01:47.830 --> 00:01:47.840 align:start position:0%
+&gt;&gt; So this is kind of our podcast edition.
+ 
+
+00:01:47.840 --> 00:01:50.310 align:start position:0%
+&gt;&gt; So this is kind of our podcast edition.
+And<00:01:47.920><c> we</c><00:01:48.079><c> ask</c><00:01:48.240><c> this</c><00:01:48.479><c> question</c><00:01:48.720><c> to</c><00:01:49.040><c> every</c><00:01:49.920><c> guest</c>
+
+00:01:50.310 --> 00:01:50.320 align:start position:0%
+And we ask this question to every guest
+ 
+
+00:01:50.320 --> 00:01:53.030 align:start position:0%
+And we ask this question to every guest
+who<00:01:50.560><c> comes</c><00:01:50.720><c> on</c><00:01:50.960><c> the</c><00:01:51.119><c> show.</c><00:01:51.920><c> So</c><00:01:52.320><c> what</c><00:01:52.560><c> what's</c>
+
+00:01:53.030 --> 00:01:53.040 align:start position:0%
+who comes on the show. So what what's
+ 
+
+00:01:53.040 --> 00:01:55.830 align:start position:0%
+who comes on the show. So what what's
+your<00:01:54.240><c> what</c><00:01:54.479><c> what's</c><00:01:54.799><c> your</c><00:01:55.119><c> background</c><00:01:55.520><c> like?</c>
+
+00:01:55.830 --> 00:01:55.840 align:start position:0%
+your what what's your background like?
+ 
+
+00:01:55.840 --> 00:01:57.510 align:start position:0%
+your what what's your background like?
+What<00:01:56.079><c> pulled</c><00:01:56.320><c> you</c><00:01:56.479><c> into</c><00:01:56.720><c> crypto?</c>
+
+00:01:57.510 --> 00:01:57.520 align:start position:0%
+What pulled you into crypto?
+ 
+
+00:01:57.520 --> 00:01:59.830 align:start position:0%
+What pulled you into crypto?
+&gt;&gt; Right.<00:01:57.920><c> Yeah.</c><00:01:58.240><c> So</c><00:01:58.719><c> uh</c><00:01:59.280><c> I've</c><00:01:59.520><c> worked</c><00:01:59.680><c> on</c>
+
+00:01:59.830 --> 00:01:59.840 align:start position:0%
+&gt;&gt; Right. Yeah. So uh I've worked on
+ 
+
+00:01:59.840 --> 00:02:02.230 align:start position:0%
+&gt;&gt; Right. Yeah. So uh I've worked on
+compilers<00:02:00.399><c> for</c><00:02:00.560><c> a</c><00:02:00.719><c> couple</c><00:02:00.880><c> of</c><00:02:01.040><c> years</c><00:02:01.680><c> and</c>
+
+00:02:02.230 --> 00:02:02.240 align:start position:0%
+compilers for a couple of years and
+ 
+
+00:02:02.240 --> 00:02:04.870 align:start position:0%
+compilers for a couple of years and
+around<00:02:02.640><c> like</c><00:02:03.439><c> last</c><00:02:03.680><c> year</c><00:02:03.920><c> I</c><00:02:04.079><c> got</c><00:02:04.320><c> interesting</c>
+
+00:02:04.870 --> 00:02:04.880 align:start position:0%
+around like last year I got interesting
+ 
+
+00:02:04.880 --> 00:02:08.469 align:start position:0%
+around like last year I got interesting
+in<00:02:05.119><c> crypto</c><00:02:05.920><c> in</c><00:02:06.159><c> or</c><00:02:06.320><c> in</c><00:02:06.560><c> blockchain.</c><00:02:07.680><c> Um</c><00:02:08.160><c> I</c>
+
+00:02:08.469 --> 00:02:08.479 align:start position:0%
+in crypto in or in blockchain. Um I
+ 
+
+00:02:08.479 --> 00:02:10.389 align:start position:0%
+in crypto in or in blockchain. Um I
+realized<00:02:08.800><c> you</c><00:02:09.119><c> can</c><00:02:09.360><c> you</c><00:02:09.520><c> know</c><00:02:09.679><c> run</c><00:02:09.920><c> things</c><00:02:10.160><c> on</c>
+
+00:02:10.389 --> 00:02:10.399 align:start position:0%
+realized you can you know run things on
+ 
+
+00:02:10.399 --> 00:02:12.150 align:start position:0%
+realized you can you know run things on
+blockchain<00:02:10.879><c> as</c><00:02:11.039><c> if</c><00:02:11.280><c> you</c><00:02:11.440><c> run</c><00:02:11.599><c> things</c><00:02:11.840><c> on</c><00:02:12.000><c> a</c>
+
+00:02:12.150 --> 00:02:12.160 align:start position:0%
+blockchain as if you run things on a
+ 
+
+00:02:12.160 --> 00:02:15.910 align:start position:0%
+blockchain as if you run things on a
+computer<00:02:13.120><c> and</c><00:02:13.760><c> that</c><00:02:14.160><c> idea</c><00:02:14.560><c> of</c><00:02:15.200><c> decentralized</c>
+
+00:02:15.910 --> 00:02:15.920 align:start position:0%
+computer and that idea of decentralized
+ 
+
+00:02:15.920 --> 00:02:18.630 align:start position:0%
+computer and that idea of decentralized
+digital<00:02:16.720><c> system</c><00:02:17.520><c> um</c><00:02:17.680><c> really</c><00:02:17.920><c> attracted</c><00:02:18.319><c> me.</c><00:02:18.480><c> I</c>
+
+00:02:18.630 --> 00:02:18.640 align:start position:0%
+digital system um really attracted me. I
+ 
+
+00:02:18.640 --> 00:02:21.430 align:start position:0%
+digital system um really attracted me. I
+just<00:02:19.280><c> curious</c><00:02:19.680><c> about</c><00:02:20.000><c> how</c><00:02:20.239><c> things</c><00:02:20.560><c> work</c><00:02:21.200><c> and</c>
+
+00:02:21.430 --> 00:02:21.440 align:start position:0%
+just curious about how things work and
+ 
+
+00:02:21.440 --> 00:02:24.150 align:start position:0%
+just curious about how things work and
+so<00:02:21.599><c> I</c><00:02:21.840><c> started</c><00:02:22.080><c> looking</c><00:02:22.319><c> into</c><00:02:23.360><c> uh</c><00:02:23.840><c> you</c><00:02:24.000><c> know</c>
+
+00:02:24.150 --> 00:02:24.160 align:start position:0%
+so I started looking into uh you know
+ 
+
+00:02:24.160 --> 00:02:26.470 align:start position:0%
+so I started looking into uh you know
+fun<00:02:24.480><c> things</c><00:02:24.640><c> to</c><00:02:24.879><c> do</c><00:02:25.040><c> in</c><00:02:25.200><c> crypto.</c><00:02:25.920><c> I</c><00:02:26.160><c> had</c><00:02:26.239><c> a</c>
+
+00:02:26.470 --> 00:02:26.480 align:start position:0%
+fun things to do in crypto. I had a
+ 
+
+00:02:26.480 --> 00:02:29.110 align:start position:0%
+fun things to do in crypto. I had a
+full-time<00:02:26.800><c> job</c><00:02:27.040><c> at</c><00:02:27.200><c> the</c><00:02:27.360><c> time</c><00:02:27.520><c> so</c><00:02:27.680><c> I</c><00:02:27.920><c> just</c><00:02:28.879><c> um</c>
+
+00:02:29.110 --> 00:02:29.120 align:start position:0%
+full-time job at the time so I just um
+ 
+
+00:02:29.120 --> 00:02:31.110 align:start position:0%
+full-time job at the time so I just um
+looking<00:02:29.360><c> for</c><00:02:29.599><c> like</c><00:02:29.760><c> a</c><00:02:30.000><c> side</c><00:02:30.239><c> gig</c><00:02:30.720><c> and</c><00:02:30.959><c> then</c>
+
+00:02:31.110 --> 00:02:31.120 align:start position:0%
+looking for like a side gig and then
+ 
+
+00:02:31.120 --> 00:02:33.270 align:start position:0%
+looking for like a side gig and then
+since<00:02:31.360><c> I</c><00:02:31.680><c> work</c><00:02:31.840><c> on</c><00:02:32.000><c> compilers</c><00:02:32.560><c> I</c><00:02:32.720><c> really</c><00:02:32.959><c> want</c>
+
+00:02:33.270 --> 00:02:33.280 align:start position:0%
+since I work on compilers I really want
+ 
+
+00:02:33.280 --> 00:02:36.150 align:start position:0%
+since I work on compilers I really want
+like<00:02:33.680><c> continue</c><00:02:34.080><c> the</c><00:02:34.319><c> path.</c><00:02:34.720><c> So</c><00:02:34.959><c> I</c><00:02:35.200><c> was</c><00:02:35.360><c> like</c>
+
+00:02:36.150 --> 00:02:36.160 align:start position:0%
+like continue the path. So I was like
+ 
+
+00:02:36.160 --> 00:02:38.710 align:start position:0%
+like continue the path. So I was like
+specifically<00:02:36.879><c> looking</c><00:02:37.200><c> for</c><00:02:38.000><c> um</c><00:02:38.239><c> like</c><00:02:38.480><c> a</c>
+
+00:02:38.710 --> 00:02:38.720 align:start position:0%
+specifically looking for um like a
+ 
+
+00:02:38.720 --> 00:02:42.630 align:start position:0%
+specifically looking for um like a
+compiler<00:02:39.840><c> work</c><00:02:40.400><c> um</c><00:02:40.560><c> in</c><00:02:40.720><c> crypto</c><00:02:41.840><c> and</c><00:02:42.160><c> I</c><00:02:42.480><c> guess</c>
+
+00:02:42.630 --> 00:02:42.640 align:start position:0%
+compiler work um in crypto and I guess
+ 
+
+00:02:42.640 --> 00:02:44.630 align:start position:0%
+compiler work um in crypto and I guess
+for<00:02:42.879><c> some</c><00:02:43.120><c> weird</c><00:02:43.519><c> magical</c><00:02:44.000><c> reason</c><00:02:44.239><c> I</c><00:02:44.480><c> met</c>
+
+00:02:44.630 --> 00:02:44.640 align:start position:0%
+for some weird magical reason I met
+ 
+
+00:02:44.640 --> 00:02:47.110 align:start position:0%
+for some weird magical reason I met
+Dean.<00:02:45.040><c> Dean</c><00:02:45.360><c> is</c><00:02:45.519><c> like</c><00:02:46.000><c> one</c><00:02:46.319><c> of</c><00:02:46.480><c> the</c><00:02:46.800><c> first</c>
+
+00:02:47.110 --> 00:02:47.120 align:start position:0%
+Dean. Dean is like one of the first
+ 
+
+00:02:47.120 --> 00:02:50.949 align:start position:0%
+Dean. Dean is like one of the first
+people<00:02:47.360><c> I</c><00:02:47.599><c> met</c><00:02:47.840><c> in</c><00:02:48.000><c> the</c><00:02:48.239><c> space.</c><00:02:49.360><c> Um,</c><00:02:50.239><c> and</c><00:02:50.720><c> so</c>
+
+00:02:50.949 --> 00:02:50.959 align:start position:0%
+people I met in the space. Um, and so
+ 
+
+00:02:50.959 --> 00:02:53.430 align:start position:0%
+people I met in the space. Um, and so
+how<00:02:51.200><c> we</c><00:02:51.440><c> met</c><00:02:52.000><c> was</c><00:02:52.480><c> was</c><00:02:52.800><c> kind</c><00:02:52.959><c> of</c><00:02:53.040><c> interesting</c>
+
+00:02:53.430 --> 00:02:53.440 align:start position:0%
+how we met was was kind of interesting
+ 
+
+00:02:53.440 --> 00:02:55.589 align:start position:0%
+how we met was was kind of interesting
+cuz<00:02:54.000><c> I'm</c><00:02:54.319><c> originally</c><00:02:54.720><c> from</c><00:02:54.879><c> Taiwan</c><00:02:55.280><c> and</c><00:02:55.440><c> then</c>
+
+00:02:55.589 --> 00:02:55.599 align:start position:0%
+cuz I'm originally from Taiwan and then
+ 
+
+00:02:55.599 --> 00:02:57.350 align:start position:0%
+cuz I'm originally from Taiwan and then
+he<00:02:55.760><c> moved</c><00:02:55.920><c> to</c><00:02:56.080><c> Taiwan</c><00:02:56.480><c> like</c><00:02:56.720><c> two</c><00:02:56.959><c> three</c><00:02:57.200><c> years</c>
+
+00:02:57.350 --> 00:02:57.360 align:start position:0%
+he moved to Taiwan like two three years
+ 
+
+00:02:57.360 --> 00:03:01.030 align:start position:0%
+he moved to Taiwan like two three years
+ago.<00:02:58.319><c> And</c><00:02:58.560><c> so</c><00:02:58.879><c> I</c><00:02:59.599><c> uh</c><00:02:59.760><c> I</c><00:02:59.920><c> moved</c><00:03:00.160><c> to</c><00:03:00.560><c> two</c><00:03:00.720><c> years</c>
+
+00:03:01.030 --> 00:03:01.040 align:start position:0%
+ago. And so I uh I moved to two years
+ 
+
+00:03:01.040 --> 00:03:02.790 align:start position:0%
+ago. And so I uh I moved to two years
+like<00:03:01.200><c> a</c><00:03:01.360><c> couple</c><00:03:01.519><c> of</c><00:03:01.680><c> years</c><00:03:01.840><c> ago</c><00:03:02.080><c> but</c><00:03:02.400><c> I</c><00:03:02.560><c> still</c>
+
+00:03:02.790 --> 00:03:02.800 align:start position:0%
+like a couple of years ago but I still
+ 
+
+00:03:02.800 --> 00:03:04.550 align:start position:0%
+like a couple of years ago but I still
+go<00:03:02.959><c> back</c><00:03:03.200><c> every</c><00:03:03.519><c> year</c><00:03:03.680><c> to</c><00:03:04.000><c> you</c><00:03:04.159><c> know</c><00:03:04.319><c> spend</c>
+
+00:03:04.550 --> 00:03:04.560 align:start position:0%
+go back every year to you know spend
+ 
+
+00:03:04.560 --> 00:03:07.750 align:start position:0%
+go back every year to you know spend
+time<00:03:04.720><c> with</c><00:03:04.959><c> family.</c><00:03:05.920><c> And</c><00:03:06.159><c> so</c><00:03:06.480><c> while</c><00:03:07.200><c> I</c><00:03:07.440><c> was</c><00:03:07.519><c> in</c>
+
+00:03:07.750 --> 00:03:07.760 align:start position:0%
+time with family. And so while I was in
+ 
+
+00:03:07.760 --> 00:03:10.710 align:start position:0%
+time with family. And so while I was in
+Taiwan<00:03:08.239><c> like</c><00:03:08.800><c> uh</c><00:03:08.879><c> last</c><00:03:09.200><c> December</c><00:03:10.000><c> visiting</c><00:03:10.480><c> my</c>
+
+00:03:10.710 --> 00:03:10.720 align:start position:0%
+Taiwan like uh last December visiting my
+ 
+
+00:03:10.720 --> 00:03:13.990 align:start position:0%
+Taiwan like uh last December visiting my
+family,<00:03:11.519><c> I</c><00:03:11.760><c> was</c><00:03:11.840><c> just</c><00:03:12.239><c> asking</c><00:03:12.720><c> around</c><00:03:13.120><c> friends</c>
+
+00:03:13.990 --> 00:03:14.000 align:start position:0%
+family, I was just asking around friends
+ 
+
+00:03:14.000 --> 00:03:16.229 align:start position:0%
+family, I was just asking around friends
+um<00:03:14.159><c> who</c><00:03:14.400><c> I</c><00:03:14.640><c> know</c><00:03:14.800><c> who</c><00:03:15.360><c> have</c><00:03:15.599><c> been</c><00:03:15.760><c> crypto</c><00:03:16.080><c> or</c>
+
+00:03:16.229 --> 00:03:16.239 align:start position:0%
+um who I know who have been crypto or
+ 
+
+00:03:16.239 --> 00:03:19.589 align:start position:0%
+um who I know who have been crypto or
+like<00:03:16.400><c> still</c><00:03:16.640><c> in</c><00:03:16.800><c> crypto</c><00:03:17.760><c> know</c><00:03:18.159><c> any</c><00:03:18.800><c> startup</c><00:03:19.280><c> or</c>
+
+00:03:19.589 --> 00:03:19.599 align:start position:0%
+like still in crypto know any startup or
+ 
+
+00:03:19.599 --> 00:03:21.990 align:start position:0%
+like still in crypto know any startup or
+like<00:03:20.000><c> team</c><00:03:20.319><c> has</c><00:03:20.800><c> might</c><00:03:21.120><c> have</c><00:03:21.280><c> a</c><00:03:21.519><c> project</c><00:03:21.760><c> for</c>
+
+00:03:21.990 --> 00:03:22.000 align:start position:0%
+like team has might have a project for
+ 
+
+00:03:22.000 --> 00:03:26.309 align:start position:0%
+like team has might have a project for
+me<00:03:22.159><c> to</c><00:03:22.319><c> do.</c><00:03:23.120><c> And</c><00:03:23.360><c> so</c><00:03:23.519><c> I</c><00:03:23.680><c> actually</c><00:03:24.000><c> first</c><00:03:24.319><c> met</c><00:03:25.360><c> um</c>
+
+00:03:26.309 --> 00:03:26.319 align:start position:0%
+me to do. And so I actually first met um
+ 
+
+00:03:26.319 --> 00:03:29.110 align:start position:0%
+me to do. And so I actually first met um
+uh<00:03:26.480><c> the</c><00:03:26.720><c> CTO</c><00:03:27.200><c> of</c><00:03:27.360><c> Zeus</c><00:03:28.239><c> uh</c><00:03:28.480><c> another</c><00:03:28.879><c> company</c>
+
+00:03:29.110 --> 00:03:29.120 align:start position:0%
+uh the CTO of Zeus uh another company
+ 
+
+00:03:29.120 --> 00:03:31.670 align:start position:0%
+uh the CTO of Zeus uh another company
+that<00:03:29.440><c> Dean</c><00:03:29.760><c> co-ounded.</c><00:03:30.799><c> So</c><00:03:30.959><c> I</c><00:03:31.200><c> talked</c><00:03:31.440><c> to</c>
+
+00:03:31.670 --> 00:03:31.680 align:start position:0%
+that Dean co-ounded. So I talked to
+ 
+
+00:03:31.680 --> 00:03:34.470 align:start position:0%
+that Dean co-ounded. So I talked to
+their<00:03:32.080><c> CTO</c><00:03:32.640><c> Jim</c><00:03:33.120><c> first.</c><00:03:33.760><c> I</c><00:03:34.000><c> was</c><00:03:34.080><c> like,</c><00:03:34.159><c> "Hey,</c>
+
+00:03:34.470 --> 00:03:34.480 align:start position:0%
+their CTO Jim first. I was like, "Hey,
+ 
+
+00:03:34.480 --> 00:03:36.390 align:start position:0%
+their CTO Jim first. I was like, "Hey,
+I've<00:03:34.640><c> got</c><00:03:34.720><c> a</c><00:03:34.879><c> compiler</c><00:03:35.360><c> background</c><00:03:35.840><c> and</c><00:03:36.159><c> I'm</c>
+
+00:03:36.390 --> 00:03:36.400 align:start position:0%
+I've got a compiler background and I'm
+ 
+
+00:03:36.400 --> 00:03:37.910 align:start position:0%
+I've got a compiler background and I'm
+looking<00:03:36.640><c> for,</c><00:03:37.360><c> you</c><00:03:37.519><c> know,</c><00:03:37.680><c> something</c>
+
+00:03:37.910 --> 00:03:37.920 align:start position:0%
+looking for, you know, something
+ 
+
+00:03:37.920 --> 00:03:40.390 align:start position:0%
+looking for, you know, something
+interesting<00:03:38.319><c> to</c><00:03:38.560><c> do."</c><00:03:39.599><c> And</c><00:03:39.840><c> he</c><00:03:40.159><c> was</c><00:03:40.319><c> like,</c>
+
+00:03:40.390 --> 00:03:40.400 align:start position:0%
+interesting to do." And he was like,
+ 
+
+00:03:40.400 --> 00:03:42.550 align:start position:0%
+interesting to do." And he was like,
+"Yeah,<00:03:40.959><c> I</c><00:03:41.120><c> might</c><00:03:41.360><c> know</c><00:03:41.519><c> a</c><00:03:41.760><c> guy</c><00:03:41.920><c> for</c><00:03:42.159><c> you."</c><00:03:42.400><c> And</c>
+
+00:03:42.550 --> 00:03:42.560 align:start position:0%
+"Yeah, I might know a guy for you." And
+ 
+
+00:03:42.560 --> 00:03:45.030 align:start position:0%
+"Yeah, I might know a guy for you." And
+then<00:03:42.799><c> so</c><00:03:43.040><c> a</c><00:03:43.280><c> week</c><00:03:43.440><c> or</c><00:03:43.680><c> two</c><00:03:43.840><c> later,</c><00:03:44.319><c> I</c><00:03:44.480><c> I</c><00:03:44.799><c> met</c>
+
+00:03:45.030 --> 00:03:45.040 align:start position:0%
+then so a week or two later, I I met
+ 
+
+00:03:45.040 --> 00:03:48.470 align:start position:0%
+then so a week or two later, I I met
+Dean<00:03:45.440><c> at</c><00:03:46.000><c> um</c><00:03:46.159><c> Zeus</c><00:03:46.560><c> office</c><00:03:46.799><c> in</c><00:03:47.040><c> Taipei.</c><00:03:48.239><c> And</c>
+
+00:03:48.470 --> 00:03:48.480 align:start position:0%
+Dean at um Zeus office in Taipei. And
+ 
+
+00:03:48.480 --> 00:03:51.430 align:start position:0%
+Dean at um Zeus office in Taipei. And
+then<00:03:48.640><c> so</c><00:03:49.519><c> uh</c><00:03:49.760><c> since</c><00:03:50.159><c> I</c><00:03:50.400><c> work</c><00:03:50.560><c> on</c><00:03:50.799><c> compilers,</c><00:03:51.280><c> so</c>
+
+00:03:51.430 --> 00:03:51.440 align:start position:0%
+then so uh since I work on compilers, so
+ 
+
+00:03:51.440 --> 00:03:53.270 align:start position:0%
+then so uh since I work on compilers, so
+we<00:03:51.680><c> like</c><00:03:51.920><c> naturally</c><00:03:52.400><c> started</c><00:03:52.720><c> talking</c><00:03:53.040><c> about</c>
+
+00:03:53.270 --> 00:03:53.280 align:start position:0%
+we like naturally started talking about
+ 
+
+00:03:53.280 --> 00:03:56.070 align:start position:0%
+we like naturally started talking about
+about<00:03:53.680><c> compilers.</c><00:03:54.720><c> And</c><00:03:54.879><c> so</c><00:03:55.040><c> he</c><00:03:55.360><c> was</c><00:03:55.519><c> like,</c>
+
+00:03:56.070 --> 00:03:56.080 align:start position:0%
+about compilers. And so he was like,
+ 
+
+00:03:56.080 --> 00:03:59.589 align:start position:0%
+about compilers. And so he was like,
+"Yeah,<00:03:56.560><c> Sona</c><00:03:57.040><c> compiler</c><00:03:57.840><c> isn't</c><00:03:58.560><c> very</c><00:03:58.879><c> good."</c>
+
+00:03:59.589 --> 00:03:59.599 align:start position:0%
+"Yeah, Sona compiler isn't very good."
+ 
+
+00:03:59.599 --> 00:04:01.990 align:start position:0%
+"Yeah, Sona compiler isn't very good."
+And<00:04:00.080><c> I</c><00:04:00.400><c> actually</c><00:04:00.720><c> didn't</c><00:04:01.040><c> buy</c><00:04:01.439><c> what</c><00:04:01.599><c> he</c><00:04:01.840><c> said</c>
+
+00:04:01.990 --> 00:04:02.000 align:start position:0%
+And I actually didn't buy what he said
+ 
+
+00:04:02.000 --> 00:04:03.990 align:start position:0%
+And I actually didn't buy what he said
+at<00:04:02.239><c> the</c><00:04:02.400><c> first</c><00:04:02.640><c> place</c><00:04:02.959><c> because</c><00:04:03.200><c> it's</c><00:04:03.439><c> like</c><00:04:03.840><c> you</c>
+
+00:04:03.990 --> 00:04:04.000 align:start position:0%
+at the first place because it's like you
+ 
+
+00:04:04.000 --> 00:04:06.550 align:start position:0%
+at the first place because it's like you
+know<00:04:04.080><c> I</c><00:04:04.319><c> work</c><00:04:04.480><c> on</c><00:04:04.640><c> compilers</c><00:04:05.360><c> I</c><00:04:05.840><c> I</c><00:04:06.239><c> know</c><00:04:06.400><c> what</c>
+
+00:04:06.550 --> 00:04:06.560 align:start position:0%
+know I work on compilers I I know what
+ 
+
+00:04:06.560 --> 00:04:08.949 align:start position:0%
+know I work on compilers I I know what
+it's<00:04:06.879><c> capable</c><00:04:07.360><c> of</c><00:04:07.680><c> but</c><00:04:07.840><c> modern</c><00:04:08.159><c> compilers</c><00:04:08.640><c> are</c>
+
+00:04:08.949 --> 00:04:08.959 align:start position:0%
+it's capable of but modern compilers are
+ 
+
+00:04:08.959 --> 00:04:12.149 align:start position:0%
+it's capable of but modern compilers are
+like<00:04:09.120><c> can</c><00:04:09.360><c> run</c><00:04:10.000><c> sophisticated</c><00:04:11.280><c> analysis</c><00:04:12.000><c> and</c>
+
+00:04:12.149 --> 00:04:12.159 align:start position:0%
+like can run sophisticated analysis and
+ 
+
+00:04:12.159 --> 00:04:14.470 align:start position:0%
+like can run sophisticated analysis and
+then<00:04:12.400><c> to</c><00:04:12.560><c> can</c><00:04:12.799><c> do</c><00:04:12.959><c> crazy</c><00:04:13.360><c> things</c><00:04:13.920><c> and</c><00:04:14.159><c> also</c>
+
+00:04:14.470 --> 00:04:14.480 align:start position:0%
+then to can do crazy things and also
+ 
+
+00:04:14.480 --> 00:04:18.150 align:start position:0%
+then to can do crazy things and also
+like<00:04:15.280><c> some</c><00:04:15.680><c> compiler</c><00:04:16.079><c> use</c><00:04:16.880><c> LVMS</c><00:04:17.600><c> back</c><00:04:17.840><c> end</c>
+
+00:04:18.150 --> 00:04:18.160 align:start position:0%
+like some compiler use LVMS back end
+ 
+
+00:04:18.160 --> 00:04:21.189 align:start position:0%
+like some compiler use LVMS back end
+right<00:04:18.720><c> so</c><00:04:18.959><c> then</c><00:04:19.440><c> it's</c><00:04:19.759><c> like</c><00:04:20.239><c> the</c><00:04:20.560><c> most</c><00:04:20.799><c> popular</c>
+
+00:04:21.189 --> 00:04:21.199 align:start position:0%
+right so then it's like the most popular
+ 
+
+00:04:21.199 --> 00:04:23.270 align:start position:0%
+right so then it's like the most popular
+compiler<00:04:21.680><c> framework</c><00:04:22.160><c> out</c><00:04:22.639><c> out</c><00:04:22.800><c> there</c><00:04:23.040><c> so</c>
+
+00:04:23.270 --> 00:04:23.280 align:start position:0%
+compiler framework out out there so
+ 
+
+00:04:23.280 --> 00:04:25.189 align:start position:0%
+compiler framework out out there so
+there<00:04:23.440><c> are</c><00:04:23.600><c> many</c><00:04:23.759><c> things</c><00:04:23.919><c> you</c><00:04:24.160><c> can</c><00:04:24.320><c> leverage</c>
+
+00:04:25.189 --> 00:04:25.199 align:start position:0%
+there are many things you can leverage
+ 
+
+00:04:25.199 --> 00:04:27.189 align:start position:0%
+there are many things you can leverage
+so<00:04:25.440><c> it</c><00:04:25.680><c> could</c><00:04:25.840><c> just</c><00:04:26.000><c> be</c><00:04:26.240><c> like</c><00:04:26.720><c> you</c><00:04:26.880><c> know</c><00:04:27.040><c> you</c>
+
+00:04:27.189 --> 00:04:27.199 align:start position:0%
+so it could just be like you know you
+ 
+
+00:04:27.199 --> 00:04:29.350 align:start position:0%
+so it could just be like you know you
+can<00:04:27.440><c> probably</c><00:04:27.759><c> tweak</c><00:04:28.080><c> it</c><00:04:28.320><c> in</c><00:04:28.479><c> the</c><00:04:28.639><c> way</c><00:04:28.800><c> you</c><00:04:29.040><c> on</c>
+
+00:04:29.350 --> 00:04:29.360 align:start position:0%
+can probably tweak it in the way you on
+ 
+
+00:04:29.360 --> 00:04:32.550 align:start position:0%
+can probably tweak it in the way you on
+to<00:04:29.520><c> do</c><00:04:29.759><c> things</c><00:04:30.000><c> that</c><00:04:30.240><c> you</c><00:04:30.400><c> wanted</c><00:04:30.639><c> to</c><00:04:30.800><c> do.</c><00:04:31.600><c> So,</c>
+
+00:04:32.550 --> 00:04:32.560 align:start position:0%
+to do things that you wanted to do. So,
+ 
+
+00:04:32.560 --> 00:04:35.030 align:start position:0%
+to do things that you wanted to do. So,
+so<00:04:33.280><c> yeah.</c><00:04:33.600><c> So,</c><00:04:33.759><c> I</c><00:04:34.000><c> was</c><00:04:34.080><c> just</c><00:04:34.320><c> like,</c><00:04:34.639><c> you</c><00:04:34.800><c> know,</c>
+
+00:04:35.030 --> 00:04:35.040 align:start position:0%
+so yeah. So, I was just like, you know,
+ 
+
+00:04:35.040 --> 00:04:40.790 align:start position:0%
+so yeah. So, I was just like, you know,
+trying<00:04:35.440><c> things</c><00:04:35.759><c> out</c><00:04:36.639><c> um</c><00:04:37.680><c> and</c><00:04:38.160><c> to</c><00:04:38.560><c> like</c><00:04:39.199><c> see</c><00:04:40.240><c> uh</c>
+
+00:04:40.790 --> 00:04:40.800 align:start position:0%
+trying things out um and to like see uh
+ 
+
+00:04:40.800 --> 00:04:42.950 align:start position:0%
+trying things out um and to like see uh
+to<00:04:41.120><c> see</c><00:04:41.360><c> like,</c><00:04:41.759><c> you</c><00:04:41.919><c> know,</c><00:04:42.160><c> just</c><00:04:42.320><c> poke</c><00:04:42.639><c> poke</c>
+
+00:04:42.950 --> 00:04:42.960 align:start position:0%
+to see like, you know, just poke poke
+ 
+
+00:04:42.960 --> 00:04:44.790 align:start position:0%
+to see like, you know, just poke poke
+things<00:04:43.199><c> around</c><00:04:43.520><c> and</c><00:04:43.840><c> then</c><00:04:44.160><c> cuz</c><00:04:44.479><c> everything</c>
+
+00:04:44.790 --> 00:04:44.800 align:start position:0%
+things around and then cuz everything
+ 
+
+00:04:44.800 --> 00:04:47.430 align:start position:0%
+things around and then cuz everything
+was<00:04:45.040><c> new</c><00:04:45.280><c> to</c><00:04:45.440><c> me</c><00:04:45.680><c> like</c><00:04:46.160><c> uh</c><00:04:46.240><c> I</c><00:04:46.479><c> didn't</c><00:04:46.800><c> even</c><00:04:47.040><c> know</c>
+
+00:04:47.430 --> 00:04:47.440 align:start position:0%
+was new to me like uh I didn't even know
+ 
+
+00:04:47.440 --> 00:04:51.110 align:start position:0%
+was new to me like uh I didn't even know
+no<00:04:47.600><c> rust</c><00:04:48.560><c> and</c><00:04:48.800><c> so</c><00:04:48.960><c> I</c><00:04:49.199><c> was</c><00:04:49.280><c> just</c><00:04:50.320><c> uh</c><00:04:50.639><c> following</c>
+
+00:04:51.110 --> 00:04:51.120 align:start position:0%
+no rust and so I was just uh following
+ 
+
+00:04:51.120 --> 00:04:53.590 align:start position:0%
+no rust and so I was just uh following
+the<00:04:51.520><c> documentation</c><00:04:52.160><c> on</c><00:04:52.400><c> Salana</c><00:04:52.960><c> to</c><00:04:53.199><c> see</c><00:04:53.360><c> like</c>
+
+00:04:53.590 --> 00:04:53.600 align:start position:0%
+the documentation on Salana to see like
+ 
+
+00:04:53.600 --> 00:04:56.150 align:start position:0%
+the documentation on Salana to see like
+how<00:04:53.840><c> to</c><00:04:54.160><c> how</c><00:04:54.400><c> to</c><00:04:54.720><c> develop</c><00:04:55.040><c> a</c><00:04:55.360><c> simple</c><00:04:55.840><c> hello</c>
+
+00:04:56.150 --> 00:04:56.160 align:start position:0%
+how to how to develop a simple hello
+ 
+
+00:04:56.160 --> 00:04:58.550 align:start position:0%
+how to how to develop a simple hello
+world<00:04:56.479><c> program.</c><00:04:57.360><c> And</c><00:04:57.600><c> so</c><00:04:57.680><c> I</c><00:04:57.919><c> just</c><00:04:58.080><c> follow</c><00:04:58.320><c> the</c>
+
+00:04:58.550 --> 00:04:58.560 align:start position:0%
+world program. And so I just follow the
+ 
+
+00:04:58.560 --> 00:05:02.310 align:start position:0%
+world program. And so I just follow the
+steps.<00:04:59.440><c> Download</c><00:04:59.759><c> the</c><00:05:00.160><c> platform</c><00:05:00.639><c> tools</c><00:05:01.919><c> um</c>
+
+00:05:02.310 --> 00:05:02.320 align:start position:0%
+steps. Download the platform tools um
+ 
+
+00:05:02.320 --> 00:05:04.710 align:start position:0%
+steps. Download the platform tools um
+and<00:05:02.560><c> then</c><00:05:03.040><c> try</c><00:05:03.280><c> to</c><00:05:03.440><c> compile</c><00:05:03.840><c> it.</c><00:05:04.320><c> Got</c><00:05:04.560><c> it</c>
+
+00:05:04.710 --> 00:05:04.720 align:start position:0%
+and then try to compile it. Got it
+ 
+
+00:05:04.720 --> 00:05:07.830 align:start position:0%
+and then try to compile it. Got it
+compiled.<00:05:05.360><c> Great.</c><00:05:05.840><c> Try</c><00:05:06.080><c> to</c><00:05:06.240><c> deploy</c><00:05:06.639><c> it.</c><00:05:06.960><c> Cool.</c>
+
+00:05:07.830 --> 00:05:07.840 align:start position:0%
+compiled. Great. Try to deploy it. Cool.
+ 
+
+00:05:07.840 --> 00:05:09.590 align:start position:0%
+compiled. Great. Try to deploy it. Cool.
+And<00:05:08.000><c> then</c><00:05:08.240><c> so</c><00:05:08.479><c> everything</c><00:05:08.880><c> seems</c><00:05:09.199><c> working</c>
+
+00:05:09.590 --> 00:05:09.600 align:start position:0%
+And then so everything seems working
+ 
+
+00:05:09.600 --> 00:05:12.550 align:start position:0%
+And then so everything seems working
+fine.<00:05:10.080><c> So</c><00:05:10.240><c> then</c><00:05:10.400><c> I</c><00:05:10.560><c> just</c><00:05:11.600><c> um</c><00:05:11.840><c> the</c><00:05:12.080><c> most</c><00:05:12.240><c> like</c>
+
+00:05:12.550 --> 00:05:12.560 align:start position:0%
+fine. So then I just um the most like
+ 
+
+00:05:12.560 --> 00:05:14.870 align:start position:0%
+fine. So then I just um the most like
+straightforward<00:05:13.120><c> way</c><00:05:13.360><c> to</c><00:05:13.680><c> see</c><00:05:14.240><c> to</c><00:05:14.560><c> like</c>
+
+00:05:14.870 --> 00:05:14.880 align:start position:0%
+straightforward way to see to like
+ 
+
+00:05:14.880 --> 00:05:16.870 align:start position:0%
+straightforward way to see to like
+evaluate<00:05:15.440><c> the</c><00:05:15.759><c> compiler</c><00:05:16.160><c> is</c><00:05:16.320><c> just</c><00:05:16.479><c> to</c><00:05:16.639><c> look</c><00:05:16.720><c> at</c>
+
+00:05:16.870 --> 00:05:16.880 align:start position:0%
+evaluate the compiler is just to look at
+ 
+
+00:05:16.880 --> 00:05:18.950 align:start position:0%
+evaluate the compiler is just to look at
+the<00:05:17.039><c> generated</c><00:05:17.520><c> code</c><00:05:17.919><c> to</c><00:05:18.240><c> see</c><00:05:18.560><c> you</c><00:05:18.639><c> know</c><00:05:18.800><c> if</c>
+
+00:05:18.950 --> 00:05:18.960 align:start position:0%
+the generated code to see you know if
+ 
+
+00:05:18.960 --> 00:05:21.270 align:start position:0%
+the generated code to see you know if
+there's<00:05:19.199><c> any</c><00:05:19.440><c> pattern</c><00:05:19.919><c> can</c><00:05:20.080><c> be</c><00:05:20.240><c> improved</c><00:05:21.120><c> if</c>
+
+00:05:21.270 --> 00:05:21.280 align:start position:0%
+there's any pattern can be improved if
+ 
+
+00:05:21.280 --> 00:05:25.510 align:start position:0%
+there's any pattern can be improved if
+there's<00:05:21.600><c> any</c><00:05:21.840><c> sketchy</c><00:05:22.400><c> things.</c><00:05:23.280><c> And</c><00:05:23.600><c> so</c><00:05:23.919><c> I</c><00:05:24.960><c> um</c>
+
+00:05:25.510 --> 00:05:25.520 align:start position:0%
+there's any sketchy things. And so I um
+ 
+
+00:05:25.520 --> 00:05:28.150 align:start position:0%
+there's any sketchy things. And so I um
+I<00:05:26.000><c> used</c><00:05:26.240><c> another</c><00:05:26.639><c> tool</c><00:05:27.039><c> developed</c><00:05:27.440><c> by</c><00:05:27.680><c> Dean</c>
+
+00:05:28.150 --> 00:05:28.160 align:start position:0%
+I used another tool developed by Dean
+ 
+
+00:05:28.160 --> 00:05:31.830 align:start position:0%
+I used another tool developed by Dean
+ECBPF<00:05:29.280><c> to</c><00:05:30.080><c> disassemble</c><00:05:30.720><c> the</c><00:05:30.960><c> program.</c><00:05:31.360><c> I</c><00:05:31.680><c> was</c>
+
+00:05:31.830 --> 00:05:31.840 align:start position:0%
+ECBPF to disassemble the program. I was
+ 
+
+00:05:31.840 --> 00:05:34.950 align:start position:0%
+ECBPF to disassemble the program. I was
+like<00:05:32.320><c> boom,</c><00:05:33.280><c> 1700</c><00:05:33.759><c> lines</c><00:05:34.080><c> of</c><00:05:34.240><c> code.</c><00:05:34.560><c> And</c><00:05:34.639><c> I</c><00:05:34.800><c> was</c>
+
+00:05:34.950 --> 00:05:34.960 align:start position:0%
+like boom, 1700 lines of code. And I was
+ 
+
+00:05:34.960 --> 00:05:37.350 align:start position:0%
+like boom, 1700 lines of code. And I was
+like<00:05:35.440><c> what</c><00:05:35.680><c> is</c><00:05:35.919><c> going</c><00:05:36.080><c> on?</c><00:05:36.479><c> Why</c><00:05:36.639><c> does</c><00:05:36.880><c> like</c><00:05:37.120><c> why</c>
+
+00:05:37.350 --> 00:05:37.360 align:start position:0%
+like what is going on? Why does like why
+ 
+
+00:05:37.360 --> 00:05:39.590 align:start position:0%
+like what is going on? Why does like why
+does<00:05:37.680><c> a</c><00:05:37.919><c> simple</c><00:05:38.240><c> hello</c><00:05:38.560><c> world</c><00:05:38.880><c> need</c><00:05:39.199><c> so</c><00:05:39.440><c> many</c>
+
+00:05:39.590 --> 00:05:39.600 align:start position:0%
+does a simple hello world need so many
+ 
+
+00:05:39.600 --> 00:05:42.150 align:start position:0%
+does a simple hello world need so many
+lines<00:05:39.919><c> of</c><00:05:40.080><c> code</c><00:05:40.320><c> to</c><00:05:40.560><c> execute?</c><00:05:41.520><c> And</c><00:05:41.680><c> then</c><00:05:41.840><c> he</c>
+
+00:05:42.150 --> 00:05:42.160 align:start position:0%
+lines of code to execute? And then he
+ 
+
+00:05:42.160 --> 00:05:44.550 align:start position:0%
+lines of code to execute? And then he
+was<00:05:42.320><c> like</c><00:05:42.560><c> yeah</c><00:05:42.880><c> now</c><00:05:43.120><c> you</c><00:05:43.280><c> know</c><00:05:43.440><c> that</c><00:05:43.840><c> you</c><00:05:44.080><c> know</c>
+
+00:05:44.550 --> 00:05:44.560 align:start position:0%
+was like yeah now you know that you know
+ 
+
+00:05:44.560 --> 00:05:47.990 align:start position:0%
+was like yeah now you know that you know
+what<00:05:44.800><c> I</c><00:05:44.960><c> mean</c><00:05:45.120><c> by</c><00:05:45.440><c> the</c><00:05:45.759><c> compiler</c><00:05:46.240><c> is</c><00:05:46.479><c> bad.</c><00:05:47.360><c> So</c>
+
+00:05:47.990 --> 00:05:48.000 align:start position:0%
+what I mean by the compiler is bad. So
+ 
+
+00:05:48.000 --> 00:05:49.670 align:start position:0%
+what I mean by the compiler is bad. So
+yeah<00:05:48.240><c> things</c><00:05:48.560><c> kind</c><00:05:48.720><c> of</c><00:05:48.800><c> like</c><00:05:49.039><c> started</c><00:05:49.440><c> from</c>
+
+00:05:49.670 --> 00:05:49.680 align:start position:0%
+yeah things kind of like started from
+ 
+
+00:05:49.680 --> 00:05:52.870 align:start position:0%
+yeah things kind of like started from
+there.<00:05:50.000><c> he</c><00:05:50.240><c> started</c><00:05:50.479><c> sharing</c><00:05:50.880><c> his</c><00:05:51.600><c> um</c><00:05:51.840><c> idea</c><00:05:52.240><c> of</c>
+
+00:05:52.870 --> 00:05:52.880 align:start position:0%
+there. he started sharing his um idea of
+ 
+
+00:05:52.880 --> 00:05:55.270 align:start position:0%
+there. he started sharing his um idea of
+building<00:05:53.199><c> a</c><00:05:53.440><c> assembler</c><00:05:54.479><c> without</c><00:05:55.039><c> any</c>
+
+00:05:55.270 --> 00:05:55.280 align:start position:0%
+building a assembler without any
+ 
+
+00:05:55.280 --> 00:05:58.070 align:start position:0%
+building a assembler without any
+dependency<00:05:55.840><c> on</c><00:05:56.000><c> the</c><00:05:56.160><c> tool</c><00:05:56.400><c> chain</c><00:05:57.280><c> and</c><00:05:57.520><c> then</c><00:05:57.759><c> I</c>
+
+00:05:58.070 --> 00:05:58.080 align:start position:0%
+dependency on the tool chain and then I
+ 
+
+00:05:58.080 --> 00:06:00.550 align:start position:0%
+dependency on the tool chain and then I
+was<00:05:58.240><c> like</c><00:05:58.479><c> hey</c><00:05:58.720><c> I</c><00:05:59.039><c> like</c><00:05:59.360><c> this</c><00:05:59.600><c> is</c><00:05:59.919><c> essentially</c>
+
+00:06:00.550 --> 00:06:00.560 align:start position:0%
+was like hey I like this is essentially
+ 
+
+00:06:00.560 --> 00:06:03.670 align:start position:0%
+was like hey I like this is essentially
+a<00:06:01.120><c> simpler</c><00:06:01.600><c> compiler</c><00:06:02.240><c> like</c><00:06:02.560><c> I</c><00:06:02.800><c> I</c><00:06:03.199><c> know</c><00:06:03.360><c> how</c><00:06:03.520><c> to</c>
+
+00:06:03.670 --> 00:06:03.680 align:start position:0%
+a simpler compiler like I I know how to
+ 
+
+00:06:03.680 --> 00:06:05.909 align:start position:0%
+a simpler compiler like I I know how to
+make<00:06:03.840><c> this</c><00:06:04.080><c> I</c><00:06:04.319><c> know</c><00:06:04.400><c> how</c><00:06:04.560><c> to</c><00:06:04.720><c> make</c><00:06:04.800><c> it</c><00:06:05.039><c> happen.</c>
+
+00:06:05.909 --> 00:06:05.919 align:start position:0%
+make this I know how to make it happen.
+ 
+
+00:06:05.919 --> 00:06:09.749 align:start position:0%
+make this I know how to make it happen.
+So<00:06:06.639><c> then</c><00:06:06.880><c> yeah</c><00:06:07.120><c> I</c><00:06:07.280><c> just</c><00:06:07.520><c> went</c><00:06:07.680><c> on</c><00:06:08.560><c> um</c><00:06:09.520><c> working</c>
+
+00:06:09.749 --> 00:06:09.759 align:start position:0%
+So then yeah I just went on um working
+ 
+
+00:06:09.759 --> 00:06:12.309 align:start position:0%
+So then yeah I just went on um working
+on<00:06:10.000><c> the</c><00:06:10.160><c> assembler</c><00:06:10.880><c> and</c><00:06:11.120><c> then</c><00:06:11.440><c> so</c><00:06:11.759><c> yeah</c><00:06:12.000><c> that</c>
+
+00:06:12.309 --> 00:06:12.319 align:start position:0%
+on the assembler and then so yeah that
+ 
+
+00:06:12.319 --> 00:06:15.510 align:start position:0%
+on the assembler and then so yeah that
+becomes<00:06:12.800><c> my</c><00:06:13.039><c> like</c><00:06:13.360><c> first</c><00:06:13.759><c> crypto</c><00:06:14.240><c> gig.</c>
+
+00:06:15.510 --> 00:06:15.520 align:start position:0%
+becomes my like first crypto gig.
+ 
+
+00:06:15.520 --> 00:06:17.830 align:start position:0%
+becomes my like first crypto gig.
+&gt;&gt; Awesome.<00:06:16.479><c> So</c><00:06:16.880><c> kind</c><00:06:17.039><c> of</c><00:06:17.199><c> backtracking</c><00:06:17.680><c> a</c>
+
+00:06:17.830 --> 00:06:17.840 align:start position:0%
+&gt;&gt; Awesome. So kind of backtracking a
+ 
+
+00:06:17.840 --> 00:06:19.830 align:start position:0%
+&gt;&gt; Awesome. So kind of backtracking a
+little<00:06:17.919><c> bit</c><00:06:18.160><c> right</c><00:06:18.960><c> for</c><00:06:19.120><c> a</c><00:06:19.280><c> lot</c><00:06:19.360><c> of</c><00:06:19.520><c> our</c>
+
+00:06:19.830 --> 00:06:19.840 align:start position:0%
+little bit right for a lot of our
+ 
+
+00:06:19.840 --> 00:06:23.110 align:start position:0%
+little bit right for a lot of our
+audience<00:06:20.880><c> are</c><00:06:21.440><c> you</c><00:06:21.600><c> know</c><00:06:21.919><c> majorly</c><00:06:22.720><c> people</c><00:06:22.960><c> who</c>
+
+00:06:23.110 --> 00:06:23.120 align:start position:0%
+audience are you know majorly people who
+ 
+
+00:06:23.120 --> 00:06:26.790 align:start position:0%
+audience are you know majorly people who
+have<00:06:23.360><c> been</c><00:06:23.600><c> working</c><00:06:24.240><c> at</c><00:06:24.560><c> the</c><00:06:25.280><c> quote</c><00:06:25.600><c> unquote</c>
+
+00:06:26.790 --> 00:06:26.800 align:start position:0%
+have been working at the quote unquote
+ 
+
+00:06:26.800 --> 00:06:31.430 align:start position:0%
+have been working at the quote unquote
+application<00:06:27.759><c> side</c><00:06:28.080><c> or</c><00:06:29.039><c> you</c><00:06:29.199><c> know</c><00:06:29.840><c> somewhat</c><00:06:31.039><c> m</c>
+
+00:06:31.430 --> 00:06:31.440 align:start position:0%
+application side or you know somewhat m
+ 
+
+00:06:31.440 --> 00:06:34.150 align:start position:0%
+application side or you know somewhat m
+and<00:06:31.759><c> some</c><00:06:32.080><c> folks</c><00:06:32.400><c> are</c><00:06:32.560><c> on</c><00:06:32.720><c> the</c><00:06:32.880><c> back</c><00:06:33.039><c> end.</c><00:06:33.360><c> So</c>
+
+00:06:34.150 --> 00:06:34.160 align:start position:0%
+and some folks are on the back end. So
+ 
+
+00:06:34.160 --> 00:06:37.110 align:start position:0%
+and some folks are on the back end. So
+uh<00:06:35.039><c> it</c><00:06:35.199><c> it's</c><00:06:35.600><c> very</c><00:06:35.840><c> rare</c><00:06:36.160><c> that</c><00:06:36.560><c> most</c><00:06:36.880><c> of</c><00:06:36.960><c> the</c>
+
+00:06:37.110 --> 00:06:37.120 align:start position:0%
+uh it it's very rare that most of the
+ 
+
+00:06:37.120 --> 00:06:39.350 align:start position:0%
+uh it it's very rare that most of the
+audience<00:06:37.520><c> get</c><00:06:37.759><c> to</c><00:06:38.240><c> hear</c><00:06:38.479><c> from</c><00:06:38.720><c> someone</c><00:06:39.120><c> who</c>
+
+00:06:39.350 --> 00:06:39.360 align:start position:0%
+audience get to hear from someone who
+ 
+
+00:06:39.360 --> 00:06:42.070 align:start position:0%
+audience get to hear from someone who
+has<00:06:39.759><c> a</c><00:06:40.000><c> background</c><00:06:40.319><c> in</c><00:06:40.560><c> compilers</c><00:06:41.440><c> right.</c><00:06:41.759><c> So</c>
+
+00:06:42.070 --> 00:06:42.080 align:start position:0%
+has a background in compilers right. So
+ 
+
+00:06:42.080 --> 00:06:44.550 align:start position:0%
+has a background in compilers right. So
+it<00:06:42.160><c> it</c><00:06:42.319><c> would</c><00:06:42.479><c> be</c><00:06:42.639><c> really</c><00:06:43.759><c> you</c><00:06:43.919><c> know</c><00:06:44.240><c> it</c><00:06:44.400><c> would</c>
+
+00:06:44.550 --> 00:06:44.560 align:start position:0%
+it it would be really you know it would
+ 
+
+00:06:44.560 --> 00:06:46.390 align:start position:0%
+it it would be really you know it would
+be<00:06:44.720><c> really</c><00:06:44.880><c> awesome</c><00:06:45.120><c> if</c><00:06:45.360><c> you</c><00:06:45.520><c> could</c><00:06:46.160><c> talk</c>
+
+00:06:46.390 --> 00:06:46.400 align:start position:0%
+be really awesome if you could talk
+ 
+
+00:06:46.400 --> 00:06:49.510 align:start position:0%
+be really awesome if you could talk
+about<00:06:47.520><c> you</c><00:06:47.680><c> know</c><00:06:48.479><c> what</c><00:06:48.720><c> what</c><00:06:48.880><c> does</c><00:06:49.039><c> it</c><00:06:49.199><c> mean</c><00:06:49.360><c> to</c>
+
+00:06:49.510 --> 00:06:49.520 align:start position:0%
+about you know what what does it mean to
+ 
+
+00:06:49.520 --> 00:06:51.670 align:start position:0%
+about you know what what does it mean to
+be<00:06:49.600><c> a</c><00:06:49.759><c> compiler</c><00:06:50.240><c> engineer</c><00:06:50.800><c> or</c><00:06:51.039><c> what</c><00:06:51.199><c> were</c><00:06:51.360><c> the</c>
+
+00:06:51.670 --> 00:06:51.680 align:start position:0%
+be a compiler engineer or what were the
+ 
+
+00:06:51.680 --> 00:06:53.110 align:start position:0%
+be a compiler engineer or what were the
+type<00:06:51.840><c> of</c><00:06:52.080><c> projects</c><00:06:52.319><c> that</c><00:06:52.560><c> you</c><00:06:52.720><c> were</c><00:06:52.960><c> working</c>
+
+00:06:53.110 --> 00:06:53.120 align:start position:0%
+type of projects that you were working
+ 
+
+00:06:53.120 --> 00:06:55.749 align:start position:0%
+type of projects that you were working
+on<00:06:53.280><c> when</c><00:06:53.520><c> you</c><00:06:53.680><c> were</c><00:06:53.840><c> working</c><00:06:54.000><c> on</c><00:06:54.240><c> compilers</c>
+
+00:06:55.749 --> 00:06:55.759 align:start position:0%
+on when you were working on compilers
+ 
+
+00:06:55.759 --> 00:06:59.189 align:start position:0%
+on when you were working on compilers
+&gt;&gt; right<00:06:56.720><c> um</c><00:06:57.759><c> so</c><00:06:58.080><c> I</c><00:06:58.319><c> actually</c><00:06:58.560><c> didn't</c><00:06:58.880><c> start</c>
+
+00:06:59.189 --> 00:06:59.199 align:start position:0%
+&gt;&gt; right um so I actually didn't start
+ 
+
+00:06:59.199 --> 00:07:03.029 align:start position:0%
+&gt;&gt; right um so I actually didn't start
+coding<00:06:59.599><c> until</c><00:07:00.240><c> like</c><00:07:00.639><c> very</c><00:07:00.960><c> late</c><00:07:01.440><c> I</c><00:07:02.319><c> uh</c><00:07:02.479><c> until</c><00:07:02.880><c> I</c>
+
+00:07:03.029 --> 00:07:03.039 align:start position:0%
+coding until like very late I uh until I
+ 
+
+00:07:03.039 --> 00:07:05.510 align:start position:0%
+coding until like very late I uh until I
+was<00:07:03.280><c> 20</c><00:07:03.599><c> something</c><00:07:04.560><c> I</c><00:07:04.800><c> didn't</c><00:07:05.199><c> major</c>
+
+00:07:05.510 --> 00:07:05.520 align:start position:0%
+was 20 something I didn't major
+ 
+
+00:07:05.520 --> 00:07:09.909 align:start position:0%
+was 20 something I didn't major
+engineering<00:07:06.000><c> in</c><00:07:06.240><c> college</c><00:07:07.360><c> and</c><00:07:07.759><c> so</c><00:07:08.160><c> when</c><00:07:08.479><c> I</c><00:07:09.440><c> uh</c>
+
+00:07:09.909 --> 00:07:09.919 align:start position:0%
+engineering in college and so when I uh
+ 
+
+00:07:09.919 --> 00:07:13.189 align:start position:0%
+engineering in college and so when I uh
+when<00:07:10.160><c> I</c><00:07:10.400><c> started</c><00:07:11.599><c> uh</c><00:07:12.000><c> studying</c><00:07:12.400><c> CS</c><00:07:12.800><c> when</c><00:07:12.960><c> I</c><00:07:13.120><c> was</c>
+
+00:07:13.189 --> 00:07:13.199 align:start position:0%
+when I started uh studying CS when I was
+ 
+
+00:07:13.199 --> 00:07:17.029 align:start position:0%
+when I started uh studying CS when I was
+in<00:07:13.520><c> the</c><00:07:13.680><c> CS</c><00:07:14.080><c> program.</c><00:07:14.960><c> I</c><00:07:15.280><c> feel</c><00:07:15.440><c> like</c><00:07:16.240><c> compilers</c>
+
+00:07:17.029 --> 00:07:17.039 align:start position:0%
+in the CS program. I feel like compilers
+ 
+
+00:07:17.039 --> 00:07:19.589 align:start position:0%
+in the CS program. I feel like compilers
+give<00:07:17.280><c> me</c><00:07:17.520><c> a</c><00:07:17.840><c> shortcut</c><00:07:18.319><c> to</c><00:07:18.560><c> learn</c><00:07:18.880><c> things</c>
+
+00:07:19.589 --> 00:07:19.599 align:start position:0%
+give me a shortcut to learn things
+ 
+
+00:07:19.599 --> 00:07:22.150 align:start position:0%
+give me a shortcut to learn things
+because<00:07:19.840><c> it's</c><00:07:20.080><c> like</c><00:07:20.240><c> when</c><00:07:20.479><c> you</c><00:07:21.199><c> work</c><00:07:21.360><c> on</c><00:07:21.919><c> work</c>
+
+00:07:22.150 --> 00:07:22.160 align:start position:0%
+because it's like when you work on work
+ 
+
+00:07:22.160 --> 00:07:24.629 align:start position:0%
+because it's like when you work on work
+with<00:07:22.400><c> compilers</c><00:07:23.120><c> you</c><00:07:23.360><c> need</c><00:07:23.440><c> to</c><00:07:24.000><c> get</c><00:07:24.240><c> involved</c>
+
+00:07:24.629 --> 00:07:24.639 align:start position:0%
+with compilers you need to get involved
+ 
+
+00:07:24.639 --> 00:07:27.589 align:start position:0%
+with compilers you need to get involved
+with<00:07:25.520><c> two</c><00:07:25.840><c> things</c><00:07:26.240><c> at</c><00:07:26.800><c> different</c><00:07:27.120><c> side</c><00:07:27.360><c> of</c>
+
+00:07:27.589 --> 00:07:27.599 align:start position:0%
+with two things at different side of
+ 
+
+00:07:27.599 --> 00:07:29.830 align:start position:0%
+with two things at different side of
+spectrum<00:07:28.319><c> like</c><00:07:28.560><c> at</c><00:07:28.800><c> one</c><00:07:29.039><c> end</c><00:07:29.280><c> you</c><00:07:29.520><c> need</c><00:07:29.599><c> to</c>
+
+00:07:29.830 --> 00:07:29.840 align:start position:0%
+spectrum like at one end you need to
+ 
+
+00:07:29.840 --> 00:07:33.510 align:start position:0%
+spectrum like at one end you need to
+learn<00:07:30.880><c> uh</c><00:07:31.039><c> study</c><00:07:31.440><c> algorithm</c><00:07:32.560><c> data</c><00:07:32.960><c> structures</c>
+
+00:07:33.510 --> 00:07:33.520 align:start position:0%
+learn uh study algorithm data structures
+ 
+
+00:07:33.520 --> 00:07:36.230 align:start position:0%
+learn uh study algorithm data structures
+to<00:07:33.759><c> learn</c><00:07:33.919><c> how</c><00:07:34.160><c> to</c><00:07:34.319><c> design</c><00:07:34.639><c> an</c><00:07:34.880><c> IR</c>
+
+00:07:36.230 --> 00:07:36.240 align:start position:0%
+to learn how to design an IR
+ 
+
+00:07:36.240 --> 00:07:38.150 align:start position:0%
+to learn how to design an IR
+intermediate<00:07:36.800><c> representation</c><00:07:37.360><c> we</c><00:07:37.680><c> use</c><00:07:37.919><c> in</c>
+
+00:07:38.150 --> 00:07:38.160 align:start position:0%
+intermediate representation we use in
+ 
+
+00:07:38.160 --> 00:07:41.909 align:start position:0%
+intermediate representation we use in
+the<00:07:38.319><c> compiler</c><00:07:39.280><c> and</c><00:07:39.520><c> then</c><00:07:40.160><c> to</c><00:07:40.960><c> you</c><00:07:41.199><c> know</c><00:07:41.680><c> uh</c>
+
+00:07:41.909 --> 00:07:41.919 align:start position:0%
+the compiler and then to you know uh
+ 
+
+00:07:41.919 --> 00:07:45.029 align:start position:0%
+the compiler and then to you know uh
+write<00:07:42.400><c> analysis</c><00:07:43.039><c> write</c><00:07:43.520><c> optimization</c><00:07:44.319><c> pass</c>
+
+00:07:45.029 --> 00:07:45.039 align:start position:0%
+write analysis write optimization pass
+ 
+
+00:07:45.039 --> 00:07:47.110 align:start position:0%
+write analysis write optimization pass
+but<00:07:45.280><c> then</c><00:07:45.680><c> the</c><00:07:45.919><c> other</c><00:07:46.160><c> end</c><00:07:46.479><c> you</c><00:07:46.720><c> need</c><00:07:46.800><c> to</c><00:07:46.960><c> work</c>
+
+00:07:47.110 --> 00:07:47.120 align:start position:0%
+but then the other end you need to work
+ 
+
+00:07:47.120 --> 00:07:49.350 align:start position:0%
+but then the other end you need to work
+with<00:07:47.360><c> hardware</c><00:07:48.080><c> it's</c><00:07:48.400><c> like</c><00:07:48.560><c> you</c><00:07:48.880><c> you</c><00:07:49.199><c> can't</c>
+
+00:07:49.350 --> 00:07:49.360 align:start position:0%
+with hardware it's like you you can't
+ 
+
+00:07:49.360 --> 00:07:50.870 align:start position:0%
+with hardware it's like you you can't
+avoid<00:07:49.759><c> working</c><00:07:50.000><c> with</c><00:07:50.160><c> hardware</c><00:07:50.560><c> when</c><00:07:50.800><c> you</c>
+
+00:07:50.870 --> 00:07:50.880 align:start position:0%
+avoid working with hardware when you
+ 
+
+00:07:50.880 --> 00:07:53.909 align:start position:0%
+avoid working with hardware when you
+work<00:07:51.039><c> on</c><00:07:51.280><c> compilers</c><00:07:52.400><c> so</c><00:07:52.960><c> I</c><00:07:53.199><c> feel</c><00:07:53.360><c> like</c><00:07:53.680><c> when</c>
+
+00:07:53.909 --> 00:07:53.919 align:start position:0%
+work on compilers so I feel like when
+ 
+
+00:07:53.919 --> 00:07:56.309 align:start position:0%
+work on compilers so I feel like when
+you<00:07:54.160><c> have</c><00:07:54.720><c> these</c><00:07:55.120><c> two</c><00:07:55.360><c> pillars</c><00:07:55.919><c> you</c><00:07:56.080><c> know</c>
+
+00:07:56.309 --> 00:07:56.319 align:start position:0%
+you have these two pillars you know
+ 
+
+00:07:56.319 --> 00:07:58.629 align:start position:0%
+you have these two pillars you know
+there<00:07:56.560><c> isn't</c><00:07:56.879><c> really</c><00:07:57.199><c> anything</c><00:07:58.080><c> you</c><00:07:58.319><c> can't</c>
+
+00:07:58.629 --> 00:07:58.639 align:start position:0%
+there isn't really anything you can't
+ 
+
+00:07:58.639 --> 00:08:01.589 align:start position:0%
+there isn't really anything you can't
+self-taught<00:08:00.000><c> and</c><00:08:00.160><c> then</c><00:08:00.400><c> so</c><00:08:00.960><c> that's</c><00:08:01.280><c> also</c>
+
+00:08:01.589 --> 00:08:01.599 align:start position:0%
+self-taught and then so that's also
+ 
+
+00:08:01.599 --> 00:08:03.670 align:start position:0%
+self-taught and then so that's also
+another<00:08:02.000><c> reason</c><00:08:02.160><c> why</c><00:08:02.319><c> I</c><00:08:02.560><c> work</c><00:08:02.879><c> why</c><00:08:03.120><c> I</c><00:08:03.280><c> enjoy</c>
+
+00:08:03.670 --> 00:08:03.680 align:start position:0%
+another reason why I work why I enjoy
+ 
+
+00:08:03.680 --> 00:08:05.270 align:start position:0%
+another reason why I work why I enjoy
+working<00:08:03.840><c> on</c><00:08:04.000><c> compilers</c><00:08:04.479><c> I</c><00:08:04.639><c> kind</c><00:08:04.800><c> of</c><00:08:04.879><c> use</c><00:08:05.039><c> this</c>
+
+00:08:05.270 --> 00:08:05.280 align:start position:0%
+working on compilers I kind of use this
+ 
+
+00:08:05.280 --> 00:08:08.869 align:start position:0%
+working on compilers I kind of use this
+as<00:08:05.520><c> a</c><00:08:05.759><c> core</c><00:08:06.160><c> skill</c><00:08:06.639><c> to</c><00:08:07.360><c> to</c><00:08:07.759><c> explore</c><00:08:08.319><c> many</c>
+
+00:08:08.869 --> 00:08:08.879 align:start position:0%
+as a core skill to to explore many
+ 
+
+00:08:08.879 --> 00:08:11.749 align:start position:0%
+as a core skill to to explore many
+different<00:08:09.280><c> technology</c><00:08:10.400><c> so</c><00:08:11.039><c> uh</c><00:08:11.199><c> my</c><00:08:11.520><c> first</c>
+
+00:08:11.749 --> 00:08:11.759 align:start position:0%
+different technology so uh my first
+ 
+
+00:08:11.759 --> 00:08:14.710 align:start position:0%
+different technology so uh my first
+compiler<00:08:12.240><c> gig</c><00:08:12.560><c> was</c><00:08:13.039><c> at</c><00:08:13.680><c> uh</c><00:08:13.919><c> quantum</c><00:08:14.240><c> computing</c>
+
+00:08:14.710 --> 00:08:14.720 align:start position:0%
+compiler gig was at uh quantum computing
+ 
+
+00:08:14.720 --> 00:08:17.990 align:start position:0%
+compiler gig was at uh quantum computing
+lab<00:08:15.280><c> working</c><00:08:15.680><c> on</c><00:08:16.000><c> a</c><00:08:16.400><c> compiler</c>
+
+00:08:17.990 --> 00:08:18.000 align:start position:0%
+lab working on a compiler
+ 
+
+00:08:18.000 --> 00:08:21.350 align:start position:0%
+lab working on a compiler
+uh<00:08:19.360><c> uh</c><00:08:19.440><c> for</c><00:08:19.759><c> a</c><00:08:20.000><c> quantum</c><00:08:20.400><c> computing</c><00:08:20.800><c> language</c>
+
+00:08:21.350 --> 00:08:21.360 align:start position:0%
+uh uh for a quantum computing language
+ 
+
+00:08:21.360 --> 00:08:24.550 align:start position:0%
+uh uh for a quantum computing language
+to<00:08:21.759><c> compile</c><00:08:22.080><c> it</c><00:08:22.240><c> to</c><00:08:22.479><c> CASM</c><00:08:23.039><c> quantum</c><00:08:23.440><c> assembly</c>
+
+00:08:24.550 --> 00:08:24.560 align:start position:0%
+to compile it to CASM quantum assembly
+ 
+
+00:08:24.560 --> 00:08:27.990 align:start position:0%
+to compile it to CASM quantum assembly
+and<00:08:24.800><c> then</c><00:08:25.599><c> uh</c><00:08:25.680><c> I</c><00:08:25.919><c> landed</c><00:08:26.240><c> a</c><00:08:26.400><c> job</c><00:08:26.560><c> at</c><00:08:26.800><c> the</c><00:08:27.520><c> uh</c><00:08:27.680><c> a</c>
+
+00:08:27.990 --> 00:08:28.000 align:start position:0%
+and then uh I landed a job at the uh a
+ 
+
+00:08:28.000 --> 00:08:30.070 align:start position:0%
+and then uh I landed a job at the uh a
+company<00:08:28.240><c> called</c><00:08:28.479><c> math</c><00:08:28.800><c> works</c><00:08:29.440><c> and</c><00:08:29.680><c> so</c><00:08:29.840><c> I've</c>
+
+00:08:30.070 --> 00:08:30.080 align:start position:0%
+company called math works and so I've
+ 
+
+00:08:30.080 --> 00:08:32.790 align:start position:0%
+company called math works and so I've
+been<00:08:30.240><c> doing</c><00:08:30.879><c> uh</c><00:08:31.039><c> for</c><00:08:31.360><c> past</c><00:08:31.759><c> around</c><00:08:32.080><c> like</c><00:08:32.399><c> five</c>
+
+00:08:32.790 --> 00:08:32.800 align:start position:0%
+been doing uh for past around like five
+ 
+
+00:08:32.800 --> 00:08:35.190 align:start position:0%
+been doing uh for past around like five
+six<00:08:33.039><c> years</c><00:08:33.680><c> I've</c><00:08:34.000><c> been</c><00:08:34.159><c> doing</c><00:08:34.479><c> uh</c><00:08:34.640><c> FPJ</c>
+
+00:08:35.190 --> 00:08:35.200 align:start position:0%
+six years I've been doing uh FPJ
+ 
+
+00:08:35.200 --> 00:08:37.829 align:start position:0%
+six years I've been doing uh FPJ
+optimizations<00:08:36.080><c> for</c><00:08:36.880><c> um</c><00:08:37.120><c> a</c><00:08:37.360><c> compiler</c>
+
+00:08:37.829 --> 00:08:37.839 align:start position:0%
+optimizations for um a compiler
+ 
+
+00:08:37.839 --> 00:08:40.790 align:start position:0%
+optimizations for um a compiler
+targeting<00:08:38.320><c> HDL</c><00:08:39.279><c> and</c><00:08:39.519><c> then</c><00:08:39.839><c> now</c><00:08:40.080><c> I'm</c><00:08:40.479><c> now</c><00:08:40.640><c> I'm</c>
+
+00:08:40.790 --> 00:08:40.800 align:start position:0%
+targeting HDL and then now I'm now I'm
+ 
+
+00:08:40.800 --> 00:08:44.230 align:start position:0%
+targeting HDL and then now I'm now I'm
+in<00:08:41.039><c> crypto</c><00:08:41.279><c> Awesome.</c>
+
+00:08:44.230 --> 00:08:44.240 align:start position:0%
+in crypto Awesome.
+ 
+
+00:08:44.240 --> 00:08:46.630 align:start position:0%
+in crypto Awesome.
+So<00:08:44.480><c> comp</c><00:08:45.200><c> compilers</c><00:08:45.760><c> are</c><00:08:45.920><c> especially</c><00:08:46.320><c> useful</c>
+
+00:08:46.630 --> 00:08:46.640 align:start position:0%
+So comp compilers are especially useful
+ 
+
+00:08:46.640 --> 00:08:48.230 align:start position:0%
+So comp compilers are especially useful
+when<00:08:46.880><c> you</c><00:08:47.200><c> when</c><00:08:47.440><c> you</c><00:08:47.680><c> you</c><00:08:47.839><c> know</c><00:08:48.000><c> you're</c>
+
+00:08:48.230 --> 00:08:48.240 align:start position:0%
+when you when you you know you're
+ 
+
+00:08:48.240 --> 00:08:51.990 align:start position:0%
+when you when you you know you're
+targeting<00:08:48.720><c> a</c><00:08:49.440><c> very</c><00:08:50.080><c> specific</c><00:08:51.040><c> ISA</c><00:08:51.600><c> or</c><00:08:51.920><c> you</c>
+
+00:08:51.990 --> 00:08:52.000 align:start position:0%
+targeting a very specific ISA or you
+ 
+
+00:08:52.000 --> 00:08:56.470 align:start position:0%
+targeting a very specific ISA or you
+know<00:08:52.160><c> a</c><00:08:52.399><c> very</c><00:08:52.720><c> specific</c><00:08:53.760><c> set</c><00:08:54.000><c> of</c><00:08:54.959><c> uh</c><00:08:55.600><c> hardware</c>
+
+00:08:56.470 --> 00:08:56.480 align:start position:0%
+know a very specific set of uh hardware
+ 
+
+00:08:56.480 --> 00:09:00.230 align:start position:0%
+know a very specific set of uh hardware
+right<00:08:56.880><c> so</c><00:08:58.080><c> now</c><00:08:58.880><c> what</c><00:08:59.120><c> what</c><00:08:59.360><c> was</c><00:08:59.519><c> it</c><00:08:59.680><c> that</c>
+
+00:09:00.230 --> 00:09:00.240 align:start position:0%
+right so now what what was it that
+ 
+
+00:09:00.240 --> 00:09:03.670 align:start position:0%
+right so now what what was it that
+Solana<00:09:00.800><c> was</c><00:09:01.040><c> doing</c><00:09:01.360><c> differently</c><00:09:02.160><c> why</c><00:09:02.160><c> why</c><00:09:02.720><c> was</c>
+
+00:09:03.670 --> 00:09:03.680 align:start position:0%
+Solana was doing differently why why was
+ 
+
+00:09:03.680 --> 00:09:09.269 align:start position:0%
+Solana was doing differently why why was
+having<00:09:04.320><c> SPF</c><00:09:05.040><c> SPF</c><00:09:05.680><c> linker</c><00:09:06.240><c> such</c><00:09:06.480><c> a</c><00:09:07.360><c> big</c><00:09:07.680><c> deal</c>
+
+00:09:09.269 --> 00:09:09.279 align:start position:0%
+having SPF SPF linker such a big deal
+ 
+
+00:09:09.279 --> 00:09:14.550 align:start position:0%
+having SPF SPF linker such a big deal
+&gt;&gt; right<00:09:09.680><c> so</c><00:09:10.240><c> um</c><00:09:10.640><c> Salana</c><00:09:11.279><c> use</c><00:09:11.920><c> um</c><00:09:12.240><c> BPF</c><00:09:13.279><c> Um</c><00:09:13.920><c> and</c><00:09:14.240><c> but</c>
+
+00:09:14.550 --> 00:09:14.560 align:start position:0%
+&gt;&gt; right so um Salana use um BPF Um and but
+ 
+
+00:09:14.560 --> 00:09:17.750 align:start position:0%
+&gt;&gt; right so um Salana use um BPF Um and but
+then<00:09:15.120><c> how</c><00:09:15.360><c> we</c><00:09:15.600><c> are</c><00:09:15.760><c> using</c><00:09:16.000><c> it</c><00:09:16.399><c> is</c><00:09:16.720><c> we</c><00:09:17.040><c> created</c>
+
+00:09:17.750 --> 00:09:17.760 align:start position:0%
+then how we are using it is we created
+ 
+
+00:09:17.760 --> 00:09:22.550 align:start position:0%
+then how we are using it is we created
+you<00:09:17.920><c> know</c><00:09:18.080><c> forks</c><00:09:18.560><c> for</c><00:09:19.440><c> BPF</c><00:09:20.640><c> uh</c><00:09:20.800><c> for</c><00:09:21.200><c> SPF</c><00:09:22.320><c> and</c>
+
+00:09:22.550 --> 00:09:22.560 align:start position:0%
+you know forks for BPF uh for SPF and
+ 
+
+00:09:22.560 --> 00:09:24.470 align:start position:0%
+you know forks for BPF uh for SPF and
+then<00:09:22.720><c> we</c><00:09:22.880><c> also</c><00:09:23.200><c> create</c><00:09:23.360><c> a</c><00:09:23.600><c> fork</c><00:09:23.920><c> for</c><00:09:24.240><c> the</c>
+
+00:09:24.470 --> 00:09:24.480 align:start position:0%
+then we also create a fork for the
+ 
+
+00:09:24.480 --> 00:09:28.470 align:start position:0%
+then we also create a fork for the
+compiler<00:09:25.120><c> for</c><00:09:25.279><c> the</c><00:09:25.600><c> LVM</c><00:09:26.800><c> and</c><00:09:27.600><c> so</c><00:09:27.920><c> yeah</c><00:09:28.080><c> we</c><00:09:28.320><c> just</c>
+
+00:09:28.470 --> 00:09:28.480 align:start position:0%
+compiler for the LVM and so yeah we just
+ 
+
+00:09:28.480 --> 00:09:30.790 align:start position:0%
+compiler for the LVM and so yeah we just
+like<00:09:28.720><c> sort</c><00:09:28.959><c> of</c><00:09:29.279><c> create</c><00:09:29.680><c> all</c><00:09:29.839><c> these</c><00:09:30.160><c> forks</c><00:09:30.560><c> and</c>
+
+00:09:30.790 --> 00:09:30.800 align:start position:0%
+like sort of create all these forks and
+ 
+
+00:09:30.800 --> 00:09:33.430 align:start position:0%
+like sort of create all these forks and
+doing<00:09:31.040><c> our</c><00:09:31.360><c> own</c><00:09:31.519><c> thing.</c><00:09:32.240><c> So</c><00:09:32.800><c> for</c><00:09:32.959><c> for</c>
+
+00:09:33.430 --> 00:09:33.440 align:start position:0%
+doing our own thing. So for for
+ 
+
+00:09:33.440 --> 00:09:35.990 align:start position:0%
+doing our own thing. So for for
+developers<00:09:34.080><c> they</c><00:09:34.320><c> need</c><00:09:34.480><c> to</c><00:09:34.640><c> like</c><00:09:35.440><c> download</c>
+
+00:09:35.990 --> 00:09:36.000 align:start position:0%
+developers they need to like download
+ 
+
+00:09:36.000 --> 00:09:39.590 align:start position:0%
+developers they need to like download
+our<00:09:36.320><c> own</c><00:09:36.880><c> platform</c><00:09:37.440><c> tools</c><00:09:38.160><c> and</c><00:09:38.480><c> then</c><00:09:38.880><c> to</c><00:09:39.200><c> use</c><00:09:39.360><c> a</c>
+
+00:09:39.590 --> 00:09:39.600 align:start position:0%
+our own platform tools and then to use a
+ 
+
+00:09:39.600 --> 00:09:42.870 align:start position:0%
+our own platform tools and then to use a
+different<00:09:39.839><c> command</c><00:09:40.240><c> to</c><00:09:40.560><c> compile</c><00:09:41.040><c> code</c><00:09:42.000><c> and</c>
+
+00:09:42.870 --> 00:09:42.880 align:start position:0%
+different command to compile code and
+ 
+
+00:09:42.880 --> 00:09:46.550 align:start position:0%
+different command to compile code and
+but<00:09:43.120><c> then</c><00:09:43.360><c> and</c><00:09:43.600><c> then</c><00:09:43.920><c> also</c><00:09:44.240><c> like</c><00:09:44.560><c> there</c><00:09:44.880><c> are</c><00:09:45.760><c> um</c>
+
+00:09:46.550 --> 00:09:46.560 align:start position:0%
+but then and then also like there are um
+ 
+
+00:09:46.560 --> 00:09:49.110 align:start position:0%
+but then and then also like there are um
+like<00:09:47.120><c> we</c><00:09:47.440><c> use</c><00:09:47.760><c> LVM</c><00:09:48.320><c> so</c><00:09:48.560><c> there</c><00:09:48.640><c> are</c><00:09:48.800><c> many</c><00:09:48.959><c> like</c>
+
+00:09:49.110 --> 00:09:49.120 align:start position:0%
+like we use LVM so there are many like
+ 
+
+00:09:49.120 --> 00:09:51.269 align:start position:0%
+like we use LVM so there are many like
+LVM<00:09:49.680><c> tools</c><00:09:50.000><c> out</c><00:09:50.160><c> there</c><00:09:50.399><c> but</c><00:09:50.640><c> then</c><00:09:50.800><c> since</c><00:09:51.040><c> we're</c>
+
+00:09:51.269 --> 00:09:51.279 align:start position:0%
+LVM tools out there but then since we're
+ 
+
+00:09:51.279 --> 00:09:53.670 align:start position:0%
+LVM tools out there but then since we're
+also<00:09:51.839><c> doing</c><00:09:52.160><c> our</c><00:09:52.480><c> own</c><00:09:52.640><c> thing</c><00:09:52.959><c> so</c><00:09:53.200><c> we</c><00:09:53.440><c> can't</c>
+
+00:09:53.670 --> 00:09:53.680 align:start position:0%
+also doing our own thing so we can't
+ 
+
+00:09:53.680 --> 00:09:56.470 align:start position:0%
+also doing our own thing so we can't
+like<00:09:54.080><c> leverage</c><00:09:55.040><c> those</c><00:09:55.360><c> tools</c><00:09:55.839><c> for</c><00:09:56.000><c> example</c>
+
+00:09:56.470 --> 00:09:56.480 align:start position:0%
+like leverage those tools for example
+ 
+
+00:09:56.480 --> 00:10:00.550 align:start position:0%
+like leverage those tools for example
+like<00:09:57.200><c> the</c><00:09:57.680><c> LVM</c><00:09:58.240><c> object</c><00:09:58.720><c> dump</c><00:09:59.200><c> doesn't</c><00:09:59.760><c> work</c><00:10:00.080><c> on</c>
+
+00:10:00.550 --> 00:10:00.560 align:start position:0%
+like the LVM object dump doesn't work on
+ 
+
+00:10:00.560 --> 00:10:03.670 align:start position:0%
+like the LVM object dump doesn't work on
+Salana<00:10:01.120><c> programs</c><00:10:01.839><c> So</c><00:10:02.160><c> it</c><00:10:02.320><c> all</c><00:10:02.560><c> relies</c><00:10:02.959><c> on</c><00:10:03.360><c> the</c>
+
+00:10:03.670 --> 00:10:03.680 align:start position:0%
+Salana programs So it all relies on the
+ 
+
+00:10:03.680 --> 00:10:07.990 align:start position:0%
+Salana programs So it all relies on the
+fork<00:10:04.959><c> uh</c><00:10:05.120><c> maintained</c><00:10:05.760><c> by</c><00:10:06.160><c> by</c><00:10:06.560><c> our</c><00:10:06.800><c> own</c><00:10:07.040><c> people.</c>
+
+00:10:07.990 --> 00:10:08.000 align:start position:0%
+fork uh maintained by by our own people.
+ 
+
+00:10:08.000 --> 00:10:12.150 align:start position:0%
+fork uh maintained by by our own people.
+Um<00:10:08.720><c> but</c><00:10:08.959><c> then</c><00:10:09.760><c> EPF</c><00:10:10.560><c> also</c><00:10:10.800><c> has</c><00:10:11.040><c> evolved</c><00:10:11.440><c> a</c><00:10:11.760><c> lot.</c>
+
+00:10:12.150 --> 00:10:12.160 align:start position:0%
+Um but then EPF also has evolved a lot.
+ 
+
+00:10:12.160 --> 00:10:15.190 align:start position:0%
+Um but then EPF also has evolved a lot.
+So<00:10:13.279><c> um</c><00:10:13.600><c> but</c><00:10:13.839><c> then</c><00:10:14.079><c> we're</c><00:10:14.320><c> also</c><00:10:14.560><c> not</c><00:10:14.800><c> getting</c>
+
+00:10:15.190 --> 00:10:15.200 align:start position:0%
+So um but then we're also not getting
+ 
+
+00:10:15.200 --> 00:10:17.030 align:start position:0%
+So um but then we're also not getting
+those<00:10:15.519><c> improvements</c><00:10:16.079><c> because</c><00:10:16.399><c> it</c><00:10:16.640><c> takes</c><00:10:16.800><c> time</c>
+
+00:10:17.030 --> 00:10:17.040 align:start position:0%
+those improvements because it takes time
+ 
+
+00:10:17.040 --> 00:10:20.710 align:start position:0%
+those improvements because it takes time
+to<00:10:17.440><c> like</c><00:10:17.760><c> pull</c><00:10:18.240><c> those</c><00:10:18.480><c> changes</c><00:10:18.880><c> in.</c><00:10:19.760><c> Um</c><00:10:20.480><c> but</c>
+
+00:10:20.710 --> 00:10:20.720 align:start position:0%
+to like pull those changes in. Um but
+ 
+
+00:10:20.720 --> 00:10:23.350 align:start position:0%
+to like pull those changes in. Um but
+then<00:10:20.959><c> it's</c><00:10:21.279><c> actually</c><00:10:21.519><c> like</c><00:10:22.079><c> not</c><00:10:22.480><c> that</c><00:10:22.880><c> hard</c><00:10:23.120><c> to</c>
+
+00:10:23.350 --> 00:10:23.360 align:start position:0%
+then it's actually like not that hard to
+ 
+
+00:10:23.360 --> 00:10:26.470 align:start position:0%
+then it's actually like not that hard to
+work<00:10:23.600><c> from</c><00:10:24.320><c> eBPF.</c><00:10:25.200><c> If</c><00:10:25.440><c> you</c><00:10:25.600><c> look</c><00:10:25.680><c> at</c><00:10:25.920><c> the</c><00:10:26.079><c> Jed</c>
+
+00:10:26.470 --> 00:10:26.480 align:start position:0%
+work from eBPF. If you look at the Jed
+ 
+
+00:10:26.480 --> 00:10:29.350 align:start position:0%
+work from eBPF. If you look at the Jed
+code<00:10:27.040><c> from</c><00:10:27.360><c> SPF</c><00:10:27.920><c> for</c><00:10:28.240><c> EBPF,</c><00:10:28.959><c> you</c><00:10:29.040><c> would</c><00:10:29.200><c> be</c>
+
+00:10:29.350 --> 00:10:29.360 align:start position:0%
+code from SPF for EBPF, you would be
+ 
+
+00:10:29.360 --> 00:10:32.230 align:start position:0%
+code from SPF for EBPF, you would be
+surprised<00:10:29.680><c> like</c><00:10:29.920><c> how</c><00:10:30.160><c> simple</c><00:10:31.200><c> how</c><00:10:31.600><c> like</c><00:10:31.920><c> yeah</c>
+
+00:10:32.230 --> 00:10:32.240 align:start position:0%
+surprised like how simple how like yeah
+ 
+
+00:10:32.240 --> 00:10:35.509 align:start position:0%
+surprised like how simple how like yeah
+how<00:10:32.480><c> simple</c><00:10:32.800><c> the</c><00:10:33.120><c> EPF</c><00:10:33.760><c> program</c><00:10:34.160><c> is.</c>
+
+00:10:35.509 --> 00:10:35.519 align:start position:0%
+how simple the EPF program is.
+ 
+
+00:10:35.519 --> 00:10:37.590 align:start position:0%
+how simple the EPF program is.
+&gt;&gt; Interesting.<00:10:36.000><c> I</c><00:10:36.160><c> mean</c><00:10:36.320><c> if</c><00:10:36.480><c> I</c><00:10:36.560><c> may</c><00:10:36.800><c> interject</c>
+
+00:10:37.590 --> 00:10:37.600 align:start position:0%
+&gt;&gt; Interesting. I mean if I may interject
+ 
+
+00:10:37.600 --> 00:10:40.790 align:start position:0%
+&gt;&gt; Interesting. I mean if I may interject
+uh<00:10:38.240><c> the</c><00:10:38.640><c> I'm</c><00:10:38.959><c> curious</c><00:10:39.440><c> why</c><00:10:39.680><c> why</c><00:10:40.000><c> was</c><00:10:40.320><c> there</c><00:10:40.480><c> a</c>
+
+00:10:40.790 --> 00:10:40.800 align:start position:0%
+uh the I'm curious why why was there a
+ 
+
+00:10:40.800 --> 00:10:44.150 align:start position:0%
+uh the I'm curious why why was there a
+need<00:10:40.959><c> to</c><00:10:41.440><c> first</c><00:10:42.000><c> fork</c><00:10:42.399><c> LVM</c><00:10:43.040><c> fork</c><00:10:43.360><c> RC</c><00:10:43.680><c> C</c><00:10:43.920><c> and</c>
+
+00:10:44.150 --> 00:10:44.160 align:start position:0%
+need to first fork LVM fork RC C and
+ 
+
+00:10:44.160 --> 00:10:45.990 align:start position:0%
+need to first fork LVM fork RC C and
+also
+
+00:10:45.990 --> 00:10:46.000 align:start position:0%
+also
+ 
+
+00:10:46.000 --> 00:10:48.949 align:start position:0%
+also
+fork<00:10:46.560><c> RBPF</c><00:10:47.519><c> and</c><00:10:47.839><c> maintain</c><00:10:48.160><c> it</c><00:10:48.399><c> separately.</c>
+
+00:10:48.949 --> 00:10:48.959 align:start position:0%
+fork RBPF and maintain it separately.
+ 
+
+00:10:48.959 --> 00:10:51.990 align:start position:0%
+fork RBPF and maintain it separately.
+Right?<00:10:49.200><c> So</c><00:10:49.760><c> what</c><00:10:50.320><c> what</c><00:10:50.560><c> what</c><00:10:50.880><c> were</c><00:10:51.519><c> what</c><00:10:51.760><c> was</c>
+
+00:10:51.990 --> 00:10:52.000 align:start position:0%
+Right? So what what what were what was
+ 
+
+00:10:52.000 --> 00:10:54.150 align:start position:0%
+Right? So what what what were what was
+happening<00:10:52.480><c> here</c><00:10:52.800><c> that</c><00:10:53.519><c> you</c><00:10:53.680><c> know</c><00:10:53.839><c> these</c>
+
+00:10:54.150 --> 00:10:54.160 align:start position:0%
+happening here that you know these
+ 
+
+00:10:54.160 --> 00:10:55.990 align:start position:0%
+happening here that you know these
+things<00:10:54.480><c> couldn't</c><00:10:54.800><c> be</c><00:10:55.040><c> upstream?</c>
+
+00:10:55.990 --> 00:10:56.000 align:start position:0%
+things couldn't be upstream?
+ 
+
+00:10:56.000 --> 00:10:58.310 align:start position:0%
+things couldn't be upstream?
+&gt;&gt; Yeah.<00:10:56.320><c> Um</c><00:10:56.640><c> that's</c><00:10:56.880><c> a</c><00:10:57.120><c> good</c><00:10:57.279><c> question</c><00:10:57.760><c> and</c><00:10:58.240><c> uh</c>
+
+00:10:58.310 --> 00:10:58.320 align:start position:0%
+&gt;&gt; Yeah. Um that's a good question and uh
+ 
+
+00:10:58.320 --> 00:11:00.470 align:start position:0%
+&gt;&gt; Yeah. Um that's a good question and uh
+that's<00:10:58.560><c> a</c><00:10:58.720><c> a</c><00:10:58.880><c> question</c><00:10:59.120><c> I</c><00:10:59.440><c> have</c><00:10:59.600><c> as</c><00:10:59.839><c> well.</c><00:11:00.240><c> I</c>
+
+00:11:00.470 --> 00:11:00.480 align:start position:0%
+that's a a question I have as well. I
+ 
+
+00:11:00.480 --> 00:11:02.389 align:start position:0%
+that's a a question I have as well. I
+think<00:11:00.720><c> that's</c><00:11:01.279><c> just</c><00:11:01.519><c> sort</c><00:11:01.760><c> of</c><00:11:01.839><c> a</c><00:11:02.079><c> design</c>
+
+00:11:02.389 --> 00:11:02.399 align:start position:0%
+think that's just sort of a design
+ 
+
+00:11:02.399 --> 00:11:04.790 align:start position:0%
+think that's just sort of a design
+choice<00:11:03.120><c> uh</c><00:11:03.279><c> when</c><00:11:03.519><c> they</c><00:11:03.920><c> when</c><00:11:04.240><c> they</c><00:11:04.399><c> created</c>
+
+00:11:04.790 --> 00:11:04.800 align:start position:0%
+choice uh when they when they created
+ 
+
+00:11:04.800 --> 00:11:06.550 align:start position:0%
+choice uh when they when they created
+Salana.
+
+00:11:06.550 --> 00:11:06.560 align:start position:0%
+Salana.
+ 
+
+00:11:06.560 --> 00:11:08.470 align:start position:0%
+Salana.
+So<00:11:06.720><c> I</c><00:11:06.959><c> don't</c><00:11:07.200><c> yeah</c><00:11:07.440><c> to</c><00:11:07.600><c> be</c><00:11:07.760><c> honest</c><00:11:08.000><c> like</c><00:11:08.160><c> I</c>
+
+00:11:08.470 --> 00:11:08.480 align:start position:0%
+So I don't yeah to be honest like I
+ 
+
+00:11:08.480 --> 00:11:10.150 align:start position:0%
+So I don't yeah to be honest like I
+don't<00:11:08.720><c> know</c><00:11:08.959><c> much</c><00:11:09.279><c> like</c><00:11:09.600><c> historical</c>
+
+00:11:10.150 --> 00:11:10.160 align:start position:0%
+don't know much like historical
+ 
+
+00:11:10.160 --> 00:11:11.990 align:start position:0%
+don't know much like historical
+background<00:11:10.640><c> there.</c>
+
+00:11:11.990 --> 00:11:12.000 align:start position:0%
+background there.
+ 
+
+00:11:12.000 --> 00:11:14.470 align:start position:0%
+background there.
+&gt;&gt; Got<00:11:12.240><c> it.</c><00:11:12.640><c> So</c><00:11:12.880><c> if</c><00:11:13.120><c> I</c><00:11:13.279><c> unders</c><00:11:13.680><c> if</c><00:11:13.920><c> I</c><00:11:14.079><c> understand</c>
+
+00:11:14.470 --> 00:11:14.480 align:start position:0%
+&gt;&gt; Got it. So if I unders if I understand
+ 
+
+00:11:14.480 --> 00:11:18.710 align:start position:0%
+&gt;&gt; Got it. So if I unders if I understand
+correctly<00:11:14.959><c> so</c><00:11:15.839><c> you</c><00:11:16.000><c> know</c><00:11:16.560><c> B</c><00:11:17.040><c> eBPF</c><00:11:17.680><c> and</c><00:11:17.839><c> SPF</c><00:11:18.480><c> are</c>
+
+00:11:18.710 --> 00:11:18.720 align:start position:0%
+correctly so you know B eBPF and SPF are
+ 
+
+00:11:18.720 --> 00:11:21.030 align:start position:0%
+correctly so you know B eBPF and SPF are
+not<00:11:19.120><c> so</c><00:11:19.519><c> divergent</c><00:11:20.079><c> that</c><00:11:20.399><c> it</c><00:11:20.720><c> doesn't</c>
+
+00:11:21.030 --> 00:11:21.040 align:start position:0%
+not so divergent that it doesn't
+ 
+
+00:11:21.040 --> 00:11:23.430 align:start position:0%
+not so divergent that it doesn't
+necessarily<00:11:21.600><c> need</c><00:11:21.839><c> to</c><00:11:22.000><c> be</c><00:11:22.720><c> separate</c><00:11:23.120><c> folks</c>
+
+00:11:23.430 --> 00:11:23.440 align:start position:0%
+necessarily need to be separate folks
+ 
+
+00:11:23.440 --> 00:11:25.030 align:start position:0%
+necessarily need to be separate folks
+but<00:11:23.600><c> then</c><00:11:23.760><c> there's</c><00:11:24.079><c> actually</c><00:11:24.320><c> a</c><00:11:24.560><c> path</c><00:11:24.800><c> for</c>
+
+00:11:25.030 --> 00:11:25.040 align:start position:0%
+but then there's actually a path for
+ 
+
+00:11:25.040 --> 00:11:29.590 align:start position:0%
+but then there's actually a path for
+them<00:11:25.279><c> to</c><00:11:26.399><c> be</c><00:11:26.800><c> one</c><00:11:27.440><c> one</c><00:11:27.839><c> streamlined</c><00:11:29.040><c> thing</c><00:11:29.360><c> and</c>
+
+00:11:29.590 --> 00:11:29.600 align:start position:0%
+them to be one one streamlined thing and
+ 
+
+00:11:29.600 --> 00:11:31.750 align:start position:0%
+them to be one one streamlined thing and
+that's<00:11:29.920><c> where</c><00:11:30.240><c> the</c><00:11:30.640><c> linker</c><00:11:31.120><c> works.</c><00:11:31.360><c> it</c><00:11:31.600><c> could</c>
+
+00:11:31.750 --> 00:11:31.760 align:start position:0%
+that's where the linker works. it could
+ 
+
+00:11:31.760 --> 00:11:36.949 align:start position:0%
+that's where the linker works. it could
+take<00:11:32.000><c> the</c><00:11:32.720><c> EVPF</c><00:11:33.360><c> and</c><00:11:33.519><c> then</c><00:11:33.680><c> link</c><00:11:33.920><c> it</c><00:11:34.160><c> to</c><00:11:35.440><c> SPF's</c>
+
+00:11:36.949 --> 00:11:36.959 align:start position:0%
+take the EVPF and then link it to SPF's
+ 
+
+00:11:36.959 --> 00:11:40.870 align:start position:0%
+take the EVPF and then link it to SPF's
+uh<00:11:37.920><c> instructions</c><00:11:38.880><c> and</c>
+
+00:11:40.870 --> 00:11:40.880 align:start position:0%
+uh instructions and
+ 
+
+00:11:40.880 --> 00:11:44.710 align:start position:0%
+uh instructions and
+is<00:11:41.839><c> is</c><00:11:42.000><c> that</c><00:11:42.320><c> is</c><00:11:42.560><c> is</c><00:11:42.720><c> that</c><00:11:42.959><c> right?</c><00:11:43.519><c> I</c><00:11:43.760><c> mean</c>
+
+00:11:44.710 --> 00:11:44.720 align:start position:0%
+is is that is is that right? I mean
+ 
+
+00:11:44.720 --> 00:11:47.670 align:start position:0%
+is is that is is that right? I mean
+&gt;&gt; um<00:11:45.040><c> sort</c><00:11:45.360><c> of</c><00:11:45.760><c> but</c><00:11:46.399><c> um</c><00:11:46.640><c> yeah</c><00:11:46.880><c> I</c><00:11:47.040><c> think</c><00:11:47.200><c> like</c><00:11:47.440><c> one</c>
+
+00:11:47.670 --> 00:11:47.680 align:start position:0%
+&gt;&gt; um sort of but um yeah I think like one
+ 
+
+00:11:47.680 --> 00:11:50.870 align:start position:0%
+&gt;&gt; um sort of but um yeah I think like one
+reason<00:11:48.000><c> is</c><00:11:48.160><c> that</c><00:11:48.560><c> EPF</c><00:11:49.360><c> is</c><00:11:49.760><c> for</c><00:11:50.079><c> for</c><00:11:50.480><c> kernel</c>
+
+00:11:50.870 --> 00:11:50.880 align:start position:0%
+reason is that EPF is for for kernel
+ 
+
+00:11:50.880 --> 00:11:53.269 align:start position:0%
+reason is that EPF is for for kernel
+work<00:11:51.279><c> and</c><00:11:51.519><c> then</c><00:11:51.680><c> the</c><00:11:52.000><c> kernel</c><00:11:52.399><c> like</c><00:11:52.640><c> verify</c><00:11:53.040><c> is</c>
+
+00:11:53.269 --> 00:11:53.279 align:start position:0%
+work and then the kernel like verify is
+ 
+
+00:11:53.279 --> 00:11:54.389 align:start position:0%
+work and then the kernel like verify is
+very<00:11:53.600><c> strict</c>
+
+00:11:54.389 --> 00:11:54.399 align:start position:0%
+very strict
+ 
+
+00:11:54.399 --> 00:11:59.269 align:start position:0%
+very strict
+&gt;&gt; but<00:11:54.640><c> then</c><00:11:55.040><c> SPF</c><00:11:55.760><c> has</c><00:11:56.000><c> like</c><00:11:56.160><c> a</c><00:11:56.399><c> many</c><00:11:57.600><c> um</c><00:11:58.240><c> is</c><00:11:59.040><c> like</c>
+
+00:11:59.269 --> 00:11:59.279 align:start position:0%
+&gt;&gt; but then SPF has like a many um is like
+ 
+
+00:11:59.279 --> 00:12:01.829 align:start position:0%
+&gt;&gt; but then SPF has like a many um is like
+from<00:11:59.440><c> the</c><00:11:59.600><c> constraint</c><00:12:00.079><c> side</c><00:12:00.480><c> is</c><00:12:00.720><c> is</c><00:12:01.040><c> very</c><00:12:01.680><c> uh</c>
+
+00:12:01.829 --> 00:12:01.839 align:start position:0%
+from the constraint side is is very uh
+ 
+
+00:12:01.839 --> 00:12:03.750 align:start position:0%
+from the constraint side is is very uh
+it's<00:12:02.079><c> kind</c><00:12:02.240><c> of</c><00:12:02.399><c> different</c><00:12:02.560><c> from</c><00:12:02.880><c> eBPF.</c><00:12:03.519><c> So</c><00:12:03.680><c> for</c>
+
+00:12:03.750 --> 00:12:03.760 align:start position:0%
+it's kind of different from eBPF. So for
+ 
+
+00:12:03.760 --> 00:12:08.389 align:start position:0%
+it's kind of different from eBPF. So for
+example<00:12:04.320><c> like</c><00:12:05.519><c> um</c><00:12:06.240><c> the</c><00:12:07.200><c> uh</c><00:12:07.360><c> you</c><00:12:07.600><c> can</c><00:12:07.839><c> have</c><00:12:08.160><c> you</c>
+
+00:12:08.389 --> 00:12:08.399 align:start position:0%
+example like um the uh you can have you
+ 
+
+00:12:08.399 --> 00:12:11.829 align:start position:0%
+example like um the uh you can have you
+can<00:12:08.560><c> loop</c><00:12:08.880><c> too</c><00:12:09.200><c> much</c><00:12:09.839><c> uh</c><00:12:10.000><c> in</c><00:12:10.240><c> eBPF</c><00:12:11.200><c> but</c><00:12:11.440><c> then</c><00:12:11.680><c> in</c>
+
+00:12:11.829 --> 00:12:11.839 align:start position:0%
+can loop too much uh in eBPF but then in
+ 
+
+00:12:11.839 --> 00:12:14.710 align:start position:0%
+can loop too much uh in eBPF but then in
+SPF<00:12:12.480><c> is</c><00:12:12.639><c> kind</c><00:12:12.720><c> of</c><00:12:12.800><c> like</c><00:12:12.959><c> a</c><00:12:13.120><c> metered</c><00:12:13.600><c> by</c><00:12:14.240><c> uh</c><00:12:14.480><c> by</c>
+
+00:12:14.710 --> 00:12:14.720 align:start position:0%
+SPF is kind of like a metered by uh by
+ 
+
+00:12:14.720 --> 00:12:18.230 align:start position:0%
+SPF is kind of like a metered by uh by
+CU<00:12:15.839><c> and</c><00:12:16.399><c> also</c><00:12:16.720><c> like</c><00:12:17.040><c> the</c><00:12:17.440><c> stack</c><00:12:17.839><c> size</c>
+
+00:12:18.230 --> 00:12:18.240 align:start position:0%
+CU and also like the stack size
+ 
+
+00:12:18.240 --> 00:12:20.629 align:start position:0%
+CU and also like the stack size
+constraint<00:12:18.720><c> is</c><00:12:19.040><c> different.</c><00:12:19.600><c> SBPF</c><00:12:20.399><c> has</c>
+
+00:12:20.629 --> 00:12:20.639 align:start position:0%
+constraint is different. SBPF has
+ 
+
+00:12:20.639 --> 00:12:22.949 align:start position:0%
+constraint is different. SBPF has
+definitely<00:12:21.279><c> like</c><00:12:21.519><c> the</c><00:12:21.680><c> largest</c><00:12:22.000><c> stack</c><00:12:22.320><c> size</c>
+
+00:12:22.949 --> 00:12:22.959 align:start position:0%
+definitely like the largest stack size
+ 
+
+00:12:22.959 --> 00:12:25.910 align:start position:0%
+definitely like the largest stack size
+but<00:12:23.279><c> then</c><00:12:24.000><c> uh</c><00:12:24.320><c> lows</c><00:12:24.720><c> are</c><00:12:24.880><c> like</c><00:12:25.279><c> configurable</c>
+
+00:12:25.910 --> 00:12:25.920 align:start position:0%
+but then uh lows are like configurable
+ 
+
+00:12:25.920 --> 00:12:29.990 align:start position:0%
+but then uh lows are like configurable
+in<00:12:26.160><c> the</c><00:12:26.320><c> compilers</c><00:12:27.040><c> actually</c><00:12:28.160><c> and</c><00:12:28.800><c> so</c><00:12:29.680><c> yeah</c>
+
+00:12:29.990 --> 00:12:30.000 align:start position:0%
+in the compilers actually and so yeah
+ 
+
+00:12:30.000 --> 00:12:32.710 align:start position:0%
+in the compilers actually and so yeah
+there<00:12:30.240><c> are</c><00:12:30.560><c> things</c><00:12:31.120><c> like</c><00:12:31.440><c> we</c><00:12:31.680><c> know</c><00:12:32.240><c> there</c><00:12:32.480><c> are</c>
+
+00:12:32.710 --> 00:12:32.720 align:start position:0%
+there are things like we know there are
+ 
+
+00:12:32.720 --> 00:12:36.949 align:start position:0%
+there are things like we know there are
+few<00:12:32.959><c> things</c><00:12:33.279><c> from</c><00:12:34.000><c> upstream</c><00:12:34.480><c> ePF</c><00:12:35.200><c> that's</c><00:12:35.600><c> not</c>
+
+00:12:36.949 --> 00:12:36.959 align:start position:0%
+few things from upstream ePF that's not
+ 
+
+00:12:36.959 --> 00:12:40.790 align:start position:0%
+few things from upstream ePF that's not
+um<00:12:37.760><c> that's</c><00:12:38.320><c> not</c><00:12:39.040><c> doing</c><00:12:39.360><c> as</c><00:12:39.600><c> good</c><00:12:39.760><c> as</c><00:12:39.920><c> SPF</c><00:12:40.720><c> for</c>
+
+00:12:40.790 --> 00:12:40.800 align:start position:0%
+um that's not doing as good as SPF for
+ 
+
+00:12:40.800 --> 00:12:45.269 align:start position:0%
+um that's not doing as good as SPF for
+example<00:12:42.079><c> um</c><00:12:42.720><c> ebpf</c><00:12:43.600><c> doesn't</c><00:12:44.720><c> uh</c><00:12:44.880><c> allow</c>
+
+00:12:45.269 --> 00:12:45.279 align:start position:0%
+example um ebpf doesn't uh allow
+ 
+
+00:12:45.279 --> 00:12:47.509 align:start position:0%
+example um ebpf doesn't uh allow
+misalignment<00:12:46.079><c> memory</c><00:12:46.639><c> and</c><00:12:46.880><c> so</c><00:12:47.040><c> it</c><00:12:47.279><c> does</c>
+
+00:12:47.509 --> 00:12:47.519 align:start position:0%
+misalignment memory and so it does
+ 
+
+00:12:47.519 --> 00:12:49.590 align:start position:0%
+misalignment memory and so it does
+everything<00:12:47.839><c> bite</c><00:12:48.079><c> by</c><00:12:48.320><c> bite</c><00:12:48.880><c> and</c><00:12:49.120><c> And</c><00:12:49.200><c> then</c><00:12:49.440><c> in</c>
+
+00:12:49.590 --> 00:12:49.600 align:start position:0%
+everything bite by bite and And then in
+ 
+
+00:12:49.600 --> 00:12:53.430 align:start position:0%
+everything bite by bite and And then in
+SPF<00:12:50.480><c> that's</c><00:12:50.880><c> kind</c><00:12:51.120><c> of</c><00:12:51.279><c> like</c><00:12:52.079><c> uh</c><00:12:52.560><c> modified</c><00:12:53.120><c> to</c>
+
+00:12:53.430 --> 00:12:53.440 align:start position:0%
+SPF that's kind of like uh modified to
+ 
+
+00:12:53.440 --> 00:12:55.990 align:start position:0%
+SPF that's kind of like uh modified to
+allow<00:12:53.760><c> misalignment.</c><00:12:54.959><c> Um</c><00:12:55.360><c> so</c><00:12:55.600><c> yeah</c><00:12:55.839><c> that's</c>
+
+00:12:55.990 --> 00:12:56.000 align:start position:0%
+allow misalignment. Um so yeah that's
+ 
+
+00:12:56.000 --> 00:12:57.670 align:start position:0%
+allow misalignment. Um so yeah that's
+but<00:12:56.240><c> then</c><00:12:56.399><c> that's</c><00:12:56.560><c> one</c><00:12:56.720><c> thing</c><00:12:57.040><c> that</c><00:12:57.440><c> we're</c>
+
+00:12:57.670 --> 00:12:57.680 align:start position:0%
+but then that's one thing that we're
+ 
+
+00:12:57.680 --> 00:12:59.350 align:start position:0%
+but then that's one thing that we're
+we're<00:12:57.920><c> working</c><00:12:58.160><c> on</c><00:12:58.480><c> like</c><00:12:58.720><c> we</c><00:12:58.880><c> know</c><00:12:59.040><c> there</c><00:12:59.279><c> are</c>
+
+00:12:59.350 --> 00:12:59.360 align:start position:0%
+we're working on like we know there are
+ 
+
+00:12:59.360 --> 00:13:02.550 align:start position:0%
+we're working on like we know there are
+a<00:12:59.519><c> few</c><00:12:59.680><c> things</c><00:13:00.000><c> that's</c><00:13:01.040><c> not</c><00:13:01.760><c> uh</c><00:13:01.920><c> working</c><00:13:02.320><c> as</c>
+
+00:13:02.550 --> 00:13:02.560 align:start position:0%
+a few things that's not uh working as
+ 
+
+00:13:02.560 --> 00:13:04.870 align:start position:0%
+a few things that's not uh working as
+good<00:13:02.720><c> as</c><00:13:03.040><c> SPF</c><00:13:03.680><c> but</c><00:13:03.920><c> then</c><00:13:04.079><c> we</c><00:13:04.240><c> know</c><00:13:04.399><c> how</c><00:13:04.560><c> to</c><00:13:04.720><c> get</c>
+
+00:13:04.870 --> 00:13:04.880 align:start position:0%
+good as SPF but then we know how to get
+ 
+
+00:13:04.880 --> 00:13:06.710 align:start position:0%
+good as SPF but then we know how to get
+there<00:13:05.200><c> like</c><00:13:05.440><c> we</c><00:13:05.680><c> know</c><00:13:06.000><c> we</c><00:13:06.240><c> know</c><00:13:06.399><c> how</c><00:13:06.560><c> to</c>
+
+00:13:06.710 --> 00:13:06.720 align:start position:0%
+there like we know we know how to
+ 
+
+00:13:06.720 --> 00:13:08.629 align:start position:0%
+there like we know we know how to
+address<00:13:07.040><c> those</c><00:13:07.360><c> issues.</c>
+
+00:13:08.629 --> 00:13:08.639 align:start position:0%
+address those issues.
+ 
+
+00:13:08.639 --> 00:13:12.230 align:start position:0%
+address those issues.
+&gt;&gt; So<00:13:08.959><c> now</c><00:13:09.279><c> now</c><00:13:09.600><c> how</c><00:13:09.839><c> does</c><00:13:10.000><c> SPF</c><00:13:10.720><c> work?</c><00:13:11.760><c> So</c><00:13:11.920><c> it's</c>
+
+00:13:12.230 --> 00:13:12.240 align:start position:0%
+&gt;&gt; So now now how does SPF work? So it's
+ 
+
+00:13:12.240 --> 00:13:15.829 align:start position:0%
+&gt;&gt; So now now how does SPF work? So it's
+like<00:13:12.480><c> a</c><00:13:13.440><c> separate</c><00:13:14.320><c> so</c><00:13:14.639><c> I</c><00:13:14.880><c> mean</c><00:13:15.120><c> when</c><00:13:15.360><c> when</c><00:13:15.680><c> I</c>
+
+00:13:15.829 --> 00:13:15.839 align:start position:0%
+like a separate so I mean when when I
+ 
+
+00:13:15.839 --> 00:13:18.790 align:start position:0%
+like a separate so I mean when when I
+install<00:13:16.240><c> platform</c><00:13:16.639><c> tools</c><00:13:17.360><c> so</c><00:13:17.680><c> for</c><00:13:18.160><c> most</c>
+
+00:13:18.790 --> 00:13:18.800 align:start position:0%
+install platform tools so for most
+ 
+
+00:13:18.800 --> 00:13:20.629 align:start position:0%
+install platform tools so for most
+Salana<00:13:19.279><c> developers</c><00:13:19.680><c> would</c><00:13:19.920><c> be</c><00:13:20.079><c> familiar</c><00:13:20.399><c> that</c>
+
+00:13:20.629 --> 00:13:20.639 align:start position:0%
+Salana developers would be familiar that
+ 
+
+00:13:20.639 --> 00:13:23.030 align:start position:0%
+Salana developers would be familiar that
+you<00:13:20.720><c> know</c><00:13:20.880><c> when</c><00:13:21.040><c> they</c><00:13:21.200><c> start</c><00:13:21.360><c> on</c><00:13:22.000><c> Salana</c><00:13:22.560><c> they</c>
+
+00:13:23.030 --> 00:13:23.040 align:start position:0%
+you know when they start on Salana they
+ 
+
+00:13:23.040 --> 00:13:26.150 align:start position:0%
+you know when they start on Salana they
+install<00:13:24.320><c> along</c><00:13:24.639><c> with</c><00:13:24.880><c> installing</c><00:13:25.360><c> the</c><00:13:25.680><c> local</c>
+
+00:13:26.150 --> 00:13:26.160 align:start position:0%
+install along with installing the local
+ 
+
+00:13:26.160 --> 00:13:28.470 align:start position:0%
+install along with installing the local
+test<00:13:26.480><c> validator</c><00:13:27.040><c> they</c><00:13:27.279><c> also</c><00:13:27.760><c> install</c><00:13:28.240><c> the</c>
+
+00:13:28.470 --> 00:13:28.480 align:start position:0%
+test validator they also install the
+ 
+
+00:13:28.480 --> 00:13:30.870 align:start position:0%
+test validator they also install the
+platform<00:13:28.880><c> tools</c><00:13:29.360><c> which</c><00:13:29.600><c> contains</c><00:13:30.000><c> its</c><00:13:30.240><c> own</c>
+
+00:13:30.870 --> 00:13:30.880 align:start position:0%
+platform tools which contains its own
+ 
+
+00:13:30.880 --> 00:13:33.269 align:start position:0%
+platform tools which contains its own
+there<00:13:31.040><c> is</c><00:13:31.120><c> a</c><00:13:31.279><c> rusty</c><00:13:31.839><c> fork</c><00:13:32.480><c> and</c><00:13:32.720><c> this</c><00:13:32.880><c> is</c><00:13:33.040><c> the</c>
+
+00:13:33.269 --> 00:13:33.279 align:start position:0%
+there is a rusty fork and this is the
+ 
+
+00:13:33.279 --> 00:13:35.990 align:start position:0%
+there is a rusty fork and this is the
+primary<00:13:33.680><c> reason</c><00:13:34.079><c> why</c><00:13:35.200><c> you</c><00:13:35.360><c> know</c><00:13:35.440><c> whenever</c><00:13:35.839><c> you</c>
+
+00:13:35.990 --> 00:13:36.000 align:start position:0%
+primary reason why you know whenever you
+ 
+
+00:13:36.000 --> 00:13:39.829 align:start position:0%
+primary reason why you know whenever you
+try<00:13:36.240><c> to</c><00:13:37.519><c> there</c><00:13:37.839><c> is</c><00:13:38.079><c> a</c><00:13:38.480><c> new</c><00:13:38.720><c> update</c><00:13:39.040><c> to</c><00:13:39.200><c> Russ</c><00:13:39.680><c> and</c>
+
+00:13:39.829 --> 00:13:39.839 align:start position:0%
+try to there is a new update to Russ and
+ 
+
+00:13:39.839 --> 00:13:41.829 align:start position:0%
+try to there is a new update to Russ and
+then<00:13:40.160><c> that's</c><00:13:40.480><c> not</c><00:13:40.639><c> been</c><00:13:40.880><c> ported</c><00:13:41.279><c> into</c><00:13:41.600><c> the</c>
+
+00:13:41.829 --> 00:13:41.839 align:start position:0%
+then that's not been ported into the
+ 
+
+00:13:41.839 --> 00:13:44.710 align:start position:0%
+then that's not been ported into the
+fork<00:13:42.240><c> and</c><00:13:42.959><c> so</c><00:13:43.200><c> you</c><00:13:43.519><c> start</c><00:13:43.760><c> encountering</c><00:13:44.399><c> very</c>
+
+00:13:44.710 --> 00:13:44.720 align:start position:0%
+fork and so you start encountering very
+ 
+
+00:13:44.720 --> 00:13:47.509 align:start position:0%
+fork and so you start encountering very
+very<00:13:44.959><c> weird</c><00:13:46.160><c> errors</c><00:13:46.639><c> and</c><00:13:46.880><c> also</c><00:13:47.120><c> at</c><00:13:47.279><c> the</c><00:13:47.440><c> same</c>
+
+00:13:47.509 --> 00:13:47.519 align:start position:0%
+very weird errors and also at the same
+ 
+
+00:13:47.519 --> 00:13:51.910 align:start position:0%
+very weird errors and also at the same
+time<00:13:47.760><c> if</c><00:13:48.000><c> your</c><00:13:48.560><c> dependencies</c><00:13:49.279><c> are</c><00:13:49.600><c> not</c><00:13:50.639><c> uh</c><00:13:51.200><c> to</c>
+
+00:13:51.910 --> 00:13:51.920 align:start position:0%
+time if your dependencies are not uh to
+ 
+
+00:13:51.920 --> 00:13:53.750 align:start position:0%
+time if your dependencies are not uh to
+you<00:13:52.079><c> know</c><00:13:52.560><c> was</c><00:13:52.800><c> compiled</c><00:13:53.200><c> with</c><00:13:53.360><c> the</c><00:13:53.519><c> right</c>
+
+00:13:53.750 --> 00:13:53.760 align:start position:0%
+you know was compiled with the right
+ 
+
+00:13:53.760 --> 00:13:57.509 align:start position:0%
+you know was compiled with the right
+trust<00:13:54.160><c> C</c><00:13:54.399><c> then</c><00:13:54.639><c> you</c><00:13:54.800><c> again</c><00:13:55.680><c> encounter</c>
+
+00:13:57.509 --> 00:13:57.519 align:start position:0%
+trust C then you again encounter
+ 
+
+00:13:57.519 --> 00:13:59.590 align:start position:0%
+trust C then you again encounter
+you<00:13:57.680><c> know</c><00:13:58.320><c> specific</c><00:13:58.800><c> problems</c><00:13:59.199><c> right</c><00:13:59.360><c> that's</c>
+
+00:13:59.590 --> 00:13:59.600 align:start position:0%
+you know specific problems right that's
+ 
+
+00:13:59.600 --> 00:14:02.790 align:start position:0%
+you know specific problems right that's
+why<00:14:00.639><c> and</c><00:14:00.959><c> to</c><00:14:01.199><c> a</c><00:14:01.440><c> point</c><00:14:01.600><c> where</c><00:14:01.920><c> people</c><00:14:02.480><c> you</c><00:14:02.639><c> know</c>
+
+00:14:02.790 --> 00:14:02.800 align:start position:0%
+why and to a point where people you know
+ 
+
+00:14:02.800 --> 00:14:05.110 align:start position:0%
+why and to a point where people you know
+keep<00:14:03.040><c> passing</c><00:14:03.440><c> around</c><00:14:03.760><c> specific</c><00:14:04.639><c> you</c><00:14:04.800><c> know</c>
+
+00:14:05.110 --> 00:14:05.120 align:start position:0%
+keep passing around specific you know
+ 
+
+00:14:05.120 --> 00:14:08.310 align:start position:0%
+keep passing around specific you know
+cargo<00:14:05.519><c> lock</c><00:14:05.760><c> files</c><00:14:06.240><c> just</c><00:14:06.480><c> so</c><00:14:06.639><c> that</c><00:14:07.040><c> the</c><00:14:08.000><c> thing</c>
+
+00:14:08.310 --> 00:14:08.320 align:start position:0%
+cargo lock files just so that the thing
+ 
+
+00:14:08.320 --> 00:14:11.750 align:start position:0%
+cargo lock files just so that the thing
+works<00:14:09.360><c> so</c><00:14:09.920><c> essentially</c><00:14:10.639><c> Because</c><00:14:10.959><c> now</c><00:14:11.279><c> that</c><00:14:11.519><c> we</c>
+
+00:14:11.750 --> 00:14:11.760 align:start position:0%
+works so essentially Because now that we
+ 
+
+00:14:11.760 --> 00:14:14.949 align:start position:0%
+works so essentially Because now that we
+have<00:14:12.000><c> this</c><00:14:12.639><c> linker,</c><00:14:13.920><c> all</c><00:14:14.079><c> of</c><00:14:14.240><c> that</c><00:14:14.560><c> goes</c><00:14:14.800><c> away</c>
+
+00:14:14.949 --> 00:14:14.959 align:start position:0%
+have this linker, all of that goes away
+ 
+
+00:14:14.959 --> 00:14:17.590 align:start position:0%
+have this linker, all of that goes away
+and<00:14:15.199><c> you</c><00:14:15.440><c> could</c><00:14:15.600><c> just</c><00:14:15.920><c> simply</c><00:14:16.399><c> work</c><00:14:16.639><c> with</c><00:14:17.360><c> any</c>
+
+00:14:17.590 --> 00:14:17.600 align:start position:0%
+and you could just simply work with any
+ 
+
+00:14:17.600 --> 00:14:20.310 align:start position:0%
+and you could just simply work with any
+Rust<00:14:18.000><c> installation.</c><00:14:18.800><c> How</c><00:14:19.040><c> does</c><00:14:19.279><c> it</c><00:14:19.680><c> I</c><00:14:19.920><c> also</c>
+
+00:14:20.310 --> 00:14:20.320 align:start position:0%
+Rust installation. How does it I also
+ 
+
+00:14:20.320 --> 00:14:22.069 align:start position:0%
+Rust installation. How does it I also
+one<00:14:20.560><c> thing</c><00:14:20.639><c> that</c><00:14:20.800><c> I</c><00:14:21.040><c> keep</c><00:14:21.279><c> hearing</c><00:14:21.519><c> is</c><00:14:21.760><c> that</c>
+
+00:14:22.069 --> 00:14:22.079 align:start position:0%
+one thing that I keep hearing is that
+ 
+
+00:14:22.079 --> 00:14:27.269 align:start position:0%
+one thing that I keep hearing is that
+like<00:14:22.480><c> uh</c><00:14:22.959><c> when</c><00:14:23.360><c> people</c><00:14:23.680><c> talk</c><00:14:23.920><c> about</c><00:14:25.120><c> um</c><00:14:26.480><c> SP</c><00:14:27.040><c> I</c>
+
+00:14:27.269 --> 00:14:27.279 align:start position:0%
+like uh when people talk about um SP I
+ 
+
+00:14:27.279 --> 00:14:30.629 align:start position:0%
+like uh when people talk about um SP I
+mean<00:14:27.600><c> this</c><00:14:28.320><c> coding</c><00:14:28.800><c> without</c><00:14:29.360><c> platform</c><00:14:29.839><c> tools</c>
+
+00:14:30.629 --> 00:14:30.639 align:start position:0%
+mean this coding without platform tools
+ 
+
+00:14:30.639 --> 00:14:33.110 align:start position:0%
+mean this coding without platform tools
+why<00:14:30.800><c> does</c><00:14:31.040><c> it</c><00:14:31.199><c> need</c><00:14:31.279><c> to</c><00:14:31.440><c> be</c><00:14:31.600><c> no</c><00:14:31.839><c> standard?</c>
+
+00:14:33.110 --> 00:14:33.120 align:start position:0%
+why does it need to be no standard?
+ 
+
+00:14:33.120 --> 00:14:35.590 align:start position:0%
+why does it need to be no standard?
+Currently,<00:14:33.519><c> EPF</c><00:14:34.240><c> is</c><00:14:34.399><c> the</c><00:14:34.560><c> tier</c><00:14:34.880><c> two</c><00:14:35.279><c> uh</c><00:14:35.360><c> sorry</c>
+
+00:14:35.590 --> 00:14:35.600 align:start position:0%
+Currently, EPF is the tier two uh sorry
+ 
+
+00:14:35.600 --> 00:14:38.069 align:start position:0%
+Currently, EPF is the tier two uh sorry
+is<00:14:35.760><c> a</c><00:14:35.920><c> tier</c><00:14:36.160><c> three</c><00:14:36.720><c> EPF</c><00:14:37.360><c> is</c><00:14:37.519><c> a</c><00:14:37.600><c> tier</c><00:14:37.839><c> three</c>
+
+00:14:38.069 --> 00:14:38.079 align:start position:0%
+is a tier three EPF is a tier three
+ 
+
+00:14:38.079 --> 00:14:41.350 align:start position:0%
+is a tier three EPF is a tier three
+target<00:14:38.320><c> for</c><00:14:38.560><c> Rust</c><00:14:39.519><c> and</c><00:14:39.760><c> then</c><00:14:40.000><c> that</c><00:14:40.160><c> is</c><00:14:40.399><c> because</c>
+
+00:14:41.350 --> 00:14:41.360 align:start position:0%
+target for Rust and then that is because
+ 
+
+00:14:41.360 --> 00:14:43.990 align:start position:0%
+target for Rust and then that is because
+um<00:14:42.160><c> it</c><00:14:42.399><c> still</c><00:14:42.639><c> takes</c><00:14:42.959><c> some</c><00:14:43.120><c> more</c><00:14:43.360><c> work</c><00:14:43.519><c> to</c><00:14:43.760><c> do</c>
+
+00:14:43.990 --> 00:14:44.000 align:start position:0%
+um it still takes some more work to do
+ 
+
+00:14:44.000 --> 00:14:47.269 align:start position:0%
+um it still takes some more work to do
+to<00:14:44.399><c> support</c><00:14:45.199><c> um</c><00:14:45.440><c> core</c><00:14:45.760><c> lip</c><00:14:46.480><c> and</c><00:14:46.720><c> we're</c><00:14:46.959><c> kind</c><00:14:47.199><c> of</c>
+
+00:14:47.269 --> 00:14:47.279 align:start position:0%
+to support um core lip and we're kind of
+ 
+
+00:14:47.279 --> 00:14:49.670 align:start position:0%
+to support um core lip and we're kind of
+working<00:14:47.519><c> on</c><00:14:47.680><c> that</c><00:14:47.920><c> but</c><00:14:48.079><c> then</c><00:14:48.320><c> at</c><00:14:48.639><c> the</c><00:14:48.800><c> moment</c>
+
+00:14:49.670 --> 00:14:49.680 align:start position:0%
+working on that but then at the moment
+ 
+
+00:14:49.680 --> 00:14:52.870 align:start position:0%
+working on that but then at the moment
+um<00:14:49.839><c> it</c><00:14:50.079><c> has</c><00:14:50.240><c> to</c><00:14:50.399><c> be</c><00:14:50.880><c> uh</c><00:14:50.959><c> no</c><00:14:51.199><c> standard</c><00:14:51.680><c> because</c>
+
+00:14:52.870 --> 00:14:52.880 align:start position:0%
+um it has to be uh no standard because
+ 
+
+00:14:52.880 --> 00:14:55.590 align:start position:0%
+um it has to be uh no standard because
+um<00:14:53.519><c> it</c><00:14:53.839><c> there</c><00:14:54.160><c> are</c><00:14:54.399><c> things</c><00:14:54.560><c> in</c><00:14:54.880><c> core</c><00:14:55.199><c> library</c>
+
+00:14:55.590 --> 00:14:55.600 align:start position:0%
+um it there are things in core library
+ 
+
+00:14:55.600 --> 00:14:58.949 align:start position:0%
+um it there are things in core library
+that<00:14:56.399><c> um</c><00:14:56.880><c> that</c><00:14:57.360><c> ebpf</c><00:14:58.079><c> doesn't</c><00:14:58.399><c> support</c><00:14:58.720><c> right</c>
+
+00:14:58.949 --> 00:14:58.959 align:start position:0%
+that um that ebpf doesn't support right
+ 
+
+00:14:58.959 --> 00:15:02.629 align:start position:0%
+that um that ebpf doesn't support right
+now.<00:14:59.360><c> So</c><00:14:59.600><c> for</c><00:14:59.680><c> example</c><00:15:00.160><c> like</c><00:15:01.040><c> functions</c><00:15:01.839><c> with</c>
+
+00:15:02.629 --> 00:15:02.639 align:start position:0%
+now. So for example like functions with
+ 
+
+00:15:02.639 --> 00:15:06.629 align:start position:0%
+now. So for example like functions with
+uh<00:15:02.800><c> more</c><00:15:03.040><c> than</c><00:15:03.199><c> five</c><00:15:03.519><c> arguments</c><00:15:04.720><c> um</c><00:15:05.920><c> it</c><00:15:06.240><c> can't</c>
+
+00:15:06.629 --> 00:15:06.639 align:start position:0%
+uh more than five arguments um it can't
+ 
+
+00:15:06.639 --> 00:15:09.030 align:start position:0%
+uh more than five arguments um it can't
+like<00:15:06.959><c> because</c><00:15:07.279><c> like</c><00:15:07.600><c> the</c><00:15:07.760><c> the</c><00:15:08.160><c> stack</c><00:15:08.480><c> size</c><00:15:08.720><c> or</c>
+
+00:15:09.030 --> 00:15:09.040 align:start position:0%
+like because like the the stack size or
+ 
+
+00:15:09.040 --> 00:15:11.509 align:start position:0%
+like because like the the stack size or
+the<00:15:09.279><c> register</c><00:15:09.680><c> is</c><00:15:09.920><c> pretty</c><00:15:10.160><c> constraint</c><00:15:10.720><c> so</c><00:15:11.279><c> you</c>
+
+00:15:11.509 --> 00:15:11.519 align:start position:0%
+the register is pretty constraint so you
+ 
+
+00:15:11.519 --> 00:15:13.430 align:start position:0%
+the register is pretty constraint so you
+can't<00:15:11.920><c> like</c><00:15:12.240><c> you</c><00:15:12.480><c> have</c><00:15:12.639><c> to</c><00:15:12.800><c> put</c><00:15:12.959><c> things</c><00:15:13.120><c> in</c><00:15:13.279><c> the</c>
+
+00:15:13.430 --> 00:15:13.440 align:start position:0%
+can't like you have to put things in the
+ 
+
+00:15:13.440 --> 00:15:15.030 align:start position:0%
+can't like you have to put things in the
+stack<00:15:13.760><c> in</c><00:15:13.920><c> order</c><00:15:14.079><c> to</c><00:15:14.240><c> pass</c><00:15:14.480><c> the</c><00:15:14.720><c> function</c>
+
+00:15:15.030 --> 00:15:15.040 align:start position:0%
+stack in order to pass the function
+ 
+
+00:15:15.040 --> 00:15:19.670 align:start position:0%
+stack in order to pass the function
+around.<00:15:16.000><c> Uh</c><00:15:16.399><c> that's</c><00:15:16.720><c> one</c><00:15:16.959><c> thing</c><00:15:17.680><c> and</c><00:15:17.920><c> then</c>
+
+00:15:19.670 --> 00:15:19.680 align:start position:0%
+around. Uh that's one thing and then
+ 
+
+00:15:19.680 --> 00:15:21.910 align:start position:0%
+around. Uh that's one thing and then
+and<00:15:20.000><c> then</c><00:15:20.800><c> yeah</c><00:15:21.120><c> there</c><00:15:21.279><c> are</c><00:15:21.519><c> some</c><00:15:21.680><c> other</c>
+
+00:15:21.910 --> 00:15:21.920 align:start position:0%
+and then yeah there are some other
+ 
+
+00:15:21.920 --> 00:15:24.470 align:start position:0%
+and then yeah there are some other
+things<00:15:22.160><c> that</c><00:15:22.399><c> I</c><00:15:22.560><c> can't</c><00:15:22.720><c> think</c><00:15:22.959><c> of</c><00:15:23.199><c> right</c><00:15:23.440><c> now.</c>
+
+00:15:24.470 --> 00:15:24.480 align:start position:0%
+things that I can't think of right now.
+ 
+
+00:15:24.480 --> 00:15:27.110 align:start position:0%
+things that I can't think of right now.
+Yeah,<00:15:24.880><c> but</c><00:15:25.279><c> that's</c><00:15:25.680><c> kind</c><00:15:25.920><c> of</c><00:15:26.160><c> the</c><00:15:26.480><c> the</c><00:15:26.639><c> the</c>
+
+00:15:27.110 --> 00:15:27.120 align:start position:0%
+Yeah, but that's kind of the the the
+ 
+
+00:15:27.120 --> 00:15:28.629 align:start position:0%
+Yeah, but that's kind of the the the
+status<00:15:27.519><c> of</c><00:15:27.760><c> things</c>
+
+00:15:28.629 --> 00:15:28.639 align:start position:0%
+status of things
+ 
+
+00:15:28.639 --> 00:15:32.389 align:start position:0%
+status of things
+&gt;&gt; in<00:15:28.959><c> terms</c><00:15:29.199><c> of</c><00:15:29.440><c> the</c><00:15:30.000><c> rusty</c><00:15:30.639><c> fork.</c><00:15:31.600><c> It</c><00:15:31.920><c> can</c><00:15:32.160><c> work</c>
+
+00:15:32.389 --> 00:15:32.399 align:start position:0%
+&gt;&gt; in terms of the rusty fork. It can work
+ 
+
+00:15:32.399 --> 00:15:35.750 align:start position:0%
+&gt;&gt; in terms of the rusty fork. It can work
+with<00:15:32.880><c> core</c><00:15:33.279><c> lib</c><00:15:33.600><c> because</c><00:15:34.240><c> it</c><00:15:34.480><c> is</c><00:15:35.279><c> the</c>
+
+00:15:35.750 --> 00:15:35.760 align:start position:0%
+with core lib because it is the
+ 
+
+00:15:35.760 --> 00:15:39.269 align:start position:0%
+with core lib because it is the
+compilation<00:15:36.399><c> for</c><00:15:36.639><c> that</c><00:15:36.880><c> to</c><00:15:38.000><c> you</c><00:15:38.240><c> know</c><00:15:38.639><c> spf</c>
+
+00:15:39.269 --> 00:15:39.279 align:start position:0%
+compilation for that to you know spf
+ 
+
+00:15:39.279 --> 00:15:41.990 align:start position:0%
+compilation for that to you know spf
+target<00:15:39.600><c> is</c><00:15:39.839><c> supported.</c><00:15:40.320><c> What</c><00:15:40.639><c> happens</c><00:15:40.959><c> to</c><00:15:41.279><c> the</c>
+
+00:15:41.990 --> 00:15:42.000 align:start position:0%
+target is supported. What happens to the
+ 
+
+00:15:42.000 --> 00:15:44.629 align:start position:0%
+target is supported. What happens to the
+the<00:15:42.320><c> linker</c><00:15:42.800><c> project</c><00:15:43.120><c> from</c><00:15:43.360><c> here?</c><00:15:43.760><c> Now</c><00:15:44.320><c> is</c>
+
+00:15:44.629 --> 00:15:44.639 align:start position:0%
+the linker project from here? Now is
+ 
+
+00:15:44.639 --> 00:15:46.710 align:start position:0%
+the linker project from here? Now is
+does<00:15:44.800><c> it</c><00:15:45.040><c> mean</c><00:15:45.199><c> that</c><00:15:45.760><c> now</c><00:15:46.000><c> that</c><00:15:46.240><c> this</c><00:15:46.480><c> is</c>
+
+00:15:46.710 --> 00:15:46.720 align:start position:0%
+does it mean that now that this is
+ 
+
+00:15:46.720 --> 00:15:49.509 align:start position:0%
+does it mean that now that this is
+possible<00:15:47.920><c> the</c>
+
+00:15:49.509 --> 00:15:49.519 align:start position:0%
+possible the
+ 
+
+00:15:49.519 --> 00:15:52.949 align:start position:0%
+possible the
+now<00:15:49.920><c> programmers</c><00:15:50.720><c> have</c><00:15:50.959><c> a</c><00:15:51.759><c> new</c><00:15:52.160><c> way</c><00:15:52.480><c> to</c>
+
+00:15:52.949 --> 00:15:52.959 align:start position:0%
+now programmers have a new way to
+ 
+
+00:15:52.959 --> 00:15:55.590 align:start position:0%
+now programmers have a new way to
+develop<00:15:53.440><c> Solana</c><00:15:53.920><c> smart</c><00:15:54.160><c> contracts</c>
+
+00:15:55.590 --> 00:15:55.600 align:start position:0%
+develop Solana smart contracts
+ 
+
+00:15:55.600 --> 00:16:00.550 align:start position:0%
+develop Solana smart contracts
+technically<00:15:56.160><c> any</c><00:15:56.480><c> LLVM</c><00:15:57.120><c> front</c><00:15:57.360><c> end</c><00:15:58.720><c> is</c><00:15:59.199><c> now</c>
+
+00:16:00.550 --> 00:16:00.560 align:start position:0%
+technically any LLVM front end is now
+ 
+
+00:16:00.560 --> 00:16:02.710 align:start position:0%
+technically any LLVM front end is now
+you<00:16:00.720><c> know</c><00:16:01.199><c> can</c><00:16:01.440><c> become</c><00:16:02.000><c> you</c><00:16:02.240><c> can</c><00:16:02.399><c> create</c>
+
+00:16:02.710 --> 00:16:02.720 align:start position:0%
+you know can become you can create
+ 
+
+00:16:02.720 --> 00:16:05.030 align:start position:0%
+you know can become you can create
+Solana<00:16:03.199><c> programs</c><00:16:03.600><c> with</c><00:16:04.079><c> any</c><00:16:04.399><c> language</c><00:16:04.800><c> that</c>
+
+00:16:05.030 --> 00:16:05.040 align:start position:0%
+Solana programs with any language that
+ 
+
+00:16:05.040 --> 00:16:08.870 align:start position:0%
+Solana programs with any language that
+has<00:16:05.199><c> an</c><00:16:05.360><c> LLVM</c><00:16:06.639><c> uh</c><00:16:07.040><c> back</c><00:16:07.279><c> end.</c><00:16:08.079><c> Yeah.</c><00:16:08.320><c> Yeah.</c><00:16:08.639><c> So,</c>
+
+00:16:08.870 --> 00:16:08.880 align:start position:0%
+has an LLVM uh back end. Yeah. Yeah. So,
+ 
+
+00:16:08.880 --> 00:16:10.710 align:start position:0%
+has an LLVM uh back end. Yeah. Yeah. So,
+so<00:16:09.040><c> I</c><00:16:09.199><c> I</c><00:16:09.440><c> mean</c><00:16:09.759><c> also</c><00:16:10.000><c> I've</c><00:16:10.240><c> been</c><00:16:10.399><c> seeing</c>
+
+00:16:10.710 --> 00:16:10.720 align:start position:0%
+so I I mean also I've been seeing
+ 
+
+00:16:10.720 --> 00:16:13.110 align:start position:0%
+so I I mean also I've been seeing
+people,<00:16:11.839><c> you</c><00:16:12.000><c> know,</c><00:16:12.160><c> create</c><00:16:12.480><c> like</c><00:16:12.800><c> very</c>
+
+00:16:13.110 --> 00:16:13.120 align:start position:0%
+people, you know, create like very
+ 
+
+00:16:13.120 --> 00:16:15.430 align:start position:0%
+people, you know, create like very
+interesting<00:16:14.399><c> uh</c><00:16:14.560><c> versions</c><00:16:14.880><c> of</c><00:16:15.040><c> that.</c><00:16:15.279><c> There</c>
+
+00:16:15.430 --> 00:16:15.440 align:start position:0%
+interesting uh versions of that. There
+ 
+
+00:16:15.440 --> 00:16:17.590 align:start position:0%
+interesting uh versions of that. There
+is<00:16:15.600><c> a</c><00:16:15.759><c> zig</c><00:16:16.160><c> lana</c><00:16:16.480><c> and</c><00:16:16.639><c> then</c><00:16:16.800><c> someone</c><00:16:17.120><c> created</c>
+
+00:16:17.590 --> 00:16:17.600 align:start position:0%
+is a zig lana and then someone created
+ 
+
+00:16:17.600 --> 00:16:21.509 align:start position:0%
+is a zig lana and then someone created
+in<00:16:17.759><c> fact</c><00:16:18.000><c> a</c><00:16:18.639><c> cobalt</c><00:16:19.120><c> lana.</c><00:16:20.000><c> So</c>
+
+00:16:21.509 --> 00:16:21.519 align:start position:0%
+in fact a cobalt lana. So
+ 
+
+00:16:21.519 --> 00:16:23.749 align:start position:0%
+in fact a cobalt lana. So
+what<00:16:21.680><c> what</c><00:16:21.920><c> does</c><00:16:22.079><c> it</c><00:16:22.320><c> really</c><00:16:22.720><c> mean</c><00:16:22.959><c> now?</c><00:16:23.279><c> Can</c>
+
+00:16:23.749 --> 00:16:23.759 align:start position:0%
+what what does it really mean now? Can
+ 
+
+00:16:23.759 --> 00:16:25.990 align:start position:0%
+what what does it really mean now? Can
+are<00:16:24.320><c> are</c><00:16:24.560><c> program</c><00:16:25.040><c> can</c><00:16:25.199><c> programmers</c><00:16:25.759><c> like</c>
+
+00:16:25.990 --> 00:16:26.000 align:start position:0%
+are are program can programmers like
+ 
+
+00:16:26.000 --> 00:16:28.870 align:start position:0%
+are are program can programmers like
+create<00:16:26.320><c> sana</c><00:16:27.279><c> programs</c><00:16:27.759><c> using</c><00:16:28.160><c> any</c><00:16:28.480><c> language</c>
+
+00:16:28.870 --> 00:16:28.880 align:start position:0%
+create sana programs using any language
+ 
+
+00:16:28.880 --> 00:16:29.670 align:start position:0%
+create sana programs using any language
+now?
+
+00:16:29.670 --> 00:16:29.680 align:start position:0%
+now?
+ 
+
+00:16:29.680 --> 00:16:33.430 align:start position:0%
+now?
+&gt;&gt; Um<00:16:30.320><c> right.</c><00:16:30.720><c> So</c><00:16:30.959><c> how</c><00:16:31.199><c> SPF</c><00:16:31.920><c> linker</c><00:16:32.320><c> works</c><00:16:32.639><c> is</c><00:16:33.279><c> uh</c>
+
+00:16:33.430 --> 00:16:33.440 align:start position:0%
+&gt;&gt; Um right. So how SPF linker works is uh
+ 
+
+00:16:33.440 --> 00:16:36.790 align:start position:0%
+&gt;&gt; Um right. So how SPF linker works is uh
+the<00:16:33.680><c> first</c><00:16:33.920><c> step</c><00:16:34.160><c> is</c><00:16:34.800><c> called</c><00:16:35.519><c> BPF</c><00:16:36.000><c> linker</c>
+
+00:16:36.790 --> 00:16:36.800 align:start position:0%
+the first step is called BPF linker
+ 
+
+00:16:36.800 --> 00:16:39.509 align:start position:0%
+the first step is called BPF linker
+written<00:16:37.199><c> by</c><00:16:37.360><c> Alessandro</c><00:16:38.480><c> and</c><00:16:38.720><c> then</c><00:16:38.959><c> he</c><00:16:39.199><c> added</c>
+
+00:16:39.509 --> 00:16:39.519 align:start position:0%
+written by Alessandro and then he added
+ 
+
+00:16:39.519 --> 00:16:42.150 align:start position:0%
+written by Alessandro and then he added
+that<00:16:39.920><c> when</c><00:16:40.160><c> he</c><00:16:40.320><c> added</c><00:16:40.639><c> the</c><00:16:41.120><c> uh</c><00:16:41.199><c> BPF</c><00:16:41.680><c> target</c><00:16:42.000><c> to</c>
+
+00:16:42.150 --> 00:16:42.160 align:start position:0%
+that when he added the uh BPF target to
+ 
+
+00:16:42.160 --> 00:16:46.629 align:start position:0%
+that when he added the uh BPF target to
+Rust<00:16:43.120><c> and</c><00:16:43.759><c> so</c><00:16:44.399><c> um</c><00:16:45.040><c> so</c><00:16:45.440><c> essentially</c><00:16:46.079><c> uh</c><00:16:46.240><c> so</c><00:16:46.399><c> how</c>
+
+00:16:46.629 --> 00:16:46.639 align:start position:0%
+Rust and so um so essentially uh so how
+ 
+
+00:16:46.639 --> 00:16:50.389 align:start position:0%
+Rust and so um so essentially uh so how
+BPF<00:16:47.120><c> linker</c><00:16:47.519><c> works</c><00:16:47.759><c> is</c><00:16:48.000><c> it</c><00:16:48.240><c> takes</c><00:16:49.040><c> um</c><00:16:49.839><c> bit</c><00:16:50.160><c> code</c>
+
+00:16:50.389 --> 00:16:50.399 align:start position:0%
+BPF linker works is it takes um bit code
+ 
+
+00:16:50.399 --> 00:16:53.350 align:start position:0%
+BPF linker works is it takes um bit code
+LVM<00:16:50.880><c> bit</c><00:16:51.120><c> code</c><00:16:51.279><c> as</c><00:16:51.519><c> input</c><00:16:52.240><c> and</c><00:16:52.480><c> then</c><00:16:52.880><c> link</c><00:16:53.120><c> it</c>
+
+00:16:53.350 --> 00:16:53.360 align:start position:0%
+LVM bit code as input and then link it
+ 
+
+00:16:53.360 --> 00:16:57.430 align:start position:0%
+LVM bit code as input and then link it
+to<00:16:53.519><c> an</c><00:16:53.759><c> object</c><00:16:54.240><c> file</c><00:16:55.040><c> and</c><00:16:55.279><c> then</c><00:16:56.160><c> uh</c><00:16:56.560><c> our</c><00:16:56.800><c> linker</c>
+
+00:16:57.430 --> 00:16:57.440 align:start position:0%
+to an object file and then uh our linker
+ 
+
+00:16:57.440 --> 00:16:59.910 align:start position:0%
+to an object file and then uh our linker
+takes<00:16:57.680><c> the</c><00:16:57.920><c> object</c><00:16:58.320><c> file</c><00:16:59.279><c> uh</c><00:16:59.360><c> and</c><00:16:59.519><c> then</c><00:16:59.680><c> like</c>
+
+00:16:59.910 --> 00:16:59.920 align:start position:0%
+takes the object file uh and then like
+ 
+
+00:16:59.920 --> 00:17:02.230 align:start position:0%
+takes the object file uh and then like
+sort<00:17:00.240><c> repackage</c><00:17:00.800><c> it</c><00:17:00.959><c> into</c><00:17:01.120><c> a</c><00:17:01.360><c> bode</c><00:17:01.839><c> format</c>
+
+00:17:02.230 --> 00:17:02.240 align:start position:0%
+sort repackage it into a bode format
+ 
+
+00:17:02.240 --> 00:17:07.990 align:start position:0%
+sort repackage it into a bode format
+that<00:17:03.040><c> u</c><00:17:03.279><c> SBM</c><00:17:03.839><c> understand</c><00:17:05.199><c> and</c><00:17:06.400><c> um</c><00:17:06.640><c> yeah</c><00:17:06.959><c> since</c>
+
+00:17:07.990 --> 00:17:08.000 align:start position:0%
+that u SBM understand and um yeah since
+ 
+
+00:17:08.000 --> 00:17:10.390 align:start position:0%
+that u SBM understand and um yeah since
+um<00:17:08.319><c> it</c><00:17:08.559><c> takes</c><00:17:08.799><c> LVM</c><00:17:09.280><c> bit</c><00:17:09.439><c> code</c><00:17:09.600><c> as</c><00:17:09.760><c> input.</c><00:17:10.240><c> So</c>
+
+00:17:10.390 --> 00:17:10.400 align:start position:0%
+um it takes LVM bit code as input. So
+ 
+
+00:17:10.400 --> 00:17:13.669 align:start position:0%
+um it takes LVM bit code as input. So
+then<00:17:10.799><c> ideally</c><00:17:12.240><c> uh</c><00:17:12.480><c> theoretically</c><00:17:13.360><c> any</c>
+
+00:17:13.669 --> 00:17:13.679 align:start position:0%
+then ideally uh theoretically any
+ 
+
+00:17:13.679 --> 00:17:16.309 align:start position:0%
+then ideally uh theoretically any
+language<00:17:14.000><c> with</c><00:17:14.240><c> LVM</c><00:17:14.799><c> back</c><00:17:14.959><c> end</c><00:17:15.120><c> or</c><00:17:15.360><c> if</c><00:17:15.600><c> like</c>
+
+00:17:16.309 --> 00:17:16.319 align:start position:0%
+language with LVM back end or if like
+ 
+
+00:17:16.319 --> 00:17:18.470 align:start position:0%
+language with LVM back end or if like
+any<00:17:16.640><c> language</c><00:17:16.959><c> that</c><00:17:17.199><c> you</c><00:17:17.360><c> can</c><00:17:17.520><c> transpile</c><00:17:18.079><c> with</c>
+
+00:17:18.470 --> 00:17:18.480 align:start position:0%
+any language that you can transpile with
+ 
+
+00:17:18.480 --> 00:17:22.789 align:start position:0%
+any language that you can transpile with
+LVM<00:17:19.919><c> um</c><00:17:20.319><c> can</c><00:17:20.559><c> like</c><00:17:20.880><c> be</c><00:17:21.120><c> compatible</c><00:17:22.079><c> can</c><00:17:22.480><c> like</c>
+
+00:17:22.789 --> 00:17:22.799 align:start position:0%
+LVM um can like be compatible can like
+ 
+
+00:17:22.799 --> 00:17:24.949 align:start position:0%
+LVM um can like be compatible can like
+use<00:17:23.120><c> this</c><00:17:23.360><c> workflow</c><00:17:23.919><c> to</c><00:17:24.160><c> compile</c><00:17:24.480><c> to</c><00:17:24.640><c> object</c>
+
+00:17:24.949 --> 00:17:24.959 align:start position:0%
+use this workflow to compile to object
+ 
+
+00:17:24.959 --> 00:17:27.990 align:start position:0%
+use this workflow to compile to object
+file<00:17:25.199><c> and</c><00:17:25.280><c> then</c><00:17:25.439><c> relink</c><00:17:25.919><c> it</c><00:17:26.079><c> to</c><00:17:26.559><c> to</c><00:17:27.280><c> a</c><00:17:27.520><c> bode</c>
+
+00:17:27.990 --> 00:17:28.000 align:start position:0%
+file and then relink it to to a bode
+ 
+
+00:17:28.000 --> 00:17:32.549 align:start position:0%
+file and then relink it to to a bode
+format<00:17:28.799><c> that</c><00:17:29.120><c> SBF</c><00:17:29.919><c> uh</c><00:17:30.080><c> SVM</c><00:17:30.720><c> understands.</c>
+
+00:17:32.549 --> 00:17:32.559 align:start position:0%
+format that SBF uh SVM understands.
+ 
+
+00:17:32.559 --> 00:17:35.350 align:start position:0%
+format that SBF uh SVM understands.
+&gt;&gt; Got<00:17:32.880><c> this.</c><00:17:33.120><c> You</c><00:17:33.280><c> you</c><00:17:33.760><c> mentioned</c><00:17:34.320><c> BPF</c><00:17:34.880><c> linker</c>
+
+00:17:35.350 --> 00:17:35.360 align:start position:0%
+&gt;&gt; Got this. You you mentioned BPF linker
+ 
+
+00:17:35.360 --> 00:17:37.909 align:start position:0%
+&gt;&gt; Got this. You you mentioned BPF linker
+right<00:17:35.600><c> like</c><00:17:36.000><c> so</c><00:17:36.559><c> so</c><00:17:37.039><c> as</c><00:17:37.280><c> I</c><00:17:37.440><c> understand</c><00:17:37.760><c> there</c>
+
+00:17:37.909 --> 00:17:37.919 align:start position:0%
+right like so so as I understand there
+ 
+
+00:17:37.919 --> 00:17:41.190 align:start position:0%
+right like so so as I understand there
+are<00:17:38.400><c> two</c><00:17:38.720><c> linkers.</c><00:17:39.200><c> one</c><00:17:39.360><c> is</c><00:17:39.520><c> a</c><00:17:39.679><c> BPF</c><00:17:40.720><c> linker</c><00:17:41.039><c> and</c>
+
+00:17:41.190 --> 00:17:41.200 align:start position:0%
+are two linkers. one is a BPF linker and
+ 
+
+00:17:41.200 --> 00:17:45.190 align:start position:0%
+are two linkers. one is a BPF linker and
+the<00:17:41.360><c> other</c><00:17:41.520><c> one</c><00:17:41.679><c> is</c><00:17:41.840><c> the</c><00:17:42.320><c> SPF</c><00:17:42.880><c> linker</c><00:17:44.160><c> right</c><00:17:44.480><c> so</c>
+
+00:17:45.190 --> 00:17:45.200 align:start position:0%
+the other one is the SPF linker right so
+ 
+
+00:17:45.200 --> 00:17:47.990 align:start position:0%
+the other one is the SPF linker right so
+what<00:17:45.280><c> what</c><00:17:45.919><c> do</c><00:17:46.080><c> these</c><00:17:46.320><c> two</c><00:17:46.559><c> and</c><00:17:47.440><c> you</c><00:17:47.600><c> know</c><00:17:47.760><c> it's</c>
+
+00:17:47.990 --> 00:17:48.000 align:start position:0%
+what what do these two and you know it's
+ 
+
+00:17:48.000 --> 00:17:51.510 align:start position:0%
+what what do these two and you know it's
+like<00:17:48.480><c> how</c><00:17:48.720><c> do</c><00:17:49.039><c> what</c><00:17:49.360><c> does</c><00:17:49.520><c> the</c><00:17:50.400><c> compilation</c>
+
+00:17:51.510 --> 00:17:51.520 align:start position:0%
+like how do what does the compilation
+ 
+
+00:17:51.520 --> 00:17:53.270 align:start position:0%
+like how do what does the compilation
+workflow<00:17:52.000><c> look</c><00:17:52.240><c> like</c><00:17:52.400><c> and</c><00:17:52.640><c> how</c><00:17:52.799><c> do</c><00:17:52.880><c> they</c><00:17:53.039><c> line</c>
+
+00:17:53.270 --> 00:17:53.280 align:start position:0%
+workflow look like and how do they line
+ 
+
+00:17:53.280 --> 00:17:56.390 align:start position:0%
+workflow look like and how do they line
+up<00:17:53.840><c> for</c><00:17:53.919><c> example</c><00:17:54.320><c> let's</c><00:17:54.480><c> say</c><00:17:54.640><c> I</c><00:17:54.880><c> take</c><00:17:55.120><c> a</c>
+
+00:17:56.390 --> 00:17:56.400 align:start position:0%
+up for example let's say I take a
+ 
+
+00:17:56.400 --> 00:17:59.510 align:start position:0%
+up for example let's say I take a
+language<00:17:57.039><c> like</c><00:17:57.919><c> you</c><00:17:58.080><c> know</c><00:17:58.240><c> typescript</c><00:17:58.799><c> or</c><00:17:59.120><c> go</c>
+
+00:17:59.510 --> 00:17:59.520 align:start position:0%
+language like you know typescript or go
+ 
+
+00:17:59.520 --> 00:18:03.750 align:start position:0%
+language like you know typescript or go
+and<00:17:59.840><c> someone</c><00:18:00.160><c> creates</c><00:18:00.559><c> a</c><00:18:01.440><c> program</c><00:18:02.559><c> in</c><00:18:03.600><c> you</c>
+
+00:18:03.750 --> 00:18:03.760 align:start position:0%
+and someone creates a program in you
+ 
+
+00:18:03.760 --> 00:18:05.350 align:start position:0%
+and someone creates a program in you
+know<00:18:03.840><c> wants</c><00:18:04.080><c> to</c><00:18:04.240><c> create</c><00:18:04.400><c> a</c><00:18:04.640><c> program</c><00:18:04.880><c> in</c><00:18:05.120><c> this</c>
+
+00:18:05.350 --> 00:18:05.360 align:start position:0%
+know wants to create a program in this
+ 
+
+00:18:05.360 --> 00:18:09.430 align:start position:0%
+know wants to create a program in this
+language<00:18:06.640><c> what</c><00:18:07.039><c> how</c><00:18:07.280><c> is</c><00:18:08.480><c> how</c><00:18:08.799><c> Can</c><00:18:08.960><c> a</c><00:18:09.120><c> developer</c>
+
+00:18:09.430 --> 00:18:09.440 align:start position:0%
+language what how is how Can a developer
+ 
+
+00:18:09.440 --> 00:18:15.110 align:start position:0%
+language what how is how Can a developer
+like<00:18:09.679><c> go</c><00:18:09.919><c> from</c><00:18:10.160><c> that</c><00:18:10.480><c> to</c><00:18:11.840><c> uh</c><00:18:12.799><c> you</c><00:18:13.039><c> know</c><00:18:13.679><c> SPF</c>
+
+00:18:15.110 --> 00:18:15.120 align:start position:0%
+like go from that to uh you know SPF
+ 
+
+00:18:15.120 --> 00:18:16.630 align:start position:0%
+like go from that to uh you know SPF
+executable?
+
+00:18:16.630 --> 00:18:16.640 align:start position:0%
+executable?
+ 
+
+00:18:16.640 --> 00:18:20.070 align:start position:0%
+executable?
+So<00:18:16.880><c> the</c><00:18:17.280><c> if</c><00:18:17.600><c> you</c><00:18:17.760><c> do</c><00:18:18.000><c> just</c><00:18:18.320><c> do</c><00:18:18.480><c> a</c><00:18:18.960><c> cargo</c><00:18:19.919><c> uh</c>
+
+00:18:20.070 --> 00:18:20.080 align:start position:0%
+So the if you do just do a cargo uh
+ 
+
+00:18:20.080 --> 00:18:22.789 align:start position:0%
+So the if you do just do a cargo uh
+nightly<00:18:20.559><c> build</c><00:18:20.799><c> on</c><00:18:21.039><c> the</c><00:18:21.200><c> BPF</c><00:18:21.760><c> target</c><00:18:22.480><c> uh</c><00:18:22.559><c> not</c>
+
+00:18:22.789 --> 00:18:22.799 align:start position:0%
+nightly build on the BPF target uh not
+ 
+
+00:18:22.799 --> 00:18:26.789 align:start position:0%
+nightly build on the BPF target uh not
+for<00:18:22.960><c> like</c><00:18:23.200><c> Salana</c><00:18:24.400><c> it</c><00:18:25.200><c> uh</c><00:18:25.440><c> it</c><00:18:25.679><c> use</c><00:18:25.919><c> BPF</c><00:18:26.400><c> linker</c>
+
+00:18:26.789 --> 00:18:26.799 align:start position:0%
+for like Salana it uh it use BPF linker
+ 
+
+00:18:26.799 --> 00:18:29.750 align:start position:0%
+for like Salana it uh it use BPF linker
+to<00:18:27.120><c> link</c><00:18:27.360><c> it</c><00:18:27.520><c> to</c><00:18:27.760><c> object</c><00:18:28.160><c> file</c><00:18:28.960><c> and</c><00:18:29.200><c> so</c><00:18:29.440><c> that's</c>
+
+00:18:29.750 --> 00:18:29.760 align:start position:0%
+to link it to object file and so that's
+ 
+
+00:18:29.760 --> 00:18:33.350 align:start position:0%
+to link it to object file and so that's
+like<00:18:29.919><c> what</c><00:18:30.160><c> you</c><00:18:30.400><c> get</c><00:18:31.039><c> and</c><00:18:31.840><c> uh</c><00:18:32.000><c> our</c><00:18:32.240><c> SBF</c><00:18:32.960><c> linker</c>
+
+00:18:33.350 --> 00:18:33.360 align:start position:0%
+like what you get and uh our SBF linker
+ 
+
+00:18:33.360 --> 00:18:37.510 align:start position:0%
+like what you get and uh our SBF linker
+is<00:18:33.520><c> a</c><00:18:33.679><c> wrapper</c><00:18:34.080><c> around</c><00:18:34.400><c> BPF</c><00:18:34.960><c> linker</c><00:18:35.919><c> and</c><00:18:36.880><c> um</c><00:18:37.280><c> a</c>
+
+00:18:37.510 --> 00:18:37.520 align:start position:0%
+is a wrapper around BPF linker and um a
+ 
+
+00:18:37.520 --> 00:18:41.110 align:start position:0%
+is a wrapper around BPF linker and um a
+linker<00:18:38.240><c> I</c><00:18:38.559><c> wrote</c><00:18:38.880><c> or</c><00:18:39.039><c> like</c><00:18:39.200><c> I</c><00:18:39.440><c> built</c><00:18:39.679><c> on</c><00:18:39.840><c> top</c><00:18:40.000><c> of</c>
+
+00:18:41.110 --> 00:18:41.120 align:start position:0%
+linker I wrote or like I built on top of
+ 
+
+00:18:41.120 --> 00:18:44.789 align:start position:0%
+linker I wrote or like I built on top of
+um<00:18:41.440><c> assembler</c><00:18:42.240><c> I</c><00:18:42.559><c> added</c><00:18:42.880><c> for</c><00:18:43.280><c> SPF</c>
+
+00:18:44.789 --> 00:18:44.799 align:start position:0%
+um assembler I added for SPF
+ 
+
+00:18:44.799 --> 00:18:46.310 align:start position:0%
+um assembler I added for SPF
+Um
+
+00:18:46.310 --> 00:18:46.320 align:start position:0%
+Um
+ 
+
+00:18:46.320 --> 00:18:48.470 align:start position:0%
+Um
+so<00:18:46.559><c> then</c><00:18:46.799><c> like</c><00:18:46.960><c> the</c><00:18:47.360><c> like</c><00:18:47.679><c> the</c><00:18:48.000><c> first</c><00:18:48.160><c> project</c>
+
+00:18:48.470 --> 00:18:48.480 align:start position:0%
+so then like the like the first project
+ 
+
+00:18:48.480 --> 00:18:52.390 align:start position:0%
+so then like the like the first project
+I<00:18:48.799><c> mentioned</c><00:18:49.919><c> um</c><00:18:50.320><c> earlier</c><00:18:51.600><c> um</c><00:18:51.840><c> it's</c><00:18:52.160><c> actually</c>
+
+00:18:52.390 --> 00:18:52.400 align:start position:0%
+I mentioned um earlier um it's actually
+ 
+
+00:18:52.400 --> 00:18:54.710 align:start position:0%
+I mentioned um earlier um it's actually
+like<00:18:52.640><c> very</c><00:18:52.880><c> similar</c><00:18:53.280><c> thing</c><00:18:53.440><c> the</c><00:18:53.679><c> as</c><00:18:54.160><c> assembler</c>
+
+00:18:54.710 --> 00:18:54.720 align:start position:0%
+like very similar thing the as assembler
+ 
+
+00:18:54.720 --> 00:18:58.870 align:start position:0%
+like very similar thing the as assembler
+and<00:18:55.039><c> the</c><00:18:55.200><c> linker</c><00:18:56.480><c> uh</c><00:18:56.880><c> the</c><00:18:57.200><c> core</c><00:18:57.520><c> part</c><00:18:57.760><c> is</c><00:18:58.000><c> an</c><00:18:58.240><c> a</c>
+
+00:18:58.870 --> 00:18:58.880 align:start position:0%
+and the linker uh the core part is an a
+ 
+
+00:18:58.880 --> 00:19:01.350 align:start position:0%
+and the linker uh the core part is an a
+and<00:18:58.960><c> abstract</c><00:18:59.440><c> syntax</c><00:18:59.840><c> tree</c><00:19:00.320><c> of</c><00:19:00.559><c> the</c><00:19:00.799><c> program</c>
+
+00:19:01.350 --> 00:19:01.360 align:start position:0%
+and abstract syntax tree of the program
+ 
+
+00:19:01.360 --> 00:19:03.430 align:start position:0%
+and abstract syntax tree of the program
+and<00:19:01.600><c> then</c><00:19:01.760><c> like</c><00:19:02.000><c> it</c><00:19:02.240><c> knows</c><00:19:02.480><c> how</c><00:19:02.640><c> to</c><00:19:02.880><c> like</c><00:19:03.280><c> you</c>
+
+00:19:03.430 --> 00:19:03.440 align:start position:0%
+and then like it knows how to like you
+ 
+
+00:19:03.440 --> 00:19:05.750 align:start position:0%
+and then like it knows how to like you
+know<00:19:03.679><c> resolve</c><00:19:04.160><c> labels</c><00:19:04.720><c> to</c><00:19:05.039><c> do</c><00:19:05.280><c> dynamic</c>
+
+00:19:05.750 --> 00:19:05.760 align:start position:0%
+know resolve labels to do dynamic
+ 
+
+00:19:05.760 --> 00:19:09.270 align:start position:0%
+know resolve labels to do dynamic
+relocations<00:19:06.320><c> for</c><00:19:06.640><c> sys</c><00:19:06.960><c> calls</c><00:19:07.600><c> that's</c><00:19:07.840><c> how</c><00:19:08.240><c> SVM</c>
+
+00:19:09.270 --> 00:19:09.280 align:start position:0%
+relocations for sys calls that's how SVM
+ 
+
+00:19:09.280 --> 00:19:13.909 align:start position:0%
+relocations for sys calls that's how SVM
+uh<00:19:09.919><c> does</c><00:19:10.240><c> sys</c><00:19:10.559><c> calls</c><00:19:11.600><c> and</c><00:19:12.960><c> um</c><00:19:13.280><c> so</c><00:19:13.520><c> yeah</c><00:19:13.760><c> it's</c>
+
+00:19:13.909 --> 00:19:13.919 align:start position:0%
+uh does sys calls and um so yeah it's
+ 
+
+00:19:13.919 --> 00:19:16.630 align:start position:0%
+uh does sys calls and um so yeah it's
+just<00:19:14.160><c> that</c><00:19:14.799><c> the</c><00:19:15.120><c> assembler</c><00:19:15.679><c> is</c><00:19:15.919><c> parsing</c><00:19:16.400><c> a</c>
+
+00:19:16.630 --> 00:19:16.640 align:start position:0%
+just that the assembler is parsing a
+ 
+
+00:19:16.640 --> 00:19:19.350 align:start position:0%
+just that the assembler is parsing a
+string<00:19:16.960><c> file</c><00:19:17.440><c> and</c><00:19:17.679><c> then</c><00:19:18.000><c> parse</c><00:19:18.320><c> it</c><00:19:18.480><c> to</c><00:19:18.720><c> a</c><00:19:18.880><c> st</c>
+
+00:19:19.350 --> 00:19:19.360 align:start position:0%
+string file and then parse it to a st
+ 
+
+00:19:19.360 --> 00:19:23.029 align:start position:0%
+string file and then parse it to a st
+but<00:19:19.520><c> then</c><00:19:19.760><c> the</c><00:19:20.000><c> linker</c><00:19:20.960><c> is</c><00:19:21.840><c> uh</c><00:19:22.080><c> parsing</c><00:19:22.640><c> from</c><00:19:22.799><c> a</c>
+
+00:19:23.029 --> 00:19:23.039 align:start position:0%
+but then the linker is uh parsing from a
+ 
+
+00:19:23.039 --> 00:19:25.350 align:start position:0%
+but then the linker is uh parsing from a
+object<00:19:23.440><c> file</c><00:19:23.679><c> which</c><00:19:23.919><c> is</c><00:19:24.000><c> a</c><00:19:24.080><c> bite</c><00:19:24.400><c> array</c><00:19:25.120><c> but</c>
+
+00:19:25.350 --> 00:19:25.360 align:start position:0%
+object file which is a bite array but
+ 
+
+00:19:25.360 --> 00:19:28.470 align:start position:0%
+object file which is a bite array but
+then<00:19:25.600><c> both</c><00:19:26.080><c> like</c><00:19:26.400><c> after</c><00:19:26.880><c> parsing</c><00:19:27.679><c> they</c><00:19:28.240><c> go</c>
+
+00:19:28.470 --> 00:19:28.480 align:start position:0%
+then both like after parsing they go
+ 
+
+00:19:28.480 --> 00:19:30.950 align:start position:0%
+then both like after parsing they go
+through<00:19:28.640><c> the</c><00:19:28.799><c> exactly</c><00:19:29.280><c> the</c><00:19:29.520><c> same</c><00:19:29.679><c> workflow.</c>
+
+00:19:30.950 --> 00:19:30.960 align:start position:0%
+through the exactly the same workflow.
+ 
+
+00:19:30.960 --> 00:19:34.390 align:start position:0%
+through the exactly the same workflow.
+Um<00:19:31.760><c> so</c><00:19:32.320><c> yeah</c><00:19:32.559><c> that's</c><00:19:32.880><c> basically</c><00:19:33.200><c> how</c><00:19:33.440><c> it</c><00:19:33.679><c> does</c>
+
+00:19:34.390 --> 00:19:34.400 align:start position:0%
+Um so yeah that's basically how it does
+ 
+
+00:19:34.400 --> 00:19:38.150 align:start position:0%
+Um so yeah that's basically how it does
+uh<00:19:34.640><c> the</c><00:19:34.960><c> the</c><00:19:35.440><c> linker</c><00:19:36.480><c> takes</c><00:19:37.360><c> um</c><00:19:37.520><c> the</c><00:19:37.760><c> object</c>
+
+00:19:38.150 --> 00:19:38.160 align:start position:0%
+uh the the linker takes um the object
+ 
+
+00:19:38.160 --> 00:19:41.909 align:start position:0%
+uh the the linker takes um the object
+file<00:19:38.640><c> parse</c><00:19:38.960><c> it</c><00:19:39.520><c> and</c><00:19:39.760><c> then</c><00:19:40.400><c> repackage</c><00:19:41.039><c> it</c><00:19:41.440><c> into</c>
+
+00:19:41.909 --> 00:19:41.919 align:start position:0%
+file parse it and then repackage it into
+ 
+
+00:19:41.919 --> 00:19:44.150 align:start position:0%
+file parse it and then repackage it into
+into<00:19:42.400><c> a</c><00:19:42.640><c> salana</c><00:19:43.200><c> program.</c>
+
+00:19:44.150 --> 00:19:44.160 align:start position:0%
+into a salana program.
+ 
+
+00:19:44.160 --> 00:19:46.950 align:start position:0%
+into a salana program.
+&gt;&gt; How<00:19:44.480><c> how</c><00:19:44.799><c> does</c><00:19:45.200><c> some</c><00:19:45.520><c> for</c><00:19:45.679><c> example</c><00:19:46.000><c> if</c><00:19:46.480><c> anyone</c>
+
+00:19:46.950 --> 00:19:46.960 align:start position:0%
+&gt;&gt; How how does some for example if anyone
+ 
+
+00:19:46.960 --> 00:19:49.270 align:start position:0%
+&gt;&gt; How how does some for example if anyone
+wants<00:19:47.280><c> to</c><00:19:47.440><c> get</c><00:19:47.679><c> involved</c><00:19:48.080><c> in</c><00:19:48.400><c> the</c><00:19:48.880><c> contribute</c>
+
+00:19:49.270 --> 00:19:49.280 align:start position:0%
+wants to get involved in the contribute
+ 
+
+00:19:49.280 --> 00:19:52.549 align:start position:0%
+wants to get involved in the contribute
+to<00:19:49.520><c> SPF</c><00:19:50.080><c> linker</c><00:19:50.480><c> project</c><00:19:50.799><c> or</c><00:19:51.440><c> you</c><00:19:51.600><c> know</c><00:19:52.080><c> uh</c>
+
+00:19:52.549 --> 00:19:52.559 align:start position:0%
+to SPF linker project or you know uh
+ 
+
+00:19:52.559 --> 00:19:57.430 align:start position:0%
+to SPF linker project or you know uh
+even<00:19:53.760><c> work</c><00:19:55.120><c> bring</c><00:19:55.440><c> some</c><00:19:55.600><c> of</c><00:19:55.760><c> their</c><00:19:56.000><c> compiler</c>
+
+00:19:57.430 --> 00:19:57.440 align:start position:0%
+even work bring some of their compiler
+ 
+
+00:19:57.440 --> 00:20:00.549 align:start position:0%
+even work bring some of their compiler
+skills<00:19:58.240><c> to</c><00:19:58.799><c> to</c><00:19:59.120><c> Solano.</c><00:19:59.760><c> what</c><00:20:00.000><c> what</c><00:20:00.240><c> are</c><00:20:00.400><c> some</c>
+
+00:20:00.549 --> 00:20:00.559 align:start position:0%
+skills to to Solano. what what are some
+ 
+
+00:20:00.559 --> 00:20:02.950 align:start position:0%
+skills to to Solano. what what are some
+places<00:20:00.799><c> that</c><00:20:01.039><c> they</c><00:20:01.280><c> can</c><00:20:01.520><c> contribute</c><00:20:01.919><c> to?</c>
+
+00:20:02.950 --> 00:20:02.960 align:start position:0%
+places that they can contribute to?
+ 
+
+00:20:02.960 --> 00:20:04.150 align:start position:0%
+places that they can contribute to?
+&gt;&gt; Yeah.<00:20:03.200><c> So,</c><00:20:03.360><c> if</c><00:20:03.520><c> there's</c><00:20:03.760><c> still</c><00:20:03.840><c> a</c><00:20:03.919><c> lot</c><00:20:04.080><c> of</c>
+
+00:20:04.150 --> 00:20:04.160 align:start position:0%
+&gt;&gt; Yeah. So, if there's still a lot of
+ 
+
+00:20:04.160 --> 00:20:06.150 align:start position:0%
+&gt;&gt; Yeah. So, if there's still a lot of
+interesting<00:20:04.880><c> compiler</c><00:20:05.440><c> things,</c><00:20:05.840><c> you</c><00:20:06.000><c> know,</c>
+
+00:20:06.150 --> 00:20:06.160 align:start position:0%
+interesting compiler things, you know,
+ 
+
+00:20:06.160 --> 00:20:07.990 align:start position:0%
+interesting compiler things, you know,
+find<00:20:06.320><c> me</c><00:20:06.480><c> on</c><00:20:06.640><c> Twitter,</c><00:20:07.039><c> find</c><00:20:07.280><c> Blue</c><00:20:07.520><c> Shift</c><00:20:07.760><c> on</c>
+
+00:20:07.990 --> 00:20:08.000 align:start position:0%
+find me on Twitter, find Blue Shift on
+ 
+
+00:20:08.000 --> 00:20:10.789 align:start position:0%
+find me on Twitter, find Blue Shift on
+Twitter.<00:20:08.880><c> Um</c><00:20:09.360><c> there</c><00:20:09.600><c> there</c><00:20:09.840><c> are</c><00:20:10.000><c> some</c><00:20:10.240><c> work</c><00:20:10.480><c> to</c>
+
+00:20:10.789 --> 00:20:10.799 align:start position:0%
+Twitter. Um there there are some work to
+ 
+
+00:20:10.799 --> 00:20:13.110 align:start position:0%
+Twitter. Um there there are some work to
+some<00:20:11.120><c> more</c><00:20:11.280><c> work</c><00:20:11.520><c> to</c><00:20:11.760><c> be</c><00:20:11.919><c> done.</c><00:20:12.320><c> Um</c><00:20:12.720><c> as</c><00:20:12.960><c> I</c>
+
+00:20:13.110 --> 00:20:13.120 align:start position:0%
+some more work to be done. Um as I
+ 
+
+00:20:13.120 --> 00:20:16.070 align:start position:0%
+some more work to be done. Um as I
+mentioned,<00:20:14.080><c> uh</c><00:20:14.640><c> Alessandro</c><00:20:15.360><c> plan</c><00:20:15.600><c> to</c><00:20:15.840><c> make</c>
+
+00:20:16.070 --> 00:20:16.080 align:start position:0%
+mentioned, uh Alessandro plan to make
+ 
+
+00:20:16.080 --> 00:20:19.110 align:start position:0%
+mentioned, uh Alessandro plan to make
+BPF<00:20:17.039><c> a</c><00:20:17.280><c> tier</c><00:20:17.600><c> 2</c><00:20:17.760><c> target</c><00:20:18.000><c> for</c><00:20:18.240><c> Rust.</c><00:20:18.720><c> So,</c><00:20:18.960><c> when</c>
+
+00:20:19.110 --> 00:20:19.120 align:start position:0%
+BPF a tier 2 target for Rust. So, when
+ 
+
+00:20:19.120 --> 00:20:21.590 align:start position:0%
+BPF a tier 2 target for Rust. So, when
+that<00:20:19.360><c> happens,</c><00:20:19.840><c> just</c><00:20:20.160><c> cargo</c><00:20:20.640><c> build</c><00:20:21.280><c> instead</c>
+
+00:20:21.590 --> 00:20:21.600 align:start position:0%
+that happens, just cargo build instead
+ 
+
+00:20:21.600 --> 00:20:24.150 align:start position:0%
+that happens, just cargo build instead
+of<00:20:21.760><c> cargo</c><00:20:22.160><c> nightly</c><00:20:22.559><c> build.</c><00:20:23.280><c> Uh</c><00:20:23.520><c> but</c><00:20:23.760><c> then,</c>
+
+00:20:24.150 --> 00:20:24.160 align:start position:0%
+of cargo nightly build. Uh but then,
+ 
+
+00:20:24.160 --> 00:20:26.710 align:start position:0%
+of cargo nightly build. Uh but then,
+yeah,<00:20:24.400><c> there</c><00:20:24.640><c> are</c><00:20:24.880><c> some</c><00:20:25.120><c> more</c><00:20:25.360><c> work</c><00:20:25.600><c> to</c><00:20:26.000><c> to</c><00:20:26.160><c> to</c>
+
+00:20:26.710 --> 00:20:26.720 align:start position:0%
+yeah, there are some more work to to to
+ 
+
+00:20:26.720 --> 00:20:29.350 align:start position:0%
+yeah, there are some more work to to to
+get<00:20:26.960><c> it</c><00:20:27.120><c> there.</c><00:20:28.080><c> And</c><00:20:28.480><c> so</c><00:20:28.640><c> yeah,</c><00:20:28.880><c> find</c><00:20:29.039><c> me</c><00:20:29.200><c> on</c>
+
+00:20:29.350 --> 00:20:29.360 align:start position:0%
+get it there. And so yeah, find me on
+ 
+
+00:20:29.360 --> 00:20:31.190 align:start position:0%
+get it there. And so yeah, find me on
+Twitter<00:20:29.520><c> and</c><00:20:29.760><c> like</c><00:20:29.919><c> we'll</c><00:20:30.240><c> find</c><00:20:30.400><c> you</c><00:20:30.720><c> stuff</c><00:20:30.880><c> to</c>
+
+00:20:31.190 --> 00:20:31.200 align:start position:0%
+Twitter and like we'll find you stuff to
+ 
+
+00:20:31.200 --> 00:20:35.750 align:start position:0%
+Twitter and like we'll find you stuff to
+do.<00:20:32.000><c> And</c><00:20:32.880><c> um</c><00:20:33.360><c> the</c><00:20:33.840><c> SPF</c><00:20:34.559><c> linker</c><00:20:34.960><c> is</c><00:20:35.200><c> open</c><00:20:35.520><c> source</c>
+
+00:20:35.750 --> 00:20:35.760 align:start position:0%
+do. And um the SPF linker is open source
+ 
+
+00:20:35.760 --> 00:20:39.830 align:start position:0%
+do. And um the SPF linker is open source
+from<00:20:36.000><c> day</c><00:20:36.240><c> one.</c><00:20:36.960><c> And</c><00:20:37.200><c> so</c><00:20:38.400><c> um</c><00:20:39.200><c> and</c><00:20:39.600><c> like</c>
+
+00:20:39.830 --> 00:20:39.840 align:start position:0%
+from day one. And so um and like
+ 
+
+00:20:39.840 --> 00:20:41.750 align:start position:0%
+from day one. And so um and like
+actually<00:20:40.240><c> we've</c><00:20:40.640><c> we've</c><00:20:40.960><c> seen</c><00:20:41.120><c> like</c><00:20:41.360><c> with</c><00:20:41.600><c> all</c>
+
+00:20:41.750 --> 00:20:41.760 align:start position:0%
+actually we've we've seen like with all
+ 
+
+00:20:41.760 --> 00:20:45.029 align:start position:0%
+actually we've we've seen like with all
+the<00:20:42.320><c> XYZ</c><00:20:42.960><c> Lana</c><00:20:43.440><c> project</c><00:20:43.840><c> we've</c><00:20:44.080><c> seen</c><00:20:44.640><c> you</c><00:20:44.880><c> know</c>
+
+00:20:45.029 --> 00:20:45.039 align:start position:0%
+the XYZ Lana project we've seen you know
+ 
+
+00:20:45.039 --> 00:20:48.310 align:start position:0%
+the XYZ Lana project we've seen you know
+people<00:20:45.360><c> just</c><00:20:45.600><c> to</c><00:20:45.840><c> try</c><00:20:46.080><c> it</c><00:20:46.240><c> out</c><00:20:46.480><c> and</c><00:20:46.960><c> um</c><00:20:47.440><c> to</c><00:20:47.919><c> do</c>
+
+00:20:48.310 --> 00:20:48.320 align:start position:0%
+people just to try it out and um to do
+ 
+
+00:20:48.320 --> 00:20:53.909 align:start position:0%
+people just to try it out and um to do
+crazy<00:20:48.720><c> experiments</c><00:20:50.080><c> and</c><00:20:50.960><c> so</c><00:20:51.760><c> yeah</c><00:20:52.640><c> um</c><00:20:53.520><c> look</c>
+
+00:20:53.909 --> 00:20:53.919 align:start position:0%
+crazy experiments and so yeah um look
+ 
+
+00:20:53.919 --> 00:20:56.710 align:start position:0%
+crazy experiments and so yeah um look
+into<00:20:54.240><c> our</c><00:20:54.480><c> GitHub</c><00:20:54.960><c> and</c><00:20:55.200><c> then</c><00:20:55.520><c> see</c><00:20:56.000><c> like</c><00:20:56.240><c> if</c><00:20:56.559><c> you</c>
+
+00:20:56.710 --> 00:20:56.720 align:start position:0%
+into our GitHub and then see like if you
+ 
+
+00:20:56.720 --> 00:20:58.789 align:start position:0%
+into our GitHub and then see like if you
+can<00:20:56.960><c> you</c><00:20:57.200><c> can</c><00:20:57.360><c> learn</c><00:20:57.679><c> anything</c><00:20:58.000><c> from</c><00:20:58.320><c> there</c><00:20:58.559><c> or</c>
+
+00:20:58.789 --> 00:20:58.799 align:start position:0%
+can you can learn anything from there or
+ 
+
+00:20:58.799 --> 00:21:00.950 align:start position:0%
+can you can learn anything from there or
+like<00:20:59.039><c> reach</c><00:20:59.200><c> out</c><00:20:59.440><c> to</c><00:20:59.600><c> us</c><00:20:59.760><c> and</c><00:21:00.080><c> then</c><00:21:00.400><c> we'll</c><00:21:00.720><c> find</c>
+
+00:21:00.950 --> 00:21:00.960 align:start position:0%
+like reach out to us and then we'll find
+ 
+
+00:21:00.960 --> 00:21:02.230 align:start position:0%
+like reach out to us and then we'll find
+you<00:21:01.120><c> stuff</c><00:21:01.280><c> to</c><00:21:01.520><c> do.</c>
+
+00:21:02.230 --> 00:21:02.240 align:start position:0%
+you stuff to do.
+ 
+
+00:21:02.240 --> 00:21:03.830 align:start position:0%
+you stuff to do.
+&gt;&gt; Awesome.<00:21:02.720><c> Thank</c><00:21:02.880><c> you</c><00:21:03.039><c> so</c><00:21:03.280><c> much</c><00:21:03.360><c> for</c><00:21:03.600><c> joining</c>
+
+00:21:03.830 --> 00:21:03.840 align:start position:0%
+&gt;&gt; Awesome. Thank you so much for joining
+ 
+
+00:21:03.840 --> 00:21:06.549 align:start position:0%
+&gt;&gt; Awesome. Thank you so much for joining
+us<00:21:04.080><c> CLA.</c><00:21:04.400><c> This</c><00:21:04.559><c> has</c><00:21:04.799><c> been</c><00:21:04.960><c> fantastic</c><00:21:05.919><c> and</c><00:21:06.240><c> I'm</c>
+
+00:21:06.549 --> 00:21:06.559 align:start position:0%
+us CLA. This has been fantastic and I'm
+ 
+
+00:21:06.559 --> 00:21:08.149 align:start position:0%
+us CLA. This has been fantastic and I'm
+pretty<00:21:06.880><c> sure</c><00:21:07.120><c> our</c><00:21:07.360><c> audience</c><00:21:07.760><c> learned</c>
+
+00:21:08.149 --> 00:21:08.159 align:start position:0%
+pretty sure our audience learned
+ 
+
+00:21:08.159 --> 00:21:10.870 align:start position:0%
+pretty sure our audience learned
+something<00:21:09.120><c> very</c><00:21:09.520><c> new</c><00:21:09.919><c> compared</c><00:21:10.240><c> to</c><00:21:10.400><c> what</c><00:21:10.640><c> they</c>
+
+00:21:10.870 --> 00:21:10.880 align:start position:0%
+something very new compared to what they
+ 
+
+00:21:10.880 --> 00:21:12.870 align:start position:0%
+something very new compared to what they
+are<00:21:10.960><c> typically</c><00:21:11.440><c> used</c><00:21:11.679><c> to.</c><00:21:12.080><c> So,</c><00:21:12.320><c> thank</c><00:21:12.480><c> you</c><00:21:12.640><c> so</c>
+
+00:21:12.870 --> 00:21:12.880 align:start position:0%
+are typically used to. So, thank you so
+ 
+
+00:21:12.880 --> 00:21:14.310 align:start position:0%
+are typically used to. So, thank you so
+much<00:21:12.960><c> for</c><00:21:13.200><c> joining</c><00:21:13.520><c> us.</c>
+
+00:21:14.310 --> 00:21:14.320 align:start position:0%
+much for joining us.
+ 
+
+00:21:14.320 --> 00:21:17.840 align:start position:0%
+much for joining us.
+&gt;&gt; Okay,<00:21:14.880><c> great.</c><00:21:15.280><c> Thank</c><00:21:15.520><c> you.</c>
+

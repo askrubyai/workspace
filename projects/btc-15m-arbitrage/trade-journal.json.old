@@ -1,0 +1,128 @@
+{
+  "startTime": "2026-02-03T18:32:50.696Z",
+  "runtime": 4,
+  "stats": {
+    "totalSignals": 6,
+    "totalTrades": 6,
+    "totalWins": 1,
+    "totalLosses": 2,
+    "totalBreakeven": 3,
+    "totalPnL": -3.7377676998681144,
+    "byAsset": {
+      "BTC": {
+        "signals": 0,
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "pnl": 0
+      },
+      "ETH": {
+        "signals": 2,
+        "trades": 2,
+        "wins": 0,
+        "losses": 1,
+        "pnl": -11.14457831325301
+      },
+      "SOL": {
+        "signals": 2,
+        "trades": 2,
+        "wins": 1,
+        "losses": 0,
+        "pnl": 10.2803738317757
+      },
+      "XRP": {
+        "signals": 2,
+        "trades": 2,
+        "wins": 0,
+        "losses": 1,
+        "pnl": -2.873563218390804
+      }
+    }
+  },
+  "trades": [
+    {
+      "timestamp": "2026-02-03T18:33:43.552Z",
+      "asset": "ETH",
+      "market": "Ethereum Up or Down - February 3, 1:30PM-1:45PM ET",
+      "side": "DOWN",
+      "entryPrice": 0.415,
+      "exitPrice": 0.415,
+      "pnlPct": 0,
+      "pnlDollars": 0,
+      "reason": "direction_flip",
+      "holdTimeMs": 29862,
+      "oracleEntry": 2135.01626145,
+      "oracleExit": 2139.55648902
+    },
+    {
+      "timestamp": "2026-02-03T18:33:44.532Z",
+      "asset": "XRP",
+      "market": "XRP Up or Down - February 3, 1:30PM-1:45PM ET",
+      "side": "DOWN",
+      "entryPrice": 0.435,
+      "exitPrice": 0.385,
+      "pnlPct": -0.11494252873563215,
+      "pnlDollars": -2.873563218390804,
+      "reason": "stop_loss",
+      "holdTimeMs": 10003,
+      "oracleEntry": 1.53857551,
+      "oracleExit": 1.53857551
+    },
+    {
+      "timestamp": "2026-02-03T18:34:15.197Z",
+      "asset": "XRP",
+      "market": "XRP Up or Down - February 3, 1:30PM-1:45PM ET",
+      "side": "DOWN",
+      "entryPrice": 0.385,
+      "exitPrice": 0.385,
+      "pnlPct": 0,
+      "pnlDollars": 0,
+      "reason": "direction_flip",
+      "holdTimeMs": 20617,
+      "oracleEntry": 1.53857551,
+      "oracleExit": 1.54060132
+    },
+    {
+      "timestamp": "2026-02-03T18:34:24.104Z",
+      "asset": "SOL",
+      "market": "Solana Up or Down - February 3, 1:30PM-1:45PM ET",
+      "side": "DOWN",
+      "entryPrice": 0.465,
+      "exitPrice": 0.465,
+      "pnlPct": 0,
+      "pnlDollars": 0,
+      "reason": "direction_flip",
+      "holdTimeMs": 69952,
+      "oracleEntry": 97.69062036,
+      "oracleExit": 98.074584
+    },
+    {
+      "timestamp": "2026-02-03T18:36:04.185Z",
+      "asset": "SOL",
+      "market": "Solana Up or Down - February 3, 1:30PM-1:45PM ET",
+      "side": "UP",
+      "entryPrice": 0.535,
+      "exitPrice": 0.755,
+      "pnlPct": 0.41121495327102797,
+      "pnlDollars": 10.2803738317757,
+      "reason": "profit_target",
+      "holdTimeMs": 90129,
+      "oracleEntry": 98.074584,
+      "oracleExit": 97.880863
+    },
+    {
+      "timestamp": "2026-02-03T18:37:03.764Z",
+      "asset": "ETH",
+      "market": "Ethereum Up or Down - February 3, 1:30PM-1:45PM ET",
+      "side": "DOWN",
+      "entryPrice": 0.415,
+      "exitPrice": 0.23,
+      "pnlPct": -0.4457831325301204,
+      "pnlDollars": -11.14457831325301,
+      "reason": "stop_loss",
+      "holdTimeMs": 10073,
+      "oracleEntry": 2134.94,
+      "oracleExit": 2134.94
+    }
+  ]
+}

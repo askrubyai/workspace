@@ -1,0 +1,88 @@
+{
+  "stats": {
+    "totalSignals": 6,
+    "totalTrades": 4,
+    "totalWins": 2,
+    "totalLosses": 0,
+    "totalPnL": 0.046818134999999914,
+    "marketOrdersAttempted": 6,
+    "marketOrdersFilled": 4,
+    "tpOrdersAttempted": 4,
+    "tpOrdersPlaced": 2,
+    "tpOrdersFilled": 2,
+    "errors": 2
+  },
+  "trades": [
+    {
+      "id": "1770184452824",
+      "symbol": "XRP",
+      "direction": "DOWN",
+      "tokenId": "89937596417714189535438668443830260050595063637879759151948529410557350213235",
+      "entryPrice": 0.525,
+      "shares": 1.0101,
+      "cost": 0.5303025,
+      "tpPrice": 0.5677875,
+      "tpOrderId": "0xc6901576bfc3e0bd4bd6c32b87edca8813dc666c4a4e17a4aaf47bfeee86ac2c",
+      "buyOrderId": "0x2d6d1c3969ea4146d590eaf6d47549931b3270552f0b75d6e25a6e261105968c",
+      "entryTime": 1770184452824,
+      "marketEndTime": "2026-02-04T06:00:00.000Z",
+      "status": "closed",
+      "exitPrice": 0.5677875,
+      "pnl": 0.027310578749999977,
+      "exitReason": "tp_filled",
+      "exitTime": 1770184455769
+    },
+    {
+      "id": "1770184469521",
+      "symbol": "SOL",
+      "direction": "DOWN",
+      "tokenId": "100715971595863811735638662296338553523773039777873320281845983380821807240508",
+      "entryPrice": 0.375,
+      "shares": 1.0101,
+      "cost": 0.3787875,
+      "tpPrice": 0.40556249999999994,
+      "tpOrderId": "0x99ee9cf9687c72adaf429a8ce567d8e9ab9d3fba869ace77e797ebe982f1c0dc",
+      "buyOrderId": "0xcd7dfe5ae6a77d75a0d323d4fbf4551891704d1a74342d9b87fb3de2833daf9e",
+      "entryTime": 1770184469521,
+      "marketEndTime": "2026-02-04T06:00:00.000Z",
+      "status": "closed",
+      "exitPrice": 0.40556249999999994,
+      "pnl": 0.019507556249999936,
+      "exitReason": "tp_filled",
+      "exitTime": 1770184470773
+    }
+  ],
+  "positions": [
+    {
+      "id": "1770184473483",
+      "symbol": "ETH",
+      "direction": "DOWN",
+      "tokenId": "37212028537140332892740995690725916453877640038486509197427110092659183954082",
+      "entryPrice": 0.9399,
+      "shares": 1.063,
+      "cost": 0.9991136999999999,
+      "tpPrice": 0.99,
+      "tpOrderId": null,
+      "buyOrderId": "0x8aea68fc162def1cff3d7a6a864666bf2e4d7ecb7a14e669bd197e3aa2f825b1",
+      "entryTime": 1770184473483,
+      "marketEndTime": "2026-02-04T06:00:00.000Z",
+      "status": "active"
+    },
+    {
+      "id": "1770184489746",
+      "symbol": "SOL",
+      "direction": "DOWN",
+      "tokenId": "100715971595863811735638662296338553523773039777873320281845983380821807240508",
+      "entryPrice": 0.99,
+      "shares": 1.0102,
+      "cost": 1.000098,
+      "tpPrice": 0.99,
+      "tpOrderId": null,
+      "buyOrderId": "0x6b8f1da19f4b757f1006d00008074997ea470c9138464d7eff04716db66248e9",
+      "entryTime": 1770184489746,
+      "marketEndTime": "2026-02-04T06:00:00.000Z",
+      "status": "active"
+    }
+  ],
+  "lastUpdate": "2026-02-04T05:54:49.746Z"
+}

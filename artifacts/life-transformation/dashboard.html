@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reuben's Life Transformation Dashboard 💎</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #718096;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+            transition: transform 0.2s;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .metric-card.success {
+            border-left-color: #48bb78;
+        }
+        
+        .metric-card.warning {
+            border-left-color: #ed8936;
+        }
+        
+        .metric-card.info {
+            border-left-color: #4299e1;
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 0.9em;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .metric-detail {
+            font-size: 0.8em;
+            color: #a0aec0;
+            margin-top: 5px;
+        }
+        
+        .progress-section {
+            margin-bottom: 40px;
+        }
+        
+        .progress-section h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .progress-bar {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 20px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(45deg, #48bb78, #38a169);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            position: relative;
+        }
+        
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        
+        .recent-activity {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .activity-icon.done {
+            background: #c6f6d5;
+            color: #38a169;
+        }
+        
+        .activity-icon.missed {
+            background: #fed7d7;
+            color: #e53e3e;
+        }
+        
+        .activity-content {
+            flex: 1;
+        }
+        
+        .activity-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .activity-detail {
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        .phase-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .phase-foundation {
+            background: #bee3f8;
+            color: #2b6cb0;
+        }
+        
+        .phase-momentum {
+            background: #fbb6ce;
+            color: #b83280;
+        }
+        
+        .phase-transformation {
+            background: #c6f6d5;
+            color: #38a169;
+        }
+        
+        .update-time {
+            text-align: center;
+            color: #718096;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💎 Life Transformation Dashboard</h1>
+            <p class="subtitle">Building the unstoppable version of Reuben</p>
+            <span id="phase-badge" class="phase-badge phase-foundation">Foundation Phase</span>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card success">
+                <div class="metric-value" id="day-counter">3</div>
+                <div class="metric-label">Days Strong</div>
+                <div class="metric-detail">Building daily momentum</div>
+            </div>
+            
+            <div class="metric-card info">
+                <div class="metric-value" id="completion-rate">67%</div>
+                <div class="metric-label">Daily Completion</div>
+                <div class="metric-detail">Consistency is key</div>
+            </div>
+            
+            <div class="metric-card success">
+                <div class="metric-value" id="streak-counter">2</div>
+                <div class="metric-label">Current Streak</div>
+                <div class="metric-detail">Days in a row</div>
+            </div>
+            
+            <div class="metric-card warning">
+                <div class="metric-value" id="smoke-free">3</div>
+                <div class="metric-label">Smoke-Free Days</div>
+                <div class="metric-detail">Lungs healing daily</div>
+            </div>
+        </div>
+        
+        <div class="progress-section">
+            <h2>30-Day Foundation Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="foundation-progress" style="width: 10%;">
+                    <span class="progress-text">Day 3 of 30</span>
+                </div>
+            </div>
+            
+            <h2>90-Day Transformation Journey</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="transformation-progress" style="width: 3%;">
+                    <span class="progress-text">Day 3 of 90</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recent-activity">
+            <h2>Recent Activity</h2>
+            
+            <div class="activity-item">
+                <div class="activity-icon done">✅</div>
+                <div class="activity-content">
+                    <div class="activity-title">Day 3: Sleep by 11 PM and wake at 7 AM</div>
+                    <div class="activity-detail">Completed - Building healthy sleep patterns</div>
+                </div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-icon done">✅</div>
+                <div class="activity-content">
+                    <div class="activity-title">Day 2: Go 24 hours without smoking</div>
+                    <div class="activity-detail">Completed - Nicotine withdrawal managed</div>
+                </div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-icon done">✅</div>
+                <div class="activity-content">
+                    <div class="activity-title">Day 1: Take your first 20-minute walk</div>
+                    <div class="activity-detail">Completed - Foundation established</div>
+                </div>
+            </div>
+            
+            <div class="activity-item">
+                <div class="activity-icon done">💪</div>
+                <div class="activity-content">
+                    <div class="activity-title">Transformation Journey Started</div>
+                    <div class="activity-detail">Feb 3, 2026 - Personal commitment made to Ruby</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="update-time">
+            Last updated: <span id="last-update">2026-02-03 03:34 AM IST</span>
+        </div>
+    </div>
+    
+    <script>
+        // Real-time updates would be implemented here
+        // For now, this is a static template showing the expected data structure
+        
+        function updateDashboard(data) {
+            document.getElementById('day-counter').textContent = data.day;
+            document.getElementById('completion-rate').textContent = data.completionRate + '%';
+            document.getElementById('streak-counter').textContent = data.currentStreak;
+            document.getElementById('smoke-free').textContent = data.smokingFreedays;
+            
+            // Update progress bars
+            const foundationProgress = (data.day / 30) * 100;
+            const transformationProgress = (data.day / 90) * 100;
+            
+            document.getElementById('foundation-progress').style.width = foundationProgress + '%';
+            document.getElementById('foundation-progress').querySelector('.progress-text').textContent = 
+                `Day ${data.day} of 30`;
+                
+            document.getElementById('transformation-progress').style.width = transformationProgress + '%';
+            document.getElementById('transformation-progress').querySelector('.progress-text').textContent = 
+                `Day ${data.day} of 90`;
+            
+            // Update phase badge
+            const phaseBadge = document.getElementById('phase-badge');
+            phaseBadge.className = `phase-badge phase-${data.phase}`;
+            phaseBadge.textContent = data.phase.charAt(0).toUpperCase() + data.phase.slice(1) + ' Phase';
+            
+            // Update timestamp
+            document.getElementById('last-update').textContent = new Date().toLocaleString('en-IN', {
+                timeZone: 'Asia/Calcutta',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+        
+        // Simulated data update (in real implementation, this would fetch from the tracking system)
+        // updateDashboard({
+        //     day: 3,
+        //     phase: 'foundation',
+        //     completionRate: 67,
+        //     currentStreak: 2,
+        //     smokingFreedays: 3
+        // });
+    </script>
+</body>
+</html>

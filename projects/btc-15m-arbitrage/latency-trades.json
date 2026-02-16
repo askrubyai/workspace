@@ -1,0 +1,27 @@
+{
+  "stats": {
+    "signals": 1,
+    "trades": 1,
+    "wins": 1,
+    "losses": 0,
+    "totalProfit": 0,
+    "totalLoss": 0,
+    "startTime": "2026-02-03T12:50:16.270Z",
+    "btcUpdates": 147342,
+    "pricePolls": 5379
+  },
+  "trades": [
+    {
+      "time": "2026-02-03T13:08:27.212Z",
+      "side": "UP",
+      "entryOdds": 0.5,
+      "exitOdds": 0.5,
+      "entryBtcPrice": 78389.76,
+      "exitBtcPrice": 78412.49,
+      "holdTimeSec": 120.925,
+      "profitPct": 0,
+      "profitUsd": 0,
+      "reason": "timeout"
+    }
+  ]
+}

@@ -1,5 +1,36 @@
-# Credentials - never commit
+# Credentials & secrets
 .credentials/
+*.key
+*.pem
+*.secret
+.env
+.env.*
 
-# OS files
-.DS_Store
+# Large files
+*.wav
+*.mp4
+*.mp3
+*.zip
+*.tar.gz
+*.log
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Node
+node_modules/
+
+# Projects with heavy deps
+projects/btc-15m-arbitrage/node_modules/
+projects/mission-control/node_modules/
+projects/ruby-blog/
+projects/podcast-clips/*.wav
+projects/podcast-clips/*.mp4
+
+# Design screenshots (large)
+artifacts/research/design-screenshots/
+
+# Convex
+projects/mission-control/.convex/

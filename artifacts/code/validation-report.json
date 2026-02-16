@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-02-02T21:09:13.476Z",
+  "validationStatus": "REJECTED",
+  "executionTimeMs": 5683,
+  "summary": {
+    "totalTrades": 150,
+    "winRate": 0.8933333333333333,
+    "profitFactor": 11.538649530400994,
+    "maxDrawdown": 0.49711534330390195,
+    "consecutiveLosses": 3
+  },
+  "performance": {
+    "avgLatency": 5.674,
+    "maxLatency": 13,
+    "p95Latency": 11,
+    "totalTime": 5675,
+    "memoryUsageMB": 4.409187316894531,
+    "passesTargets": {
+      "latency": true,
+      "memory": true
+    }
+  },
+  "edgeCases": {
+    "api_rate_limit": {
+      "description": "API calls limited, execution delayed 5-30 seconds",
+      "impact": "severe",
+      "recoveryTime": 15000,
+      "tradingImpact": -0.4
+    },
+    "market_suspension": {
+      "description": "Market temporarily suspended, positions stuck",
+      "impact": "critical",
+      "recoveryTime": 300000,
+      "tradingImpact": -1
+    },
+    "network_interruption": {
+      "description": "Internet disruption, missed execution windows",
+      "impact": "severe",
+      "recoveryTime": 30000,
+      "tradingImpact": -0.6
+    },
+    "mac_mini_failure": {
+      "description": "System overload or hardware glitch",
+      "impact": "critical",
+      "recoveryTime": 180000,
+      "tradingImpact": -1
+    },
+    "correlation_breakdown": {
+      "description": "Mathematical relationships fail unexpectedly",
+      "impact": "moderate",
+      "recoveryTime": 0,
+      "tradingImpact": -0.25
+    },
+    "liquidity_evaporation": {
+      "description": "Cannot execute at expected prices",
+      "impact": "moderate",
+      "recoveryTime": 5000,
+      "tradingImpact": -0.3
+    },
+    "fee_structure_change": {
+      "description": "Polymarket changes fees, profit margins reduced",
+      "impact": "moderate",
+      "recoveryTime": 0,
+      "tradingImpact": -0.15
+    },
+    "account_restriction": {
+      "description": "Trading account flagged or limited",
+      "impact": "critical",
+      "recoveryTime": 86400000,
+      "tradingImpact": -1
+    }
+  },
+  "shuriValidation": {
+    "realistic66to82WinRate": false,
+    "rejects97PlusWinRate": true,
+    "edgeCasesTested": 8,
+    "paperTradingMandated": true
+  },
+  "recommendation": "Bot requires significant improvements before real-money deployment. Continue paper trading and address failed validation checks.",
+  "nextSteps": [
+    "Continue paper trading until all validation checks pass",
+    "Address specific failed validation requirements",
+    "Re-run full validation suite before considering real money",
+    "Focus on realistic performance expectations (66-82% win rate)"
+  ]
+}

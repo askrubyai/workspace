@@ -1,0 +1,45 @@
+{
+  "name": "polymarket-bot-v2",
+  "version": "2.0.0",
+  "description": "Mac Mini optimized Polymarket trading bot with mandatory paper trading validation",
+  "main": "polymarket-bot-v2.js",
+  "scripts": {
+    "validate": "node paper-trading-validator.js",
+    "start": "node polymarket-bot-v2.js",
+    "test": "npm run validate && npm run start",
+    "paper-trade": "node polymarket-bot-v2.js --paper-only"
+  },
+  "dependencies": {
+    "@polymarket/clob-client": "^5.2.1",
+    "ethers": "^5.8.0",
+    "node-fetch": "^2.7.0",
+    "ws": "^8.19.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "keywords": [
+    "polymarket",
+    "trading-bot",
+    "paper-trading",
+    "mac-mini",
+    "apple-silicon",
+    "mathematical-arbitrage"
+  ],
+  "author": "Friday (Developer Agent)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "openclaw://workspace/artifacts/code"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://polymarket.com"
+  }
+}

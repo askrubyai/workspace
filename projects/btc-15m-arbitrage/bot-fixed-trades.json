@@ -1,0 +1,324 @@
+{
+  "stats": {
+    "startTime": "2026-02-03T14:36:19.759Z",
+    "signals": 31,
+    "trades": 31,
+    "wins": 2,
+    "losses": 7,
+    "breakeven": 22,
+    "totalProfit": 3.975173636766661,
+    "totalLoss": 19.987230449077494
+  },
+  "trades": [
+    {
+      "time": "2026-02-03T14:38:37.091Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.028,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T14:41:55.825Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.187,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T14:45:14.773Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.308,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T14:47:46.396Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.176,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T14:50:53.271Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.027,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T14:52:53.495Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.061,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T14:56:18.347Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.21,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:03:49.162Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.423,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:05:54.338Z",
+      "side": "UP",
+      "entry": 0.505,
+      "exit": 0.505,
+      "holdSec": 120.001,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:09:13.754Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.13,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:13:09.253Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.056,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:15:44.077Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:18:39.982Z",
+      "side": "UP",
+      "entry": 0.505,
+      "exit": 0.505,
+      "holdSec": 120.273,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:22:26.187Z",
+      "side": "UP",
+      "entry": 0.505,
+      "exit": 0.505,
+      "holdSec": 120.151,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:26:31.620Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.014,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:28:31.716Z",
+      "side": "UP",
+      "entry": 0.505,
+      "exit": 0.505,
+      "holdSec": 120.092,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:32:36.365Z",
+      "side": "DOWN",
+      "entry": 0.5,
+      "exit": 0.495,
+      "holdSec": 120.015,
+      "pnlPct": -0.010000000000000009,
+      "pnlUsd": -0.2500000000000002,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:34:52.206Z",
+      "side": "UP",
+      "entry": 0.505,
+      "exit": 0.505,
+      "holdSec": 120.252,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:37:08.954Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.34,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:39:55.013Z",
+      "side": "UP",
+      "entry": 0.505,
+      "exit": 0.5,
+      "holdSec": 120.299,
+      "pnlPct": -0.00990099009900991,
+      "pnlUsd": -0.24752475247524774,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:47:08.379Z",
+      "side": "DOWN",
+      "entry": 0.495,
+      "exit": 0.495,
+      "holdSec": 120.023,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T15:49:02.711Z",
+      "side": "UP",
+      "entry": 0.505,
+      "exit": 0.525,
+      "holdSec": 107.298,
+      "pnlPct": 0.03960396039603964,
+      "pnlUsd": 0.990099009900991,
+      "reason": "profit"
+    },
+    {
+      "time": "2026-02-03T15:51:03.863Z",
+      "side": "UP",
+      "entry": 0.525,
+      "exit": 0.485,
+      "holdSec": 44.657,
+      "pnlPct": -0.07619047619047625,
+      "pnlUsd": -1.9047619047619064,
+      "reason": "stop_loss"
+    },
+    {
+      "time": "2026-02-03T15:54:08.686Z",
+      "side": "DOWN",
+      "entry": 0.515,
+      "exit": 0.515,
+      "holdSec": 120,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T16:18:54.080Z",
+      "side": "DOWN",
+      "entry": 0.475,
+      "exit": 0.475,
+      "holdSec": 120.214,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T16:21:13.683Z",
+      "side": "UP",
+      "entry": 0.525,
+      "exit": 0.515,
+      "holdSec": 120.302,
+      "pnlPct": -0.019047619047619063,
+      "pnlUsd": -0.4761904761904766,
+      "reason": "timeout"
+    },
+    {
+      "time": "2026-02-03T16:27:36.932Z",
+      "side": "UP",
+      "entry": 0.385,
+      "exit": 0.165,
+      "holdSec": 102.439,
+      "pnlPct": -0.5714285714285714,
+      "pnlUsd": -14.285714285714285,
+      "reason": "stop_loss"
+    },
+    {
+      "time": "2026-02-03T16:34:48.193Z",
+      "side": "DOWN",
+      "entry": 0.455,
+      "exit": 0.435,
+      "holdSec": 84.067,
+      "pnlPct": -0.043956043956043994,
+      "pnlUsd": -1.0989010989010999,
+      "reason": "stop_loss"
+    },
+    {
+      "time": "2026-02-03T16:36:49.367Z",
+      "side": "DOWN",
+      "entry": 0.435,
+      "exit": 0.405,
+      "holdSec": 103.79,
+      "pnlPct": -0.06896551724137924,
+      "pnlUsd": -1.724137931034481,
+      "reason": "stop_loss"
+    },
+    {
+      "time": "2026-02-03T16:43:47.502Z",
+      "side": "DOWN",
+      "entry": 0.335,
+      "exit": 0.375,
+      "holdSec": 39.952,
+      "pnlPct": 0.1194029850746268,
+      "pnlUsd": 2.98507462686567,
+      "reason": "profit"
+    },
+    {
+      "time": "2026-02-03T16:48:40.737Z",
+      "side": "DOWN",
+      "entry": 0.465,
+      "exit": 0.465,
+      "holdSec": 120.281,
+      "pnlPct": 0,
+      "pnlUsd": 0,
+      "reason": "timeout"
+    }
+  ]
+}

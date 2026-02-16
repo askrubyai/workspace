@@ -1,0 +1,43 @@
+{
+  "stats": {
+    "totalSignals": 2,
+    "totalTrades": 2,
+    "totalWins": 0,
+    "totalLosses": 0,
+    "totalPnL": 0,
+    "marketOrdersFilled": 2,
+    "tpOrdersPlaced": 0,
+    "tpOrdersFilled": 0
+  },
+  "trades": [],
+  "positions": [
+    {
+      "id": "1770183918309",
+      "symbol": "ETH",
+      "direction": "UP",
+      "tokenId": "103479341044648852039060653662256201702298199871505484331177637885018825000859",
+      "entryPrice": 0.525,
+      "shares": 1.9047619047619047,
+      "cost": 1.03,
+      "tpPrice": 0.5677875,
+      "tpOrderId": null,
+      "entryTime": 1770183918309,
+      "marketEndTime": "2026-02-04T06:00:00.000Z",
+      "status": "active"
+    },
+    {
+      "id": "1770183923015",
+      "symbol": "SOL",
+      "direction": "UP",
+      "tokenId": "87327365167954685901556155680338127561656683094475031619144835882024559939522",
+      "entryPrice": 0.51,
+      "shares": 1.9607843137254901,
+      "cost": 1.03,
+      "tpPrice": 0.551565,
+      "tpOrderId": null,
+      "entryTime": 1770183923015,
+      "marketEndTime": "2026-02-04T06:00:00.000Z",
+      "status": "active"
+    }
+  ]
+}

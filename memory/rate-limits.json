@@ -1,0 +1,39 @@
+{
+  "alertsSent": [],
+  "lastCheck": "2026-02-16T12:01:00+05:30",
+  "providers": {
+    "claude": {
+      "status": "healthy",
+      "activeSessions": 941,
+      "modelBreakdown": {
+        "sonnet-4-5": 639,
+        "opus-4-6": 1,
+        "opus-4-5": 7
+      },
+      "avgContext": "2-8%",
+      "lastError": null,
+      "note": "All sessions running normally. Cron jobs executing on schedule. No rate limit issues detected."
+    }
+  },
+  "status": "all_healthy",
+  "sessionCheck": {
+    "totalSessionsAnalyzed": 941,
+    "sessionsWithErrors": 0,
+    "providersRateLimited": [],
+    "timestamp": "2026-02-16T12:01:00+05:30"
+  },
+  "recentLogs": {
+    "rateLimit429Errors": 0,
+    "quotaErrors": 0,
+    "noProviderRateLimits": true,
+    "lastLogCheck": "All sessions operational. No rate limit errors detected. System healthy."
+  },
+  "systemStatus": {
+    "gateway": "healthy",
+    "channels": "telegram_ok",
+    "cronJobs": "all_executing",
+    "warnings": [],
+    "critical": 0
+  },
+  "trend": "stable - no rate limits detected"
+}
