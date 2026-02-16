@@ -296,4 +296,22 @@ All must pass:
 - Podcast group style: casual "gm gm", action-oriented, avoid introductions when group has extras
 - Prefers I draft messages he can copy-paste directly
 
-*Last updated: 2026-02-15 20:00 IST*
+## GitHub Workspace Backup (Feb 16, 2026)
+- **Repo**: github.com/askrubyai/workspace (public)
+- **SSH auth**: Working (key: Ruby Mac Mini)
+- **Auto-sync cron**: Every 4h (job `1c592938`), commits + pushes changes
+- **.gitignore**: Excludes credentials, media (wav/mp4/png), node_modules, logs
+- **GitHub sudo mode**: Blocking settings changes (collaborator invite). Need to get past email verification loop.
+- **Reuben's GitHub**: Need to invite as collaborator (username TBD — likely `reubence`)
+
+## Podcast Clip Titles — Generic Audience (Feb 16, 2026)
+- Reuben wants clip titles accessible to non-Solana audience
+- Pattern: human stories, relatable dev problems, no jargon in headlines
+- Updated in `/projects/podcast-clips/analysis/episode-latest-clips.md`
+
+## Quant Research Week 1 Complete (Feb 16, 2026)
+- 6 days of research published on blog
+- Day 6 backtest: 14 trades, 57.1% win rate, +0.12% edge (maker orders)
+- Theory phase done. Week 2 = live paper trading bot for forward validation.
+
+*Last updated: 2026-02-16 20:00 IST*

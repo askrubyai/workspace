@@ -1,8 +1,43 @@
 # WORKING.md
 
-*Last updated: 2026-02-16 15:45 IST (Jarvis - Heartbeat)*
+*Last updated: 2026-02-16 23:31 IST (Ruby - Daily Standup)*
 
-## 🎯 MONDAY PRIORITIES (Feb 16, 2026)
+## 🎯 TUESDAY PRIORITIES (Feb 17, 2026)
+
+### 1. 🤖 Day 7 Quant Research — Live Paper Trading Bot (1:30 AM)
+**Goal:** Build forward validation system for multi-factor pipeline
+- Implement real-time signal generation (regime + VRP + cluster)
+- Paper trade execution with position tracking
+- Performance logging for statistical validation
+- Target: 50+ trades over 2 weeks for significance testing
+- Blog post: "From Backtest to Reality: Building a Live Trading Bot"
+
+### 2. 🎙️ Astralane Podcast Scheduling
+**Action:** Follow up with Sujith/Kirat/Paarug on availability
+- Propose specific slots (first half of week preferred)
+- Once confirmed: research Astralane + prepare technical questions
+- Format: Claire/Blue Shift style (deep technical dive, discovery flow)
+
+### 3. 📱 Social Media Deployment Decision
+**Status:** 6 threads ready (Days 1-6), awaiting deployment strategy
+- Option A: Staggered Mon-Fri (Days 1-5), then Day 6 validation Monday Week 2
+- Option B: Batch deployment with spacing
+- Decision needed from Reuben
+
+### 4. 🛡️ Oro GRAIL Grant Application
+**Next Step:** Contact Fahd (@fahdahmed96) about grant process
+- Notion page ready: surf-authority-392.notion.site
+- All research/math validated, concept finalized
+- Need: grant application process/requirements
+
+### 5. 🔐 Mac Mini Security (If Time)
+**Waiting on:** Reuben to enable FileVault + verify firewall
+- 5 min action + restart required
+- Critical for data protection
+
+---
+
+## 🎯 MONDAY PRIORITIES (Feb 16, 2026) — ✅ COMPLETE
 
 ### 1. ✅ Day 5 Quant Research — Regime Detector (1:30 AM) — ✅ COMPLETE
 **Research Published:** Feb 16, 1:30 AM IST  
@@ -39,7 +74,7 @@
 **Achievement:** SECOND consecutive 5/5 editorial rating. Full-stack delivery maintained (<25 min from publish to deployment-ready).
 
 ### 2. 📱 Social Media Deployment (READY)
-**Status:** ✅ 6 complete thread packages + updated deployment plan ready
+**Status:** ✅ 6 complete thread packages + theory arc deployment plan ready
 
 **Threads Ready:**
 - Day 1: Funding rate research (8-tweet + 2 visuals, 4.5/5)
@@ -53,9 +88,14 @@
 - ✅ All visual assets created (Wanda)
 - ✅ All SEO-optimized (Vision)
 - ✅ All editorial-approved (Loki)
-- ✅ **Deployment plan updated** (Quill, 9:27 AM Feb 16) — now includes Day 5 as Friday finale
+- ✅ **Deployment plan updated** (Quill, 20:30 PM Feb 16) — theory arc complete (Days 1-6)
 
-**Next:** Awaiting Reuben's approval to execute deployment (recommended: staggered Mon-Fri, Day 5 as synthesis payoff)
+**Recommended Schedule (Option A):**
+- Mon-Fri: Days 1-5 (staggered, Day 5 synthesis as Friday payoff)
+- Weekend: Followers digest multi-factor framework
+- Monday Week 2: Day 6 validation ("moment of truth" thread)
+
+**Next:** Awaiting Reuben's approval to execute deployment
 
 ### 3. 🛡️ Oro Grant Application (Morning)
 **Next step:** Contact Oro team about GRAIL grant process

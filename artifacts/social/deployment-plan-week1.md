@@ -1,7 +1,7 @@
-# Week 1 Social Deployment Plan — 5 Threads Ready
+# Social Deployment Plan — Theory Arc Complete (Days 1-6)
 
 **Created:** Feb 16, 2026, 12:57 AM IST  
-**Updated:** Feb 16, 2026, 9:27 AM IST (added Day 5)  
+**Updated:** Feb 16, 2026, 8:30 PM IST (added Day 6)  
 **Agent:** Quill  
 **Status:** READY FOR APPROVAL
 
@@ -10,9 +10,9 @@
 ## Executive Summary
 
 **What's Ready:**
-- ✅ 5 complete Twitter threads (Day 1/2/3/4/5)
+- ✅ 6 complete Twitter threads (Day 1/2/3/4/5/6)
 - ✅ All with visual assets created by Wanda
-- ✅ All reviewed by Loki (4.5-5/5 ratings — Day 5 earned first perfect 5/5)
+- ✅ All reviewed by Loki (4.5-5/5 ratings — Days 5+6 both earned perfect 5/5)
 - ✅ All SEO-optimized by Vision
 - ✅ All blog posts published
 
@@ -20,44 +20,56 @@
 
 **This Document:** Deployment schedule + copy-paste ready tweets + tracking setup
 
+**Theory Arc Complete:** Days 1-6 form complete multi-factor framework + empirical validation. Week 2 = live execution.
+
 ---
 
 ## Recommended Deployment Schedule
 
-### **Option A: Staggered Release (RECOMMENDED)**
-Spreads engagement over 5 days, builds anticipation, culminates with synthesis thread.
+### **Option A: 6-Day Arc with Monday "Moment of Truth" (RECOMMENDED)**
+Build theory Mon-Fri, validate Monday Week 2.
 
 | Day | Thread | Post Time | Rationale |
 |-----|--------|-----------|-----------|
-| **Monday, Feb 16** | Day 1 (Funding Rates) | 9:00 AM IST | Crypto trader morning, establishes foundation |
-| **Tuesday, Feb 17** | Day 2 (Contrarian Signals) | 4:00 PM IST | US morning, myth-busting = engagement |
-| **Wednesday, Feb 18** | Day 3 (Liquidity Clusters) | 9:00 AM IST | Technical depth, human-vs-bot hook |
-| **Thursday, Feb 19** | Day 4 (Implied Vol) | 4:00 PM IST | Edge-but-fees problem, 3 escape routes |
-| **Friday, Feb 20** | Day 5 (Regime Detector) | 9:00 AM IST | **SYNTHESIS PAYOFF** — shows how all 5 days connect (5/5 rating) |
+| **Monday, Feb 17** | Day 1 (Funding Rates) | 9:00 AM IST | Foundation: establishes research rigor |
+| **Tuesday, Feb 18** | Day 2 (Contrarian Signals) | 4:00 PM IST | Myth-busting drives engagement |
+| **Wednesday, Feb 19** | Day 3 (Liquidity Clusters) | 9:00 AM IST | Human-vs-bot narrative hook |
+| **Thursday, Feb 20** | Day 4 (Implied Vol) | 4:00 PM IST | Edge-but-fees problem + escape routes |
+| **Friday, Feb 21** | Day 5 (Regime Detector) | 9:00 AM IST | **SYNTHESIS** — all 5 signals click together (5/5 rating) |
+| **Monday, Feb 24** | Day 6 (Backtest Results) | 9:00 AM IST | **VALIDATION** — empirical test with real BTC data (5/5 rating) |
 
 **Why this works:**
-- Consistent cadence (1 thread/day)
-- Alternating times catch different time zones
-- Builds narrative momentum across the week
-- Each thread teases the next (forward momentum)
-- **Day 5 as finale:** First 5/5 editorial rating, reveals multi-factor framework that makes Days 1-4 retroactively more valuable
+- Mon-Fri: Build complete multi-factor framework (Days 1-5)
+- Weekend: Followers digest synthesis, anticipate validation
+- Monday Week 2: "Moment of truth" thread (does the framework work?)
+- **Narrative tension:** Day 5 reveals the system, Day 6 proves/disproves it
+- **Bridge to execution:** Day 6 conclusion = "theory complete, paper trading next"
+- **Two consecutive 5/5 threads** separated by weekend = maximum impact
 
 ---
 
-### **Option B: Batch Drop**
-Post all 5 threads Monday morning (9 AM IST), pin Day 5, let followers binge-read.
+### **Option B: Staggered 6-Day (Mon-Sat)**
+All 6 threads in one week, Day 6 as Saturday closer.
 
-**Pros:** Maximum initial visibility, shows work volume  
-**Cons:** Dilutes engagement per thread, no daily momentum, Day 5 synthesis loses narrative buildup
+| Day | Thread | Post Time |
+|-----|--------|-----------|
+| Mon Feb 17 | Day 1 | 9:00 AM IST |
+| Tue Feb 18 | Day 2 | 4:00 PM IST |
+| Wed Feb 19 | Day 3 | 9:00 AM IST |
+| Thu Feb 20 | Day 4 | 4:00 PM IST |
+| Fri Feb 21 | Day 5 | 9:00 AM IST |
+| Sat Feb 22 | Day 6 | 9:00 AM IST |
+
+**Pros:** Complete theory arc in one week, maintains daily cadence  
+**Cons:** Saturday engagement typically lower, loses weekend cliffhanger tension
 
 ---
 
-### **Option C: Front-Loaded (3+2)**
-Monday: Day 1+2+3 (9 AM, 1 PM, 5 PM)  
-Thursday: Day 4+5 (9 AM, 4 PM)
+### **Option C: Batch Drop (All 6 Monday)**
+Post all 6 threads Monday morning (9 AM IST), pin Day 6, let followers binge-read.
 
-**Pros:** Quick foundation, synthesis closer together  
-**Cons:** Concentration risk, Day 5 payoff arrives too soon (readers haven't absorbed Days 1-4 yet)
+**Pros:** Maximum initial visibility, shows work volume, immediate social proof  
+**Cons:** Dilutes engagement per thread, no daily momentum, synthesis/validation narrative loses buildup
 
 ---
 
@@ -178,7 +190,41 @@ The detector catches these windows automatically 🧵
 - ✅ **Strategic positioning:** Makes Days 1-4 retroactively more valuable (aha! moment for followers)
 - ✅ **Honest validation:** Acknowledges synthetic data limitations, builds Day 6 anticipation
 
-**Deployment note:** Recommended as FINAL thread (Friday) for maximum narrative payoff.
+**Deployment note:** Recommended as SYNTHESIS thread (Friday) — reveals multi-factor framework.
+
+---
+
+### **Day 6: Multi-Factor Backtest Results (SECOND 5/5 rating)**
+
+**Thread Start:**
+```
+The noise is louder than the signal.
+
+I backtested my 6-day multi-factor pipeline on 30 days of real BTC data (Jan 15 – Feb 14, 2026).
+
+14 trades. 57.1% win rate. +0.12% edge per trade with maker orders.
+
+But here's the brutal truth about what I actually learned:
+
+🧵👇
+```
+
+**Visual Assets:**
+- Tweet 3: `day6-winrate-edge-comparison.png` (57% win rate, opposite edge with taker fees)
+- Tweet 4: `day6-edge-decomposition.png` (regime +0.06%, clusters +0.04%, VRP +0.02%)
+- Tweet 7: `day6-multi-factor-scorecard.png` (Days 1-6 synthesis table with emoji ratings)
+
+**Full thread:** `/artifacts/social/day6-backtest-thread.md`
+
+**Why this thread is special:**
+- ✅ **Second consecutive 5/5 editorial rating** (Loki) — deployment-ready with zero changes
+- ✅ **Empirical validation:** 30 days real BTC data (Jan-Feb 2026 $91K→$68K drawdown period)
+- ✅ **Brutal honesty signature:** "Noise term exceeds signal" — unflinching self-assessment builds trust
+- ✅ **Educational depth:** Teaches backtest methodology, not just results (reproducible framework)
+- ✅ **Multi-factor scorecard:** Ties all 6 days together (cluster proximity MVP at 4/5, regime timing 4/5)
+- ✅ **Forward momentum:** "Theory complete, paper trading next" — bridges to Week 2 execution
+
+**Deployment note:** Recommended as VALIDATION thread (Monday Week 2) — proves/disproves the framework with real data.
 
 ---
 
@@ -233,17 +279,23 @@ The detector catches these windows automatically 🧵
 
 ### **Tracking Sheet Template**
 
-Create Google Sheet: "Ruby Twitter Analytics — Week 1"
+Create Google Sheet: "Ruby Twitter Analytics — Theory Arc (Days 1-6)"
 
 | Thread | Post Date | Post Time | Impressions | Likes | RTs | Replies | QTs | Bookmarks | Followers Added | Blog Clicks | Notes |
 |--------|-----------|-----------|-------------|-------|-----|---------|-----|-----------|-----------------|-------------|-------|
-| Day 1 | Feb 16 | 9:00 AM | | | | | | | | | |
-| Day 2 | Feb 17 | 4:00 PM | | | | | | | | | |
-| Day 3 | Feb 18 | 9:00 AM | | | | | | | | | |
-| Day 4 | Feb 19 | 4:00 PM | | | | | | | | | |
-| Day 5 | Feb 20 | 9:00 AM | | | | | | | | | |
+| Day 1 | Feb 17 | 9:00 AM IST | | | | | | | | | |
+| Day 2 | Feb 18 | 4:00 PM IST | | | | | | | | | |
+| Day 3 | Feb 19 | 9:00 AM IST | | | | | | | | | |
+| Day 4 | Feb 20 | 4:00 PM IST | | | | | | | | | |
+| Day 5 | Feb 21 | 9:00 AM IST | | | | | | | | | |
+| Day 6 | Feb 24 | 9:00 AM IST | | | | | | | | | |
 
 **Populate metrics:** 24 hours after each post (Twitter analytics)
+
+**Key metrics to watch:**
+- Day 5 vs Day 6 performance (both 5/5 editorial — which resonates more?)
+- Day 6 scorecard image shareability (Tweet 7)
+- Weekend cliffhanger effect (Day 5 Fri → Day 6 Mon)
 
 ---
 
@@ -320,27 +372,36 @@ Good catch — I discuss [specific limitation] in the full post. See section: [l
 - **Virality potential:** HIGH (first 5/5 rating, "aha!" moment, makes Days 1-4 retroactively valuable)
 - **Strategic impact:** Positions Ruby as systems thinker vs random researcher
 
+### **Day 6: Backtest Results (Validation Thread — SECOND 5/5 rating)**
+- **Impressions:** 3,000-5,000 (empirical validation, "moment of truth" narrative, Monday Week 2 momentum)
+- **Engagement rate:** 7-9%
+- **Best performer:** Tweet 1 (brutal honesty hook: "noise is louder than signal") + Tweet 7 (multi-factor scorecard table)
+- **Virality potential:** VERY HIGH (challenges "found alpha!" hype culture, educational depth, honest self-critique builds credibility)
+- **Strategic impact:** Completes theory arc (Days 1-6), bridges to Week 2 execution phase, differentiates Ruby via transparency
+- **Shareability:** Tweet 7 scorecard image (all 6 days summarized in one table) = most shareable visual of entire series
+
 ---
 
-## Success Criteria (Week 1)
+## Success Criteria (Theory Arc — Days 1-6)
 
 **Minimum Viable Success:**
-- ✅ 50+ total followers by end of week
-- ✅ 7,000+ total impressions across 5 threads
-- ✅ 1+ technical engagement from quant/trader
-- ✅ 0 major errors pointed out (validates methodology)
+- ✅ 75+ total followers by end of theory arc
+- ✅ 10,000+ total impressions across 6 threads
+- ✅ 2+ technical engagements from quants/traders
+- ✅ 0 major methodological errors pointed out (validates research rigor)
 
 **Strong Success:**
-- 🎯 100+ followers
-- 🎯 12,000+ impressions
-- 🎯 5+ technical engagements
-- 🎯 1 thread with >3,000 impressions (likely Day 5 synthesis)
+- 🎯 150+ followers
+- 🎯 18,000+ impressions
+- 🎯 8+ technical engagements
+- 🎯 2 threads with >3,000 impressions each (likely Day 5 synthesis + Day 6 validation)
 
 **Exceptional Success:**
-- 🚀 200+ followers
-- 🚀 20,000+ impressions
-- 🚀 10+ quote tweets from established traders
-- 🚀 Day 5 synthesis thread featured/shared by quant Twitter influencers
+- 🚀 250+ followers
+- 🚀 30,000+ impressions
+- 🚀 15+ quote tweets from established traders/quants
+- 🚀 Day 6 backtest thread featured/shared by quant Twitter influencers
+- 🚀 Day 6 scorecard image (Tweet 7) goes semi-viral as standalone content
 
 ---
 
@@ -391,20 +452,17 @@ Good catch — I discuss [specific limitation] in the full post. See section: [l
 - `/artifacts/social/day3-liquidity-cluster-thread.md`
 - `/artifacts/social/day4-implied-volatility-thread.md`
 - `/artifacts/social/day5-regime-detector-thread.md`
+- `/artifacts/social/day6-backtest-thread.md`
 
 **Visual Assets:**
-- `/artifacts/design/btc-funding-timeseries.png`
-- `/artifacts/design/altcoin-funding-bars.png`
-- `/artifacts/design/day2-funding-winrate-bars.png`
-- `/artifacts/design/day2-altcoin-comparison.png`
-- `/artifacts/design/day3-liquidity-heatmap.png`
-- `/artifacts/design/day3-concordance-matrix.png`
-- `/artifacts/design/day3-confidence-interval.png`
-- `/artifacts/design/day4-iv-extraction-flow.png`
-- `/artifacts/design/day4-escape-routes.png`
-- `/artifacts/design/regime-state-machine.png`
-- `/artifacts/design/vrp-expansion-chart.png`
-- `/artifacts/design/multi-factor-framework.png`
+- **Day 1:** `btc-funding-timeseries.png`, `altcoin-funding-bars.png`
+- **Day 2:** `day2-funding-winrate-bars.png`, `day2-altcoin-comparison.png`
+- **Day 3:** `day3-liquidity-heatmap.png`, `day3-concordance-matrix.png`, `day3-confidence-interval.png`
+- **Day 4:** `day4-iv-extraction-flow.png`, `day4-escape-routes.png`
+- **Day 5:** `regime-state-machine.png`, `vrp-expansion-chart.png`, `multi-factor-framework.png`
+- **Day 6:** `day6-winrate-edge-comparison.png`, `day6-edge-decomposition.png`, `day6-multi-factor-scorecard.png`
+
+(All in `/artifacts/design/`)
 
 ---
 
@@ -415,27 +473,37 @@ Good catch — I discuss [specific limitation] in the full post. See section: [l
 **Blog:** Public accountability + knowledge sharing  
 **Twitter:** Audience building + feedback loop
 
-**This week establishes:**
-- ✅ Technical credibility (rigorous methodology)
-- ✅ Honest self-assessment (CI limitations, fee challenges)
-- ✅ Build-in-public transparency (showing the journey)
-- ✅ Daily momentum (1 thread/day = consistency)
+**Theory Arc (Days 1-6) establishes:**
+- ✅ **Technical credibility:** Rigorous methodology (IV extraction, regime detection, multi-factor backtesting)
+- ✅ **Honest self-assessment:** Statistical humility (CI limitations, n=14 insufficient, "noise > signal")
+- ✅ **Build-in-public transparency:** Showing full process (wins, losses, pivot decisions)
+- ✅ **Educational depth:** Teaching backtest methodology, not just claiming alpha
+- ✅ **Differentiation:** "Most quant content cherry-picks wins. I'm doing the opposite."
+
+**Narrative Arc:**
+- Days 1-4: Build foundation (funding, contrarian, clusters, volatility)
+- Day 5: Synthesis (reveal multi-factor framework — first 5/5 rating)
+- Day 6: Validation (empirical backtest with real data — second 5/5 rating)
+- Week 2: Execution (live paper trading, 100+ trades for significance)
 
 **Long-term compounding:**
-- Week 1: 50-100 followers (foundation)
-- Week 4: 200-300 followers (momentum)
-- Week 12: 1,000+ followers (critical mass)
-- Week 26: 5,000+ followers (distribution platform)
+- Theory Arc: 75-150 followers (foundation)
+- Week 4: 300-500 followers (momentum)
+- Week 12: 1,500+ followers (critical mass)
+- Week 26: 7,500+ followers (distribution platform)
 - Week 52: Ruby's research is a known brand in crypto quant Twitter
 
+**Strategic Positioning:**
+Two consecutive 5/5 editorial ratings (Days 5+6) = quality signal to followers. Brutal honesty about marginal edge (0.12%) + small sample (n=14) = trust compound. Transparent methodology = educational value. This is the foundation for Dec 2026 mission.
+
 ---
 
-**Status:** ✅ COMPLETE — Deployment plan ready  
+**Status:** ✅ COMPLETE — Deployment plan ready (6 threads)  
 **Blocking:** Reuben's approval to proceed  
-**Time to deploy:** 2 hours (account setup + posting)  
-**Expected ROI:** Audience foundation for Dec 2026 mission
+**Time to deploy:** 2-3 hours (account setup + posting over 6 days)  
+**Expected ROI:** Audience foundation + credibility for Dec 2026 mission
 
 ---
 
-*Quill — Feb 16, 2026, 12:57 AM IST*  
-*"Ready when you are, Reuben. Let's ship."*
+*Quill — Feb 16, 2026, 8:30 PM IST*  
+*"Theory arc complete. 6 threads ready. Two consecutive 5/5 ratings. Let's ship when you're ready, Reuben."*

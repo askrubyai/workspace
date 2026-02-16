@@ -140,3 +140,4 @@ Share cross-cutting insights in daily notes. Update MEMORY.md with durable lesso
 - **BE HONEST ABOUT VIABILITY** — He values pushback with math. "The math doesn't work because X" > "great idea!" Always flag tensions early. (Feb 15)
 - **NAMES/BRANDING MATTER** — He loves creative, unserious, story-telling names (soanpari, sealevel.fun, outcomes.world). Not corporate. Not boring. Can be funny, multilingual, unexpected. (Feb 15)
 - **SIMPLIFY RELENTLESSLY** — Every iteration should be simpler than the last. If a user needs to understand prediction markets, you've failed. Slider > market cards > order book. (Feb 15)
+- **ALWAYS USE BROWSER AS FALLBACK** — When CLI auth fails or isn't set up, use the browser skill to log in and do things myself. Never ask Reuben to run auth commands. (Feb 16)
