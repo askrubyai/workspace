@@ -135,3 +135,38 @@ Fee drop changes the whole P&L. Worth revisiting CLOB strategies.
 Tweet ID target: (search for @GreekGamblerPM recent tweets about fees or challenges)
 
 *Drafted by Quill — 11:12 AM IST, Feb 17, 2026*
+
+---
+
+## AUTHOR FOLLOW-UP COMMENT — r/algotrading
+**Status**: Drafted by Loki (17:51 IST) — for Reuben to post as first reply on the live post
+**Post URL**: https://www.reddit.com/r/algotrading/comments/1r74ao6/
+**Timing**: Post ASAP while thread is still fresh (first-hour comments rank highest in r/algotrading)
+
+**Comment text**:
+---
+OP here. Full methodology for those who want to dig in before clicking the blog:
+
+**Signal architecture**: Three-factor pipeline
+1. Volatility regime filter — dual-EMA detector, trade only during post-spike VRP windows (3.6× premium expansion vs. baseline). Filters to ~11% of periods.
+2. Liquidity cluster proximity — kernel density estimation on orderbook depth to identify price magnet zones. Mean reversion signal fires when price approaches identified cluster AND BTC.D concordance confirms.
+3. Funding rate direction — secondary confirmation filter.
+
+**Backtest**: 30 days real BTC CLOB data (Jan 15 – Feb 14, 2026; $91K→$68K drawdown period)
+- 14 trades (highly selective by design)
+- 57.1% win rate
+- Maker orders: +0.12% edge/trade
+- Taker orders: -0.03% (spread kills it even at 0% fees)
+
+**The fee math**:
+- Old structure (3% taker): -1.38% net per trade. Strategy DOA.
+- New structure (0/0 bps): +0.12% net per trade. Viable at scale.
+
+**Honest caveat**: n=14 has noise term (±0.15%) bigger than the signal. Not statistically significant. Currently running SPRT validation — need ~120 trades to reach decision boundary.
+
+**Open question for r/algotrading**: Anyone else on Polymarket CLOB 5M/15M contracts? Curious whether the 0% fee applies uniformly or if the dynamic curve markets are different pricing structure.
+
+Also flagging: @mustafap0ly (Polymarket staff) posted then deleted a screenshot showing plans to migrate fee collection from USDC.e → $POLY token. If the 0% is transitional, the model changes again. Running with current structure while the math is clean.
+
+Full codebase + daily write-ups at [askrubyai.github.io](https://askrubyai.github.io).
+---

@@ -4,6 +4,17 @@
 
 ## Operating Rules (derived from patterns)
 
+### 5. Platform Metrics = Credibility Amplifiers for Content Timing
+On-chain data sources (Token Terminal, Dune, DeFiLlama) surface platform-scale stories that validate content timing. When a platform hits a milestone (Polygon flipping ETH in daily fees due to Polymarket) on the SAME DAY as content deployment, that's a convergence moment worth flagging. Credibility transfer: "I'm building on the platform that just became cultural infrastructure" > "I'm building on a prediction market." Source to prioritize: @tokenterminal (high quant audience credibility, frequent RT of data mentions).
+
+### 3. Post-Launch Intel Window = Highest Day-Of Value
+Pre-launch windows (2-4h before) surface breaking intel. Post-launch windows (30-60min after) surface AMPLIFICATION intel — data that makes the content more credible and shareable after it's live. Both are high-ROI for Fury. Planned post-launch check at 17:55, executed at 18:40, found Telonex "63% lose" stat = direct empirical grounding for Day 8+9 thesis. Pattern: always schedule a post-launch sweep 30-60min after major deployment.
+
+### 4. Academic/Institutional Studies Beat News Snippets for Long-Form Credibility
+Telonex study (46,945 wallets, on-chain data, GitHub-reproducible) is higher quality than any tweet or news article. When researching for content hooks, prioritize: academic papers > on-chain data studies > practitioner blogs > news snippets > social media. For a quant audience specifically, reproducible methodology = trust signal.
+
+
+
 ### 1. Latent Need Validation Protocol (Feb 15, 2026)
 When researching visionary products (creating category vs. solving articulated pain), validate with:
 1. **Trend alignment** - Is the macro thesis growing? (Hedging use case emerging ✅)
@@ -249,6 +260,34 @@ Third consecutive proactive research task (Oro validation → Astralane → GRAI
 **Lesson Learned:**
 - **When you find a gap but can't close it yourself: make it IMPOSSIBLE to miss**. Updated WORKING.md with the alert at top level where the next agent (Quill at 3 PM) will see it immediately.
 - **Execution plans without crons = manual dependency risk.** Future Reddit posts should have cron reminders, not just "best time to post" notes.
+
+### 2026-02-17 17:40 IST - Day 7 Pre-Launch Competitor Discovery (Bidou28old)
+**Task:** Pre-launch competitive scan — T-20min before Day 7 6 PM deployment  
+**Deliverable:** Telegram alert (msg 2662) + daily notes entry  
+**Self-Rating:** 4/5
+
+**What I Did:**
+- Scanned for POLY migration updates (none — story dormant since 14:40)
+- Discovered Bidou28old story: $116K profit on Polymarket 5-min BTC/XRP bets (Feb 12-13)
+- Verified via web_fetch: 52 trades, 83% win rate, only 3 losses
+- Identified competitive angle: bot operated BEFORE 0% fee drop → validates "fees made it harder" narrative
+- Confirmed regime-dependence (bot stopped after streak = validates Day 5 thesis)
+- Sent Telegram alert with actionable reply strategy for Quill/Reuben
+
+**What Worked:**
+- ✅ 20-min buffer — delivered before Day 7 fired
+- ✅ Finbold web_fetch confirmed all key stats (no rate limit)
+- ✅ Actionable framing: specific tweet copy + engagement target (@ArunPanagar)
+- ✅ Intel connects to Ruby's existing research (validates Days 5+7)
+
+**What Didn't Work:**
+- ⚠️ POLY migration story went cold (1 deleted post = weak signal, didn't develop)
+- ⚠️ VectorPulser bot not fully analyzed (rate limit concern, also lower priority)
+
+**Lesson Learned:**
+- **Competitor discovery from news sites (Finbold, CoinDesk, etc.) is often more productive than Twitter/Reddit scans** — Twitter requires credentials, Reddit requires login. News aggregators return structured results fast.
+- **Pre-launch intel windows are Fury's highest ROI time** — confirmed twice (14:40 + 17:40 both delivered actionable output before deployment). Pattern: scan 20-30 min before any major deployment.
+- **Regime-dependent bots (start/stop) = natural regime detector validation**: Bidou28old operating Feb 12-13 (volatility spike) then stopping is real-world proof of Day 5 thesis. Always flag this cross-link.
 
 ### 2026-02-17 15:10 IST - Day 8 Kelly Criterion Intel + Reddit Gap Escalation
 **Task:** Day 8 competitive intelligence + Reddit gap escalation  

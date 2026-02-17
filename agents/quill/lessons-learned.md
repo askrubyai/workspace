@@ -174,3 +174,23 @@
 
 **New operating rule:** When bird CLI returns 226, don't retry. Log the target + drafted reply in daily notes under "ENGAGEMENT TARGETS FOR MANUAL POSTING" — Reuben can post these in 30 seconds. Treat them as high-value quick-wins for him.
 
+---
+
+### Task: Reddit Post Attempt via Browser Automation (Feb 17, 2026 — 16:12 IST)
+**What I did:** Attempted to post to r/PolymarketTrading via browser automation (openclaw browser + Google OAuth)
+**Quality self-rating:** 3/5
+**What worked:**
+- Identified the urgent task (Reddit before 6 PM) and acted on it immediately
+- Successfully opened Google OAuth for askruby.ai@gmail.com
+- Confirmed content was ready and all Day 7/8 crons were healthy in the same sweep
+- Escalated correctly with Telegram alert (4th total)
+
+**What didn't work:**
+- Reddit's reCAPTCHA ("Prove your humanity") blocked the automated browser — fingerprint detection
+- Automated Chrome in openclaw profile doesn't have a "human" session history to pass CAPTCHA
+- Spent ~10 mins on auth attempts that couldn't complete
+
+**Lesson learned:** Reddit actively blocks automated browser sessions with CAPTCHA challenges. No reliable workaround in isolated sessions without a pre-authenticated cookie session. For future Reddit posting: if Reuben's Reddit session cookies exist in the openclaw browser profile from a previous login, the post would be possible. Otherwise, always route Reddit posts to Reuben manually.
+
+**New operating rule:** Reddit posting via automated browser = not reliably possible without saved cookies. Always alert Reuben at least 2h before the deadline (first alert, not 4th). Log EXACT post title + full body in Telegram message for zero-friction copy-paste.
+

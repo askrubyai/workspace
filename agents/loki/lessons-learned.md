@@ -430,6 +430,42 @@ When you fix a structural issue (Tweet 4 orphan), the fix is trivial but the val
 **New operating rule (candidate):**
 "Scan for structural orphans: numbered lists without all items, 'Part 1' without Part 2, setup without payoff."
 
+### 2026-02-17 16:06 IST — Day 9 Thread Scaffold: Pre-staged for 1:30 AM Research Session
+**Task:** Proactive pre-staging of Day 9 thread scaffold before tonight's research fires  
+**Quality (self-rated):** 4/5 (can't verify against actual Day 9 content — inherent uncertainty in pre-staging)  
+**What worked:**
+- Applied the 13:51 IST pattern (Day 8 pre-staging) again immediately for Day 9
+- Day 9 topic was predictable: Day 8 Tweet 10 explicitly promised signal filtering
+- Three hook options (live results / analysis only / strong results) cover 95% of outcomes
+- Fixed tweets (2 + 7) are mathematically true regardless of Day 9 results — no conditional logic needed
+- [FILL] placeholders make Quill's job trivial: replace numbers, pick hook, skip/include conditionals
+- Cross-referenced Vision's SEO pre-staging (companion file already existed)
+- Updated WORKING.md + daily notes with cat >> (not write — learned this lesson)
+
+**What didn't work:**
+- Scaffold assumes signal filtering is Day 9's topic. If Ruby pivots to something unexpected at 1:30 AM, scaffold is partially obsolete (but not wasted — fixed tweets still usable)
+- Didn't include a "scaffold is wrong" emergency path for Quill if Day 9 topic is entirely different
+
+**Lesson learned:**
+**When you can predict a topic, pre-stage immediately.** Day 8's Tweet 10 told us what Day 9 would cover. The 90-minute window between my last work (15:36) and this heartbeat was the right time to stage it — after Day 8's thread was written and before the 6 PM deployment distraction. Pre-staging windows close: once Day 7 deploys and Day 9 publishes, Quill needs the scaffold immediately. Building it early = no time pressure.
+
+**New Operating Rule (candidate):**
+"When a thread ends with a tomorrow teaser, that's a scaffold spec. Build it at the next heartbeat."
+
+### 2026-02-17 17:51 IST — Reddit Author Comment: Pre-Day 7 Content Gap Fill
+**Task:** Proactive — spotted live Reddit post with no author follow-up comment, drafted it before Day 7 fired
+**Quality (self-rated):** 4/5 (strong methodology comment; -1 can't post directly, requires Reuben action)
+**What worked:**
+- Identified the gap (r/algotrading culture: OP first-reply often becomes top comment)
+- Technical-first format (signal architecture → backtest numbers → fee math → POLY caveat)
+- Included open question ("anyone else on 5M/15M?") — invites discussion, not a link drop
+- Appended to existing reddit-posts-feb17.md instead of creating a new file (no artifact sprawl)
+- Used cat >> (not write) for daily notes append
+**What didn't work:**
+- Can't post directly (browser relay unavailable in isolated session) — still requires human action
+**Lesson learned:**
+When a published asset (blog post, tweet, Reddit post) goes live with a missing companion piece that's clearly in Loki's domain, draft the companion immediately. Don't wait to be asked. The first-hour window on Reddit is the highest-value time to drop a methodology comment.
+
 ### 2026-02-17 15:36 IST — Day 8 Kelly Thread: Original Write (Not Review)
 **Task:** Thread file was empty at heartbeat — Quill's scaffold was for paper bot (no longer applicable). Wrote 11-tweet Kelly Criterion thread from scratch.
 **Quality (self-rated):** 4.5/5
@@ -450,3 +486,35 @@ When you fix a structural issue (Tweet 4 orphan), the fix is trivial but the val
 
 **New Operating Rule (candidate):**
 "Trust the file, not the log. When log and artifact disagree, the artifact is truth. Verify outputs, not intentions."
+
+### 2026-02-17 21:21 IST — Day 9 Scaffold Update: VectorPulser Contrast Hook Added
+**Task:** Proactive — spotted approved hook missing from pre-staged scaffold (Jarvis approved 18:45, scaffold written 16:06)
+**Quality (self-rated):** 4/5 — clean gap fill; -1 for minor scope (scaffold amendment, not original content)
+**What worked:**
+- Checked scaffold against WORKING.MD systematically — found the 18:45 Jarvis approval had no corresponding scaffold update
+- Added Option D and Tweet 3b as a complete, deployable unit (hook + companion tweet)
+- Integrated Telonex 63% stat into Tweet 3b for empirical grounding (connects Fury's Day 9 intel to the selectivity narrative)
+- Used cat >> for daily notes (not write tool — lesson retained from 10:36 incident)
+**What didn't work:** Minor update — no major gaps
+**Lesson learned:** Pre-staged scaffolds have a shelf life. Any Jarvis directive that approves content for a future thread is a scaffold amendment request. Check the gap between scaffold creation time and current time for any approved-but-not-integrated hooks before the research session fires.
+
+**New operating rule (candidate):** "Before every research session, check WORKING.MD for Jarvis-approved hooks/angles not yet in the staged scaffold. Amendment window closes when the cron fires."
+
+### 2026-02-17 18:51 IST — Day 8 Tweet 3 Update: Telonex Empirical Grounding
+**Task:** @loki directive from Jarvis (18:45 IST) — incorporate Fury's Telonex finding into Day 8 Tweet 2-3 before 9 AM deployment  
+**Quality (self-rated):** 4.5/5  
+**What worked:**
+- Acted within 6 minutes of the directive hitting WORKING.MD — no lag, no waiting to be asked twice
+- Surgical single-tweet edit: modified Tweet 3 only (the numbers tweet), not a structural overhaul
+- Telonex stat opens the tweet — then our backtest numbers — then "But wait. Don't." (cliffhanger preserved)
+- Empirical grounding is now explicit: 63% of 47K real wallets lose → our 57.1% → still not enough
+- Character count confirmed safe (≈260 chars, under 280 limit)
+- Used cat >> for daily notes, not write tool (lesson from 10:36 IST incident retained)
+
+**What didn't work:**
+- Nothing significant. The edit was clean and targeted.
+
+**Lesson learned:**
+**Intel from Fury is actionable within the same heartbeat.** When Fury posts a finding at 18:40 and Jarvis annotates it by 18:45, I should check by 18:51 and act immediately — the thread deploys tomorrow, the window is short but not urgent. Pre-dawn urgency is worse: if I miss this heartbeat and the next Loki heartbeat is 19:06, there's still time, but acting now means it's done.
+
+**Reaffirmed pattern:** Trust the WORKING.MD for @loki task annotations. If Jarvis writes "Day 8 hook (Loki)" — that's a direct task. Don't wait for a second signal.

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Task, ActivityItem } from '../types';
 
-const API = 'http://localhost:5175';
+const API = ''; // Relative — Vite proxies /api to port 5175
 
 interface WorkingData {
   working: string;
@@ -136,7 +136,7 @@ function parseActivityFromDaily(dailyContent: string): ActivityItem[] {
   
   return activities.sort((a, b) => 
     new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-  ).slice(0, 20); // Most recent 20
+  ); // Return all activities — UI handles pagination
 }
 
 export function useTasks() {

@@ -37,12 +37,12 @@ When w < p: take the other side.
 
 ---
 
-### Tweet 3: The Number
+### Tweet 3: The Number (Updated 18:51 IST — Telonex grounding added per Fury intel + Jarvis directive)
+Context: Telonex analyzed 46,945 real Polymarket wallets last week. 63% lost money. Median: -$3.
+
 From our Day 6 backtest:
 • Win rate: 57.1% (w = 0.571)
 • Average entry: 50¢ (p = 0.50)
-
-Full Kelly fraction:
 
 f* = (0.571 − 0.50) / (1 − 0.50) = **14.2%**
 
@@ -182,10 +182,19 @@ Day 9 tomorrow: signal filtering—trade only when edge is fat.
 The blog post already contains `day8-kelly-comparison.png` and `day8-kelly-ruin.png` in:
 `/Users/ruby/.openclaw/workspace/projects/ruby-blog/blog/posts/2026-02-17-kelly-criterion/`
 
-**Best tweet placement (updated by Shuri 15:50 IST — CONFIRMED correct visuals):**
-- Tweet 6 (Monte Carlo results table) → `day8-kelly-comparison.png` (1200×675, 80KB — deployment cron updated)
-- Tweet 8 (win rate sensitivity) → `day8-winrate-sensitivity.png` (1200×675, 70KB — copied to artifacts/design/)
-- `day8-kelly-ruin.png` (1112×597) is blog OG image only — do NOT use for tweets
+**Best tweet placement (updated by Shuri 15:50 IST, revised by Loki 17:36 IST):**
+- Tweet 6 (Monte Carlo results table) → `day8-kelly-comparison.png` (1650×935 — deployment cron already set)
+- Tweet 7 (18.4% ruin stat) → `day8-kelly-ruin.png` ⚠️ **UPGRADED** — Wanda rebuilt to 1800×1012 at 17:24 IST, TWEET-COMPATIBLE
+- Tweet 8 (win rate sensitivity) → `day8-winrate-sensitivity.png` (1785×985)
+
+**⚠️ LOKI EDITORIAL NOTE (17:36 IST) — ACTION FOR QUILL/JARVIS BEFORE 9 AM WED:**
+Tweet 7 ("18.4% chance of immediate ruin") is the highest-impact single stat in the thread — most likely to stop scrolling, most likely to get screenshotted. It currently has no visual. Wanda's upgraded `day8-kelly-ruin.png` (1800×1012) directly illustrates ruin probability from Monte Carlo paths. 
+
+**Recommendation:** Add `day8-kelly-ruin.png` as a 3rd tweet visual attached to Tweet 7.
+
+Thread would go from 2-visual to 3-visual — standard for high-engagement technical threads. Visual file is confirmed present on disk and at correct dimensions. No additional Wanda work needed.
+
+**Quill/Jarvis call** — flag this before 9 AM Wed deployment if adding the visual. Deployment cron `dc27da24` will need visual path added if approved.
 
 Both tweet visuals confirmed in `/artifacts/design/` and committed to git. Wanda spec: 4.5/5 quality, dark mode series-consistent.
 

@@ -197,3 +197,10 @@ This table format will be reusable for any multi-day, multi-factor, or retrospec
 **Feedback:** None yet (awaiting Reuben/squad review)
 
 **Lesson:** When implementing scroll indicators, gradient overlays must use `pointer-events-none` to avoid blocking user interactions. For empty states, emoji + contextual messaging beats generic text.
+
+## 2026-02-17 — Task: Day 8 Visual Verification
+**What I did:** Checked day8-kelly-ruin.png, day8-kelly-comparison.png, day8-winrate-sensitivity.png for tweet-quality.
+**Rating:** 4.5/5 (day8-kelly-ruin needed full replacement, found and fixed; other two were excellent)
+**What worked:** Systematic visual inspection; regenerated with clean layout (fig.text for title/subtitle avoids ax clipping), smooth filter on noisy Monte Carlo lines
+**What didn't:** Original ruin.png was a live bot dashboard screenshot, not a Kelly chart — caught immediately
+**Lesson:** When inheriting visuals from another session, always verify the chart _title_ matches the expected topic — content drift is real in multi-agent pipelines

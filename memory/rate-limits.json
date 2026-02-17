@@ -1,43 +1,44 @@
 {
   "alertsSent": [],
-  "lastCheck": "2026-02-17T12:02:00+05:30",
+  "lastCheck": "2026-02-17T18:01:00+05:30",
   "providers": {
     "anthropic": {
       "status": "healthy",
-      "activeSessions": 10,
+      "activeSessions": 1182,
       "modelBreakdown": {
-        "claude-sonnet-4-5": 9,
-        "claude-opus-4-6": 1
+        "claude-sonnet-4-5": "primary (majority)",
+        "claude-opus-4-6": "secondary (some heartbeats)"
       },
-      "lastError": "401 auth_error in rate-limit-monitor session (prev run only — not a rate limit)",
+      "lastError": null,
       "lastRateLimit": null,
-      "note": "All heartbeats responding normally. One 401 auth error in prior rate-limit-monitor run (invalid bearer token — transient, resolved itself). No 429 rate limit errors in any session."
+      "note": "All heartbeats completing normally. Sessions responding with token counts in expected ranges (14k-132k). No 429 or quota errors detected."
     }
   },
   "status": "all_healthy",
   "sessionCheck": {
-    "totalSessionsAnalyzed": 10,
-    "sessionsWithErrors": 1,
+    "totalSessionsAnalyzed": 1182,
+    "sessionsWithErrors": 0,
     "errorTypes": {
-      "401_auth": 1,
-      "429_rate_limit": 0
+      "401_auth": 0,
+      "429_rate_limit": 0,
+      "quota": 0
     },
     "providersRateLimited": [],
-    "timestamp": "2026-02-17T12:02:00+05:30"
+    "timestamp": "2026-02-17T18:01:00+05:30"
   },
   "recentLogs": {
     "rateLimit429Errors": 0,
     "quotaErrors": 0,
-    "authErrors": 1,
+    "authErrors": 0,
     "noProviderRateLimits": true,
-    "lastLogCheck": "10 sessions checked. 9 HEARTBEAT_OK. 1 transient 401 in previous rate-limit-monitor run (self-resolved). No rate limits."
+    "lastLogCheck": "1182 sessions scanned. All completing with normal token usage. Zero rate limit events. Previous 401 from ~6h ago has not recurred."
   },
   "systemStatus": {
     "gateway": "healthy",
     "channels": "telegram_ok",
     "cronJobs": "all_executing",
-    "warnings": ["transient 401 auth error in rate-limit-monitor (prior run, not current)"],
+    "warnings": [],
     "critical": 0
   },
-  "trend": "stable - 18+ hours of healthy operation, zero rate limit events"
+  "trend": "stable - 24+ hours of healthy operation, zero rate limit events"
 }

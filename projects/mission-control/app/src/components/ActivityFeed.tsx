@@ -1,4 +1,5 @@
 import { useTasks } from '../hooks/useTasks';
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 function timeAgo(iso: string) {
   const diff = Date.now() - new Date(iso).getTime();
@@ -6,7 +7,9 @@ function timeAgo(iso: string) {
   if (mins < 1) return 'now';
   if (mins < 60) return `${mins}m`;
   const hrs = Math.floor(mins / 60);
-  return `${hrs}h`;
+  if (hrs < 24) return `${hrs}h`;
+  const days = Math.floor(hrs / 24);
+  return `${days}d`;
 }
 
 const actionIcons: Record<string, string> = {
@@ -20,12 +23,53 @@ const actionIcons: Record<string, string> = {
   updated: '📝',
 };
 
+const PAGE_SIZE = 30;
+
 export function ActivityFeed() {
   const { activity, loading, error } = useTasks();
-  
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  const visibleActivity = activity.slice(0, visibleCount);
+  const hasMore = visibleCount < activity.length;
+
+  const loadMore = useCallback(() => {
+    if (hasMore) {
+      setVisibleCount((prev) => Math.min(prev + PAGE_SIZE, activity.length));
+    }
+  }, [hasMore, activity.length]);
+
+  // Reset visible count when activity changes significantly
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [activity.length]);
+
+  // Infinite scroll via IntersectionObserver
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el || !hasMore) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) loadMore();
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasMore, loadMore]);
+
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-semibold">Activity Feed</h2>
+      <div className="flex items-baseline justify-between">
+        <h2 className="text-lg font-semibold">Activity Feed</h2>
+        {activity.length > 0 && (
+          <span className="text-xs text-text-muted">
+            {visibleCount < activity.length 
+              ? `${visibleCount} of ${activity.length}` 
+              : `${activity.length} events`}
+          </span>
+        )}
+      </div>
       
       {/* Loading State */}
       {loading && (
@@ -55,10 +99,10 @@ export function ActivityFeed() {
             </div>
           ) : (
             <div className="space-y-0">
-              {activity.map((item, i) => (
+              {visibleActivity.map((item, i) => (
                 <div key={item.id} className="flex gap-3 py-3 relative">
                   {/* Timeline line */}
-                  {i < activity.length - 1 && (
+                  {i < visibleActivity.length - 1 && (
                     <div className="absolute left-[15px] top-10 bottom-0 w-px bg-border-subtle" />
                   )}
                   {/* Icon */}
@@ -76,6 +120,14 @@ export function ActivityFeed() {
                   </div>
                 </div>
               ))}
+              
+              {/* Infinite scroll sentinel */}
+              {hasMore && (
+                <div ref={sentinelRef} className="flex items-center justify-center py-4">
+                  <div className="w-4 h-4 border-2 border-accent border-t-transparent rounded-full animate-spin mr-2" />
+                  <span className="text-xs text-text-muted">Loading more… ({activity.length - visibleCount} remaining)</span>
+                </div>
+              )}
             </div>
           )}
         </>

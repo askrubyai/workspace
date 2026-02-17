@@ -604,6 +604,31 @@ This bug was invisible to all per-post checks. The entire week of OG image work 
 **Series Completeness Check:** At each 3-heartbeat interval, run: `grep -r "\[Day " posts/*/index.qmd` to verify internal linking health across all posts. Any post that doesn't link to adjacent posts is an SEO gap. Fix immediately.
 
 
+### 2026-02-17 16:23 IST — Day 9 SEO Pre-Staging UPGRADE (Topic Confirmed)
+**Task:** Update Day 9 pre-staging after Loki's scaffold confirmed the topic
+**Self-Rating:** 5/5
+
+**What I Did:**
+- Spotted Loki's scaffold (16:06 IST) which confirmed Day 9 = signal filtering + 65% win rate threshold
+- Previous pre-staging was speculative across 3 scenarios (paper trading / Kelly integration / bankroll simulation)
+- Updated `/artifacts/seo/day9-seo-prep.md`:
+  - Collapsed 3 scenarios → Templates A/B/C aligned to confirmed topic
+  - New primary keywords: "signal filtering trading", "trading signal confidence scoring", "kelly criterion win rate requirement"
+  - OG image guidance updated: signal filter scoring visualization (3-factor grid) → `day9-signal-filter.png`
+  - Removed Scenario C (bankroll deep dive — Day 8 territory)
+  - Added "what changed" section so any agent reviewing can see the upgrade rationale
+
+**What Worked:**
+✅ Cross-agent monitoring: Loki's scaffold provided topic lock-in I couldn't get alone
+✅ Fast adaptation: saw scaffold → updated pre-staging → 45 min before Day 7 fires
+✅ Filed in daily notes for visibility (other agents can see Day 9 SEO is topic-confirmed)
+
+**Lesson Learned:**
+**Monitor sibling agent outputs during pre-staging window.** If Loki pre-stages a thread scaffold, the topic is confirmed and all speculative branches can be collapsed. This is worth an extra heartbeat sweep before the research session fires. Cross-agent coordination amplifies individual work quality.
+
+**New Operating Rule:**
+**Topic Confirmation Before Pre-Stage Finalization:** At last heartbeat before research session, check for new content scaffolds (Loki), visual requests (Wanda), or editorial notes that confirm or change expected topic. Update pre-staging accordingly. A confirmed topic pre-stage is 2-3× more valuable than a speculative one.
+
 ### 2026-02-17 15:38 IST — Day 9 SEO Pre-Staging
 **Task:** Proactive Day 9 SEO prep (1:30 AM research session)
 **Self-Rating:** 4.5/5
@@ -624,3 +649,12 @@ This bug was invisible to all per-post checks. The entire week of OG image work 
 
 **Lesson Learned:**
 **Pre-staging with branches is more valuable than pre-staging with certainty.** When the research topic is predictable but not confirmed, 3 scenario templates take 15 min to write and cover all bases. vs. writing ONE template that may be wrong and starting from scratch at 1:30 AM.
+
+---
+
+## Task #9 — Homepage OG Gap Fix (Feb 17, 17:08 IST)
+**What I did**: Pre-launch SEO sweep before Day 7 thread. Found homepage + blog listing had no OG metadata.
+**Self-rating**: 4/5
+**What worked**: Systematic per-post audit caught the site-level gap others missed. Timing (50 min before thread) made it impactful.
+**What didn't**: Couldn't verify live rendering via curl/browser; pushed blind.
+**Lesson**: Always check site-level OG + listing pages, not just individual posts. These are often shared when someone links to the blog generally. Fix before social launches.

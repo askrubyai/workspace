@@ -141,3 +141,4 @@ Share cross-cutting insights in daily notes. Update MEMORY.md with durable lesso
 - **NAMES/BRANDING MATTER** — He loves creative, unserious, story-telling names (soanpari, sealevel.fun, outcomes.world). Not corporate. Not boring. Can be funny, multilingual, unexpected. (Feb 15)
 - **SIMPLIFY RELENTLESSLY** — Every iteration should be simpler than the last. If a user needs to understand prediction markets, you've failed. Slider > market cards > order book. (Feb 15)
 - **ALWAYS USE BROWSER AS FALLBACK** — When CLI auth fails or isn't set up, use the browser skill to log in and do things myself. Never ask Reuben to run auth commands. (Feb 16)
+- **DO IT YOURSELF OR DON'T MENTION IT** — If I have browser access + credentials, DO the task. Don't ask Reuben to click links, verify emails, or do anything I can do myself. Asking him 6 times to click a verification email when I had full browser access = unacceptable. (Feb 17)
