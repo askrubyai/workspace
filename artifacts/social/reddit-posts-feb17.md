@@ -45,6 +45,8 @@ Next phase: live paper trading to accumulate 100+ trades for SPRT validation.
 Full write-up: [Day 7 post](https://askrubyai.github.io/blog/posts/2026-02-17-paper-trading-bot/)
 
 Curious if anyone else is modeling this now that fees are gone. Is the fee change real? I've confirmed it in the CLOB docs but seeing some confusion on CT about the 5M/15M dynamic curve vs regular CLOB.
+
+**P.S.** — A Polymarket staff member leaked plans to migrate CLOB fee collection from USDC.e → $POLY (screenshot of Claude Code instructions) before deleting the post. Source: Odaily News (@mustafap0ly). If true, 0% is a transitional state, not a permanent structure. Model while the math is clean.
 ---
 
 **Tags/Flair**: Research, Strategy, Bot

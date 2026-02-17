@@ -37,9 +37,11 @@ Multi-asset (BTC/ETH/SOL/XRP). SPRT early stopping (~120 trades). Fills: 50bps s
 3. `SPRT Trading Validation: [N] Trades, Results` (fill in N)
 
 ## OG Image Selection
-- **If Wanda creates SPRT progress chart**: use `day8-sprt-validation-progress.png`
+- **Primary (Quill scaffold confirmed)**: `day8-sprt-progress.png` ← Wanda's confirmed filename
 - **If multi-asset grid**: use `day8-multi-asset-signal-grid.png`
 - **Fallback**: use any clearly-labeled Day 8 chart Wanda creates
+
+*Filename synced with Quill's Day 8 scaffold (2026-02-17 13:27 IST) — was `day8-sprt-validation-progress.png`, corrected to `day8-sprt-progress.png`*
 
 ## Keyword Strategy
 Primary (include in description):

@@ -20,6 +20,17 @@
 | Notable Engagements | None |
 | Top Tweet | N/A |
 
+### Metrics (6h check — 3:03 PM IST)
+| Metric | Value |
+|--------|-------|
+| Total Likes | 0 |
+| Total RTs | 0 |
+| Total Replies (non-thread) | 0 |
+| QT w/ hashtags (11:15 AM) | 0 likes, 0 RTs |
+| Day 7 teaser (11:15 AM) | 0 likes, 0 RTs |
+| Engagement velocity | Flatlined — zero activity since post |
+| Top Tweet | None (all 0) |
+
 ### Assessment
 **Severely underperforming.** 0 engagement at 2h mark vs 50-like target.
 
@@ -60,4 +71,7 @@ Day 7 (6 PM IST = 12:30 PM UTC) is better time zone for US afternoon audience. B
 
 ---
 
-*Tracking started: Feb 17, 2026 | Last updated: 11:42 AM IST by Quill*
+### 6h Verdict
+**Dead on arrival.** 0 engagement across all 3 posts (thread, QT, teaser) at 6h mark. No external replies, no impressions signal. Root cause confirmed: 0-follower account with no distribution network. Day 7 (6 PM) has better timing (12:30 PM UTC = US morning) and breaking news hook, but won't move needle without Reuben RT from personal account.
+
+*Tracking started: Feb 17, 2026 | Last updated: 3:03 PM IST by Quill (6h check)*

@@ -121,6 +121,15 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 **Lesson learned**: "Known problems" without solutions aren't really solved. When I flag a gap, pair it with a workaround immediately.
 **New rule**: When identifying a blocker I can't fully fix (e.g., paid tier required), IMMEDIATELY create the best available workaround. Don't just flag — fix what I can, document the rest.
 
+## 2026-02-17 16:03 IST - Heartbeat #9 (Day 7 T-2h)
+**Context:** 0 subscribers 7h post Day 1 launch. Day 7 thread fires at 6 PM (T-2h). Day 8 published at 3:11 PM.
+**What I did**: Updated welcome email draft to include Day 8 (Kelly Criterion) — was missing since draft was created 13h before Day 8 published.
+**Self-rating**: 4/5
+**What worked**: Proactive content audit — checked both drafts and found the gap; fast fix via PATCH API
+**What didn't work**: 0 subs after 7h isn't alarming but worth monitoring. Email forms are live; conversion may come post Day 7 thread.
+**Lesson learned**: Welcome email needs updating whenever new blog posts go live. It's a live document, not a set-and-forget. Should audit it every session that publishes a new post.
+**New rule**: After every blog post published, check welcome email draft. If <24h old post isn't linked, update it.
+
 ## 2026-02-17 09:06 IST - Heartbeat #8 (Day 1 Launch +6min)
 **Context:** Day 1 Twitter thread launched at 9:00 AM. Email system fully staged. 0 subscribers at check (expected — only 6 min post-launch).
 **What I did**: Verified Buttondown count (0), confirmed all subscriber-check crons are scheduled (noon `420430de`, evening `9fbceee2`, Sunday digest `29a3630a`), sent Reuben Telegram reminder about sender email verification needed before noon.

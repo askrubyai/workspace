@@ -171,3 +171,110 @@ Third consecutive proactive research task (Oro validation → Astralane → GRAI
 - When Twitter engagement = 0, don't just analyze Twitter. Check Reddit FIRST — that's where niche communities actually live. Polymarket + algo trading communities are very active there.
 - Mirror accounts (same challenge format, same niche) are highest-ROI engagement targets on Twitter — the audience overlap is near-perfect
 - Use official platform blogs (news.polymarket.com) to find credible builders in a niche
+
+### 2026-02-17 12:25 IST - Day 7 Accuracy Audit + Day 8 Pre-Brief
+**Task:** Proactive research — verify Day 7 accuracy + prepare Day 8 SPRT context  
+**Deliverable:** `/artifacts/research/fury-day7-context-feb17.md`  
+**Self-Rating:** 3.5/5
+
+**What I Did:**
+- Audited Day 7's "0/0 bps" claim against official Polymarket docs
+- Confirmed accuracy: existing BTC Chainlink CLOB token IDs are fee-free
+- Found NEW breaking news: sports market fees expanding Feb 18 (NCAAB/Serie A)
+- Validated SPRT credibility (Netflix/LinkedIn/Statsig use cases)
+- Identified IID limitation as honest counter-argument for Day 8
+- Mapped competitor (QuantJourney fee curve piece, 1 week ago)
+
+**What Worked:**
+- ✅ Confirmed content accuracy before thread fires (critical risk mitigation)
+- ✅ Found actionable urgency angle (fee-free window narrowing)
+- ✅ SPRT Netflix hook is strong Day 8 framing
+- ✅ IID limitation = honest credibility point
+
+**What Didn't Work:**
+- ⚠️ Rate limited on QuantJourney deep-dive
+- ⚠️ No direct Reddit data access (had to rely on search snippets)
+
+**Lessons Learned:**
+1. **Always check fee expansion roadmap, not just current rate** — "when does this change?" matters as much as "what is it now?"
+2. **Accuracy audits before high-traffic events** are worth the time. If Day 7 was wrong, fixing it in 5 mins now beats 50 angry replies at 6 PM.
+3. **IID assumption in SPRT** — when adapting statistical tests to trading, always flag the distributional assumption. Quants will call this out if you don't.
+
+### 2026-02-17 14:40 IST - Day 7 Pre-Launch Competitive Scan
+**Task:** Proactive competitive intelligence 3h before 6 PM Day 7 Twitter deployment  
+**Deliverable:** `/artifacts/research/fury-day7-engagement-update-1411.md`  
+**Self-Rating:** 4/5
+
+**What I Did:**
+- Searched for current Polymarket fee discussion on Twitter/CT
+- Surfaced POLY token fee migration leak story (Odaily, published today)
+- Confirmed Feb 18 sports market fee expansion (official)
+- Identified @mustafap0ly as high-value reply target for 6 PM launch
+- Documented POLY migration context for Quill's Day 7 thread
+
+**What Worked:**
+- ✅ Timed research to 3h before launch (actionable buffer)
+- ✅ Found breaking story by scanning news sites (not just Twitter)
+- ✅ POLY migration angle significantly strengthens urgency narrative
+- ✅ Delivered actionable reply targets with specific account names
+
+**What Didn't Work:**
+- ⚠️ Rate limited on second search — had to use web_fetch directly
+- ⚠️ POLY migration is unconfirmed single source (1 deleted post → MEDIUM confidence)
+
+**Lesson Learned:**
+- **Scan news aggregators (Odaily, Bitget News) for breaking crypto stories** before major deployments — not just Twitter
+- **Deleted posts are signals**, not noise. When platform staff delete something, it's worth investigating.
+- Pre-launch intel windows (2-4h before deployment) are Fury's highest-leverage time slots
+
+### 2026-02-17 14:25 IST - Reddit Gap Detection
+**Task:** Heartbeat check — identified Reddit post #1 not submitted  
+**Self-Rating:** 3.5/5 (found gap, documented clearly, couldn't execute due to browser block)
+
+**What I Did:**
+- Reviewed all daily notes up to 14:22 IST — no confirmation Reddit was posted
+- Cross-referenced `/artifacts/social/reddit-posts-feb17.md` execution plan
+- Found: Post #1 = HIGH priority, "Post TODAY before 6 PM", Loki-approved, BUT no cron and no confirmation of submission
+- Attempted browser post — blocked (no tab attached)
+- Logged gap in daily notes + WORKING.md for Quill/Reuben to action
+
+**What Worked:**
+- ✅ Cross-referencing execution plans against daily activity logs is exactly how to catch slippage
+- ✅ Surfacing the gap clearly with exact post content location + title makes it easy to action fast
+
+**What Didn't Work:**
+- ⚠️ Browser not accessible — couldn't close the loop myself
+- ⚠️ 3.5/5 because gap detection without execution = incomplete
+
+**Lesson Learned:**
+- **When you find a gap but can't close it yourself: make it IMPOSSIBLE to miss**. Updated WORKING.md with the alert at top level where the next agent (Quill at 3 PM) will see it immediately.
+- **Execution plans without crons = manual dependency risk.** Future Reddit posts should have cron reminders, not just "best time to post" notes.
+
+### 2026-02-17 15:10 IST - Day 8 Kelly Criterion Intel + Reddit Gap Escalation
+**Task:** Day 8 competitive intelligence + Reddit gap escalation  
+**Deliverable:** Daily notes entry + Telegram alert to Reuben  
+**Self-Rating:** 4/5
+
+**What I Did:**
+- Confirmed Reddit Post #1 still unsubmitted (gap from 14:25 persisted through all agents)
+- Found Telegram chat ID (603633311) via sessions_list → deliveryContext
+- Sent direct Telegram alert to Reuben with copy-paste ready Reddit body
+- Found key Day 8 counter-argument: arxiv paper proving prices ≠ probabilities in prediction markets
+- Validated Half-Kelly consensus across multiple practitioner sources (Jul 2025, Jan 2025, Dec 2024)
+- Identified r/algotrading community sentiment aligns with Day 8 content
+
+**What Worked:**
+- ✅ Found Telegram chat ID via sessions_list (not config — that path was dead)
+- ✅ Direct Telegram send worked (message #2651)
+- ✅ Academic counter-argument (price≠probability) is high-value intel for Quill's Day 8 thread
+- ✅ Half-Kelly validation: Day 8 approach is on solid practitioner ground
+
+**What Didn't Work:**
+- ⚠️ Multiple agents passed on Reddit gap (14:25 detection → 15:10 = 45 min drift)
+- ⚠️ Early message tool calls failed: wrong target format — need to use sessions_list to find deliveryContext.to first
+
+**Lessons Learned:**
+1. **To send Telegram: use sessions_list first** — look for `channel: "telegram"` session → `deliveryContext.to` field contains the chat ID. Then `message(action=send, channel=telegram, target=<chatId>)`.
+2. **When a gap persists through 3+ agent heartbeats: escalate to human immediately** — don't just update WORKING.md again. Direct Telegram message is the escalation path.
+3. **For new content (Day 8): price≠probability gap is the standard academic critique of Kelly in prediction markets** — any social thread must address this or face blowback from quant audience.
+

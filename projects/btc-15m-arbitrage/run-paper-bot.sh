@@ -65,16 +65,19 @@ import json, sys
 try:
     with open('$JOURNAL_FILE') as f:
         j = json.load(f)
-    trades = j.get('trades', [])
+    trades = j.get('closed_trades', [])
     sprt = j.get('sprt', {})
-    print(f'Total trades: {len(trades)}')
+    stats = j.get('stats', {})
+    print(f'Balance: \${stats.get(\"balance\",0):.2f} | P&L: \${stats.get(\"total_pnl\",0):+.3f} ({stats.get(\"pnl_pct\",0):+.1f}%)')
     print(f'SPRT: n={sprt.get(\"n_trades\",0)}, win_rate={sprt.get(\"win_rate\",0):.1%}, progress={sprt.get(\"progress_pct\",0):.0f}%')
     if trades:
         print('')
         print('Last 5 trades:')
         for t in trades[-5:]:
-            outcome = '✅' if t.get('result') == 'WIN' else '❌'
-            print(f'  {outcome} {t.get(\"asset\",\"?\")} @ {t.get(\"entry_price\",0):.2f} → PnL: {t.get(\"pnl\",0):+.4f} | {t.get(\"primary_factor\",\"?\")}')
+            outcome = '✅' if (t.get('pnl') or 0) > 0 else '❌'
+            factors = t.get('signal_factors', {})
+            top_factor = max(factors, key=lambda k: factors[k]) if factors else '?'
+            print(f'  {outcome} {t.get(\"asset\",\"?\")} {t.get(\"direction\",\"?\")} @ {t.get(\"entry_price\",0):.2f} → PnL: {t.get(\"pnl\",0):+.4f} | top: {top_factor}')
 except Exception as e:
     print(f'No journal yet: {e}')
 " 2>/dev/null

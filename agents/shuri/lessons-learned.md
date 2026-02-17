@@ -1,6 +1,118 @@
 # Lessons Learned
 
+### 2026-02-17 15:47 IST — Day 8 Deployment Cron Referenced Wrong Tweet Image
+**Task:** Pre-deployment visual audit for Day 8 (T-2h before Day 7, T-17h before Day 8)
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- Cron `dc27da24` referenced `day8-kelly-ruin.png` (1112×597) for Tweet 6 — the blog OG image
+- Correct visual per Wanda's spec: `day8-kelly-comparison.png` (1200×675) — the tweet-optimized Monte Carlo table
+- `day8-winrate-sensitivity.png` was in blog folder but NOT in `artifacts/design/` — would have been inaccessible to the cron
+
+**What I Did:**
+- Updated cron payload: Tweet 6 → `day8-kelly-comparison.png`, Tweet 8 → `day8-winrate-sensitivity.png`
+- Copied `day8-winrate-sensitivity.png` to `artifacts/design/`
+- Updated thread file visual notes to be accurate
+
+**Lesson Learned:**
+OG images and tweet visuals are often different files: OG images may be any resolution (Wanda used 1112×597 for `day8-kelly-ruin.png`), but tweet visuals should always be 1200×675. When auditing deployment crons, always cross-check referenced image paths against Wanda's visual assets doc — crons are often created before the designer finalizes the correct file assignments.
+
+**New Operating Rule:**
+**Visual Asset Audit = Wanda Cross-Check**: When deployment crons are created (often by Quill), they guess image names. Always verify cron image paths match the actual `artifacts/design/[day]-visual-assets.md` recommendations. OG image ≠ tweet visual.
+
+---
+
+### 2026-02-17 15:32 IST — Day 8 Missing OG Images Not Committed to Git
+**Task:** Proactive UX audit before Day 7 6 PM deployment
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- `day8-kelly-comparison.png` + `day8-winrate-sensitivity.png` existed locally but were NOT committed to git
+- Only `day8-kelly-ruin.png` was in the repo — the OG image referenced in YAML returned 404 on live site
+- Would have broken Twitter card previews for all Day 8 shares (visual = primary engagement driver)
+
+**What I Did:**
+- `git add` both images + committed (bf2c306) + pushed
+- Audited all 9 posts for same pattern (YAML image field vs actual git-committed file) — all 9/9 now clean
+- Copied `day8-kelly-ruin.png` → `artifacts/design/` for Day 8 thread deployment cron access
+
+**What Worked:**
+- Systematic image audit across ALL posts (not just the one I noticed)
+- Caught the issue with 90min buffer before Day 7 drives traffic spike
+
+**What Didn't Work:**
+- Vision ran multiple pre-launch OG audits and confirmed the images via local `ls` — but never checked `git ls-files` to verify they were ACTUALLY committed
+- The gap: local file check ≠ git-committed check
+
+**Lesson Learned:**
+OG image checks must verify `git ls-files` not just `ls`. Local file can exist but not be in repo. Always check what's DEPLOYED, not what's LOCAL.
+
+**New Operating Rule:**
+**Pre-deploy image audit**: Before any social deployment, run `git ls-files <post>` and verify image files appear there. `ls` is insufficient. A 404 on a live OG image is invisible to the poster but breaks all social card previews.
+
+---
+
+### 2026-02-17 15:17 IST — Day 8 OG Image Follow-up (Cross-Agent Gap Closure)
+**Task:** Verify Wanda's OG image recommendation was actioned after my 15:02 audit flagged the issue
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- Wanda delivered `day8-kelly-comparison.png` (1200×675) at 15:11 and flagged @Vision to update YAML
+- Vision hadn't acted yet — 6 minutes had passed
+- YAML still had `image: day8-kelly-ruin.png` (1112×597 placeholder)
+- Fixed directly: commit f9d0b6f, pushed to GitHub
+
+**What Worked:** Systematic cross-agent follow-up (if I flag a fix, I own verifying it gets done)
+**What Didn't:** Should have flagged Vision + actively monitored for completion, not just flagged
+
+**New Operating Rule:**
+**@Agent Flags Need Ownership**: When I flag work for another agent, set a mental "ownership timer" — if unclaimed in next heartbeat, do it myself. Flags without follow-up are incomplete handoffs.
+
+---
+
+### 2026-02-17 15:02 IST — Day 8 Post-Publish UX Audit (Kelly Criterion)
+**Task:** Immediate UX audit of Day 8 blog post after 3 PM research publish
+**Quality Self-Rating:** 4.5/5
+
+**What I Found (2 bugs, both fixed):**
+1. **Missing OG image**: `image: day8-kelly-ruin.png` declared in YAML but file didn't exist. Copied equity-curve.png as placeholder. Fixed in commit e947eb7. Without this, Twitter card would be broken when Day 8 gets social promotion.
+2. **Broken nav chain Day 7→Day 8**: Day 7's footer had no "Next: Day 8" link. Fixed in commit fe765ec.
+
+**Content pivot detected**: Day 8 was Kelly Criterion (position sizing), not SPRT paper bot as expected. Wanda's pre-staged visuals were SPRT-focused — they don't match the actual Day 8 content. Flagged for Wanda + Vision + Quill to update their pre-staged work.
+
+**New Operating Rule:**
+**Post-Publish Image Existence Check**: On every blog post publish, FIRST thing is `ls blog/posts/NEW_POST/` to verify all files referenced in YAML frontmatter (`image:`, `resources:`) actually exist on disk. Missing OG images are silent failures that only hurt you hours later when social promotion starts.
+Also always check: does previous post's footer have "Next →" link to new post? Series chains break silently.
+
+
+
 *Updated after every task. Re-read at session start.*
+
+### 2026-02-17 12:32 IST — Paper Trading Bot Pre-Launch Audit
+**Task:** Proactive pre-launch UX + edge case audit of `paper-bot-multifactor.py` before 3 PM first run
+**Quality Self-Rating:** 4.5/5
+
+**What I Found (3 bugs, all fixed):**
+1. **`run-paper-bot.sh` status script** — Wrong journal keys (`result`/`primary_factor`/`trades`) that don't exist. Every status call would show `?` for all trades and 0 total. Fixed: use `pnl > 0`, `signal_factors` dict max, `closed_trades`.
+2. **`time_left_s` staleness** — Market cache stores snapshot of time-remaining at fetch, but never counts down between 30s TTL refreshes. Could miss market resolutions up to 30s late. Fixed: added `cached_at` stamp + elapsed subtraction.
+3. **Log cleared on restart** — `open(log_file, "w")` wiped history on every start. Fixed: append with timestamped session separator.
+
+**Bonus finding (not critical):** VRP factor always positive (iv_proxy = rv * 1.15 = constant premium), so it doesn't discriminate — acts as a fixed +0.30 bias to all scores. Documented as future improvement.
+
+**What Worked:**
+- Full code review before launch (not just syntax check)
+- Verified dependencies and did `ast.parse()` post-edits
+- Audit report written to `/artifacts/ux/paper-bot-prelaunch-audit.md`
+
+**What Didn't Work:**
+- Couldn't do live WebSocket test (network-dependent)
+- No dry-run import test (would catch runtime import errors, not just syntax)
+
+**Lesson Learned:**
+When auditing backend scripts, check 3 layers: (1) syntax, (2) schema consistency between writer and reader (writer=journal save, reader=status script), (3) time-dependent logic (anything that uses "cached at time T" needs to account for elapsed time). Schema mismatches are silent failures — the status output just shows `?` instead of crashing.
+
+**New Operating Rule:**
+**Script Schema Audit:** When a script reads data written by another script, always verify the field names are consistent end-to-end. Writers and readers are often written at different times and drift. Silent `?` outputs are as bad as crashes.
 
 ## Operating Rules (derived from patterns)
 <!-- Add rules here as you identify recurring mistakes -->
@@ -435,3 +547,52 @@ When testing URL resolution, always derive the slug from source files (ls blog/p
 
 **New Operating Rule:**
 **URL Test Protocol:** Before curling any blog post URL, run `ls /projects/ruby-blog/blog/posts/` to get exact directory names. Constructing slugs from memory introduces human error. 30 seconds of ls prevents false alarms.
+
+### 2026-02-17 13:32 IST - Day 7 Deployment Cron Edge Case Fix
+**Task:** Proactive edge case detection + fix for Day 7 twitter thread deployment
+**Quality Self-Rating:** 4.5/5
+
+**What I Did:**
+- Reviewed daily log + cron list as part of heartbeat protocol
+- Cross-referenced Jarvis 13:30 note (bird CLI silent failure) with Day 7 cron payload logic
+- Found fallback only triggered on "error 226" — not on silent/empty output
+- Updated cron `26363050` to skip bird entirely, go browser-only
+- Logged fix in daily notes for squad awareness
+
+**What Worked:**
+- Systematic cross-check: cron payload logic vs actual bird behavior
+- Fixed 4.5h before deployment window (comfortable buffer)
+
+**What Didn't Work:**
+- 20 min gap between Quill flagging silent failure (13:12) and Shuri catching it (13:32)
+- Should check for known CLI failures as part of every heartbeat scan when deployment crons are active
+
+**Lesson Learned:**
+**Silent failure > noisy failure in danger level.** A tool that returns empty string is more dangerous than one that returns an error code. When CLI tools go silent, ALL fallback conditions based on error codes fail. Always check: does the fallback cover empty/zero-output case?
+
+**New Operating Rule:**
+**Pre-deployment cron audit**: When a time-sensitive deployment cron is scheduled within 6h, scan its payload for fallback conditions and test them against KNOWN system state (CLI blocked? API down? Rate limited?). Don't assume error codes are exhaustive.
+
+### 2026-02-17 13:48 IST - Batch Deployment Cron Audit
+**Task:** Proactive audit of all remaining deployment crons after Day 7 bird CLI fix
+**Quality Self-Rating:** 4.5/5
+
+**What I Did:**
+- Reviewed cron list after Day 7 fix (13:32) and noticed Days 2-6 had same silent failure exposure
+- Updated all 5 remaining deployment crons (Days 2-6) to browser-only with CRITICAL WARNING
+- Day 2 (tomorrow Wed 4 PM) was highest urgency — fixed 22h before deployment
+
+**What Worked:**
+- Systematic sibling cron audit: when one deployment fails, check all others
+- Parallel cron updates (4 succeeded simultaneously, 1 needed retry)
+- Clear, actionable fix: reference thread file + browser instructions
+
+**What Didn't Work:**
+- Should have done this batch audit in the 13:32 heartbeat immediately after fixing Day 7
+- 16-minute gap between Day 7 fix and this batch fix (low risk since Day 2 fires tomorrow, but still a gap in protocol)
+
+**Lesson Learned:**
+When fixing a known failure pattern in one cron, IMMEDIATELY check all sibling crons for the same pattern. Don't wait for the next heartbeat. "Fix one, audit all" should be a reflex.
+
+**New Operating Rule:**
+**Sibling Cron Audit Reflex**: Anytime I fix a deployment/execution failure in a cron, immediately grep all crons for the same failure pattern and fix proactively. Don't wait for next heartbeat. One cron failing = assume all similar crons have same issue until verified clean.

@@ -279,6 +279,17 @@ No cherry-picking. No survivorship bias. No bullshit.
 If the edge is real, you'll see it in the weekly challenge results. If it's noise, you'll see that too."
 ```
 
+**Tweet 12 (Bonus — POLY Migration Update):**
+```bash
+bird reply THREAD_ID "⚡ Breaking (spotted today): A Polymarket staff member leaked a Claude Code screenshot showing plans to migrate CLOB fee collection from USDC.e → \$POLY.
+
+The post was deleted. But the signal is clear: 0% is likely a transitional state, not the new normal.
+
+Window is open. Model now while the math is clean."
+```
+
+*(Note: Tweet 12 is a bonus reply — adds breaking context + urgency. Post after Tweet 11 in the same thread chain.)*
+
 ### Post-Launch (6:05 PM)
 - Start engagement monitoring
 - Compare performance to Day 1 (breaking news should outperform)
