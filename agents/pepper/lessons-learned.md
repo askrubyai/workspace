@@ -151,6 +151,18 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 **Lesson learned**: When a milestone triggers "update all drafts," execute all updates in the same API session — don't split across heartbeats.
 **New rule**: "Update all drafts together" — when SPRT/post/milestone fires, update Sunday Digest + Welcome Email in the SAME heartbeat, not sequentially across cycles.
 
+## 2026-02-18 00:46 IST - First Subscriber Check (Heartbeat)
+**Context:** 12:46 AM heartbeat, 44 min before Day 9 research fires at 1:30 AM
+**What I did**: Checked Buttondown subscriber count — discovered FIRST SUBSCRIBER (Reuben, 00:32 IST)
+**Self-rating**: 4.5/5
+**Key finding**:
+- Reuben subscribed via homepage form 14 min before my heartbeat
+- Subscriber status: `unactivated` (double opt-in pending)
+- Welcome email draft is ready but missing Day 9 (not published yet)
+- Plan: update welcome email at 2:00 AM after Day 9, then manually send via API
+**Lesson learned**: On free tier Buttondown, must manually check subscriber list every heartbeat — there's no push notification when someone signs up. Would miss first subscriber windows without active monitoring.
+**New rule**: Always check subscriber count on heartbeat after any new social thread fires. Traffic from threads → conversions happen asynchronously.
+
 ## 2026-02-17 23:02 IST - Sunday Digest SPRT ACCEPT Update
 **What I did**: Proactively updated Sunday Digest draft to include SPRT ACCEPT result (written at 10:16 AM, bot ACCEPTED at 22:24 PM — 12h gap)
 **Self-rating**: 4.5/5
@@ -162,3 +174,15 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 **What didn't work**: Should have checked the Sunday Digest at 22:17 IST heartbeat right after SPRT ACCEPT was logged in WORKING.md — caught it 45 min later instead
 **Lesson learned**: When a major project milestone hits (SPRT ACCEPT, Day N published, backtest result), immediately scan all pre-staged email drafts for stale content. Email drafts that reference future events become misleading after those events occur.
 **New operating rule**: After any major project milestone (SPRT decision, new blog post, live trading result), check ALL Buttondown drafts for stale language within same heartbeat cycle.
+
+## 2026-02-18 02:46 IST - Sunday Digest Day 9 Update
+**What I did**: Found Day 9 (signal filtering, published 01:46 IST) missing from Sunday Digest draft. Also updated stale "Next week" section (wallet IS funded, waiting on go-signal — not "waiting on wallet funding"). Applied both fixes via PATCH API.
+**Self-rating**: 4.5/5
+**What worked**:
+- Caught the gap proactively (applied "After every blog post, check all drafts" rule correctly)
+- Updated both content gap (Day 9 finding) and accuracy issue (stale next-week narrative) in single API call
+- Found and used correct draft ID (fd03f1f4-8816-..., not the old wrong one from WORKING.md)
+**What didn't work**:
+- Previous heartbeat (02:02 IST) updated welcome email for Day 9, but didn't update Sunday Digest in same call (violating "update all drafts together" rule). Fixed it here 44 min later.
+**Lesson learned**: The "update all drafts together" rule needs to be stronger — it should be a blocking checklist item, not just a noted rule. Every time Day N publishes: Welcome Email checked AND Sunday Digest checked, in the same action.
+**No new operating rule** (existing rule covers this — just needs stricter enforcement)

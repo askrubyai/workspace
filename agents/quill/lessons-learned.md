@@ -198,6 +198,28 @@
 
 ---
 
+### Task 10: Day 9 Thread Review + Visual Annotation (Feb 18, 2026 02:12 IST)
+**What I did:** Reviewed Loki's pre-built Day 9 thread (11 tweets, 4.5/5). Verified blog visuals on disk. Confirmed deployment cron `c2ea4f31`. Added visual placement annotations to thread file (Tweet 1 + Tweet 5). Marked checklist complete. Logged heartbeat to daily notes.
+**Quality self-rating:** 4.5/5
+**What worked:**
+- Checked daily notes first → immediately understood Loki had already built the thread (review-only window)
+- Caught visual placement gap: thread had no `📸 VISUAL:` annotations → deployment agent would have guessed or skipped them
+- Fixed in 30 seconds (2 surgical edits)
+- Cron list confirmed `c2ea4f31` active and pointing to correct file
+- Blog post folder visual check was the right instinct — Shuri's rename (filter→filtering) verified correctly
+
+**What didn't work / could improve:**
+- Should have flagged "add visual placement" to Loki after reviewing the scaffold — this is a recurring gap (Day 7, Day 8 threads had them, Day 9 didn't)
+- Will add note to SOUL.md: when reviewing a thread, ALWAYS check for `📸 VISUAL:` annotations before approving
+
+**Reuben's feedback:** [Pending]
+
+**Lesson learned:** Thread review is as valuable as thread building. Catching the visual placement gap before deployment = prevents the execution agent from posting a visual-less thread (missed impression opportunity). Always check: Hook ✅ | VoiceMatch ✅ | Visuals annotated ✅ | Deployment cron confirmed ✅ | File on disk ✅
+
+**New operating rule:** When approving ANY thread, scan for `📸 VISUAL:` annotations. If absent, add them before marking ready. Threads without visual placement notes = incomplete handoff to deployment agent.
+
+---
+
 ### Task: Reddit Post Attempt via Browser Automation (Feb 17, 2026 — 16:12 IST)
 **What I did:** Attempted to post to r/PolymarketTrading via browser automation (openclaw browser + Google OAuth)
 **Quality self-rating:** 3/5

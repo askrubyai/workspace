@@ -1,6 +1,6 @@
 # WORKING.md
 
-*Last updated: 2026-02-17 23:33 IST (Jarvis - Daily Standup)*
+*Last updated: 2026-02-18 02:30 IST (Jarvis - 2:30 AM Heartbeat)*
 
 **🏆 PAPER BOT — SPRT ACCEPTED (22:24 IST Feb 17) 🏆**
 - **FINAL: n=28 closed trades | 25W / 3L | 89.3% win rate**
@@ -15,12 +15,19 @@
 
 ## 🎯 WEDNESDAY PRIORITIES (Feb 18, 2026)
 
-### 1. 🔬 Day 9 Research — Signal Filtering (1:30 AM auto)
-- Topic: "We enter 0 markets unless estimated win rate ≥ 65%" (signal filtering)
-- Day 9 hook locked: "28 trades. SPRT says: ACCEPT." (Option E — Quill)
-- Fury pre-Day 9 intel sweep at ~1:20 AM IST (NautilusTrader contrast + Telonex 63% data)
-- Quill builds thread at ~1:42 AM from scaffold: `/artifacts/social/day9-signal-filtering-scaffold.md`
-- Pepper updates welcome email at ~2:00 AM with Day 9 link
+### 1. ✅ Day 9 Research — Signal Filtering (COMPLETE — 01:46 IST Feb 18)
+- **Blog published**: `2026-02-18-signal-filtering/` ✅ (01:46 IST)
+- **Full squad support delivered**:
+  - ✅ Shuri UX audit (01:47): 3 bugs fixed (OG filename mismatch, Day 8 nav footer, description 183→149 chars) — cc68071
+  - ✅ Loki editorial (01:51): APPROVED 4.5/5, grammar fix "a→an" applied — bde9fc2
+  - ✅ Fury post-publish intel (01:55): Competitive table updated, Ruby = ONLY builder with multi-factor filter + SPRT + explicit win rate threshold
+  - ✅ Vision: SEO update COMPLETE (03:23 AM) — Template C description + Day 6 nav link. Commit 12d43cb.
+  - ⏳ Friday: live-bot-v1.py placeholders from Day 9 (fires 2:19 AM — missed 2:04 slot)
+  - ✅ Quill: Thread reviewed + annotated (02:12 IST)
+  - ✅ Pepper: Welcome email Day 9 link updated (02:02 IST)
+- ✅ **Math inconsistency FIXED** (Jarvis, 2:30 AM): "$0.15" → "$1.50" (15% Kelly × $10 = $1.50). Commit 5cbd269, pushed to GitHub. Blog live fix before Thu 4 PM Day 9 thread fires.
+- **✅ Day 9 deployment cron CREATED** (Jarvis, 2:00 AM): `c2ea4f31` — Thu Feb 19, 4 PM IST
+  - Thu 9 AM taken by Day 3, so 4 PM slot selected
 
 ### 2. 📱 Automated Social Deployments
 - **9:00 AM IST**: Day 8 Kelly Criterion thread (cron `dc27da24`) + 24h engagement check
@@ -31,9 +38,25 @@
 - Live $10→$100 challenge starts INSTANTLY when Reuben funds wallet
 - **Polygon wallet**: `0x2FC6896bDFB507002D1A534313C67686111cDfdA` (key: `~/.credentials/ruby-polygon-wallet.json`)
 - **Reuben's return address (Solana)**: `ASqAYTvsjHSFJF1bJzDfJLb85XQyNjHHw8sbPe3hLMaM`
+- ✅ **$10.50 USDC received on Polygon** (00:13 IST Feb 18)
+- ✅ **USDC → USDC.e swapped** ($10.49 after swap fee) via Uniswap V3
+- ✅ **All 3 Polymarket contract approvals set** (CTF, NegRisk Exchange, NegRisk Adapter)
+- ✅ **Polymarket CLOB client authenticated** — $10.49 available for trading
+- ⏸️ **NOT trading yet** — awaiting live bot build + Day 9 signal filtering research
 - `wallet-funding-check` cron running every 2 min monitoring Polygon wallet
 - Next bot run: `paper-bot-multifactor.py` clean (watchdog EOF fixed, force-close fixed)
 - Day 9 research will further refine signal filtering threshold before real run
+- ✅ **`live-bot-v1.py` BUILT** (Friday, 00:49 IST Feb 18): Real CLOB integration complete. Commit 5781bf9.
+  - CLOB auth ✅ | Live balance $10.4919 ✅ | Token ID lookup ✅ | FOK orders ✅ | DRY_RUN mode ✅
+  - **3 PLACEHOLDERS** still pending (Friday fires at 2:19 AM to fix):
+    - `signal_threshold`: 0.65 → **0.30** (Gate 1 multi-factor score from Day 9)
+    - `backtest_win_rate`: 0.65 → **0.893** (from paper run) or conservative ~0.70
+    - `sprt_p1`: 0.65 → likely correct (SPRT testing for ≥65% win rate) — Friday to confirm
+  - ✅ **Placeholders UPDATED** (Jarvis, 2:30 AM): signal_threshold=0.30, backtest_win_rate=0.70, sprt_p1=0.65 (confirmed correct). Commit b5589bd.
+  - ✅ **Math inconsistency FIXED** (Jarvis, 2:30 AM): $0.15 → $1.50. Commit 5cbd269.
+  - 🔒 **DO NOT start live bot until Reuben gives go-ahead** (all technical blockers now cleared)
+  - Run: `python3 live-bot-v1.py` (dry run) | `python3 live-bot-v1.py --live` (real USDC)
+- ⚠️ **Post-Day-9 config updates**: Update `signal_threshold`, SPRT `p1`, and `backtest_win_rate` before restarting paper bot
 
 ### 4. ⚠️ REUBEN ACTIONS NEEDED
 - Fund wallet (USDC/SOL) — live challenge waiting

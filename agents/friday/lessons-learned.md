@@ -832,6 +832,68 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 **Verdict:** Nothing urgent. Infrastructure healthy. Paper bot collecting high-quality Day 9 data. Standing down.
 **Self-Rating:** 5/5
 
+## Heartbeat: Feb 18, 2026 03:49 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable
+- ✅ Mission Control UI: pid 843, 9h uptime — stable
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — no regression
+- ✅ No assigned tasks (Convex empty). No @friday mentions.
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED, awaiting Reuben go-ahead)
+- ✅ live-bot: NOT running (correct — all technical blockers cleared, waiting on Reuben only)
+
+**Verdict:** Infrastructure healthy. Nothing to action. Standing down.
+**Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 18, 2026 03:19 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable
+- ✅ Mission Control UI: pid 843, 9h uptime — stable
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — no regression
+- ✅ No assigned tasks (Convex empty)
+- ✅ No @friday mentions in today's daily notes
+- ✅ Paper bot: NOT running (correct — SPRT ACCEPTED, awaiting Reuben go-ahead)
+- ✅ Live bot: NOT started (correct — all technical blockers cleared at 2:30 AM, waiting on Reuben only)
+- ✅ Post-Day-9 configs synced across both bots (done at 02:49 IST heartbeat)
+
+**Verdict:** Nothing urgent. Infrastructure healthy. Squad clean. Standing down.
+**Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 18, 2026 01:34 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable
+- ✅ Mission Control UI: pid 843, 7h uptime — online
+- ✅ No assigned tasks (Convex empty)
+- ✅ No @friday mentions
+- ⏳ Day 9 research: cron fired at 1:30 AM (T+4 min), blog post not yet published — session still running
+- ⏳ **Blocked**: live-bot-v1.py placeholder update (signal_threshold, backtest_win_rate, sprt_p1) waiting on Day 9 publish
+
+**Verdict:** Nothing urgent. Infrastructure healthy. Blocked on Day 9 publish (T+4 min, expected). Standing down.
+**Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 18, 2026 00:19 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable
+- ✅ Mission Control UI: pid 843, 6h uptime — online
+- ✅ No assigned tasks for Friday (Mission Control query returned empty)
+- ✅ No @mentions in today's activity log
+- ✅ Paper bot: SPRT ACCEPTED + STOPPED — journal clean, watchdog EOF fix committed (d108628)
+- ✅ Day 9 research cron `efb8d151` ARMED — fires 1:30 AM IST (~71 min)
+- ✅ Day 8 deployment cron `dc27da24` ARMED — fires 9:00 AM IST
+- ✅ Live trading ARMED: $10.50 USDC on Polygon wallet confirmed
+
+**Verdict:** Nothing urgent. Infrastructure healthy. Day 9 imminent and automated. Standing down.
+**Self-Rating:** 5/5
+
 ## Heartbeat: Feb 17, 2026 23:19 IST
 
 **Status Check:**
@@ -890,3 +952,41 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 **What didn't:** Should have caught this at 21:49 IST heartbeat when the fix was committed. Previous heartbeat (20:04 IST) noted SPRT was accelerating — should have checked whether running bot had all patches.
 **Lesson:** When committing a critical fix to a running process, ALWAYS check if bot needs restart AND whether restart is safe. If restart resets state → either (1) restart immediately before state accumulates, or (2) pre-build the watchdog pattern at commit time.
 **New Rule:** On any commit to `paper-bot-multifactor.py` while bot is running: (1) assess if fix is in running process, (2) if not — is restart safe? If safe, restart. If not safe (SPRT state would be lost), deploy watchdog to bridge the gap.
+
+---
+
+## Heartbeat: Feb 18, 2026 02:49 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable
+- ✅ Mission Control UI: pid 843, 8h uptime — online
+- ✅ No assigned tasks for Friday (Convex empty)
+- ✅ No @friday mentions in today's activity log
+- ✅ Paper bot: NOT running (correct — SPRT ACCEPTED, holding for Reuben go-ahead)
+- ✅ Live bot: NOT started (correct — waiting on Reuben only, all technical blockers cleared)
+- 🔧 **Proactive: post-Day-9 paper-bot config update** (Commit 4abc96f)
+  - backtest_win_rate: 0.571 → 0.70 (conservative post-paper-run estimate)
+  - SPRT p1: 0.57 → 0.65 (Day 9 Gate 2 threshold, aligned with live-bot-v1.py)
+  - signal_threshold already at 0.30 ✅
+
+**Self-Rating:** 4.5/5 — caught the WORKING.md "Post-Day-9 config updates" note, executed precisely
+
+**Lesson:** Research-driven parameter updates apply to ALL bots in the project, not just the most recently created one. Jarvis updated live-bot-v1.py at 2:30 AM but paper-bot-multifactor.py was left with stale Day-6 values. After any "update parameters from Day N research" task, grep both bots and sync them.
+
+**New Rule:** After any research-driven parameter update, check ALL bots in the project for stale values. Use `grep -rn "backtest_win_rate\|sprt_p1\|signal_threshold" projects/` to find all instances.
+
+## Heartbeat: Feb 18, 2026 03:04 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable
+- ✅ Mission Control UI: pid 843, 9h uptime — stable
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — no regression
+- ✅ No assigned tasks (Convex empty)
+- ✅ No @friday mentions in today's activity log
+- ✅ Paper bot: NOT running (correct — SPRT ACCEPTED, awaiting Reuben go-ahead)
+- ✅ Live bot: NOT started (correct — all blockers cleared, waiting on Reuben only)
+- ✅ Post-Day-9 config sync already done at 02:49 IST (both bots updated)
+- ✅ All pipeline crons armed through Thu 4 PM
+
+**Verdict:** Nothing urgent. Infrastructure healthy at 3D+ uptime. Squad fully automated. Standing down.
+**Self-Rating:** 5/5

@@ -258,6 +258,52 @@ When auditing backend scripts, check 3 layers: (1) syntax, (2) schema consistenc
 **New Operating Rule:**
 **Script Schema Audit:** When a script reads data written by another script, always verify the field names are consistent end-to-end. Writers and readers are often written at different times and drift. Silent `?` outputs are as bad as crashes.
 
+### 2026-02-18 01:47 IST — Day 9 Post-Publish UX Audit
+**Task:** Immediate post-publish audit of Day 9 signal-filtering post
+**Quality Self-Rating:** 4.5/5
+
+**3 Bugs Found, All Fixed:**
+1. OG image filename mismatch: YAML said `day9-signal-filtering.png`, Wanda's file was `day9-signal-filter.png`. Copied artifact to post dir with correct name. Without fix → broken Twitter cards.
+2. Day 8 footer placeholder: "Next: Day 9 (tomorrow)" was literal text. Fixed with actual link.
+3. Description 183 chars → trimmed to 149 chars (SEO: Google truncates at ~160).
+
+**Commit:** cc68071 — pushed to GitHub
+
+**Lesson Learned:**
+Pre-staged asset names created by Wanda MUST match YAML frontmatter exactly. When research sessions create the blog post, they write YAML without knowing exact Wanda filenames. Always verify image: field in YAML against actual artifact on disk.
+
+**New Operating Rule:**
+**Post-Publish Image Name Audit**: First thing after any new post publishes: `grep "^image:" YAML` then `ls post-dir/` to verify match. Names written in research sessions diverge from Wanda's delivery filenames predictably.
+
+### 2026-02-18 00:32 IST — Paper Bot Pre-Next-Run + Live Trading Gap Audit
+**Task:** Proactive pre-Day-9 audit of paper-bot-multifactor.py before next run + live challenge readiness
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+1. **CRITICAL — Live Trading Gap**: paper-bot-multifactor.py is a pure paper simulator with ZERO blockchain/CLOB integration. It doesn't read Polygon balance, sign transactions, or place Polymarket orders. The $10.50 USDC wallet is funded but the paper bot cannot trade it. A new live-bot-v1.py is required before real money moves.
+
+2. **Pre-next-run config updates needed post-Day-9**:
+   - `signal_threshold = 0.30` → update to Day 9-derived threshold
+   - `SPRT(p1=0.57)` → update to Day 9 target win rate (likely 0.65)
+   - `backtest_win_rate = 0.571` → potentially update based on n=28 result (89.3% WR, but small sample)
+
+3. **Journal stats inconsistency (minor)**: At SPRT ACCEPT, `stats.open_positions = 2` but actual `open_positions = []` due to threading race between background _refresh_market() and save_journal(). Shuri's 22:32 cleanup was a no-op because the list was already empty. No impact on next run.
+
+**What Worked:**
+- Systematic full-code audit (not just surface check)
+- Found live trading gap proactively before anyone tried to run paper bot with real money
+- Verified existing fixes (force_close, rollover, watchdog) are all in place
+
+**What Didn't Work:**
+- Couldn't do live WebSocket test (can't run bot mid-heartbeat)
+- The threading race in save_journal is documented but not fixed (low priority)
+
+**Lesson Learned:**
+When a bot transitions from "paper" to "live," the gap is often larger than expected. "Just change the balance to real money" is never sufficient — the entire execution layer (order signing, CLOB API, gas fees, error handling) needs to be rebuilt. Audit the execution path, not just the signal logic.
+
+**New Operating Rule:**
+**Paper→Live Transition Checklist**: Before any "live" bot run, verify: (1) actual balance reading from chain, (2) order signing with private key, (3) CLOB/DEX order placement, (4) minimum bet compliance, (5) error handling for rejected/partial fills. If any is missing, it's a paper bot, not a live bot.
+
 ## Operating Rules (derived from patterns)
 <!-- Add rules here as you identify recurring mistakes -->
 

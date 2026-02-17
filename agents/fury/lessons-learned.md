@@ -38,6 +38,14 @@ Don't expect direct customer complaints for latent needs. Look for SIGNALS inste
 ### 2. Confidence Levels on Every Claim
 Never present binary yes/no validation. Use HIGH/MEDIUM/LOW confidence tiers with evidence cited. Investors trust nuanced analysis over absolute statements.
 
+### 10. Post-Publish Intel: GitHub Repos > Twitter for Competitor Discovery at 2 AM
+Post-Day 9 sweep (01:55 IST) found 4 new competitors via GitHub search (discountry, Trust412, ent0n29, MrFadiAi) that weren't surfaced in prior sweeps. At 2 AM, Twitter/X is dormant (no new posts), Reddit requires login, but GitHub search returns structured, actionable results fast. Pattern for all post-publish windows: **lead with GitHub search → then news aggregators → then Twitter** (not the reverse). Rate limit lesson: two searches hit 1 req/sec limit — always add `sleep 2` between web_search calls to stay under free tier.
+
+### 9. Early Pre-Launch Windows (T-80min) Still High ROI When Deliverable Is Specific
+Pre-Day 9 intel at 00:10 IST (80 min before 1:30 AM research fires). WORKING.md listed "Fury pre-Day 9 intel sweep at ~1:20 AM" — started 70 min early. Result: 4.5/5 intel with full competitor table, updated Telonex stat (63.2% confirmed), new competitor discovered (VectorPulser, 1,500 markets). Starting early didn't degrade quality — the intel is still fresh when research fires. Pattern: when a pre-launch window is scheduled, starting earlier is usually fine IF the deliverable scope is specific (not "check latest news" but "confirm 3 specific facts + competitive contrast").
+
+Telonex stat correction: prior intel logged "63%", actual is 63.2% (36.8% profit). Always note the exact decimal when possible — quant audiences notice rounding.
+
 ## Task Log
 
 ### 2026-02-15 14:40 IST - Oroboros Pitch Customer Research Validation
