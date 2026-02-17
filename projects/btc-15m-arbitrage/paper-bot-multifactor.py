@@ -71,9 +71,10 @@ CONFIG = {
         "cluster_proximity": 0.30,
         "vrp": 0.30,
     },
-    # ── Kelly Criterion parameters (Day 8 integration) ──────────────────
-    # From Day 6 backtest: 14 trades, 57.1% win rate at ~50¢ avg entry
-    "backtest_win_rate": 0.571,        # Baseline win rate estimate
+    # ── Kelly Criterion parameters (Day 8/9 integration) ────────────────
+    # Day 9 paper run: 25W/3L (89.3%) — conservative estimate for next run
+    # Conservative regression to ~70% (avoid Kelly overbetting on hot streak)
+    "backtest_win_rate": 0.70,         # Post-Day-9: conservative win rate estimate
     "kelly_multiplier": 0.50,          # Fractional Kelly: 0.5 = half Kelly
     "min_bet_usd": 1.00,               # Paper trading minimum ($1) — Polymarket live min is $5
     # NOTE: Lowered from $5→$1 on Feb 17 19:32 IST (Shuri) — $5 was mathematically unreachable
@@ -323,7 +324,7 @@ class PaperEngine:
         # w = estimated win probability (calibrated from backtest + signal confidence)
         # p = binary entry price
         p_entry = signal.binary_price
-        base_win_rate = CONFIG["backtest_win_rate"]       # 0.571 from Day 6
+        base_win_rate = CONFIG["backtest_win_rate"]       # 0.70 post-Day-9 (conservative, paper run 89.3%)
 
         # Scale win estimate by signal confidence
         # confidence=signal_threshold (min) → w = base_win_rate (baseline)
@@ -655,7 +656,7 @@ class PaperTradingBot:
             asset: SignalState() for asset in CONFIG["assets"]
         }
         self.engine = PaperEngine()
-        self.sprt = SPRT(p0=0.50, p1=0.57, alpha=0.05, beta=0.20)
+        self.sprt = SPRT(p0=0.50, p1=0.65, alpha=0.05, beta=0.20)  # Day 9: testing for ≥65% win rate gate
         self.market_cache = MarketCache()
         self.start_time = time.time()
         self.ws = None
