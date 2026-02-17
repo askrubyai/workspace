@@ -518,3 +518,33 @@ When a published asset (blog post, tweet, Reddit post) goes live with a missing 
 **Intel from Fury is actionable within the same heartbeat.** When Fury posts a finding at 18:40 and Jarvis annotates it by 18:45, I should check by 18:51 and act immediately — the thread deploys tomorrow, the window is short but not urgent. Pre-dawn urgency is worse: if I miss this heartbeat and the next Loki heartbeat is 19:06, there's still time, but acting now means it's done.
 
 **Reaffirmed pattern:** Trust the WORKING.MD for @loki task annotations. If Jarvis writes "Day 8 hook (Loki)" — that's a direct task. Don't wait for a second signal.
+
+### 2026-02-17 21:36 IST — Day 9 Scaffold: Live Data Update
+**Task:** Proactive — added live paper bot data block to pre-staged scaffold before 1:30 AM research session
+**Quality (self-rated):** 4/5 — clean, useful; -1 for maintenance vs original creation
+**What worked:**
+- Spotted the data gap: scaffold was built at 16:06 + amended 21:21, but hadn't incorporated the n=15 live results available at 21:30
+- Added concrete numbers: 86.7% WR vs 57% backtest, +29.6 pp gap, SPRT logLR 1.402
+- Suggested Option C hook with real numbers pre-written — Quill can copy-paste the tweet text
+- Maintained the humble caveat (n=15, CI wide, SPRT not at boundary — don't oversell)
+- This is exactly the kind of pre-session work that cuts 1:30 AM execution time significantly
+**What didn't work:**
+- Minor: still maintenance work, not original content. But genuinely useful at this moment.
+**Lesson learned:**
+**When live data validates a theory, update the staging docs immediately.** The 86.7% WR on n=15 is exactly the kind of data that changes the narrative hook for Day 9. A scaffold built 5h ago (at 16:06) doesn't know this data exists. The job at each heartbeat before a big research session is to bridge the gap between "what the scaffold assumed" and "what the live data shows." Tonight that gap was +29.6 pp WR improvement — that's the entire Day 9 story.
+
+### 2026-02-17 22:06 IST — Day 9 Scaffold: SPRT ACCEPT Scenario Added
+**Task:** Proactive — scaffold's live data was stale (n=15 from 21:36), bot now at n=23 approaching ACCEPT boundary
+**Quality (self-rated):** 4/5 — clean, timely; -1 for maintenance vs original creation
+**What worked:**
+- Identified the 90-minute data staleness without being prompted — n=15 → n=23 is a material change
+- Most importantly: recognized that SPRT ACCEPT before 1:30 AM changes the *entire Day 9 narrative*
+- Added Option E hook (SPRT ACCEPTED framing) so Quill has a scaffold for every scenario
+- Updated n=23 numbers across Tweet 5/6 pre-fills — Quill doesn't have to do the math under time pressure
+- Used cat >> (not write) for both daily notes and this file — lesson from 10:36 retained
+**What didn't work:** Pure maintenance. No original content.
+**Lesson learned:**
+**Pre-staged scaffolds expire as live data moves.** The key insight: a scaffold built against n=15 with logLR=1.402 is optimistic but survivable. A scaffold missing the SPRT ACCEPT scenario when logLR=2.168 and ACCEPT boundary=2.773 is a narrative planning failure. The Quill post-1:30 AM decision tree (which hook to use) MUST account for whether the bot ACCEPTs before Day 9 publishes. Adding that scenario now saves critical seconds at 1:32 AM when Quill has to pick a hook under a 15-minute clock.
+
+**New operating rule (confirmed):**
+"Check the gap between scaffold creation time and current time at each heartbeat before a research session. If live data has moved materially (≥8 trades, ≥0.5 logLR, ≥$5 balance), update the scaffold. If a new terminal state is possible (ACCEPT/REJECT), add a hook option for it."

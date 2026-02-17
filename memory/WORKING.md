@@ -1,6 +1,53 @@
 # WORKING.md
 
-*Last updated: 2026-02-16 23:31 IST (Ruby - Daily Standup)*
+*Last updated: 2026-02-17 23:33 IST (Jarvis - Daily Standup)*
+
+**🏆 PAPER BOT — SPRT ACCEPTED (22:24 IST Feb 17) 🏆**
+- **FINAL: n=28 closed trades | 25W / 3L | 89.3% win rate**
+- **FINAL: Balance $47.75 (+377.5% from $10 start)** 🚀
+- SPRT logLR: **2.823** (boundary 2.773) — ACCEPTED via XRP CLOSED +$4.485 at 22:24:02 IST
+- ✅ **Reuben pre-alerted at 22:15 IST** (Jarvis, msg 2691 — "ONE MORE WIN = ACCEPT")
+- ✅ **Journal CLEAN** (Shuri, 22:32 IST): Zombie positions force-closed (SOL +$0.024, ETH +$0.023), watchdog killed, 28 real closed trades confirmed, backup saved.
+- ✅ **Watchdog EOF bug FIXED** (Friday, 22:49 IST): `accept-watchdog.py` now scans from BOF + pre-checks log before entering poll loop. Commit d108628. Ready for next bot run.
+- ✅ **Day 9 scaffold updated** (Quill, 22:27 IST): Option E hook locked with final numbers — ready for 1:30 AM session
+- ✅ **Post-accept intel** (Fury, 22:55 IST): NautilusTrader competitor cataloged. Ruby = ONLY builder to reach formal SPRT ACCEPT decision. Differentiation table staged for Day 9.
+- 🔔 **Real trading prep**: Wallet check cron active every 2 min — real $10→$100 starts when Reuben funds wallet
+
+## 🎯 WEDNESDAY PRIORITIES (Feb 18, 2026)
+
+### 1. 🔬 Day 9 Research — Signal Filtering (1:30 AM auto)
+- Topic: "We enter 0 markets unless estimated win rate ≥ 65%" (signal filtering)
+- Day 9 hook locked: "28 trades. SPRT says: ACCEPT." (Option E — Quill)
+- Fury pre-Day 9 intel sweep at ~1:20 AM IST (NautilusTrader contrast + Telonex 63% data)
+- Quill builds thread at ~1:42 AM from scaffold: `/artifacts/social/day9-signal-filtering-scaffold.md`
+- Pepper updates welcome email at ~2:00 AM with Day 9 link
+
+### 2. 📱 Automated Social Deployments
+- **9:00 AM IST**: Day 8 Kelly Criterion thread (cron `dc27da24`) + 24h engagement check
+- **4:00 PM IST**: Day 2 Contrarian thread (cron `7b2b6d6b`)
+- **Cron creates**: Day 9 deployment cron after research publishes (Thu Feb 19 9 AM or 4 PM slot)
+
+### 3. 🏆 Post-SPRT: Real Trading Prep
+- Live $10→$100 challenge starts INSTANTLY when Reuben funds wallet
+- **Polygon wallet**: `0x2FC6896bDFB507002D1A534313C67686111cDfdA` (key: `~/.credentials/ruby-polygon-wallet.json`)
+- **Reuben's return address (Solana)**: `ASqAYTvsjHSFJF1bJzDfJLb85XQyNjHHw8sbPe3hLMaM`
+- `wallet-funding-check` cron running every 2 min monitoring Polygon wallet
+- Next bot run: `paper-bot-multifactor.py` clean (watchdog EOF fixed, force-close fixed)
+- Day 9 research will further refine signal filtering threshold before real run
+
+### 4. ⚠️ REUBEN ACTIONS NEEDED
+- Fund wallet (USDC/SOL) — live challenge waiting
+- Click Buttondown verification email (askruby.ai@gmail.com)
+- Enable FileVault (System Settings → Privacy & Security, 5 min + restart)
+- Contact Fahd (@fahdahmed96) about Oro GRAIL grant
+- Post Reddit #1 (or confirm Quill to post): `/artifacts/social/reddit-posts-feb17.md`
+- Confirm Astralane podcast slot with Sujith/Kirat/Paarug
+
+### 5. 🔔 Reminders Firing Tomorrow
+- 8:00 AM IST: Visa Biometrics (tomorrow, Feb 19)
+- 8:00 PM IST: Visa Biometrics eve reminder
+
+---
 
 ## 🎯 TUESDAY PRIORITIES (Feb 17, 2026)
 
@@ -102,7 +149,10 @@
 **Day 8 published**: 15:11 IST — "Kelly Criterion for Binary Options" (`2026-02-17-kelly-criterion`)
 - **Thread**: `/artifacts/social/day8-kelly-criterion-thread.md` (11 tweets, 4.5/5 — written by Loki)
 - **Deployment cron**: `dc27da24` — Wed Feb 18, 9:00 AM IST ✅
-- **Visual check needed**: @wanda — `day8-kelly-ruin.png` + `day8-kelly-comparison.png` already in blog post folder — verify they're tweet-quality dark mode exports; if not, create new ones
+- **Visual check**: ✅ COMPLETE (Wanda, 20:45 IST) — all 3 assets verified/rebuilt and tweet-ready
+  - `day8-kelly-comparison.png`: 5/5 — no changes (perfect)
+  - `day8-kelly-ruin.png`: rebuilt 3.5→4.5/5 — card layout (AVOID/OPTIMAL/SAFE), white badge text, Half Kelly wider
+  - `day8-winrate-sensitivity.png`: polished 4→4.5/5 — bolder labels, simplified annotation
 - **Visuals in blog folder**: `/projects/ruby-blog/blog/posts/2026-02-17-kelly-criterion/` (day8-kelly-comparison.png, day8-kelly-ruin.png, day8-winrate-sensitivity.png)
 - **Key angle**: 57% win rate + Kelly math = need 65%+ for the $10→$100 challenge. Brutal honesty.
 - **NOTE**: Quill's scaffold (`day8-paper-bot-thread-scaffold.md`) is obsolete — Day 8 is Kelly not paper bot.

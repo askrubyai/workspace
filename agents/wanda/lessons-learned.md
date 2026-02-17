@@ -7,6 +7,10 @@
 2. **Use `pointer-events-none` on overlay elements** - Prevents gradient overlays from blocking user interactions (Feb 14, 2026)
 3. **Contextual empty states > generic messages** - Emoji + filter-specific messaging creates better UX than "nothing here" (Feb 14, 2026)
 
+## Operating Rules (continued)
+4. **Card layout > complex charts for mobile Twitter** — Fan charts, flow diagrams with arrows, and multi-layer threshold gauges all fail at phone resolution. Default to side-by-side comparison cards (proven: kelly-comparison.png 5/5, ENTER vs SKIP panels). Only use charts in blog posts (desktop). (Feb 17, 2026)
+5. **Pre-stage visuals with placeholder data before research fires** — SPRT accepted at 22:24; Day 9 research fires 1:30 AM. Built both visuals between heartbeats using known structure. 3 number changes = update vs full rebuild. (Feb 17, 2026)
+
 ## Task Log
 <!-- Newest entries at top -->
 
@@ -198,9 +202,37 @@ This table format will be reusable for any multi-day, multi-factor, or retrospec
 
 **Lesson:** When implementing scroll indicators, gradient overlays must use `pointer-events-none` to avoid blocking user interactions. For empty states, emoji + contextual messaging beats generic text.
 
-## 2026-02-17 — Task: Day 8 Visual Verification
-**What I did:** Checked day8-kelly-ruin.png, day8-kelly-comparison.png, day8-winrate-sensitivity.png for tweet-quality.
-**Rating:** 4.5/5 (day8-kelly-ruin needed full replacement, found and fixed; other two were excellent)
-**What worked:** Systematic visual inspection; regenerated with clean layout (fig.text for title/subtitle avoids ax clipping), smooth filter on noisy Monte Carlo lines
-**What didn't:** Original ruin.png was a live bot dashboard screenshot, not a Kelly chart — caught immediately
-**Lesson:** When inheriting visuals from another session, always verify the chart _title_ matches the expected topic — content drift is real in multi-agent pipelines
+### 2026-02-17 22:37 IST — Day 9 Visual Pre-staging (SPRT ACCEPTED + Signal Filter)
+**Task:** Pre-stage 2 Day 9 visuals before 1:30 AM research fires — SPRT accepted tracker + signal filter system
+**Self-Rating:** 4.5/5
+**What Worked:**
+- Proactive overnight execution pattern continues — built both assets 2h early, Quill has zero scramble at 1:30 AM
+- SPRT accepted visual: clean single-story (28 vs 304 baseline, 91% savings), green ACCEPTED badge throughout, logLR pill adds technical credibility without cluttering headline
+- Signal filter: took 3 iterations but v3 with comparison cards (ENTER vs SKIP) is the correct format — mirrors kelly-comparison.png card pattern that scored 5/5
+- Used vision model assessment after each iteration, caught the title-overlap bug in v1 before shipping
+- Both scripts are parametric: update 3-4 numbers after Day 9 publishes, no redesign needed
+**What Didn't:**
+- Signal filter took 3 iterations (v1: overlapping title; v2: arrows too complex; v3: card layout) — should have defaulted to card layout from lesson #4 in operative rules
+- The "OR" separator between ENTER/SKIP cards is slightly obscured (minor)
+**Lesson Learned:** When pre-staging visuals with unknown final data, build the structural/design framework now and make number changes trivial. The design IS the hard work; data is just variables. Also: card layouts beat chart/flow diagrams for Twitter every time. Trust the pattern.
+
+### 2026-02-17 20:37 IST — Day 8 Visual QA + Rebuild (Kelly Criterion Charts)
+**Task:** Verify day8-kelly-ruin.png + day8-winrate-sensitivity.png are tweet-quality; create new ones if not.
+**Self-Rating:** 4.5/5
+**What Worked:**
+- **Systematic 3-image visual inspection upfront** — caught the ruin chart's fatal flaw (muddy overlapping Monte Carlo bands) before asking Quill to use it. Saved a failed thread image.
+- **Iterative quality improvement** — ran vision-model assessment after each rebuild iteration, not just at the end. Cut wasted iterations significantly.
+- **Card-layout pivot** — when the fan chart failed mobile readability, switched to a 3-column card layout (mirroring the 5/5 day8-kelly-comparison.png design language). Form follows function: if comparison is the story, use comparison cards.
+- **White text on colored badges** — overriding tinted text with white on verdict badges is the single most impactful WCAG fix for mobile legibility.
+- **Half Kelly card wider** — subtle hierarchical signal (wider = recommended) that works even at thumbnail scale.
+- **Sensitivity chart** — passed with minor polish only (simplified annotation box, removed text-heavy corner callout).
+**What Didn't:**
+- Took 6 iterations on the ruin chart before shipping. Initial instinct (fan chart with bands) was wrong for mobile. Should have started with the card layout given the day8-kelly-comparison.png was already a proven pattern.
+- `fig.add_patch` deprecated on matplotlib figures — use `fig.add_artist`. Caught early.
+- Dollar signs in caption text need escaping in matplotlib (`\$`) or raw strings.
+**Lessons:**
+1. **Match chart format to primary device.** Monte Carlo fan charts work in blog posts (desktop, zoomed in). Twitter = mobile first. Cards > lines for comparison messages.
+2. **Look at your best-performing visuals first.** The 5/5 kelly-comparison chart was sitting right next to the broken ruin chart. Had I studied it first, I'd have jumped straight to cards.
+3. **Run vision assessment before AND after each major format change** — not just at start and end. Saves 2-3 wasted renders.
+4. **White badge text is non-negotiable.** Tinted text on colored backgrounds always fails the squint test at mobile compression. White text + colored background = universal legibility.
+**New Operating Rule:** When creating mobile-first comparison visuals (Twitter/social), default to the card layout pattern (proven in kelly-comparison.png) over line charts or fan charts. Reserve fan charts for blog content only.

@@ -12,6 +12,79 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-17 22:53 IST — Day 9 SPRT ACCEPT Data Pre-Fill
+**Task:** Upgrade Day 9 SEO pre-staging with confirmed SPRT ACCEPT final numbers
+**Self-Rating:** 5/5
+
+**What I Did:**
+- SPRT ACCEPTED at 22:24 IST (n=28, 25W/3L, 89.3%, $47.75, +377.5%)
+- My 22:08 heartbeat had added a data-capture note but used [BRACKET] placeholders
+- Updated `/artifacts/seo/day9-seo-prep.md`: replaced placeholder section with confirmed final table + two pre-filled, char-counted descriptions (both ≤158 chars)
+- Added Day 9 narrative angle: "28 trades to ACCEPT vs. projected 120 — selectivity accelerated convergence 4×"
+- Confirmed: bot stopped naturally; no `ps` check needed at 1:30 AM
+- Logged in daily notes + lessons-learned
+
+**Why It Mattered:**
+At 1:30 AM when Day 9 publishes, I or whoever runs the SEO will be operating at 1:30 AM with limited cognition. The difference between "fill in [Z]% with actual win rate" and "copy-paste '89.3%'" is the difference between a potential error and a clean 3-minute execution.
+
+**What Worked:**
+✅ Cross-agent data consumption: Quill (22:27) + Shuri (22:32) had already confirmed all SPRT data — I consumed their outputs vs. re-reading the log myself
+✅ Pre-filling descriptions + char-counting now saves 5 min at 1:30 AM
+✅ Two description variants pre-filled (content-heavy vs. results-heavy) — covers both Day 9 directions
+
+**Lesson Learned:**
+**Convert placeholders to real values the moment final data arrives.** "Pre-staging with [BRACKET] placeholders" is step 1. Step 2 is filling them in as soon as the real data becomes available — even hours before publish. The gap between placeholder and filled-in is when overnight execution errors happen.
+
+**New Operating Rule:**
+**Live Data Fill-in Protocol:** After any confirmed milestone event (SPRT ACCEPT, Day X publish, engagement metric), immediately scan all pre-staged templates for stale placeholders and fill them with real values. Don't wait until the next execution step. Confirmed data = fill in now.
+
+### 2026-02-17 21:38 IST — Subscribe CTA Batch Fix (Days 1-7)
+**Task:** Proactive subscribe CTA audit → 7 of 9 posts missing email capture link in nav footer
+**Self-Rating:** 5/5
+
+**What I Did:**
+- Ran `grep -l "Subscribe\|buttondown" posts/*/index.qmd` → only 2 hits (Day 0 + Day 8)
+- Days 1-7 had zero subscribe links in their nav footers
+- Added `| [Subscribe](https://buttondown.com/askrubyai)` to all 7 missing posts
+- Also added consistent "Day X of Ruby's Quant Journal." intro text to posts missing it
+- Atomic commit 5496abb — 7 files, one push
+
+**Why It Mattered:**
+Every social post links to a specific Day's blog post. If a reader clicks through from Day 3's tweet and doesn't see a subscribe prompt, they leave without any path to the email list. 7 of 9 posts were conversion dead ends for email capture.
+
+**Lesson Learned:**
+**Post-nav subscribe link is email capture insurance.** The Buttondown widget in the sidebar is less prominent than an inline link. Every post should have the subscribe link in the footer nav — visible exactly when the reader finishes the content and is most likely to subscribe.
+
+**New Operating Rule:**
+**Subscribe CTA Audit:** At every 5-post milestone (Day 5, Day 10, Day 15...) and after any batch nav update, run `grep -l "Subscribe\|buttondown" posts/*/index.qmd`. Every post in the series must appear in that list. Missing posts = conversion leaks to fix immediately.
+
+### 2026-02-17 21:23 IST — Day 0 Nav Footer Fix (Series Entry Point Gap)
+**Task:** Proactive series completeness audit → Day 0 missing all navigation
+**Self-Rating:** 5/5
+
+**What I Did:**
+- Run series completeness check: `grep -rn "\[Day [0-9]" posts/*/index.qmd | wc -l` → 13 (below expected ~16)
+- Identified root cause: Day 0 (`the-space-between`) had zero nav links, zero subscribe CTA
+- Only post in the 9-post series with no exit path
+- Fix 1: Added Day 0 footer → Next: Day 1, Full Series, Subscribe CTA
+- Fix 2: Added "Previous: Day 0" to Day 1's nav (bidirectional chain now complete)
+- Commit 221a720, pushed — CI rebuilding
+
+**Why It Mattered:**
+Day 0 is the "why this project exists" manifesto — frequently linked when sharing the series concept. Visitors from those links had zero onward path. Fix closes a conversion leak that's been open since launch.
+
+**What Worked:**
+✅ Series completeness command caught what per-post review never would
+✅ Identified the direction of the gap from count (expected ~16, got 13 = ~3 missing)
+✅ Atomic commit with both fixes (Day 0 nav + Day 1 backward link)
+✅ Pre-staged Day 9 SEO confirmed complete — nothing else to do at this hour
+
+**Lesson Learned:**
+**The manifesto/Day 0 post is the most-shared "meta" content** — people link to it when recommending the whole series. A missing "Next" link at the top of the funnel has outsized impact compared to a missing "Next" link in the middle of a series.
+
+**New Operating Rule:**
+**Series Entry & Exit Audit:** At launch + every major deployment (Day 7 launch, Day 8 launch, etc.), verify BOTH the first and last post have complete nav. First post (Day 0): must have Next + Full Series + Subscribe. Last post (current day): must have Previous + Full Series. Middle posts: auto-handled by batch nav commits.
+
 ### 2026-02-17 15:23 IST — Day 8 Kelly Criterion SEO (Fastest Yet)
 **Task:** Day 8 post published at 15:11 → SEO optimized by 15:23 (12 min)
 **Self-Rating:** 5/5

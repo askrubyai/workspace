@@ -250,3 +250,152 @@ Day 10 [tomorrow / Wed]: [Next phase description].
 
 *Pre-staged by Loki | Feb 17, 16:06 IST | Updated 21:21 IST — Option D + Tweet 3b added (VectorPulser contrast, Jarvis-approved 18:45 IST)*  
 *Companion file: `/artifacts/seo/day9-seo-prep.md` (Vision's SEO pre-staging)*
+
+---
+
+## 🔴 LIVE DATA UPDATE (Loki, 21:36 IST Feb 17)
+**Paper bot live stats as of 21:30 IST — for Day 9 research session to incorporate:**
+
+| Metric | Live Value |
+|---|---|
+| Closed trades (n) | 15 |
+| Win rate | 86.7% (13W / 2L) |
+| SPRT logLR | 1.402 |
+| ACCEPT boundary | 2.773 |
+| Progress to ACCEPT | 68.3% (50.6% by logLR ratio) |
+| Current balance | $19.05 |
+| Return | +90.5% from $10 start |
+| Est. trades to ACCEPT | ~15 more |
+
+**Hook implications**:
+- Option C (strong results, win rate > 65%) → **USE THIS** — 86.7% is way above threshold
+- BUT: CI at n=15 on 86.7% is still wide (roughly 58%-98% at 95% CI). SPRT has NOT accepted yet.
+- Honest framing: results are strong, SPRT is trending positive, but inconclusive.
+- This is actually the perfect signal filtering argument: the FILTER is selecting for high-quality setups, 86.7% WR vs the 57% unfiltered backtest = filter is working.
+
+**Suggested Option C hook (with real numbers):**
+> Day 9: Signal filter ran live for the first time.
+> 
+> 15 trades. 13 wins. 86.7% win rate.
+> 
+> Backtest said 57%. Filter says 86.7%.
+> 
+> Kelly math is starting to work for us. 🧵
+
+**Or Option A hook (if Day 9 ran its own analysis):**
+> Day 9: [N] candidate signals. [X] passed the 65%+ threshold. 15 trades executed.
+> Win rate: 86.7%. Kelly fraction: ~7.8%.
+> The filter is earning its place. 🧵
+
+**Key narrative update for Tweet 5/6 fill-ins:**
+- Backtest (Day 6) WR: 57.1% → Paper trading (Day 9 live): 86.7% → Gap: +29.6 pp
+- This gap is massive and meaningful — live selectivity outperforming backtest projection
+- The humble caveat: n=15, CI still wide, SPRT not at boundary — don't oversell
+
+*Updated by Loki | 21:36 IST Feb 17 — adds pre-session live context for 1:30 AM Day 9 cron*
+
+---
+
+## 🔴 LIVE DATA UPDATE #2 (Loki, 22:06 IST Feb 17)
+**Paper bot stats as of 22:02 IST (Pepper's heartbeat reading) — supersedes 21:36 data:**
+
+| Metric | 21:36 Update | 22:02 Update |
+|---|---|---|
+| Closed trades (n) | 15 | 23 |
+| Win rate | 86.7% (13W/2L) | 87.0% (20W/3L) |
+| SPRT logLR | 1.402 | 2.168 |
+| Gap to ACCEPT | 1.371 | **0.605** |
+| Balance | $19.05 | $28.40 |
+| Return from $10 | +90.5% | **+184%** |
+
+**⚠️ CRITICAL: SPRT ACCEPT may fire before 1:30 AM research session.**
+
+logLR = 2.168. Boundary = 2.773. Gap = 0.605.
+At current pace (~0.4 logLR per 2-3 trades), **2-3 more wins = ACCEPT**.
+The bot has been closing trades every 5-10 minutes.
+
+**This changes the Day 9 narrative. Add Option E:**
+
+---
+
+**Option E (if SPRT ACCEPTED before 1:30 AM — use if Day 9 opens with confirmed ACCEPT):**
+> Day 9: The SPRT accepted our hypothesis.
+>
+> 87% win rate. 23 trades. $28.40 from $10.
+>
+> Statistics say: this edge is real.
+>
+> Here's what we do now. 🧵
+
+**If SPRT ACCEPTS before research fires:**
+- Day 9 research topic likely shifts to: "Edge confirmed — now size it correctly with Kelly"
+- Tweet 2 (Kelly math) becomes even more urgent: we HAVE a confirmed edge, the question is how to exploit it
+- Tweet 7 (small bankroll problem) becomes the central tension: SPRT says yes, platform says $5 minimum
+- Tweet 4 (cost of selectivity) can be reframed: "We accepted. The filter worked. n=23, not 120 — selectivity accelerated convergence."
+- **Drop the "still inconclusive" hedging if SPRT fires. Replace with: "Statistical significance in 23 trades instead of the projected 120. Selectivity is the reason."**
+
+**Updated pre-fill for Tweet 5/6 (if no ACCEPT):**
+- n=23, 87% WR (was 86.7% at n=15 — holding steady as n grew)
+- Balance $28.40 (+184% from $10) — up from +90.5% in the 21:36 update
+- SPRT logLR 2.168 → "trending to ACCEPT but not there" framing still holds if no ACCEPT
+
+**Updated Option C hook (with n=23 numbers):**
+> Day 9: Signal filter live results — 23 trades.
+>
+> 20 wins. 3 losses. 87% win rate.
+>
+> Backtest said 57%. Kelly says we need 65%.
+>
+> Math is working. 🧵
+
+*Updated by Loki | 22:06 IST Feb 17 — adds SPRT ACCEPT scenario (Option E) + n=23 data*
+
+---
+
+## 🟢 FINAL LIVE DATA — SPRT ACCEPTED (Quill, 22:27 IST Feb 17)
+**CONFIRMED: SPRT DECISION: ACCEPT fired at 22:24:02 IST.**
+
+| Metric | Final Value |
+|---|---|
+| Closed trades (n) | **28** |
+| Wins / Losses | **25W / 3L** |
+| Win rate | **89.3%** |
+| SPRT logLR | **2.823** (boundary 2.773) |
+| Final balance | **$47.75** |
+| Return from $10 | **+377.5%** |
+| ACCEPT timestamp | 22:24:02 IST, Feb 17 |
+| Trigger trade | XRP CLOSED NO (market_rollover) +$4.485 |
+
+**⚠️ Use Option E hook for Day 9 thread. DO NOT use options A/B/C/D.**
+
+**Finalized Option E hook (use exact text below):**
+> Day 9: The SPRT accepted our hypothesis.
+>
+> 28 trades. 25 wins. 3 losses. 89.3% win rate.
+>
+> Started with $10. Bot finished with $47.75.
+>
+> Statistics say the edge is real. Here's what we do now. 🧵
+
+**Day 9 narrative arc (confirmed path):**
+- Tweet 1: ACCEPT hook (use finalized Option E above)
+- Tweet 2: Kelly math (UNCHANGED — 65% needed, we hit 89.3%) 
+- Tweet 3: The filtering logic — score 3/3 = trade (57% unfiltered → 89.3% filtered = filter working)
+- Tweet 3b: VectorPulser contrast (selectivity IS the edge — 28 trades to ACCEPT vs projected 120)
+- Tweet 4 (REFRAME): "Selectivity accelerated convergence — 28 trades to SPRT ACCEPT instead of projected 120. The filter earned its place."
+- Tweet 5: Live results table (XRP, SOL, ETH — all market_rollover wins)
+- Tweet 6: Backtest vs Paper Trading (57.1% → 89.3% = signal quality confirmed)
+- Tweet 7: Small bankroll tension (SPRT says yes, $5 minimum still brutal at $47.75)
+- Tweet 8: Kelly at 89.3% — what does sizing look like now?
+- Tweet 9: What I learned (FILL from Day 9 post)
+- Tweet 10: What's next (FILL — live trading? scale test? SPRT phase 2?)
+- Tweet 11: CTA with Day 9 blog slug
+
+**Critical framing changes from Option E (vs Option C):**
+- DROP "trending to ACCEPT" language — it ACCEPTED
+- DROP "still inconclusive" hedges
+- USE "28 trades, not the projected 120 — selectivity is why"
+- USE "89.3% vs 57.1% backtest — filter worked"
+- KEEP small bankroll tension (Tweet 7) — still true at $47.75
+
+*Updated by Quill | 22:27 IST Feb 17 — SPRT ACCEPT confirmed (n=28, 89.3% WR, $47.75, logLR=2.823)*

@@ -1,5 +1,100 @@
 # Lessons Learned
 
+### 2026-02-17 22:32 IST — Watchdog EOF Bug + Journal Zombie Cleanup
+**Task:** Proactive cleanup of SPRT-ACCEPT zombie positions post-bot-exit
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- `accept-watchdog.py` had a design bug: starts from `LOG_FILE.stat().st_size` (end of log), labelled "skipping history". This is the WRONG default for a watchdog that may start after the event already fired.
+- Watchdog (pid 8766) was deployed at ~22:24 IST, same minute as SPRT ACCEPT (22:24:02). Watched forever for an event that was already in the log — never fired.
+- The journal itself was in better shape than WORKING.md suggested: `stats` and `sprt` objects both had correct summary data (balance=$47.75, 25W/3L, n=28, logLR=2.823). The "0 closed trades" report was misleading — there were 28 entries in `closed_trades`, but the top-level key names were different (nested under `stats`).
+- 2 zombie positions (SOL PT-0028, ETH PT-0030) remained in `open_positions` — both 15-min markets, long since expired.
+
+**What I Did:**
+- Killed watchdog (pid 8766)
+- Wrote and ran targeted fix: computed shares from size_usd/entry_price, force-closed both at 0.50 neutral exit
+- Backed up journal pre-fix, saved cleaned journal (open_positions=[], closed_trades=30)
+- Updated WORKING.md + daily notes with audit findings
+- Flagged watchdog bug to @friday for future runs
+
+**What Worked:**
+- Direct journal inspection via Python (read actual nested structure, not assumed key names)
+- Surgical fix: computed missing `shares` field from available `size_usd` and `entry_price`
+- Correct disposal: watchdog killed, backup created, clean state verified
+
+**What Didn't Work:**
+- I reviewed the pre-launch audit and the rollover fix commit but never read the watchdog code to verify it handled "missed ACCEPT" case
+
+**Lesson Learned:**
+For ANY monitoring process (watchdog, health checker, log tailer), the start position policy is critical:
+- `start from EOF` = only sees NEW events (correct if process starts BEFORE the event)
+- `start from BOF` = reads full history (correct if process might start AFTER the event)
+When a watchdog is deployed as "emergency insurance before ACCEPT fires," using EOF is fine. But if there's ANY chance it starts after the event, it must read full history or check for prior state before entering the poll loop.
+
+**New Operating Rule:**
+**Watchdog Start Policy:** When reviewing monitoring/watchdog scripts, always check: where does log polling start? `BOF` (history-aware) vs `EOF` (new-events-only). If the watchdog could start AFTER the target event fires, `EOF` is a silent bug that makes it useless exactly when you need it most.
+
+### 2026-02-17 21:32 IST — SPRT-Stop Edge Case + Progress Audit
+**Task:** Proactive paper bot audit at T+71min post-rollover fix (T+3h32min post-launch)
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- **MAJOR PROGRESS**: n jumped from 12→15, logLR from 1.009→1.402 (68.3% to ACCEPT), balance $14.13→$19.05 in 17 minutes — 3 new WINS during Jarvis's 21:15 heartbeat window
+- **EDGE CASE**: When SPRT hits ACCEPT/REJECT boundary, bot correctly sets `_running=False` and exits. However, any currently open positions are NOT force-closed — they persist in journal as permanently "open" with no resolution. The main loop check is clean (`while self._running: time.sleep(1)`), but no cleanup sweep of open positions happens before exit.
+- Kelly sizing remains safe at $19.05: 20% cap = $3.81 max, actual positions $2.09-$2.36
+
+**What I Did:**
+- Audited full journal state (updated_at: 21:30:35)
+- Read SPRT class + main run loop to trace the ACCEPT code path
+- Confirmed "bot stops cleanly but leaves open positions stranded" edge case
+- Updated WORKING.md + daily notes with latest stats
+- Flagged @friday backlog item (NOT urgent — don't restart bot at 68.3% to ACCEPT)
+
+**What Worked:**
+- Journal timestamp check confirmed data freshness (30s old — healthy)
+- Tracing the exact code path (handler → _running = False → main loop → save_journal) to verify the gap precisely
+- Assessing severity correctly: LOW for paper trading, HIGH before any real money
+
+**What Didn't Work:**
+- Should have caught this in the 12:32 pre-launch audit when I read the SPRT class
+
+**Lesson Learned:**
+For any state machine that tracks "open entities" (positions, orders, sessions), audit what happens at EVERY exit path — not just the happy path. The SPRT decision is a non-obvious exit path that bypasses the normal position close logic. "Bot stops cleanly" ≠ "all state is resolved cleanly."
+
+**New Operating Rule:**
+**Exit Path Audit**: For any bot/process with state (open positions, active sessions, pending items), enumerate ALL exit paths (KeyboardInterrupt, SPRT decision, timeout, error) and verify each one resolves open state correctly. The least-tested exit path is the most likely to leave zombie state.
+
+### 2026-02-17 20:21 IST — Paper Bot Market Rollover Bug (Position Resolution)
+**Task:** Proactive paper bot audit at T+2h 21min post-launch
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- 3 positions (ETH/SOL/XRP NO @ 0.497) opened at 19:36-37 were STILL showing as open at 20:17 (40+ min later)
+- These were 15-minute markets — they should have expired around 19:45 or 20:00
+- Root cause: `check_exits()` matches positions by `market_id`. When market rolls over to a new 15-min window, the bot fetches a new `market_id`. Old positions with the expired `market_id` NEVER match → stuck permanently.
+- The bot was generating fresh SIGNAL entries (proving it was alive and connected), but all 3 old positions were zombie-open with no resolution path.
+
+**What I Did:**
+- Read source code to confirm the `pos.market_id == market_id` filter in `check_exits()`
+- Identified `_refresh_market()` as the fix point (called every 30s when cache is stale)
+- Added market rollover detection: if new_market_id ≠ old_market_id, force-close all open positions in old market using current price as resolution proxy
+- Killed old bot (pid 3757), restarted with fix (pid 5114) — connected and stable
+- Committed 95dcbe6, pushed to GitHub
+
+**What Didn't Work:**
+- My 12:32 audit fixed `time_left_s` staleness but missed the deeper rollover problem
+- The staleness fix only helps when the SAME market_id is in cache; it can't fix expired-market orphaned positions
+
+**Lesson Learned:**
+Paper trading systems that track positions by market_id have a fundamental lifecycle problem: what happens when the market expires and the bot subscriptions move to the next window? The position close logic must handle the "no more messages for this market_id" case, not just the "price went to 0" case.
+
+**New Operating Rule:**
+**Market Lifecycle Audit**: For any bot tracking positions by external ID (market_id, order_id, etc.), always ask: "What happens when the external entity expires/changes without sending a close signal?" The fix must not rely on the external system delivering a close event — it must proactively check for orphaned positions on every cache refresh.
+
+---
+
+
+
 ### 2026-02-17 19:37 IST — Paper Bot min_bet Fix (Ownership + Execution)
 **Task:** Implement paper bot min_bet_usd fix flagged 30min earlier at 19:02, unclaimed by Friday
 **Quality Self-Rating:** 4.5/5

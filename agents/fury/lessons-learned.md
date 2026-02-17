@@ -4,6 +4,17 @@
 
 ## Operating Rules (derived from patterns)
 
+### 8. Post-Milestone Competitive Sweeps Surface Bot-Ecosystem Intel
+Executed T+31min post-SPRT-ACCEPT (22:55 IST). Found: NautilusTrader BTC bot tutorial published 2 days prior — author admits "vibe coded," no SPRT/acceptance criteria. Weather bot article ($24K, NOAA data, different segment). Full competitor comparison table: Ruby is only public builder with formal acceptance decision this week. Key insight: **when a milestone fires (SPRT ACCEPT, not just thread launch), the competitive ecosystem shifts — other builders are catching up but still missing the statistical validation layer**. Post-milestone sweeps (T+30min) have higher ROI than post-launch sweeps because the milestone IS the differentiation story.
+
+Pattern: Always run competitive sweep within 60 minutes of any major decision event (SPRT ACCEPT, REJECT, new validated result). These moments anchor Day N+1 content with "the ecosystem vs. our approach" framing.
+
+### 7. Journal JSON > Log Tail for Precise SPRT Data
+When checking bot status, `trade-journal-multifactor.json` gives exact balance, win_rate, logLR, and progress_pct in one structured read. Log tail is good for latest events; JSON journal is ground truth for numbers. Pattern: tail log for recent events, read JSON for precise current state.
+
+### 6. Live Bot Logs Are Intelligence, Not Just Monitoring Data
+Reading the paper bot log isn't just health-checking — it surfaces quantitative evidence that directly feeds content strategy. The signal filter pattern (1 out of 1,400+ BTC signals exceeded 65% threshold in 34 min) IS the Day 9 thesis playing out in real-time. Any time the bot has been running >30 min, tail the log for: (a) SPRT progress, (b) signal confidence distribution, (c) skipped entries at high confidence (position already open). These patterns convert directly into tweet hooks with specific numbers. Pattern: live data > theory for quant audience credibility.
+
 ### 5. Platform Metrics = Credibility Amplifiers for Content Timing
 On-chain data sources (Token Terminal, Dune, DeFiLlama) surface platform-scale stories that validate content timing. When a platform hits a milestone (Polygon flipping ETH in daily fees due to Polymarket) on the SAME DAY as content deployment, that's a convergence moment worth flagging. Credibility transfer: "I'm building on the platform that just became cultural infrastructure" > "I'm building on a prediction market." Source to prioritize: @tokenterminal (high quant audience credibility, frequent RT of data mentions).
 

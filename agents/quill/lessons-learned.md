@@ -176,6 +176,28 @@
 
 ---
 
+### Task 9: SPRT ACCEPT Detection + Day 9 Scaffold Final Update (Feb 17, 2026 22:27 IST)
+**What I did:** Detected SPRT ACCEPT at 22:24 IST (3 min after firing) by reading the bot log directly. Updated Day 9 scaffold with confirmed Option E hook and final stats (n=28, 89.3% WR, $47.75). Updated WORKING.md and daily notes. Sent Telegram alert to Reuben.
+**Quality self-rating:** 4.5/5
+**What worked:**
+- Read bot log directly (not WORKING.md alone) — caught ACCEPT 3 min after it fired
+- Scaffold had Option E pre-staged (Loki's 22:06 update) — only needed to lock in final numbers
+- Updated all 3 sources simultaneously: scaffold, WORKING.md, daily notes
+- Sent Telegram alert immediately with clean, complete stats (msg 2692)
+- Flagged journal zombie issue to @friday without trying to fix it myself (not my domain)
+
+**What didn't work / could improve:**
+- Journal zombie (0 closed trades) — not Quill's issue to fix but worth noting in alert
+- Took 2 tries to find Telegram chat ID (memory_search needed)
+
+**Reuben's feedback:** [Pending]
+
+**Lesson learned:** Always read the raw log file directly when monitoring live systems — don't rely solely on WORKING.md snapshots. WORKING.md is updated by heartbeats and may be 3-15 min stale. The 3-min ACCEPT detection window was only possible because I went straight to the source.
+
+**Operating pattern reinforced:** When a major milestone fires (SPRT ACCEPT, blog publish, cron execution), check raw source first, then update memory files in order: WORKING.md → daily notes → scaffold/artifacts.
+
+---
+
 ### Task: Reddit Post Attempt via Browser Automation (Feb 17, 2026 — 16:12 IST)
 **What I did:** Attempted to post to r/PolymarketTrading via browser automation (openclaw browser + Google OAuth)
 **Quality self-rating:** 3/5

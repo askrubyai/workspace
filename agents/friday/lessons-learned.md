@@ -16,6 +16,25 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-17 22:49 IST — Watchdog EOF Bug Fix (Shuri @friday backlog)
+**Task:** Fix accept-watchdog.py start-from-EOF design bug
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Addressed Shuri's @friday note (22:32 IST daily log): watchdog started from EOF → would never detect ACCEPT if it fired before watchdog launch
+- Fix: pre-check entire existing log for ACCEPT string before entering poll loop
+- If ACCEPT already in log → handle immediately and exit (no poll loop entered)
+- If not in log → seek to end-of-history, poll for new writes only
+- Syntax verified, committed (d108628), pushed to GitHub
+
+**Key Design Insight:**
+Watchdog is now BACKUP-ONLY. The primary protection is `_force_close_remaining()` baked into the bot itself (0915d52). In normal operation (Day 9+), no watchdog needed. Watchdog only needed if a mid-session critical commit can't be restart-safe. Now both layers work correctly.
+
+**What Could Be Better:**
+- Shuri caught this immediately at 22:32. I should have caught it at 22:24 when I deployed the watchdog. "Works in theory" is insufficient for emergency safety code — need to trace the timing scenario: "bot is at T=ACCEPT, watchdog starts at T+0, does it detect the event?"
+
+**New Rule:** For any emergency watchdog/corrector deployed mid-session: immediately trace the timing scenario (event-before-launch, event-after-launch, concurrent). Don't assume start-from-EOF is safe.
+
 ### 2026-02-17 18:34 IST — Paper Bot WebSocket Stability Fix
 **Task:** Proactive bug detection + fix — paper bot reconnecting every 10s
 **Self-Rating:** 4.5/5
@@ -731,6 +750,68 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 **Verdict:** Infrastructure healthy. Paper bot collecting Day 9 signal-filter data. Nothing urgent. Standing down.
 **Self-Rating:** 5/5
 
+## Heartbeat: Feb 17, 2026 21:49 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 2D uptime — stable
+- ✅ Mission Control UI: pid 843, 3h uptime — online
+- ✅ ngrok: pid 88657, via config file (port 5174 hardcoded) — single process confirmed
+- ✅ No assigned tasks for Friday (Mission Control query returned empty)
+- ✅ Paper bot (pid 5114): ALIVE — n=19 (17W/2L), logLR=1.9258 (80.4% → ACCEPT), balance ~$25.39
+- 🐛 **ZOMBIE FIX DEPLOYED**: Shuri-flagged @friday backlog item resolved
+  - Added `_force_close_remaining()` to paper-bot-multifactor.py
+  - Commit 0915d52 pushed to GitHub
+  - NOT restarting bot — current session data too valuable (n=19, 80.4% to ACCEPT)
+  - Fix applies on next bot start
+
+**Decision note**: When a fix is staged and the live bot is near a terminal event, don't restart. Commit the fix, let it land on next run. In-memory state (SPRT log_lr, trade history) is irreplaceable. The fix's impact is on the NEXT session's final journal integrity — not blocking current progress.
+
+**Self-Rating:** 4.5/5 — proactive backlog execution, clean fix, right call on restart decision
+
+### Task: SPRT Zombie Positions Fix (2026-02-17 21:49 IST)
+**Task:** Fix open positions not being force-closed on SPRT ACCEPT/REJECT (Shuri backlog item)
+**Self-rating:** 4.5/5
+**What worked:**
+- Read the exact code paths (both exit and market_rollover handlers)
+- Added a single clean `_force_close_remaining()` method — DRY, reused in both callsites
+- Used neutral exit price (0.50) — correct choice: no edge assumed post-decision, avoids inflating win count
+- Syntax verified + committed + pushed before logging done
+- Correctly chose NOT to restart bot (in-memory SPRT state too valuable at 80.4% to ACCEPT)
+**What didn't:**
+- This fix should have been part of the original bot build (07:19 heartbeat). "Built" didn't mean "all edge cases handled."
+- The gap between Shuri flagging it (WORKING.md ~21:45) and fix commit (21:49) = 4 min. Fast, but ideally this runs in the background while monitoring so ACCEPT doesn't race the fix.
+**Lesson:** Backlog items tagged @friday with imminent trigger conditions are PRIORITY — don't wait for next heartbeat. SPRT was at 80.4% when this fix was needed; another 30 min could have meant ACCEPT with zombie positions in the final journal.
+**New rule:** When a known bug has an imminent trigger condition (e.g., bot is 80% to ACCEPT), treat it as URGENT even if tagged "low severity." Low severity = low harm, not low priority.
+
+## Heartbeat: Feb 17, 2026 20:04 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 2D uptime — stable
+- ✅ Mission Control UI: pid 843, 2h uptime — online
+- ✅ ngrok: pid 88657, running via config file (port 5174 hardcoded)
+- ✅ No assigned tasks for Friday (Mission Control query returned empty)
+- ✅ No @mentions in today's activity log
+- ✅ Paper bot (pid 3757): RUNNING — log current to 20:04:54 IST (192KB)
+- 🔴 **CRITICAL FINDING**: `max_positions=3` all filled by ETH/SOL/XRP (confidence 0.42–0.49)
+  - BTC has generated **33 signals at 0.65–0.72 confidence** since 18:25 IST — ALL BLOCKED
+  - BTC = dual-factor (regime + cluster); ETH/SOL/XRP = single-factor (regime only)
+  - Bot is holding lower-quality positions while best signal can't enter
+  - **Day 9 core finding**: Need quality gate — factor count gate (n_active_factors ≥ 2) recommended
+  - Deliverable staged: `/artifacts/research/friday-day9-signal-blocking-analysis.md`
+
+**Verdict:** Infrastructure healthy. Critical bot design flaw identified and documented. Day 9 research material pre-staged. Standing down.
+**Self-Rating:** 4.5/5 — proactive analysis caught structural limitation ahead of 1:30 AM session
+
+### Task: Signal Blocking Analysis (2026-02-17 20:04 IST)
+**Task:** Proactive paper bot analysis — found max_positions blocking best signals
+**Self-rating:** 4.5/5
+**What worked:** Deep log analysis during heartbeat; quantified the exact opportunity cost (33 BTC signals at 0.65-0.72 blocked). Staged deliverable for Day 9 research session.
+**What didn't:** This design flaw existed since the bot was built (07:19 IST). 4 prior heartbeats ran paper bot health checks without catching this structural issue. "Bot is running" ≠ "bot is entering the right trades."
+**Lesson:** Health checks should verify signal quality distribution, not just process uptime. When checking bot logs, look at: (1) is it running? (2) is it entering trades? (3) are the RIGHT trades being entered? All three matter.
+**New Rule:** Paper bot monitoring = uptime + entry rate + signal quality audit. If 0 entries in >30min post-slot-fill, check what's being blocked.
+
+---
+
 ## Heartbeat: Feb 17, 2026 19:49 IST
 
 **Status Check:**
@@ -750,3 +831,62 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 
 **Verdict:** Nothing urgent. Infrastructure healthy. Paper bot collecting high-quality Day 9 data. Standing down.
 **Self-Rating:** 5/5
+
+## Heartbeat: Feb 17, 2026 23:19 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable
+- ✅ Mission Control UI: pid 843, 5h uptime — online
+- ✅ Paper bot: STOPPED after SPRT ACCEPT at 22:24 IST (journal clean)
+- ✅ accept-watchdog.py: BOF fix confirmed in code + git (d108628)
+- ✅ No assigned tasks for Friday
+- ✅ Stale @friday note in WORKING.md corrected (watchdog fix was done at 22:49, not pending)
+- ✅ Day 9 cron `efb8d151` ARMED for 1:30 AM IST (~2h 10min)
+
+**Action taken:** Updated WORKING.md to clear stale watchdog @friday note (Jarvis's 23:00 sweep didn't see Friday's 22:49 fix).
+
+**Verdict:** Clean heartbeat. All pre-Day 9 systems green. Standing down.
+**Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 17, 2026 22:49 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 2D uptime — stable
+- ✅ Mission Control UI: pid 843, 4h uptime — online
+- ✅ ngrok: pid 88657, port 5174 hardcoded — no regression
+- ✅ Paper bot: SPRT ACCEPTED at 22:24 IST, journal clean (Shuri), bot stopped
+- ✅ No assigned Mission Control tasks (Convex empty)
+- ✅ No @mentions in task system
+- 🔧 **Watchdog fix deployed** (d108628): EOF bug resolved, Shuri backlog cleared
+- ✅ Day 9 cron `efb8d151`: ARMED, fires 1:30 AM IST (42 min)
+- ✅ Day 8 cron `dc27da24`: ARMED, fires 9:00 AM IST
+
+**Verdict:** Clean heartbeat. One proactive item addressed (Shuri @friday). Infrastructure healthy. Day 9 imminent. Standing down.
+**Self-Rating:** 4.5/5
+
+---
+
+## Heartbeat: Feb 17, 2026 22:24 IST
+
+**Status Check:**
+- ✅ Mission Control API: stable — no assigned tasks
+- ✅ No @mentions in today's activity log
+- ✅ Paper bot (pid 5114): HEALTHY — SPRT 98.1% to ACCEPT, ONE WIN AWAY 🎯
+
+**🔴 CRITICAL BUG FOUND: Zombie Positions**
+- **Scenario**: Bot started 20:21 IST. Fix committed 21:49 IST. Gap of 88 minutes means running process has OLD code.
+- **Old code (95dcbe6)**: When ACCEPT fires → save_journal → print_final_report → stop. NO `_force_close_remaining()`.
+- **New code (0915d52)**: Adds `_force_close_remaining()` before save_journal. Fix exists on disk but NOT in running process.
+- **Impact**: 3 open positions (ETH, SOL, XRP NO @0.497) will be zombied. Journal balance understated by ~$9-14 at ACCEPT time.
+- **Cannot restart**: Bot doesn't restore state from journal. Restart = lose n=27 SPRT progress, $43.48 balance.
+
+**Fix deployed**: `accept-watchdog.py` (pid 8766) — polls log every 2s, corrects journal within 2s of ACCEPT event. Non-invasive, bot unaffected.
+
+### Task: Zombie Fix Watchdog (2026-02-17 22:24 IST)
+**Self-rating:** 4.5/5
+**What worked:** Root cause analysis was precise — identified exact line-by-line difference between old/new code, computed exact impact, deployed non-invasive fix that doesn't touch the running bot.
+**What didn't:** Should have caught this at 21:49 IST heartbeat when the fix was committed. Previous heartbeat (20:04 IST) noted SPRT was accelerating — should have checked whether running bot had all patches.
+**Lesson:** When committing a critical fix to a running process, ALWAYS check if bot needs restart AND whether restart is safe. If restart resets state → either (1) restart immediately before state accumulates, or (2) pre-build the watchdog pattern at commit time.
+**New Rule:** On any commit to `paper-bot-multifactor.py` while bot is running: (1) assess if fix is in running process, (2) if not — is restart safe? If safe, restart. If not safe (SPRT state would be lost), deploy watchdog to bridge the gap.

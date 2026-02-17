@@ -75,3 +75,63 @@ Day 7 (6 PM IST = 12:30 PM UTC) is better time zone for US afternoon audience. B
 **Dead on arrival.** 0 engagement across all 3 posts (thread, QT, teaser) at 6h mark. No external replies, no impressions signal. Root cause confirmed: 0-follower account with no distribution network. Day 7 (6 PM) has better timing (12:30 PM UTC = US morning) and breaking news hook, but won't move needle without Reuben RT from personal account.
 
 *Tracking started: Feb 17, 2026 | Last updated: 3:03 PM IST by Quill (6h check)*
+
+---
+
+## Day 7 — Breaking News: Polymarket 0% Fees (11 tweets, 1 visual)
+
+**Thread URL**: https://x.com/askrubyai/status/2023738338164044068
+**Posted**: 6:06 PM IST (12:36 PM UTC) — optimal US afternoon timing
+
+### Metrics (2h check — 8:33 PM IST)
+| Metric | Value |
+|--------|-------|
+| Total Likes | 0 |
+| Total RTs | 0 |
+| Total Replies (non-thread) | 0 |
+| Total Views (head tweet) | 4 |
+| Total Views (across thread) | ~19 |
+| Followers | 1 |
+| Notable Engagements | None |
+| Top Tweet (by views) | Head tweet + Architecture tweet (4 views each) |
+
+### Per-Tweet Views
+| Tweet # | Content | Views |
+|---------|---------|-------|
+| 1 (Head) | "Everything changed overnight..." | 4 |
+| 2 | Before/after fee comparison | 2 |
+| 3 | Days 1-6 recap | 2 |
+| 4 | Day 7 building | 1 |
+| 5 | Architecture | 4 |
+| 6 | Paper trading fills | 1 |
+| 7 | SPRT validation | 2 |
+| 8 | Three caveats | 1 |
+| 9 | Backtests vs forward | 1 |
+| 10 | Multi-asset expansion | 1 |
+| 11 | Blog link | — |
+
+### Day 1 vs Day 7 Comparison (2h mark)
+| Metric | Day 1 (2h) | Day 7 (2h) | Change |
+|--------|-----------|-----------|--------|
+| Likes | 0 | 0 | = |
+| RTs | 0 | 0 | = |
+| Replies | 0 | 0 | = |
+| Views | 1 | 4 (head) | +300% |
+| Posted time | 9:11 AM IST (3:41 AM UTC) | 6:06 PM IST (12:36 PM UTC) | Better timing |
+
+### Assessment
+**Marginal improvement over Day 1** — 4x views on head tweet (4 vs 1), but still zero engagement actions (likes/RTs/replies). Breaking news angle did NOT deliver the expected 2x engagement boost — because the root cause remains: **0 followers = no distribution network**.
+
+### Telonex Reply
+- ✅ **POSTED** at 8:35 PM IST — status/2023775783966441596
+- Text: "Telonex just published a study of 47K wallets... 63% lost money... github.com/telonex/research"
+- GitHub link card rendering correctly
+- Reply visible in thread as tweet 12
+
+### Root Cause (unchanged from Day 1)
+- 0→1 followers = no organic distribution
+- Views are likely bot/crawler traffic, not real humans
+- Better timing (12:36 PM UTC vs 3:41 AM UTC) yielded marginal view increase but no engagement
+- **Core blocker**: Reuben personal account RT still needed for any real traction
+
+*Last updated: 8:35 PM IST by Quill (2h check)*

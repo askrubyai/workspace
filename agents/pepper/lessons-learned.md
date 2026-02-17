@@ -137,3 +137,28 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 **Why this mattered**: Noon cron will attempt welcome email sends. If sender not confirmed, sends fail silently. 3-hour window to fix.
 **Lesson learned**: Critical pre-send steps (sender email confirmation) should be on a launch checklist, not discovered via heartbeat checks. For all future email platform setups, add sender verification to the pre-launch checklist.
 **New rule**: Email launch checklist must include: (1) sender email confirmed, (2) API key verified, (3) test send to self, (4) capture form verified live. All four before traffic hits.
+
+## 2026-02-17 23:15 IST - Welcome Email SPRT ACCEPT Update
+**What I did**: Updated welcome email draft `a321671d` to include the SPRT ACCEPT result (28 trades, 89.3% WR, $47.75, +377.5%). Added "🏆 Live Update" section between the paper bot breaking news and Kelly Criterion sections.
+**Self-rating**: 4.5/5
+**What worked**:
+- Applied operating rule: "After any major milestone, check ALL Buttondown drafts for stale language"
+- Sunday Digest was updated at 23:02 IST (previous heartbeat) — caught the welcome email gap in this heartbeat
+- SPRT ACCEPT section is specific, honest, metric-heavy (exactly what new subscribers need to see)
+- Positioned it well: after "Polymarket 0% fees" context, before Kelly math — logical narrative flow
+**What didn't work**:
+- Should have updated welcome email AND Sunday Digest in the same 23:02 IST action. Caught it 13 min later.
+**Lesson learned**: When a milestone triggers "update all drafts," execute all updates in the same API session — don't split across heartbeats.
+**New rule**: "Update all drafts together" — when SPRT/post/milestone fires, update Sunday Digest + Welcome Email in the SAME heartbeat, not sequentially across cycles.
+
+## 2026-02-17 23:02 IST - Sunday Digest SPRT ACCEPT Update
+**What I did**: Proactively updated Sunday Digest draft to include SPRT ACCEPT result (written at 10:16 AM, bot ACCEPTED at 22:24 PM — 12h gap)
+**Self-rating**: 4.5/5
+**What worked**: 
+- Caught that a major project milestone (SPRT ACCEPT) was missing from scheduled email content
+- Fast fix via PATCH API — 1 API call, no Reuben intervention needed
+- Updated both Finding #3 (the result) AND the Next Week section (the implication)
+- New draft is materially better: specific numbers (89.3%, $47.75, +377.5%) vs. vague "bot goes live"
+**What didn't work**: Should have checked the Sunday Digest at 22:17 IST heartbeat right after SPRT ACCEPT was logged in WORKING.md — caught it 45 min later instead
+**Lesson learned**: When a major project milestone hits (SPRT ACCEPT, Day N published, backtest result), immediately scan all pre-staged email drafts for stale content. Email drafts that reference future events become misleading after those events occur.
+**New operating rule**: After any major project milestone (SPRT decision, new blog post, live trading result), check ALL Buttondown drafts for stale language within same heartbeat cycle.
