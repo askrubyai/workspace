@@ -421,24 +421,45 @@ class MarketCache:
 
 
 def fetch_current_market(asset: str) -> Optional[dict]:
-    """Fetch the currently active 15-min binary market for an asset."""
+    """Fetch the currently active 15-min binary market for an asset.
+    
+    Fix (2026-02-17 Friday): series_ticker filter doesn't work with numeric IDs.
+    Use the series endpoint directly to get latest event IDs, then look up live markets.
+    """
     try:
         series_id = CONFIG["assets"][asset]["series_id"]
-        url = f"{CONFIG['gamma_api']}/events?series_ticker={series_id}&active=true&limit=5"
-        resp = requests.get(url, timeout=5)
-        if resp.status_code != 200:
+        
+        # Step 1: Get the series to find the last (most recent) event IDs
+        series_url = f"{CONFIG['gamma_api']}/series/{series_id}"
+        series_resp = requests.get(series_url, timeout=5)
+        if series_resp.status_code != 200:
             return None
-        data = resp.json()
-        events = data if isinstance(data, list) else data.get("events", [])
-        if not events:
+        series_data = series_resp.json()
+        events_meta = series_data.get("events", [])
+        if not events_meta:
             return None
-
-        # Use the most recently started active event
-        event = events[0]
-        markets = event.get("markets", [])
-        if not markets:
+        
+        # Last entries in the list are most recent; try last 5 to find active one
+        recent_event_ids = [ev.get("id") for ev in events_meta[-5:] if ev.get("id")]
+        recent_event_ids.reverse()  # newest first
+        
+        market = None
+        for event_id in recent_event_ids:
+            ev_url = f"{CONFIG['gamma_api']}/events/{event_id}"
+            ev_resp = requests.get(ev_url, timeout=5)
+            if ev_resp.status_code != 200:
+                continue
+            event = ev_resp.json()
+            markets = event.get("markets", [])
+            if not markets:
+                continue
+            candidate = markets[0]
+            if candidate.get("active") and not candidate.get("closed"):
+                market = candidate
+                break
+        
+        if not market:
             return None
-        market = markets[0]
 
         # Parse binary option prices
         outcome_prices = market.get("outcomePrices", "")
