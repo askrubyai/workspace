@@ -69,13 +69,13 @@ CONFIG = {
     "spread_bps": 50,                  # 0.50% spread assumption for limit pricing
 
     # ── Signal Filtering — ⚠️ UPDATE FROM DAY 9 RESEARCH ─────────────────────
-    "signal_threshold": 0.65,          # PLACEHOLDER: Day 9 will derive optimal threshold
+    "signal_threshold": 0.30,          # Day 9: Gate 1 composite score threshold (60% of signals below this)
     "max_entry_price": 0.65,           # Don't enter above 65 cents (low reward)
     "min_entry_price": 0.20,           # Don't enter below 20 cents (high risk)
     "min_time_left_s": 90,             # Min 90s before market resolves (live orders need time)
 
     # ── Kelly Criterion — ⚠️ CALIBRATE BACKTEST_WIN_RATE FROM DAY 9 ──────────
-    "backtest_win_rate": 0.65,         # PLACEHOLDER: use Day 9 post-filter win rate
+    "backtest_win_rate": 0.70,         # Day 9: conservative estimate for Kelly sizing (paper run 89.3%, expect regression to ~70%)
     "kelly_multiplier": 0.50,          # Fractional Kelly: 0.5 = half Kelly (conservative)
     "min_bet_usd": 5.00,               # Polymarket live minimum bet (not $1 like paper)
 
@@ -86,7 +86,7 @@ CONFIG = {
 
     # ── SPRT — ⚠️ UPDATE p1 FROM DAY 9 ───────────────────────────────────────
     "sprt_p0": 0.50,                   # Null hypothesis: random (50% win rate)
-    "sprt_p1": 0.65,                   # PLACEHOLDER: update from Day 9 signal filter target
+    "sprt_p1": 0.65,                   # Day 9 confirmed: Gate 2 win rate gate = w ≥ 0.65 (testing for this threshold)
     "sprt_alpha": 0.05,                # Type I error (false positive)
     "sprt_beta": 0.20,                 # Type II error (false negative)
 
