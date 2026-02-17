@@ -49,8 +49,8 @@ CONFIG = {
     "min_entry_price": 0.15,           # Don't enter below 15 cents (low vol)
     "min_time_left_s": 60,             # Min 60s before market resolves
     "exit_reversal_pct": 0.10,         # Exit if price moves 10% against us
-    "log_file": "paper-multifactor.log",
-    "journal_file": "trade-journal-multifactor.json",
+    "log_file": "paper-trading-results/paper-multifactor.log",
+    "journal_file": "paper-trading-results/trade-journal-multifactor.json",
     "runtime_h": 8,                    # Run for up to 8 hours
     "assets": {
         "BTC": {"series_id": "10192", "symbol": "btc/usd"},
@@ -471,6 +471,7 @@ def fetch_current_market(asset: str) -> Optional[dict]:
             "up_price": up_price,
             "down_price": down_price,
             "time_left_s": time_left_s,
+            "cached_at": time.time(),  # Stamp fetch time for staleness correction
         }
     except Exception:
         return None
@@ -568,9 +569,9 @@ class PaperTradingBot:
         self._reconnect_attempts: int = 0
         self._keepalive_id: int = 0   # bumped on each reconnect to kill stale threads
 
-        # Clear log on start
-        with open(CONFIG["log_file"], "w") as f:
-            pass
+        # Append separator to log (preserve previous run history)
+        with open(CONFIG["log_file"], "a") as f:
+            f.write(f"\n{'═'*60}\n[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] NEW SESSION STARTED\n{'═'*60}\n")
 
     # ─── WebSocket ─────────────────────────────────────────────────────────────
 
@@ -668,9 +669,9 @@ class PaperTradingBot:
         if not market:
             return
 
-        # Update time_left by subtracting elapsed since last refresh
-        # (approximate — market fetcher provides seconds remaining)
-        time_left = market.get("time_left_s", 0)
+        # Adjust time_left for elapsed since last cache fetch (prevents stale reads)
+        elapsed_since_fetch = time.time() - market.get("cached_at", time.time())
+        time_left = max(0.0, market.get("time_left_s", 0) - elapsed_since_fetch)
 
         # ── Check exits for all open positions in this market ──
         exits = self.engine.check_exits(market["market_id"], market["up_price"], time_left)
