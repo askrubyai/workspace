@@ -786,6 +786,7 @@ class PaperTradingBot:
             if decision in ("accept", "reject"):
                 log(f"SPRT DECISION: {decision.upper()} after {self.sprt.n_trades} trades "
                     f"(win rate: {self.sprt.win_rate:.1%})", "sprt")
+                self._force_close_remaining(reason=decision)  # fix: no zombie open positions
                 save_journal(self.engine, self.sprt)
                 self.print_final_report()
                 self._running = False
@@ -816,6 +817,37 @@ class PaperTradingBot:
         if now - self._last_status_print > 300:
             self.print_status()
             self._last_status_print = now
+
+    def _force_close_remaining(self, reason: str = "sprt_terminal"):
+        """Force-close all remaining open positions when SPRT reaches a terminal decision.
+        
+        Fixes the 'zombie open positions' edge case flagged by Shuri:
+        When SPRT hits ACCEPT/REJECT mid-session, any open positions that haven't 
+        resolved yet remain permanently open in the final journal. This method closes 
+        them at 0.50 (fair value — no edge assumed post-decision) before saving final state.
+        
+        Called by both ACCEPT and REJECT handlers before print_final_report().
+        Must be called BEFORE save_journal() in the terminal path.
+        """
+        remaining = list(self.engine.positions)
+        if not remaining:
+            return
+        log(f"Force-closing {len(remaining)} open position(s) on SPRT terminal decision ({reason})", "warn")
+        for pos in remaining:
+            # Use 0.50 as neutral exit — market hasn't resolved, no edge assumed
+            # (better than leaving open or assuming win/loss)
+            exit_price = 0.5
+            pos.exit_price = exit_price
+            pos.exit_timestamp = time.time()
+            pos.pnl = (exit_price - pos.entry_price) * pos.shares  # typically small loss (~0)
+            pos.status = "CLOSED"
+            pos.sprt_decision = f"force_closed_{reason}"
+            self.engine.balance += pos.entry_price * pos.shares + pos.pnl
+            self.engine.positions.remove(pos)
+            self.engine.closed_trades.append(pos)
+            pnl_str = f"{pos.pnl:+.3f}"
+            log(f"  [{pos.asset}] FORCE-CLOSED {pos.direction} @ 0.50 (neutral) PnL={pnl_str}", "warn")
+        log(f"All positions closed. Final balance: ${self.engine.balance:.2f}", "sprt")
 
     def _refresh_market(self, asset: str):
         old_market = self.market_cache.get(asset)
@@ -860,6 +892,7 @@ class PaperTradingBot:
                         if decision in ("accept", "reject"):
                             log(f"SPRT DECISION: {decision.upper()} after {self.sprt.n_trades} trades "
                                 f"(win rate: {self.sprt.win_rate:.1%})", "sprt")
+                            self._force_close_remaining(reason=decision)  # fix: no zombie open positions
                             save_journal(self.engine, self.sprt)
                             self.print_final_report()
                             self._running = False
