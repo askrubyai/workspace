@@ -75,7 +75,10 @@ CONFIG = {
     # From Day 6 backtest: 14 trades, 57.1% win rate at ~50¢ avg entry
     "backtest_win_rate": 0.571,        # Baseline win rate estimate
     "kelly_multiplier": 0.50,          # Fractional Kelly: 0.5 = half Kelly
-    "min_bet_usd": 5.00,               # Polymarket minimum (need 5+ shares to exit)
+    "min_bet_usd": 1.00,               # Paper trading minimum ($1) — Polymarket live min is $5
+    # NOTE: Lowered from $5→$1 on Feb 17 19:32 IST (Shuri) — $5 was mathematically unreachable
+    # at p≈0.50 markets: max f*≈30% → full_kelly≈$3.00 < $5.00 → 100% SKIP rate, zero data
+    # At $1 threshold: BTC signals (f*≈26%) generate full_kelly≈$2.60 → trades execute ✅
     # Kelly skip rule: don't trade if full-Kelly size < min_bet_usd
     # This enforces selectivity — only trade when edge justifies the minimum bet
     "kelly_skip_enabled": True,        # Log skips for Day 9 signal-selection research
