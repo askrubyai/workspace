@@ -1,38 +1,43 @@
 {
   "alertsSent": [],
-  "lastCheck": "2026-02-17T06:01:00+05:30",
+  "lastCheck": "2026-02-17T12:02:00+05:30",
   "providers": {
-    "claude": {
+    "anthropic": {
       "status": "healthy",
       "activeSessions": 10,
       "modelBreakdown": {
-        "sonnet-4-5": 9,
-        "opus-4-6": 1
+        "claude-sonnet-4-5": 9,
+        "claude-opus-4-6": 1
       },
-      "avgContext": "24-46K tokens",
-      "lastError": null,
-      "note": "All heartbeats responding normally. No rate limit errors in recent sessions. System stable."
+      "lastError": "401 auth_error in rate-limit-monitor session (prev run only — not a rate limit)",
+      "lastRateLimit": null,
+      "note": "All heartbeats responding normally. One 401 auth error in prior rate-limit-monitor run (invalid bearer token — transient, resolved itself). No 429 rate limit errors in any session."
     }
   },
   "status": "all_healthy",
   "sessionCheck": {
     "totalSessionsAnalyzed": 10,
-    "sessionsWithErrors": 0,
+    "sessionsWithErrors": 1,
+    "errorTypes": {
+      "401_auth": 1,
+      "429_rate_limit": 0
+    },
     "providersRateLimited": [],
-    "timestamp": "2026-02-17T06:01:00+05:30"
+    "timestamp": "2026-02-17T12:02:00+05:30"
   },
   "recentLogs": {
     "rateLimit429Errors": 0,
     "quotaErrors": 0,
+    "authErrors": 1,
     "noProviderRateLimits": true,
-    "lastLogCheck": "All sessions operational. Heartbeats (rate-limit-monitor, researcher, session-cleanup, jarvis, commander, quill, fury, vision, wanda) all executing successfully. No rate limit errors detected. System healthy."
+    "lastLogCheck": "10 sessions checked. 9 HEARTBEAT_OK. 1 transient 401 in previous rate-limit-monitor run (self-resolved). No rate limits."
   },
   "systemStatus": {
     "gateway": "healthy",
     "channels": "telegram_ok",
     "cronJobs": "all_executing",
-    "warnings": [],
+    "warnings": ["transient 401 auth error in rate-limit-monitor (prior run, not current)"],
     "critical": 0
   },
-  "trend": "stable - continuous healthy operation since 12:01 PM Feb 16 (18+ hours)"
+  "trend": "stable - 18+ hours of healthy operation, zero rate limit events"
 }

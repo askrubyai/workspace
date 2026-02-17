@@ -17,6 +17,29 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-17 11:21 IST — Proactive Editorial Review: Reddit Posts (Time-Sensitive)
+**Task:** Proactive review of 3 Reddit posts drafted by Quill — Post #1 needed today before 6 PM  
+**Quality (self-rated):** 4.5/5  
+**What worked:**
+- Identified the review need without prompting (time-sensitive, warm audience, high stakes)
+- Focused review: 3.8KB instead of the usual 10-13KB monster docs — appropriate for the urgency
+- Rated all 3 posts clearly (4/5, 4.5/5, 4/5), all APPROVED
+- Identified the opening/title momentum mismatch in Post #1 — concrete suggestion (TL;DR block)
+- Flagged the "Ruby vs Reuben" identity question as a flag for Reuben, not a blocker
+- Protected the "n=14 too small" honest moment — didn't suggest softening it
+- Clear priority table at bottom (ship today / this week / Thursday)
+- Avoided the "still no original writing" pattern by noting this was genuinely useful vs. filling a gap
+
+**What didn't work:**
+- Described the TL;DR block but didn't pre-write it (minor — just a description would have been faster if already pre-written)
+- Didn't check r/PolymarketTrading flair options (no access, minor gap)
+
+**Lesson learned:**
+**Time-sensitive reviews need a different format.** When the post needs to go out in the next 6 hours, the review should be 1-2 pages max, verdict-first, with the most critical item at the top. No comparative tables to prior work, no "pattern self-check" sections. Urgency changes the editorial format — reviewer serves the shipping timeline, not the review's comprehensiveness.
+
+**New operating rule (candidate):**  
+"Time-sensitive content gets verdict-first, brief reviews (≤2KB). Save comprehensive treatment for evergreen content."
+
 ### 2026-02-17 08:06 IST — Sunday Digest Template: Reusable Template + Feb 22 First Instance
 **Task:** Proactive original content creation — Sunday Digest template (noticed nobody had claimed it, needed by Feb 20)  
 **Quality (self-rated):** 4.5/5  
@@ -331,3 +354,24 @@ When reviewing myth-busting content, always check that temporal caveats ("in the
 **Lesson learned:** 
 When you recommend a fix in a review, do it immediately or explicitly hand it off. A "5-min fix" left in a recommendation doc is a loose end — someone has to pick it up. Default: if you're the one who spotted it, you're the one who ships it.
 
+
+---
+
+### 2026-02-17 10:36 IST - Heartbeat Check (No-op)
+**Task:** Routine heartbeat, no assigned work  
+**Quality (self-rated):** N/A (no content produced)  
+**What worked:**
+- Loaded full context (WORKING.md, SOUL.md, daily notes, lessons-learned)
+- Correctly assessed no editorial work needed before 3 PM Day 8 session
+- Spotted Quill's @IamAdamSchulz reply as clean without needing intervention
+
+**What didn't work — CRITICAL INCIDENT:**
+- Used `write` tool on `memory/2026-02-17.md` instead of `>>` append
+- **Overwrote the entire daily notes file** (1143 lines wiped) with just my single entry
+- Recovered immediately from git (`git show HEAD:memory/2026-02-17.md`)
+
+**Lesson learned — NEW RULE:**
+**NEVER use the `write` tool on daily notes or any append-only log file.**  
+Daily notes = shared team log. Overwriting destroys all prior entries.  
+**Always use:** `exec` with `cat >> file << 'EOF'` OR `edit` tool to append.  
+Rule effective immediately. Adding to SOUL.md next task rotation.

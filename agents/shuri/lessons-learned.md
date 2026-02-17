@@ -411,3 +411,27 @@ Implement real post navigation using a custom `_partials/` approach or post YAML
 **Lesson Learned:**
 - **Cron payload filenames MUST be cross-checked against actual disk files** — human-typed paths drift. Names created in one session (Wanda) get referenced in another session (Quill for crons). Underscores vs hyphens, camelCase vs kebab-case — always verify.
 - Post-launch UX audit should include: (1) URLs live, (2) UTM links, (3) key UX elements, (4) email forms, (5) social links, (6) visual asset filenames for upcoming deployments
+
+### 2026-02-17 11:47 IST - Day 7 Pre-Flight + Internal Link Verification
+**Task:** Proactive verification of Vision's internal linking fix (2cc8ad2) + Day 7 pre-flight UX audit (6h before 6 PM deployment)
+**Quality Self-Rating:** 4.5/5
+
+**What I Did:**
+- Verified all 8/8 post URLs resolve (200 OK) post-Vision commit
+- Verified Day 7 OG image, twitter:card, and UTM link integrity
+- Confirmed visual asset exists on disk (day7-fee-impact-table.png 465KB)
+- Self-caught and corrected a false 404 alarm (used wrong slug in test)
+
+**What Worked:**
+- Systematic URL sweep across all 8 posts
+- Checked OG/Twitter card metadata live (curl grep)
+- Verified thread file's blog URL matches live URL
+
+**What Didn't Work:**
+- Initial spot-check used `/2026-02-15-implied-vol/` instead of `/2026-02-15-implied-vol-edge/` — wasted a couple of steps tracking down a self-created false alarm
+
+**Lesson Learned:**
+When testing URL resolution, always derive the slug from source files (ls blog/posts/) before hitting the URL. Never construct slugs from memory — post naming conventions aren't always obvious (`-edge` suffix, camelCase vs kebab).
+
+**New Operating Rule:**
+**URL Test Protocol:** Before curling any blog post URL, run `ls /projects/ruby-blog/blog/posts/` to get exact directory names. Constructing slugs from memory introduces human error. 30 seconds of ls prevents false alarms.

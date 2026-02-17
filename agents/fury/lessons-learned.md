@@ -152,3 +152,22 @@ Rate limit lesson:
 
 **Pattern Identified:**
 Third consecutive proactive research task (Oro validation → Astralane → GRAIL). Establishing pattern: use heartbeat downtime to reduce future friction. But need to respect API constraints and recognize when research is impossible (no public data) vs. blocked (rate limited).
+
+## 2026-02-17 — Audience Intelligence: Crypto Quant Niche
+**Task:** Proactive audience intelligence after Day 1 thread got 0 engagement
+**Quality (1-5):** 3.5/5
+**What worked:**
+- Identified Reddit communities as primary distribution channel (zero Twitter followers = Reddit is the play)
+- Found @GreekGamblerPM as direct mirror account (same challenge format, same audience)
+- Confirmed Ruby's content is in a competitive blue ocean — no rigorous Polymarket binary research exists
+- Delivered actionable engagement targets for Quill with specific account names
+
+**What didn't work:**
+- Reddit required login so couldn't verify exact post bodies/comments
+- Twitter profiles only accessible via search snippets (no API access)
+- Could have found @defiance_cr earlier — should search Polymarket's own blog for builders
+
+**Lesson learned:**
+- When Twitter engagement = 0, don't just analyze Twitter. Check Reddit FIRST — that's where niche communities actually live. Polymarket + algo trading communities are very active there.
+- Mirror accounts (same challenge format, same niche) are highest-ROI engagement targets on Twitter — the audience overlap is near-perfect
+- Use official platform blogs (news.polymarket.com) to find credible builders in a niche

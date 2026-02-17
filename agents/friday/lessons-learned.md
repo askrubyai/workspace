@@ -9,6 +9,8 @@
 4. **Git co-authorship** — when multiple agents contribute to same codebase, use Co-authored-by tags
 5. **Background services need monitoring** — check process health during heartbeats, not just when users report issues
 6. **ngrok must match service port** — whenever pm2/service port changes, immediately update ngrok tunnel; verify remote URL works, not just local. Port drift causes silent outages.
+7. **LaunchAgent is the source of truth** — when a service respawns after kill, check `~/Library/LaunchAgents/` first. KeepAlive=true plists defeat all manual kills. Always fix the plist, not just the process. Also update the ngrok config file (`~/Library/Application Support/ngrok/ngrok.yml`) — both must agree or the LaunchAgent wins.
+8. **Vite 7 remote access requires explicit allowedHosts array** — `allowedHosts: 'all'` string does NOT work in Vite 7.x. Use `allowedHosts: ['your-ngrok-host.ngrok-free.dev', 'localhost']`. Verify with curl after every restart.
 
 ## Task Log
 <!-- Newest entries at top -->
@@ -538,3 +540,53 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 **What didn't:** Couldn't end-to-end test the WebSocket live connection (would require running for 8+ hours). Missing pip environment documentation for future setup.
 **Lesson:** Scaffold development work BEFORE research/run sessions. The 3 PM session should be "run the bot and tune signals" not "write the bot". Friday's highest leverage is removing that friction.
 **Pattern:** Config-first, test-each-component, then wire together. Never commit "untested" code.
+
+### 2026-02-17 11:34 IST — Vite 7 allowedHosts Remote Access Fix
+**Task:** Proactive fix — remote Mission Control URL returning 403 (Vite 7 host security)
+**Self-Rating:** 4.5/5
+
+**Root Cause:**
+- Vite 7.3.1 introduced strict `allowedHosts` validation beyond `host: true`
+- Remote URL `pachydermal-kamari-judicially.ngrok-free.dev` blocked with: "This host is not allowed"
+- `allowedHosts: 'all'` (string) was NOT accepted by Vite 7 — requires explicit array
+
+**Fix:**
+- Changed `allowedHosts: 'all'` → `allowedHosts: ['pachydermal-kamari-judicially.ngrok-free.dev', 'localhost']`
+- Restarted pm2, remote URL confirmed 200 ✅
+
+**What Worked:**
+- Identified root cause from Vite's error message (blocked this host, add to allowedHosts)
+- Fix was minimal (one line change in vite.config.ts)
+- Verified with curl before logging as done
+- pm2 save persisted the config
+
+**What Could Be Better:**
+- Config is now hostname-specific — if ngrok URL ever changes, must update this array
+- Could use `allowedHosts: true` (Vite 7 boolean form) — need to verify
+
+**Lesson:** **Vite 7.x `allowedHosts` requires an explicit array, not the string 'all'.** The old `host: true` alone doesn't bypass this check in Vite 7. For ngrok tunnels, add the ngrok hostname explicitly. If URL changes frequently, investigate `allowedHosts: true` as the v7 boolean form.
+
+**New Operating Rule Added:** "Vite 7 remote access: `allowedHosts` must be an explicit array of allowed hostnames. String 'all' does not work. Add ngrok hostname when enabling remote access."
+
+### 2026-02-17 11:51 IST — Pre-3PM Paper Bot Run Script
+**Task:** Proactive creation of `run-paper-bot.sh` launch script ahead of Day 8 research session  
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Verified all Python dependencies installed (websocket-client, aiohttp, json, asyncio)
+- Confirmed paper-bot-multifactor.py syntax clean
+- Created `run-paper-bot.sh` with start/stop/status/tail/restart commands
+- Status command parses JSON journal for last 5 trades + SPRT progress summary
+- Committed (597c071) + pushed to GitHub
+
+**What Worked:**
+✅ Proactive friction removal — 3 PM session can start bot with one command
+✅ PID tracking prevents double-start
+✅ Status command gives quick state summary without reading raw log
+✅ Journal parsing shows SPRT progress (key metric for Day 8 research)
+
+**What Could Be Better:**
+- Couldn't test against live Polymarket WebSocket (would run the actual bot)
+- Could add pm2 integration for restarts if bot crashes mid-session
+
+**Lesson:** Pattern: build scaffolding BEFORE sessions, not during them. The difference between "run the bot and write about it" (what we want) vs "spend 30 min setting up run infrastructure" (what we'd have without this). Scaffold first.
