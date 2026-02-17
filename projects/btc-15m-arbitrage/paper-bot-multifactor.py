@@ -818,9 +818,53 @@ class PaperTradingBot:
             self._last_status_print = now
 
     def _refresh_market(self, asset: str):
+        old_market = self.market_cache.get(asset)
+        old_market_id = old_market.get("market_id") if old_market else None
+
         market = fetch_current_market(asset)
         if market:
             self.market_cache.set(asset, market)
+
+            # ── Market rollover detection: force-close positions in expired market ──
+            # When a new 15-min window opens, market_id changes. Positions tracked by
+            # the OLD market_id will NEVER match check_exits() → stuck open forever.
+            # Fix: when market_id changes, resolve any open positions in the old market.
+            new_market_id = market.get("market_id")
+            if old_market_id and new_market_id != old_market_id:
+                stale_positions = [p for p in self.engine.positions if p.market_id == old_market_id]
+                if stale_positions:
+                    log(f"[{asset}] MARKET ROLLOVER detected: {old_market_id} → {new_market_id}. "
+                        f"Force-closing {len(stale_positions)} expired position(s).", "warn")
+                    # Resolve based on price at time of rollover (use current market price as proxy)
+                    current_price = market.get("up_price", 0.5)
+                    for pos in stale_positions:
+                        resolved_yes = current_price > 0.50
+                        if pos.direction == "YES":
+                            exit_price = 1.0 if resolved_yes else 0.0
+                        else:
+                            exit_price = 1.0 if not resolved_yes else 0.0
+                        pos.exit_price = exit_price
+                        pos.exit_timestamp = time.time()
+                        pos.pnl = (exit_price - pos.entry_price) * pos.shares
+                        pos.status = "CLOSED"
+                        self.engine.balance += pos.entry_price * pos.shares + pos.pnl
+                        self.engine.positions.remove(pos)
+                        self.engine.closed_trades.append(pos)
+                        won = pos.pnl > 0
+                        decision = self.sprt.update(won)
+                        pos.sprt_decision = decision
+                        level = "win" if won else "loss"
+                        pnl_str = f"+${pos.pnl:.3f}" if won else f"-${abs(pos.pnl):.3f}"
+                        log(f"[{pos.asset}] CLOSED {pos.direction} (market_rollover) {pnl_str} | "
+                            f"Balance: ${self.engine.balance:.2f} | {self.sprt.summary()}", level)
+                        if decision in ("accept", "reject"):
+                            log(f"SPRT DECISION: {decision.upper()} after {self.sprt.n_trades} trades "
+                                f"(win rate: {self.sprt.win_rate:.1%})", "sprt")
+                            save_journal(self.engine, self.sprt)
+                            self.print_final_report()
+                            self._running = False
+                            return
+                    save_journal(self.engine, self.sprt)
 
     # ─── Reporting ─────────────────────────────────────────────────────────────
 
