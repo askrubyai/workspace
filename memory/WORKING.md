@@ -163,7 +163,8 @@
 - ✅ **Evening subscriber check**: `9fbceee2` — fires 8:00 PM IST (2h after Day 7) — NEW, closes gap
 - ✅ Double-send protection in evening cron (checks if noon already sent)
 - ⚠️ **Reuben action needed**: Confirm Buttondown verification email in askruby.ai@gmail.com ⚡
-- 🔲 **Sunday Digest**: First one due Feb 22 — template needed by Feb 20
+- ✅ **Sunday Digest template**: Written by Loki (Feb 17, 08:06 IST) — reusable template + Feb 22 first instance pre-filled. Path: `/artifacts/email-marketing/sunday-digest-template.md`.
+- ✅ **Sunday Digest pre-staged**: Buttondown draft `fd03f1f4` created (corrected blog URLs). Cron `29a3630a` fires Feb 22 9 AM IST — auto-updates teaser + sends.
 - 🔲 Welcome sequence automation (3 emails) — requires Buttondown Standard ($9/month) → upgrade at 10+ subs
 
 ### 6. 🔐 Mac Mini FileVault (Requires Reuben)

@@ -8,11 +8,47 @@
 3. **Data integration trinity** — loading states + error handling + empty states are all mandatory
 4. **Git co-authorship** — when multiple agents contribute to same codebase, use Co-authored-by tags
 5. **Background services need monitoring** — check process health during heartbeats, not just when users report issues
+6. **ngrok must match service port** — whenever pm2/service port changes, immediately update ngrok tunnel; verify remote URL works, not just local. Port drift causes silent outages.
 
 ## Task Log
 <!-- Newest entries at top -->
 
-## Heartbeat: Feb 17, 2026 06:49 IST
+### 2026-02-17 10:19 IST — ngrok Port Regression (Repeat)
+**Task:** Caught ngrok silently running on port 5173 again (regression from 09:49 fix)
+**Self-Rating:** 4/5
+
+**What Happened:**
+- New ngrok process (pid 87289) spawned on 5173 instead of 5174 — same bug as 09:49
+- Remote URL was broken for ~30 minutes between heartbeats
+- Fix: killed, restarted on 5174, confirmed healthy
+
+**Lesson:** ngrok needs a `~/.config/ngrok/ngrok.yml` with the port hardcoded to prevent CLI default regression. Bare CLI commands don't persist intent.
+
+**New Operating Rule Added:** Create ngrok config file to persist port 5174 (scheduled as low-priority improvement task).
+
+---
+
+### 2026-02-17 09:49 IST — ngrok Port Mismatch Fix
+**Task:** Proactive infrastructure fix — remote Mission Control URL was broken  
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Spotted during heartbeat: `ps aux | grep ngrok` showed ngrok on port 5173 but Mission Control UI is on 5174
+- Verified: `curl localhost:5173` = nothing, `curl localhost:5174` = Mission Control HTML
+- Killed old ngrok process (pid 8988), started fresh pointing to 5174 (pid 87302)
+- Same public URL preserved (pachydermal-kamari-judicially.ngrok-free.dev)
+- Verified remote URL serves correct app ("Mission Control" title confirmed)
+- Confirmed API healthy (35KB WORKING.md serving)
+
+**What Worked:** Systematic port verification before/after; preserved same public URL
+
+**What Didn't:** Should have caught this at pm2 migration time (Feb 14). 3-day silent outage on remote access.
+
+**Lesson:** After any service port change (pm2 migration, config update), IMMEDIATELY update ngrok. Check: old port empty? new port serving? remote URL verified? Don't assume remote access works just because local does.
+
+---
+
+### 2026-02-17 06:49 IST
 
 **Status Check:**
 - ✅ Mission Control servers healthy (2D uptime, stable, 0% CPU) — API + UI both online
@@ -426,6 +462,69 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 - ✅ Day 1 cron `24856612` fires at 9:00 AM IST (~11 min from now) — fully automated
 - ✅ paper-bot-multifactor.py built and ready for 3 PM Day 8 session
 - ✅ paper-bot-v2.js fees updated to 0/0 bps — no further action needed
+
+**Verdict:** Nothing urgent. Infrastructure healthy. Day 1 launch imminent and fully automated. Standing down.
+**Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 17, 2026 08:34 IST
+
+**Status Check:**
+- ✅ Mission Control servers healthy (2D uptime, 0% CPU — API pid 10442, UI pid 10443)
+- ✅ No assigned tasks for Friday
+- ✅ No @mentions in today's activity log
+- ✅ Day 1 cron `24856612` fires at 9:00 AM IST (~26 min) — fully automated
+- ✅ paper-bot-multifactor.py built + WS robustness patched (done at 08:19)
+- ✅ paper-bot-v2.js fees updated to 0/0 bps (done at 07:04)
+- ✅ 3 PM Day 8 research session ready to run immediately
+
+**Verdict:** All prior work complete. Infrastructure healthy. Nothing urgent.
+**Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 17, 2026 09:34 IST
+
+**Status Check:**
+- ✅ Mission Control servers healthy (2D uptime, 0% CPU — API pid 10442, UI pid 10443)
+- ✅ No assigned tasks for Friday (Mission Control query returned empty)
+- ✅ No @mentions in today's activity log
+- 🚀 Day 1 thread LIVE — https://x.com/askrubyai/status/2023603687994892719 (deployed 9:15 AM IST)
+- ✅ Shuri post-launch UX fixes committed (nav scoping 69b351b, path fix 89302ec)
+- ✅ All monitoring crons active (11 AM, 3:30 PM, 5:55 PM, 6 PM, 8 PM, Feb 18 9 AM)
+- ✅ paper-bot-multifactor.py ready for 3 PM Day 8 research session
+- ✅ All prior Friday work complete (fees patched, WS robustness fixed)
+
+**Verdict:** Nothing urgent. Infrastructure healthy. Day 1 is live, monitoring automated, 3 PM session ready to run. Standing down.
+**Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 17, 2026 09:19 IST
+
+**Status Check:**
+- ✅ Mission Control servers healthy (2D uptime, 0% CPU — API pid 10442, UI pid 10443)
+- ✅ No assigned tasks for Friday
+- ✅ No @mentions found
+- 🚀 Day 1 thread LIVE — cron fired at 9:00 AM IST, Quill deploying funding rates thread
+- ✅ Shuri deployed post-launch UX fix (commit f75095b) — nav bar on all posts before readers land
+- ✅ Full monitoring pipeline active (11 AM, 3 PM, 5:55 PM, 6 PM, 8 PM, Feb 18 9 AM checks)
+- ✅ paper-bot-multifactor.py ready for 3 PM Day 8 session
+- ✅ All infrastructure work from prior heartbeats complete
+
+**Verdict:** Nothing urgent. Infrastructure healthy. Day 1 is live and squad is monitoring. Standing down.
+**Self-Rating:** 5/5
+
+## Heartbeat: Feb 17, 2026 08:49 IST
+
+**Status Check:**
+- ✅ Mission Control servers healthy (2D uptime, 0% CPU — API pid 10442, UI pid 10443)
+- ✅ No assigned tasks for Friday
+- ✅ No @mentions found
+- ✅ Day 1 cron `24856612` fires at 9:00 AM IST (~11 min from now) — fully automated
+- ✅ paper-bot-multifactor.py built and ready for 3 PM Day 8 session
+- ✅ All prior infrastructure work complete (fees patched, WS robustness done)
 
 **Verdict:** Nothing urgent. Infrastructure healthy. Day 1 launch imminent and fully automated. Standing down.
 **Self-Rating:** 5/5

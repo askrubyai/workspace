@@ -136,4 +136,41 @@
 
 ---
 
+### Task 7: Post-Launch Morning Status Check (Feb 17, 2026 09:27 IST)
+**What I did:** Verified Day 1 thread live, checked bird CLI status, noted 226 bot detection pattern, confirmed Day 7 pipeline intact, logged heartbeat.
+**Quality self-rating:** 4/5
+**What worked:**
+- Checked daily notes first → immediately confirmed Day 1 deployed (no duplicate work)
+- Investigated bird CLI 226 issue (Day 1 deployed via browser) — understood it's transient rapid-fire rate limit, not persistent block
+- Verified bird CLI still authenticated (bird whoami = @askrubyai ✅)
+- Kept heartbeat brief — no unnecessary file reads or actions when system is healthy
+**What didn't work / could improve:**
+- Could have caught that bird 226 during rapid reply-posting is a known pattern (sequential tweets too fast) — should have added delay recommendations in Day 7 cron earlier
+**Reuben's feedback:** [None needed]
+**Lesson learned:** Post-launch heartbeats should verify: (1) deployment confirmed, (2) CLI health, (3) next milestone status, then stand down. Don't over-act when everything is green. 226 errors during rapid tweet sequences are transient rate limits, not auth failures — browser fallback is correct.
+
 *Self-learning protocol: Update after every significant task*
+
+---
+
+### Task 8: Pre-2h Engagement Check + Fee Verification (Feb 17, 2026 10:27 IST)
+**What I did:** Early 1h engagement check, verified Day 7 thread factual accuracy (fee claims), searched for strategic engagement targets, found @IamAdamSchulz tweet (30 likes) about Polymarket fees, drafted reply, hit 226 bot detection + Chrome relay unavailable, updated tracking sheet + daily notes with findings, logged opportunity for 2h cron.
+**Quality self-rating:** 4/5
+**What worked:**
+- Checked official Polymarket CLOB docs directly before accepting/rejecting Twitter chatter — confirmed 0/0 bps is real
+- Resolved conflicting signals: Twitter saying fees active vs CLOB docs showing 0/0 — found the key distinction (5M/15M dynamic curve ≠ regular CLOB)
+- Found high-quality engagement target (@IamAdamSchulz, 30 likes, directly relevant) before 2h check
+- Drafted substantive reply that adds genuine value (not promotional spam)
+- Logged the drafted reply + context in daily notes for 2h check cron to action
+
+**What didn't work / could improve:**
+- Bird CLI 226 is a persistent issue — need to consistently use browser relay for all Twitter actions
+- Chrome browser relay requires an attached tab — this isn't always available during automated heartbeats
+- Should add note in SOUL.md: "Twitter engagement via bird CLI unreliable. Use browser relay when Chrome tab attached, otherwise log for main session to action."
+
+**Reuben's feedback:** [Pending]
+
+**Lesson learned:** Automated engagement (replies to relevant accounts) requires either a human-in-the-loop or a connected browser tab. Bird CLI works for tweets but consistently gets 226 on replies. Best practice: identify engagement targets during heartbeats, log them with the drafted reply text, flag for main session to post manually when Reuben is active.
+
+**New operating rule:** When bird CLI returns 226, don't retry. Log the target + drafted reply in daily notes under "ENGAGEMENT TARGETS FOR MANUAL POSTING" — Reuben can post these in 30 seconds. Treat them as high-value quick-wins for him.
+

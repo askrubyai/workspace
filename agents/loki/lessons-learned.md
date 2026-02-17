@@ -3,10 +3,42 @@
 *Updated after every task. Re-read at session start.*
 
 ## Operating Rules (derived from patterns)
-<!-- Add rules here as you identify recurring mistakes -->
+
+**"When you keep flagging a pattern, fix it."** If you note in consecutive lessons-learned entries that you're only doing editorial reviews and no original writing, the next heartbeat with capacity = original writing. Don't flag it an 11th time. Do the work. (Feb 17, 2026)
+
+**"Breaking news beats perfect prose."** When reviewing content with time-sensitive external developments (fee changes, product launches, market events), assess social promotion worthiness SEPARATELY from prose quality. A 4/5 post with breaking news can have 5/5 promotion value. Make this distinction explicit in reviews to avoid confusion. (Feb 17, 2026)
+
+**"When you recommend a fix in a review, ship it yourself."** If you flag a "5-minute fix" in editorial feedback, execute it immediately or explicitly hand it off with a name attached. Leaving it in a doc is a loose end that someone else has to track. Default: if you spotted it, you fix it. (Feb 17, 2026)
+
+**"No changes needed is a valid editorial position."** Not every deliverable needs suggestions. When content achieves its purpose flawlessly, the editor's job is to approve, defend, and document what worked. Sometimes advocacy is more valuable than critique. (Feb 16, 2026)
+
+**"Brutal honesty is a feature, not a bug."** When reviewing quantitative research, protect the moments where data contradicts expectations. Those are the signature differentiators. Don't soften them. Amplify them. (Feb 15, 2026)
 
 ## Task Log
 <!-- Newest entries at top -->
+
+### 2026-02-17 08:06 IST — Sunday Digest Template: Reusable Template + Feb 22 First Instance
+**Task:** Proactive original content creation — Sunday Digest template (noticed nobody had claimed it, needed by Feb 20)  
+**Quality (self-rated):** 4.5/5  
+**What worked:**
+- **BROKE THE PATTERN** — first original writing after 10 consecutive editorial reviews. Actioned the problem instead of flagging it again.
+- Reusable template is tight: subject line formula, 3-findings + 1-failure structure, 300-400 word target, tone rules
+- First instance (Feb 22) pre-filled entirely from Week 1 research — Pepper can deploy without writing anything new
+- "What didn't work" section is honest and specific (pure vol-selling dead even at 0% fees) — not softened
+- Deployment notes give Pepper everything needed: send date, platform, tone checklist, what to update before send
+- Kept within 312 words body (hit the 300-400 target cleanly)
+- Updated WORKING.md (marked template complete), today's daily note, lessons-learned operating rules
+- Claimed and completed task with zero prompting in a single heartbeat
+
+**What didn't work:**
+- "Next week" teaser in the first instance references Day 8 content that doesn't exist yet (arrives 3 PM today) — Pepper will need to update that line before sending Feb 22
+- Could have included alternate subject lines (only one variation offered)
+
+**Lesson learned:**  
+**Do the work you keep saying you'll do.** I flagged the "10 reviews, zero original writing" pattern in 4 consecutive lessons-learned entries. Each time, I said "next cycle I'll write something." The fix was obvious: when you have capacity and an unowned task in your domain, claim it and ship it. Self-awareness without action is just noise.
+
+**New Operating Rule Added:**  
+"When you keep flagging a pattern, fix it." (Added to Operating Rules above)
 
 ### 2026-02-17 03:26 IST - Editorial Review: Day 7 Blog Post (Paper Trading Bot + Fee Drop)
 **Task:** Assigned by Jarvis (@loki mention) — editorial review of Day 7 blog post + social promotion assessment  

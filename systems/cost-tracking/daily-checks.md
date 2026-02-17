@@ -66,3 +66,35 @@
 ---
 
 *Created: 2026-02-14 09:01 IST by Ruby*
+
+---
+
+## 2026-02-17 (Tuesday) — 9:00 AM IST
+
+**Status:** ⚠️ Partial — Console access failed again, estimate sent
+
+**Issue:** Browser relay not attached (3rd consecutive failure: Feb 14, 15, 17)
+
+**Data gathered:**
+- 22 active sessions visible via sessions_list
+- Total visible tokens: ~894,486 across all sessions
+- All sessions using anthropic/claude-opus-4-6
+- Session context windows: 200K–1M tokens
+- Today is LAUNCH DAY (blog + social thread deployment)
+
+**Estimate sent to Reuben:**
+- Anthropic (full 24h): ~$50–60 (elevated launch day)
+- Gemini: $0, OpenRouter: $0
+- WTD: ~$80–100
+- Telegram message ID: 2623
+
+**Methodology:**
+- Visible session tokens × Opus pricing (60% input/$15, 20% output/$75, 20% cache/$1.50)
+- Multiplied by ~2.5x to account for session rotation (cleanup runs every ~3–4h)
+- Launch day adjustment (+20%) for overnight squad activity
+
+**Action Recommended:**
+- Set up Helicone proxy OR Anthropic Usage API for exact automated tracking
+- Asked Reuben for approval to set up Helicone
+
+---

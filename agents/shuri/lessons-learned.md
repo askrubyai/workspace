@@ -8,6 +8,23 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-17 09:32 IST - Post-Launch Nav Fix
+**Task:** Proactive fix — "← All Research" nav showing on homepage/about (flagged as minor issue at 09:17)  
+**Quality Self-Rating:** 4/5
+
+**What I Did:**
+- Added JS page-detection to `_includes/email-capture.html`
+- Nav bar hidden by default (`display:none`), shown only when `window.location.pathname` contains `/blog/posts/`
+- Committed (69b351b) + pushed — CI rebuilding
+
+**What Worked:** Clean JS-only solution, no Quarto config changes needed, zero risk to email form
+
+**What Didn't:** Should have caught this during the initial 07:02 UX audit rather than leaving it as "low priority follow-up"
+
+**Lesson Learned:** Global includes with contextual UI (nav, back-links) should ALWAYS use JS page-type gating from the start. Never ship "it works but looks odd on homepage" — fix it before launch.
+
+---
+
 ### 2026-02-15 10:32 IST - Email Forms UX Audit
 **Task:** Proactive UX review of email capture forms prepared by Pepper  
 **Quality Self-Rating:** 4.5/5
@@ -334,3 +351,63 @@ New forms should always be checked for: (1) label/aria coverage, (2) all 3 UX st
 
 **Follow-Up Action (Post-Launch, Low Priority):**
 Implement real post navigation using a custom `_partials/` approach or post YAML `next-page`/`prev-page` fields. Not blocking launch — "Read Research" navbar link is usable fallback.
+
+### Task 12: Post-Nav Fix (2026-02-17, 9:02 AM)
+- **Task**: Fix dead-end post navigation (no prev/next links on blog posts)
+- **Self-rating**: 4/5
+- **What worked**: `include-after-body` partial already on every page — perfect injection point; deployed before peak Day 1 traffic
+- **What didn't**: `page-navigation: true` in Quarto website config was confirmed non-functional for listing posts (knew from 08:02, but didn't fix then)
+- **Lesson**: When you diagnose a UX bug, own the fix immediately — don't leave it in a doc for "later". Shipping 60 min later (08:02→09:02) still caught it before most traffic arrived.
+- **Lesson 2**: Always check relative paths work for all URL depths, not just the one you tested. Verify with curl before committing.
+
+### 2026-02-17 09:17 IST - Post-Launch UX Audit (Day 1 Launch)
+**Task:** Post-launch live blog verification during Day 1 Twitter thread deployment  
+**Quality Self-Rating:** 4/5
+
+**What I Did:**
+- Verified all 7 blog post URLs are live (200 OK) after CI build
+- Confirmed correct UTM link URLs in social threads (`funding-rate-arbitrage` not `funding-rate-free-lunch`)
+- Verified nav bar (`← All Research`) deployed on Day 1 + Day 7 posts
+- Confirmed email capture forms present on all pages
+- Confirmed Twitter/X link in navbar
+
+**Findings:**
+1. ✅ All URLs live — initial 404 false alarm (I used wrong slug to test)
+2. ✅ Nav bar on all posts — CI build completed successfully by 09:17 IST
+3. ⚠️ MINOR: "← All Research" link appears on homepage + about.html (contextually odd, but link works)
+4. ⚠️ MINOR: `../../../blog.html` is hardcoded relative path — fragile if blog structure changes
+
+**Non-issues discovered:**
+- My 04:02 worry about relative path breaking was a false alarm — all posts are at same depth `/blog/posts/[date]/` so `../../../blog.html` correctly resolves to `/blog.html` for all posts
+
+**Lesson Learned:**
+- Always verify URL slugs from source files before testing 404s — assumptions about slugs waste time
+- Post-launch UX sweep should check: (1) all URLs live, (2) UTM links, (3) key UX elements, (4) email forms, (5) social links
+- `include-after-body` in `_quarto.yml` injects into ALL pages, not just blog posts — be careful with post-specific navigation elements
+
+**Follow-up Items (low priority):**
+- Fix: Show "← All Research" nav only on blog post pages (needs JS page-type detection or separate include)
+- Fix: Replace hardcoded relative path with absolute path `/blog.html` (more robust)
+
+### 2026-02-17 09:47 IST - Pre-Deployment Asset Audit
+**Task:** Full visual asset audit across all 7 deployment days  
+**Quality Self-Rating:** 4.5/5
+
+**What I Did:**
+- Verified existence of all visual assets for Days 1-7 (14 files total)
+- Cross-checked cron payload filenames against actual disk files
+- Caught Day 6 filename mismatch: cron said `day6-multi-factor-scorecard.png`, file was `day6-multifactor-scorecard.png`
+- Fixed by creating copy with expected name — both variants now exist
+
+**What Worked:**
+- Proactive auditing rather than waiting for the cron to fail
+- Systematic ls check for each day's assets
+- Found the mismatch 7 days early (deploy is Feb 24)
+
+**What Could Be Better:**
+- Should have done this audit earlier (when crons were first set)
+- A script that auto-compares cron payload filenames vs disk would prevent this class of bug
+
+**Lesson Learned:**
+- **Cron payload filenames MUST be cross-checked against actual disk files** — human-typed paths drift. Names created in one session (Wanda) get referenced in another session (Quill for crons). Underscores vs hyphens, camelCase vs kebab-case — always verify.
+- Post-launch UX audit should include: (1) URLs live, (2) UTM links, (3) key UX elements, (4) email forms, (5) social links, (6) visual asset filenames for upcoming deployments

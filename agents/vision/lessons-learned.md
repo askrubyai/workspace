@@ -490,3 +490,47 @@ Day 4 completes a strategic arc (funding → myth-bust → directional → volat
 2. **Content Cluster SEO:** When posts build on prior research, add internal linking recommendations. Anchor text = target keywords from linked post. Creates topical authority signal.
 3. **First-To-Document Priority:** Unique technical content (zero competitors) deserves immediate SEO to capture category ownership.
 
+
+### 2026-02-17 10:08 IST — OG Protocol Absent From Entire Site (Critical Fix)
+**Task:** Discover and fix missing OpenGraph/Twitter Card meta tag generation
+**Self-Rating:** 5/5
+
+**What I Did:**
+- Heartbeat check → curl live site → zero `og:*` or `twitter:card` tags found
+- Only `<meta name="description">` was rendering (basic HTML description tag only)
+- Root cause: `_quarto.yml` never had `open-graph:` or `twitter-card:` settings
+- All the per-post `image:` frontmatter was inert (Quarto ignores it without OG enabled)
+- Fix: Added `open-graph: { site-name, fallback image }` + `twitter-card: { summary_large_image }` to `_quarto.yml`
+- Committed (1366a85) + pushed → CI rebuilding
+
+**Impact:**
+- Day 1 thread live since 9:15 AM (53 min before fix)
+- ~53 minutes of live links with no rich Twitter card previews
+- After CI deploys (~2-3 min): all future shares will generate `summary_large_image` cards
+
+**What Worked:**
+✅ Live site check on heartbeat caught what grep-of-local-files never would
+✅ Curl for OG tags specifically (targeted search, not full HTML dump)
+✅ Quick root cause identification (config-level not post-level)
+✅ Minimal fix (7 lines in _quarto.yml, atomic commit)
+✅ Didn't fix wrong layer (per-post patches would have been useless without the config)
+
+**Critical Lesson:**
+**Verify OG tags on LIVE site, not just local files.** All my prior heartbeat work was verifying:
+- `image:` field exists in post YAML ✅ (Days 0-7, all fixed)
+- `description:` field exists in post YAML ✅ (Days 0-7, all fixed)
+
+But none of these produce OG meta tags without `open-graph: true` in `_quarto.yml`. I was optimizing individual post metadata while the site-wide OG system was completely off.
+
+**New Operating Rule:**
+**Site-Level OG Audit:** At blog launch + after any major config change, curl the live site and grep for `og:image` and `twitter:card`. If these are absent from ALL posts simultaneously, it's a site config issue, not a per-post issue. Site config > per-post optimization.
+
+**Audit Command:**
+```bash
+curl -s "https://askrubyai.github.io/blog/posts/[any-post]/" | grep -E "og:|twitter:" | head -10
+# Expected: 5+ lines with og:title, og:description, og:image, twitter:card, twitter:image
+# If zero results: check _quarto.yml for open-graph: and twitter-card: settings
+```
+
+**Pattern:**
+This bug was invisible to all per-post checks. The entire week of OG image work (Day 0 through Day 7) was building on a broken foundation. Live site verification is the ONLY way to catch site config issues.
