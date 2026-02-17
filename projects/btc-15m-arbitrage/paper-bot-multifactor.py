@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 PAPER TRADING BOT — MULTI-FACTOR (V3)
-Day 7/8 forward validation bot: regime + VRP + cluster proximity signals
+Day 7/8/9 forward validation bot: regime + VRP + cluster proximity signals
 
 Architecture:
-  Polymarket RTDS WebSocket → Signal Engine (multi-factor) → Paper Execution → SPRT Validation
+  Polymarket RTDS WebSocket → Signal Engine (multi-factor) → Kelly Sizing → Paper Execution → SPRT Validation
 
 Key improvements over paper-bot-v2.js:
   - Full multi-factor signal pipeline (regime + VRP + cluster)
@@ -12,8 +12,15 @@ Key improvements over paper-bot-v2.js:
   - Realistic fill modeling (spread + latency)
   - Multi-asset: BTC, ETH, SOL, XRP (4× signal rate)
   - Factor attribution tracking per trade
+  - TRUE Kelly Criterion position sizing (Day 8) — not confidence-weighted heuristic
 
-Updated: 2026-02-17 (Friday)
+Kelly Sizing Logic (Day 8):
+  f* = (w - p) / (1 - p)   where w = estimated win prob, p = entry price
+  w_estimate = 0.50 + BACKTEST_EDGE * (confidence / signal_threshold)
+  practical = kelly_multiplier * f*   (default: half Kelly)
+  Skip trade if f* × balance < min_bet_usd (edge too thin to justify minimum bet)
+
+Updated: 2026-02-17 (Friday — Kelly integration)
 Fee structure: Polymarket 0/0 bps (dropped Feb 2026)
 """
 
@@ -64,6 +71,14 @@ CONFIG = {
         "cluster_proximity": 0.30,
         "vrp": 0.30,
     },
+    # ── Kelly Criterion parameters (Day 8 integration) ──────────────────
+    # From Day 6 backtest: 14 trades, 57.1% win rate at ~50¢ avg entry
+    "backtest_win_rate": 0.571,        # Baseline win rate estimate
+    "kelly_multiplier": 0.50,          # Fractional Kelly: 0.5 = half Kelly
+    "min_bet_usd": 5.00,               # Polymarket minimum (need 5+ shares to exit)
+    # Kelly skip rule: don't trade if full-Kelly size < min_bet_usd
+    # This enforces selectivity — only trade when edge justifies the minimum bet
+    "kelly_skip_enabled": True,        # Log skips for Day 9 signal-selection research
 }
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -273,6 +288,10 @@ class PaperTrade:
     pnl: Optional[float] = None
     status: str = "OPEN"
     sprt_decision: Optional[str] = None
+    # Kelly metrics (Day 8) — stored for Day 9 signal-selection analysis
+    kelly_w_estimate: float = 0.0      # Estimated win probability used for sizing
+    kelly_f_star: float = 0.0          # Full Kelly fraction
+    kelly_f_practical: float = 0.0     # Fractional Kelly applied
 
 
 class PaperEngine:
@@ -296,9 +315,53 @@ class PaperEngine:
             if pos.asset == signal.asset:
                 return None
 
-        # Kelly-inspired sizing: confidence-weighted fraction of max size
-        size_usd = self.balance * self.max_position_pct * signal.confidence
-        size_usd = max(min(size_usd, self.balance * self.max_position_pct), 0.50)
+        # ── True Kelly Criterion position sizing (Day 8) ──────────────────
+        # From Day 8 research: f* = (w - p) / (1 - p)
+        # w = estimated win probability (calibrated from backtest + signal confidence)
+        # p = binary entry price
+        p_entry = signal.binary_price
+        base_win_rate = CONFIG["backtest_win_rate"]       # 0.571 from Day 6
+
+        # Scale win estimate by signal confidence
+        # confidence=signal_threshold (min) → w = base_win_rate (baseline)
+        # confidence=1.0 (max)             → w = 0.50 + edge × (1.0 / threshold)
+        edge = base_win_rate - 0.50
+        confidence_scale = signal.confidence / CONFIG["signal_threshold"]
+        w_estimate = 0.50 + edge * confidence_scale
+        w_estimate = min(w_estimate, 0.85)  # cap at 85% (realistic upper bound)
+
+        # Full Kelly fraction for a binary option: f* = (w - p) / (1 - p)
+        f_star = (w_estimate - p_entry) / (1.0 - p_entry)
+        if f_star <= 0:
+            return None  # Negative or zero Kelly = no edge, skip trade
+
+        # Apply fractional Kelly (half Kelly by default)
+        kelly_multiplier = CONFIG["kelly_multiplier"]
+        f_practical = kelly_multiplier * f_star
+
+        # Compute position size from Kelly fraction
+        size_usd = self.balance * f_practical
+
+        # Kelly skip rule: if full Kelly size < min_bet, edge is too thin
+        min_bet = CONFIG["min_bet_usd"]
+        full_kelly_size = self.balance * f_star
+        if CONFIG.get("kelly_skip_enabled") and full_kelly_size < min_bet:
+            # Log skip for Day 9 signal-selection analysis
+            log_entry = (f"[KELLY_SKIP] {signal.asset} | confidence={signal.confidence:.2f} | "
+                         f"w={w_estimate:.3f} | p={p_entry:.3f} | f*={f_star:.3%} | "
+                         f"full_kelly_size=${full_kelly_size:.2f} < min_bet=${min_bet:.2f}")
+            try:
+                with open(CONFIG["log_file"], "a") as lf:
+                    lf.write(log_entry + "\n")
+            except Exception:
+                pass
+            return None  # Skip — edge doesn't justify minimum bet
+
+        # Floor at minimum bet (survival mode: can't bet less than $5)
+        size_usd = max(min_bet, size_usd)
+        # Hard cap: never risk more than 50% of balance in a single trade
+        size_usd = min(size_usd, self.balance * 0.50)
+
         if size_usd > self.balance:
             return None
 
@@ -322,6 +385,9 @@ class PaperEngine:
             size_usd=size_usd,
             shares=shares,
             signal=signal,
+            kelly_w_estimate=w_estimate,
+            kelly_f_star=f_star,
+            kelly_f_practical=f_practical,
         )
         self.positions.append(trade)
         self.balance -= size_usd
@@ -558,6 +624,14 @@ def save_journal(engine: PaperEngine, sprt: SPRT):
                     "sprt_decision": t.sprt_decision,
                     "opened_at": datetime.fromtimestamp(t.timestamp).isoformat(),
                     "closed_at": datetime.fromtimestamp(t.exit_timestamp).isoformat() if t.exit_timestamp else None,
+                    # Kelly metrics (Day 8) — for Day 9 signal-selection analysis
+                    "kelly": {
+                        "w_estimate": round(t.kelly_w_estimate, 4),
+                        "f_star": round(t.kelly_f_star, 4),
+                        "f_practical": round(t.kelly_f_practical, 4),
+                        "kelly_pct": f"{t.kelly_f_star * 100:.2f}%",
+                        "practical_pct": f"{t.kelly_f_practical * 100:.2f}%",
+                    },
                 }
                 for t in engine.closed_trades
             ],
