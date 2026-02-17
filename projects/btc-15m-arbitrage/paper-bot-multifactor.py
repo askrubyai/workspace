@@ -683,19 +683,19 @@ class PaperTradingBot:
         threading.Thread(target=self._keepalive, args=(my_id,), daemon=True).start()
 
     def _keepalive(self, my_id: int):
-        """Send ping every 5s; force reconnect if pong silent for 10s."""
+        """Check every 30s that price data is flowing; force reconnect if silent for 60s.
+        
+        Fix (2026-02-17): Polymarket RTDS does NOT respond to text 'ping' with text 'pong'.
+        We now reset _last_pong_time on ANY incoming message (any data = connection alive).
+        Pong timeout increased 10s→60s to accommodate irregular message intervals.
+        """
         while self._running and self.ws and my_id == self._keepalive_id:
-            time.sleep(5)
+            time.sleep(30)
             if not (self._running and self.ws and my_id == self._keepalive_id):
                 break
-            try:
-                if self.ws.sock:
-                    self.ws.send("ping")
-            except Exception:
-                pass
-            # Check liveness: if no pong in 10s, force reconnect
-            if time.time() - self._last_pong_time > 10:
-                log("No pong in 10s — forcing reconnect", "warn")
+            # Check liveness: if no message received in 60s, force reconnect
+            if time.time() - self._last_pong_time > 60:
+                log("No data in 60s — forcing reconnect", "warn")
                 try:
                     self.ws.close()
                 except Exception:
@@ -703,8 +703,9 @@ class PaperTradingBot:
                 break  # let on_close handle reconnect
 
     def _ws_on_message(self, ws, data: str):
+        # Any incoming message proves the connection is alive — reset liveness clock
+        self._last_pong_time = time.time()
         if data == "pong":
-            self._last_pong_time = time.time()
             return
         try:
             msg = json.loads(data)
