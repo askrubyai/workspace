@@ -8,6 +8,12 @@
  * 2. Tracks RESOLUTION outcomes, not price swings
  * 3. Tests multiple strategies
  * 4. Realistic fee modeling
+ * 
+ * UPDATED 2026-02-17: Polymarket dropped fees to 0/0 bps (Feb 2026)
+ * - takerFee: 0% (was 3%)
+ * - makerRebate: 0% (was 1%)
+ * - This changes strategy economics fundamentally — net edge now = gross edge
+ * - Day 6 backtest: +0.12% gross edge = +0.12% net edge (was deeply negative at 3% fees)
  */
 
 require('dotenv').config();
@@ -63,8 +69,8 @@ const CONFIG = {
   // Realistic simulation parameters
   simulation: {
     fillProbability: 0.7,     // 70% chance limit order fills
-    makerRebate: 0.01,        // 1% maker rebate
-    takerFee: 0.03,           // 3% taker fee (if we use market orders)
+    makerRebate: 0.00,        // 0% — Polymarket dropped fees to 0/0 bps (Feb 2026)
+    takerFee: 0.00,           // 0% — market orders now fee-free (was 3%)
     slippageBps: 50,          // 0.5% average slippage
   },
   
@@ -313,8 +319,8 @@ async function resolvePosition(position) {
   if (won) {
     // Win: shares become worth $1 each, minus our cost
     pnl = position.shares - position.betSize;
-    // Add maker rebate
-    pnl += position.betSize * CONFIG.simulation.makerRebate;
+    // No maker rebate — Polymarket fees are 0/0 bps as of Feb 2026
+    // pnl += position.betSize * CONFIG.simulation.makerRebate; // was 1%, now 0%
     state.balance += position.shares; // Get back $1 per share
     state.stats.wins++;
   } else {
