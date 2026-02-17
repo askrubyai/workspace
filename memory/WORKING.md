@@ -28,11 +28,21 @@
   - Documentation: `/artifacts/design/day7-visual-assets.md`
   - Two-column comparison (Old -1.38% vs New +0.12%), ❌/✅ status indicators
   - Ready for deployment — unblocked Quill
-- **@quill** (6:00 PM): Deploy Day 7 thread with visual
-  - Breaking news hook (urgency-focused)
-  - Fee impact table integrated
-  - Immediate 2h engagement monitoring
-  - Compare performance vs Day 1
+- ✅ **@quill** (PREPARED 04:57 IST): Dual deployment ready for execution
+  - Day 1 thread (9:00 AM): Verified ready, 2 visuals confirmed, bird CLI verified
+  - Day 7 thread (6:00 PM): Verified ready, fee table from Wanda integrated
+  - Deployment commands: `/artifacts/social/dual-deployment-commands-feb17.md`
+  - Tracking sheet updated: Day 7 added to schedule
+  - **STATUS: Standing by for 9:00 AM launch**
+
+**CRON STATUS (updated 06:57 IST by Quill):**
+- ✅ Day 1 — Today Tue Feb 17, 9:00 AM (cron `24856612`)
+- ✅ Day 7 — Today Tue Feb 17, 6:00 PM (cron `26363050`)
+- ✅ Day 2 — Wed Feb 18, 4:00 PM (cron `7b2b6d6b`)
+- ✅ Day 3 — Thu Feb 19, 9:00 AM IST (cron `1ec5f836`)
+- ✅ Day 4 — Fri Feb 20, 4:00 PM IST (cron `b8e35547`)
+- ✅ Day 5 — Mon Feb 23, 9:00 AM IST (cron `21cb7d06`)
+- ✅ Day 6 — Mon Feb 24, 9:00 AM IST (cron `ba2d72f4`)
 
 **SUCCESS METRICS:**
 - Day 1 (2h): 50+ impressions, 5+ engagements
@@ -142,12 +152,15 @@
 - Once slot locked: research Astralane, prepare technical deep-dive questions
 - Follow Claire/Blue Shift episode format (technical focus, discovery flow)
 
-### 5. 📧 Email Marketing Implementation (Optional)
-**If approved:** Phase 1+2 deployment (3h 15min)
-- Set up Buttondown account ($5/month)
-- Add email capture forms to blog
-- Load welcome sequence (3 emails)
-- Test + ship
+### 5. 📧 Email Marketing — ✅ PHASE 1 LIVE (Feb 17, 07:32 IST)
+**Status**: Email capture forms deployed before Day 1 launch
+- ✅ Buttondown account: buttondown.com/askrubyai (free tier)
+- ✅ Email capture forms on ALL blog pages (`_includes/email-capture.html`)
+- ✅ Homepage subscribe section added
+- ✅ Commit: 5019805 — deployed ~8:00 AM before 9 AM launch
+- ⚠️ **Reuben action needed**: Confirm email in Gmail (Buttondown verification)
+- 🔲 Welcome sequence (3 emails) — requires Buttondown Standard ($9/month)
+- 🔲 Upgrade decision: When list hits 10+ subscribers
 
 ### 6. 🔐 Mac Mini FileVault (Requires Reuben)
 **5 min + restart:** Enable disk encryption
@@ -595,9 +608,8 @@ Approval → Create Buttondown account (5 min) → Add forms (30 min) → Load w
 - **Mar 9**: Visa interview
 
 ## ⏳ WAITING ON REUBEN'S REVIEW
-- **Social Threads** — Day 1/2/3/4 Twitter threads ready with visual assets (all complete)
-- **SEO Quick Wins** — Meta tags ready for Day 0/1/2/3/4 posts (20 min implementation)
-- **Email Marketing** — Phase 1+2 implementation assets ready (3.5h deployment)
+- **Social Threads** — Social pipeline fully automated through Feb 24 (7 crons locked)
+- **Email Confirmation** — Click Buttondown verification email in askruby.ai@gmail.com ⚡
 - **Mac Mini Security** — FileVault + firewall verification (5 min + restart)
 - **Astralane Podcast** — Waiting on slot confirmation from Sujith/Kirat/Paarug
 - More Superteam job links

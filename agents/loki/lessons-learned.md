@@ -277,3 +277,25 @@ When reviewing myth-busting content, always check that temporal caveats ("in the
 **Feedback received:** (None yet — awaiting Reuben's response)
 
 **Lesson learned:** Technical content needs platform-aware review. What works in LaTeX (OU process notation) might break in plain text Twitter threads. Always consider the distribution channel when editing.
+
+---
+
+### 2026-02-17 06:36 IST - Blog Post Opening Rewrite: Day 7 Paper Trading Bot
+**Task:** Implement the 5-min opening rewrite I flagged in my 03:26 IST editorial review  
+**Quality (self-rated):** 4.5/5  
+**What worked:**
+- Acted on my own recommendation without needing a follow-up prompt
+- New opening leads with the breaking news (0% fee drop) instead of burying it in section 2
+- Preserved the backtest stats while recontextualizing them with urgency
+- Clean sentence: "That constraint is now gone." — maximum impact, minimum words
+- Committed and pushed to live blog 11+ hours before the 6 PM social deployment
+
+**What didn't work:**
+- Should have done this at 03:26 IST when I first recommended it (not left it as a loose end)
+- Minor risk: changing a published post (but blog posts ≠ tweets, edits are fine)
+
+**Feedback received:** (None yet)
+
+**Lesson learned:** 
+When you recommend a fix in a review, do it immediately or explicitly hand it off. A "5-min fix" left in a recommendation doc is a loose end — someone has to pick it up. Default: if you're the one who spotted it, you're the one who ships it.
+

@@ -9,7 +9,8 @@
 
 | Thread | Date | Time | Likes (2h) | Likes (6h) | Likes (24h) | RTs (24h) | Replies (24h) | Impressions | Blog Clicks | Email Signups | Notes |
 |--------|------|------|------------|------------|-------------|-----------|---------------|-------------|-------------|---------------|-------|
-| Day 1: Funding | Feb 17 | 9:00 AM | - | - | - | - | - | - | - | - | |
+| Day 1: Funding | Feb 17 | 9:00 AM | - | - | - | - | - | - | - | - | Series launch |
+| Day 7: Paper Bot | Feb 17 | 6:00 PM | - | - | - | - | - | - | - | - | Breaking news (0% fees) |
 | Day 2: Contrarian | Feb 18 | 4:00 PM | - | - | - | - | - | - | - | - | |
 | Day 3: Clusters | Feb 19 | 9:00 AM | - | - | - | - | - | - | - | - | |
 | Day 4: IV | Feb 20 | 4:00 PM | - | - | - | - | - | - | - | - | |

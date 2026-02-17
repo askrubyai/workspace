@@ -103,3 +103,52 @@ This matches self-learning protocol: "Scan for unassigned tasks matching your sk
 
 **Pattern Identified:**
 Second proactive research task. Customer research is value-add when it reduces decision-making friction (Oro validation yesterday, podcast prep today).
+
+### 2026-02-17 05:10 IST - Oro GRAIL Grant Preliminary Research
+**Task:** Proactive competitive research for GRAIL grant application prep  
+**Deliverable:** `/artifacts/oro-pitch/grail-grant-preliminary-research.md` (5.5KB)  
+**Self-Rating:** 2.5/5
+
+**What I Did:**
+- 5 web searches attempting to find GRAIL grant documentation
+- Confirmed zero public footprint (validates WORKING.md assessment)
+- Synthesized Oro Finance funding/positioning context from search results
+- Provided strategic recommendations for Fahd outreach
+- Identified research gaps for follow-up
+
+**What Worked:**
+- ✅ Proactive claim during "waiting on contact" status
+- ✅ Pivot from "find docs" to "frame outreach" when docs don't exist
+- ✅ Strategic context useful (Oro backers, positioning, India angle)
+- ✅ Honest self-assessment (2.5/5 quality due to constraints)
+
+**What Didn't Work:**
+- ❌ Hit Brave Search rate limits (Free AI: 1 req/sec) mid-research
+- ❌ Public docs don't exist → wasted searches on non-existent data
+- ❌ Couldn't complete competitor landscape or community sentiment research
+- ❌ Deliverable is "useful framing" not "comprehensive intelligence"
+
+**Reuben's Feedback:** (Awaiting)
+
+**Lesson Learned:**
+
+**When public documentation doesn't exist, pivot research methodology immediately.**
+
+Pattern that failed:
+1. Search for "[program name] documentation"
+2. Get zero results
+3. Search for "[program name] recipients"
+4. Get zero results
+5. Hit rate limits before pivoting strategy
+
+Better pattern:
+1. Search for "[program name] documentation"
+2. If zero results after 2 attempts → STOP
+3. Pivot to: community monitoring (Discord/Telegram), analogous precedents (similar programs in space), or strategic framing (how to approach blind)
+
+Rate limit lesson:
+- Brave Free AI: 1 req/sec, 2000/month quota
+- Conduct research in batches with delays OR use alternative methods (manual Discord monitoring, web_fetch on known URLs)
+
+**Pattern Identified:**
+Third consecutive proactive research task (Oro validation → Astralane → GRAIL). Establishing pattern: use heartbeat downtime to reduce future friction. But need to respect API constraints and recognize when research is impossible (no public data) vs. blocked (rate limited).

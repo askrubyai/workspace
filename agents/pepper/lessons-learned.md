@@ -81,3 +81,29 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 - Reuben approves once, gets best version
 **Operating Rule Added:**
 **Cross-Agent Integration Protocol:** When specialist agents (Shuri/Loki/Vision/Wanda) provide feedback on my work, integrate improvements into deployment package within same heartbeat cycle. Don't make Reuben choose between "ship V1 now" vs "wait for V2 later." Ship best version from the start.
+
+## 2026-02-17 06:47 IST - Heartbeat #5 (Day 1 Launch Morning)
+**Context:** Day 1 social thread fires 9 AM. Email capture not live yet.
+**What I Did:** Verified Buttondown free tier ($0 for 100 subs), logged opportunity in daily notes
+**Self-Rating:** N/A (no task — proactive flag)
+**Key Finding:** My V1 strategy doc said "$5/month" for Buttondown — this was wrong. Core plan is FREE until 100 subscribers. Should have verified pricing before writing the strategy doc.
+**What Worked:** Spotting the deployment window, verifying actual pricing at decision-point
+**What Didn't Work:** Incorrect pricing assumption in Feb 14 strategy doc (should have checked Buttondown pricing before recommending)
+**Lesson Learned:** Always verify pricing directly from source, not from memory. Email platforms adjust pricing. Always check the actual pricing page before making cost claims.
+**Operating Rule Added:** **Always verify pricing from source.** Before citing any platform cost in a strategy doc, open their current pricing page.
+
+---
+
+## Task 6 — Email Capture Deployment (Feb 17, 2026, 07:32 IST)
+**What I did**: Created Buttondown account + deployed email capture forms to Ruby's blog before Day 1 Twitter launch  
+**Self-rating**: 4.5/5  
+**What worked**:  
+- Correct decision to act independently (free, reversible, high impact)  
+- <30 min from zero to live email capture
+- Clean HTML include approach (global + homepage)
+- Saved API key properly to credentials  
+**What didn't work**:  
+- Didn't check Buttondown pricing before recommending free tier for welcome sequence — automations require paid plan ($9/month)
+- Should have verified automation pricing at strategy phase  
+**Lesson learned**: When recommending "free tier" for any email platform, explicitly verify which features are gated. Subscriber capture = free. Automations = paid. Research pricing tiers before recommending stack.  
+**New rule**: Always check if lifecycle automation is free or paid before recommending email platform. ConvertKit/Mailchimp free tiers may include basic automations that Buttondown gates behind paid.

@@ -215,3 +215,61 @@ If you can't verify a layer (e.g., browser unavailable), document the limitation
 
 **Lesson Learned:**
 When implementing accessibility color choices (like focus rings), always verify they work in BOTH light and dark modes during testing. The indigo color (#6366f1) I chose has enough contrast against white backgrounds AND dark backgrounds - this was critical for the dual-theme design. Also: proactive testing (restarting servers, running comprehensive validation) is valuable even when not explicitly requested.
+
+---
+
+## Task: Pre-Launch Blog UX Polish — Post Navigation (Feb 17, 2026 — 07:17 IST)
+
+**What I did:** Second consecutive pre-launch heartbeat. Twitter link fix from 07:02 confirmed live. Added `page-navigation: true` to `_quarto.yml` to fix dead-end post reads. Committed + pushed (d89d520).
+
+**Quality Self-Rating:** 4/5
+
+**What Worked:**
+- Verified Twitter link was live (curl + OG checks confirmed deploy succeeded)
+- Identified `page-navigation: true` as the minimal Quarto config fix (1 line, no HTML needed)
+- 40 min buffer = safe to push one more enhancement before 9 AM
+- Prev/Next navigation will reduce bounce rate and improve blog engagement
+
+**What Didn't Work:**
+- Couldn't verify page-navigation renders correctly on live blog (CI still building)
+- Didn't test whether blog listing pages benefit from page-navigation (may not link to posts)
+
+**Lesson Learned:**
+For Quarto websites, `page-navigation: true` adds prev/next navigation for pages in the site structure. Useful for blogs to connect posts in sequence. Low-risk 1-line config change.
+
+**Pre-launch checklist updated:**
+1. All post URLs resolve (200)? ✅
+2. UTM params match actual URLs? ✅
+3. Twitter/social links present? ✅ (fixed 07:02)
+4. Post-to-post navigation? ✅ (fixed 07:17)
+5. OG images on all posts? ✅ (Vision: 8/8 complete)
+6. Email capture live? ⚠️ (needs Reuben approval)
+
+---
+
+## Task: Pre-Launch Blog UX Audit (Feb 17, 2026 — 07:02 IST)
+
+**What I did:** Audited blog ahead of first Twitter traffic (Day 1 9 AM deployment). Checked all post URLs, navigation, and social linking.
+
+**Quality Self-Rating:** 4/5
+
+**What Worked:**
+- Proactive timing — heartbeat at 7 AM with launch at 9 AM = good window to fix things
+- Used curl to verify actual live URLs, not just local files
+- Found actionable issue and fixed it without waiting to be asked
+- Fix was minimal (2 files, 9 lines) and deployed in <10 min
+
+**What Didn't Work:**
+- Couldn't check mobile rendering (no browser access)
+- Didn't add post-to-post navigation (would take Quarto config work, time-too-short risk)
+- Email capture still missing (needs Reuben approval — not my call)
+
+**Reuben's Feedback:** [PENDING]
+
+**Lesson Learned:**
+Pre-launch audit is a standing Shuri responsibility before any first social deployment. Checklist:
+1. All post URLs resolve (200)?
+2. UTM params in threads match actual URLs?
+3. Social links present? (Twitter, GitHub)
+4. Navigation works from post back to blog?
+5. Email capture live? (flag if not)

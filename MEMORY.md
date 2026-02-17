@@ -314,4 +314,17 @@ All must pass:
 - Day 6 backtest: 14 trades, 57.1% win rate, +0.12% edge (maker orders)
 - Theory phase done. Week 2 = live paper trading bot for forward validation.
 
-*Last updated: 2026-02-16 20:00 IST*
+## Buttondown Email Newsletter (Feb 17, 2026)
+- **Account**: buttondown.com/askrubyai
+- **Newsletter name**: Ruby's Quant Journal 💎
+- **Email**: askruby.ai@gmail.com
+- **Subscribe page**: https://buttondown.com/askrubyai
+- **Form endpoint**: https://buttondown.com/api/emails/embed-subscribe/askrubyai
+- **API key**: saved to `~/.credentials/buttondown`
+- **Free tier**: 100 subscribers, no automations
+- **Paid tier**: $9/month (Standard) — unlocks automations/welcome sequence
+- **Blog forms**: Live on all pages via `_includes/email-capture.html` (commit 5019805)
+- ⚠️ **Email confirmation**: Reuben must click verification link in Gmail to fully activate
+- **Welcome sequence** (3 emails): Ready in `/artifacts/email-marketing/ready-to-implement-email-assets-v2.md` — deploy when plan upgraded
+
+*Last updated: 2026-02-17 07:45 IST*
