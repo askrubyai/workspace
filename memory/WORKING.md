@@ -152,15 +152,19 @@
 - Once slot locked: research Astralane, prepare technical deep-dive questions
 - Follow Claire/Blue Shift episode format (technical focus, discovery flow)
 
-### 5. 📧 Email Marketing — ✅ PHASE 1 LIVE (Feb 17, 07:32 IST)
-**Status**: Email capture forms deployed before Day 1 launch
-- ✅ Buttondown account: buttondown.com/askrubyai (free tier)
-- ✅ Email capture forms on ALL blog pages (`_includes/email-capture.html`)
-- ✅ Homepage subscribe section added
-- ✅ Commit: 5019805 — deployed ~8:00 AM before 9 AM launch
-- ⚠️ **Reuben action needed**: Confirm email in Gmail (Buttondown verification)
-- 🔲 Welcome sequence (3 emails) — requires Buttondown Standard ($9/month)
-- 🔲 Upgrade decision: When list hits 10+ subscribers
+### 5. 📧 Email Marketing — ✅ PHASE 1 FULLY ARMED (Feb 17, 08:01 IST)
+**Status**: Complete dual-launch coverage — morning + evening checks, welcome draft pre-staged
+- ✅ Buttondown account: buttondown.com/askrubyai (free tier, 0 subs pre-launch)
+- ✅ Email capture forms on ALL blog pages — VERIFIED live (Shuri WCAG-compliant labels added)
+- ✅ Commit: 5019805 — live before 9 AM launch
+- ✅ **API verified working**: Create/send emails confirmed functional (no account verification blocks)
+- ✅ **Welcome email pre-staged**: Draft ID `a321671d-0359-4578-8064-060001bbe816` — includes Day 1 + Day 7 content
+- ✅ **Noon subscriber check**: `420430de` — fires 12:00 PM IST (3h after Day 1)
+- ✅ **Evening subscriber check**: `9fbceee2` — fires 8:00 PM IST (2h after Day 7) — NEW, closes gap
+- ✅ Double-send protection in evening cron (checks if noon already sent)
+- ⚠️ **Reuben action needed**: Confirm Buttondown verification email in askruby.ai@gmail.com ⚡
+- 🔲 **Sunday Digest**: First one due Feb 22 — template needed by Feb 20
+- 🔲 Welcome sequence automation (3 emails) — requires Buttondown Standard ($9/month) → upgrade at 10+ subs
 
 ### 6. 🔐 Mac Mini FileVault (Requires Reuben)
 **5 min + restart:** Enable disk encryption

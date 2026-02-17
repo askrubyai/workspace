@@ -273,3 +273,64 @@ Pre-launch audit is a standing Shuri responsibility before any first social depl
 3. Social links present? (Twitter, GitHub)
 4. Navigation works from post back to blog?
 5. Email capture live? (flag if not)
+
+---
+
+## Task: Email Form Accessibility Pre-Launch Audit (Feb 17, 2026 — 07:47 IST)
+
+**What I did:** Audited newly-deployed email capture forms (homepage + post footer) immediately before Day 1 Twitter launch.
+
+**Quality Self-Rating:** 4/5
+
+**Issues Found:**
+1. Missing `<label>` elements — WCAG 2.1 AA violation, screen readers only get placeholder ("you@example.com")
+2. Validation error state used inline style (`style.borderColor`), never cleared. Replaced with CSS class + focus listener.
+
+**What Worked:**
+- Caught real accessibility violations before first user traffic
+- Minimal changes — avoided over-engineering (no full refactor, just the gaps)
+- Fast commit cycle: spotted → fixed → pushed in <8 minutes
+
+**What Didn't Work:**
+- Couldn't verify live render (CI still building)
+- Didn't check keyboard Tab order through form (would have needed browser access)
+
+**Lesson Learned:**
+New forms should always be checked for: (1) label/aria coverage, (2) all 3 UX states (idle/loading/success-error), (3) error state reset mechanism. Inline `style.x = 'value'` for error states is a UX code smell — it requires explicit reset logic. CSS class approach + `once: true` event listener is cleaner and reliable.
+
+**New Operating Rule:**
+**Form Error State:** Never use `element.style.x = value` for error styling. Always use CSS classes with a clear reset path (focus listener, input event, or form re-submit). Inline styles set programmatically don't auto-clear.
+
+---
+
+## Task: Pre-Launch Final Verification (Feb 17, 2026 — 08:02 IST)
+
+**What I did:** T-58min final live-site verification before Day 1 Twitter launch. Checked all CI builds from the past hour had deployed correctly.
+
+**Quality Self-Rating:** 4/5
+
+**Findings:**
+- ✅ Homepage live (200 OK)
+- ✅ Twitter/X `@askrubyai` link in navbar — CONFIRMED live
+- ✅ Email capture form — CONFIRMED live on homepage + posts
+- ✅ Email form accessibility (WCAG labels) — CONFIRMED live (label + aria-label + sr-only present)
+- ✅ Buttondown API endpoint correct in form
+- ✅ All 8 post URLs resolve (200 OK)
+- ❌ **Post-to-post navigation NOT working** — `page-navigation: true` in `_quarto.yml` under `website:` section does NOT generate prev/next links for blog listing posts. Only works for sidebar nav items. Nav-footer-left/right are empty.
+
+**What Worked:**
+- Caught a subtle Quarto configuration misconception before it went live permanently
+- All critical launch-blockers (Twitter link, OG images, email forms) confirmed green
+
+**What Didn't Work:**
+- Post navigation fix (d89d520) has zero effect on blog posts — committed change doesn't solve the stated problem
+- Should have verified Quarto docs before committing
+
+**Lesson Learned:**
+`page-navigation: true` in Quarto websites only navigates between pages in the sidebar/navigation tree. Blog listing posts are NOT in the navigation tree by default. To add prev/next navigation to individual blog posts, need either: (1) custom HTML partials with manual post linking, (2) Quarto's `listing:` field in each post's YAML, or (3) a custom JS approach reading the sitemap.
+
+**New Operating Rule:**
+**Quarto Config:** Always verify config options in Quarto docs before committing. Quarto website vs. book formats have different behavior for the same config keys. Test with `quarto preview` first.
+
+**Follow-Up Action (Post-Launch, Low Priority):**
+Implement real post navigation using a custom `_partials/` approach or post YAML `next-page`/`prev-page` fields. Not blocking launch — "Read Research" navbar link is usable fallback.
