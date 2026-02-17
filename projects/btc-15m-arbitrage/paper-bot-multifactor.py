@@ -563,6 +563,10 @@ class PaperTradingBot:
         self._running = False
         self._last_signal_time: dict[str, float] = {}
         self._last_status_print = 0
+        # WS robustness state (see MEMORY.md critical requirements)
+        self._last_pong_time: float = 0.0
+        self._reconnect_attempts: int = 0
+        self._keepalive_id: int = 0   # bumped on each reconnect to kill stale threads
 
         # Clear log on start
         with open(CONFIG["log_file"], "w") as f:
@@ -572,24 +576,39 @@ class PaperTradingBot:
 
     def _ws_on_open(self, ws):
         log("Connected to Polymarket RTDS", "info")
+        self._last_pong_time = time.time()    # reset liveness clock on connect
+        self._reconnect_attempts = 0          # reset backoff on success
         ws.send(json.dumps({
             "action": "subscribe",
             "subscriptions": [{"topic": "crypto_prices_chainlink", "type": "*"}]
         }))
-        # Start ping keepalive
-        threading.Thread(target=self._keepalive, daemon=True).start()
+        # Start ping keepalive — capture current id so stale threads self-exit
+        my_id = self._keepalive_id
+        threading.Thread(target=self._keepalive, args=(my_id,), daemon=True).start()
 
-    def _keepalive(self):
-        while self._running and self.ws:
+    def _keepalive(self, my_id: int):
+        """Send ping every 5s; force reconnect if pong silent for 10s."""
+        while self._running and self.ws and my_id == self._keepalive_id:
             time.sleep(5)
+            if not (self._running and self.ws and my_id == self._keepalive_id):
+                break
             try:
-                if self.ws and self.ws.sock:
+                if self.ws.sock:
                     self.ws.send("ping")
             except Exception:
                 pass
+            # Check liveness: if no pong in 10s, force reconnect
+            if time.time() - self._last_pong_time > 10:
+                log("No pong in 10s — forcing reconnect", "warn")
+                try:
+                    self.ws.close()
+                except Exception:
+                    pass
+                break  # let on_close handle reconnect
 
     def _ws_on_message(self, ws, data: str):
         if data == "pong":
+            self._last_pong_time = time.time()
             return
         try:
             msg = json.loads(data)
@@ -602,12 +621,19 @@ class PaperTradingBot:
         log(f"WebSocket error: {err}", "warn")
 
     def _ws_on_close(self, ws, code, reason):
-        log("WebSocket closed — reconnecting in 5s", "warn")
+        if not self._running:
+            return
+        # Exponential backoff: 5s → 10s → 20s → … → 60s max
+        delay = min(5 * (2 ** self._reconnect_attempts), 60)
+        self._reconnect_attempts += 1
+        log(f"WebSocket closed — reconnecting in {delay}s (attempt {self._reconnect_attempts})", "warn")
+        time.sleep(delay)
         if self._running:
-            time.sleep(5)
             self._connect_ws()
 
     def _connect_ws(self):
+        # Bump keepalive_id to signal stale threads to exit
+        self._keepalive_id += 1
         self.ws = websocket.WebSocketApp(
             CONFIG["rtds_url"],
             on_open=self._ws_on_open,
