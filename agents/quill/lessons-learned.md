@@ -168,7 +168,48 @@
 
 **New operating rule:** After pre-staging engagement replies with time targets, schedule a T+15min mental check: "is relay connected?" If not connected within 15 min of target, route to Reuben immediately via HEARTBEAT output (don't wait for next :12 slot).
 
+---
+
+### Task 14: Day 2 T+60min Engagement Escalation + Day 10 Thread Sign-off (Feb 18, 2026 16:57 IST)
+**What I did:** Identified T+57min golden window for Day 2 Contrarian post-deploy engagement. Found browser relay not connected (consistent issue). Used Fury's Tier 1 NewsBTC foil (Feb 14 article, CryptoQuant data, TradingView-amplified). Sent Telegram msg 2785 to Reuben with copy-paste reply + Day 2 blog link. Also did Quill sign-off on Day 10 thread (visual annotations verified, 4.5/5 approved, cron `17ebae96` confirmed).
+**Quality self-rating:** 4/5
+**What worked:**
+- Caught T+57min window still live (not too late to act)
+- Telegram msg is low-friction for Reuben: literal copy-paste, 5 min to post
+- Day 10 sign-off is clean — no issues found, saves Shuri sweep time tomorrow
+- Verified Day 10 visual file paths against disk (not just thread annotations)
+
+**What didn't work / could improve:**
+- Sent Telegram at T+57min, should have sent at T+27min (16:27 heartbeat)
+- Previous heartbeat noted "browser relay down" but only updated daily notes (low-visibility)
+- Same issue for the 3rd+ time — operating rule exists but wasn't fast enough to execute
+
+**Lesson learned:** "Browser relay not connected" detection should IMMEDIATELY trigger Telegram escalation — no waiting for next heartbeat. The rule is clear. The execution was late by 30 minutes. The fix: when I detect relay down + time-sensitive window, message is FIRST action, not last action in the heartbeat.
+
+**UPDATED OPERATING RULE:** When browser relay is down AND there's a live engagement window within 2h, SEND TELEGRAM FIRST before any other analysis. Do not log in daily notes first. Do not finish reading files first. Telegram → then continue heartbeat.
+
 *Self-learning protocol: Update after every significant task*
+
+---
+
+### Task 13: Day 2 Post-Deploy Engagement Window — Browser Relay Unavailable (Feb 18, 2026 16:27 IST)
+**What I did:** Checked for @mentions and assigned tasks (none). Identified Day 2 Contrarian deployed at 4:00 PM IST (T+27min). Loaded Fury's Tier 1 NewsBTC intel. Found browser relay not connected (cdpReady: false). Logged engagement reply drafts for Reuben in daily notes. Noted Day 10 math flag (22%→28%).
+**Quality self-rating:** 3.5/5
+**What worked:**
+- Read Fury's 16:10 intel immediately — NewsBTC foil is Tier 1 (better than Gate.com)
+- Correctly identified browser relay status before spending time on posting attempts
+- Logged full reply copy in daily notes (zero friction for Reuben to copy-paste)
+- Noted Day 10 math flag with file path + search string
+
+**What didn't work / could improve:**
+- Browser relay not connected = missed T+30min golden window. AGAIN. Same issue as Task 12.
+- This is the 2nd time this has happened. Per SOUL.md self-learning rule: "same correction twice = new rule"
+
+**Reuben's feedback:** [Pending]
+
+**Lesson learned:** The T+30min golden window consistently falls during automated heartbeat slots when Chrome browser is not open. Browser relay requires human action (opening Chrome, attaching tab). The problem is structural — engagement requires presence.
+
+**NEW OPERATING RULE (3rd occurrence would be unacceptable):** When Fury delivers post-deploy intel AND browser relay is down, immediately route to Reuben via the primary channel (Telegram message) — not just daily notes. Daily notes are low-visibility. Telegram message is high-visibility. Time-sensitive engagement should always go to Telegram first.
 
 ---
 

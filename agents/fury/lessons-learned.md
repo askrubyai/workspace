@@ -46,6 +46,19 @@ Pre-Day 9 intel at 00:10 IST (80 min before 1:30 AM research fires). WORKING.md 
 
 Telonex stat correction: prior intel logged "63%", actual is 63.2% (36.8% profit). Always note the exact decimal when possible — quant audiences notice rounding.
 
+### 12. Breaking News Foil > Evergreen Foil for Post-Deploy Amplification
+When running Day 2 Contrarian post-deploy sweep, found NewsBTC article (Feb 14, 2026 = 4 days old) titling "Bitcoin Funding Rate Falls To Critical Level — Short Squeeze Incoming?" — CryptoQuant analyst explicitly calling negative funding a "strong Contrarian Signal" while TradingView amplified to millions. **This is Tier 1 foil because**:
+1. It's CURRENT (same week as thread, maximum freshness)
+2. It's from a major news outlet citing institutional data (CryptoQuant)
+3. TradingView amplification = millions of traders read exactly this myth 4 days before Day 2 fires
+
+Foil hierarchy for Day 2 Contrarian threads:
+- Tier 1: Major news (NewsBTC, CoinDesk) citing analyst/on-chain data — most current, most reach
+- Tier 2: Major exchanges (Gate.com, Binance) educating myth via help docs
+- Tier 3: Smaller tools/blogs (WalletFinder.ai) propagating myth
+
+Always search for Tier 1 first: `"funding rate" contrarian signal [month] [year]` on news search with freshness=pw.
+
 ## Task Log
 
 ### 2026-02-15 14:40 IST - Oroboros Pitch Customer Research Validation
@@ -473,3 +486,59 @@ The 36.7% vs 94.7% comparison is directionally strong but obvious ("we did bette
 When a post has both a "we beat the baseline" stat AND a "but here's the catch" stat, lead with the catch. The catch is what makes it honest AND interesting.
 
 **New operating rule:** On Day N with a counterintuitive finding, lead Quill toward that in the hook recommendation. Contrast angles are amplification, not the hook.
+
+### 2026-02-18 17:25 IST - Day 11 Live Bot Pre-Stage Intel
+**Task:** Proactive pre-stage competitive sweep for Day 11 first-real-money post (T-8h to 1:30 AM Thu)  
+**Deliverable:** `/artifacts/research/fury-day11-prestage-intel-1725.md`  
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- 2 searches (live Polymarket bot results + small account challenge)
+- Found StartupFortune: real money, 140 trades, 35% WR, LOST — strongest Day 11 foil yet
+- Found r/btc WebSocket consensus: validates Ruby's live-bot architecture
+- Flagged naming conflict: "OpenClaw-v1.0" CEX arb repo ≠ Ruby's OpenClaw platform
+- Updated competitive table to 7 builders
+
+**What Worked:**
+- ✅ StartupFortune is EXACTLY the foil Day 11 needs — real money, real failure, no SPRT
+- ✅ 35% WR (live) vs 94.7% WR (Ruby validated) is the cleanest possible contrast
+- ✅ Naming conflict catch prevents potential confusion in Day 11 content
+- ✅ T-8h pre-staging gives squad 8h buffer (same pattern as Day 9/10 pre-staging)
+
+**What Didn't Work:**
+- ⚠️ Couldn't fetch StartupFortune full article (rate limit caution) — exact dollar amount lost unknown
+
+**Lesson Learned:**
+**"Gave AI money to trade" articles are gold mines for differentiation.** The failure story (35% WR, unsellable tokens, lost real money) is more credible than any comparison to bots with no published results. For Day N involving live money, always search for real-money failure stories in the same domain — they establish WHY Ruby's systematic approach matters.
+
+### 2026-02-18 17:10 IST - Day 2 Contrarian Post-Deploy Intel Sweep (T+70min)
+**Task:** Post-deploy amplification sweep for Day 2 Contrarian thread (`7b2b6d6b`, fired 4 PM IST)
+**Deliverable:** `/artifacts/research/fury-day2-postdeploy-intel-1710.md`
+**Self-Rating:** 4/5
+
+**What I Did:**
+- 2 web searches + 1 web_fetch
+- Found Cointribune + Santiment article (Feb 17): LIVE myth propagation (negative funding = directional bearish signal)
+- Confirmed F&G at 10 (extreme fear) — market context making Day 2 topical RIGHT NOW
+- Found Polygon/Polymarket credibility angle (Polygon flipped ETH in fees Feb 14)
+- No new defenses needed — prior stack sufficient
+
+**What Worked:**
+- ✅ Cointribune (Tier 1, French/European outlet) is ADDITIVE to NewsBTC (different audience)
+- ✅ Live market conditions (BTC -28%, F&G=10) make Day 2 thesis extraordinarily timely
+- ✅ 3-bucket framework produced structured, actionable output efficiently
+- ✅ Identified engagement window still open (closes ~5:30 PM)
+
+**What Didn't Work:**
+- ⚠️ Didn't do deeper fetch on Santiment's actual funding rate chart (rate limit risk)
+- ⚠️ No direct Twitter engagement metrics available (no API access)
+
+**Lesson Learned:**
+**Multiple independent Tier 1 sources > one Tier 1 source for amplification.**
+When a myth is being propagated simultaneously by NewsBTC (US media, CryptoQuant analyst) AND CoinTribune (French media, Santiment) — the myth is mainstream, not fringe. This DOUBLES the day's content credibility: "It's not one outlet saying this — entire CT media ecosystem is propagating it."
+Tweet angle: "It's not just one outlet. NewsBTC, CoinTribune, Santiment — all saying the same thing about negative funding this week. We're the counter-data."
+
+**New pattern:** For post-deploy sweeps on contrarian debunking content, search specifically for:
+1. Major media citing specific on-chain data firms (CryptoQuant/Santiment) for the myth — highest authority
+2. Search in non-English markets (CoinTribune=France, Cointelegraph Germany, etc.) — additive audience
+3. Current macro context that makes the myth MORE active right now (extreme fear = people reaching for contrarian plays)

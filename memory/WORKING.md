@@ -1,6 +1,6 @@
 # WORKING.md
 
-*Last updated: 2026-02-18 02:30 IST (Jarvis - 2:30 AM Heartbeat)*
+*Last updated: 2026-02-18 17:30 IST (Jarvis - Day 11 intel relay, evening pipeline clean)*
 
 **🏆 PAPER BOT — SPRT ACCEPTED (22:24 IST Feb 17) 🏆**
 - **FINAL: n=28 closed trades | 25W / 3L | 89.3% win rate**
@@ -12,6 +12,30 @@
 - ✅ **Day 9 scaffold updated** (Quill, 22:27 IST): Option E hook locked with final numbers — ready for 1:30 AM session
 - ✅ **Post-accept intel** (Fury, 22:55 IST): NautilusTrader competitor cataloged. Ruby = ONLY builder to reach formal SPRT ACCEPT decision. Differentiation table staged for Day 9.
 - 🔔 **Real trading prep**: Wallet check cron active every 2 min — real $10→$100 starts when Reuben funds wallet
+
+## 🚀 DAY 11 PRE-STAGE INTEL (Jarvis relay, 17:30 IST Feb 18)
+
+**Topic**: Live bot (`live-bot-v1.py`) real money run — Day 11 fires 1:30 AM Thu Feb 19
+
+### Fury Intel (17:25 IST) — Pre-staged
+- **TIER 1 HOOK**: StartupFortune article ("I Actually Gave an AI Money to Trade on Polymarket") — 140 trades, 35% WR, lost money. "Unsellable tokens" (illiquid markets). Perfect Day 11 foil vs Ruby's SPRT-validated 94.7% WR.
+- **Validate**: r/btc WebSocket consensus ("bots making money use WebSocket not REST") — validates `live-bot-v1.py` CLOB architecture ✅
+- **Deliverable**: `/artifacts/research/fury-day11-prestage-intel-1725.md`
+
+### ⚠️ NAMING CONFLICT — IMPORTANT (@loki @quill)
+- Phemex article references "OpenClaw-v1.0" GitHub CEX-arb bot — **DIFFERENT project from OpenClaw platform**
+- **DO NOT use "OpenClaw" branding in Day 11 blog post or Twitter thread** — causes confusion risk
+- Refer to the bot as `live-bot-v1.py`, "Ruby's trading bot", or "the CLOB bot" — not "OpenClaw"
+
+### Day 11 Squad Status
+- ✅ Loki: Scaffold pre-staged `/artifacts/social/day11-scaffold.md` (16:36) + Quill-reviewed (16:42) — 3 scenarios
+- ✅ Vision: SEO pre-staged `/artifacts/seo/day11-seo-prep.md` — 3 scenarios A/B/C + 7-step checklist (16:53)
+- ✅ Fury: Intel delivered (17:25) — StartupFortune foil, WebSocket validation, naming conflict flag
+- ⏳ Wanda: Visuals NOT pre-stageable (runtime screenshots required) — builds at 1:30 AM Thu
+- ✅ Quill: Day 11 thread pre-staged (17:42 IST) — StartupFortune 35% WR foil LOCKED, naming conflict applied (zero "OpenClaw"), Scenario A + C written, [FILL] placeholders runtime-only. `/artifacts/social/day11-live-trading-thread-prestage.md`
+- ✅ Loki: "Unsellable token" risk note added (18:06 IST) — 1-2 sentences in thread Tweet 3 annotation + editorial note for blog in scaffold
+
+---
 
 ## 🎯 WEDNESDAY PRIORITIES (Feb 18, 2026)
 
@@ -39,16 +63,19 @@
 - ✅ **Twitter thread WRITTEN** (Jarvis, 15:45 IST): `/artifacts/social/day10-paper-run2-thread.md` — 11 tweets, counterintuitive WR↑/balance↓ hook (Fury rec), SPRT logLR ~4.37 ACCEPT
 - ✅ **Deployment cron CREATED** (Jarvis, 15:45 IST): `17ebae96` → Fri Feb 20, 9:00 AM IST
 - ✅ **Wanda visual update DONE** (Vision, 15:53 IST): Ran `day10-generate-visuals.py` with real numbers (N=19, WR=94.7%, $35.39, logLR=4.37, ACCEPT) — both PNGs updated + copied to blog post folder. Commit 1807231.
-- ⏳ **Loki editorial review**: Pending (next beat 4:06 PM IST)
+- ✅ **Loki editorial review**: COMPLETE (4:21 PM IST) — **4.5/5 APPROVED**. Math flag resolved: "22% longer" → "28% longer" fixed by Jarvis (commit b386eae, 16:30 IST). Blog + thread approved for deployment.
+- ✅ **Math fix SHIPPED** (Jarvis, 16:30 IST): commit b386eae pushed. Blog live before Fri 9 AM Day 10 thread fires.
 - ✅ **Vision SEO**: COMPLETE (15:53 IST) — OG image updated to day10-run-comparison.png, Day 9→10 nav linked, live site verified. Commit 1807231. (Also unblocked Wanda: ran day10-generate-visuals.py with real numbers)
 - ✅ **Wanda visuals**: COMPLETE (via Vision 15:53 IST) — both PNGs regenerated (N=19, WR=94.7%, $35.39, logLR=4.37) + copied to blog post folder
 - ✅ **Fury post-publish intel**: DONE (15:40 IST) — Gate.com foil, 36.7% contrast hook, 3 defense tweets ready
 
 ### 2. 📱 Automated Social Deployments
 - **9:00 AM IST**: ✅ Day 8 Kelly Criterion thread deployed
-- **4:00 PM IST**: Day 2 Contrarian thread (cron `7b2b6d6b`) — ⏰ FIRING NOW (16:00 IST)
-- **Fri Feb 20 9:00 AM**: Day 10 Paper Run 2 (cron `17ebae96`) ✅ CREATED
+- **4:00 PM IST**: ✅ Day 2 Contrarian thread (cron `7b2b6d6b`) — FIRED + engagement foils (NewsBTC + Cointribune/Santiment) sent to Reuben msgs 2785/2786. Window closed ~5:30 PM IST.
+- **Thu Feb 19 9:00 AM**: Day 3 Clusters (cron `1ec5f836`) ✅ armed
 - **Thu Feb 19 4:00 PM**: Day 9 Signal Filtering (cron `c2ea4f31`) ✅ armed
+- **Fri Feb 20 9:00 AM**: Day 10 Paper Run 2 (cron `17ebae96`) ✅ armed (Loki/Shuri/Quill all 4.5/5 cleared)
+- **Fri Feb 20 4:00 PM**: Day 4 IV (cron `b8e35547`) ✅ armed
 
 ### 3. 🏆 Post-SPRT: Real Trading Prep
 - Live $10→$100 challenge starts INSTANTLY when Reuben funds wallet
@@ -75,16 +102,18 @@
 - ⚠️ **Post-Day-9 config updates**: Update `signal_threshold`, SPRT `p1`, and `backtest_win_rate` before restarting paper bot
 
 ### 4. ⚠️ REUBEN ACTIONS NEEDED
-- Fund wallet (USDC/SOL) — live challenge waiting
-- Click Buttondown verification email (askruby.ai@gmail.com)
+- **Live bot go-ahead**: `python3 live-bot-v1.py --live` — all technical blockers cleared ✅. Day 11 fires 1:30 AM Thu regardless (paper or live)
+- Click Buttondown verification email (askruby.ai@gmail.com) — blocks all welcome sends ⚠️
+- Reuben double opt-in (`reuben3699@gmail.com`) — ~29h remaining (deadline 00:32 IST Feb 20)
 - Enable FileVault (System Settings → Privacy & Security, 5 min + restart)
 - Contact Fahd (@fahdahmed96) about Oro GRAIL grant
 - Post Reddit #1 (or confirm Quill to post): `/artifacts/social/reddit-posts-feb17.md`
+- ~~Post Day 2 engagement replies~~ — Window CLOSED at 5:30 PM IST. NewsBTC + Cointribune foils sent to Reuben msgs 2785/2786.
 - Confirm Astralane podcast slot with Sujith/Kirat/Paarug
 
-### 5. 🔔 Reminders Firing Tomorrow
-- 8:00 AM IST: Visa Biometrics (tomorrow, Feb 19)
-- 8:00 PM IST: Visa Biometrics eve reminder
+### 5. 🔔 Reminders Firing Tonight/Tomorrow
+- ✅ 8:00 PM IST TONIGHT: Visa Biometrics Eve reminder `44b40860` — ARMED (fires in ~30min from 17:30)
+- ✅ Thu Feb 19 Biometrics: US Consulate Mumbai, 12-1 PM (Reuben bring passport, DS-160, appointment letter, photos)
 
 ---
 

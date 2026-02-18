@@ -1366,3 +1366,49 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 
 **Self-Rating:** 4/5 — proactive catch, clean fix. Minor: could have flagged this earlier (Jarvis updated config at 2:30 AM, I could have caught it at the 2:04 AM heartbeat).
 
+
+### 2026-02-18 17:49 IST — Day 10 Adaptive Threshold Integration
+**Task:** Proactive pre-Day 11 integration — Day 10 blog promised adaptive threshold in live-bot, hadn't been done
+**Self-Rating:** 4.5/5
+
+**Gap Detected:**
+- live-bot-v1.py built at 00:49 IST (before Day 10 at 15:35 IST)
+- signal_threshold stuck at 0.30 (Day 9 value)
+- Day 10 blog explicitly: "Tomorrow [Day 11]: live bot uses Run 2 enhanced filter (0.40 threshold) as default, with adaptive threshold as safety mechanism"
+- If bot fires at 1:30 AM with 0.30 threshold, would use LESS selective filter than advertised → potential quality regression vs paper run
+
+**Fix Applied:**
+1. signal_threshold: 0.30 → 0.40 (Run 2 default)
+2. Added `adaptive_threshold(balance, signal_rate_per_hour)` function — scales 0.30–0.50
+3. Modified `compute_signal()` to accept optional threshold param
+4. Added `_signal_timestamps` deque to LiveTradingBot for rolling signal rate tracking
+5. Wired adaptive_threshold() into `_handle_message()` pre-signal eval
+6. Commit 897a547, syntax clean, pushed to GitHub
+
+**What Worked:**
+- Cross-referenced Day 10 blog against live-bot-v1.py config
+- Minimal, surgical edits — didn't touch execution or SPRT logic
+- Logging improved: now shows `threshold=X.XX | rate=Y/hr` in signal output
+
+**What Could Be Better:**
+- gap existed for ~2.5h (Day 10 published 15:35, now 17:49)
+- Should have scanned for blog→bot drift at 16:04 heartbeat (the auto-sync right after Day 10)
+
+**New Rule:** After any research session publishes (1:30 AM/3 PM), IMMEDIATELY check: did the blog promise any bot parameter updates or new features? If yes, implement before next research session fires. Pattern: Research → Blog promise → Bot integration (same heartbeat cycle, not next day).
+
+## Heartbeat: Feb 18, 2026 18:34 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable (34.1MB, 0% CPU)
+- ✅ Mission Control UI: pid 843, 24h uptime — stable (51.8MB, 0% CPU)
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — single process, no regression
+- ✅ No assigned tasks (Convex unavailable — consistent all day). No @friday mentions.
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED, awaiting Reuben go-ahead)
+- ✅ live-bot: NOT running (correct — DRY_RUN=True, waiting on Reuben only)
+- ✅ live-bot-v1.py pre-Day 11 config verified: signal_threshold=0.40, adaptive_threshold=enabled, backtest_win_rate=0.70, sprt_p1=0.65 — all Day 10 Run 2 values correct (commit 897a547)
+- ✅ Day 11 pre-staging 100% COMPLETE (Jarvis confirmed 18:15 IST)
+- ✅ Visa Biometrics eve reminder fires 8 PM IST (automated)
+- ✅ Day 11 research fires 1:30 AM Thu (automated)
+
+**Verdict:** Nothing urgent. Infrastructure healthy. live-bot pre-verified for Day 11. Standing down.
+**Self-Rating:** 5/5

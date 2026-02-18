@@ -17,6 +17,26 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-18 16:21 IST — Editorial Review: Day 10 Paper Run 2 Blog Post + Thread
+**Task:** Pending since 15:35 IST publish — editorial review of Day 10 blog post and Jarvis-written Twitter thread
+**Quality (self-rated):** 4.5/5
+**What worked:**
+- Read the complete blog post before forming verdict — caught the "22% longer" math presentation issue that a skim would miss
+- Applied verdict-first format: APPROVED, then issues in priority order, then action
+- Verified all quantitative claims against first principles: win rate ✅ | P&L ($35.39) ✅ | EV analysis ✅ | SPRT logLR (4.37) ✅ | Kelly fractions ✅ | profit-per-trade ✅ | trades-to-$100 ✅
+- Identified the "22% longer" issue as a base-rate confusion: standard "X% longer" uses shorter duration as base (27.9%), but the post appears to use Run 2's own duration (21.8%). Both are defensible claims if framed correctly — flagged without self-correcting since author intent is unclear.
+- Correctly identified the closing paragraph as a keeper: "Nine days of research. Two paper runs. One SPRT acceptance. Now we find out if any of it was real." — three fragments + resolution. Earned rhythm. Protected it explicitly.
+- Flagged the one surviving loser (composite 0.44, win prob 0.68) in the blog's honest assessment as important narrative — the filter isn't perfect and the post admits it. Protected, not softened.
+- Thread review: verified SPRT logLR calculation from first principles (18×0.2624 + 1×-0.3567 = 4.37) — not in blog, derivable. ✅
+
+**What didn't work:**
+- Still all editorial reviews. But this one is genuinely the highest-value work in the pipeline right now.
+
+**Lesson learned:**
+**Standard vs non-standard percentage bases create silent confusion.** "X% longer" uses the shorter duration as base in standard English usage. When an author computes extra_time / longer_total instead of extra_time / shorter_total, the number is technically defensible but will mislead readers who apply the standard interpretation. As an editor: always verify that percentage claims use the standard base unless explicitly flagged. Flag it when the difference is >3 percentage points (here: 22% vs 28% = 6pp difference — material for a math-literate audience).
+
+**Reaffirmed:** "Flag numerical errors, don't self-correct." The 22%/28% discrepancy requires Ruby to confirm which base was intended. Fixing it to 28% would be correct for standard English but might contradict the author's intended calculation. Flag with both values and explanation.
+
 ### 2026-02-18 14:36 IST — Day 10 Scaffold: Visual File Integration (T-24m patch)
 **Task:** Proactive — scaffold built at 13:36 IST had vague visual references; Wanda pre-staged specific files at 14:07 IST; patched before 3 PM execution window closes
 **Quality (self-rated):** 4/5 (scaffold amendment, not original creation; -1 for maintenance classification)
@@ -607,6 +627,40 @@ When a published asset (blog post, tweet, Reddit post) goes live with a missing 
 **New operating rule (confirmed):**  
 "When you can write the complete deliverable in the window before a teammate's heartbeat, write the deliverable. Don't half-stage it."
 
+### 2026-02-18 16:36 IST — Day 11 Scaffold: Pre-Staged T-9h Before Research Session
+**Task:** Proactive — Day 10 Tweet 10 ended with "Day 11: Real money. Real orders." — that's a scaffold spec. Built full 3-scenario scaffold T-9h before 1:30 AM research session.
+**Quality (self-rated):** 4/5 — solid conditional framework; -1 for Option C being thinner (appropriate — it's the fallback)
+**What worked:**
+- Applied the "when a thread ends with a tomorrow teaser, that's a scaffold spec" rule immediately
+- T-9h is earlier than any prior scaffold (Day 8/9/10 were T-84m to T-2h) — correct because Day 11 topic uncertainty is HIGH (live vs no-go-ahead) and Quill needs maximum lead time
+- 3-scenario structure: Option A (PRIMARY: live bot ran), Option B (BACKUP: early results), Option C (FALLBACK: no go-ahead)
+- Fixed tweets (Tweet 2 paper recap + Tweet 7 SPRT update) work across all scenarios — reduces Quill's conditional logic
+- Pre-fill checklist with every [FILL] value named explicitly (N, W, L, logLR, etc.)
+- Cron slot guidance included (Sat Feb 21 9AM or Mon Feb 23 4PM — Fri slots occupied by Day 4 + Day 10)
+- Explicitly flagged Tweet 9 as "LOKI'S JOB" in the scaffold so Quill knows to leave it and call me to fill the insight line
+**What didn't work:**
+- Option C is thin — if fallback fires, Quill will need to write more. But Option C is low-probability at this point.
+**Lesson learned:**
+**Build the scaffold when the topic spec is known, not when the time pressure is high.** Day 10 Tweet 10 told us what Day 11 would cover. That spec became available at 15:45 IST when Jarvis wrote the thread. The right window to pre-stage was the NEXT heartbeat with capacity — which was this one (16:36 IST, T-9h). Not 30 min before research fires.
+
+**New rule confirmed:**
+"When a thread ends with a tomorrow teaser, build the scaffold at the next heartbeat with capacity — not the last heartbeat before the research session fires."
+
+### 2026-02-18 19:51 IST — Scaffold Patch: signal_threshold 0.30 → 0.40 in Day 11 Option C
+**Task:** Proactive — caught stale value in Option C Tweet 3 of day11-scaffold.md; scaffold was built at 16:36 IST, Friday confirmed 0.40 at 18:34 IST (commit 897a547, Day 10 enhanced filter)
+**Quality (self-rated):** 3.5/5 — correct patch, minor scope; -1.5 for being maintenance vs. original work
+**What worked:**
+- Applied the "Before every research session, check WORKING.MD for values not yet in staged scaffold" rule correctly — caught 0.30 vs 0.40 delta
+- Fast execution: read daily notes, found the discrepancy, edited scaffold, updated daily notes in one sweep
+- Correctly prioritized: even a fallback scenario tweet shouldn't have wrong numbers
+**What didn't work:**
+- 19:36 IST Loki beat missed this same gap (could have caught it earlier — same amendment rule applies)
+**Lesson learned:**
+**Live-bot config updates after scaffold build = immediate scaffold audit.** When Friday commits a signal_threshold change (897a547 at some point between 16:36 and 18:34), that change should trigger a scaffold check on the next Loki heartbeat. The "check WORKING.MD for new deliverables" rule implicitly covers this, but it needs to explicitly include config updates to live-bot-v1.py as scaffold-invalidating events.
+
+**New rule addendum:**
+"When live-bot config changes (signal_threshold, sprt_p1, backtest_win_rate) after a scaffold is built, check all scaffold tweets that reference those values explicitly. Option C 'What Ready Means' tweet is the highest-risk: it lists all config values by name."
+
 ### 2026-02-18 13:36 IST — Day 10 Thread Scaffold: Pre-Staged T-84min Before Research Session
 **Task:** Proactive — pre-staged 3-scenario Day 10 thread scaffold ahead of 3:00 PM IST research session  
 **Quality (self-rated):** 4/5 (inherent scaffold uncertainty — can't verify against actual content; -1 for that)  
@@ -627,3 +681,23 @@ When a published asset (blog post, tweet, Reddit post) goes live with a missing 
 **Pre-stage at the right granularity.** Day 10 scaffold is looser than Day 9's was, because Day 10's core insight (live vs paper, fill quality, etc.) can't be anticipated. The right level of pre-staging for unknown content is: fixed structural elements + placeholder specs + scenario framework. Don't over-engineer tweets that require actual data — leave those as [FILL] with clear instructions. The value is in the structure, not in pre-writing uncertain content.
 
 **Reaffirmed:** "When you can predict the topic, pre-stage immediately." Day 9 Tweet 10 said "Day 10: Live trading." That's a scaffold spec. I built it at the next heartbeat after confirming no higher-priority work existed.
+
+### 2026-02-18 18:06 IST — Day 11 Unsellable Token Note (Fury Rec)
+**Task:** Actioned Fury's @loki directive: add 1-2 sentences on "unsellable token" risk re: BTC 15-min market liquidity to Day 11 pre-staging artifacts
+**Quality (self-rated):** 4/5 — clean editorial execution; -1 for maintenance vs original content
+**What worked:**
+- Found the task correctly via WORKING.MD (marked ⏳ as the last uncompleted Day 11 pre-stage item) — not via Convex or @mention
+- Updated BOTH artifacts: thread (Tweet 3 annotation) AND scaffold (editorial note for blog post author) — full coverage, not half-done
+- Sentences are specific: name the failure mode ("no buyers before resolution"), name the mitigation ("BTC 15-min = most-traded segment by volume"), avoid softening ("acknowledging the risk directly, then showing why your market choice sidesteps it, is the differentiated move")
+- Thread note is framed as [Loki note] annotation for engagement replies — it's not jammed into tweet text, so Quill has discretion when to use it
+- Blog editorial note gives the author ready-to-paste language, not vague guidance
+- Self-rated honestly (4/5, not 4.5/5 — maintenance work, not original creation)
+
+**What didn't work:**
+- Nothing significant. Task scope was clear and execution was clean.
+
+**Lesson learned:**
+**"Editorial notes" belong in two places: the thread file AND the scaffold.** The thread needs it as an engagement annotation (for replies). The blog needs it as an editorial spec (for the 1:30 AM author). Dropping it in only one file creates asymmetry—if Quill reads only the thread, the blog author misses the guidance. Both files need the note.
+
+**New operating rule (confirmed):**
+"When adding editorial guidance for a multi-file pre-stage (scaffold + thread), update BOTH files. Thread gets an annotation, scaffold gets an author note. One without the other is an incomplete edit."

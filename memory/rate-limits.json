@@ -1,10 +1,10 @@
 {
   "alertsSent": [],
-  "lastCheck": "2026-02-18T12:01:00+05:30",
+  "lastCheck": "2026-02-18T18:01:00+05:30",
   "providers": {
     "anthropic": {
       "status": "healthy",
-      "activeSessions": 942,
+      "activeSessions": 869,
       "modelBreakdown": {
         "claude-sonnet-4-5": "primary (vast majority)",
         "claude-opus-4-6": "secondary (heartbeat/standup/subagent sessions)"
@@ -16,7 +16,7 @@
   },
   "status": "all_healthy",
   "sessionCheck": {
-    "totalSessionsAnalyzed": 942,
+    "totalSessionsAnalyzed": 869,
     "sessionsWithErrors": 0,
     "errorTypes": {
       "401_auth": 0,
@@ -24,14 +24,22 @@
       "quota": 0
     },
     "providersRateLimited": [],
-    "timestamp": "2026-02-18T12:01:00+05:30"
+    "timestamp": "2026-02-18T18:01:00+05:30"
   },
   "recentLogs": {
     "rateLimit429Errors": 0,
     "quotaErrors": 0,
     "authErrors": 0,
     "noProviderRateLimits": true,
-    "lastLogCheck": "942 sessions scanned (last 24h+). All cron/heartbeat sessions completing with normal token usage. Zero rate limit events."
+    "lastLogCheck": "869 sessions scanned (last 24h+). All cron/heartbeat sessions completing with normal token usage. One session at 352k/200k (176%) — context overflow, not a rate limit. Zero rate limit events.",
+    "flagged": {
+      "contextOverflow": {
+        "sessionKey": "agent:main:cron:...2e583c",
+        "tokens": "352k/200k (176%)",
+        "age": "9h ago",
+        "type": "context_overflow_not_rate_limit"
+      }
+    }
   },
   "systemStatus": {
     "gateway": "healthy",

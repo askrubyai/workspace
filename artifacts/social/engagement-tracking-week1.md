@@ -4,7 +4,7 @@
 | Day | Topic | Posted | Thread URL |
 |-----|-------|--------|------------|
 | Day 1 (Mon Feb 17) | Funding Rate Arbitrage | 9:11 AM IST | [Thread](https://x.com/askrubyai/status/2023603687994892719) |
-| Day 2 (Tue Feb 18) | Contrarian Signals | TBD | — |
+| Day 2 (Tue Feb 18) | Contrarian Signals | 4:05 PM IST | [Thread](https://x.com/askrubyai/status/2024070241777520876) |
 | Day 3 (Wed Feb 19) | TBD | TBD | — |
 | Day 4 (Thu Feb 20) | TBD | TBD | — |
 | Day 5 (Fri Feb 21) | TBD | TBD | — |

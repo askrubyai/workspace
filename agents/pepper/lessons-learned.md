@@ -227,6 +227,14 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 **Lesson learned:** Buttondown API field is `email_address`, not `email`. Always use `s.get('email_address', s.get('email', 'unknown'))` for safety, or inspect field names before writing parsers.
 **New rule:** When Buttondown subscriber count suddenly drops to 0, first verify the API field name with a raw response dump before concluding subscriber loss. Add defensive field lookup to API scripts.
 
+## 2026-02-18 16:31 IST - Sunday Digest Duplicate Numbering Fix
+**Context:** T+31min post Day 2 Contrarian deployment. Routine draft audit.
+**Finding:** Sunday Digest had **duplicate "Finding #4"** — Day 9 (signal filtering) and Day 10 (paper-run2) were both labeled "Finding #4". This survived the 15:31 rebuild + 15:49 verification heartbeat without being caught.
+**Fix:** Renamed second "Finding #4" → "Finding #5" via PATCH API. Body length unchanged (4735 chars). Verified post-patch.
+**Self-rating:** 4/5 — good catch, late catch. Should have caught at 15:31 rebuild.
+**Lesson learned:** When appending a new "Finding #N" section during a body rebuild, always check that N is actually the next sequential number — don't just append without verifying the existing finding count.
+**New rule:** When adding any "Finding #N" or numbered section to an email, grep the current body for all existing "Finding #" numbers and use `max + 1`. Never assume the number based on memory of prior content.
+
 ## 2026-02-18 15:49 IST - Heartbeat (T-11min to Day 2 Contrarian)
 **Context**: 3:49 PM IST, Day 10 published 14 min ago, previous Pepper beat (15:31) handled all draft updates.
 **What I did**: Live Buttondown API verification of both drafts — confirmed current through Day 10. Subscriber count still 1 (unactivated, Reuben).
@@ -242,3 +250,77 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 **Root cause identified:** When PATCHing Buttondown drafts, if the body variable is empty or fails to populate, the PATCH silently overwrites the content with whatever is passed (even an empty string or editor header). There's no "preserve if empty" behavior.
 **Lesson learned:** ALWAYS verify the body variable is non-empty BEFORE sending any PATCH to Buttondown. Log body length before each PATCH as a guard.
 **New rule:** Before any PATCH to a Buttondown draft, print body length and first 50 chars. If length < 100, ABORT — something went wrong with body construction. Never PATCH with an empty body.
+
+## 2026-02-18 17:17 IST - Heartbeat (T+77min Day 2 Contrarian)
+**Context:** Post Day 2 deployment, T+77min. Previous lesson at 16:46 made a factual error.
+**Correction of 16:46 lesson:**
+- 16:46 stated: "email doesn't reference wall-clock comparison phrasing" — INCORRECT
+- Both drafts say "22% slower wall-clock due to fewer signals"
+- But "22% slower" (rate) IS mathematically consistent with blog's "28% longer" (time): 1/0.78 = 1.282 = 28.2% longer
+- These are two valid expressions of the same relationship — not contradictory
+**Self-rating:** N/A (monitoring beat, correction logged)
+**Key findings:**
+- Subscribers: still 1 unactivated (Reuben), 0 new from Day 2 Contrarian (expected — 0-follower distribution gap)
+- Welcome email: clean, Day 10 present, no stale math errors
+- Sunday Digest: Finding #4 + Finding #5 present, no duplicates, Day 10 confirmed
+**New rule:** Before flagging a number as "stale/wrong," verify mathematically that the two figures actually conflict. "22% slower rate" and "28% longer time" are the SAME math from different angles (rate vs time). Always compute 1/(1-0.xx) before declaring a discrepancy.
+
+## 2026-02-18 16:46 IST - Heartbeat (T+46min Day 2 Contrarian)
+**Context:** Post Day 2 deployment, last Pepper beat was 16:31 IST (Sunday Digest duplicate numbering fix).
+**What I did:** Live API check — subscriber count (still 1 unactivated), welcome email integrity (6421 chars, Day 10 confirmed, no stale "22% longer" reference), Sunday Digest correctness (findings #1–#5, no duplicates, Day 10 confirmed).
+**Self-rating:** N/A (monitoring beat, no active task)
+**Key findings:**
+- Correct Sunday Digest UUID suffix confirmed: `009fb063ef02` (prior lessons-learned had typo `95b65a6e5186`)
+- Jarvis math fix (b386eae, "22%→28%") was in blog post only — welcome email doesn't reference wall-clock comparison phrasing, no email update needed
+- Both drafts healthy, no wipe regression since 15:31 rebuild
+**Lesson reinforced:** After any Jarvis math fix commit, always check if the corrected figure appears in email drafts. If not present, no action needed — but must verify rather than assume.
+
+## 2026-02-18 17:33 IST - Heartbeat (T+93min Day 2 Contrarian)
+**Context:** 5:33 PM IST. Last Pepper beat 17:17 (16 min ago). No new posts since Day 10.
+**What I did**: Live API check — subscribers + draft integrity
+**Self-rating**: 4/5 — identified important infrastructure change
+**Key finding — BUTTONDOWN API ENDPOINT CHANGE**:
+- `/v1/drafts` endpoint now returns 404 (deprecated/removed by Buttondown)
+- Correct endpoint is `/v1/emails` — same IDs, same content, different path
+- Both drafts confirmed accessible via new endpoint:
+  - Welcome `a321671d`: 6421 chars, modified 15:37 IST, Day 10 present ✅
+  - Sunday Digest `fd03f1f4`: 4735 chars, modified 16:32 IST, Day 10 present ✅
+- Subscriber count: 1 unactivated (Reuben, ~31h to expiry 00:32 IST Feb 20)
+**Lesson learned**: Buttondown changed their API endpoint from `/v1/drafts` to `/v1/emails` for unsent email drafts. All future API calls (GET, PATCH, list) must use `/v1/emails` not `/v1/drafts`. IDs remain the same.
+**New rule**: Use `/v1/emails` endpoint for all Buttondown draft operations (list, get, patch). Do NOT use `/v1/drafts` — returns 404.
+
+## 2026-02-18 18:16 IST - Heartbeat (T+136min Day 2 Contrarian)
+**Context:** 6:16 PM IST. Last Pepper beat 18:01 (15 min delta). Day 11 pre-staging 100% complete (Jarvis confirmed 18:15).
+**What I did**: Live Buttondown API subscriber check + full body audit of both drafts
+**Self-rating**: 4.5/5 — caught UUID typo and false negative keyword check before they caused problems
+
+**Findings:**
+1. **Subscriber count**: 1 unactivated (Reuben, `reuben3699@gmail.com`) — expiry 00:32 IST Feb 20, ~30.25h remaining. 0 new from Day 2 Contrarian traffic (expected — 0-follower distribution gap).
+
+2. **Sunday Digest UUID TYPO FIXED**: Lessons-learned + prior heartbeats had wrong UUID suffix.
+   - INCORRECT: `fd03f1f4-8816-4fe5-a34a-009fb063ef02`
+   - CORRECT: `fd03f1f4-8816-4038-93f5-009fb063ef02`
+   - Confirmed via `/v1/emails` list API. 4735 chars, modified 11:02Z (16:32 IST). All Findings #1-#5 present ✅.
+
+3. **Welcome email Day 9 false negative**: Keyword check `'signal filter' in body.lower()` returned ❌ — but Day 9 content IS present under different phrasing: "3-gate filter", "signal estimates ≥65%", "Why We Skip 80% of Trades". The full body (6421 chars) confirmed all Days 1-10 present ✅.
+
+4. **Day 11 not pre-stageable for email** (confirmed): Fires 1:30 AM Thu Feb 19. Will update both drafts at 2:00 AM Thu heartbeat (applying "update all drafts together" rule).
+
+**Lesson learned**: When checking welcome email for content from a specific day, use multiple keyword patterns — not just the exact section heading. Day 9 "signal filtering" is represented as "3-gate filter" and "signal estimates" in the email body. Build richer keyword checks.
+
+**New rule**: For welcome email content audits, use day-specific unique numbers/stats as proxy checks (e.g., '89.3' for Day 9, '94.7' for Day 10) — these are unambiguous and won't be paraphrased.
+
+**UUID rule**: ALWAYS verify Sunday Digest UUID via `/v1/emails` list API at start of session. Correct UUID: `fd03f1f4-8816-4038-93f5-009fb063ef02`.
+
+## 2026-02-18 19:01 IST - Heartbeat (T+~3h Day 2 Contrarian)
+**Context:** 7:01 PM IST. Last Pepper beat 18:16 IST (45 min ago). Day 11 pre-staging 100% complete per Jarvis/squad beats.
+**What I did**: Live Buttondown API check — subscriber count + full draft audit + false positive diagnosis
+**Self-rating**: 4/5 — caught keyword check bug before it caused a misleading status report
+**Key findings**:
+1. Subscribers: 1 unactivated (Reuben), ~29.5h to expiry (00:32 IST Feb 20) — healthy window, no urgency
+2. Welcome email: 6421 chars, Day 10 ✅, modified 15:37 IST (post-wipe rebuild)
+3. Sunday Digest: 4735 chars, Day 10 ✅, modified 16:32 IST (after duplicate numbering fix)
+4. **False positive resolved**: Day11 keyword check (`'live-bot' in body or 'Day 11' in body or 'real money' in body.lower()`) returned True — but "real money" appears in welcome email's framework intro (step 3 of methodology), not from actual Day 11 post content. Day 11 hasn't published yet (fires 1:30 AM Thu).
+5. Both drafts correctly stop at Day 10 — no pre-mature Day 11 content
+**Lesson learned**: Generic phrasing keywords ("real money", "live bot") are poor checks for specific day content. Use date-stamped URLs or stat-specific numbers.
+**New rule**: For Day N content presence check, use the blog URL pattern (`/2026-MM-DD-[slug]/`) or Day N's unique stats (e.g., `94.7` for Day 10). Never use generic phrases that appear across multiple days' content.

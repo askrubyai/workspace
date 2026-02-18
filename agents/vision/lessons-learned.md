@@ -12,6 +12,49 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-18 18:38 IST — Day 11 Pre-Staging Config Staleness Fix (Friday 0.30→0.40)
+**Task:** Catch signal_threshold staleness in Day 11 SEO pre-staging + add liquidity keywords
+**Self-Rating:** 4/5
+
+**What I Did:**
+- Prior Vision beat (18:23 IST) had already run and found HEARTBEAT_OK
+- Delta since 18:23: Friday (18:34) confirmed live-bot signal_threshold=0.40 (commit 897a547, 17:49 IST)
+- My pre-staging file (last updated 17:38 IST) still said "signal_threshold=0.30" — stale config note
+- **Fix 1**: Updated config line to reflect 0.40 + added adaptive_threshold context
+- **Fix 2**: Added `polymarket unsellable tokens` + `polymarket illiquid markets` as TERTIARY keywords — the "unsellable tokens" failure mode from StartupFortune + Loki's editorial note is a real long-tail SEO angle (people searching for Polymarket liquidity failures)
+
+**Why It Mattered:**
+Config notes in pre-staging files are reference material for whoever runs the 1:30 AM execution. A stale `0.30` when the actual bot runs at `0.40` creates a small but real inconsistency in the blog post vs bot state. At 1:30 AM under cognitive load, stale config notes don't just confuse — they can cause the research agent to write the wrong threshold value in the blog.
+
+**Lesson Learned:**
+**Developer commits (Friday) that change bot configuration values invalidate SEO pre-staging config notes.** My Intel Integration SLA already covers research intel (Fury/Shuri). Extend it explicitly to DEVELOPER COMMITS that change runtime config values referenced in pre-staging files.
+
+**New Operating Rule:**
+**Dev Config Commit Sync:** After any Friday commit that changes `signal_threshold`, `backtest_win_rate`, `sprt_p1`, `sprt_p0`, or other bot config values, scan current pre-staging files for references to those values. Config notes in SEO/content pre-staging files must match what the bot actually runs.
+
+### 2026-02-18 17:38 IST — Day 11 Pre-Staging Fury Intel Integration
+**Task:** Update Day 11 pre-staging with Fury intel delivered at 17:25 IST (StartupFortune foil, naming conflict, WebSocket validation)
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Fury dropped fresh intel at 17:25 IST (post my 16:53 pre-staging):
+  1. StartupFortune foil: 140 trades, 35% WR, lost money — "I Actually Gave an AI Money to Trade on Polymarket"
+  2. WebSocket consensus (r/btc): bots making money use WebSocket not REST — validates CLOB architecture
+  3. Naming conflict: "OpenClaw-v1.0" on Phemex = different CEX-arb project — don't use "OpenClaw" in Day 11 content
+- Updated `/artifacts/seo/day11-seo-prep.md` with:
+  - ⚠️ NAMING CONFLICT section (explicit warning at top — file was already compliant, but executor at 1:30 AM needs to know)
+  - StartupFortune foil section with updated Template A description variant using 35% WR contrast
+  - 2 new keywords: `polymarket trading bot results` (SECONDARY) + `polymarket CLOB vs REST bot` (TERTIARY)
+
+**Why It Mattered:**
+Pre-staging files have a freshness problem — written hours before execution, they can miss teammate intel that arrives later. Fury's StartupFortune angle is genuinely better for CTR ("35% WR vs 94.7%" contrast) than my original description templates. If I don't update the file, whoever runs the 1:30 AM execution uses stale templates.
+
+**Lesson Learned:**
+**Post-pre-stage intel updates are mandatory, not optional.** Pre-staging at 16:53 + Fury delivers at 17:25 = 45-minute gap where my "complete" file became partially stale. The fix is to integrate intel within the same heartbeat cycle it arrives, not wait for execution time. At 1:30 AM with cognitive load high, stale templates get used as-is.
+
+**New Operating Rule:**
+**Intel Integration SLA:** When any agent delivers research intel (Fury, Shuri, Quill) that postdates a pre-staging file I own, I must integrate it at the same heartbeat. Check WORKING.md for new ✅ entries from other agents that postdate my pre-stage timestamp. If newer intel exists → update my file before marking HEARTBEAT_OK.
+
 ### 2026-02-18 14:23 IST — OG Strategy Update: Wanda Visual Intel Integration
 **Task:** Pre-execution check T-37m before Day 10 — integrate Wanda's newly pre-staged visuals into OG strategy
 **Self-Rating:** 4/5
@@ -988,3 +1031,44 @@ Previous Vision heartbeat at 15:08 IST had also monitored this and SET A FLAG: "
 
 **New Operating Rule:**
 **Proactive Visual Script Execution:** At Day N SEO execution time, check if a `day[N]-generate-visuals.py` script exists in artifacts/design/ AND if real numbers are available from the blog post. If yes: update placeholders, run script, copy outputs to blog post folder, use updated images in OG. Don't wait for Wanda's heartbeat if the script is self-contained and parameterized.
+
+### 2026-02-18 16:53 IST — Day 11 SEO Pre-Staging (Live Trading Launch)
+**Task:** Proactive pre-staging for Day 11 research session (1:30 AM Thu Feb 19)
+**Self-Rating:** 4.5/5
+
+**Context:**
+- Day 11 is highest-stakes post in series: "Nine days of research. Two paper runs. One SPRT acceptance. Now we find out if any of it was real."
+- Loki pre-staged Day 11 scaffold at 16:36 IST. No SEO pre-stage existed.
+- Day 10 OG verified clean (live curl: 157-char description, day10-run-comparison.png live ✅)
+- Research fires at 1:30 AM IST — ~8.5h away, ideal pre-staging window
+
+**What I Did:**
+- Read Day 10 closing section (tail -30) → confirmed Day 11 topic: live-bot-v1.py, $10.49 USDC, Polygon, enhanced filter from Run 2, SPRT from n=0
+- Created `/artifacts/seo/day11-seo-prep.md` (8369 bytes):
+  - 3 scenario templates (live trades executed / early stage / no go-ahead)
+  - All 3 descriptions char-counted (145-157 chars)
+  - Primary keywords: "live trading bot polymarket", "polymarket CLOB trading python"
+  - Strategic note: Day 11 = recency/results post (same dynamics as Day 7 breaking news)
+  - OG image strategy: Wanda live-trade visual → Day 10 fallback → Day 9 last resort
+  - Forward-link checklist: add Day 11 to Day 10 footer nav after publish
+  - 7-step execution checklist for 1:25 AM Thu Feb 19 heartbeat
+  - Post-Day-11 opportunity: "live trading results" pillar page for Day 12+ compound SEO value
+
+**Why It Mattered:**
+Day 11 will be typed at 1:30 AM under time pressure. "Live trading" is a milestone post that gets organic shares fast. OG image and description quality directly affect CTR on every share. 8369 bytes of pre-staging at 4:53 PM = <12 min clean execution vs. cold-start at 1:30 AM.
+
+**What Worked:**
+✅ Cross-agent monitoring: Loki's scaffold (16:36) confirmed squad pre-positioned, SEO was the only gap
+✅ Day 10 closing section read = free topic confirmation (no speculation needed)
+✅ 3-scenario coverage = resilient to Reuben go-ahead/no-go uncertainty
+✅ Char-counted all 3 templates at pre-stage time (saves 2+ min at 1:30 AM)
+✅ Identified new SEO opportunity (live trading results pillar page) flagged for squad
+
+**Self-Rating Justification (4.5 vs 5):**
+Day 11 slug unknown (will be `2026-02-19-[something]`) — can't pre-verify the internal link URLs. Execution checklist notes this as a lookup step. Otherwise complete. -0.5 for that unavoidable uncertainty.
+
+**Pattern:**
+This is the 4th consecutive heartbeat cycle where I pre-staged the NEXT research session within hours of completing the current one. Pattern: read Day N closing section → pre-stage Day N+1 within the same afternoon. This is now systematic behavior, not one-off.
+
+**New Operating Rule:**
+**Same-Afternoon Pre-Staging Cadence:** After Day N SEO is live and verified, use the SAME afternoon session to pre-stage Day N+1. Don't wait for the overnight session. The closing section of each Day N post is the canonical topic source for Day N+1. Pre-staging 8-12h early is the sweet spot (Wanda and Loki work on scaffolds ~6-8h before research fires — coordinate timing).
