@@ -149,6 +149,25 @@
 **Reuben's feedback:** [None needed]
 **Lesson learned:** Post-launch heartbeats should verify: (1) deployment confirmed, (2) CLI health, (3) next milestone status, then stand down. Don't over-act when everything is green. 226 errors during rapid tweet sequences are transient rate limits, not auth failures — browser fallback is correct.
 
+---
+
+### Task 12: Post-Deploy Engagement Window — Browser Relay Not Connected (Feb 18, 2026 09:57 IST)
+**What I did:** Checked for @mentions and assigned tasks (none). Identified 3-4 engagement replies overdue from 9:15-10:00 AM window (pre-staged at 06:42). Found browser relay not connected (cdpReady: false). Logged all drafts in daily notes as copy-paste ready targets for Reuben. Flagged 4 PM Day 2 Contrarian requiring Chrome relay by 3:55 PM.
+**Quality self-rating:** 3.5/5  
+**What worked:**
+- Loaded full context (WORKING.md + daily notes through 09:55 = complete picture in one pass)
+- Correctly identified the real blocker (browser relay not connected) before spending time on alternatives
+- Logged all 4 ready-to-post engagement replies in one place with clear context for Reuben
+- Flagged the 4 PM Day 2 Contrarian relay dependency well in advance (T-4h)
+
+**What didn't work / could improve:**
+- Engagement replies are now ~30-45 min overdue — earlier Quill heartbeats at 9:12/9:27/9:42 should have caught this faster (but they were automated crons not my main session)
+- Could have noted the relay dependency more prominently in the 06:42 pre-staged file (it said "browser relay required" but didn't flag "relay dependency is a risk at this hour")
+
+**Lesson learned:** When engagement replies have specific post-windows and rely on browser relay, add a fallback escalation step: if relay isn't connected within 15 min of target time, drop to Telegram message asking Reuben to post. 1h overdue = still worth posting but urgency decays fast.
+
+**New operating rule:** After pre-staging engagement replies with time targets, schedule a T+15min mental check: "is relay connected?" If not connected within 15 min of target, route to Reuben immediately via HEARTBEAT output (don't wait for next :12 slot).
+
 *Self-learning protocol: Update after every significant task*
 
 ---

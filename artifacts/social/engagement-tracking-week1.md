@@ -74,7 +74,28 @@ Day 7 (6 PM IST = 12:30 PM UTC) is better time zone for US afternoon audience. B
 ### 6h Verdict
 **Dead on arrival.** 0 engagement across all 3 posts (thread, QT, teaser) at 6h mark. No external replies, no impressions signal. Root cause confirmed: 0-follower account with no distribution network. Day 7 (6 PM) has better timing (12:30 PM UTC = US morning) and breaking news hook, but won't move needle without Reuben RT from personal account.
 
-*Tracking started: Feb 17, 2026 | Last updated: 3:03 PM IST by Quill (6h check)*
+### Metrics (24h check — 9:05 AM IST, Feb 18)
+| Metric | Value |
+|--------|-------|
+| Total Likes | 0 |
+| Total RTs | 0 |
+| Total Replies (non-thread) | 0 |
+| Impressions | ~1 (head tweet) |
+| Blog Clicks | 0 (estimated) |
+| Email Signups | 0 |
+| Followers gained | 0 |
+
+### 24h Verdict
+**Dead.** Zero engagement at 24h. Root cause unchanged: 0-follower account with no distribution network. Thread never reached any audience.
+
+### Lessons Learned — Day 1
+1. **Don't launch on a 0-follower account without a distribution plan.** Organic reach from 0 followers = 0. Period. Hashtags, timing, content quality are irrelevant without at least one amplification source.
+2. **Posting time (3:41 AM UTC) was a compounding mistake** — even if we had followers, US/global crypto audience was asleep.
+3. **Content quality was strong (Loki 4.5/5, Shuri-approved)** — the thread itself isn't the problem. Distribution is.
+4. **Day 1 should have been seeded via Reuben's personal account RT**, a crypto community post, or at minimum a reply to a high-engagement tweet in the funding rate niche.
+5. **Metric**: 0 likes vs 50 target = 0% of goal. This is a distribution failure, not a content failure.
+
+*Tracking started: Feb 17, 2026 | Last updated: 9:05 AM IST Feb 18 by Quill (24h check)*
 
 ---
 
@@ -134,4 +155,19 @@ Day 7 (6 PM IST = 12:30 PM UTC) is better time zone for US afternoon audience. B
 - Better timing (12:36 PM UTC vs 3:41 AM UTC) yielded marginal view increase but no engagement
 - **Core blocker**: Reuben personal account RT still needed for any real traction
 
-*Last updated: 8:35 PM IST by Quill (2h check)*
+### Metrics (24h check — 9:05 AM IST, Feb 18 — actually ~15h post)
+| Metric | Value |
+|--------|-------|
+| Total Likes | 0 |
+| Total RTs | 0 |
+| Total Replies (non-thread) | 0 |
+| Head Tweet Views | ~4 (unchanged from 2h check) |
+| Total Thread Views | ~19 (unchanged from 2h check) |
+| Blog Clicks | 0 (estimated) |
+| Email Signups | 0 |
+| Followers gained | 1→1 (no change) |
+
+### 15h Verdict
+**Dead.** Zero engagement actions at 15h. Views flatlined at ~19 across 11 tweets (unchanged since 2h mark — likely bot/crawler traffic, not humans). Breaking news angle (0% fees) failed to generate any traction. Same root cause as Day 1: 0-follower distribution problem.
+
+*Last updated: 9:05 AM IST Feb 18 by Quill (24h check)*

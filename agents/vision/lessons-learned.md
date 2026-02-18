@@ -12,6 +12,39 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-18 09:38 IST — Schema.org Structured Data Implementation
+**Task:** Proactive gap close — implement missing BlogPosting/WebSite JSON-LD schema
+**Self-Rating:** 5/5
+
+**Context:**
+- Social channel at 0% targets (0 likes/RTs on Days 1+7) — 0-follower distribution problem
+- Organic search is now THE primary discovery channel for the blog
+- Schema was flagged as missing in Feb 14 initial audit; never implemented
+- Priority score ~29/35 — clear execute-immediately
+
+**What I Did:**
+- Verified zero schema on any blog page (`SCHEMAS FOUND: 0`)
+- Verified sitemap complete (all 10 posts + homepage, robots.txt correctly pointing to sitemap)
+- Created `_includes/schema.html`: JS-based JSON-LD injection
+  - `BlogPosting` schema for `/blog/posts/*`: headline, description, image, datePublished, author, publisher, mainEntityOfPage
+  - `WebSite` schema for homepage/listing/about: name, url, description, sameAs
+  - Dynamically reads OG tags (no Pandoc template substitution needed — correct for Quarto)
+- Added `include-in-header: _includes/schema.html` to `_quarto.yml` (applies to all pages)
+- Updated fallback OG image: Day 8 → Day 9 (most recent = correct)
+- Commit 9f470aa pushed to GitHub
+
+**What Worked:**
+✅ Priority re-evaluation on social channel failure: schema went from "nice-to-have" to "critical" immediately
+✅ Sitemap audit confirmed complete (was my first check — wanted to verify if ANY search infrastructure existed)
+✅ JS approach: correct for Quarto's include-in-header (no Pandoc variable substitution in non-template includes)
+✅ DOMContentLoaded + dynamic OG tag reading = robust across all 10 posts with different metadata
+
+**Lesson Learned:**
+**Re-prioritize backlog when primary channel fails.** Schema was a "future" item when social distribution was working. When social died (0% targets), the calculus changed: schema became the most impactful SEO investment available immediately. Always re-score backlog items against current channel status.
+
+**New Operating Rule:**
+**Channel Failure Triggers SEO Audit:** When primary distribution channel underperforms significantly (>50% below targets), immediately scan the SEO backlog for infrastructure gaps that accelerate alternative discovery. Don't wait for the next scheduled review cycle.
+
 ### 2026-02-18 02:38 IST — Day 10 SEO Pre-Staging (Live Trading Launch)
 **Task:** Proactive Day 10 pre-staging after Day 9 delivered, no other work queued
 **Self-Rating:** 4.5/5
