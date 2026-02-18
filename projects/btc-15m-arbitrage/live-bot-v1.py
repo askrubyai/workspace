@@ -15,11 +15,12 @@ Key differences from paper-bot-multifactor.py:
   - min_bet_usd = $5.00 (Polymarket live minimum)
   - DRY_RUN mode: default True — set to False to enable real USDC trading
 
-✅  PARAMETERS UPDATED — Day 9 Signal Filtering (published 2026-02-18 01:46 IST)
-  - signal_threshold: 0.30 (Gate 1 composite score threshold; 60% of signals below this)
+✅  PARAMETERS UPDATED — Day 10 Paper Run 2 (published 2026-02-18 15:35 IST)
+  - signal_threshold: 0.40 (Gate 1 composite score; Run 2 enhanced filter, 94.7% WR)
   - SPRT p1:          0.65 (Gate 2 win rate gate — testing for ≥65% win rate)
-  - backtest_win_rate: 0.70 (conservative; paper run achieved 89.3%, expect regression)
-  Updated: 2026-02-18 02:30 IST (Jarvis — commits 5cbd269 + b5589bd)
+  - backtest_win_rate: 0.70 (conservative; Run 2 achieved 94.7%, expect regression)
+  - adaptive_threshold: enabled — auto-scales 0.30–0.50 based on balance + signal rate
+  Updated: 2026-02-18 17:49 IST (Friday — Day 10 Run 2 integration, adaptive threshold)
 
 Built: 2026-02-18 01:00 IST (Friday — live trading infrastructure)
 Wallet: 0x2FC6896bDFB507002D1A534313C67686111cDfdA (Polygon)
@@ -68,14 +69,14 @@ CONFIG = {
     "max_positions": 3,                # Max concurrent open positions
     "spread_bps": 50,                  # 0.50% spread assumption for limit pricing
 
-    # ── Signal Filtering — ⚠️ UPDATE FROM DAY 9 RESEARCH ─────────────────────
-    "signal_threshold": 0.30,          # Day 9: Gate 1 composite score threshold (60% of signals below this)
+    # ── Signal Filtering — Day 10 Run 2 enhanced filter ──────────────────────
+    "signal_threshold": 0.40,          # Day 10: Run 2 default (94.7% WR). Adaptive fn scales 0.30–0.50 at runtime.
     "max_entry_price": 0.65,           # Don't enter above 65 cents (low reward)
     "min_entry_price": 0.20,           # Don't enter below 20 cents (high risk)
     "min_time_left_s": 90,             # Min 90s before market resolves (live orders need time)
 
-    # ── Kelly Criterion — ⚠️ CALIBRATE BACKTEST_WIN_RATE FROM DAY 9 ──────────
-    "backtest_win_rate": 0.70,         # Day 9: conservative estimate for Kelly sizing (paper run 89.3%, expect regression to ~70%)
+    # ── Kelly Criterion — Day 10 calibration ─────────────────────────────────
+    "backtest_win_rate": 0.70,         # Day 10: conservative estimate (Run 2 = 94.7%, expect regression to ~70%)
     "kelly_multiplier": 0.50,          # Fractional Kelly: 0.5 = half Kelly (conservative)
     "min_bet_usd": 5.00,               # Polymarket live minimum bet (not $1 like paper)
 
@@ -84,9 +85,9 @@ CONFIG = {
     "order_timeout_s": 10,             # How long to wait before checking if FOK filled
     "kelly_skip_enabled": True,        # Skip trade if full Kelly < min_bet
 
-    # ── SPRT — ⚠️ UPDATE p1 FROM DAY 9 ───────────────────────────────────────
+    # ── SPRT ──────────────────────────────────────────────────────────────────
     "sprt_p0": 0.50,                   # Null hypothesis: random (50% win rate)
-    "sprt_p1": 0.65,                   # Day 9 confirmed: Gate 2 win rate gate = w ≥ 0.65 (testing for this threshold)
+    "sprt_p1": 0.65,                   # Day 9/10 confirmed: Gate 2 win rate gate = w ≥ 0.65
     "sprt_alpha": 0.05,                # Type I error (false positive)
     "sprt_beta": 0.20,                 # Type II error (false negative)
 
@@ -110,6 +111,35 @@ CONFIG = {
     "log_file": "paper-trading-results/live-v1.log",
     "journal_file": "paper-trading-results/live-v1-journal.json",
 }
+
+
+def adaptive_threshold(balance: float, signal_rate_per_hour: float) -> float:
+    """Dynamic composite threshold from Day 10 Paper Run 2 research.
+
+    Scales between 0.30 (baseline) and 0.50 (max selectivity) based on:
+    - balance: tighten when we have more to lose (late challenge)
+    - signal_rate_per_hour: tighten when signals are abundant; loosen when scarce
+    Base is CONFIG["signal_threshold"] (0.40 = Run 2 default).
+    """
+    # Start from Run 2 default (0.40), apply context adjustments
+    threshold = CONFIG["signal_threshold"]  # 0.40 base
+
+    # Tighten when balance is high (more to lose)
+    if balance > 50:
+        threshold += 0.05
+    if balance > 80:
+        threshold += 0.05
+
+    # Tighten when signals are abundant (can afford selectivity)
+    if signal_rate_per_hour > 10:
+        threshold += 0.05
+
+    # Loosen when signals are scarce (need some action)
+    if signal_rate_per_hour < 3:
+        threshold -= 0.05
+
+    return max(0.30, min(0.50, threshold))
+
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # SIGNAL ENGINE — identical to paper bot (signalState, SPRT, Signal)
@@ -610,8 +640,15 @@ def fetch_current_market(asset: str) -> Optional[dict]:
 # SIGNAL COMPUTATION — identical logic to paper bot
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def compute_signal(state: SignalState, binary_price: float, asset: str) -> Signal:
-    """Compute multi-factor signal. Identical to paper bot signal engine."""
+def compute_signal(state: SignalState, binary_price: float, asset: str,
+                   threshold: Optional[float] = None) -> Signal:
+    """Compute multi-factor signal. Identical to paper bot signal engine.
+
+    threshold: override CONFIG["signal_threshold"]. Pass result of adaptive_threshold()
+               for dynamic context-aware filtering (Day 10 Paper Run 2 feature).
+    """
+    if threshold is None:
+        threshold = CONFIG["signal_threshold"]
     factors = {}
     weights = CONFIG["factor_weights"]
 
@@ -643,7 +680,7 @@ def compute_signal(state: SignalState, binary_price: float, asset: str) -> Signa
 
     # ── Direction: bet on market continuing current momentum ──────────────────
     direction = "NONE"
-    if confidence >= CONFIG["signal_threshold"]:
+    if confidence >= threshold:
         if binary_price < 0.50:
             direction = "NO"    # "Down" is more likely
             trade_price = binary_price  # Entry price for NO = up_price
@@ -800,9 +837,13 @@ class LiveTradingBot:
         self.start_time = time.time()
         self._stop = threading.Event()
 
+        # ── Adaptive threshold tracking (Day 10 Paper Run 2) ─────────────────
+        # Rolling deque of (timestamp, asset) for signals seen in last 60 min
+        self._signal_timestamps: deque = deque(maxlen=500)
+
         mode = "🟡 DRY RUN (no real USDC)" if CONFIG["dry_run"] else "🔴 LIVE TRADING (real USDC)"
         log(f"LiveTradingBot initialized | {mode}", "info")
-        log(f"signal_threshold={CONFIG['signal_threshold']} | SPRT p1={CONFIG['sprt_p1']} | "
+        log(f"signal_threshold={CONFIG['signal_threshold']} (adaptive) | SPRT p1={CONFIG['sprt_p1']} | "
             f"min_bet=${CONFIG['min_bet_usd']:.2f}", "info")
 
     # ── Market refresh thread ────────────────────────────────────────────────
@@ -857,10 +898,19 @@ class LiveTradingBot:
 
         # Compute signal and potentially enter
         if time_left >= CONFIG["min_time_left_s"]:
-            signal = compute_signal(state, binary_price, asset)
+            # ── Adaptive threshold (Day 10 Paper Run 2) ──────────────────────
+            now_ts = time.time()
+            self._signal_timestamps.append(now_ts)
+            cutoff = now_ts - 3600.0  # last 60 minutes
+            recent = [t for t in self._signal_timestamps if t > cutoff]
+            signal_rate_per_hour = len(recent)
+            threshold = adaptive_threshold(self.engine.balance, signal_rate_per_hour)
+
+            signal = compute_signal(state, binary_price, asset, threshold=threshold)
 
             if signal.direction != "NONE":
                 log(f"[{asset}] SIGNAL conf={signal.confidence:.3f} | "
+                    f"threshold={threshold:.2f} | rate={signal_rate_per_hour}/hr | "
                     f"factors={signal.factors} | dir={signal.direction}", "signal")
 
                 condition_id = market.get("condition_id")
