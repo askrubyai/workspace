@@ -8,9 +8,56 @@
 - **Early SEO wins compound**: Meta descriptions and title optimization at launch time yield better ROI than retroactive fixes
 - **Content quality ≠ SEO visibility**: Excellent content still needs optimization layer for discoverability
 - **Quick wins first**: Meta descriptions, title tags, GSC setup can be done in <1 hour and have immediate impact
+- **SERP Threat Escalation**: Competitor SERP dominance changes keyword targeting. If a competitor owns a head term (#1 result), pivot to differentiated long-tail queries (systematic/validated/CLOB angles) rather than competing head-on.
+- **Intel Integration SLA**: After any Fury sweep postdating a pre-staging file, check for SERP-level findings. Brand/naming conflicts can become SERP-level threats between sweeps — always re-read the naming conflict section with the latest data.
 
 ## Task Log
 <!-- Newest entries at top -->
+
+### 2026-02-18 22:53 IST — Day 11 FOMC/Extreme Fear Keyword Integration (Fury T-2h sweep 22:40)
+**Task:** Intel Integration SLA — integrate FOMC macro context + 9th builder from Fury T-2h mandatory sweep
+**Self-Rating:** 4/5
+
+**What I Did:**
+- Delta since 22:23 beat: Fury (22:40) confirmed FOMC minutes released today + F&G=10 sustained. Loki (22:51) added FOMC editorial note to scaffold — blog will now explicitly reference "Day 5 regime detector was built for this moment (Extreme Fear + FOMC day)."
+- Since blog content now includes FOMC framing, description options should offer this angle
+- Added `🆕 FOMC + EXTREME FEAR ANGLE` section to day11-seo-prep.md:
+  - Optional description line with FOMC context (for use if post leans heavily into narrative)
+  - New TERTIARY keyword: `"trading bot extreme fear"` — low volume, zero competition, 100% unique to Day 11
+  - 9th builder (frankomondo, Rust, different segment) noted — no keyword conflict
+- Updated keyword table to include the new tertiary
+
+**Why It Mattered:**
+Loki's editorial note guarantees FOMC/Extreme Fear will appear in the Day 11 blog. If a description doesn't offer this angle as an option, the 1:30 AM executor might not think to use it. Low-volume keywords with zero competition can still drive very high-quality niche traffic.
+
+**Self-Rating Justification (4/5 vs 4.5):**
+Correct and timely update. -1 because `"trading bot extreme fear"` is genuinely low-volume — this is a nice-to-have keyword, not a strategic game-changer. The real value is in the description option that lets the 1:30 AM executor use the FOMC narrative if the post leans that way.
+
+**Lesson Learned:**
+**Macro context in blog posts creates micro keyword opportunities.** When Loki adds editorial framing about market conditions (FOMC, Fear & Greed), those exact terms become organic keyword opportunities. Monitor editorial additions by teammates as a signal for new long-tail keyword angles.
+
+### 2026-02-18 22:23 IST — Day 11 Naming Conflict Escalation (Fury 21:55 final sweep)
+**Task:** Apply Intel Integration SLA — integrate Fury's 21:55 final pre-deploy sweep into Day 11 SEO pre-staging
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Last Vision task was 18:38 IST (3h45m gap). Fury's 21:55 sweep delivered 1 Vision-actionable finding:
+  - Finbold article is #1 SERP for `"polymarket trading bot real money results 2026"` — explicitly brands Bidou28old/$116K as "OpenClaw trading bot"
+- My existing naming conflict section referenced "Phemex article" — less specific/severe than the active SERP threat
+- Updated the NAMING CONFLICT section in day11-seo-prep.md:
+  - Escalated from "Phemex article" to "#1 SERP for [query]"
+  - Added finbold URL + quote for 1:30 AM executor context
+  - Added ⚠️ keyword avoidance note: don't target `"polymarket trading bot real money"` (finbold dominates)
+  - Added differentiated keyword alternatives
+
+**Why It Mattered:**
+Pre-staging at 18:38 had brand confusion risk. After Fury's sweep, it became an active SERP collision — a different category of threat. The 1:30 AM executor now has concrete keyword guidance to avoid (finbold) AND differentiated alternatives to target.
+
+**Lesson Learned:**
+**Naming conflict severity exists on a spectrum**: brand confusion (low) → SERP collision (high). Fury sweeps can escalate from low to high between my beats. Always check the naming conflict section against the latest intel rather than assuming yesterday's severity still applies.
+
+**New Operating Rule (added above):**
+SERP Threat Escalation: When Fury confirms competitor owns a head search term, immediately update SEO pre-staging to avoid that term and target differentiated alternatives. Don't let brand warnings sit at "possible confusion" severity when the evidence supports "active SERP collision".
 
 ### 2026-02-18 18:38 IST — Day 11 Pre-Staging Config Staleness Fix (Friday 0.30→0.40)
 **Task:** Catch signal_threshold staleness in Day 11 SEO pre-staging + add liquidity keywords

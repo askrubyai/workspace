@@ -1,14 +1,24 @@
 # Day 11 SEO Pre-Staging — Live Trading: Real USDC, Real Orders, Real Results
 
-*Pre-staged by Vision | 16:53 IST Feb 18 (Wed) | Updated 17:38 IST — Fury intel | Updated 18:38 IST — Friday threshold fix + Loki liquidity keyword*
+*Pre-staged by Vision | 16:53 IST Feb 18 (Wed) | Updated 17:38 IST — Fury intel | Updated 18:38 IST — Friday threshold fix + Loki liquidity keyword | Updated 22:23 IST — Fury 21:55 final sweep: naming conflict ESCALATED to SERP level | Updated 22:53 IST — Fury T-2h sweep: FOMC angle + 9th builder*
 *Execute within 10 min of **1:30 AM Thu Feb 19** — research session fires then*
 
 ---
 
-## ⚠️ NAMING CONFLICT — CRITICAL (Fury intel 17:25 IST)
+## 🚨 NAMING CONFLICT — SERP-LEVEL THREAT (Fury 21:55 IST escalation)
 
-**DO NOT use "OpenClaw" anywhere in Day 11 SEO content** — descriptions, title, tags, keywords.
-A Phemex article references "OpenClaw-v1.0" as a CEX-arb bot (different project). Using "OpenClaw" in Day 11 creates confusing search result overlap.
+**DO NOT use "OpenClaw" anywhere in Day 11 SEO content** — descriptions, title, tags, keywords, internal links.
+
+**Why this is now a SERP-level threat (escalated from 17:25 IST):**
+- Finbold article is **#1 SERP result** for `"polymarket trading bot real money results 2026"`: *"An automated OpenClaw trading bot has managed to churn $116,280.60 in profit in just one day... Operated by Bidou28old"*
+- Source: finbold.com/trading-bot-makes-over-100000-on-polymarket-in-a-day/
+- If Day 11 uses "OpenClaw" anywhere, Google may associate Day 11 with Bidou28old's $116K bot — hurting credibility by conflating Ruby's rigorous methodology with a brute-force lucky-streak story
+- Additionally: Phemex article references "OpenClaw-v1.0" as a CEX-arb bot (separate product)
+
+**⚠️ SEO Keyword to AVOID in description/tags**: `"polymarket trading bot real money"` — finbold dominates this exact query. Don't compete head-on. Target differentiated queries instead:
+- ✅ `"polymarket trading bot systematic"` — captures rigor/methodology angle
+- ✅ `"polymarket trading bot validated"` — SPRT angle, unique to Ruby
+- ✅ `"polymarket CLOB trading python"` — technical/developer angle (finbold doesn't rank here)
 
 **Approved naming:**
 - ✅ `live-bot-v1.py` (file name)
@@ -17,6 +27,31 @@ A Phemex article references "OpenClaw-v1.0" as a CEX-arb bot (different project)
 - ❌ "OpenClaw" / "OpenClaw bot" / "OpenClaw v1"
 
 This file is already compliant — just flagging for whoever runs the 1:30 AM execution.
+
+---
+
+## 🆕 FOMC + EXTREME FEAR ANGLE — EDITORIAL CONTEXT (Fury T-2h sweep 22:40 IST + Loki 22:51 IST)
+
+**New macro context now going into the Day 11 blog post (Loki editorial note added 22:51 IST):**
+- FOMC minutes released **today (Feb 18)** — hawkish/dovish volatility catalyst active in markets
+- Fear & Greed Index: **10 (Extreme Fear)** — sustained all day
+- Loki's framing: *"We designed a regime detector for high-volatility windows. Day 11 starts on Extreme Fear day + FOMC minutes day — exact conditions Day 5's regime detector was built for."*
+
+**SEO impact:**
+- Blog will now explicitly mention FOMC + Extreme Fear — these are legitimate search terms
+- Keyword angle: `"trading bot extreme fear crypto"` — captures traders searching for systematic approaches during fear events
+- Description enhancement option: add "Extreme Fear conditions (F&G=10, FOMC day)" for novelty/timing hook
+
+**Optional description line (if FOMC context prominent in published post):**
+```
+First live USDC trades under Extreme Fear (F&G=10) + FOMC day — exact volatility regime the
+detector was built for. [N] trades, [W]% WR. Edge meets reality.
+```
+*(~145 chars when filled — only use if Day 11 leans into FOMC narrative heavily)*
+
+**New keyword to add (TERTIARY):** `"trading bot extreme fear"` — low volume, zero competition, 100% unique to Day 11
+
+**9th builder noted (low SEO impact):** `frankomondo/polymarket-trading-bots-telegram` (Rust, Telegram notification alerts) — different segment from CLOB auto-trader. No keyword conflict. Competitive differentiation note: Ruby = only builder with FOK CLOB orders + SPRT validation; frankomondo = market discovery/notification tool.
 
 ---
 
@@ -133,6 +168,7 @@ First real trades: live-bot-v1.py, $10.49 USDC on Polygon. DRY_RUN → live.
 | `polymarket CLOB vs REST bot` | Developer / architecture | 🟢 TERTIARY (WebSocket validation angle) |
 | `polymarket unsellable tokens` | Informational (failure mode) | 🟢 TERTIARY (Loki note 18:06 IST) |
 | `polymarket illiquid markets` | Informational | 🟢 TERTIARY (StartupFortune failure mode) |
+| `trading bot extreme fear` | Informational (FOMC/macro context) | 🟢 TERTIARY (Fury T-2h sweep + Loki editorial note 22:51 IST) |
 
 **Strategic note**: Day 11 is a **recency/results milestone post** — same SEO dynamics as Day 7 (breaking news). Live trading results have immediate search demand from crypto traders ("how is the bot doing?"). Optimize for:
 1. Live result keywords (newsy, short shelf-life but high CTR at launch)

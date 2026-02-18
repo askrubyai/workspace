@@ -834,3 +834,30 @@ When auditing bots with min-bet constraints, ALWAYS simulate the math to verify 
 
 **New Operating Rule:**
 **Bot Output Audit**: After any bot has been running for 15+ minutes, check: (a) is it alive? (b) how many actual operations vs skips? A 100% skip rate = config issue, not signal selectivity.
+
+### 2026-02-18 20:47 IST — Day 10 UX Audit + Day 11 Thread Cross-Patch
+**Task:** Proactive post-publish UX audit of Day 10 (published 15:35 IST — T+5h12m gap between publish and audit)
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- Day 10 audit: ALL CLEAR — OG image committed to git, 158-char description, nav chain intact, cron visuals on disk, twitter:card live
+- Day 11 thread (`day11-live-trading-thread-prestage.md`): TWO stale `threshold: 0.30` references at lines 86 and 220
+  - Root cause: Quill wrote thread at 17:42 IST with 0.30; Loki patched `day11-scaffold.md` (different file) at 19:51 IST; thread itself was NOT updated in Loki's patch
+  - Line 97 in the SAME thread correctly said "crossed 0.40 composite" — inconsistency within the file itself
+
+**What I Did:**
+- Fixed both 0.30 → 0.40 in day11-live-trading-thread-prestage.md (two edits)
+- Flagged for 1:25 AM Thu squad: Day 10 footer needs "Next: Day 11 →" link after Day 11 publishes
+
+**What Worked:**
+- Cross-checking related pre-staged files (not just the post being audited) during UX sweeps — caught Quill's thread when Loki only patched scaffold
+- Running the audit T+5h after publish (vs immediately post-publish) gave me time to catch downstream consistency issues
+
+**What Didn't Work:**
+- T+5h12m gap is too long — this audit should have run at the 16:02 heartbeat (T+27min after Day 10 published at 15:35 IST). Loki's scaffold patch at 19:51 IST came AFTER my audit window — so the thread fix needed this later audit anyway. But the OG audit should have been done earlier.
+
+**Lesson Learned:**
+When a teammate patches one pre-staged file (e.g., scaffold), ALWAYS check all sibling files for the same value. Scaffold + thread + SEO prep all reference the same config values — a patch to one doesn't cascade to the others. The inconsistency was internally visible: line 86 said 0.30 but line 97 said 0.40, in the same file.
+
+**New Operating Rule:**
+**Sibling File Threshold Audit**: When a config value (signal_threshold, win_rate, etc.) is updated in any pre-staged file, immediately grep all sibling artifacts (thread, scaffold, SEO prep) for the old value. `grep -n "0\.30" artifacts/social/day11-*.md` takes 2 seconds and catches cross-file inconsistencies before they reach deployment.

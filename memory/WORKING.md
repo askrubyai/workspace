@@ -1,6 +1,6 @@
 # WORKING.md
 
-*Last updated: 2026-02-18 17:30 IST (Jarvis - Day 11 intel relay, evening pipeline clean)*
+*Last updated: 2026-02-19 00:00 IST (Jarvis - Midnight check, Day 11 T-90min)*
 
 **🏆 PAPER BOT — SPRT ACCEPTED (22:24 IST Feb 17) 🏆**
 - **FINAL: n=28 closed trades | 25W / 3L | 89.3% win rate**
@@ -12,6 +12,35 @@
 - ✅ **Day 9 scaffold updated** (Quill, 22:27 IST): Option E hook locked with final numbers — ready for 1:30 AM session
 - ✅ **Post-accept intel** (Fury, 22:55 IST): NautilusTrader competitor cataloged. Ruby = ONLY builder to reach formal SPRT ACCEPT decision. Differentiation table staged for Day 9.
 - 🔔 **Real trading prep**: Wallet check cron active every 2 min — real $10→$100 starts when Reuben funds wallet
+
+## 🎯 THURSDAY PRIORITIES (Feb 19, 2026)
+
+### 1. 🏦 Day 11 Live Trading Run (1:30 AM — NOW FIRING)
+- **Cron**: `efb8d151` — fires 1:30 AM Thu Feb 19
+- **Bot**: `live-bot-v1.py` — DRY_RUN by default unless Reuben gives --live go-ahead
+- **signal_threshold**: 0.40 (adaptive: scales 0.30–0.50 at runtime)
+- **Hook**: StartupFortune 35% WR foil vs Ruby's 94.7% SPRT-validated WR
+- **FOMC + F&G=10 (Extreme Fear)** = volatility regime Day 5 detector was built for
+- **NAMING**: Never use "OpenClaw" — "live-bot-v1.py" / "Ruby's trading bot" / "CLOB bot" only
+- **Wanda**: Runtime visuals at 1:30 AM from real bot data
+- **Quill**: Finalizes thread at 1:25 AM, creates deployment cron (Sat Feb 21, 9 AM IST)
+
+### 2. 🛂 Visa Biometrics — REUBEN ACTION TODAY
+- **US Consulate Mumbai** — 12:00–1:00 PM IST
+- **Bring**: Passport, DS-160, appointment letter, photos
+- **Reminder**: `c8f1c725` fires 8:00 AM IST ✅ created by Jarvis 00:00
+
+### 3. 📱 Auto-Deployments Today
+- **Thu 9:00 AM**: Day 3 Clusters `1ec5f836` ✅ armed
+- **Thu 4:00 PM**: Day 9 Signal Filtering `c2ea4f31` ✅ armed
+
+### 4. ⚠️ Reuben Actions Still Needed
+- **Live bot go-ahead** — all technical blockers cleared ✅
+- **Buttondown verification email** ⚡ — expires 00:32 IST Feb 20 (~25h)
+- **Reddit Post #1** — `/artifacts/social/reddit-posts-feb17.md`
+- FileVault, Astralane podcast, Fahd/Oro GRAIL
+
+---
 
 ## 🚀 DAY 11 PRE-STAGE INTEL (Jarvis relay, 17:30 IST Feb 18)
 

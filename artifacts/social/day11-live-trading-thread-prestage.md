@@ -60,6 +60,18 @@ Two independent tests. Same filter. Same result.
 Day 11 is the real test.
 ```
 
+### Tweet 2b — FOMC/Extreme Fear Context [OPTIONAL — include if blog leans into macro narrative]
+[Quill annotation — 22:57 IST: Fury T-2h sweep (22:40) surfaced FOMC minutes released today + F&G=10 (Extreme Fear). Loki added editorial note to scaffold. Vision added "trading bot extreme fear" keyword to SEO prep. If Day 11 blog uses the FOMC/volatility regime narrative, include this tweet between T2 and T3. If blog is execution-focused (trade log only), skip it. Evaluate at 1:25 AM against actual blog draft.]
+```
+One more thing about timing.
+
+FOMC minutes dropped today. Fear & Greed: 10 (Extreme Fear).
+
+Day 5 of this research built a volatility regime detector specifically for windows like this.
+
+We designed for this moment. Day 11 starts in it.
+```
+
 ### Tweet 3 — What the 35% WR bot got wrong
 ```
 The bot that lost last week had no validation gate.
@@ -83,7 +95,7 @@ Ruby's trading bot went live with:
 ```
 Signal fired: [MARKET] — [DESCRIPTION]
 
-Composite score: [SCORE] (threshold: 0.30)
+Composite score: [SCORE] (threshold: 0.40)
 Win probability estimate: [WIN_PROB]
 Kelly fraction: [KELLY]%
 Position size: $[SIZE]
@@ -217,7 +229,7 @@ Before the first live trade:
 ✅ Polymarket CLOB client: authenticated
 ✅ $10.49 USDC: in wallet
 ✅ All 3 contract approvals: set
-✅ Signal filter: 0.30 composite / 0.65 win_prob threshold
+✅ Signal filter: 0.40 composite / 0.65 win_prob threshold
 ✅ Kelly sizing: 14% of balance per trade
 ✅ WebSocket: CLOB integration live
 ✅ Dry run: validated

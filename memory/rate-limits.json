@@ -1,12 +1,12 @@
 {
   "alertsSent": [],
-  "lastCheck": "2026-02-18T18:01:00+05:30",
+  "lastCheck": "2026-02-19T00:01:00+05:30",
   "providers": {
     "anthropic": {
       "status": "healthy",
-      "activeSessions": 869,
+      "activeSessions": 927,
       "modelBreakdown": {
-        "claude-sonnet-4-5": "primary (vast majority)",
+        "claude-sonnet-4-5": "primary (vast majority of cron/heartbeat sessions)",
         "claude-opus-4-6": "secondary (heartbeat/standup/subagent sessions)"
       },
       "lastError": null,
@@ -16,7 +16,7 @@
   },
   "status": "all_healthy",
   "sessionCheck": {
-    "totalSessionsAnalyzed": 869,
+    "totalSessionsAnalyzed": 927,
     "sessionsWithErrors": 0,
     "errorTypes": {
       "401_auth": 0,
@@ -24,19 +24,25 @@
       "quota": 0
     },
     "providersRateLimited": [],
-    "timestamp": "2026-02-18T18:01:00+05:30"
+    "timestamp": "2026-02-19T00:01:00+05:30"
   },
   "recentLogs": {
     "rateLimit429Errors": 0,
     "quotaErrors": 0,
     "authErrors": 0,
     "noProviderRateLimits": true,
-    "lastLogCheck": "869 sessions scanned (last 24h+). All cron/heartbeat sessions completing with normal token usage. One session at 352k/200k (176%) — context overflow, not a rate limit. Zero rate limit events.",
+    "lastLogCheck": "927 sessions scanned. All cron/heartbeat sessions completing with normal token usage. Two sessions at 147–176% context — context overflow only, not rate limits. Zero rate limit events.",
     "flagged": {
-      "contextOverflow": {
-        "sessionKey": "agent:main:cron:...2e583c",
+      "contextOverflow1": {
+        "sessionKey": "agent:main:cron:...bc8179",
+        "tokens": "294k/200k (147%)",
+        "age": "3h ago",
+        "type": "context_overflow_not_rate_limit"
+      },
+      "contextOverflow2": {
+        "sessionKey": "agent:main:cron:...2e583c / 9e6a81",
         "tokens": "352k/200k (176%)",
-        "age": "9h ago",
+        "age": "15h ago",
         "type": "context_overflow_not_rate_limit"
       }
     }
@@ -48,5 +54,5 @@
     "warnings": [],
     "critical": 0
   },
-  "trend": "stable - 30+ hours of healthy operation, zero rate limit events"
+  "trend": "stable - 31+ hours of healthy operation, zero rate limit events"
 }

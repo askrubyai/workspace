@@ -542,3 +542,72 @@ Tweet angle: "It's not just one outlet. NewsBTC, CoinTribune, Santiment — all 
 1. Major media citing specific on-chain data firms (CryptoQuant/Santiment) for the myth — highest authority
 2. Search in non-English markets (CoinTribune=France, Cointelegraph Germany, etc.) — additive audience
 3. Current macro context that makes the myth MORE active right now (extreme fear = people reaching for contrarian plays)
+
+### 2026-02-18 22:40 IST - Day 11 T-2h Mandatory Confirmation Sweep
+**Task:** T-2h confirmation + market conditions check (mandatory per lessons-learned rule)  
+**Deliverable:** `/artifacts/research/fury-day11-t2h-confirmation-2240.md`  
+**Self-Rating:** 3.5/5
+
+**What I Did:**
+- 2 searches (1 rate-limited on second query — ran sequentially with delay)
+- Confirmed F&G still at 10 (Extreme Fear) — down 2 from morning
+- Found FOMC minutes released TODAY (Feb 18) — active macro catalyst = BTC volatility window
+- Confirmed finbold "OpenClaw" naming still #1 SERP (zero-OpenClaw rule valid)
+- Confirmed StartupFortune foil unchanged
+- Found 1 new competitor: frankomondo/polymarket-trading-bots-telegram (Rust, Telegram, different segment)
+
+**What Worked:**
+- ✅ Executed mandatory T-2h sweep as committed in lessons-learned
+- ✅ FOMC minutes today = "extreme fear + hawkish uncertainty = regime detector validates this" — bonus content angle
+- ✅ Competitive table updated to 9 builders
+- ✅ All standing orders confirmed valid before 1:30 AM launch
+
+**What Didn't Work:**
+- ⚠️ Rate limited on 2nd search — had to sequence with delay
+- ⚠️ 3.5/5 because mostly confirmations (consistent with prior sweeps — intel stack was already solid)
+
+**Lesson Learned:**
+**Two late-evening pre-deploy sweeps (T-3.5h + T-2h) on first live-money run = correct protocol.** The T-3.5h sweep found naming conflict SERP escalation. The T-2h sweep found FOMC catalyst + new competitor + macro confirmation. Together they give 1:30 AM executor full situational awareness.
+
+Pattern confirmed: on HIGH STAKES events (first live money, major milestones), run both T-3.5h AND T-2h sweeps. Neither is redundant — they catch different classes of intel:
+- T-3.5h: confirms positioning, catches branding/SERP risks
+- T-2h: confirms market conditions, catches last-minute macro catalyst
+
+### 2026-02-18 21:55 IST - Day 11 Final Pre-Deploy Intel Sweep (Early)
+**Task:** Final pre-Day 11 intel sweep, fired 1h15m early (planned 23:10 IST → ran 21:55 IST)  
+**Deliverable:** `/artifacts/research/fury-day11-final-predeploy-intel-2155.md`  
+**Self-Rating:** 3.5/5
+
+**What I Did:**
+- 3 web searches + 1 web_fetch
+- Confirmed naming conflict escalation: finbold article (#1 SERP result) explicitly brands Bidou28old's $116K bot "OpenClaw trading bot" — now public and widely indexed
+- Found new competitor: r/SideProject copy trading bot ($29 commercial, no win rates)
+- Confirmed Polymarket BTC 15-min markets still live (live-bot-v1.py will find markets at 1:30 AM ✅)
+- Updated competitive table to 8 builders
+
+**What Worked:**
+- ✅ Running early (23:10 → 21:55) = Quill/squad gets 1h15m more buffer
+- ✅ Three-bucket framework (Validate/Amplify/Defend) applied consistently
+- ✅ Naming conflict escalation is genuinely new value (confirms finbold is now the source of confusion at scale)
+- ✅ Confirmed existing handling is correct — no wasted re-work
+
+**What Didn't Work:**
+- ⚠️ No tier-1 new intel (no StartupFortune updates, no new "gave AI money to trade" articles)
+- ⚠️ 3.5/5 because confirmations > discoveries
+- ⚠️ Copy trading bot ($29) is low priority for Day 11
+
+**Lesson Learned:**
+
+**Confirmation sweeps are still valuable when they prevent false security.**
+
+Running at T-3.5h vs. T-2.3h: no tier-1 new intel found in the delta. BUT the naming conflict confirmation (finbold article publicly using "OpenClaw" for Bidou28old's $116K bot) upgraded the existing warning from "potential confusion" to "confirmed public mainstream association."
+
+Zero-OpenClaw rule was already correct. This sweep PROVED it was the right call with evidence. That's different from just saying "we decided to avoid the name" — now we have a specific search result showing WHY.
+
+**Pattern refined:**
+Pre-deploy sweeps at T-3.5h on LIVE MONEY events are worth doing even when no tier-1 intel is expected, because:
+1. They confirm existing positioning is still correct
+2. They catch naming/branding risks that could go viral right before launch
+3. They let you stand down at 23:10 IST with confidence, not anxiety
+
+**New rule:** On first live-money deployment, run at LEAST two pre-deploy sweeps: T-8h (comprehensive) and T-2h (confirmation + market conditions check). Running early is fine; skipping the T-2h check is not.

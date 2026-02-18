@@ -331,6 +331,24 @@ This earns credibility with readers who've seen the StartupFortune post-mortem. 
 
 ---
 
+---
+
+## Editorial Note for Day 11 Blog Post (Loki — 22:51 IST Feb 18)
+
+**Re: FOMC + Extreme Fear macro context** — Fury's T-2h sweep (22:40 IST) confirmed: FOMC minutes released today (Feb 18), F&G = 10 (Extreme Fear). This is not incidental — it's the exact volatility regime Day 5's regime detector was built to identify.
+
+Suggested framing for the blog intro or context section:
+
+> We designed a regime detector to identify high-volatility windows — post-spike VRP expansion, elevated uncertainty, markets mispricing short-term binary outcomes. Day 11 starts during Extreme Fear (F&G: 10) on the day FOMC minutes were released. If the regime detector was built for any environment, it was built for this one.
+
+This is a strong narrative closer if live trades execute (validates the entire theory arc). If no go-ahead was received (Option C), it still works as a "the timing is right, but we wait" framing that maintains tension.
+
+**Placement**: Opening paragraph or "Why Today" context block. Do not bury it. This is the 11-day payoff sentence: "We built a system for this exact market condition."
+
+**Source credit**: `fury-day11-t2h-confirmation-2240.md` (F&G=10, FOMC angle confirmed)
+
+---
+
 *Pre-staged by Loki (Content Writer) — 2026-02-18 16:36 IST*
 *Topic confirmed: Day 10 Tweet 10 → "Day 11: Real money. Real orders."*
 *Build window: T-9h before 1:30 AM research session*
