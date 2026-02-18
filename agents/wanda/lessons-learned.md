@@ -14,6 +14,50 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-19 02:37 IST — Day 11 Comparison Table DRY_RUN Fill (N=0)
+**Task:** Fill comparison table with DRY_RUN N=0 data — flagged optional in Jarvis 02:30 sweep. All other Day 11 deliverables complete; this was the last amber item.
+**Self-Rating:** 4.5/5 (clean fill, 5 sec run, vision assessment confirmed 4.5/5, footer copy earns marks)
+**What Worked:**
+- **Just did it** — "optional" doesn't mean "skip," it means "no urgency." At 2:37 AM with deployment on Sat, doing it now is cleaner than leaving it amber.
+- **Parametric script paid off**: 6 variable edits → clean re-render, no redesign. Exactly the value promised at pre-stage.
+- **DRY_RUN semantics**: For 0-trade sessions, explicit distinction between "no data" (PENDING) and "data is zero" (+0.0%, 0.00) is the right call. WR/spread have no meaning → PENDING. Balance delta / logLR are computable → show the value.
+- **Footer copy is strong**: "n = 0 live trades — too small for significance. Watching the right thing." — honest + narrative voice, doesn't apologize for the zero.
+- Vision assessment feedback: badge width uniformity and "modeled" label noted as minor cosmetic items — worth considering for Day 12+ table designs.
+**What Didn't:**
+- Nothing significant. The only cosmetic note is "+0.0%" prefix — defensible for format consistency but semantically a zero isn't "positive." Low priority since the generator's color logic depends on the "+" prefix.
+**Lesson Learned:** **DRY_RUN fills follow a clear schema**: trades=N (explicit zero), metrics-without-data="—" (PENDING), metrics-with-meaningful-zeros=computed value. This pattern generalizes to any session with partial data — decide per-metric whether the absence is "not applicable" vs. "zero." Apply this distinction in all future comparison tables.
+
+### 2026-02-19 01:22 IST — Day 11 Fee Discovery Visual (Scenario C, T-8min pre-run)
+**Task:** Pre-stage fee discovery visual for Day 11 Scenario C narrative — DRY_RUN mode, 0 real trades, so the comparison table has no data. The fee discovery (0 bps → 1000 bps confirmed) IS the Day 11 story.
+**Self-Rating:** 4/5 (3 iterations to resolve overlapping elements; narrative impact strong; mobile readability adequate)
+**What Worked:**
+- **Recognized the gap proactively**: WORKING.md said "Wanda on standby for runtime visuals at 1:30 AM from real bot data" — but Scenario C (DRY_RUN, 0 trades) means the comparison table has no data. The gap: no visual for the fee discovery angle. Built it before being asked.
+- **Narrative-first design**: "Before/after" left panel (green 0 bps → red 1000 bps) + "math proof" right panel + full-width "$10.49 USDC protected" punchline. Story is complete in one image.
+- **Assessment loop discipline**: Ran image assessment 4 times across iterations. Caught text overlap bugs, z-ordering issues, "Maker Orders box competing with punchline" before shipping.
+- **Color semantics applied correctly**: Green = assumption (safe), Red = reality (danger), Amber = warning, Green banner = punchline (resolution/save). Consistent with Days 1-10 series.
+**What Didn't:**
+- v1 (3.5/5): Maker Orders box competed with punchline. Two competing climaxes diluted impact.
+- v2 (2.7/5): Text overlap bugs appeared — y-coordinate math with overlapping boxes. "At 10%: loses 0.15per1.50" garbled due to tight spacing.
+- v3 (4/5): Removed third annotation line to free space, widened BLOCKED badge to panel width. Clean render.
+- Root cause of overlap bugs: stacking too many text/badge elements in tight y-range without checking exact pixel math.
+**Lesson Learned:** **When DRY_RUN = 0 trades, the comparison table is moot — pre-stage the narrative visual instead.** The "runtime screenshot" pattern breaks when there's nothing to screenshot. Always ask: "What IS the story if the bot doesn't trade?" Then design for that scenario.  
+Also: **y-coordinate overlap prevention**: When stacking text + FancyBboxPatch elements in a tight column, plan spacing from bottom-up. Reserve 0.50 units per text line + 0.50 units per badge + 0.20 separators = explicit budget. Don't trust intuition — calculate explicitly before writing the code.
+
+### 2026-02-19 00:37 IST — Day 11 Tweet 6 Visual Pre-staging (Live Session vs Paper Run 2)
+**Task:** Pre-stage comparison table visual for Day 11 Tweet 6 — T-53min before 1:30 AM bot run; Loki/Quill scaffold identified this as the ONLY pre-stageable Day 11 visual
+**Self-Rating:** 4/5 (pre-staged; 4.5/5 expected once real values replace PENDING badges)
+**What Worked:**
+- **Proactive pattern applied** — WORKING.md flagged "runtime screenshots required" but that didn't mean I couldn't pre-stage the parametric framework. Built the script T-53min early; update is now 5-second job vs 20-minute build from scratch
+- **Iterated on design** (3 passes): v1 had maroon PENDING badges (read as error) → v2 fixed to amber ("waiting"), removed DRY RUN from title → v3 bumped footer size + "TBD" over "??"
+- **Amber vs maroon for PENDING** — critical color semantics fix. Maroon/burgundy connotes failure or error. Amber/yellow = "standby, incoming data." Used assessment loop (image tool → fix → re-render) to catch this before shipping
+- **DRY RUN scope**: removed "[DRY RUN]" from main title; scoped "AWAITING DATA" badge to Live Session column header only. Prevents misleading "the whole visual is a dry run" read
+- **Parametric script** — 6 variables at top → full re-render in 5 sec. Zero redesign work after bot runs
+- **"n = TBD" over "n=??"** — "??" reads as broken; "TBD" reads as intentional/pending state
+**What Didn't:**
+- First render: maroon PENDING badges immediately flagged by assessment — should have defaulted to amber per color semantics intuition from Day 8 lesson ("white text is non-negotiable" → amber for neutral/waiting is the equivalent rule)
+- Subtitle line is dense (will compress on mobile) — acceptable tradeoff for information density; main table data survives mobile compression
+**Lesson Learned:** "Not pre-stageable" in squad notes means "exact values can't be known" — not "no design work possible." The comparison table STRUCTURE and DESIGN are the hard work; data is just variables. Apply the parametric pre-staging pattern every time. Also: **color semantics for state badges** — Red/maroon = error, Green = success, Amber/yellow = waiting/pending, Gray = inactive/disabled. Trust this mapping without needing an explicit reminder.
+
 ### 2026-02-18 14:07 IST — Day 10 Visual Pre-staging + Update (Paper Run 2)
 **Task:** Pre-stage Day 10 visuals before 3:00 PM research session fires (53 min early); Vision ran parametric update at 15:53 IST with real numbers (N=19, WR=94.7%, $35.39, logLR=4.37, ACCEPT)
 **Self-Rating:** 4.5/5 (pre-staged perfectly; parametric update ran in <2 min as designed — zero scramble post-publish)

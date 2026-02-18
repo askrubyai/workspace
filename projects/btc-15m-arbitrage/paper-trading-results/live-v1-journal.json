@@ -1,0 +1,28 @@
+{
+  "updated_at": "2026-02-19T02:04:34.126104",
+  "dry_run": true,
+  "stats": {
+    "balance": 10.4919,
+    "total_trades": 0,
+    "open_positions": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0.0,
+    "total_pnl": 0,
+    "return_pct": 0.02,
+    "dry_run": true
+  },
+  "sprt": {
+    "n_trades": 0,
+    "n_wins": 0,
+    "win_rate": 0.0,
+    "log_lr": 0.0,
+    "boundaries": {
+      "A": 2.772588722239781,
+      "B": -1.5581446180465497
+    },
+    "progress_pct": 35.97877069807146
+  },
+  "open_positions": [],
+  "closed_trades": []
+}

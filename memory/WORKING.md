@@ -1,6 +1,6 @@
 # WORKING.md
 
-*Last updated: 2026-02-19 00:00 IST (Jarvis - Midnight check, Day 11 T-90min)*
+*Last updated: 2026-02-19 02:30 IST (Jarvis - 2:30 AM check — Day 11 FULLY COMPLETE, Day 12 pre-staged)*
 
 **🏆 PAPER BOT — SPRT ACCEPTED (22:24 IST Feb 17) 🏆**
 - **FINAL: n=28 closed trades | 25W / 3L | 89.3% win rate**
@@ -15,15 +15,47 @@
 
 ## 🎯 THURSDAY PRIORITIES (Feb 19, 2026)
 
-### 1. 🏦 Day 11 Live Trading Run (1:30 AM — NOW FIRING)
+### 1. ✅ Day 11 Live Bot Dry Run (FULLY COMPLETE — squad delivered by 02:25 IST)
+- **Blog published**: `2026-02-19-live-bot-dry-run/` — "Day 11: The Dry Run That Saved $10.49" (02:05 IST) ✅
+- **Git**: commit faf7cca pushed to main ✅ | Day 10→11 nav added ✅
+- **SEO**: Vision 7-step checklist executed (02:08 IST) — Scenario C meta, OG image fixed, commit 50253e3 ✅
+- **UX audit**: Shuri all-clear 4.5/5 (02:17 IST) — 6/6 checks pass, zero bugs ✅
+- **Editorial review**: Loki APPROVED 4.5/5 (02:21 IST) — blog + thread both greenlit ✅
+- **Twitter thread**: FINALIZED (Quill, 02:12 IST) → `/artifacts/social/day11-live-trading-thread-final.md`
+- **Day 12 thread pre-staged**: (Quill, 02:42 IST) → `/artifacts/social/day12-maker-redesign-thread-prestage.md` — 11 tweets, 3 hook options, scenario tree, lorine93s foil woven in, all [FILL] placeholders ready
+- **Deployment cron**: `5d527d4a` — Sat Feb 21, 9:00 AM IST ✅ armed
+- **Day 12 pre-stage**: Fury filed intel (02:25 IST) → `/artifacts/research/fury-day12-prestage-intel-0225.md`
+- **Dry run**: Bot connected, 4 WS feeds active, $10.4919 balance confirmed, 0 trades (markets ~24h out)
+- **Fee finding**: 1000 bps taker fee = 10% per trade = economically non-viable for FOK
+- **✅ Pepper**: Buttondown drafts updated with Day 11 (02:33 IST) — Welcome email 7290ch, Sunday Digest 5521ch, both verified ✅
+- **✅ Wanda**: Comparison table updated with DRY_RUN N=0 fill (02:37 IST) — N=0, WR/spread PENDING badges (N/A), +0.0% balance, 0.00 logLR. 4.5/5 quality. Footer: "n = 0 live trades — too small for significance. Watching the right thing."
+- **Next**: Day 12 — GTC maker order redesign for rebates instead of 10% taker charges
+
+### 1b. 🔄 Day 12 Pre-Stage (1:30 AM Fri Feb 20 research session)
+- **Fury intel**: `/artifacts/research/fury-day12-prestage-intel-0225.md` (02:25 IST)
+  - TIER 1 foil: `lorine93s/polymarket-market-maker-bot` — neutral spread farming vs. Ruby's directional signal. "Market makers need volume. We need edge."
+  - Maker rebates now live on NCAAB + Serie A markets (Polymarket expanding, grain-alignment)
+- **Day 12 thesis**: Fee discovery killed FOK strategy → redesign: GTC maker orders earn rebates (not pay 10%)
+- **Research cron**: `efb8d151` fires 1:30 AM Fri Feb 20 ✅
+
+### 1-OLD. 🏦 Day 11 Live Trading Run (1:30 AM — COMPLETED AS DRY RUN)
 - **Cron**: `efb8d151` — fires 1:30 AM Thu Feb 19
 - **Bot**: `live-bot-v1.py` — DRY_RUN by default unless Reuben gives --live go-ahead
 - **signal_threshold**: 0.40 (adaptive: scales 0.30–0.50 at runtime)
 - **Hook**: StartupFortune 35% WR foil vs Ruby's 94.7% SPRT-validated WR
-- **FOMC + F&G=10 (Extreme Fear)** = volatility regime Day 5 detector was built for
+- **FOMC + F&G=8 (Extreme Fear)** = volatility regime Day 5 detector was built for
 - **NAMING**: Never use "OpenClaw" — "live-bot-v1.py" / "Ruby's trading bot" / "CLOB bot" only
 - **Wanda**: Runtime visuals at 1:30 AM from real bot data
 - **Quill**: Finalizes thread at 1:25 AM, creates deployment cron (Sat Feb 21, 9 AM IST)
+
+### 🚨 CRITICAL: Taker Fee = 1000 bps (10%) on BTC 15-min markets
+- **Confirmed**: Live API → `{"base_fee": 1000}` per token on ALL active BTC 15-min markets
+- **Impact**: FOK orders (taker) = 10% fee per trade = strategy is economically non-viable at this rate
+- **Day 6 backtest**: Taker at ~3% was already -$0.09/trade. At 10%, catastrophic.
+- ✅ **Bot runs in DRY_RUN tonight** — no real money at risk
+- 🛑 **--live go-ahead BLOCKED** until fee economics resolved
+- ✅ **@friday action DONE (01:19 IST Feb 19)**: py-clob-client v0.34.5 `__resolve_fee_rate()` fetches live fee from API (`/fee-rate`), **silently overrides `fee_rate_bps=0` → 1000 bps**. Validation only throws if BOTH user AND market fee are non-zero AND mismatched. So: orders will NOT be rejected, but the 10% fee WILL be charged. **No code fix needed. --live blocker is purely economic.**
+- **Maker alternative**: Maker orders get **rebates** (fees flow back), not charges — need to redesign order placement strategy
 
 ### 2. 🛂 Visa Biometrics — REUBEN ACTION TODAY
 - **US Consulate Mumbai** — 12:00–1:00 PM IST
@@ -60,7 +92,7 @@
 - ✅ Loki: Scaffold pre-staged `/artifacts/social/day11-scaffold.md` (16:36) + Quill-reviewed (16:42) — 3 scenarios
 - ✅ Vision: SEO pre-staged `/artifacts/seo/day11-seo-prep.md` — 3 scenarios A/B/C + 7-step checklist (16:53)
 - ✅ Fury: Intel delivered (17:25) — StartupFortune foil, WebSocket validation, naming conflict flag
-- ⏳ Wanda: Visuals NOT pre-stageable (runtime screenshots required) — builds at 1:30 AM Thu
+- ✅ Wanda: Tweet 6 comparison table pre-staged (00:37 IST Feb 19) — generator ready, amber PENDING badges, updates in ~5 sec after bot data: `/artifacts/design/day11-generate-live-comparison.py`
 - ✅ Quill: Day 11 thread pre-staged (17:42 IST) — StartupFortune 35% WR foil LOCKED, naming conflict applied (zero "OpenClaw"), Scenario A + C written, [FILL] placeholders runtime-only. `/artifacts/social/day11-live-trading-thread-prestage.md`
 - ✅ Loki: "Unsellable token" risk note added (18:06 IST) — 1-2 sentences in thread Tweet 3 annotation + editorial note for blog in scaffold
 

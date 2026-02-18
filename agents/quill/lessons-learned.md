@@ -315,3 +315,51 @@
 
 **New operating rule:** Reddit posting via automated browser = not reliably possible without saved cookies. Always alert Reuben at least 2h before the deadline (first alert, not 4th). Log EXACT post title + full body in Telegram message for zero-friction copy-paste.
 
+
+---
+
+### Task 16: Day 11 Thread Fill + Cron Creation (Feb 19, 2026 02:12 IST)
+**What I did:** Post-publish thread fill immediately after Day 11 blog published (02:05 IST). Read full blog post, confirmed Scenario C (DRY_RUN, 0 trades, fee discovery). Finalized 11-tweet thread with fee discovery as primary narrative. Placed Wanda's two pre-staged visuals correctly (Tweet 4: fee-discovery, Tweet 7: Paper vs Live comparison). Pulled direct blog quote for Tweet 9. Created deployment cron `5d527d4a` for Sat Feb 21, 9:00 AM IST.
+**Quality self-rating:** 4.5/5
+**What worked:**
+- Executed within 7 minutes of blog publish (02:05→02:12) — well under 10-min SLA
+- Pre-staging paid off: fee discovery narrative was already framed at 01:12 IST pre-eval — just needed real numbers from blog
+- Tweet 9 direct-quote approach worked perfectly: blog had exactly the right quotable line
+- Fee math in Tweet 5 is precise and derived from the blog's actual numbers ($1.50 → $0.15 → -9.88%)
+- F&G=8 irony in Tweet 6 is genuinely compelling — connects Day 5 regime detector to Day 11 result
+- Two-visual placement: Tweet 4 (fee discovery visual) + Tweet 7 (Paper vs Live PENDING visual) — correct pairing
+
+**What didn't work / could improve:**
+- Tweets 7+8 back-to-back both have comparison tables — could feel dense. Considered merging but kept them because they serve different contrasts (Paper vs Live vs StartupFortune)
+- -0.5: Tweet 8 StartupFortune table is text-only; an actual image would be stronger but Wanda's two visuals were already committed to Tweets 4+7
+
+**Lesson learned:** Pre-eval (done at 01:12 IST, T-18min) + blog read at 02:05 + thread fill at 02:12 = 7-min total execution. This is the correct workflow: pre-eval does the thinking, post-publish does the filling. Pre-staging eliminates all structural decisions at execution time.
+
+**Operating pattern reinforced:** The pre-eval window should always lock: (1) scenario choice, (2) narrative frame, (3) visual placement. Then post-publish is 100% fill-in-the-blanks. This is why 7 minutes was achievable.
+
+### Task 15: Day 11 Pre-Eval — Scenario C Lock (Feb 19, 2026 01:12 IST)
+**What I did:** T-18min pre-eval check (planned T-5min but moved it up — no reason to wait). Confirmed --live BLOCKED (10% taker fee, Jarvis 01:00 IST). Locked Scenario C. Identified narrative upgrade: fee discovery → "dry run saved $10.49" framing. Added guidance note to pre-staged thread file. Logged to daily notes.
+**Quality self-rating:** 4.5/5
+**What worked:**
+- Ran pre-eval 13 min early (T-18 vs T-5) — same information available, shorter wait, zero downside
+- Instantly caught the Scenario A → Scenario C implication from Jarvis's fee alert
+- Recognized Scenario C narrative upgrade opportunity (fee discovery > just "waiting") and documented it for post-publish fill
+- Clean daily notes entry with full action plan for 2 AM
+**What didn't work / could improve:**
+- Nothing significant — this was a decision checkpoint, not a creation task
+**Lesson learned:** Pre-eval windows are maximums, not minimums. If the information is already in the daily notes, act immediately rather than waiting for the exact scheduled time. T-18 is better than T-5 because it leaves more buffer if anything unexpected surfaces.
+
+---
+
+### Task 17: Day 12 Thread Pre-Stage (Feb 19, 2026 — 02:42 IST)
+**What I did:** Proactively pre-staged Day 12 thread scaffold after seeing Fury's @loki @quill intel note in daily notes. Fury filed `/artifacts/research/fury-day12-prestage-intel-0225.md` at 02:25 IST with TIER 1 foil (lorine93s neutral MM bot vs Ruby's directional signal). Day 12 research fires 1:30 AM Fri Feb 20. Created 11-tweet scaffold with 3 hook options, scenario decision tree, all [FILL] placeholders, deployment cron note (Tue Feb 25 9 AM IST recommended).
+**Quality self-rating:** 4.5/5
+**What worked:**
+- Pre-staging 23h before research session fires = maximum buffer for refinement
+- Fury intel directly usable: lorine93s competitor table became Tweet 4+5 (no rewrite needed)
+- Three-scenario hook structure (Option A/B/C) means no structural decisions at fill time
+- Honest about GTC fill rate challenge in Tweet 8 — maintains Ruby's transparency voice
+- Cron slot research embedded in scaffold (prevents scrambling for slot at 2 AM)
+**What didn't work / could improve:**
+- Rebate rate placeholder needs live lookup at fill time (not a static number) — logged as [FILL] with source
+**Lesson learned:** The moment Fury files competitive intel with @quill tag = pre-stage the thread scaffold immediately (even at 2:42 AM). Intel freshness window is short; structural thinking doesn't require the actual Day 12 numbers. Pre-staging is always faster when the competitive contrast is fresh in working memory.

@@ -14,6 +14,110 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-19 03:08 IST — Day 12 SEO Pre-Staging (GTC Maker Order Redesign)
+**Task:** Proactive Day 12 SEO pre-staging — squad had Fury intel (02:25), Loki scaffold (02:51), Quill thread (02:42) all filed, but zero SEO coverage for Day 12.
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Loaded all Day 12 context: Fury intel (lorine93s foil, Polymarket NCAAB/Serie A maker rebate expansion), Loki's scaffold (3 scenarios A/B/C, explicit "SEO NOTE for Vision" with keyword suggestions), Quill's thread
+- Verified Day 11 blog closing confirms Day 12 topic: "Redesign order execution for GTC (maker) orders" — Topic Source of Truth rule applied ✅
+- Ran python char-count verification for all 6 description variants BEFORE writing the pre-staging file (A1: 145, A2: 151, B1: 155, B2-fix: 154, C1: 145, C2-fix: 148 — all ✅ within 145-158 bounds)
+- Built `/artifacts/seo/day12-seo-prep.md`:
+  - 3-scenario coverage (A/B/C) with 2 description variants each — all char-verified
+  - 3-tier keyword strategy: Primary (polymarket maker orders, GTC limit orders polymarket), Secondary (taker fee maker rebate, CLOB python bot), Tertiary (CLOB limit order strategy, FOK vs GTC)
+  - SERP competition mapped: lorine93s GitHub ranks for maker-bot queries → Ruby can outrank with blog depth
+  - OG image priority chain (Wanda Day 12 assets → Day 11 fee discovery fallback)
+  - 7-step checklist with ready-to-paste bash audit commands
+  - Intel Integration SLA triggers for T-2h/T-30min before execution
+  - Naming conflict confirmed still active (finbold) — zero "OpenClaw"
+
+**Why 4.5 not 5:**
+Wanda hasn't yet confirmed Day 12 visual filenames (pre-staged at T-22.5h, before Wanda's Day 12 session). OG Image Strategy covers this with fallback chain, but ideally the primary filename would be confirmed. Will need T-1h visual asset check (per operating rule) at ~23:30 IST Thu Feb 19.
+
+**Lesson Learned:**
+**Post-completion pre-staging is the highest-value proactive work.** After Day 11 went 100% complete at 02:45 IST, the squad's Day 12 pre-staging cycle was already ~70% done by 03:08 IST (Fury: 02:25, Quill: 02:42, Loki: 02:51) — but SEO was the gap. Loki explicitly flagged "SEO NOTE for Vision" in the scaffold. The right move was to execute immediately on the next heartbeat rather than waiting for a @vision mention.
+
+**New Operating Rule (extension of existing):**
+**Post-Day Pre-Staging Checklist:** After any Day N goes 100% complete, check if Fury/Loki/Quill have all filed Day N+1 pre-staging. If they have and SEO is missing → execute Day N+1 SEO pre-staging at the next heartbeat. Don't wait to be @mentioned. Loki's scaffold section "SEO NOTE for Vision" is sufficient signal to act.
+
+### 2026-02-19 02:08 IST — Day 11 Post-Publish SEO Execution
+**Task:** Execute 7-step Day 11 SEO checklist post-publish — Scenario C (DRY_RUN / fee discovery)
+**Self-Rating:** 5/5
+
+**What I Did:**
+- Day 11 blog published at 02:05 IST. Triggered on next heartbeat (02:08 IST).
+- Ran 7-step checklist immediately:
+  1. ✅ Description: 148 chars — "Live bot dry run revealed 1000 bps..." — matches Scenario C ✅
+  2. 🔧 OG Image: `day11-dry-run.png` referenced in YAML but NOT in post dir → FIXED: copied `day11-fee-discovery.png` as `day11-dry-run.png` (Wanda's fee discovery visual, correct story)
+  3. ✅ Title: "Day 11: The Dry Run That Saved $10.49" — zero "OpenClaw" (SERP-level naming conflict respected)
+  4. ✅ Day 10→11 nav: confirmed in Day 10 post ("What Day 11 Will Cover" section)
+  5. ✅ Subscribe CTA: in Day 11 footer nav (Previous links + Full Series + Subscribe)
+  6. ✅ No "OpenClaw": grep clean
+  7. ✅ Full site audit: 12/12 posts — descriptions in bounds (148-160), OG images exist, Subscribe CTAs present
+- Commit 50253e3 pushed to main
+
+**Bugs Caught:**
+- Missing OG image file: YAML referenced `day11-dry-run.png` but file wasn't in post dir. Fixed by copying Wanda's pre-staged `day11-fee-discovery.png`.
+
+**Why It Worked:**
+Pre-staging the full scenario weeks ahead (Scenario C template with fee discovery narrative) meant 0 decision-making at 2 AM. Execution was pure mechanical checklist.
+
+**Self-Rating Justification (5/5):**
+Caught a real production bug (missing OG image = broken social card on every Twitter/Telegram share of Day 11). Fixed before site propagated. Full 7-step checklist executed clean. Full site audit shows 12/12 healthy.
+
+**Lesson Learned:**
+**The OG image file can be missing even when the YAML `image:` field is set.** Research agents write YAML front matter with the intended filename but don't always copy the actual PNG file into the post directory. The 7-step checklist must verify (a) `image:` field exists AND (b) the referenced file actually exists in the post directory. Not both at once = broken social sharing.
+
+**New Operating Rule (extending OG Image Existence Check):**
+**Post-Publish OG File Verification:** After any blog publish, immediately run `ls posts/[day]/` and check the listed files against the YAML `image:` field. If the file isn't there, copy from `/artifacts/design/` before anything else. A missing OG file breaks social card rendering on every platform — higher priority than any keyword optimization.
+
+### 2026-02-19 01:08 IST — Day 11 Fee Discovery Integration (Jarvis 01:00 confirmed 10% taker fee)
+**Task:** Intel Integration SLA — Jarvis confirmed fee rate blocker at 01:00 IST; Loki updated scaffold at 01:06 IST. SEO pre-staging had no fee narrative.
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Jarvis 01:00 confirmed: BTC 15-min market fee_rate = 1000 bps (10% taker). --live BLOCKED. Bot runs DRY_RUN.
+- Loki 01:06 added fee discovery framing to scaffold ("dry run saved $10.49 — exactly what dry runs are for")
+- My SEO pre-staging was current at 00:23 but had no fee narrative — Template C was generic DRY_RUN boilerplate
+- **Updated `/artifacts/seo/day11-seo-prep.md`**:
+  1. Header timestamp + new FEE DISCOVERY section (Scenario C confirmed base case, --live BLOCKED)
+  2. Template C: replaced 1 generic template → 3 variants (C1/C2/C3) with fee discovery as headline, all 148-149 chars ✅
+  3. 3 new keywords: `polymarket taker fee` (SECONDARY), `polymarket CLOB fee rate` (TERTIARY), `trading bot dry run importance` (TERTIARY)
+
+**Why It Mattered:**
+Template C was "Waiting for deployment window" — completely wrong narrative now. Day 11 story is "dry run caught 10% fee before real money fired." If the 1:30 AM executor uses stale Template C, the description will be factually inaccurate and miss a high-intent keyword (`polymarket taker fee` — traders are actively searching this post-Jan 2026 fee intro).
+
+**Self-Rating Justification (4.5/5):**
+Clean, timely, complete. -0.5 because `polymarket taker fee` is still a moderate-value keyword (may not have large search volume yet), but it's exactly the kind of high-intent, zero-competition term that captures the right audience (traders investigating Polymarket fee structure).
+
+**Lesson Learned:**
+**Blocking technical events (fee discovery, API outage, wallet issue) that force a scenario change are the highest-priority Intel Integration SLA triggers.** When a go-ahead is BLOCKED, the primary scenario becomes the fallback — and if the fallback template was written as "generic waiting state," it needs to be upgraded to reflect the actual reason. Generic waiting copy = missed narrative + missed keywords.
+
+**New Operating Rule (extending Dev Config Commit Sync):**
+**Scenario Lock Protocol:** When any blocker event (fee rate, API failure, config issue) forces a scenario change to the confirmed base case, immediately (a) mark the new base case as ⭐ CONFIRMED in the pre-staging file, (b) upgrade the fallback template from generic to narrative-specific, and (c) add blocker-specific keywords. Don't let "fallback scenario" mean "placeholder copy."
+
+### 2026-02-19 00:23 IST — Day 11 F&G Correction (Fury 00:10 sweep: 10→8)
+**Task:** Intel Integration SLA — apply F&G=8 correction from Fury's 00:10 sweep to Day 11 SEO pre-staging
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- 00:08 beat had no delta → HEARTBEAT_OK
+- Fury 00:10 sweep: F&G dropped from 10 to 8 (deepening fear into bot run)
+- Loki applied this at 00:21 to the Twitter thread (Tweet 2b)
+- My SEO pre-staging referenced F&G=10 in 2 places — immediately patched:
+  1. FOMC section body text: "10 (Extreme Fear)" → "8 (Extreme Fear) — dropped from 10 at 22:40 to 8 by 00:10 IST"
+  2. Optional description template: "F&G=10" → "F&G=8" + narrative note about deepening fear
+- Header timestamp updated with new update entry
+
+**Why It Mattered:**
+If the 1:30 AM executor uses the optional description with F&G=10, it contradicts the fear narrative (which actually strengthened). A live trader searching "trading bot extreme fear" will see a stale metric in the description. Small fix, but precision matters for the fear/FOMC narrative angle.
+
+**Self-Rating Justification (4.5/5):**
+Clean, timely, within Intel Integration SLA. -0.5 because the impact is low (the optional description line may not even be used if FOMC isn't prominent). But SLA must be followed regardless.
+
+**Lesson Learned:**
+**Sentiment indices (F&G) can shift meaningfully in the 90 minutes before a major execution window.** Two data points from Fury were 90 min apart (22:40 and 00:10) and F&G moved from 10 to 8. In a fear narrative, this is a *narrative upgrade* (deeper fear = stronger story). Always check the most recent Fury sweep for sentiment index updates, not just research findings.
+
 ### 2026-02-18 22:53 IST — Day 11 FOMC/Extreme Fear Keyword Integration (Fury T-2h sweep 22:40)
 **Task:** Intel Integration SLA — integrate FOMC macro context + 9th builder from Fury T-2h mandatory sweep
 **Self-Rating:** 4/5

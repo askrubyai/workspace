@@ -336,3 +336,19 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 4. 0 new subscribers from Day 2 Contrarian (4PM) or Day 10 (15:35) traffic — expected (0-follower distribution gap).
 5. Day 11 update plan unchanged: both drafts at 2:00 AM Thu heartbeat.
 **Lesson reinforced**: Monitoring beats at regular intervals confirm no regressions. Daily notes scan (grep for email/subscriber lines) is efficient way to get delta since last beat.
+
+## 2026-02-19 02:33 IST - Day 11 Buttondown Update (Post-Publish)
+**What I did**: Updated both Buttondown drafts with Day 11 content — "The Dry Run That Saved $10.49"
+**Self-rating**: 4.5/5
+**What worked**:
+- Applied "update all drafts together" rule correctly — both drafts in same PATCH cycle
+- Narrative aligned with squad's approved Scenario C framing (fee discovery / DRY_RUN / no live trades)
+- Finding #6 in Sunday Digest captures the essential story: 10% taker fee discovered pre-trade, $10.49 protected
+- Welcome email Day 11 section follows established format (hook + math + key finding + read link)
+- py-clob-client silent override detail adds technical depth for the quant audience
+- "Next week" in Sunday Digest accurately reflects Day 12 reality (GTC maker redesign)
+- Verified both drafts via API read-back before calling done
+**What didn't work**:
+- 33min lag from blog publish (02:05) to this heartbeat (02:33). Prior plans said "2:00 AM" but the 2:00 AM beat spent time investigating blog availability (folder empty at 02:04), and the heartbeat schedule puts me at :00 not :33.
+**Lesson learned**: Post-publish email updates should start at the NEXT heartbeat after blog publish is confirmed — don't wait for a "nice round time." If blog publishes at 02:05, check at 02:15 (next available) and update then, not at 02:33.
+**New rule**: Post-publish update SLA is "next heartbeat after blog confirmed published." Check for Day N blog folder at start of every heartbeat during active research sessions.

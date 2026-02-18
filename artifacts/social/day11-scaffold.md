@@ -339,13 +339,39 @@ This earns credibility with readers who've seen the StartupFortune post-mortem. 
 
 Suggested framing for the blog intro or context section:
 
-> We designed a regime detector to identify high-volatility windows — post-spike VRP expansion, elevated uncertainty, markets mispricing short-term binary outcomes. Day 11 starts during Extreme Fear (F&G: 10) on the day FOMC minutes were released. If the regime detector was built for any environment, it was built for this one.
+> We designed a regime detector to identify high-volatility windows — post-spike VRP expansion, elevated uncertainty, markets mispricing short-term binary outcomes. Day 11 starts during Extreme Fear (F&G: 8) on the day FOMC minutes were released. If the regime detector was built for any environment, it was built for this one.
 
 This is a strong narrative closer if live trades execute (validates the entire theory arc). If no go-ahead was received (Option C), it still works as a "the timing is right, but we wait" framing that maintains tension.
 
 **Placement**: Opening paragraph or "Why Today" context block. Do not bury it. This is the 11-day payoff sentence: "We built a system for this exact market condition."
 
-**Source credit**: `fury-day11-t2h-confirmation-2240.md` (F&G=10, FOMC angle confirmed)
+**Source credit**: `fury-day11-t2h-confirmation-2240.md` (F&G=8, FOMC angle confirmed — fear deepened from 10→8 in the 90min before bot run)
+
+---
+
+---
+
+## ⚠️ CRITICAL NARRATIVE UPDATE — Fee Discovery (Loki — 01:06 IST Feb 19)
+
+**Source**: Jarvis 01:00 IST investigation + Fury 00:55 IST intel → fee alert CONFIRMED
+
+**Finding**: Polymarket BTC 15-min markets have a **10% taker fee (1000 bps)**. All `live-bot-v1.py` FOK orders are taker orders. At 10%/trade, the strategy is economically non-viable — --live go-ahead is **BLOCKED** until fee economics resolved.
+
+**Narrative impact**: Day 11 will not have live trades. This IS NOT just Option C (generic "no go-ahead"). This is a specific, highly valuable story: **the dry run revealed a market structure constraint that saved real money before the first live order fired.**
+
+**Recommended narrative frame for blog post author** (replaces generic Option C framing):
+
+> The first day of live trading didn't go as planned — and that's exactly what made it valuable.
+> 
+> Before a single real order was placed, the dry run surfaced a market structure constraint that the paper runs couldn't surface: BTC 15-min markets charge 10% (1000 bps) taker fees. At that rate, a strategy that earned +0.12% per trade with maker orders loses -9.88% per trade with taker orders. The architecture was sound. The fee structure was wrong.
+>
+> This is what a dry run is for.
+
+**Blog Tweet 9 implication** (Loki's job post-publish): The screenshot-worthy line for Day 11 is likely something like: "The dry run didn't find zero trades. It found a 10% fee. That's a more valuable discovery." Write Tweet 9 based on the actual blog — but protect this fee discovery framing as the core insight.
+
+**Placement**: Blog intro or "What Day 11 Found" section. Do NOT bury it. Fee discovery + DRY_RUN protection = the entire value proposition of running a dry run at all.
+
+**@loki directive from Jarvis (01:00 IST)**: "Day 11 blog — include fee discovery finding if Reuben confirms scope." Pre-staging this note so Reuben/the blog author can decide whether to lead with it at 1:30 AM.
 
 ---
 

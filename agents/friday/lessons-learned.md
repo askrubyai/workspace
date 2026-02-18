@@ -832,6 +832,23 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 **Verdict:** Nothing urgent. Infrastructure healthy. Paper bot collecting high-quality Day 9 data. Standing down.
 **Self-Rating:** 5/5
 
+## Heartbeat: Feb 19, 2026 00:34 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 4D uptime — HTTP 200, 0% CPU
+- ✅ Mission Control UI: pid 843, 30h uptime — HTTP 200, 0% CPU
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — single process, no regression
+- ✅ No assigned tasks (Convex unavailable — consistent). No @friday mentions.
+- ✅ live-bot-v1.py: staged, NOT running (correct — DRY_RUN, awaiting Reuben go-ahead)
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED)
+- ✅ Squad sweep 00:00–00:30 IST clean — all agents HEARTBEAT_OK
+- ⏰ T-56min to Day 11 (`efb8d151`, 1:30 AM IST) — zero dev gaps
+
+**Verdict:** Nothing urgent. Infrastructure fully healthy. Standing down.
+**Self-Rating:** 5/5
+
+---
+
 ## Heartbeat: Feb 18, 2026 22:04 IST
 
 **Status Check:**
@@ -1460,4 +1477,48 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 - ✅ Auto-sync 20:04 IST committed (lessons-learned + fury intel updated)
 
 **Verdict:** Nothing urgent. Infrastructure healthy. live-bot ready for Day 11 1:30 AM. Standing down.
+**Self-Rating:** 5/5
+
+## Heartbeat: Feb 19, 2026 01:19 IST — py-clob-client Fee Investigation (Proactive Early Delivery)
+
+**Task:** Verify py-clob-client v0.34.5 fee override behavior for live-bot-v1.py
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Action was tagged "@friday post-2 AM" but current time was T-11min to bot run
+- Executed proactively — T-41min earlier than planned
+- Read `__resolve_fee_rate()` source directly in py-clob-client v0.34.5
+- Traced the full code path with `fee_rate_bps=0`
+- Confirmed: client fetches live 1000 bps from `/fee-rate` endpoint, silently overrides user's 0
+- Validation only raises if BOTH user AND market fee > 0 AND mismatched (ours = 0, so safe)
+
+**Verdict:**
+- ✅ No code fix needed
+- ✅ Orders won't be rejected
+- ⚠️ 10% fee will apply to live orders (economics decision for Reuben)
+
+**Infrastructure confirmed:**
+- API/UI: HTTP 200, 4D/31h uptime
+- ngrok: stable pid 88657
+- live-bot-v1.py staged correctly, DRY_RUN=True
+- paper-bot: not running (correct)
+
+**Lesson:** "Post-2 AM" tags on investigations are scheduling suggestions, not blockers. If I have T-11min of idle time and the investigation is low-risk (read-only code inspection), execute early and deliver the answer sooner. Earlier answers = earlier unblocking decisions.
+
+**New rule:** When an action item has a scheduled time but is actually "do this after event X", and I have idle capacity before X, do it. Read-only investigations are always safe to run early.
+
+## Heartbeat: Feb 19, 2026 01:49 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 4D uptime — HTTP 200 (479KB, 0% CPU)
+- ✅ Mission Control UI: pid 843, 31h uptime — HTTP 200 (0% CPU)
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — single process, no regression
+- ✅ No assigned tasks (Convex unavailable — consistent). No @friday mentions.
+- ⏳ Day 11 blog post: NOT YET PUBLISHED (research session T+19min in progress — normal)
+- ✅ live-bot-v1.py: staged and correct (DRY_RUN mode, awaiting Reuben --live go-ahead)
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED)
+- ✅ All prior Friday work complete: py-clob-client fee override analysis, watchdog EOF fix, zombie fix, live-bot build
+- ✅ --live blocker: purely economic (10% taker fee on BTC 15-min markets), not a code issue
+
+**Verdict:** Nothing urgent. Infrastructure fully healthy. Day 11 session in progress. Standing down.
 **Self-Rating:** 5/5

@@ -62,10 +62,11 @@ Day 11 is the real test.
 
 ### Tweet 2b — FOMC/Extreme Fear Context [OPTIONAL — include if blog leans into macro narrative]
 [Quill annotation — 22:57 IST: Fury T-2h sweep (22:40) surfaced FOMC minutes released today + F&G=10 (Extreme Fear). Loki added editorial note to scaffold. Vision added "trading bot extreme fear" keyword to SEO prep. If Day 11 blog uses the FOMC/volatility regime narrative, include this tweet between T2 and T3. If blog is execution-focused (trade log only), skip it. Evaluate at 1:25 AM against actual blog draft.]
+[Loki patch — 00:21 IST Feb 19: F&G updated 10→8 per Fury's 00:10 IST sweep. Fear deepened in the 90-min pre-run window. Strengthens narrative. Tweet text corrected below.]
 ```
 One more thing about timing.
 
-FOMC minutes dropped today. Fear & Greed: 10 (Extreme Fear).
+FOMC minutes dropped today. Fear & Greed: 8 (Extreme Fear).
 
 Day 5 of this research built a volatility regime detector specifically for windows like this.
 
@@ -201,6 +202,26 @@ This is proof.
 
 Day 12: [TEASER].
 ```
+
+---
+
+---
+
+## 🚨 FEE DISCOVERY UPDATE (Quill pre-eval, 01:12 IST Feb 19)
+**Context**: Jarvis confirmed at 01:00 IST — BTC 15-min markets charge **10% taker fee (1000 bps)**. live-bot-v1.py uses FOK = taker orders. This makes --live BLOCKED.
+
+**Narrative upgrade for Scenario C**: This is NOT just "waiting for go-ahead." The dry run FOUND the 10% fee before it cost real money. This is the story:
+- Paper runs → validated the edge
+- Dry run → found the market structure bomb (10% taker = economically non-viable)
+- **"The dry run saved $10.49 before the first order."** That IS the differentiation from StartupFortune.
+
+**Post-publish fill guidance (01:30-02:00 AM)**:
+- Tweet 4 ("Why We Wait") → upgrade to include fee discovery if Loki covers it in Day 11 blog
+- Tweet 3 checkout list → add: `✅ Taker fee: confirmed + accounted for` if blog mentions it
+- Find the quotable line about fee discovery for Tweet 9
+- If fee discovery is NOT in the blog (Reuben may have changed scope), use Scenario C as-is
+
+**BASE CASE CONFIRMED**: Scenario C. No --live go-ahead. Dry run data only.
 
 ---
 

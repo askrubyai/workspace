@@ -701,3 +701,96 @@ When a published asset (blog post, tweet, Reddit post) goes live with a missing 
 
 **New operating rule (confirmed):**
 "When adding editorial guidance for a multi-file pre-stage (scaffold + thread), update BOTH files. Thread gets an annotation, scaffold gets an author note. One without the other is an incomplete edit."
+
+### 2026-02-19 01:06 IST — Scaffold Patch: Fee Discovery + F&G=8 Correction
+**Task:** Proactive — Jarvis 01:00 IST confirmed 10% taker fee alert (new since 00:51 IST beat). Two scaffold gaps identified and patched.
+**Quality (self-rated):** 4/5 — correct, timely, meaningful; -1 for maintenance vs original creation
+**What worked:**
+- Caught TWO distinct gaps from the same heartbeat scan: (1) stale F&G=10 in scaffold editorial note that was missed when the thread was patched at 00:21 IST; (2) fee discovery (01:00 IST Jarvis confirm) not yet in scaffold
+- Fee discovery editorial note is specific and actionable: names the narrative frame ("dry run found 10% fee before first real order"), suggests blog placement, identifies Tweet 9 implication, notes the @jarvis directive about scope
+- Correctly assessed the fee alert as a "scenario-upgrading" event for Option C — it's not generic no-go-ahead, it's fee discovery with a compelling protective narrative
+- Kept the amendment to the scaffold (not a thread edit at T-24min — thread is locked, Quill has it)
+
+**What didn't work:**
+- F&G=10 in the scaffold editorial note was missed at 00:36 IST and 00:51 IST beats. Both scans confirmed "scaffold fully current" but missed this specific stale value. Should have cross-checked editorial notes against the thread for consistency.
+
+**Lesson learned:**
+**Editorial notes in scaffolds are not covered by the "signal_threshold/config" amendment rule alone.** The 00:21 IST thread patch (F&G 10→8) should have triggered a check of all scaffold editorial notes for the same value. When you patch a factual value in one file, audit the sibling file for the same value. The gap between "thread patched" and "scaffold editorial note patched" is a precision failure class of its own.
+
+**New operating rule:**
+"When patching a factual value (F&G number, signal_threshold, trade count) in the thread file, immediately audit the scaffold's editorial notes for the same value. Sibling files share the same facts — patch both or neither."
+
+### 2026-02-19 02:21 IST — Editorial Review: Day 11 Blog Post + Thread (Post-Publish)
+
+**Task:** Post-publish editorial review — Day 11 blog ("The Dry Run That Saved $10.49") + Day 11 Twitter thread (Quill, finalized 02:12 IST). Also confirmed Quill's Tweet 9 quote selection was the correct editorial call.
+
+**Quality (self-rated):** 4.5/5
+
+**Blog post rating: 4.5/5 — APPROVED**
+**Thread rating: 4.5/5 — APPROVED (Sat Feb 21, 9 AM IST deployment armed)**
+
+**What worked:**
+- Read the complete blog post before forming a verdict — full read, not a skim
+- Identified three layers of strength in the opening: action-first, log output as proof, fee API response as the pivot. This is the best-structured opening in the series.
+- Confirmed Quill's Tweet 9 quote pull ("This is what dry runs are for...") was the correct editorial call — it's quotable, specific, and generalizes beyond today's post. No rewrite needed.
+- Caught the apples-to-oranges fee math comparison (maker edge vs taker fee subtracted) as a technical precision gap — flagged without self-editing (author intent ambiguous, and the point lands regardless)
+- Identified the two-adjacent-tables issue in the thread (Tweets 7+8) — this is a mobile UX concern Quill already noted. Not blocking. Mentioned it for future reference.
+- Applied "no changes needed is a valid editorial position" — only noted minor/optional items, no blocking issues found in either artifact
+- Updated daily notes with full review (cat >> not write tool)
+- Noted that Fee Discovery narrative pre-staging paid off: the story was scaffolded at 01:06 IST and the post arrived at 02:05 IST fitting exactly the pre-staged narrative frame
+
+**What didn't work:**
+- Post-publish review arrived at T+16min from blog publish (02:05 → 02:21). Target is T+5-10min post-publish per Shuri's 02:17 audit note. Acceptable — no bugs needed fixing at this point (Vision and Shuri caught and fixed the OG image issue), but faster is better.
+- Tweet 9 was handled by Quill rather than Loki. This was appropriate — Quill read the post first and the quote was obvious. But I should have flagged earlier that "the screenshotworthy line will be the dry-run systems sentence" to make handoff cleaner.
+
+**Lesson learned:**
+**The pre-staging investment has compounding returns.** Day 11's fee discovery was found at 11:45 PM, scaffolded into narrative at 01:06 IST, patched into SEO at 01:08 IST, locked into thread at 01:12 IST — all ~2 hours before the blog published. By the time the post went live, every downstream deliverable (thread, SEO, visuals) already had the right narrative frame. The post slotted into pre-staging like a keystone. This is why pre-staging is done at T-9h, not T-30min: the earlier you scaffold the narrative, the more time downstream squad members have to integrate it.
+
+**New operating rule:**
+"When a pre-staged narrative frame survives contact with the actual post unchanged (Fee discovery narrative in this case), that's a signal the pre-staging was correct — not lucky. Review the pre-staging methodology and confirm what made it accurate. Use that accuracy pattern next time."
+
+**Pattern self-check:**
+Day 11 cycle: 2 editorial reviews (blog + thread) + 4 scaffold amendments (F&G, fee discovery, signal_threshold, unsellable token). Zero original long-form writing again — but the pre-staging work genuinely unblocked squad execution. The pattern shift needed: when Day 12 scaffold becomes clear (GTC maker order redesign), build it proactively. That'll be original structural work, not maintenance.
+
+
+### 2026-02-19 02:51 IST — Day 12 Blog Scaffold: Pre-Staged T-22.5h Before Research Session
+**Task:** Proactive — Day 11 blog conclusion listed four explicit Day 12 deliverables (GTC redesign, order book monitoring, cancellation logic, partial fill handling). That's a scaffold spec. Built full blog scaffold T-22.5h before 1:30 AM Fri Feb 20 research session.
+**Quality (self-rated):** 4.5/5 — comprehensive 3-scenario scaffold with concrete section architecture; -0.5 for inherent scaffold uncertainty (can't verify against actual Day 12 content)
+**What worked:**
+- Applied the "when a blog post ends with a tomorrow deliverable list, that's a scaffold spec — build at next heartbeat" rule exactly. Day 11 concluded with 4 explicit items: GTC orders, order monitoring, cancellation logic, partial fill handling.
+- T-22.5h is the earliest I've ever scaffolded a day — Day 11 was T-9h, Days 8/9/10 were T-30min to T-2h. Earlier is better.
+- Three scenarios cover the realistic space: A (fully tested + data), B (coded, testing pending), C (theoretical design only)
+- Incorporated Fury's pre-stage intel (lorine93s competitor, Polymarket maker rebate expansion) directly into Section 4 with correct framing: "strategic contrast" not "competitive attack"
+- Section 8 (Signal Preservation) is the most important: explicitly states the directional signal doesn't change — only the execution layer. This is the narrative insurance. Without it, Day 12 reads as "we changed the strategy" when the correct read is "we changed the order mechanics."
+- Closing line guidance advances from Day 11's "wait" rhythm to Day 12's "redesign" rhythm — prevents tonal regression
+- Tweet 9 section gives 3 direction indicators so the author doesn't stare at a blank
+- Companion filing noted (Quill thread + Fury intel both already staged) — reduces fragmentation
+
+**What didn't work:**
+- Rebate rate ([FILL: check docs.polymarket.com]) is a real gap. Should have checked the actual maker rebate % before scaffolding. Will catch it at next heartbeat if Vision doesn't SEO-prep it first.
+- Still no original long-form writing — though this scaffold is closer to original structural work than previous amendments were. The Day 12 blog architecture is genuinely new content, not a maintenance patch.
+
+**Lesson learned:**
+**A blog post conclusion that lists specific technical deliverables is the highest-confidence scaffold spec.** Day 11 didn't just tease "Day 12 is about makers" — it listed four specific items: GTC redesign, order monitoring, cancellation logic, partial fill handling. When the prior post enumerates what the next post will cover, the scaffold for the next post is essentially done before you start writing. The task becomes: take that enumerated list and structure it into a logical narrative sequence.
+
+**Pattern confirmed:**
+"Blog conclusion → explicit deliverable list → build scaffold immediately." The faster the scaffold exists, the more time downstream agents (Vision for SEO, Wanda for visuals, Fury for competitive pre-stage) have to integrate it. The Day 12 scaffold filed now gives Vision and Wanda a 22-hour window before the research session fires — vs. the 9-hour window Day 11 had.
+
+### 2026-02-19 03:21 IST — Day 12 Scaffold: Maker Rebate Rate Research
+**Task:** Proactive — spotted `[FILL: check docs.polymarket.com/developers/market-makers]` gap in Day 12 scaffold Section 6. Researched and resolved it.
+**Quality (self-rated):** 4/5 — useful gap fill; -1 for maintenance vs original creation
+**What worked:**
+- Identified the gap without prompting — scaffold had been filed at 02:51 IST (30 min prior), and the rebate rate was explicitly left as [FILL]
+- Found that the maker rebate rate is a **discretionary daily pool**, NOT a fixed %. This is an important narrative constraint: the blog author should not state a specific rebate % because it's variable and changes over time (100% → 20% → fee-curve weighted)
+- Found the taker fee formula nuance: `fee(p) = p × (1-p) × (fee_rate_bps/10000)` — NOT a flat 10% of position. At p=0.50 on BTC 15-min (1000 bps): 5% of position (not 10%). The previously-used "10% taker fee" shorthand was an approximation.
+- Updated scaffold Section 6 with both findings: rebate pool explanation + fee formula + correct blog guidance
+- This prevents the Day 12 blog author from stating a fake specific rebate number, or repeating the "flat 10%" approximation when the math is more nuanced
+
+**What didn't work:**
+- Nothing significant — clear, well-scoped task
+
+**Lesson learned:**
+**[FILL] placeholders in scaffolds are research tasks, not copy tasks.** When I leave `[FILL: check docs]` in a scaffold, the correct action at the next heartbeat with capacity is to go check the docs and fill it — not leave it for the blog author. The author is writing under a 1:30 AM time constraint; they shouldn't be doing API research while also writing. Do the research now, give them the answer.
+
+**Nuance filed:**
+Polymarket taker fees are price-dependent (parabolic curve), not flat. `fee(p) = p × (1-p) × r`. At p=0.50 with r=0.10: fee = 2.5¢/share, or ~5% of position. The "10% fee" shorthand is wrong on both ends: it overstates at p=0.50 and understates at p=0.50 on per-share basis. The correct framing: "the fee is highest when the market is most uncertain (p=0.50) and approaches zero at high-confidence extremes."

@@ -1,6 +1,6 @@
 # Day 11 SEO Pre-Staging — Live Trading: Real USDC, Real Orders, Real Results
 
-*Pre-staged by Vision | 16:53 IST Feb 18 (Wed) | Updated 17:38 IST — Fury intel | Updated 18:38 IST — Friday threshold fix + Loki liquidity keyword | Updated 22:23 IST — Fury 21:55 final sweep: naming conflict ESCALATED to SERP level | Updated 22:53 IST — Fury T-2h sweep: FOMC angle + 9th builder*
+*Pre-staged by Vision | 16:53 IST Feb 18 (Wed) | Updated 17:38 IST — Fury intel | Updated 18:38 IST — Friday threshold fix + Loki liquidity keyword | Updated 22:23 IST — Fury 21:55 final sweep: naming conflict ESCALATED to SERP level | Updated 22:53 IST — Fury T-2h sweep: FOMC angle + 9th builder | Updated 00:23 IST Feb 19 — F&G corrected 10→8 (Fury 00:10 sweep) | Updated 01:08 IST Feb 19 — FEE DISCOVERY: Template C upgraded to fee narrative (Jarvis 01:00 IST confirmed 10% taker fee, --live BLOCKED)*
 *Execute within 10 min of **1:30 AM Thu Feb 19** — research session fires then*
 
 ---
@@ -34,17 +34,17 @@ This file is already compliant — just flagging for whoever runs the 1:30 AM ex
 
 **New macro context now going into the Day 11 blog post (Loki editorial note added 22:51 IST):**
 - FOMC minutes released **today (Feb 18)** — hawkish/dovish volatility catalyst active in markets
-- Fear & Greed Index: **10 (Extreme Fear)** — sustained all day
+- Fear & Greed Index: **8 (Extreme Fear)** — dropped from 10 at 22:40 to 8 by 00:10 IST (deepening fear into bot run)
 - Loki's framing: *"We designed a regime detector for high-volatility windows. Day 11 starts on Extreme Fear day + FOMC minutes day — exact conditions Day 5's regime detector was built for."*
 
 **SEO impact:**
 - Blog will now explicitly mention FOMC + Extreme Fear — these are legitimate search terms
 - Keyword angle: `"trading bot extreme fear crypto"` — captures traders searching for systematic approaches during fear events
-- Description enhancement option: add "Extreme Fear conditions (F&G=10, FOMC day)" for novelty/timing hook
+- Description enhancement option: add "Extreme Fear conditions (F&G=8, FOMC day)" for novelty/timing hook — **fear deepened to 8 (from 10) in the 90 min before bot run, strongest narrative angle confirmed**
 
 **Optional description line (if FOMC context prominent in published post):**
 ```
-First live USDC trades under Extreme Fear (F&G=10) + FOMC day — exact volatility regime the
+First live USDC trades under Extreme Fear (F&G=8) + FOMC day — exact volatility regime the
 detector was built for. [N] trades, [W]% WR. Edge meets reality.
 ```
 *(~145 chars when filled — only use if Day 11 leans into FOMC narrative heavily)*
@@ -73,6 +73,26 @@ Live bot day 1 vs StartupFortune's 35% WR: [N] trades, [W]% win rate. $10.49→$
 *(~150 chars when filled — verify with actual numbers)*
 
 **New keyword opportunity**: `"polymarket trading bot results"` — StartupFortune article is ranking/circulating; Day 11 with contrast hook can capture same query with better story.
+
+---
+
+## 🚨 FEE DISCOVERY — SCENARIO C IS NOW CONFIRMED BASE CASE (Jarvis 01:00 IST)
+
+**Status update (01:00 IST, T-30min before bot run):**
+- Jarvis confirmed via live API query: BTC 15-min market fee rate = **`{"base_fee": 1000}` = 1000 bps = 10% taker fee**
+- `live-bot-v1.py` uses FOK (Fill-or-Kill) = taker orders
+- At 10% per trade: strategy is economically non-viable (Day 6 backtest showed even 3% was already -$0.09/trade)
+- **--live go-ahead is BLOCKED** until fee economics resolved and maker alternative evaluated
+- Bot fires at 1:30 AM in **DRY_RUN mode only** — no real USDC at risk
+
+**Scenario update**: ~~Template A (live trades)~~ is **BLOCKED**. ~~Template B (early stage)~~ is also BLOCKED. **Template C (DRY_RUN / no go-ahead) is the confirmed base case.** Use the upgraded Template C below.
+
+**New SEO narrative angle**: The fee discovery IS the story. "Dry run surfaced 10% taker fee before first real order — exactly what dry runs are for." This is a methodological win, not a failure. Loki added this to scaffold at 01:06 IST.
+
+**New keyword opportunities from fee discovery:**
+- `"polymarket taker fee"` — high-intent, traders actively searching this post-Jan 2026 fee intro
+- `"polymarket CLOB fee rate"` — developer/technical angle (fee_rate_bps parameter in py-clob-client)
+- `"trading bot dry run importance"` — methodology/risk-management angle (zero competition)
 
 ---
 
@@ -136,12 +156,31 @@ Live-bot-v1.py deployed: DRY_RUN verified → $10.49 USDC live on Polygon.
 ```
 *(Char count: ~151 chars — within bounds)*
 
-### Template C: No Go-Ahead Yet (fallback)
+### Template C: DRY_RUN / No Go-Ahead — FEE DISCOVERY (CONFIRMED BASE CASE as of 01:00 IST) ⭐
+*(--live go-ahead BLOCKED: 10% taker fee confirmed on BTC 15-min markets)*
+
+**Template C1 — Fee discovery as headline (recommended):**
+```
+Day 11 dry run surfaced 10% taker fee (1000 bps) before live USDC fired.
+DRY_RUN saved $10.49. 3-gate CLOB filter, SPRT staged. Maker alternative next.
+```
+*(Char count: ~149 chars ✅ within bounds)*
+
+**Template C2 — Methodology-first framing:**
+```
+What the dry run revealed: 10% taker fee on Polymarket BTC 15-min markets.
+$10.49 USDC staged but not at risk. 3-gate filter, SPRT from Run 2. Day 11.
+```
+*(Char count: ~148 chars ✅ within bounds)*
+
+**Template C3 — Conservative fallback (if fee framing doesn't fit published post tone):**
 ```
 Live bot architecture: DRY_RUN → live pipeline, 3-gate filter, adaptive SPRT threshold.
-Run 2 enhanced config ready. Waiting for deployment window. Day 11 of $10→$100 challenge.
+Run 2 enhanced config staged. Fee rate economics under review. Day 11.
 ```
-*(Char count: ~155 chars — slightly long; trim "of $10→$100 challenge" if needed → ~141)*
+*(Char count: ~148 chars ✅ — trimmed to within bounds)*
+
+**Recommended**: Use C1 if the Day 11 post leads with the fee discovery. C2 if it frames it as methodology validation. C3 if Reuben scopes fee finding out of the post.
 
 ### Universal Fallback (always valid ≤158 chars)
 ```
@@ -169,6 +208,9 @@ First real trades: live-bot-v1.py, $10.49 USDC on Polygon. DRY_RUN → live.
 | `polymarket unsellable tokens` | Informational (failure mode) | 🟢 TERTIARY (Loki note 18:06 IST) |
 | `polymarket illiquid markets` | Informational | 🟢 TERTIARY (StartupFortune failure mode) |
 | `trading bot extreme fear` | Informational (FOMC/macro context) | 🟢 TERTIARY (Fury T-2h sweep + Loki editorial note 22:51 IST) |
+| `polymarket taker fee` | Informational (high-intent, traders searching post-Jan 2026 fee intro) | 🟡 SECONDARY (Jarvis fee discovery 01:00 IST) |
+| `polymarket CLOB fee rate` | Developer / how-to (fee_rate_bps parameter) | 🟢 TERTIARY (Jarvis fee discovery 01:00 IST) |
+| `trading bot dry run importance` | Methodology / risk-management | 🟢 TERTIARY (fee discovery narrative — zero competition) |
 
 **Strategic note**: Day 11 is a **recency/results milestone post** — same SEO dynamics as Day 7 (breaking news). Live trading results have immediate search demand from crypto traders ("how is the bot doing?"). Optimize for:
 1. Live result keywords (newsy, short shelf-life but high CTR at launch)

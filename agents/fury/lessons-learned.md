@@ -611,3 +611,83 @@ Pre-deploy sweeps at T-3.5h on LIVE MONEY events are worth doing even when no ti
 3. They let you stand down at 23:10 IST with confidence, not anxiety
 
 **New rule:** On first live-money deployment, run at LEAST two pre-deploy sweeps: T-8h (comprehensive) and T-2h (confirmation + market conditions check). Running early is fine; skipping the T-2h check is not.
+
+### 13. F&G Real-Time API = Instant Market Condition Read
+`https://api.alternative.me/fng/?limit=1` returns current F&G score in <3 seconds, no auth required. At T-80min before Day 11: F&G dropped 10→8 in ~90 min (deepening Extreme Fear). This delta — not just the absolute value — is the story. "Fear deepened into the bot run" is more compelling than "fear was at 10." Always fetch F&G delta between sweeps, not just current snapshot.
+
+**New operating rule:** When sequential pre-deploy sweeps are done (T-2h, T-80min), log the F&G DELTA, not just current value. The direction of fear (deepening vs. stabilizing) predicts whether volatility is entering or leaving — and the regime detector cares about direction.
+
+### 2026-02-19 00:55 IST - Day 11 T-35min Final Sweep
+**Task:** Final pre-run competitive + market intel sweep before 1:30 AM live bot run
+**Deliverable:** Daily notes entry + Telegram alert (msg 2789) + lessons-learned update
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Fetched F&G via API: **8 (Extreme Fear)** — unchanged since 00:10 sweep, stabilized
+- 1 web search: Polymarket 15-min markets status
+- 1 web_fetch: PANews article (Feb 18, 2026) — full article
+- Found CRITICAL: Taker fees up to 3% introduced in January 2026 on 15-min crypto markets
+- Found AMPLIFICATION: InvestingHaven — "downside odds above 70%" = favorable for regime detector
+- Sent Telegram alert (msg 2789) to Reuben + tagged Jarvis/Friday
+- Updated daily notes
+
+**What Worked:**
+- ✅ F&G API call (<3 sec) confirmed stability instantly
+- ✅ Web search surfaced PANews article that prior sweeps MISSED — published 17h ago but contains January-dated fact
+- ✅ Followed "web_fetch for key articles" rule — got full article, not just snippet
+- ✅ Escalated immediately to Telegram (msg 2789) — this is the class of finding that can't wait for next heartbeat
+- ✅ Correctly noted bot is DRY_RUN=True — no panic, but clear action request
+
+**What Didn't Work:**
+- ⚠️ This fee change happened in JANUARY 2026 — it should have been caught in Day 8 accuracy audit (Feb 17) or prior sweeps. It wasn't. Multiple sweeps missed a $787K/week revenue story.
+
+**Lesson Learned:**
+
+### 14. Fee Changes On Running Platforms Need Monthly Re-Audits
+The Polymarket 0/0 bps "discovery" from Day 7 (Nov 2025 CLOB fee drop) was validated in Day 8 accuracy audit as "still current" on Feb 17. But the January 2026 taker fee reinstatement on 15-min crypto markets was NOT caught until T-35min before the live bot run (Feb 19, 00:55 IST).
+
+**Why it was missed**: Day 8 accuracy audit searched for "Polymarket fee" and confirmed CLOB token IDs still show 0/0 bps at the API level. The fee reinstatement was at the PRODUCT level (15-min price change market charging taker fees) — different from what the CLOB API returns for maker/taker rates on specific token IDs.
+
+**New rule**: For LIVE MONEY deployments, always search for:
+1. "[Platform] fee changes [current month]" — monthly cadence
+2. "[Platform] revenue" + filter freshness=pm — if revenue is growing, fees are increasing
+3. "[Platform] taker fee" + "[product category]" — product-level fees may differ from CLOB-level docs
+
+**The pattern**: Platform revenue articles surface fee changes BEFORE docs update. PANews found the $787K/week → instantly reveals fee structure change that Polymarket docs might still show as 0/0 bps.
+
+**Escalation rule confirmed**: When finding contradicts current trading config at T-35min before live money → Telegram immediate (not just daily notes). That's what happened here (msg 2789). 
+
+### 2026-02-19 01:40 IST - Day 11 T+10min Post-Launch Sweep
+**Task:** Post-launch competitive sweep T+10min after Day 11 bot run fired (1:30 AM)
+**Deliverable:** Daily notes entry (2026-02-19.md)
+**Self-Rating:** 3.5/5
+
+**What I Did:**
+- Fetched F&G via API: 8 (Extreme Fear) — STABLE (unchanged for 90+ min)
+- 1 web search: Polymarket bot trading results + new competitor landscape
+- Found: PolySpike Trader (reactive spike-detection, no SPRT, published 3h ago)
+- Found: AP News Trump admin backing Polymarket/Kalshi (mainstream legitimacy story)
+- Found: Bidou28old ($116K bot) now in French-language media (BeinCrypto France)
+- Updated daily notes with squad handoff notes for Loki/Quill
+
+**What Worked:**
+- ✅ F&G API call instant (<3 sec) — confirmed fear STABLE (not deepening, not recovering)
+- ✅ Found new competitor (PolySpike Trader) published in last 3h — missed by all pre-deploy sweeps
+- ✅ AP News macro story = platform legitimacy upgrade for Loki's Day 11 content
+- ✅ Squad handoff notes structured for immediate use by Loki + Quill
+
+**What Didn't Work:**
+- ⚠️ 3.5/5 — mostly confirmations, no tier-1 new intel equivalent to yesterday's fee discovery
+- ⚠️ Could have done a GitHub search for new Polymarket bots (lessons-learned rule 10: lead with GitHub at 2 AM)
+
+**Lesson Learned:**
+
+### 15. Spike-Detector Bots = Reactive vs. Proactive Framing Opportunity
+PolySpike Trader (reactive spike-detection) creates a new competitive contrast: "bots that react to moves" vs. "bots that predict moves." Ruby's multi-factor signal filter is PROACTIVE — it identifies conditions before a market resolves. PolySpike is REACTIVE — it triggers after a spike is detected. This reactive/proactive distinction is a clean architectural differentiation that doesn't require win-rate comparison.
+
+**New operating rule:** When cataloging competitors, note their architecture class:
+- Reactive: spike-detection, copy-trading, wallet-monitoring → trigger AFTER something happens
+- Proactive: signal-filter, SPRT, regime-detector → predict conditions BEFORE they resolve
+
+Ruby's entire stack is proactive. That's the architectural differentiation, not just the win rate.
+

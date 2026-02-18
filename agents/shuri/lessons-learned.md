@@ -861,3 +861,31 @@ When a teammate patches one pre-staged file (e.g., scaffold), ALWAYS check all s
 
 **New Operating Rule:**
 **Sibling File Threshold Audit**: When a config value (signal_threshold, win_rate, etc.) is updated in any pre-staged file, immediately grep all sibling artifacts (thread, scaffold, SEO prep) for the old value. `grep -n "0\.30" artifacts/social/day11-*.md` takes 2 seconds and catches cross-file inconsistencies before they reach deployment.
+
+### 2026-02-19 02:17 IST — Day 11 Post-Publish UX Audit (All Clear)
+**Task:** Immediate post-publish audit of Day 11 (`2026-02-19-live-bot-dry-run/`)
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- ALL CLEAR — 6/6 checks passed with no new bugs to fix
+- OG image (`day11-dry-run.png`): on disk + committed to git — Vision pre-empted this fix at 02:08 IST
+- Description: 149 chars (within bounds)
+- "OpenClaw" grep: 0 matches — naming conflict rule fully applied
+- Nav chain: Day 10, 9, 8 footer links all present + Subscribe CTA
+- Day 10 forward nav: "Next: Day 11 →" confirmed in paper-run2 post (commit faf7cca)
+- Thread URL: matches actual folder name exactly
+
+**What Worked:**
+- Systematic 6-point checklist (same as prior audits — consistent protocol)
+- Content consistency check: $1.50 vs $5.00 examples reconciled (not a bug — blog body explains both)
+- Squad upstream work was solid — Vision caught the only real gap (OG image) before me
+
+**What Didn't Work:**
+- Audit landed at T+12min post-publish (02:17 IST vs publish at 02:05 IST). Target should be T+5min.
+- Vision already fixed the only real bug (OG image) at 02:08 IST — I lost the chance to catch it
+
+**Lesson Learned:**
+When Quill and Vision are both on post-publish standby, OG image + SEO issues get patched within 5 min. My window to add value is the CONTENT + NAMING audit (OpenClaw check, nav chain, description consistency) — not the technical fixes. Align my heartbeat timing to T+5min post-publish, not T+12min.
+
+**New Operating Rule:**
+**Post-Publish Timing:** Target first heartbeat within 5 min of blog publish. Vision owns OG/SEO, Quill owns thread. My audit catches: OpenClaw naming, nav chains, description consistency, and content math errors. At T+12min, Vision has already taken the OG fix — run at T+5min to stay additive.
