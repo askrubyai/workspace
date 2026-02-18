@@ -1,0 +1,931 @@
+Transcript:
+I I started coding very early in high
+school. My like first language was C.
+Just got very kind of obsessed with.
+>> So what is the best way for people to
+understand FML roll up?
+>> When I got into uh crypto and and
+blockchain, I realized like the insane
+like uh computing power that uh you need
+for training a large language model. I
+just felt like I could contribute more
+in into crypto. you have this impression
+that everything is broken and and you
+can build your own way like you can be
+very impactful. Every day there are like
+10 15 ideas that if you take on it you
+probably will be very very impactful if
+if you if you ship it.
+>> Hello hello hello hello. Welcome to
+another episode of the one day devs
+podcast. Today we have with us my good
+friend Gabriel from Magic Block. Welcome
+to the show Gabriel.
+>> Thanks for having me. It was a pleasure.
+>> Awesome. Um
+so we we like to do this thing where you
+know we talk about
+uh the journey of the founder. So if you
+can I I know you used to work in in AI
+and then you you know made your
+transition to crypto. Do you want to
+talk about it like how did you get into
+crypto?
+>> Yeah. Yeah. Absolutely. I guess I I can
+like start from the origin very quickly
+and and then like go till till today
+where we are at. Um but yeah, I I
+started coding very early um in high
+school. My like first language was C.
+just got very kind of obsessed with uh
+you know knowing how things work, how to
+fix stuff, how to build things and and
+and then after that um you know that's
+that time in your life where you have uh
+time to experiment and so I was uh I
+started building apps uh for mobile uh
+that point was Java for for Android and
+I published some of those on on mobile
+on you know play store app store and um
+after that I I I kind
+I was building games. That was like my
+kind of passion in high school. I was I
+was like uh building and try to kind of
+get a a game working and experimenting
+with with different tax. Um that was
+kind of like my initial parenthesis. And
+after that I did a major and um computer
+science uh specialized in AI um in Italy
+and the University of of Turin. And
+after that I joined a startup. Um in
+this startup they were basically
+offering the the Wi-Fi uh the guest
+Wi-Fi in like big big venues like
+airport or um you know big uh um big
+shops big big venues and their their
+core product was basically indoor
+geoloccation. So they had this
+sophisticated solution where a neural
+network was like uh triangulated the
+signal of uh the receiver uh mostly like
+cell phones and like getting a precise
+estimation of where uh people were like
+navigating into an indoor environments
+and on top of that there was like a
+analytics and like extracting data so
+you could like observe common pattern or
+like where where people were like going
+to a venue where they were spending most
+of the time. or like uh things of this
+nature
+and it was like a interesting
+interesting work. After that I I joined
+IBM uh IBM research. Um initially I was
+working on uh AI for fraud detection in
+in the healthcare system
+and in research as uh it's like a almost
+like a startup but uh with the funding
+of of a big company. So you work on
+multiple projects. And so after this
+this work on fraud detection, I've I've
+worked on uh um using language model for
+protein discovery and material
+discovery. So given like certain
+properties that you're trying to
+optimize for um predicting like a
+protein structure that uh then they will
+synthesize in the lab and and you will
+rank uh using using this AI model uh the
+most likely candidate that will then
+have that that given properties and
+different other things like I've been
+working on symbolic reasoning and it was
+pre chpt uh release it was like
+interesting times where transformers
+started to be kind
+widely adopted but it was still um was
+still to certain level niche. Um so
+there was a lot of experimentation you
+know how how you train a model how you u
+empirically like um get like fast uh
+clean training data and all of like the
+optimization of of that nature that I
+can by I guess by now are kind of pretty
+pretty standard. Um and that that's also
+when I got into uh crypto and and
+blockchain. I realized like the insane
+like uh computing power that uh you need
+for training a large language model and
+I was experimenting with federated
+learning and distributed model uh um
+training and that's when I kind of uh
+got into into crypto and blockchain as a
+way to kind of build the orchestration
+layer of how you train um uh this this
+sort of distributed model. Um
+unfortunately it's it's more like I
+guess like a project that works better
+in a startups like big company cannot
+take a risk and you know launching a
+coin or everything is like highly uh
+sensitive to the policy of the company
+and uh and so I didn't I didn't manage
+to push it forward but like it was my
+entry point in that and u and yeah
+anyway I just got interested in uh
+bitcoin first you know the white paper
+fall in love with it ethereum we've been
+like I was doing some experiment in
+solidity and then eventually like
+stumble upon Solana just got interested
+about the tech and uh quickly also kind
+of experimented with it fast and cheap
+and and got the idea of where um the the
+vision of Sana was going and and
+therefore like yeah I started like
+taking vacation going to a houses there
+were like this one event that Sana was
+was doing at the at the at the beginning
+of uh you know where they were pushing
+the ecosystem. So it was taking one week
+vacation going to those events and and
+then at some point in one of those a
+house that that's when we we started um
+I guess we can go deeper into that
+later.
+>> Yeah. And also I think I see this
+pattern where interestingly to also you
+know used to
+during the early case of deep learn you
+know the deep learning case there were a
+lot of these GPUs. So the back the story
+of Salana is also that now that you you
+have this so much GPU can you actually
+um
+build
+a a blockchain that leverages these
+GPUs right uh so there's like a lot lot
+of interesting folks who have you know
+used to BA adjacent or used to build
+infrastructure for AI and then are in
+block so switching gears through magic
+blog, right? So I I remember the first
+time we uh spoke to each other or you
+know got in touch with us when you guys
+were running speedrun and also you were
+you had this unity SDK for people to
+build games. So from
+so today it's like you know magic block
+is its own rollup if I may call it it's
+a network extension on Salana you guys
+are building a mirror rollup so c can
+can you talk about the you know your the
+how you got into this problem space and
+you know what magic block is doing
+today.
+>> Yeah. Yeah. Absolutely. I guess I guess
+I guess I can continue the story. Uh as
+I mentioned like uh in one of these Zach
+houses um we initially started um
+building a project that then like evolve
+over times and and and then becomes
+magic block. Um but yeah the story is
+like I I was uh as mentioned going to
+these acra houses and one of them was in
+Dubai and my co-ounder Andrea uh was
+living there. So it just like uh reach
+out and knew it was was working on in
+crypto was like on working on one of the
+first bridges between bitcoin and like
+several other chains. So I just like
+reach out, hey, I'm coming. Are you
+going to this one a house? And that's
+when we started kind of building. We we
+started with a game. Um and uh we didn't
+want any tradeoff in um using an API
+like I didn't want to experiment with
+the blockchain and started by
+integrating an API in a game. I wanted
+to kind of build uh serialize, create a
+transaction, sign a transaction
+completely within uh within the game and
+then directly send a transaction to the
+blockchain. So um it was a simple game
+sort of a Pokemon Go where you go around
+mint NFT validate GPS
+um coordinates. Um but I was still
+fairly early in Solana. Like the um SDK
+tooling was uh almost almost like
+frankly broken. And there was a lot of
+uh a lot of uh places where you kind of
+had to fork the repository go into the
+source code and and you know implement
+your your own solution. and and so
+during that uh that arrows uh I ended up
+forking there was like an existing SDK
+for unity but it didn't work so I kind
+of end up forking it and then uh like
+forking other lips and by the end of the
+Ara I was like we almost like
+reimplemented the SDK uh completely and
+we managed to make it make it work uh
+for like signing creating transaction in
+game and um and and like ship the basic
+version of of the game but yeah end of
+The story is um this SDK we decided to
+uh open source it after the after the
+arrows and it got traction. There were
+teams that uh were kind of looking for
+something similar. They they wanted to
+build their own like on training game.
+didn't want to take trade off of of
+using an API and and so it got traction
+other people started using it partially
+contributing and and then we got a grant
+uh from Sana to kind of continue
+improving and and working on on the
+Unity SDK which which is still still
+available today still um MIT like we
+maintaining best effort but like gladly
+now the community is also supporting it
+sometimes fixing bug and opening pull
+requests and and so that that was the
+origin story. Um, at some point I kind
+of decided, okay, let's let's do the
+jump and I I left my my job uh at IBM,
+not because I didn't like it. It was was
+amazing, like super interesting stuff,
+but I I just felt like I could
+contribute more um in into crypto. Like
+you have this impression that everything
+is broken and and you can build your own
+way like you can be very impactful.
+every day there are like 10 15 ideas
+that if you take on it you probably will
+be very very impactful if if you if you
+ship it and and so from there like we
+went fulltime with the idea of building
+fully on chain games and so it's a still
+fairly niche category of games where all
+the state and state transition are
+completely on chain no API no offchain
+logic
+and uh and it was it was bare market so
+even even if there was
+not not many transaction, no congestion.
+We uh reached the the limit of what you
+could do on the L1. Um essentially like
+you know even using in slot uh process
+commitments and all of the optimization
+that you can do with a with a with a
+existing infrastructure you couldn't get
+to the end to end latency that uh for
+certain category of games will feel kind
+of natural for for the user. And so
+that's when we kind of went back to the
+white word and and and decided okay
+let's try to build something that um
+will still um be aligned with the vision
+of like a fully decentralized
+uh machine and uh still um you know be
+composible with the with the ecosystem
+but at the same time allow us to get um
+end to end latency realtime performances
+that is um impaired with what would be a
+server for a for a game or or an
+application.
+And um and so this was u um summer 2023
+and um at Breckpoint 2023 we presented
+ephemer rollups our old unit which kind
+of outlined the design of um of what we
+call ephemer rollups this solution that
+essentially can um take a subset of the
+state from Salana. It clones just in
+times the the smart contracts and uh all
+the readable accounts and then it could
+operate with low latency on uh on the
+accounts that are delegated to one
+specific instance. And um it also has
+like um an architecture that allow
+basically to colllocate this just in
+time instances close to the user. And so
+if you process a transaction
+in between one and 10 milliseconds and
+you're close enough to a machine um end
+to end, you can stay below 50
+millisecond and that's when you kind of
+unlock the new category of games and
+apps that uh require this uh this
+latency
+and and yeah that was like when we uh
+presented the first time rollup was was
+still like um I think not a word that we
+will hurt in uh the Solana ecosystem.
+Still nowadays it's it's kind of like a
+bit orthogonal to the vision of Salana.
+Um but because of like the nature of of
+the family rollups basically uh we we
+think we found a way to basically be
+aligned with overall vision of bringing
+a state machine that is global and um at
+the same time have like the um the
+scalability and the latency that that
+you need. Um I guess I guess finally
+like if I have to to describe the
+solution to a developer I probably don't
+use the word rollup I would describe it
+as a multi-threaded application where
+your sana program is the main thread and
+it can then dispatch uh computation to
+um other threads that are executing this
+fast colloccated SVMs and then they can
+collect and uh get back the computation
+and they can kind orchestrate the the
+flow in the logic of the application
+from the main thread which is the S um
+um smart contracts and um and yeah so
+then uh going I guess fast forward to uh
+February the next year and uh and I
+guess to today uh there was like a a
+huge Solana um congestion mostly because
+like Solana was not performant as it is
+today. there were like several issues
+like related to RPC and like different
+part of uh of the stacks which which now
+are are way more solid and and scalable.
+Um but anyway we got um we got kind of
+interest from several other use case not
+gaming related that uh required kind of
+the same uh properties and so we kind of
+evolve uh even if we build already with
+the idea in mind to make it in a way
+that's general and scarable um we evolve
+to supporting like other use cases like
+you know high frequency trading or uh
+DPIN and and that's That's where uh we
+are today.
+>> I I have a question Gabriel. Uh
+so what is the best way for people to
+understand ephemeral roll up right? U
+because especially on the Ethereum side
+of the world you know there's like
+different a variety of rollups. So in
+within that niche what exactly does an
+ephemeral rollup mean? And also
+especially within the context of Solana
+I think Austin some tweeted sometimes
+saying most rollup like things on Solana
+are better thought of as network
+extensions than L2s or rollups. So where
+exactly does
+you know magic blog fit with fit fit
+within this rubric or is it something
+entirely different?
+>> Yeah that's a very good question. We
+actually had very hard time when we were
+like uh coming up with a name. Okay, how
+should we call it? It's like a
+decentralized engine. It's like is it a
+rollup? Is it something else? And then
+we ended up like choosing ephemeral
+rollups as is like best best way to
+describe it. Um but but like you're
+saying mostly it's it's a very unique
+solution. I don't think there is any
+architecture that um it is sort of like
+equivalent. Maybe um maybe state channel
+are the closer architecture to ephemer
+rollups uh even if they don't have a
+full uh VM. So ephemer rollups do have a
+full SVM you can run arbitrary smart
+contract within uh within uh within
+ephemer rollups but I guess yeah the
+closer comparison in traditional like
+architecture would be would be state
+channel and and yeah as you pointed out
+like Austin Federa pioneer this this
+network tension and we were like um one
+of the company and like solution that
+invention um because like essentially
+there there was a need to describe this
+this new category and there was no real
+like uh term or name that will fit uh
+perfectly what what we were building and
+um and I guess partially uh that's due
+to the to the to the fact of like
+architecting from like a Solana uh
+native uh uh perspective like I think
+initially we didn't look too much into
+all the existing like L2 architecture we
+just told from first principle uh what
+would make more sense with a SVM uh
+architecture as a way to kind of uh get
+um get low latency real-time
+performances and and there are there are
+few uh unique characteristics of the SVM
+that makes makes our architecture
+possible and it wouldn't be possible on
+on EVM and ju just to name a few um
+sometimes like this this sounds like
+smaller difference but they're they're
+actually huge in in the and and the
+their comp compounding effect like the
+separation of the um like the account
+model and the separation of the state
+and the logic is core of um is core of
+the paralization the you know mechanics
+that is within the block in so it's also
+core of uh our solution um because
+basically if there's no state contention
+um you can execute in parallel
+transaction that don't write to the same
+state and it's fairly easy for a
+sequencer um to like um parallelize
+because all the transaction declare up
+front all the state that a transaction
+is is writing and and reading. So this
+account model where um everything is
+like an account is just data buckets.
+It's just a bunch of bytes. But smart
+contract are a specific type of accounts
+that are only readable. They contains
+the logic of your smart contract. you
+can potentially just like uh clone it
+just in time, clone it locally, clone it
+everywhere and execute the same logic uh
+which is stateless in any uh SVM uh
+runtime. And all the all the smart
+contract control state only indirectly
+through uh through PDAs, program drive
+addresses and so you only care about um
+who has uh ownership and who can change
+those PDAs. And so the the core um idea
+is that instead of um moving everything
+to a rollup, we can basically just lock
+and and delegate a subset of of those
+accounts and then the FM rollup will
+basically be able to clone just in time
+the logic. the smart contract then
+execute the same logic for doing state
+transition on the subset of the state uh
+which you can then independently uh
+commit and set up before unlocking those
+um those uh those PDAs and uh and yeah
+that's that's that's kind of like one of
+the core uh differences that um make
+make our architecture possible. Another
+another big difference is that Sona is
+actually fast and cheap and so it can
+actually be used as uh as an execution
+runtime and it actually should be used
+for anything that is critical and as I
+was mentioning like we see FM rollups
+more like a multi-raded uh Solana smart
+contract where you still use your your
+main trade your main thread your your
+like smart contract on Solana for um all
+the critical uh logic and then you can
+get these extra uh fast and and shipped
+sometimes threat that um are are are
+used to bring what would be impossible
+otherwise. Um so rather than like trying
+to have an alternative to what um
+running on Solana, we're trying to kind
+of unlock the new generation of apps and
+games that are not possible today and uh
+we think are going to be uh onchain in
+the next in the next uh one two years. I
+think one analogy that jumps to my mind
+is in for example in a typical webto
+architecture when you have a database
+and you have very specific hot keys that
+are extremely read heavy you would take
+them and put them on a cache. So this is
+kind of like the the inversion the
+inverse version of it where you have
+specific hot keys which are right heavy
+and you kind of know the access you
+these access patterns are predictable
+and you want very high performance. So
+you want to put them on a se you want to
+delegate right access and put them on a
+separate environment so that you could
+do much much more faster. So this is
+kind of like in the web two world you
+would have cache like you know you you
+would have reddis or mem cache in front
+of your database but in the web3 world
+for instead of read for rightes you have
+these dedicated accounts on an ephmel
+rollout.
+>> Yeah. Yeah. I think that's a that's a
+great analogy and um I as you pointed
+out like you can know beforehand like
+the pattern of what what accounts are
+kind of hot account that you're often
+writing. Um but another like interesting
+pattern that we're seeing is that
+because the uh this delegation is part
+of your smart contract logic um this
+could also be dynamic like you could
+record how many um like the frequency of
+a given instruction on mainet in a time
+frame and if this exceed a certain
+threshold then uh you offload the work
+uh otherwise you just run it on uh on
+mainet and so it gives you like uh an
+interesting in kind of design space
+where um you could kind of know up front
+um what most likely is going to uh need
+low latency or some some kind of extra
+extra features and then run it in the
+firmware rollups or it could be dynamic
+and encoded in your in your smart
+contract and everything works
+transparently. Um and and you can al
+also go back like in case you want to
+CPI into another smart contract then
+that's when you kind of bring back the
+account's normal state and then you
+remain composible. If you're like uh
+operating in a isolation then you can
+like bring it in do state transition
+close it and then and do something else.
+So yeah it open up the design space
+that's uh absolutely a good good
+analogy.
+>> Awesome. and also keeping up with I mean
+it's kind of like you know now on the
+salons themselves are working extremely
+hard to you know increase bandwidth and
+reduce latency. So in in a way it's like
+you are also like
+you know working in your own way to do
+that. So that that must mean you are
+dealing with like extremely
+hard engineering problems. So I would
+love for you to talk about some of these
+you know hard engineering problems that
+you are uh you know tackling at magic
+blog.
+>> Yeah. Yeah. Absolutely. We we have a lot
+of interesting I guess problem and in
+different categories. Um
+the category of problems are um around
+synchronizing uh with Solana state uh
+because like it's a in insane like
+number of um accounts and say transition
+that are happening um all at once like
+you need to basically keep track and
+selectively um pick what's relevant for
+your FM rollup systems. we're we're kind
+of
+designing the system in a way that can
+run on sort of commodity hardware. Um so
+we don't run them on um beefy machines
+and therefore like there is uh a lot of
+optimization around what stage is
+actually relevant for um the subset of
+the accounts that you're you're writing.
+Um so that's one and um the same is for
+the other way around. Whenever you
+you're going to you are syncing back
+state there are like still challenges
+you know in landing transaction or what
+you know typically would you would call
+a sequencer how you um sequence all uh
+all the updates and state transitions
+and that open up obviously another big
+uh category of of problems around how
+you prove state transition. Now you
+prove that the validator is not uh
+malevolent. It's not pushing just like
+an arbitrary um say transition collusion
+and any problem of of this nature. is uh
+um I guess we don't have time we can go
+deeper into that but like it it probably
+will take a couple of hours to to
+summarize all the different approaches
+that uh exist to the you know optimistic
+DK uh solution in the middle that that's
+like another kind of very sophisticated
+and uh engineered a part of of the
+system there are also um a set of
+problems related to the deployment
+itself. Um
+the system obviously is uh optimized for
+executing transaction as fast as
+possible. Um but because of the
+collocation aspect how you deploy the
+system also make make a big difference
+in end to end latency. So you want to
+have a system where um pretty much
+anyone connecting to the network have a
+machine that uh give him sub 50
+millisecond latency. uh and that's like
+some challenges around how uh many
+instances how to keep uh constant up
+time how to deploy and like a reliable
+reliable way and um and yeah then there
+are all uh all um the challenges related
+to UX and and the vax um how do you uh
+kind of abstract away the complexity of
+the system? How do we make it easy for
+developers to um start and have like a
+hello world solution working in like
+five 10 minutes max and these are pretty
+common like uh challenges in salon as
+well. So the the great um great things
+about being like uh in the same
+ecosystem and pushing the same ecosystem
+is like we work in open source we use
+the same SDK that Solana use and we also
+contribute. So uh partially it's like
+a team effort like a cross team and like
+a solan effort as well. Uh but obviously
+like there are challenges around uh the
+specifics of how you make it easy for
+developer to to start using your system
+and and yeah I guess I guess I mentioned
+a bunch of categories and and you can
+imagine if you want we can unpack some
+of those but definitely a lot of
+interesting problems uh that that we're
+working on.
+>> That's awesome. two things that I'm
+curious about we could get into it. So
+for you mentioned collocation right so
+is it when I say collocating is it like
+collocating with the validator it's so
+the what kind of use cases require
+collocation is it runs or you know a
+purps and then they need to collocate or
+>> yeah yeah I mean uh when I um when I
+mention real time uh just to define it
+more more clearly are all the use case
+that um require latency which is like
+typically below 50 milliseconds and
+latency specifically I mean end to end
+latency. So from the time you send the
+transaction um to the time you get back
+the result of your of your transaction
+and that include the state state
+transition happening on chain and
+reflect the chain to anyone that is
+watching the same state and this is like
+um critical for well where we started
+games obviously like if um you have more
+than uh 50 millcond or 100 milliseconds
+your game start to lag and that kind of
+break the experience for the user. uh
+but that's also true for high frequency
+trading and I guess nowadays there is a
+this huge narrative around COBS and how
+to achieve um uh latency that is also in
+this range and that's another use case
+where uh collocation is extremely
+important and another use case that we
+are kind of um experimenting and and
+getting like interest from a lot of
+project is deep um there are like
+different use cases. Um I we have we're
+working like in a pilot with uh multiple
+projects that uh require like fast
+response times and they are
+nowadays using a server for getting the
+the latency that they need and then they
+kind of uh batch or build inhouse their
+their solution for like posting
+periodically on chain but that's like it
+overly complicated and uh they have a
+lot of issue on that on that front. So
+like that's when you you could basically
+uh switch from that server architecture
+to to ephemer rollups and and and and
+yeah I guess apps as well like if you
+imagine
+uh bringing on chain um
+other other use cases like you know
+could be a social network it could be um
+apps that people use daily um fast uh
+response times is is kind of critical
+and so any state transition
+uh becomes uh sort of uh critical in in
+in latency in latency terms and uh and
+and yeah so that's why collocation
+matters in in these use cases.
+>> That's awesome. How how do you uh the
+earlier when we were chatting you
+mentioned the team is like now 17
+members right that's like in the last
+span of one year just like team has
+gotten so big how how do you uh how do
+you maintain like a high performance
+engineering culture at magic blog
+>> yeah yeah that's the one million
+question and like it's it's I guess one
+of the complex part in in running a
+company like finding and and and and
+retaining talents. Um I I think I think
+it's very important to uh do the right
+uh first hired correctly. um first team
+members are are going to kind of
+compound the culture and the mentality
+of the company and I think it's start
+with the founder first like you know
+being like very kind of uh transparent
+oriented that's uh those are kind of
+things that we we value but like the
+first hire of of a team are are going to
+be critical because then they are going
+to compound in like the next hires and
+eventually they're going to compound in
+in the company and eventually in the
+product itself. I I have this impression
+that or this theory that um if I use a
+product or uh a platform, I can probably
+get a sense of the theme that is behind
+that product just by you know the look
+and feel and uh design choices or um or
+you know if I use an SDK I I can kind of
+get a sense of or I have the impression
+that I can get a sense of uh what what
+are the the people behind that and and
+and so I I I really like think it's it's
+critical u to hire correctly in the
+first hires and then like that that's
+going to simplify the the next hire. Um
+I guess I I can make an example like we
+were like our first hire was uh Torsten
+which is very uh kind of I guess known
+in the Solan ecosystem. He built uh SDKs
+and and tools like Shanks and Solita
+that are uh widely used uh daily uh
+developer life and it was also like a
+huge uh contributor on open source and
+so it was like a perfect fit for us. It
+was like very very much aligned and I
+think this this kind of compounded in uh
+all the other people that joined the
+company afterward like everyone is kind
+of very passionate about open source
+contributing pushing the ecosystem
+forward.
+And um and yeah, that's that's like what
+what I like to to kind of um
+maintain as a as a as a high bar. I
+guess more it's more like a cultural um
+cultural fit to the company. In term of
+engineering, I think the same principle
+apply common like knowledge of a player
+um uh you know get other A player and so
+again like if you pick carefully the
+first employees then uh they're going to
+be part of the selection processes of
+the next people maybe they have a friend
+maybe they uh they interview someone and
+they they kind of get the sense that it
+could be a strong engineer and so that's
+that's why uh again it it compounds to
+to the company and I don't know if if
+the question is more like about the
+process or how we hire if if if it's
+interesting.
+>> No, I think the the this makes perfect
+sense. I was I also especially being
+like you know a open-source company
+working a lot of your work out also goes
+out in the open right so I'm I'm curious
+how you do you weigh open source
+contribution heavily
+>> open source is definitely a big plus if
+uh anyone like any candidate has a
+strong contribution um it's uh one a
+good signal that uh is going to be
+comfortable and aligned with the way
+we're working. As you mentioned, we're
+um working in uh public repository. So,
+we're building in public and and that's
+like comfortable for people to that are
+used to that workflow, but could also be
+uh uncomfortable um to some degree if
+you're if you're not used to that like
+you know all the all the issues, all the
+pull requests are public. So, you you uh
+you are exposed to anyone uh which which
+is is great. Obviously, we like that.
+Um, but it could be uh uncomfortable for
+other people that are not used to um to
+build in public. Um,
+I think that that's like uh if a
+candidate is is strong doesn't and
+doesn't have like open source uh
+contribution is, you know, it's not uh
+it's not a bad sign maybe to just like
+uh work in a company where they didn't
+have the possibility to kind of build uh
+open sources. Sometimes it's not your
+your choice, right? It's it's the
+company choice. uh if maybe you're
+working super cool stuff um but the
+company has a policy don't uh create
+open source don't release as open source
+uh then I don't think it's uh it's your
+fault right and but but anyway like you
+will get the scent while like
+interviewing and having a conversation
+with the engineering if they work
+something quite interesting um so yeah I
+guess it's a plus uh but it's um it's
+not it's not mandatory
+um one one things that I I guess I
+notice over time is people that have a
+lot of side projects. Uh they are
+usually a good uh good fit for our teams
+mostly. I I'm not sure if because we're
+like touching multiple things or because
+it's just like show that uh you're a
+builder like you have a a bias for kind
+of actions and just just build stuff. Um
+but I I feel like that's something that
+I value. Like I one of the question that
+I usually ask is like what's the side
+project you're mostly proud of? Uh is is
+there one that like you will be very
+very proud and do you want to explain?
+Uh what were the challenges why you
+built it in the first place? And this is
+like one of the question that gives give
+me like a good insight in the
+personality of uh of of a person of a
+developer. Are there any specific roles
+that you're hiring for?
+>> Yeah. Yeah. So different different
+roles. And right now like we're always
+looking for kind of strong rust
+low-level engineer for the work on the
+optimization of um of the femoral
+validator and um full stack as well and
+deal uh that are more like on gluing
+together the infrastructure with uh uh
+who is building the the apps in in the
+games or financial products on of of the
+infrastructure.
+>> That's awesome. If you can share the
+after this, if you could share the job
+description, we will make sure to add it
+along with the video. We'll list it in
+the description so that
+>> absolutely
+>> the devs watching can apply.
+>> Absolutely. Thanks.
+>> Awesome. Thank you so much for joining
+us, Gabriel. Uh and also
+would you would you like to share
+anything about how people can get
+involved apart from the jobs? Uh what
+can people build on top of magic block?
+>> Yeah. Yeah. Absolutely. Um I guess two
+ways. One is building uh like you can
+just take the example or the tutorial
+that are available or on our
+documentation or on the GitHub repo and
+try to build u an MVP or a product on
+top of it. We occasionally do acton uh
+we sponsor coliseum and so like if um if
+you want to join one of those that's
+definitely like a good time where
+everyone is building and vibes are great
+for building a product. Um otherwise uh
+there's also um the path of trying to go
+through the uh issues that we have open
+in uh multiple repository could be at
+the SDK level or at the validator level
+and uh you know try to look for first uh
+good issues and and and take it from
+there. Um could also just be commending
+or proposing an architecture. I guess
+that's a good way to start. Um we
+started uh releasing all the major uh
+design and architecture that we're going
+to implement as a GitHub discussion uh
+what we call MIMD like following closely
+the CMD of Salana and and so if you go
+there you will you will find like
+outline um measure factoring measuring
+like features that we're implementing
+right now any any comment any uh
+interaction there is is welcome
+and and yeah than any any other like uh
+could be using the product building a
+product or contributing to the infra
+anyone is is welcome and yeah looking
+forward to see more more people uh
+contributing and joining our ecosystem.
+>> That's fantastic. Thank you so much for
+joining us today Gabriel and it's been
+such a fantastic conversation.
+>> My pleasure.
+>> Thank you so much. Thank you so much
+once again.
+>> Thanks Jack. My pleasure.

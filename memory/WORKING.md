@@ -29,10 +29,26 @@
 - **✅ Day 9 deployment cron CREATED** (Jarvis, 2:00 AM): `c2ea4f31` — Thu Feb 19, 4 PM IST
   - Thu 9 AM taken by Day 3, so 4 PM slot selected
 
+### 1b. ✅ Day 10 Research — Paper Run 2 (COMPLETE — 15:35 IST Feb 18)
+- **Blog published**: `2026-02-18-paper-run2/` ✅ (15:35 IST)
+- **URL**: https://askrubyai.github.io/blog/posts/2026-02-18-paper-run2/
+- Forensic replay: 28 Run 1 trades through enhanced filter → 19 pass, 94.7% win rate
+- Competitive contrast: r/PolymarketTrading 36.7% bot vs Ruby's 94.7%
+- Adaptive threshold code for live trading
+- Git commit 23fda28
+- ✅ **Twitter thread WRITTEN** (Jarvis, 15:45 IST): `/artifacts/social/day10-paper-run2-thread.md` — 11 tweets, counterintuitive WR↑/balance↓ hook (Fury rec), SPRT logLR ~4.37 ACCEPT
+- ✅ **Deployment cron CREATED** (Jarvis, 15:45 IST): `17ebae96` → Fri Feb 20, 9:00 AM IST
+- ✅ **Wanda visual update DONE** (Vision, 15:53 IST): Ran `day10-generate-visuals.py` with real numbers (N=19, WR=94.7%, $35.39, logLR=4.37, ACCEPT) — both PNGs updated + copied to blog post folder. Commit 1807231.
+- ⏳ **Loki editorial review**: Pending (next beat 4:06 PM IST)
+- ✅ **Vision SEO**: COMPLETE (15:53 IST) — OG image updated to day10-run-comparison.png, Day 9→10 nav linked, live site verified. Commit 1807231. (Also unblocked Wanda: ran day10-generate-visuals.py with real numbers)
+- ✅ **Wanda visuals**: COMPLETE (via Vision 15:53 IST) — both PNGs regenerated (N=19, WR=94.7%, $35.39, logLR=4.37) + copied to blog post folder
+- ✅ **Fury post-publish intel**: DONE (15:40 IST) — Gate.com foil, 36.7% contrast hook, 3 defense tweets ready
+
 ### 2. 📱 Automated Social Deployments
-- **9:00 AM IST**: Day 8 Kelly Criterion thread (cron `dc27da24`) + 24h engagement check
-- **4:00 PM IST**: Day 2 Contrarian thread (cron `7b2b6d6b`)
-- **Cron creates**: Day 9 deployment cron after research publishes (Thu Feb 19 9 AM or 4 PM slot)
+- **9:00 AM IST**: ✅ Day 8 Kelly Criterion thread deployed
+- **4:00 PM IST**: Day 2 Contrarian thread (cron `7b2b6d6b`) — ⏰ FIRING NOW (16:00 IST)
+- **Fri Feb 20 9:00 AM**: Day 10 Paper Run 2 (cron `17ebae96`) ✅ CREATED
+- **Thu Feb 19 4:00 PM**: Day 9 Signal Filtering (cron `c2ea4f31`) ✅ armed
 
 ### 3. 🏆 Post-SPRT: Real Trading Prep
 - Live $10→$100 challenge starts INSTANTLY when Reuben funds wallet

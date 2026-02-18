@@ -1,0 +1,1228 @@
+Transcript:
+Anza is the company behind all of the
+validator codebase that is on the Solana
+network today. First, how do you define
+what is SVM?
+>> Technically speaking, the SVM is the
+state transition function
+>> for developers who are new to crypto,
+people who are coming from the EVM side
+of the world. How should they understand
+SVM?
+>> We do have actually an instruction set
+architecture that lays out what all the
+op codes of the VM are. We do have that
+>> SPM execution environment is actually
+the EBPF and then we have special op
+codes on top of that. Why EBPF was
+chosen?
+>> I mean the core reason it was just
+easier to do. So like
+>> do you have a any specific repositories
+that you recommend people look at when
+you have both these set of tests?
+>> I would say the solid program or has a
+lot of
+>> how are people using SVM APIs?
+>> Well, you can build a state channel with
+>> Hello, welcome to another episode of the
+one dev spark. Today is a special
+episode. We have Joe who is an engineer
+at Anza and Anza is the company behind
+all of the validator codebase that you
+that is on the Sana network today and
+welcome to the podcast Joe.
+>> Thanks guys. Thanks for having me.
+>> This is a question that we ask everyone.
+It's a standard in the podcast. What
+pulled you into crypto? Uh
+>> so like for me I was this was like 2019
+maybe or no I'm sorry maybe like a
+little after 2020 like a little bit
+towards the end of the pandemic I was
+working at a bank and I had actually
+gotten a software engineering job like
+the first job that I had because I was
+doing something totally different before
+I was like basically mowing lawns and
+like just doing stuff like that like
+snowplowing and I was like getting into
+coding and I got my first job at a bank
+and I quickly realized that like a lot
+of people were kind of like complacent
+and I was really more interested in
+working on like some cutting edge stuff
+and like really crazy interesting cool
+tech and I went to some of these like
+conferences like uh permissionless and
+like a lot of hacker houses and stuff
+like that and I was like a felt like I
+was like like having an affair like I
+was like sneaking out and like going to
+these conferences on the weekend and
+like coming back to work on Monday and
+eventually I was just like I figured
+this is probably where I was going up
+and then I met some cool people from
+Foundation down in Florida during a
+hackathon and I was making YouTube
+videos for like how to build on Salana
+and some of those videos people still
+watch like I still get notifications
+about them and I was like passing out
+business cards at the hackathon like hey
+if you guys are like looking to build on
+Salana like here's my channel and I was
+like chilling myself and they hired me
+which was pretty sweet and so that was
+like my start at Salana and then um and
+I had already gone to the hacker houses
+and I building on Salana, some cool
+stuff. And then I started working there
+and like building like doing onchain
+program work as like reference material
+and like doing like education and stuff
+like that. And then eventually made my
+way over to labs because like I was just
+doing enough onchain work that they kind
+of knew that I knew the stuff. I knew
+the tax stack or the tech stack for um
+like onchain work and I've been working
+in like an engineering capacity since
+then.
+>> That's awesome. So what what do you
+focus on today at Dan? For example, if
+when I saw your GitHub, you have
+comments across a variety of repos,
+right? Like uh Molesk uh Kodama then in
+into a way and some of the core programs
+as well. So what's your area of focus
+at?
+>> I'm kind of like I'm I'm definitely
+spread across quite a few locations, but
+I I tend to focus around like the realm
+of onchain programs. So like I've
+written a lot of programs, I've worked
+on a lot of our programs and then um
+I've worked on a lot of like tooling
+that is focused on those programs and
+also like the parts of the execution
+layer which I know you guys want to talk
+about today which I think it'll be
+sweet. Um so like a lot of stuff that
+has to do with just like deploying
+programs to Salana and like everything
+in between, right? So like to list a
+couple things specifically
+um I worked a lot on like decoupling our
+SVM which we call SVM we can get into
+that as well what's what but the API
+that you would use to build like a
+network extension or a rollup so like
+decoupling that um did some refactoring
+internal to that those components as
+well to just help things run smoother um
+worked on a lot of onchain programs that
+we use internally or like other programs
+that like we've worked on for other
+people that like help them out and stuff
+and then tooling like testing harnesses
+and um yeah I've contributed to things
+like kodama and I don't think I have any
+commits on Pinocchio yet but I got to
+change that soon but yes all kinds of
+stuff like that
+>> how do you even define start defining
+SVM because when you look at the the
+runtime I guess it was called sea level
+in in the beginning right so it make the
+runtime makes up so many different
+things it's the state it's the storage
+it's also the scheduling How do you def
+first how do you define what is SVM like
+if you if you have to
+>> so technically speaking the SVM is the
+state transition function of Solana. So
+like if you give me a set of inputs and
+you get a result that the inputs are
+going to be accounts and input data and
+then the result is going to be changes
+to that account state and some code
+right and there's like logs and whatever
+else but the point is like that right
+there that transition function is SVM
+and like in the stack where that
+actually happens is technically like
+within the program runtime. So like the
+way that I and a lot of people will like
+debate exactly what constitutes SVM or
+not, but the way that I envision it is
+like everything that is involved with
+like executing a batch of transactions,
+it all distills down to like what are
+the programs in your transaction. And
+there's obviously like usually many or
+multiple of them. And so for each one,
+there's going to be a a stage that will
+load that program and execute it with
+the inputs that are in the transaction.
+And that right there, I think, is the
+SPM. That's the state transition
+function. That's where accounts actually
+change. Now, obviously, you can make an
+argument that like the transaction piece
+is like a necessary part because it's
+atomic, but technically the way that it
+works in the in the actual runtime is
+all those changes do happen. It's just
+they get committed to the block later if
+the transaction is successful, but they
+still occurred. The state transition
+function still exists. So, that's the
+way I define it. It's that that
+transition between the inputs that you
+give a program and what the result is of
+it and like everything else besides that
+is runtime or or banking stage to be
+more proper and like banking stage
+includes runtime. Taking a step back
+right for example for developers who are
+new to crypto or people who are coming
+from the EVM side of the world how
+should they understand SVM because when
+you look at EVM they have like a
+specific op code the virtual machine
+works in a specific way uh so when we
+come draw a parallel to SVM what what is
+the best way for them to understand what
+SVM is
+>> that's a good question I mean obviously
+the two are quite
+But we do have actually an instruction
+set architecture that lays out what all
+the op codes of the VM are. We do have
+that. So if you want to look at like how
+the actual Salana virtual machine works,
+the one that is supposed to implement
+EVPF and is supposed to like execute
+your programs, that one is defined and
+the op codes are all listed in the SPF
+repo. Um, as far as the other stuff
+goes, we don't do a great job of like
+specking everything out. And that's like
+a product of like most of it having
+built like super quickly and like
+launching. And so it's taken us a long
+time to go back and actually like spec
+this stuff out. And maybe we should, but
+what's missing I think that like the
+difficult piece for EVM people coming
+over is like what is the spec for
+basically everything above the VM,
+right? So like
+the most EVM devs aren't used to like
+having to specify all the different
+accounts that are going to be involved
+in something, marking them as readable,
+writable, things like that. And that can
+be a little bit like verbose and
+annoying.
+And I think that's the cusp of where
+we're missing a lot of like
+specification is like how do these
+accounts actually get used into
+different ex program executions? like
+how does the like thread pool work that
+determines which can be like used in the
+same batch and that has actually changed
+recently, you know, because like
+previously a batch had to be
+non-conlicting.
+And so like if even one account was
+going to be written to, it needs to go
+in one batch and then like it needs to
+appear again in a later batch if it
+wants to be written to again. But now
+that doesn't do that anymore. So the
+spec would have changed recently again.
+So we're missing some specs in that
+area. Basically all the stuff that makes
+Solana like go burr with like the
+accounts being paralyzable that's all
+like pretty unrespected. I think
+>> you mentioned EVPF, right? Like a lot
+lot of lot of the SVM execution
+environment is actually the EVPF and
+then we have special op codes on top of
+that. That's actually an interesting
+choice.
+C can you talk about why EVPF was chosen
+as a
+you know the execution runtime versus
+something like was
+>> I mean the core reason that they picked
+EVPF so there's like there's a couple
+like main engineering focused reasons
+then there's also one that was like it
+was just easier to do so like on the
+first on the on the engineering side it
+it is like a known standard and a pretty
+performant way to do like it was used in
+in packet filtering and in networking.
+And so like it it's a fast way to do
+like an ISA for like a VM for different
+kinds of sandboxed environments. And so
+it was really useful for the performance
+that you could get out of it and also
+for the sandboxing capabilities that the
+VM offered. So like you could have this
+like isolated architecture where like
+everything that happened is say is like
+self-contained and that works great for
+like a blockchain because that way you
+know that like nothing that happens
+within this VM is going to like panic a
+validator right so that was huge and the
+other thing that I was alluding to is
+like there was already an implementation
+in Rust available from this guy named
+Quinton who we forked it from a long
+time ago this is long before my time and
+so that was probably a huge help already
+as well is having something that you
+could build off of without having to
+start from scratch and things like that.
+Now, I don't know what like what was
+maybe around or prevalent at the time as
+far as like something that could have
+been used instead. I know nowadays we've
+talked quite a bit about looking into
+risk 5. I don't know if that's going to
+happen or not, but it's something that's
+maybe worth exploring because it's
+getting popularity.
+But, I mean, to this day, like EVPF is
+still pretty quick. So unless like
+there's really a lot of like compelling
+reasons to switch it, I don't think the
+switching cost is really worth it. But
+we'll see.
+>> Interesting. It it's also interesting
+that you mentioned uh you know
+supporting risk five, right? So is a
+part of the modeler argument today is
+that so that you can we you have the
+ability to upgrade some of these
+components independently. Yeah, I think
+it's also we could also talk about why
+model, right? Like why move from a
+monolithic integrated design into a
+modeler at least at the codebased level.
+>> Well, so like my take on this is like if
+you if you have like a lot of well
+decoupled components in a validator like
+if you think about it the validator is
+pretty big, right? Like there's actually
+a lot of stuff in there. And if you can
+decouple a lot of components in like a
+sensible way, you know, not just like
+every little thing needs to be like its
+own isolated component, but at least
+sensible buckets of performance and
+functionality. You could actually have
+like a lot of plug-andplay for different
+validator clients. So imagine a world
+where like the labs client that we had
+for years is like this big
+like machine that runs all these
+different blocks of components and
+somebody wants to like change one of
+them. They could just fork one component
+and they could change that one component
+and plug it in and like this is what JTO
+does. But because they do that, like
+there is no like easy way for them to
+plug their changes in. So they have to
+maintain a fork and have done that for
+years. And sometimes it's not so bad,
+sometimes it sucks because they have to
+like upstream all the cherry picks and
+like get all the changes from the
+client. And that's like not really a fun
+process for anyone to maintain like a
+like a fork or a mod or anything like
+that. So if you imagine the scenario I
+was I was like sort of laying up. If I'm
+like a node operator and I want to
+change like one or two components, I can
+easily do that and then I can keep
+getting updated software as Anza
+releases new updates and I just have to
+worry about like updating my piece, you
+know, or like bringing in the features
+that have been added to that little
+piece. And so then you end up with like
+a network that has a really good spread
+of many different versions of many
+components. And so like a lot of people
+talk about the benefit of having someone
+like Fire Dancer or even Cheeto like for
+the same reasons because like if there's
+a bug in Agave for example and hopefully
+it's not in the other client then you
+have part of the network that can still
+run. You can apply the same concept to
+individual components. So, like if you
+have a bug in one component and
+everybody's mod maybe doesn't have it or
+like some mods have it, some mods don't,
+like you have actually a little bit more
+resilience that way as well for the same
+reasons that you get it for having
+multiple clients. But obviously the main
+benefit like that's a huge one too. But
+the main benefit is like you can do a
+lot more innovation on top of Agave
+without having to worry about like all
+this crazy coupled code that you're
+going to have to update every time
+there's changes to somewhere in the
+stack. And it's really a pain. So it
+would be nice and it would I mean my
+like longot idea is like if we did have
+that you could have people like commit
+stuff back. I've said this many times
+before and it hasn't happened, but you
+could have people commit stuff back and
+be like, "Hey, I've been tinkering with
+this. Like, I have this fork of
+whatever. Like, I really think the
+protocol should just do this or like the
+base validator should just do this and
+you guys should like blah blah blah."
+And you make a case for it and then
+suddenly it's maintained along with the
+like flagship validator and then like
+you can push the the cluster along with
+like new tech. So I know there's a lot
+of benefits I think but it's mostly for
+people who just want to tinker around
+that you know.
+>> Yeah it's also interesting you mentioned
+that because it kind of drawing these
+clear interface interfaces and
+boundaries between different components
+kind of also you know gives you the
+interfaces actually become specs for
+these components. So in a way it kind of
+starts documenting what these components
+are and how they are supposed to behave.
+So that now it makes it much more easier
+for someone to build a new thing and
+potentially also upscreen it if that is
+a good reason for it.
+>> Absolutely. That would be awesome.
+That's ideal because then you have like
+a well- definfined interface, a spec and
+then you know how to hook into it.
+>> You you mentioned different mods, right?
+I'm curious to double click on what type
+of mods are people running or typically
+what especially around these specific
+which which of these components are
+people actually modifying and why?
+>> There's quite a few that people tend to
+mess with. So like you can you can mod
+things like Geyser if you want to like
+get more information extracted from your
+node and you could have like different
+infrastructure that you have alongside
+of it. Maybe you have like some cloud
+databases or whatever. You're tracking
+different telemetry.
+You can also add more telemetry in
+general. But the most popular one for
+any operator to mod is going to be the
+block producing agent like anything that
+has to do with producing a block. So
+like basically your scheduler and
+obviously the reason is for me, right?
+You want to try to try your hand at
+ordering a block in a way that you think
+is going to be most profitable. And like
+some people just run Cheeto and they do
+like the auction method and they go
+through some of the like the mechanisms
+that they offer and some people do it
+themselves. They like they have their
+own custom setup and that's mostly what
+people do. And I think that that's
+that's not necessarily a bad thing. It's
+just that um like it can be a little bit
+like wild west. So, one of the nice
+things is I think we're moving towards a
+future where like that's a little bit
+more decoupled like we were just talking
+about and so you have like a validator
+that is not so tightly wound with the
+different scheduler components and you
+can actually like plug in more stuff in
+there. And then ideally the second step
+is like here are some standards now that
+we know like
+external third party or just decoupled
+block producing in general is like no
+longer this like fringe forking thing.
+It's like a pluggable thing. Then you
+can start to have like standards. But
+yeah, I would say that anything block
+producing is obviously going to be the
+biggest one that people mod. you you
+also mentioned network extensions being
+like a use case for you know having
+these components right so I'm curious to
+know like what what what is like the
+spectrum of changes this uh you know
+this network extensions who don't
+necessarily sit within the main salon
+network but are kind of like extending
+the network right what kind of
+modifications do they make is there do
+people mess around with how the state is
+stored for example the accounts DB or
+even uh maybe even even possibly the
+runtime as well, right? If the if the
+SPM API doesn't like strictly enforce it
+being a you know a SPF shared object, it
+could be a risk by binary as well,
+right? the different extensions that I
+know about that are true extensions and
+not like SPM L2s for like another base
+chain.
+Um those it seems to be common that
+people want to do like
+permissioned environments
+or like state channels
+and like those are pretty like classic
+examples. But for those people who don't
+know, like a permission environment is
+obviously you just you're kind of like
+forking the Salona runtime, but you're
+still like compatible with all the
+primitives. However, you can add and
+omit some of the things that will still
+allow you to be consensus compatible.
+So, for example, let's say that I want
+to have like a side chain, but I don't
+want to do staking. So, you just like
+create a fork and then you just don't
+have a stake program. Or maybe you want
+to do one where like you don't have
+token 22, right? Or there's like certain
+restrictions on token 22 extensions that
+are enforced at a protocol level. That's
+pretty easy to do as like an extension.
+And so there's quite legitimate use
+cases there too. And I think we'll see
+more with like some of the stable coin
+legislation, but for now I don't think
+there's too many extensions yet. So
+we'll probably see more. How are people
+using SVM APIs to to build state
+channels?
+>> Well, you can build a state channel with
+the API without having to worry about
+any of the rest of the of the cluster.
+So, you don't need to like fork a
+validator or spin up like a cluster to
+do just like simple payments or if you
+have like a well- definfined standard of
+state transitions, um you can really
+simplify everything. So, like the
+classic one is going to be just
+transfers. So if you want to do just
+like sole transfers like imagine imagine
+you and I want to set up like a we want
+to set up like a P2P network within our
+let's say we have like an app or we're a
+bank. You can just like take the SVM API
+and you can like load account state from
+Salana that are like owned by your
+program. So like you don't have to worry
+about them like rugging underneath. And
+then you do all the payment processing
+on your little like extension layer and
+then you settle it like periodically to
+the accounts that are on the base chain.
+And like you can see that first of all
+you can probably make that a little bit
+faster. But the nice thing too is you
+can aggregate changes too. So you can
+say like I'm going to keep track of just
+like the delta of everybody's balance
+and I'll do that settlement later. So
+it's like I don't need to post every del
+like balance change to the main chain
+every time. And so you save on fees,
+right? So you don't have to just you
+don't have to tell Salana every time
+somebody makes a transfer. You just wait
+for like maybe like a minute or two
+minutes or an hour, whatever you want to
+do. And then you take the final ledger
+and you put that to the chain and you're
+going to save on fees likely orders of
+magnitude. And then like anyone
+depending on what the app that they're
+running, you can easily sprinkle in some
+of the permission stuff we were talking
+about too. So it's like, oh, you can
+make these kind of payments. You got
+like payment limits, blah blah blah. But
+that's that's up to whoever is
+implementing that. But that's that's the
+most common way you could use a state
+channel. If you don't want to do just
+payments though, you can do it in just
+about any kind of transition you want.
+The idea is you can make it
+hyperfocused. So you could say like
+here's a program that defines our like
+transition functions that this account
+can do and like the state channel can do
+and then as long as you can still update
+those to the base chain like your
+program on the base chain and on the on
+the extension are compatible or
+otherwise matching you can do it with
+just about any kind of state transition
+function. The idea is you're not just
+like this all-encompassing any third
+party software channel. You're a focused
+thing, but you use the same API, the
+same like primitives and everything as
+the base and it's quite easy to rectify
+everything at the end.
+>> That's awesome. And all of this is
+possible because of the refactoring you
+mentioned, right? And where all of these
+components were tightly coupled now
+since you have decoupled them, you can
+take the pieces and you know start using
+them in different contexts. I'm curious
+to know what was the I the most
+challenging f part of decoupling
+you know doing this refactor.
+>> Um definitely the bank I don't know if
+you guys have looked at like the code in
+the bank but it's a really really big
+file and it used to be even bigger and
+um I didn't actually start the
+refactoring. There was a couple of us
+working on it and I jumped in later and
+thankfully a lot of that was like in
+flight already. So I just jumped in and
+started pulling stuff out of bank
+myself.
+But whoever started the effort
+originally probably I think it was this
+guy named Pankage. He was probably the
+one who had to deal with the most like
+oh my god where do I even start?
+Because that file used to be massive.
+It's still huge but it used to be even
+bigger. So that one definitely sucked.
+It needs more refactoring, but nobody
+like has time to go take that on yet.
+>> That's awesome. It's switching gears
+into Moleskisk.
+It's like
+why why build mole? Like why is it
+important also? Why why would
+when when does a dev choose you know for
+their testing? Why should they choose
+something like monisk over the sana
+program test which most if anyone is
+already writing some of their tests in
+rust they're already familiar with right
+so what was the thought process behind
+monesk oh basically
+so it's a pretty versatile like test
+harness so you can use it for a lot of
+different things and we've actually seen
+a lot of people come up with pretty cool
+use cases besides what it was intended
+for but the original idea was that we
+needed a good test harness that would
+let you write unit tests really easily.
+And the problem with things like program
+test was that it just brought with it so
+many things that you just like really
+didn't need. And so it it would bring
+with you like a bank like I was just
+talking about how big the bank file is.
+Like the bank itself is quite large and
+so it does a lot of stuff. So bring like
+the runtime and if you're testing a
+program and like if you're doing unit
+tests you really want to test one case
+on one instruction at a time and each
+test is a different case and like each
+test suite is a different instruction.
+At least that's the pattern that I think
+most people should follow. Well, I mean
+ultimately devs could do whatever they
+want, but like that's my suggestion. And
+that was how we were writing tests, but
+it was really like verbose and annoying.
+And then we would also get a lot of
+problems as our test suites grew because
+like if you spin up too many program
+test instances, you end up with like
+timeouts.
+And so I wrote this thing that basically
+just says, "All right, give me the
+accounts and the instruction data and
+I'll just invoke the program on the VM
+and that's it." It's like I won't bring
+any of the bank or the stakes cache or
+any of the other stuff that like you
+don't really need and I won't even
+persist the account changes. I'll just
+give you like we talked about the state
+transition function, the SPM like STF.
+That's all it is. It's just the
+transition function. And so you can test
+exactly what you're trying to see from
+the VM like from the program using this
+harness.
+And I will say that like most people I
+think have found that quite useful. Some
+people get a little bit tripped up here
+and there sometimes because it can be a
+little bit like explicit, but it's
+that's kind of the point. And I've added
+some features over time to make that
+less like less of a of an obstacle when
+people are trying to get onboarded to
+it. So there is like a persistent
+account store and there's stuff like
+that if you wanted to expand on some of
+the writing but the core like tenant of
+the harness itself was like each test is
+one case of one instruction and you just
+do like you spin up a mollisk instance
+and then you just like invoke it and you
+can also like keep a moist instance
+around and like keep invoking it too.
+And so there's like other goodies in
+there too like you can record and
+benchmark your compute units and stuff
+like that. But that was the motivation
+and so far so good. I mean we use it all
+over the place and I think it it works
+well for that intended use case.
+>> Interesting. So the idea is that so
+moisk actually shaves off all the the
+expensive setup and tear down times. For
+examp if I were to set up a entire
+bank's client every for every unit test
+case that I have to run tens of padding
+a lot of time. So molesk makes it much
+much more faster. So now it is I could
+actually run it on GitHub CI. Is that
+the
+>> Yeah, it's it's a lot less resource
+intensive for sure. The other nice thing
+too is like I I'm obviously a little
+biased, but I think that the some of the
+setup is a little bit more like
+customizable.
+So like when you're working with like
+program test and you have like a bank in
+there that you need to work with, you
+have to be careful when you do certain
+updates. So like there some of these
+things were just bugs that we just could
+have maybe gone and fixed, but like a
+number of things I would run into was
+you would need to set up some accounts
+and you would want to test with these
+accounts. And so you have two options.
+You can either set them all up ahead of
+time and then like run your tests with
+transactions
+and if you need to change anything in
+between or like look at some
+intermediate state or whatever like you
+have to be careful about when the bank
+is frozen like things like that if you
+need to advance the slot and so it was a
+little bit tricky to work with those
+kinds of things to manipulate the
+environment on the fly. And the other
+thing that was difficult to do was like
+setting up sisfars and just things like
+that were not like super simple. Not
+impossible but not super simple. I think
+that that's a little bit easier to do
+now too.
+>> Another pattern that I've noticed is
+that people directly use anchor test
+like they write their program in anchor
+and then they anchor creates this mocha
+test for you and they use the ideal to
+test against. So what is so what is the
+best since you have built a lot of
+onchain programs like what's the best
+practice that people should adopt
+especially when it comes to testing
+should they test it via their ideal or
+you know should they just directly have
+their test cases at the
+at the program level in Rust
+>> I don't know I think it's you're asking
+like where should you write them
+>> yeah yeah I I think for for on one
+practice I'm I'm actually what I'm
+asking thing is what's the best pattern
+should people write their test cases.
+For example, if you're developing in
+anchor, anchor by default creates this
+test folder and inside it you could have
+your entire you know test suite and
+written in Mocha, right? So
+the question that I'm asking is like how
+does something something lightweight
+very fast like molesk benefit them
+because my because that actually ends up
+spinning up like a test validator
+deploys programs to it and then executes
+all your
+you know test cases against one state of
+the validator right
+>> and so the way I would do it I the way I
+would recommend is
+Like if it was me, I don't I don't write
+a lot of Anchor programs anymore, but if
+I was writing Anchor right now, I would
+probably write a whole like suite of
+unit tests in like so I would have like
+program source, right? Like my program
+code and then like program tests and in
+programs I would write a slew of unit
+tests for each instruction. And I
+actually like this is what I do right
+now. And so like if you have let's say
+like three processors and like three
+instructions like you usually have three
+files. If you write it all in one file,
+I mean maybe that's your jam, but like
+usually people will split them into like
+three different files. And so then you
+just have like three different test
+files. And like again, this is like just
+what I would do. I'm not saying anyone
+has to like get this granular or
+anything, but you have each one mapped
+to an instruction and then like go down
+the line and each like test attribute
+function should cover like a different
+edge case or a different case in general
+that your program is checking for. So
+with anchor, this is actually a little
+bit not obvious to test because the
+framework does a lot of things for you
+and what like you can configure the
+context to do a lot of these like checks
+and assertions and so you can test it
+and make sure that the framework is
+going to do what you expect. It's
+probably a good thing to do. Um, but
+it's not always super apparent like when
+you write something in native, you
+actually put the check there yourself.
+So like you know what to look for. And
+so I just go down the line of like the
+program control flow like the logic and
+just start at the top like what is the
+first check that I see and it's usually
+like this person is a ser okay first
+test is going to be like fail this thing
+isn't a signer. And then you you set up
+a mo unit test and you make sure you get
+the the error code that you're looking
+for. You just go down the line and then
+outside of the program source like the
+program source and test folders what I
+would do is I would use the anchor like
+boilerplate setup and the client to do
+an endto-end test with the test
+validator. And the reason that I would
+do it like this is because with the test
+validator it's really good to get like a
+gut check that you can start from zero
+and like go through the whole like end
+to end flow and nothing like craps out
+in between. But when you're trying to
+make sure that certain things fail,
+it's actually better to have like really
+quickfire unit tests that do one simple
+thing. So then all your unit tests cover
+all the failure cases and maybe you have
+a success cases in there too, but you
+they cover all your cases and then your
+end to end is just like does it do the
+thing that I built this thing to do, you
+know, and like then you just worry about
+that. And I think that's probably the
+optimal way to do it. But like I said,
+anybody is free to do testing and
+development however they want. That's
+just my jam.
+>> I think one key distinction here is that
+the anchor whatever tests you write in
+anchor those are more integration test
+because you're operating on one specific
+state of the validator and then you're
+you know keeping a
+continue to make changes. The what is
+the the interesting part about moisk is
+that that now I I can actually use it
+with a property testing module like
+quick check. Now you I can exhaustively
+test different corner cases,
+right? So I I Yeah,
+super interesting. I'm definitely going
+to use uh Mullisk with quick check now.
+>> Nice. Yeah, I haven't tried that yet,
+but it should it should work just as you
+said. I have used it for like benchmarks
+because I wrote like a little compute
+unit benchmarker and it's nothing really
+fancy. All it does is just read the
+final resulting compute unit value, but
+it will make a little markdown file for
+you. And so if you look at some of the
+core programs that are in like the
+Salana program organization, like a
+bunch of the ones that Onzo maintains,
+like the lookup table, like those have a
+benchmarks folder. It's just called
+benches, I think. And in it is a
+markdown file. And I I' I've said this
+multiple times, but I stole this from
+Ankor. I took this idea from them. they
+will benchmark all the CU usage of like
+different APIs and types with new
+releases. I thought that was super cool.
+So I put this in as a feature and you
+can like do it on a program. So if you
+like make a change to dependencies or to
+anything in your code, you can see the
+change to the cus based on your
+benchmarks.
+And so that's been pretty neat. But
+yeah, that was all Anchor's idea.
+>> Awesome.
+>> I just got a question. Do you have uh
+any specific repositories that you
+recommend u people look at where you
+have both these set of tests uh on the
+rust side and on on the client? Is there
+any specific repo which has them well
+documented so people can actually look
+at it uh after the part?
+>> I would say the solenoid program or has
+a lot of really good unit test examples
+but we don't have a lot of good examples
+of testing with clients because like we
+don't really use anchor at so I don't
+have any good examples of that. I would
+check out Blue Shift though. They
+definitely do. But other other teams too
+as well probably have good examples, but
+we don't use a lot of Anchor.
+>> Got it. Makes sense. And when you don't
+use Anchor, you don't ever at all write
+end to end tests with a client. They're
+all written in Rust. I
+>> I have written end to end tests in
+native Rust. It's just like I haven't
+done it in like our stuff. I've done it
+in other stuff that I've helped other
+people with that I can't really share.
+>> Yeah. But but for our stuff, no, we have
+some like there's some end toend tests
+with like CLIs and whatnot, but I
+wouldn't recommend those as being like
+good examples. Some of them are like
+really verbose or they're like ported
+over from old tests.
+I don't know. I think there's probably
+better stuff out there.
+>> What is the most quote unquote elegant
+app you have seen in the Agawe codebase?
+Like it probably shouldn't work, but it
+does. I would say probably the craziest
+was what was like I think feature
+activations are pretty wild.
+So like the way that it kind of works is
+you have like the epic rollover phase
+where like an epic ends at the end of
+some slot and then the next slot is the
+first slot of the next epic and in that
+transition like between every slot
+there's a process of like one bank
+becomes a new bank. So like imagine like
+a bank maps to a block pretty much they
+do. Um it's more complex than that but
+you can think about that for the
+analogy. And so like each slot you get a
+new bank that's made from the old one.
+And in the one that's on the epic
+boundary like a million things happen.
+And we've been trying to like thin that
+out like what happens there because it's
+like obviously a big like compute job.
+But the feature activations in
+particular, I think are interesting
+because it's like they all happen at
+once. I mean, we only activate maybe one
+or two at a time, but they are all right
+there on that boundary and and if and
+they're activated and then they are like
+piped through all the source code. So
+like to give you an example like if you
+activate a feature you submit an account
+like you submit a transaction to put an
+account on chain under a certain owner
+and the key is in the software like the
+pub key is in the software and so once
+that account exists during the epic
+transition the runtime sees it and it
+activates that logic gate and so it's
+kind of clever but it's also like crazy
+because it's like you have this
+hardcoded address of an account that
+doesn't exist, then somebody creates it
+and causes this action to occur on the
+live cluster during an epic transition.
+And so there's another a bunch of
+reasons why I think it's like an elegant
+hack because like a reason I think it's
+elegant is I think it's like a really
+good idea and it's clever. But the
+reason I think it's a kind of a hack is
+because it's like it like flips
+basically a logic gate all across the
+entire validator, but on all validators
+that do it.
+>> So it's kind of like a crank, but
+instead of someone externally triggering
+it, you have it submit, you have it as
+part of the code base.
+>> I mean, I don't know a better
+alternative to like activate a feature
+on a cluster that needs to all do the
+same thing at the same time. So, I think
+it does make sense. But when I first
+figured out how they work, I was kind of
+mind blown. And you can go look at these
+in the code. Like if you go through
+bank, there's a like a part of the code
+that says like new feature activations.
+And so what it will do is like on that
+boundary, it will look up all these pub
+keys and see which ones exist that
+didn't last epic. And it comes up with
+this short list of like this these we
+just found. Like we just found these
+ones now. So, we got to go do something
+with these. And then it'll go through
+that short list and turn them all to
+true. And like there's logic that is
+like basically hooked into these for
+like the first time they become active.
+And so like the way the features
+actually work is there's like two ways.
+So like one is like there's an action
+that happens as soon as it is activated
+and it doesn't happen again. Then
+there's also features that like once
+they're active like this path is taken
+instead of this one and then you
+eventually never go back to this one.
+So, it is clever. It makes sense. It's
+just like when you see the code that
+does it though, you're like, "Whoa, this
+is kind of like wild. It's just like it
+recognizes an account all of a sudden
+randomly that like just appears and then
+it just changes the behavior of the
+validator." But it's pretty pretty cool,
+I think.
+>> Okay. One one more question. Uh, what
+are your thoughts on Cindy 215?
+>> I did I did try. I mean, dude, like I'm
+a I'm a light client guy. Like I
+understand why people want them and need
+them and like I'm all for it, but
+ultimately at the end of end of the day
+like most of the devs are trying to make
+the cluster faster and unless enough
+people like stand up and say like here's
+this thing I'm building and I need like
+clients
+like they're like we're gonna probably
+make compromises that make the chain
+faster. And that's exactly what happened
+with 215. I mean, you could argue
+whether or not there was enough
+discussion on it. I don't really know. I
+I would just What I'm trying to say is
+like if enough people think that it
+really stinks that we don't have good
+like client support and it's something
+that we need to fix, then we can do it.
+Like no one's against it. But um until
+this day, like there really hasn't been
+a ton. There's some like there's
+definitely some teams that have pushed
+this idea forward, but it's not like
+this giant outpouring of of projects. If
+that was to happen, if a lot of people
+were like, "Hey, this is like really
+kind of terrible that we don't have
+support for this, I think that would
+change the game because like I
+understand you want to have like
+trustless bridging and you don't want to
+have to do all these like weird things
+and some of the guys that have figured
+out how to do proving
+like it's very um it's very difficult.
+like you have to there's really no way
+around like someone has to run a modded
+node if you want to have anything that
+you can use to do proofs and then you're
+kind of like trusting this fork and so
+it's not ideal. So, I'm all in favor of
+like clients, but um I also think that
+like
+unless somebody is like, "Hey, let's not
+make the chain faster because we need
+this light client and here's why and
+it's a compelling reason," then like
+they're probably like the chain is
+probably just going to get faster like
+to be honest with you. Um but I'm
+totally on board. If somebody wants to
+like propose something or jam on it, I'm
+on board. We talked a little bit in some
+discussions on the SIMD repo, but um
+yeah, I don't know. I think the idea has
+just fallen a little bit flat sometimes
+to be honest.
+>> That's awesome. We we are towards the
+end of the pod so just have one more
+question. What what is what is one
+feature that you're you know that you're
+most excited about in SVM that what keep
+what is that one thing that keeps you up
+at night?
+>> Um that's a good question. I think so.
+So there's some things that keep me up
+at night for the wrong reasons. But I
+think that there's um I think the async
+program execution sounds pretty cool and
+it's an interesting problem to try to
+solve because for anybody who's like
+seen some of the discussion about it,
+there's like this concept of like
+execution domains. So like if if you
+think about the thread pool concept of
+like Solano's Calele and you know how
+like if an account is ridable, right?
+like you have to make sure that nobody
+else is trying to write to it at the
+same time. Like basic thread lock stuff.
+But then you take that same concept and
+you say like okay how do you set this up
+so that like different kinds of
+transactions like different kinds of
+execution flows can happen at the same
+time and we can isolate different types
+of accounts from each other. And like
+Anatoli has a good paper on this that I
+don't know if it like kicked things off
+or he just kind of jumped into the mix
+when people were already talking about
+this, but he talks about first like the
+voting domain versus the rest of the
+cluster is like a good way to
+conceptualize this. So if you think
+about like votes, there's really no need
+that you would require like a vote
+account to be writable unless you're
+voting, right? So if I'm voting, I know
+that the vote account is probably going
+to be writable. Maybe not, but usually.
+And so that's something that can happen
+in vote land, right? But then something
+else that's like a token transfer has
+nothing to do with vote. Like it like
+these are two separate worlds. So if you
+have that as like a primitive in the
+chain, that makes sense. And you can
+build on that concept and you can try to
+isolate different domains of accounts
+that would be used together. And like
+dude, you can profile blocks and figure
+this out. Like you can look at what
+dexes use. Like all this stuff is
+related, you know? Like you don't have
+some random protocol that Joe Blow wrote
+that you include accounts from in your
+like drift transaction. Just this
+doesn't happen. So there you go. like
+you have separation that you can do and
+then you can parallelize more stuff and
+you can have like pipelined approaches
+to things that like you can basically
+just have like super fast some stuff
+that's super fast and like Hyperlid did
+this and they did this for like some of
+their dex stuff. Um, like don't ask me,
+I'm not an expert about all the things
+Hyperlquid, but reading some of their
+docs, that's how they accomplished some
+of their Perf stuff is they did some
+pipelining around like transaction um,
+whatever, like transaction domains and
+Suie did this too. Um, so Salana did
+this, we would probably squeeze out a
+ton of performance with this. And I
+think that that's a really cool idea
+that would probably be great for the
+chain. And with Alpenlow, I think I'm
+not entirely sure if it's like directly
+affected or not. I'd have to think about
+it quite quite a bit, but um I think
+that like combined those are really good
+features to have for performance, you
+know.
+>> Thank you so much for joining us, too.
+Been fantastic having you.
+>> It was it was great chatting with you
+guys. Hopefully, it was uh it was
+interesting for some of the devs out
+there. And yeah, if anybody's ever
+curious about anything, whatever, you
+can like tag me on Twitter or like find
+me on Discord or Telegram or whatever.
+Um maybe we could share some of the
+handles um in like the description or
+whatever. But yeah, happy to jam with
+anybody who's down.
+>> Thank you.

@@ -1,0 +1,26 @@
+In this episode, we talk to Austin Federa about the next evolution in blockchain infrastructure—focusing on low-level performance, IBRL, the Zero network, and how hardware-level optimization could change everything. From Fire Dancer to fiber optics, this is a must-listen for deep tech builders.
+Timestamps -
+00:00 - Intro
+01:05 - Meet Austin Federa & the Zero Network vision
+03:50 - Blockchain performance myths debunked
+06:12 - Why Solana is leading third-gen chains
+08:40 - Fire Dancer and building fast blockchains
+11:24 - Bandwidth vs. latency in real terms
+14:16 - The hardware layer behind Zero
+17:20 - Multicast tech & next-gen data propagation
+21:00 - How validators connect to the Zero network
+27:10 - Why scaling blockchains needs real infrastructure
+Superteam India: https://x.com/SuperteamIN
+100xDevs: https://x.com/100xDevs
+Shek: https://x.com/shek_dev
+Kirat: https://x.com/kirat_tw
+Earn your first crypto: https://earn.superteam.fun
+🔗 𝗜𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝗟𝗶𝗻𝗸𝘀:
+Website → https://app.100xdevs.com
+GitHub → https://github.com/code100x
+Twitter → https://x.com/100xDevs
+LinkedIn → / 100xdevs
+Instagram → / 100xdevsofficial
+Discord → / discord
+Telegram → https://t.me/kirat_internal_group
+Whatsapp → https://whatsapp.com/channel/0029Va98...

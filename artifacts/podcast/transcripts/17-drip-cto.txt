@@ -1,0 +1,36 @@
+🚀 OnlyDevs Presents: The Founder Series 🚀
+In this episode of the OnlyDevs Podcast, we sit down with Joe, CTO of Drip Haus, one of the leading consumer crypto products on Solana. From pioneering Solana Spaces to scaling Drip into a powerhouse for NFT airdrops, Joe shares his insights on building in Web3, engineering at scale, and the future of digital ownership. Dive into the behind-the-scenes of high-performance minting, Sybil resistance, and optimizing blockchain infrastructure—this is a must-listen for every Web3 dev!
+Bounty link - https://earn.superteam.fun/listing/elixir-nifs-for-compressed-nfts/
+Timestamps -
+00:00 – Context for the video
+02:00 – In this video
+03:08 – Meet Joe (CTO @ Drip)
+02:34 – The challenges of building Solana Spaces
+05:48 – The first version of Drip & early airdrop challenges
+07:16 – How compression changed everything for Drip
+12:28 – Engineering for robustness in Web3
+15:35 – Why Drip chose Elixir for scalability
+20:37 – Handling failed & lost transactions in Web3
+29:36 – Fighting Sybil attacks & Web3 security challenges
+32:56 – The impact of Drip’s mobile app on user growth
+35:46 – Why Drip moved from REST APIs to WebSockets
+43:43 – Final thoughts on scaling Web3 & closing remarks
+Links:-
+Bounty Link:
+DRiP Haus website: https://drip.haus/
+DRiP Haus: https://x.com/drip_haus
+Superteam India: https://x.com/SuperteamIN
+100xDevs: https://x.com/100xDevs
+Joe: https://x.com/DxJiG_
+Shek: https://x.com/shek_dev
+Kirat: https://x.com/kirat_tw
+Earn your first crypto: https://earn.superteam.fun
+🔗 𝗜𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝗟𝗶𝗻𝗸𝘀:
+Website → https://app.100xdevs.com
+GitHub → https://github.com/code100x
+Twitter → https://x.com/100xDevs
+LinkedIn → https://www.linkedin.com/company/100xdevs
+Instagram → https://www.instagram.com/100xdevsofficial/
+Discord → https://discord.com/invite/WAaXacK9bh
+Telegram → https://t.me/kirat_internal_group
+Whatsapp → https://whatsapp.com/channel/0029Va98SYeHrDZhfxCT6s0a

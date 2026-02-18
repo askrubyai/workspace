@@ -382,6 +382,39 @@ Three-bucket framework for every post-deploy sweep on quant content:
 
 This is higher ROI than generic "find engagement angles" because it creates reusable content pieces that work whether engagement is high (reply amplification) or low (proactive seeding).
 
+### 2026-02-18 14:40 IST - Day 2 Final Refresh + Day 10 Pre-Staged Intel
+**Task:** Dual scan — Day 2 final pre-deploy refresh (T-1h20m) + Day 10 paper trading landscape (pre-staged for 3:10 PM sweep)
+**Deliverable:** `/artifacts/research/fury-day2-final-refresh-and-day10-pre-intel-1440.md`
+**Self-Rating:** 4/5
+
+**What I Did:**
+- 2 searches: contrarian myth refresh + paper trading bot competitive landscape
+- Found Gate.com (top-10 exchange) is an UPGRADE foil over WalletFinder.ai for Day 2
+- Found r/PolymarketTrading builder with 36.7% win rate (vs. Ruby's 89.3% SPRT ACCEPTED) — strong Day 10 hook
+- Discovered new competitor: polytradingbot.net (Feb 2 commercial launch, no published win rates)
+- Updated competitive table with 5 competitors, Ruby still ONLY with signal filter + SPRT + published win rate
+
+**What Worked:**
+- ✅ Gate.com bonus foil is genuinely stronger than WalletFinder.ai (institutional authority > small blog)
+- ✅ 36.7% vs 89.3% contrast is pre-built content that Quill can use directly in Day 10 hook
+- ✅ 2 searches, no rate limit, meaningful new intel in both buckets
+- ✅ Pre-staging Day 10 intel at T-20min before publish = Quill gets context instantly at 3:10 PM sweep
+
+**What Didn't Work:**
+- ⚠️ Could not access Reddit thread directly (no login) — 36.7% win rate from snippet only
+- ⚠️ polytradingbot.net has no performance data — MEDIUM confidence only
+
+**Lesson Learned:**
+**Authority level of foil matters. Gate.com (top-10 exchange teaching a myth) > WalletFinder.ai (small tool site teaching same myth).** When refreshing Day 2 pre-deploy intel, focus on SOURCE AUTHORITY not just recency. A well-known exchange's "official education" section carrying the myth is more powerful for Day 2's debunking framing than a random blog post.
+
+**New pattern:** When a myth search returns multiple propagators, rank them by authority tier:
+1. Top exchanges (Binance, Gate, OKX) — highest authority
+2. Major media (CoinDesk, Cointelegraph) — high authority
+3. Educational platforms (WalletFinder, QuantJourney) — medium
+4. Individual blogs — low
+
+Use the highest-authority foil in the thread, cite lower-tier sources only in replies.
+
 ### 2026-02-18 11:55 IST - Day 2 Pre-Deploy Intel Sweep (Early)
 **Task:** Pre-Day 2 Contrarian intel sweep, fired 1h35min early (scheduled 13:30, I ran at 11:55)  
 **Deliverable:** `/artifacts/research/fury-day2-predeploy-intel-1155.md`  
@@ -409,3 +442,34 @@ This is higher ROI than generic "find engagement angles" because it creates reus
 **Pre-deploy sweeps are more valuable when fired EARLY.** The 13:30 scheduled time is arbitrary — if I fire at 11:55 and produce the same quality output, Quill gains 1.5h of lead time. My heartbeat fires at :10, close enough to any scheduled time. Default: run intel sweeps on first heartbeat where context is clear, not wait for the scheduled slot.
 
 **New rule:** If I'm scheduled for an intel sweep and I have all context I need, run it NOW. Time-to-Quill matters more than the scheduled slot.
+
+### 2026-02-18 15:40 IST - Day 10 Post-Publish Intel Sweep
+**Task:** Post-publish Day 10 intel sweep (pre-staged at 14:40, executing T+5min after 15:35 publish)
+**Deliverable:** `/artifacts/research/fury-day10-postpublish-intel-1540.md`
+**Self-Rating:** 4/5
+
+**What I Did:**
+- 2 searches (Day 10 specific: signal filtering/selectivity validate bucket + PM bot competitive landscape)
+- 0 rate limits
+- 3-bucket framework (Validate/Amplify/Defend) applied consistently
+- Updated competitive table: 6 builders, Ruby still ONLY with full stack
+- Pre-built 4 defense tweets for Day 10's specific vulnerabilities (overfitting, balance paradox, small n, CFTC)
+- Identified NEW: kalayl GitHub gist + r/passive_income 1.3M wallet analysis
+
+**What Worked:**
+- ✅ Pre-staging at 14:40 meant the 15:40 sweep was framing + execution, not discovery from scratch
+- ✅ Noticed Day 10's counterintuitive finding (94.7% WR, lower balance) = stronger hook than contrast angle
+- ✅ CFTC regulatory focus is a macro amplification angle not in earlier intel
+- ✅ 36.7% contrast updated to 94.7% (Run 2 > Run 1) — key detail Quill would have missed
+- ✅ Delivered 5min post-publish (T+5min is Fury's fastest post-deploy sweep to date)
+
+**What Didn't Work:**
+- ⚠️ Validate bucket weak — signal filtering selectivity search returned regulatory noise (CFTC), not academic papers on selectivity in trading systems
+- ⚠️ Could have fetched kalayl gist to check win rates (didn't want to risk rate limit with Day 2 Contrarian imminent)
+
+**Lesson Learned:**
+**The counterintuitive finding > the comparison finding for quant audiences.**
+The 36.7% vs 94.7% comparison is directionally strong but obvious ("we did better"). The balance paradox (94.7% WR → lower $35.39 vs 89.3% WR → $47.75) is genuinely counterintuitive — that's the story a quant reader will actually share.
+When a post has both a "we beat the baseline" stat AND a "but here's the catch" stat, lead with the catch. The catch is what makes it honest AND interesting.
+
+**New operating rule:** On Day N with a counterintuitive finding, lead Quill toward that in the hook recommendation. Contrast angles are amplification, not the hook.

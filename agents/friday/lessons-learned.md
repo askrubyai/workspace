@@ -832,6 +832,59 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 **Verdict:** Nothing urgent. Infrastructure healthy. Paper bot collecting high-quality Day 9 data. Standing down.
 **Self-Rating:** 5/5
 
+## Heartbeat: Feb 18, 2026 14:34 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable (34.3MB, 0% CPU)
+- ✅ Mission Control UI: pid 843, 20h uptime — stable (48.0MB, 0% CPU)
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — single process, no regression
+- ✅ No assigned tasks (Convex unavailable — consistent all day). No @friday mentions.
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED, awaiting Reuben go-ahead)
+- ✅ live-bot: NOT running (correct — all technical blockers cleared, waiting on Reuben only)
+- ⏰ Day 2 Contrarian `7b2b6d6b` → fires at 4:00 PM IST (~26 min away) — Quill's domain, browser relay required
+- ✅ Day 9 Signal Filtering `c2ea4f31` → Thu 4:00 PM IST — armed
+
+**Verdict:** Nothing urgent. Infrastructure fully healthy. No dev work queued.
+**Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 18, 2026 13:04 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable (39.4MB, 0% CPU), HTTP 200
+- ✅ Mission Control UI: pid 843, 19h uptime — stable (48.5MB, 0% CPU), HTTP 200
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — single process, no regression
+- ✅ No assigned tasks (Convex unavailable — consistent all day). No @friday mentions.
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED, awaiting Reuben go-ahead)
+- ✅ live-bot: NOT running (correct — all technical blockers cleared, waiting on Reuben only)
+- ✅ Day 2 Contrarian `7b2b6d6b` → 4:00 PM IST — armed (Quill's domain)
+- ✅ Day 9 Signal Filtering `c2ea4f31` → Thu 4:00 PM IST — armed
+
+**Verdict:** Nothing urgent. Infrastructure fully healthy. No dev work queued.
+**Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 18, 2026 12:04 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable (41.5MB, 0% CPU), HTTP 200
+- ✅ Mission Control UI: pid 843, 18h uptime — stable (51.6MB, 0% CPU), HTTP 200
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — single process, no regression
+- ✅ No assigned tasks (Convex unavailable — consistent all morning). No @friday mentions.
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED, awaiting Reuben go-ahead)
+- ✅ live-bot: NOT running (correct — all technical blockers cleared, waiting on Reuben only)
+- ✅ Day 8 Kelly LIVE since 9:00 AM IST (T+3h04m)
+- ✅ Day 2 Contrarian `7b2b6d6b` → 4:00 PM IST — armed (⚠️ Chrome relay req'd by 3:55 PM)
+- ✅ Day 9 Signal Filtering `c2ea4f31` → Thu 4:00 PM IST — armed
+- ✅ Fury pre-deploy intel (11:55): WalletFinder.ai cite frame + pushback defenses pre-staged for Quill
+
+**Verdict:** Nothing urgent. Infrastructure fully healthy. No dev work queued.
+**Self-Rating:** 5/5
+
+---
+
 ## Heartbeat: Feb 18, 2026 11:49 IST
 
 **Status Check:**
@@ -1274,3 +1327,42 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 
 **Verdict:** Nothing urgent. Infrastructure fully healthy. Standing down.
 **Self-Rating:** 5/5
+
+## Heartbeat: Feb 18, 2026 13:49 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable (39.6MB, 0% CPU)
+- ✅ Mission Control UI: pid 843, 19h uptime — stable (49.1MB, 0% CPU)
+- ✅ ngrok: pid 88657, config-based (port 5174 hardcoded) — single active tunnel confirmed via API
+- ✅ No assigned tasks (Convex unavailable — consistent all day). No @friday mentions.
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED, awaiting Reuben go-ahead)
+- ✅ live-bot: NOT running (correct — waiting on Reuben only)
+- ✅ Day 2 Contrarian `7b2b6d6b` → 4:00 PM IST — armed (Quill's domain)
+- ✅ Day 9 Signal Filtering `c2ea4f31` → Thu 4:00 PM IST — armed
+
+**Verdict:** Nothing urgent. Infrastructure fully healthy. No dev work queued.
+**Self-Rating:** 5/5
+
+## Heartbeat: Feb 18, 2026 14:04 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 3D uptime — stable (37.6MB, 0% CPU)
+- ✅ Mission Control UI: pid 843, 20h uptime — stable (49.4MB, 0% CPU)
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — single process, no regression
+- ✅ No assigned tasks (Convex unavailable — consistent all day). No @friday mentions.
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED, awaiting Reuben go-ahead)
+- ✅ live-bot: NOT running (correct — all technical blockers cleared, waiting on Reuben only)
+
+**Proactive Action — live-bot-v1.py docstring fix:**
+- Header docstring said "PARAMETERS PENDING DAY 9 RESEARCH" with old values (signal_threshold: 0.65, backtest_win_rate: TBD)
+- Actual CONFIG already had correct values (0.30, 0.70, 0.65) from Jarvis's 2:30 AM update
+- Stale docstring creates confusion for anyone reading the file
+- Fix: updated header to reflect current values + added update timestamp + commit refs
+- Committed (8dd3601) + pushed
+
+**Lesson:** Config value updates and docstring/comment updates must be atomic. When a config block is updated, its documentation block must be updated simultaneously — they're the same change. "Config correct, docs stale" is a subtle tech debt that creates real confusion.
+
+**New Rule:** After any bot config update, grep for matching docstring/header comments and update them in the same commit. Code and docs are not separate tasks.
+
+**Self-Rating:** 4/5 — proactive catch, clean fix. Minor: could have flagged this earlier (Jarvis updated config at 2:30 AM, I could have caught it at the 2:04 AM heartbeat).
+

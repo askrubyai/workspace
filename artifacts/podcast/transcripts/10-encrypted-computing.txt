@@ -1,0 +1,848 @@
+Transcript:
+Typically when you know some in high
+school when you're so much into
+programming the natural progression is
+that hey you know what I'm already
+building apps actually after high school
+decided to go out and study law. In the
+process of studying law I got back to
+building apps developed an app which
+then became quite successful and one of
+the most sold productivity apps on the
+app store.
+>> With confidential SPL tokens that you
+guys have built if there's a payroll
+that's happening what does the end user
+receive? So they receive confidential
+balance directly.
+>> What kind of roles do you hire for? What
+is the expertise one needs to be able to
+contribute to the core protocol? Well,
+>> core protocol it's very cryptography um
+the ability to also reveal things and
+and make them public
+>> engineering/org culture you have right
+on one side you have people coming with
+like tremendous amount of academic rigor
+on another end it's like you know
+startup engineers very curious to you
+know understand how do you balance these
+things what does the culture look like
+>> it's very difficult because you can't
+really break things
+>> hello hello welcome to another episode
+of the only devs podcast. Today we have
+with us Yanik the founder of RM. Archium
+is a multi-party computation network and
+they are doing the probably one of the
+OG teams if I may use that word that
+have been working on privacy on Solana.
+Remember them all the way from their
+elusive days. So so happy to have you
+here Yanik. welcome to the podcast.
+>> Yeah, thanks for having me.
+>> The first question we ask everyone is
+how did you get into crypto? Is this
+your first job or were you doing
+something else before? Yeah. So, um I
+initially actually after high school
+decided to go out and study law. Um and
+um when I was a child, I taught myself
+how to program um but still decided to
+study law. And then um yeah in the
+process of studying law um I got back to
+um building apps um on the side um and
+developed an app which then became um
+quite successful and um yeah one of the
+most sold productivity apps on the app
+store and at that point I then decided
+okay let's switch things up and maybe go
+back to computer science um and then I
+decided to instead of studying law study
+computer science and mathematics um and
+yeah That's where I met my co-founders
+and those were really the people that
+got me into crypto. Um before that I had
+um only small touching points with
+crypto but meeting my co-founders um we
+then had this shared um passion I guess
+for cryptography privacy um and um I got
+at that time into into crypto and then
+it made sense for us to apply all of
+those things and try to solve some of
+the most complex problems in distributed
+systems I guess uh which is how can we
+execute um in a distributed way on fully
+private private um encrypted data.
+>> Typically when you know some in high
+school when you are so much into
+programming the natural progression is
+that hey you know what I'm already
+building apps let me go all into it. So
+the shift to law sounds super
+interesting.
+>> I think for me it it I I had this
+feeling of okay I already know how to
+program how to do all of those things.
+So um I at that point didn't really see
+the need to to study that um because I
+was already programming so much um and
+studying um computer science itself I
+think didn't give me too much knowledge
+because I already um was developing
+things um but more importantly I think
+what um this study at university gave me
+was a deeper mathematical and
+cryptographic knowledge um which then
+allowed me to again teach myself mostly
+um cryptography and all of those things.
+But um yeah, I think um for me um the
+turning point really was then switching
+back again um developing an application
+um solo developing that um and having uh
+that be a major success. And so um that
+really drove me to um yeah to to want to
+found something bigger um to want to
+build something bigger um and I guess
+that then started this whole um journey.
+>> That's awesome. So cut to today you're
+working on RTM right like also speaking
+of bigger vision like what is RTM and
+why RTM? Why is like often times when
+people in the crypto industry speak
+about crypto, it's crypto the currency
+but not crypto the cryptography.
+Whatever you describe like kind kind of
+sounds super rooted in the whole cipher
+punk ethos. Curious to hear about like
+you know why you are building archum.
+>> Yeah. So I think um why we're building
+archium. I think it's not just something
+that um is required in in crypto. I
+think it's required as a whole also in
+in web 2. Um and um what we are solving
+for and this new primitive that we are
+introducing to the world is what we call
+encrypted computing. So being able to
+run arbitrary computer programs in a
+fully encrypted way. Um where all of the
+data that is used within those
+computations can remain fully encrypted.
+Um and as you hinted at earlier um one
+of the technological cryptographic
+primitives that we are utilizing is
+called secure multi-party computation
+which as the name suggests already um
+yeah requires an element of distribution
+and decentralization for for these
+cryptographic um protocols to to work.
+Um and so
+that's I guess one one aspect in in in
+which this crypto connection comes from
+because Archium itself um needs to be
+instantiated in the form of a
+distributed network, right? Um and um
+secondly, these kinds of encrypted
+computations are incredibly valuable for
+onchain applications. They are
+incredibly valuable for blockchains
+because on top of blockchains,
+everything by default is public, right?
+And so we are introducing a primitive to
+these to these networks and um I guess
+right now Solana where it becomes
+possible to execute anything in an
+encrypted way while being on top of a
+public distributed ledger. Um and so I
+think there's an element of a cypher
+punk ethos to that um where um it's
+important to have privacy but I try to
+not think about it that way. And I think
+um this kind of cyberpunk ethos is a is
+a fallacy that um that people have
+fallen into in the past where um privacy
+itself becomes a sort of political issue
+only um uh moralizing stance where
+you're essentially saying hey we need
+privacy why isn't anyone adopting
+privacy I think that's what what people
+have been doing in the past and I think
+that's the entirely wrong approach um
+the the approach that that that we are
+taking is that privacy itself um should
+be a logical business decision to adopt
+um and that's how this technology is
+going to be adopted. So our task is it
+to empower applications and allow
+applications to become more powerful and
+there's many aspects to that. There's
+the really technical and mathematical um
+cryptographic aspect to that, but
+there's higher level aspects to it as
+well where um we need to abstract away
+all of those cryptographic things for
+the user experience and developer
+experience to allow applications to
+become more powerful because privacy
+isn't anything holding them back but
+instead adding new features. And so
+that's the way that um we go about
+things and that also um is why we at
+Arium um evolved in the way that we have
+evolved where initially um as you Z
+check we were called elusive and we're
+using different set of cryptographic
+primitives but then evolved into archum
+which now allows anything to be
+encrypted while um everything can be
+computed um and
+um yeah in the meantime what we also did
+um and I think that also speaks to the
+role of Arum not just enabling um
+encrypted computations on chain but also
+for anyone to use right also for
+traditional companies to use is that we
+last year end of last year acquired our
+largest web two competitor who have been
+doing encrypted computations for um um
+yeah traditional industries like
+healthcare defense and others um and so
+that's um that's the role that I see
+argument not in a cypher punk role but
+instead in enabling anyone be it a
+business be it an onchain protocol
+anyone to have more powerful
+applications because now you can process
+more sensitive data. Yeah, thank you so
+much for such a thoughtful answer. It
+kind of you know it speaks to it
+anything gets only adopted if it makes
+business sense and you know if it's a
+only if it is a four delta implement
+over what exists right versus you know
+it it being because it's a virtuous
+thing to do. Switching gears here
+slightly a little bit and getting a
+little bit technical. You mentioned
+encrypted computation, right? So when
+you say encrypted computation, what what
+does it really mean? Are people is the
+the circuit or the function itself is
+that the one that is encrypted or is it
+the inputs to it that is encrypted and
+you know the computation happens over
+this over the cipher text. So how how
+should people uh understand this?
+>> One of the new primitives that that
+Archium is introducing is encrypted
+shared state. Um so when you normally
+execute in a smart contract environment
+um you operate over shared state, right?
+Where you have a smart contract and then
+there's maybe account data that is used
+within those um smart contracts.
+Essentially whenever you're submitting a
+transaction to a ledger um that gets um
+yeah becomes part of this state machine
+right so you're operating over shared
+state um and we are allowing for the
+operation over encrypted shared state so
+just like within a normal smart contract
+environment you can have some functions
+that determine how state transitions
+take place um over this shared state now
+you can do so in an encrypted way which
+means the data that is being used is
+encrypted. So the most simple example
+would be um yeah let's say um um a
+protocol where
+all of us um the three of us let's say
+have some confidential um encrypted
+token balance on chain. Um and then
+using that protocol we we for example
+can compute the average of our token
+holdings without revealing any of um of
+our individual token holdings. That's a
+computation that takes place over
+encrypted shared state because all of
+our state is encrypted and we can run a
+function over all of the state without
+anyone seeing the individual underlying
+state.
+>> Fascinating. You guys also launched like
+confidential SPL tokens, right? Um so h
+how how does that work? Is it on one end
+there's like for example there there is
+uh this confidential balances as a token
+extension in the token 22 program. So
+where where does confidential SPL token
+fit fit in the spectrum?
+>> Yeah. So, Solana over the last few years
+has been developing um what they call
+confidential transfer extensions um the
+confidential transfer extension for the
+token 22 standard um which basically
+allows you within your um EOA to
+additionally have a confidential balance
+um and then I can send someone else who
+has such an account a confidential
+transfer. So, they receive this
+confidential amount into their
+confidential balance. So publicly nobody
+sees the individual balances and the
+amounts that are being transferred. The
+issue with that is that
+simply by the technology on which um all
+of this is based namely CK zero
+knowledge proofs is that it only allows
+EOAs to send to other EOAs. So if I have
+a wallet that supports that, I can send
+it peer-to-peer to another wallet, but I
+cannot as a smart contract, as a onchain
+program on Solana utilize such a
+balance, which then greatly hinders um
+the entire protocol. Um I guess at the
+end of the day leading to the status
+that it's currently in where um there
+isn't any adoption because anything I I
+cannot really do anything with my token
+balances, right? And so that's where
+confidential SPL token comes into play.
+It it resolves all of those issues. So
+it allows any program on Solana to
+manage a confidential token balance. Um
+and then you can build very interesting
+applications. The most simple
+application um that we that we have
+currently uh confidential SPL token
+isn't live yet but will be very soon. Um
+so the most simple example application
+would be a confidential payroll program
+where you have some smart contract um
+that that manages a confidential payroll
+account where all of the um salaries sit
+basically and then the transfers to all
+of the employees is confidential and
+something like this wasn't possible in
+the past. You would need to control a
+single wallet and then send individual
+transfers out. But now it can sit in a
+multisig. Can security sit on chain? And
+um yeah, what all of this enables is
+then applications like confidential
+lending protocols, entire confidential
+DeFi applications, right? All on on top
+of the standard. And the nice thing
+about how we designed the standard is
+that it's fully interoperable with what
+Solana has built. So it adds all of
+those missing features to to what we
+have already um baked into the chain,
+which is incredibly powerful. and also
+things like being able to send
+confidential transfers to anyone which
+previously wasn't possible because if
+Czech for example just has a normal
+wallet but hasn't even considered um
+receiving some specific token in a
+confidential way I couldn't have sent
+him um a confidential transfer but now
+with the confidential SPL token that
+becomes possible I can just send him any
+SPL token in a confidential way and yeah
+I think the the most powerful aspect to
+all of this really is that as a program
+you can now manage those balances. So a
+program which previously just used let's
+say SPL token to perform some DeFi
+actions can now just use confidential
+SPL token and send out confidential
+amounts and compute with confidential
+balances um and encrypted values which
+is incredibly powerful. I think
+>> just to double click on that that there
+are two things that you mentioned that
+that I mean that uh are that it got me
+very curious. You mentioned that you
+know in the confidential transfer
+program since it depends on CK proofs
+using it between non
+EVOA wallets or that is in a smart
+contract setting becomes hard. Curious
+to understand why that is actually the
+case. Uh the other question uh is is you
+mentioned you know the confidential SDL
+token
+you it need not necessarily be optin how
+exactly does that work even if I haven't
+enabled that setting how how does it
+work such that the protocol can send
+something privately to me
+>> first thing with zero knowledge proofs
+um zero knowledge proofs operate over
+what I usually call isolated secret
+state so I have some secret. Um, and a
+zero knowledge proof then is me proving
+some fact about the secret by running a
+computation over that secret um, without
+revealing the secret. But in order to do
+so, what I need to have is access to the
+secret and nobody else can have access
+to the secret, right? which enables
+something like these very simple
+confidential transfers that Solana has
+built where I have I know my balance so
+I can generate a zero knowledge proof
+submit that on chain it gets verified
+and a transfer occurs into um someone
+else's balance but what a smart contract
+cannot do is have exclusive access to a
+secret and generate zero knowledge
+proofs right and that's where archum
+comes into play where with archum the
+zero the the smart contract can now
+generate zero knowledge proofs and by
+being able to generate zero knowledge
+proofs the smart contract can then
+perform those confidential transfers
+because of um yeah the MPC based
+encrypted computing that we enable. So
+that's one aspect that's the most um
+most important primitive for for the
+system um to be interoperable with the
+um token 22 transfer extension um where
+a program can now manage those those
+balances. Now, in regards to being able
+to send tokens to someone else who maybe
+hasn't opted into it, um what what I
+need to do in the in the standard that
+Dave um designed is I need to know your
+public key. Um but you only have a
+public key for for encrypting uh a
+confidential transfer if you have opted
+in. So what we enable with Archium is
+that we say you instead sort of transfer
+it to a program and then you can just
+claim it. Um so you don't need to
+generate a a key up front but instead RQ
+does that for you.
+>> Uh with confidential SPL tokens that you
+guys have built um if there's a payroll
+that's happening what does the end user
+receive? Do they receive an SPL token or
+do they receive a different account that
+they can maybe eventually claim to a
+token?
+>> So they receive um a confidential
+balance directly. So um that's that's
+important. So what they can do with that
+confidential balance is they can do many
+things. They can keep it as a
+confidential balance and um the the nice
+thing again is that um you can basically
+send that to anyone because it's already
+part of the Solana protocol, right?
+Because then it's a EOA again. So you
+just receive this confidential amount.
+Now since we enable any program to now
+use this standard you can use this
+confidential amount to let's say perform
+some DeFi action or pay with Solana pay
+or whatever right you can do so in a
+confidential way but what you can also
+do is you can in turn just convert it
+into the original SPL token right so you
+can then say okay I now want it to be
+non-confidential public USDZ so you can
+just turn it into that as well yeah
+>> interesting you mentioned I can actually
+use it in a D5 application So if I have
+a confidential balance, I can literally
+swap it on Jupiter and get a
+confidential token on the other side
+like
+>> Yeah. Yeah. I mean Jupiter for for for
+that requires to to support um to to
+integrate um our our confidential SPL
+token, right? But um yes, you can. And
+the nice thing really is that again you
+don't you don't have to um use anything
+that that that we've designed basically
+because you just have your confidential
+balance and then you transfer something
+in an account um and based on the amount
+that you have transferred some swap is
+being executed. So you don't even have
+to use some additional cryptography and
+encrypt anything. So there's really um
+no requirement for for for additional
+integrations which makes that so
+powerful because it's just something
+that a program now integrates. So you
+can transfer it to an account owned by
+the program. They perform a swap and
+transfer something back to you. So yeah
+um down the line what you will see is
+that you receive some confidential um
+tokens through payroll and then you can
+instantly in a confidential way swap
+them. Yeah. Fascinating thing about this
+is that it opens up the design space to
+build so many other confidential
+applications. Anything that you that we
+think you know that exists today can
+actually build a confidential or or a
+private version of it. Right. What are
+the type of applications that you're
+seeing that that that people are
+building or you or you're personally
+most excited about? Yeah, I think
+especially um all of the D5 primitives
+really um and um I think it's it's it's
+so powerful because the the concept that
+that you're working with as a developer
+is simply um I take this account balance
+and I don't know multiply it by whatever
+fee I'm taking as as D5 protocol right
+and then I transfer that and transfer
+this amount without you knowing the
+amounts but you can still perform this
+this kind of arithmetic right and then
+you just call transfer like you would
+normally with with with normal SPL
+tokens. So death experience wise um you
+don't have to understand any new
+concepts and and I think that's really
+the the powerful aspect to it and that
+that enables developers to to build
+these kinds of applications. So we
+haven't yet opened it up um confidential
+SPL tokens um to to developers. what
+we've built internally is a few D5
+protocols um as as example protocols and
+for example within a few hours I
+developed an entire confidential landing
+protocol um last week on on Friday or
+Saturday I think um which was a very
+seamless experience just building a
+confidential lending protocol where I
+don't know let's say um yeah before
+before the confidential SPL token um
+that we've designed
+I I mean the amount of work that as a
+developer you would have to perform is
+you basically would have to start from
+zero and build out all of the
+cryptography and by having this standard
+and this interoperability
+as you said it becomes so seamless and
+the entirely new design space is opened
+up where you can say okay um I'll take
+my existing application and add
+confidentiality or you can also say okay
+um let's think about defi in an entirely
+new way and what's also fascinating
+about this I think is that um
+um what you can do and I think that's
+that's something that that most people
+don't realize is let's say I now have a
+confidential lending protocol and people
+are um there's there's a lot of activity
+happening but nobody knows how much
+activity is happening right which again
+can be a downside to all of this but um
+that doesn't have to be the case you can
+do things like let's say every day the
+volume numbers are being decrypted and
+so you can verifiably ly on chain Z, how
+much lending has been taking place over
+the last 24 hours, things like that. So
+people can really play around with um
+the ability to also reveal things and
+and make them public.
+>> Absolutely love it. When when can
+developers start building on this like
+what's the how do they get started? And
+also I you guys I also noticed that you
+guys are doing uh RPM fellowships. So
+how can people the best way how can
+people get started and also the audience
+listening to this
+>> except that all of the fellows into our
+fellowship program that we've um done
+together with super team earn so over
+the next few months um all of those
+fellow fellows um will build some very
+exciting applications um we currently
+have arum itself on on public test net
+but we will have the confidential SPL
+token standard um live on test net at
+least um
+it's So it's it's a very difficult
+thing. Um people listening to this
+podcast um are developers so they know
+how difficult it is to actually give um
+precise estimates on on timelines but um
+we are getting our stuff audited at the
+moment. So um as soon as possible
+>> are you guys other than the fellowship
+um what kind of roles do you hire for?
+What is the expertise one needs to be
+able to contribute to the core protocol?
+Well,
+>> yeah. So, um for for a core protocol, um
+it's very cryptography heavy. Um so um
+I'm I'm very proud of the of the team
+that I've assembled with Archium where
+we have um yeah some of the best
+cryptographers in the world um be part
+of Archium and especially for
+confidential SPL token we we had to come
+up with some
+very um impressive I guess um new
+cryptography actually to to make this
+work. um uh from the outside it looks
+seamless and yeah that's um super
+straightforward but actually if you if
+you look at the cryptography there's a
+lot of heavy stuff involved to to get
+this to work um so in a core protocol
+there's a lot of cryptography um but um
+there's also as archum is a
+decentralized network right there's all
+of those aspects as well archum itself
+isn't a blockchain um but it's still a
+decentralized network so there's all of
+those mechanics X that that need to be
+um developed for any distributed network
+to work also within ARUM um which means
+the node software development which
+means all of the communication taking
+place between those nodes. Um and so um
+I guess the the ST and um the stack that
+we have really is this this core
+cryptographic stack. there's this this
+node software networking um scheduling
+um distributed computations part of the
+ST but there's also things and and I
+think that's one of the most important
+aspects actually the higher level things
+like um the interfaces that developers
+use um we we have a custom Rust compiler
+called Arcis um which enables Rust
+computations to um to be compiled into
+circuits which then can be executed uh
+cryptographically
+Um and so those are important aspects um
+to to allow developers to build these
+seamless applications because they then
+don't have to notice anything um below.
+So um I think um the only thing that we
+in a core protocol don't have um because
+we are infrastructure right is um
+extremely userfacing things where it's
+um user UI applications right we we have
+people building out those to um for
+demos example applications right games
+for the communities things for the
+community things like that um but for
+the core protocol itself that's that's
+not part of the core protocol. Yeah,
+>> I'm actually curious on the on the
+engineering/org culture you have right
+on one side you have people coming with
+like tremendous amount of academic rigor
+and on on another end it's like you know
+startup engineers who ship fast break
+things and given that you are a startup
+you're a cryptography startup working in
+this space who also has to ship fast I'm
+very curious to you know understand how
+do to balance these things. What does
+the culture look like?
+>> It's very difficult because you can't
+really break things. Um I think I think
+it's easier to to ship fast and break
+things if you're if you're developing I
+don't know uh social media network. I
+don't know what some some sort of
+application where at the end of the day
+it doesn't matter too much if if things
+break. Um we are we've we've started um
+working with um web 2 um customers as
+well in the in the area of of encrypted
+um machine learning where um you don't
+want data to to get exposed, right? I
+think our whole thing really is the
+highest level of of security. So um
+that's I guess that's one of the main um
+main principles that we that we stick
+to. Um I think what you what you then as
+a startup have to look at is um
+prioritization. I think that's that's
+what matters. Um because you cannot
+build out everything in a perfect way
+right from the right from the beginning.
+So you you you basically um yeah have to
+pick an area where you want to find
+product market fit and then expand from
+that. And so I think we've we've done
+that. Um and
+um that's also one of the one of the
+reasons I think why um yeah why we're
+building those those things on on Solana
+and I guess in crypto in general because
+um it's an area where um this need for
+privacy and encrypted execution is is
+very tangible and it's it's easier to
+work together with teams and and get
+them to adopt this technology whereas in
+traditional industries um it can be it
+can be tougher and it can it can take
+longer right so I think that's that's a
+very conscious decision on our end as a
+startup um to be to be really really
+focused on this area
+>> yeah I I think the key takeaway here is
+that like have ultimate clarity in what
+you're doing as a business and then
+everything kind of like builds around it
+and es especially you know when you're
+when you're operating on some of these
+foundational cryptography, you can't
+rigor is the way to go.
+>> You can't really mock things. Um, you
+you you really have to have all of the
+cryptography in place and it needs to be
+mathematically sound and proven. Um,
+yeah, that's that's the battle that we
+picked. I guess I I have one last
+question. You mentioned that you're, you
+know, working with some web two clients
+where, you know, they want to do
+multi-party machine learning. So how
+does the technology work? Because this
+involves I mean machine learning as I
+understand involves a tremendous amount
+of matrix multiplication. So when you
+apply that to a setup like MPC how do
+you one deal with so many number of
+multiplication and also at the same time
+like how do you overcome the
+communication basically the
+communication penality.
+>> We have a we have a paper specifically
+addressing this question I guess. um
+which is the Monticor paper on our
+research section of our website. Um so
+that's um that's basically the protocol
+that um so so so RQM uses two core
+protocols Cberus and Monticor. Cberus
+really is that which which powers the
+RUM network and um confidential SPL
+token and all of those things. Um and
+ser monticore is tailored for AI
+applications. Um and so the points that
+you've mentioned um are exactly all of
+the points that this this protocol
+addresses. Um and
+the the team that we've acquired had
+developed this protocol for more than
+eight years and and done all of the
+required I guess cryptographic MPC
+research um to to get that into
+fruition. Um what's so powerful about it
+is that um machine learning itself I
+guess has has two aspects right it's the
+training aspect um which requires all of
+those operations and then the
+interference um aspect um but I think um
+where it becomes really complicated if
+we look at LLMs for example right um
+where there's even um many orders of
+magnitude more operations involved um
+and um what we were able to run earlier
+this year um was for example um an
+inference using um the 16 billion
+parameter model um of DeepSeek within
+MPC in a fully encrypted way. Um and so
+the question that you always have to to
+ask yourself I guess when when when
+running these computations is if you
+have public model weights it becomes
+cheaper. um if the model weights are
+encrypted and the the the prompt I guess
+um is encrypted that then um becomes
+very difficult to scale. um if one of
+those um is public it becomes easier and
+for machine learning I think um
+um the the important aspect that um that
+Monticor is addressing is that um it's
+in a very smart way um um solving the
+real number arithmetic problem um
+because usually you would operate over
+um over finite field elements um and
+with with Monticor there's basically the
+um fixed point um floating fixed point
+arithmetic whereas um it it basically at
+compile time of the circuit identifies
+um the best um um point fixture based on
+on on floatingoint values. So um all of
+the details of of this protocols um sort
+of go over my head. I am unfortunately
+um not as good a cryptographer as as all
+of the team members um that I have. But
+um I think what all of those AI
+applications really are for me is um a
+testament to how powerful the technology
+really can be. Um and um we
+especially when when doing machine
+learning operations
+um
+have seen that um the the runtime um is
+is is very good and I guess it always
+depends on um it it depends on the type
+of data sets that you're evaluating. So
+on in in in the web two um application
+that we have it is medical data for
+example um where it's um basically um
+scans um and um
+the the technology had also been used
+Monteor had also been used for um 3D
+lung scans as far as I know in the past.
+So um yeah at the end of the day uh what
+I'm trying to say is that um matrix
+multiplication over real numbers so
+tensor operations is specifically what
+this uh protocol is fine-tuned for um
+which is something that with uh Cberus
+for example would be quite difficult to
+do. So with Cberus it would be way more
+difficult and basically impractical to
+run these these computations. That's why
+Cberus as a protocol really is
+fine-tuned for for those onchain
+operations. Um and Monteor really is
+fine-tuned for those AI applications. Um
+and yeah, both of those together um I I
+guess um from Archium um but um what you
+don't need for Monticor for example is a
+Rust interface. You don't need to
+program something with Arcus because
+that's not what machine learning
+engineers do. um instead we have a
+Python um interface where you can just
+use pandas and and TensorFlow interfaces
+to to specify the um the the the
+training and inference workflows.
+>> Oh, that's awesome. It also brings us to
+the end of the podcast. Thank you so
+much for joining us, Yanik. like after
+this personally after this podcast like
+I'm so pumped about RPM uh when it goes
+on mainet and I would also personally
+like to get my hands dirty and build
+something on top of RKM.
+>> Yeah, thank you very much.
+>> Thank you for joining us.
+>> Thanks for having me. All right.

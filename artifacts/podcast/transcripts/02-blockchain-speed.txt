@@ -1,0 +1,1357 @@
+Transcript:
+Wait, we can scale blockchains at the
+network layer if we send information
+fast.
+>> I'm curious, how does the user specify
+this? Like um is this does this happen
+at the app level or at the user level?
+Can the user really specify they don't
+want to be a source of validator?
+>> How does paladin align incentives? You
+mentioned uh you know the idea of
+paladin is to align incentives
+especially for non-malicious or you know
+honest leaders, right? How are the
+incentives aligned? Excellent question.
+So it goes like
+>> Hello, welcome to another episode of the
+one podcast. Today we have with us Yuri,
+the founder of Blocksten. He's also the
+creator of the Paladin project. Welcome
+to the show, Yuri.
+>> Thank you guys. Thank you for having me.
+>> Awesome. So this is we like um the first
+question we typically like to ask our
+guest is what what what's your
+background? What pulled you into crypto?
+Okay, so be like I am a crypto guy but
+before that I'm really a networking guy,
+right? So way back then when I was a
+software engineer back in Israel and
+then I figured you know what being a
+software engineer is kind of boring for
+me. Like it's kind of like okay you do
+the same thing etc. I want to do
+something else. So me and my wife moved
+here to the US and I did my PhD at
+Northwestern University where I still
+live and my PhD is in computer networks.
+So I am a networking guy, you know, TCP
+and quick and like Wi-Fi and like muimo
+and cool stuff like in that world etc.
+So I'm I'm a networking guy and through
+my research I had a project which kind
+like pivoted from one thing to another.
+By the way, if you're not from academia
+that yes, you build something, you write
+it, etc., you send it to like a
+conference and you get rejected and then
+just very much like a startup. Okay, how
+do we take the work we already did and
+we pivot it. You slightly change the
+story. Maybe we do this, maybe we do
+that. So, we already built a system and
+that didn't go to one country then to
+the other, etc. Eventually, we turned it
+into like a proofof work like it's
+called Webcoin. It's a proofof work like
+chain that instead of hashing it scrapes
+the internet, right? So it creates like
+an index like Google like bing that as
+as a research project. It's pretty cool.
+But that's how I kind of got into that
+world. But then and we're talking like
+2016 or so. Um that was like the block
+size wars on Bitcoin, Bitcoin, Bitcoin
+Cash, should we make blocks bigger, etc.
+So back then me and my then adviser and
+now co-founder professor Kusmanovich we
+were kind like wait we can scale
+blockchains at the network layer if we
+send information fast we could allow for
+larger blocks at shorter time intervals
+so the original idea of blocks route
+it's called blocks route because we
+route blocks and transactions is to send
+blockchain data fast so that was the
+idea and we kind of like how I got into
+crypto now I never wanted to be a
+founder. I was on my way to academia. We
+were kind of like you do a project then
+you do industry. Like it's interesting.
+You you have a lot of flexibility in
+what you do. But I remember me and Alex
+were sitting in a room like oh we could
+do this and this and here's how it makes
+money. Like this is a billion dollar
+idea. Like we can't not do it. I never
+Alex has like startup like background
+before that. Like I never wanted to do
+like I'm I'm a technical guy. I'm a dev.
+like what do I know about like starting
+a company and etc. It was too big of an
+idea. So when we started blocks route
+and blockchain is the same like it's a
+BDN a blockchain distribution network
+right we send information fast we hear
+information fast with like like like
+servers all around the world and some
+cool technologies around that and then
+we really found product market fit in
+2019 2020 when DeFi became a thing right
+so leading into the D5 summer all of a
+sudden everybody in the world wanted to
+see information fast and they wanted to
+send information fast right everybody
+Everybody wanted to know what's the
+latest price. This was like on Ethereum
+still proof of works or everybody wanted
+to connect to the mining pools to get
+their blocks faster and send their trade
+to the to the miners and see what the
+other people are sending. Right? This
+was when started to become a thing and
+send their transaction without being
+seen by other people. So like we had
+front running pro a front running
+protection product before flashbot
+existed even. Okay? like we're talking
+2019 and so like mid9 or something like
+that. So we I never wanted to do any of
+it but once you go into crypto you kind
+like that how could I do anything else
+in the world. So we built this and you
+know that was like I think our zero to
+one moment. We made moved from making
+zero money to like 10 million a year or
+something like that. And so now blocks
+is like a big company. We started on
+Ethereum expanded to BC. We did polygon
+2 although we depregated that and
+sunseted it not long ago. We're very big
+on Salana and in all these places we
+have like okay we use our infrastructure
+to allow people to land transaction
+really fast to hear transaction and
+blocks and shreds really fast. So that's
+kind of like how I got into crypto quite
+by accident.
+So you you mentioned one just double
+clicking on that right one thing I found
+fascinating was how does how does block
+store actually send this you know
+transaction faster
+>> right like what's what specifically is
+it private links or
+>> so so there there are four things like
+doing it right you could imagine block
+route has like servers all around the
+world where we try to propagate
+information fast and one of them is just
+like [clears throat] okay good
+connectivity and connecting the c you
+know you don't want to connect from here
+through there right you don't want to go
+if you're from you know US east to US
+west you don't go through Europe or
+whatever just like okay constantly
+connecting the right like links and we
+do have private links as well etc but
+basic piece number one is just like good
+topology you want to connect that way
+both close to the validators who could
+be anywhere in the world but also close
+to the users whoever wherever they are
+in the world right maybe it's your f you
+take your dog out and you walk outside
+So I need to be close to your ne
+neighborhood. So if you're like you walk
+the dog, you open the phone because
+that's what we all do. You open phantom
+or whatever like, oh, I should buy this
+or sell that or long this or we should
+be very close to you to get your
+transaction as fast as possible and land
+it as fast as possible. And so one of it
+is topology. The other piece is just
+good engineering. Okay. Basically, okay,
+you do this. We we built the first
+prototype. We made it. It was kind of
+fast. Then we improved it, iterated, and
+then we built it from scratch again way
+more prefer like like more efficient and
+faster than the original like you know
+v1 than v 0 let's call it. And we
+iterated and we iterated it. Then we did
+that again. So in the early days you can
+say oh if we do this we'll shave 10
+milliseconds. We don't have 10
+milliseconds to shave at this point.
+Okay, we propagate information close to
+the speed of light. Okay, we propagate
+it very fast everywhere. And so like
+piece number two here is um um just fast
+ju just good engineering. You get it how
+you serialize des serialize it like like
+do not waste time on copying and etc.
+Just just being fast about it. A third
+piece which is a bit more interesting is
+that we realize this is more for blocks
+and shreds.
+If you think about blockchains, what
+happens, you know, in the vanilla case
+is that transactions propagate around
+and every so often a block comes out and
+it contains some of these maybe all
+these transactions, maybe some of them,
+maybe some of them that you didn't know.
+But in that money time where you want to
+propagate a block, well, you don't
+really need to propagate the
+transaction. the transaction you already
+propagated. You could in theory said,
+"Oh, just put here transaction 1, 5, 37,
+46, 110, etc., right? Because blocks are
+just basically a list of transaction,
+right? It's a header, some fields in it,
+version, time stamp, whatever, and then
+just a transaction in it. So in that
+money time where you want to propagate
+it, you don't need really need to send
+it on the wire everywhere. You could
+just send the metadata for it. any
+transaction that you already propagated
+and the system had seen already you
+could just replace with a very short ID
+and decrypt it on the other side. So you
+put it in full you don't no data is
+being lost you put full of it in you
+know in one side on the wire you just
+send the metadata and on the other side
+you reconstruct it and it's faster than
+sending like the full data. So that's a
+third piece so like the caching of it.
+There was a fourth piece which I'm
+missing. Probably the network effect. If
+we're connected to all the users, we see
+all the transactions and we're connected
+to all the value. So the more people who
+connect to us, the faster we become. And
+so you know that was more like in the
+early days when we tried to get more
+people. At this point we're connected to
+everybody and their sister. Okay? Like
+every major validator out there, every
+major chain like like also like L2 and
+etc. And so we found ourselves really as
+a lot of let's say wallets or trading
+terminals or telegram bots and like oh I
+I want to offer my user to land
+transaction really fast and hear
+information really fast on all these
+chains like like I could either work
+with like seven different providers or I
+could go to block route who I know
+they're good and they've been here for
+like eight years they've been around I
+know they're not going to disappear or
+pivot in six months and so that's like
+that's why they come to us versus like
+we make a lot of money. We have a lot of
+competition every single vertical we
+operate. Somebody say, "Oh, L's making
+money there. I should do that, too."
+Right? So, we really have competition
+every single place that we do. But we
+have the track record, but we also
+multi-chain, right? So, it's kind like
+we support it and we give it everywhere.
+And maybe the last point on it is
+competitors [snorts]
+basically have to do like a zero to one
+to do what we do. they need to build the
+entire infrastructure and propagate it
+and etc. Well, we if we add a chain
+right like takes us like 2 3 weeks and
+like a 10 to 11, right? I already paid
+the money for it. I already iterated for
+like eight years. I already all of that.
+So, it's very easy for me to add another
+project. I know where the value is. I
+know how to do it and I don't have to
+reinvent the wheel and build support and
+build infrastructure and all that it
+takes to build it. Does that kind of
+answer the question?
+>> Yeah. Yeah. I mean just to switch some
+switch gear right uh ho how does uh how
+how did paladin come together um because
+on one side it feel you know you you
+mentioned at block start you you're you
+built a product to send transaction
+faster and also you built me protection
+and then on the other end of the
+spectrum you you know you also have
+paladin which you know enables or
+empowers these
+uh validators to capture some of that
+MVP. So I'm curious to understand you
+know your your evolution towards uh
+>> so that that's that's an interesting one
+I think so I am a giant DeFi boy okay
+like I got really redpilled on DeFi in
+2019 for our listeners like it's a short
+story but it's very much worth like
+hearing in my opinion I heard it I think
+it's the former head of the CFTC in the
+US and he was saying how in 2008 eight
+when the subprime like like crisis kind
+like emerged. He was at the White House.
+Lehman Brothers is about to crash and
+they're sitting there and they need to
+decide whether to save it or let it fail
+fall. And it's kind of like listen, we
+have enough cash. We can responsibly
+keep it alive. Maybe another two other
+banks like that. But if there are 20
+banks underwater, we can't save it. We
+do not have enough money to hold all of
+them and we let them crash. So what do
+we do? Do we save Leman Brothers or we
+don't? Well, how many banks are
+underwater? Like the regulator should
+have all the information. All the books
+are open to it. He should know in
+theory. In practice, these are like 200
+different banks on 200 different
+systems. And it takes literally like
+four years to connect all the books to
+understand who holds who and how much
+money they have, right? It's kind of
+like the what what what banks did at the
+time was okay I give like a gazillion
+mortgages and then I put them together
+and then then I let sell the mortgages
+to other people who take it merge pieces
+from different one create a salami out
+of it then slice this thing and then
+sell it to others. So everybody was
+holding everybody else's like like debts
+and assets and whatever on completely
+different systems
+and the wise are like we don't know how
+many like banks are underwater. So they
+let Leman brother fail and we had the
+2008 crisis like major like a major
+effect to so many sectors in the US
+globally you name it and like four years
+later they finish auditing the books and
+figure out like the connections like you
+know what there was just like one more
+bank we could have saved Lehman Brothers
+and avoided most of the 2008 crisis if
+we had a single global open
+permissionless transparent financial
+network for the world. So like you know
+we talk about price discovery, we talk
+about trading, we talk about like like
+like a um like privacy etc. Just having
+these systems open and composable and
+integrate is a huge value. US retail
+don't really know how how to appreciate
+it as much. If you run a company like
+think everything how many shares do you
+have who hold everything around it which
+isn't secret some of it is private some
+of it is not like most of it should be
+open that is kind of like this is
+extremely so I got really excited about
+defi it's kind like this is the future I
+want defi to kick ass and beat ci
+me I strongly disagree with flashbot and
+what they did on Ethereum and created an
+auction and trying to max extract.
+That's not good for anybody. It did not
+push anybody in the right direction. I
+kind of hate seeing it playing out on
+Solanic literally shooting yourself in
+the foot. And so because Blockstart is
+such a major actor in DeFi, that made us
+also a large actor in ME. And so we
+started create like you know on Ethereum
+we run two of the five relays off ME
+boost etc. on BSE. We're a block builder
+and we give better blocks to BSE
+validators.
+When it came to Solana, I'm like, I
+don't want G. I told GTO, I like the GTO
+team. I hate their product. I told them
+to their face a lot of times over the
+years. I told them that creating the Meo
+and sandwiching would be bad. It was
+bad. I they did the right thing and
+stopped like with their Meo and
+sandwiching, but at that point, the cat
+was out of the bag and everybody got
+sandwiched. But the idea of Paladin was
+basically
+could we offer an alternative, right?
+It's kind, oh, it's easy to say you
+don't like it, right? It's kind of like
+[clears throat]
+the question is, can you make it more
+profitable to act honestly, right?
+What's the problem? And maybe worth that
+for people who aren't very familiar. MEV
+is maximal
+um extractable value. Okay? Like
+basically if somebody's about to buy a
+million dollar worth of soul then if I
+see this before it execute I could
+frontr run like oh price of soul is
+going to I should have buy it before he
+buys it because it's going to go up and
+that actually hurts that first trade.
+Okay he if I bought before him then I
+move the price a bit and so now he gets
+a worse price and I could even do a
+sandwich. I could frontr run and back
+run. So I buy it, he buys it, push the
+price up, I sell it right immediately
+after him. I sandwich his transaction
+and I made money and all the money that
+I made came from his pocket. Okay? All
+the money that I made came from him. He
+lost it. It's not like a victimless like
+crime or whatever. It actually hurts
+him. Now
+me doesn't actually pay that much like
+money. It pays like 0.2%
+APY or so. like like this isn't the big
+money. So if you think from a long-term
+perspective like if you're again taking
+Solana right now as an example if you're
+a Solana validator or a staker all the
+stakers to together have like I don't
+know a hundred billion dollar worth of
+stake okay like if that goes up by 1% in
+five years it pays more than front
+running and sandwiching okay what they
+should do is make it the best chain so
+DeFi happens and it booms and all the
+like everything goes better and in this
+alternative universe where there's no
+front running and sandwiching etc. and
+DeFi is winning. If that world is just
+like price of soul just like 5% higher
+and might it should be like 5x higher
+right? It should be like 500%. But if
+it's just slightly higher it pays more
+than me. Nobody should do it. That's the
+long term. The problem is the shortterm
+incentive. Sure it would be great if
+everybody didn't do it and it will be
+we'll all benefit. But when I'm the
+leader and it's my turn, then I see a
+transaction buying a million dollar
+worth of well I should buy just in front
+of him and sell after him. Okay, so this
+is a classic strategy of the comet.
+Okay, the strategy that's better for
+everybody is not the same one like when
+I at that time my uh dominant strategy
+i.e. the strategy that makes the most
+money is that everybody kind of like
+falls to is that I actually
+sandwich it and everybody do it and so
+nobody benefit and it's a classic
+tragedy of the commons right everybody
+would benefit if nobody did it but when
+it's my turn then I do it and so
+everybody does it and etc. So Paladine
+came out and Paladine had six different
+iteration. It started like I I had one
+thing with pre-confirmation on Ethereum
+and using Solana and like doing this and
+and like I like really iterated a lot in
+the past I don't know two three years
+now and the idea was how do I solve this
+problem okay how do I solve you all how
+do I align the short-term incentive with
+the long-term incentive
+and it is possible to do it mostly
+because users have power so you could
+imagine
+if right now everybody body are
+sandwiching and everybody are doing it
+then it's kind of like it's kind of like
+traffic in India right like sure there
+are like like stop signs and red lights
+and what but everybody goes every you
+can't if you can't even give a ticket to
+every literally everybody do it so you
+can't get over it but if you imagine
+okay if we could somehow incentivize
+everybody to do it for a short period of
+time if we could incentiv everybody to
+behave and everybody and then somebody
+misbehave then we could punish him,
+right? If everybody nobody doing it, but
+then somebody misbehaved. You don't need
+a objective proof or anything. Users
+should just skip it. Oh, this leader
+seems like not legit to me. Like like
+this, I think he's sandwiched that guy.
+I should just skip him. Okay, why do I
+care? I'll just send my transaction.
+I'll skip one leader and I'll go to the
+next leader. At that point, if you
+sandwich people, if you front run, then
+you'll start making less money. People
+will skip you over. You lose. You'll
+make lower APY. your stake would leave
+you everybody like your validator going
+to nothing. You really don't want to
+play with the apps and the users in
+playing this game. So if we could get
+people to act honestly for some period
+of time then at that point okay it is
+becomes enforceable right it moves from
+I don't know from like India to I don't
+know like suburbia I don't know English
+suburb or something right it everybody
+follow the rules they go when they're
+supposed to being super polite and if
+somebody goes in a red light okay
+everybody sees that he goes in in a red
+light everybody go oh I even if I think
+he went in a red light like why why
+should I take the chance So this becomes
+like you could align the incentives. So
+Paladine idea and again we had multiple
+iterations over it is could we build a
+client pal paladine is a fork of Agave
+it's a fork of fire danceance like a
+patch on top of it and basically say
+could we make more money for validators
+who don't play these games who don't
+include sandwiches and don't don't do
+all these things and just act honestly
+does that kind of make and this is I
+became like I went down that path
+because I want DeFi to beat DeFi, it
+took way more time and way more money
+from from it than like then it was worth
+it in terms of like like it's not a good
+investment in that regard. But I want
+DeFi to win. So, you know, you do what
+you it's
+not even a choice. You kind of have to
+do it. No, they're doing it wrong. We
+need to fix it. Does that make sense?
+How does Paladin align incentives? You
+mentioned uh you know the idea of
+paladin is to align incentives for
+especially for non-malicious or you know
+honest leaders right. How does how do
+how does the how are the incentives
+aligned?
+>> Excellent question. So it goes like
+this. Okay
+the main pro so let we we explain what
+sandwiching is right. Right. So it's
+kind like when you come before and after
+GTO if you don't know a major product on
+Salana
+basically imported this idea of bundles
+from Ethereum. Okay. So basically you
+could send oh here's you know my front
+transaction a trigger transaction and
+the background transa I could send them
+as a bundle to the leader and the b and
+they will try to execute it. Now, maybe
+it works, maybe it doesn't, but the
+bundle does a cool thing that's called
+drop on revert. Okay? Basically, if it
+doesn't work, you don't pay money. Like,
+the entire thing doesn't go on chain.
+So, if there's a I don't know, a $100 to
+be made in sending a bundle, then you
+send it and but and and you don't pay
+the $100 unless you made a profit. So,
+JTO really combines three different
+things, okay? A bundle, okay? multiple
+transactions execute one by one which is
+the least ant like it's the most anti-
+IBRL okay it's really not IBRL stop
+everything I want this one and then this
+one and then this one don't do no
+nothing should go next to it or whatever
+so like it's bundled transaction
+it is a drop on revert okay it I like
+atomic either everything is successful
+or it reverts and get dropped and tips
+instead Instead of paying in a normal
+priority fee, you pay a tip to GTO and
+they get 5% and they pass 95% to the Now
+bundles are toxic. They suck really bad.
+They're really only good for sandwiching
+and they're very little else. Could you
+use them for other things? Yes. Anything
+good? Not really. Okay. Like the only
+the people say, "Oh, what about backing?
+We are among the pioneers of
+backrunning. We've been doing it for
+five years. Backrunning is a terrible
+solution. Okay, backing is like, oh, you
+send a trade which is executed so badly
+that I could go after it, right? You
+like you traded a million dollar in just
+one venue and you move the price so
+much. So, I will come and I will buy
+somewhere else and I was there and I
+correct it and even though I pay them
+fee, I make money and there's like
+money. That means like oh it was so bad
+that you could capture money after that.
+If that is the case, what you want to do
+is not in the last moment go and correct
+the ARB in the last moment you should do
+the trading routing right like we have
+made a long way in the past five years
+whether that's Jupiter whether that's
+Titan other aggre like just do the trade
+routing better backing doesn't like like
+like it really isn't a compelling use
+case another one I think um squads are
+using bundles okay I really like squads
+they're a great project etc but it's Not
+because they really need bundles, it's
+because transactions are too small.
+Okay? And they wanted to do a lot of it
+to do it cheaply or whatever. Well,
+we're increasing the side of
+transaction. If we want to do more
+stuff, we should increase the side of we
+shouldn't add bundles which only create
+significant damage. Okay? Really hinders
+DeFi um for that. So bundles suck and
+tip also suck like really tip. You could
+say that originally, you know, five 50%
+of the priority fee got burned. So, it
+was a way you could pay the validator
+like instead of getting half of it
+burned or whatever,
+you really don't need tips. Not even for
+drop on revert, right? You could say
+instead of paying a priority fee, you
+could put an instruction that pass the
+money to the leader and if the
+transaction fails, then you don't pay
+that money. Okay? It only goes in if
+successful. Is it good for GTO? Sure,
+because it pays them the 5%. But like
+it's not a really compelling use case.
+So the really valuable thing that GTO
+brought in is the drop on revert. Okay.
+But again, what you're really getting
+there is not
+the value is not dropping. Nobody cared
+if the transaction dropped or not. What
+you really want is pay only if
+successful, right? It's going to only I
+will pay $100 to include this
+transaction, but only if it's
+successful. I don't want to pay you if
+it reverts. And again, we just say that
+you could do this with an instruction
+like natively put another transa
+instruction in the transaction that pays
+and then money only goes to the leader
+if it goes through or not. And so when I
+look at the
+people call it micro structure nowadays,
+right? But you look at the landscape and
+like what GTO and now um um temporal
+came out with harmonic, we can talk
+about that too. What Paladin does it
+like this is all misaligned skewed
+incentive. Okay. What Paladin does is
+says well instead of putting bundles
+first even if they pay less money and
+transaction goes after which kind of
+like incentivize everybody to send their
+transaction as bundles because bundle go
+first even if they paid less right.
+Okay. So that again good for GTO not
+necessarily good for everybody else. So
+instead of putting bundles first before
+everybody else, take all transactions,
+take all bundles, order them by reward
+by per CU, okay? Like reward by how much
+compute they take and order by that.
+whoever pays the most transaction or
+bundle or whatever, just like put that
+in and
+use this idea, right? Like of the the
+drop on revert or really pay only if
+successful to let people pay directly to
+the leader and the leader will make more
+money, right? If you use the
+pay only if successful instead of a tip,
+immediately make 5% more because like
+tips takes 5%. But more importantly, put
+whoever pays you the most is a
+transaction. Whoever pays you most
+money, this is who you should put put
+first. Not first do all the bundles and
+then do the transaction or something
+like that. So just cleaning all that out
+should make more money to the leader. So
+the idea is like okay, just do that.
+Next really I don't want to support
+bundles. I think bundles suck. We're
+going to multiple concurrent leader. We
+can talk about it in a bit but like in
+multiple concurrent leader world where
+you have multiple leaders each one
+proposes a partial block it's kind like
+okay I propose a thing she propose a
+thing hurry up propose a thing and then
+the network itself like okay all of them
+is one bundle and order them by priority
+fee there are no bundles there there's
+no such thing like like transaction will
+be like ordered by all sorts of stuff by
+what other people you don't bundles
+don't work there at all they're
+ordered in the way that you wanted them
+to order. You can't do drop and revert
+whether they're because you don't know
+if a transaction will be successful or
+will revert. None of it works. So this
+is like a thing that shouldn't exist in
+my opinion. And so going back to like
+how do you incentive you make it more
+profitable in my opinion like I don't
+want to currently I have to support
+bundles because like there's money there
+and the idea is to make them more money
+but it is like get rid of bundles
+completely like get rid of sandwiching
+etc. make it very easy for people to see
+whether the transactions are ordered by
+reward per CU or not. Anybody not
+ordering by reward by CU should get like
+should should start like like like be
+like being avoided, right? It's going
+like start skipping. That looks weird to
+me. I will skip that. Okay. So,
+everybody should be doing that in real
+time. A few more things around you could
+also but does that make sense?
+>> Yeah. So if I understood it correctly
+the ma the major unlock here is that as
+a user you know as a user of a D5
+applications
+I also have the opportunity to pay a
+slightly higher fee to ensure that my
+the transaction that I am sending does
+not get sandwiched right
+>> no
+like that's always like that's in theory
+that's always a but you should pay
+however you need to pay in order to land
+your transaction which should be very
+little unless you're touching So I'm
+like, "Okay, this is a hot account. I'm
+trying to land it. Everything is full.
+Maybe you should pay more." In reality,
+no. Like like transaction go through no
+matter what. We see like fees and tips
+like really fell off a cliff because of
+it. Okay? Because you just send a
+transaction and it lands. The idea is
+that as a user
+and more so your app is an aggregator of
+users. Okay? Jupiter or Axiom or Phantom
+or whoever, right? They are the
+aggregators of users. They should decide
+where to send your transaction and they
+should send it to validators who order
+it by you know by reward per CU again
+fee or tip like shouldn't care it should
+become like ordered by that and you you
+can see it on chain like how the
+transaction came out and etc. And you
+should skip those that you know if you
+look at sandwich.mme right from the
+great team the ghost team which is
+awesome. If a validator has a lot of
+sandwiches or doesn't order the
+transaction in that way or does anything
+funky skip it. Okay don't take just skip
+that one. And that incentivizes all
+validators in the short term not to play
+these games. Right? The the long term is
+already aligned.
+Nobody should do it. Everybody should
+just put the transaction as they should
+and not play funny games and that would
+make everybody rich. But the short-term
+incentive is a problem. So we should
+really give like users and especially
+their apps and their aggregators a big
+stick. If you mess around, we'll kick
+your ass. You will lose money. Okay?
+We'll start going like away and and
+going others and just skipping you and
+send it to the next leader. And that
+align the short-term incentive. Does
+that make sense?
+>> Yeah. I'm curious how does the user
+specify this? Like um is this does this
+happen at the app level or at the user
+level? Can the user really specify they
+don't want to be a source of validator?
+>> So it's a great question and it really
+depends and you could do it in multiple
+ways and most users shouldn't know nor
+care about any of it. They're trying to
+use an app. They don't understand the
+architect. Like sure you're you know me,
+you, whoever. Okay, like we like this
+stuff. Okay, cool. Well, well, I will do
+this and I will do this block block or
+whatever like like Triton has a good
+product called shield and etc. So, it
+really should be the apps from my
+perspective as aggregators off users and
+apps should do it because users should
+look oh this app is protecting me and
+those like like how many sandwiches
+happening to people using this app
+versus using that app. How much money
+did there these users lost versus in one
+app versus the other. show apps should
+be the ones doing the leg work. Okay,
+I'm like, oh, which and and it's very
+easy to decide who to send or it's not
+like rocket science right now. I got the
+transaction is the current leader really
+like like is it okay or not okay? If it
+looks okay, send it to it. It's not
+okay, send to the next one. That's it.
+It's not like rocket science in any way,
+etc. I kind of have this
+thought at the back of my mind. Does it
+make sense
+to allow this at the protocol there?
+Right? It's kind of like could I make a
+transaction that like could only go to
+validators within this set, right? And
+like like could not go to others. Maybe
+it doesn't, but maybe it's an overkill.
+Maybe just the app do it and don't send
+to that leader. It's going to everything
+is happening in real time. Get the
+transaction. Look at the leader. Is it
+good or not? It looks good. Send to it.
+It looks bad. Skip it and go to the next
+one. So, it should be the user, but the
+user at this point is the app, the
+aggregator of its own users.
+Does that answer the question?
+>> Yeah, that makes a lot of sense. Uh,
+switching gears a bit. I'm very curious.
+Uh, initially started off with Ethereum
+and EVM, right? Um, and you mentioned
+Polygon, BNB. Uh, how is it different to
+move to Solana? Um, and I don't know if
+you're on other chains as well that are
+not EVM. um in terms of hiring
+engineering talent in terms of you know
+whatever the day-to-day looks like in
+building something like this and like
+the specific innovation on FA for
+example BAM um does that affect you know
+the kind of hires you have to make the
+kind of engineering talent that is
+needed
+so
+talent is hard in general but also a lot
+of the time you know like we we pay fair
+salaries but we're not like like other
+project they're like like blast through
+the roof. We see like a competitor comes
+in and etc. and they're trying and
+they're paying a lot and like you know a
+year and a half later they're gone or
+whatever. It's kind of like sure like
+okay that's their VC money like that's
+fine but it's kind of like we're trying
+to find just good engineers from our
+perspective. Okay you could learn the
+specific it's cool if you have people
+who are you know cryptonative and
+they're also a trader and they
+understand the space but then they also
+waste so much time like being on Twitter
+and etc. So you need a good balance. You
+want some people being like cryptonative
+and okay if they don't only understand
+the technologies they understand the
+ecosystem they understand that like they
+really understand all of that that's
+very very valuable but you also want
+engineers who really could not care less
+and there's like oh I just want to do
+here I build my infrastructure thing and
+I go home and and they're a lot more
+effective in terms of like like you know
+how much time I waste oh there's that
+thing that I need to answer to like all
+all the stuff so you really want a good
+balance of both that's in general that's
+but It's more so on Solana. Um, one
+thing that was extremely hard for me on
+Paladin is finding somebody who could
+touch the fire dancer client, right?
+Fire dancer is written in C. How many
+people in our ecosystem can touch the
+fire dancer client? Like five. Like like
+literally like like nobody's doing it.
+Nobody touches it, etc. So like people
+to play around with agave like which is
+in Rust. Okay, you want smart people
+etc. I love the turbine team. Okay, so
+Turbine if you don't know they're kind
+like like they're like they they're
+doing like demos and they're building
+projects etc. It's kind of like an
+educational thing and then they're kind
+of like okay you go to them and you pay
+them like a fee like okay I need
+somebody to do this this and this and
+like you hire through them. So they're
+like training plus hiring plus like
+project plus community plus something.
+So, I really like them and I got some
+like really great engineer references
+from them. But so, so but again, Rust is
+easier. Um um um Agave is easier. A lot
+of quite a lot of people could do smart
+contract at this point. Okay. Like like
+EVM and SVM that doesn't matter.
+I find myself often in the validator
+code. Okay. Like it's kind of like it's
+kind of like deeper than most other
+project in that regard. Um that was true
+on EVM. That's true also for like both
+on Ethereum and Solana and everywhere.
+So my hiring needs are different than
+most in that regard and it's hard but
+mostly find good engine. You need like
+find a good engineer who knows what he's
+doing and find somebody who understand
+what's going on in Solana and between
+the two of them they could figure it
+out, right? Kind of like you need both.
+And it if you're lucky it's the same
+person. Um, this is like maybe the best
+engineer I know is Oliver who helped me
+pick like create Paladin. Now he's at
+Anza and okay, he's really talented.
+He's really smart. He's very
+professional and he understand crypto
+and he understand trading. Sure. That's
+like one in a million. You don't get
+lucky to meet many Oliver out there.
+>> Yep. That makes a lot of sense.
+Amazing. I think I'm out of questions
+here. Shake, do you have any more
+questions to add?
+Yeah, I I would love to, you know, hear
+your thoughts on multiple concurrent
+leaders.
+H how
+do you think that changes things?
+>> So, right now, let let's talk about
+multiple It's funny. I'm literally
+writing a thread about it. Like maybe my
+thread about it will come out before
+this episode.
+>> There are two things. There's multiple
+concurrent leaders or three things. four
+really multiple concurrent leaders and
+you have BAM from GTO and you have
+Harmonic from Toro and you have what DTO
+is doing now and so multiple concurrent
+leader is awesome. It is really a
+breakthrough in that regard like Max
+working super hard on it. Max Resnik and
+like okay try let's get up and glow out
+the door. Alessandro from us said like
+like I don't know why you think it will
+take that long. This shouldn't take that
+long. like this isn't like far into the
+future. This is not like a fiveyear road
+map. This is like 2027. Okay. And so the
+idea of multiple concurrent leaders, we
+said it earlier, you have multiple
+leaders at the same time. Every 50
+millisecond they create like a partial
+block and that's all accepted by the
+network which create a single block out
+of that etc. And why is that valuable
+and why is that super cool? Because it
+breaks the leader monopoly. Okay? Like
+leaders could do all these games because
+they not only control the ordering of
+the transaction, but they also control
+what goes in and what doesn't go in,
+right? So an app could say, "Oh, I don't
+care about the order. I will just like
+get bids and I'll choose the highest
+one, you know, to make the trade and
+like that will decide the price or
+whatever." But the leader could easily
+say, "Oh, I'll put my transaction. I'll
+just censor everything else." And so
+like that app can't beat me, right? is
+again I can still extract value from it.
+Multiple concurrent leaders I mean like
+okay I maybe I keep the other
+transaction out but then another leader
+will put them in. So it's kind of like
+you can't play that game and that really
+opens up a world of design for DeFi that
+is closed right now. Okay, it doesn't
+even matter at that point whether your
+transaction come first or second etc.
+because the the order doesn't even
+matter that much. You could like have
+like the protocol look at the different
+transaction and decide what to execute
+further. It is very very cool. Okay. And
+so that's multiple crowd leaders. It's
+coming out. It's change going to change
+how DeFi works. It's going to change a
+lot of things. Now between now and then,
+you know, we talked about jetto, right?
+They send bundles. They send to the
+leader. The leader, it's slightly
+different in fire dancer. They literally
+execute the bundles then execute the
+transactions, right? It's kind like two
+different tree heaps trips and so like
+they do one then they do the other. Um
+on agave basically all the bundles come
+in it takes all the locks for itself. So
+other you know random transaction they
+don't touch anything important or
+there's any activity or like could
+execute by them but really they all
+execute and only when they finish they
+let the transaction execute. So JTO
+really brought the MEV auction idea from
+Ethereum. In Ethereum you have PBS, you
+have multiple like builders. Jeta
+basically made themselves the only
+builder. Okay, they call it the block
+engine, but it's a very similar idea.
+But at least it's continuous, right?
+It's kind of like they do this and they
+set the bundle, etc. So that's the
+baseline of what GTO is doing now. Now
+Harmonic from Tuporal just came out and
+they say, well, let's not do that. Why
+only GTO is running a block engine?
+Let's have a competition. Competition is
+good, right? So, let's have multiple
+block builders and whoever offers the
+best like they could send bids through
+like harmonic and the best bid will win
+and would go to the leader. And so that
+sounds good in theory. It has two major
+problems.
+The first major problem like this like I
+wrote about like a year ago. The first
+major problem is that it really hurts
+Salana. It moves from real time
+continuous transaction inclusion and
+etc. which is a cool feature of Salana
+and what makes it good for trading and
+etc and now it turns it into discrete.
+Okay, here's a full block after 400
+milliseconds kind like you don't get
+stuff in between. So that's really is
+taking a spec. That is not a good thing
+for Solana. Nobody will tell you it's a
+good thing for Solana. The second thing
+is say, well, you know, they're going to
+pay more for the validator, so it makes
+sense to take whoever plays more. You'll
+have they'll have different strategies.
+One will do one thing, then the other,
+and whoever has the best strategy will
+win. That, my friends, is
+Okay? Like,
+sure, there are strategies, it's
+slightly changed. The only thing that
+really matter and we know this from PVS
+on Ethereum and Mev Boost and we have
+years of experience with it is private
+order flow. Okay? If you have three
+builders and they all basically got the
+same transaction, they all kind of like
+have the same stuff, but one of them
+also got one transaction that pays an
+extra dollar, then he would win. Okay?
+Because he got private order for he
+could put it in and he could bid higher
+than everybody else. And the game to be
+played is if you're big and early,
+you'll subsidize it. You actually pay
+money out of your own pocket to be a
+major block builder. Then because you're
+big, people would send you say like,
+"Oh, I'll give you half of the money
+back, right? I'll give you kickback."
+Get orderflow. At that point, you're
+even better at winning, right? That's
+why Ethereum had like 95 a year ago, 95%
+of blocks were built by two actors,
+right? like Beaver and um
+Arsync. Okay. Um no sorry Beaver and
+Titan are sync already left at that
+point. So it's going to it really is a
+winner takes all situation. So this
+really oh let's centralize all the order
+flow to the block builder and he gets
+that and he offers at that point he
+stops subsidizing just start to extract
+value because he's doing it to make
+money. How does he make money? because
+he got the private order flow and he
+said like, "Oh, I don't need to bid that
+high to beat the competition because I
+have private order flow that they don't.
+I could pay $100 less. I'll keep $50 to
+myself. I give $50 to those who send me
+the private order flow. This is bad.
+This is how it's going to play out. Kind
+of terrible." And that's what's kind of
+like harmonic from I'm really against
+it. And again, that also doesn't work
+with MCP. This is all like temporary
+solution for like in two years from now,
+none of it would work, right? like MCP
+is going to change the ordering. Like I
+don't care what the builder put in
+there, whatever order, it's going to
+work based on the order that like MCP
+is going to like order them. So that's
+like piece number two, right? Like so we
+have JTO what they're doing now. You
+have harmonic. Now JTO is working on
+BAM, right? Bam is saying like, well,
+you know what? How about we create
+here's how we order transactions and you
+have like what they're called like
+plugins basically allowing apps to
+decide how transactions are to be
+ordered and then we give it to BAM nodes
+okay they run it on a T on a trusted
+execution environment so basically you
+have these here's the code you have to
+run it as is okay it's in a T you can't
+change anything otherwise nobody will
+work so you have it's kind of like a
+single server that running it or like
+multiple replicas running on the same
+server and then validators who work with
+BAM say oh you just put in whatever the
+BAM sent you in that order you can't add
+transaction you can't remove transaction
+you change you literally are a rubber
+stamp of what B sent you okay if B sent
+you transaction 1 2 3 4 5 maybe you saw
+another transaction transaction six you
+can't put it in you could only rubber
+stamp what ban had sent you now at that
+point like then what's the point of the
+decentralized like validator set if this
+is the reality and we should use ban and
+just what are the validators even doing
+in that world like why do we even need
+that just use ban oh you want te well
+tell the validator to run in a tea if
+you want to participate like I don't I
+don't get the design and so like this is
+that good for us for salana to get like
+equities trading on chain I don't think
+so like the the value why can we run and
+we don't need a license to for e from
+the you know SEC for for equities well
+because it's decentralized
+is it decentralized if there is like
+here's the code and you have to run it
+as is and you can't include other you
+can't change anything like how is that
+different than I don't know kraken
+taking their exchange and running a code
+on like three T's running like in three
+different regions or you know one Google
+Google cloud AWS and Azure I don't know
+whatever like is that the maybe it is
+but it's it's not clear that it is like
+how decentral like is it or not I don't
+know I don't have the answer to that I'm
+like I'm not a lawyer but I'm not sure
+it gets the same decentralization
+properties like the validator said that
+being decentralized for a few like that
+we have right now so that's the world
+that we live in right it's kind of like
+we're going toward multiple concurrent
+leader this is really coming really soon
+and we have these actors speedr
+runninging
+all the mistake the flashbot did over
+the years on Ethereum, right? He's got
+like So, so bam, by the way, is just
+like copy pasting um what's this called?
+Um builderet that flashbot is working
+right now. No, it's not that flashbot
+actually won, right? He's got flash what
+they're doing on Ethereum and Ethereum
+has spent the last like three years like
+well how do we put it in protocol and
+like like EPBS and we're now thinking of
+like Fossil how do we add center like
+and I'm running two of the five trusted
+relays on Ethereum. Okay, I'm running
+two of them and they were like supposed
+to be there for like 12 months. You
+know, this is been going for three over
+three years now. It's a temporary
+solution to use trusted like like we
+they're still here. We're still here.
+We're still doing it. So, in my opinion,
+and again, I'm an opinionated guy. You
+don't have to agree with me, but in my
+we really like trying to speedrun all
+the designs and whatever like came from
+Flashbot when Flashbot really did it
+make it work and they are working like
+their own L2 swave thing, whatever. We
+want, you know, let's say Eugene from
+Ellipsus, who I like a lot. He's a great
+guy. He's super smart. He's like, he's
+like, you know, they build Phoenix. they
+built um
+sulfi and they're building something
+else right now and he's saying listen
+fragmentation of how transactions are
+being ordered is really bad for us okay
+for apps to work we've seen this with
+prop amm we need to know how transaction
+are being ordered if we don't know how
+the transaction are going to be ordered
+then we can't allow let our users quote
+really tightly right it's kind of like
+prop amm is this smart thing where it's
+extremely cheap to send an oracle
+update. So what the price is and trading
+takes a lot more compute units. Okay, so
+if if it's 100x or a,000x then you could
+imagine that if a
+an oracle update is paying a scent, then
+anybody who wants to make a trade to
+take advantage needs to pay at least
+like $10. Okay? So it's by making that
+thing that was a super insightful smart
+thing to do. you could actually make it
+the set really fast cheap updates that
+keep getting to the front of the queue
+because they pay really high reward per
+CU because their CU are tiny okay like
+the compute units and that's really
+smart but if the transactions are not
+ordered by reward price CU then the
+entire thing doesn't work so Eugene says
+and rightfully so if we don't know how
+it works we can't as an app developer I
+can't really let my user quote really
+tight it affect the micro structure now
+um um fragmentation if you have BAM and
+GTO and harmonic and paladin and vanilla
+and whatever that's actually worse or
+it's bad okay like like it's like they
+won't know how to it really depends on
+the leader each leader does a different
+thing etc we want everybody to do the
+same thing
+BAM jer is saying that well BAM gives
+everybody everybody do the same thing
+the it allows for ace application like
+like controlled execution. Yes,
+basically the app can decide how things
+execute.
+I argue that the cost is too high and
+the value is too low. Okay, I don't
+think we need ace. I think ACE is a red
+herring. Okay, we need we we've seen
+that prop amm could compete with CFI if
+transactions are ordered by reward by
+CU. I think that gives us like 95% of
+the value of ACE. I have yet and I try
+to ask like people who built decks like
+what would you use it for like how could
+you make it better with ace I don't
+think ace above reward by see gives that
+much value the cost in my opinion is
+huge the cost of like basically the
+validator set doesn't do anything okay
+just like a rubber stamp of whatever
+band sent them I don't think so so their
+argument and again I'm probably doing a
+bad job about it because they're they
+believe in it and I don't but their
+argument is that like you get ACE from
+it and ACE is very important if we want
+to compete with C5 and the cost isn't
+high right like it works and it's fine I
+argue that the cost is huge and the
+value is little so like oh we want this
+well why don't we why can't we let's try
+to get all the validators to order by
+reward by CU
+and then does that does that make sense
+again not to agree with me not that I
+don't but is my argument clear like what
+is Is what I'm saying clear? That like
+here's what they're saying and here's
+what I'm saying like that they're wrong
+on even Solana people like people they
+don't really know how transactions are
+being ordered. They don't know that
+bundles go before transaction even if
+they pay less for no reasonable reason.
+They don't know like I like it. They
+don't it's got like you know you see the
+headlines. Oh this is good. This is bad.
+like it's funny to see jetto interpol
+like on the timeline like we really
+won't ban because that thing is terrible
+like no competition is good we don't
+it's funny but really people should
+understand how the thing works and the
+details and the nuance of it and they
+then they could make up their own minds
+>> totally agreed yep on that note thank
+you so much Uri for your time it was
+great hing you
+>> all the best with paralin and blog
+starters doing amazing

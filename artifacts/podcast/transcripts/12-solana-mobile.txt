@@ -1,0 +1,866 @@
+Transcript:
+It reminds me of when the Apple app
+store launched. There were apps like
+drink a beer. There was like a fart app
+that was like one of the most popular
+apps like in the app store. So yeah,
+it's the same model. It blows my mind
+because of these the app store like
+duopoly with like Apple and Google.
+Something has to change, you know, and
+Anatoli's vision is like let's break
+this up. Maybe it doesn't happen today.
+Maybe it doesn't happen with Seeker, but
+it will happen. we will all be fully
+mobile using our crypto and not be using
+our computers for the most part anymore.
+How can a new developer try to build
+gain value from this? I actually think
+that the large majority of the medium to
+large share mentality apps are not going
+to invest time into those things right
+now. You are competing against a small
+subset of people. So the newer
+developers actually some guy who has a
+deex just decides to ship to seeker
+that's that it's not drift or it's not
+any of these big ones on day one people
+are like I want to trade on a deck
+they'll just use this new developers
+decks because that's their option on
+that phone. So I see this as an
+opportunity.
+Hello hello hello welcome everyone to
+the devs podcast. Today we have with us
+the most famous [ __ ] poster on crypto
+Twitter Chase Barker. It's a great thing
+to be known for. Yeah. And he's also
+reason why most of the early devs on
+Solana are on Solana. So he used to be
+the head of developer ecosystem for
+Solana and we only had 75 developers.
+Yeah. We still truly and now he's back
+from his quote unquote retirement to do
+the same thing for Salana
+Mobile. Welcome, Chase, to the podcast.
+We're so back. We are so back in. No,
+thanks for having me. Um I mean, now
+we're the the tables have turned. You
+used to be you were on my old podcast,
+Chewing Glass. Oh, yeah. Yeah. And that
+was my first ever podcast, by the way.
+Yeah, that was a I I miss doing that
+specific podcast because like a lot of
+those were like pre like well-known, not
+all of them, but a lot of them were pre-
+well-known developers like the Tensor
+guys before they got huge. Like so it
+was it's like a really cool well and
+also Paul um who basically wrote the
+Salona Bible which was that old escrow
+program um from from back in the day. So
+it's like a treasure trove of history
+like when I go back and like just like
+look at at those interviews. Armani like
+before he had like did all his stuff. So
+yeah.
+Very cool. Yeah.
+Yeah. Did
+how Chase like how was retirement?
+Um so yeah that that was always sort of
+like a joke and a meme. I knew that I
+was going to come back to something. Um
+but six I thought I could make it 6
+months. Um basically I I I worked for 4
+years. I mean most people know I'm
+terminally online but what people didn't
+know that I actually did a job at Salona
+Foundation behind the scenes like
+launching educational programs like
+doing all these creating as many funnels
+as possible. like one of the my one of
+my greatest successes or like I can't
+I'm not attributing it directly to
+myself which was just helping support
+Solana Turbine which is now producing
+about 20% of the engineers. It brought
+Dean Little into light. Like he was
+always the shadowy figure for the
+longest time until I met him and I'm
+like now he's out there crushing it. So
+I'm just like just really thankful that
+I had um the people um to work with uh
+throughout that process. But yeah, man.
+The You know what? I forgot the [ __ ]
+So, let's start. Let's like cut that. I
+forgot the question. I started rambling.
+I do. That's totally fine. I mean,
+Turbine is incredible. Almost. I have
+never been not impressed with any
+engineer that I meet from Turbine. They
+all are like freaking fantastic and
+always have something new or very
+interesting niche to talk about. So,
+they have a very good community out
+there. Yeah. But like you were asking
+about the like the retirement stuff. It
+was it
+two two and a half months in of like
+just sort of doing the things that I
+loved. It was really just about like I I
+the whole point that I was saying
+earlier was that I was just I was
+working so much like I was doing all
+these things behind the scenes. I was
+probably online 16 to 17 hours a day and
+like a two week vacation wouldn't fix
+it. I needed to spend time with my
+family. But two two and a half months
+in, my wife was already annoyed of me
+being around too much and and um I was
+sort of like watching everybody do a
+bunch of cool stuff and I and I just
+needed to get back into it. Um and you
+know I I got back into it. Cool. Tell us
+more about what you're doing now. Yeah.
+So, um, you know, long story short, I
+was in I was in Thailand for 3 months
+and on my way back through New York
+City, I ran into the the COO of Solana
+Mobile and he essentially was just like,
+"Hey, we're about to launch the phone.
+We need somebody just like you to to
+help us to track developers." And then
+he was like a little hint hint nudge
+nudge like what about you? And at first
+I was just like, "Don't you dare." And
+then like within a day I was like let's
+do it because you know Seeker there's a
+Saga you know it's had and it sold two
+thou or 20,000 devices 150,000
+pre-orders for Saga or for Seeker makes
+that extremely compelling to me. There's
+some AirDrop farmers out there who
+bought those phones but you cut that 150
+in half. 75,000 potential. Even if it's
+only 75,000, that's more than um 9
+that's more than 95%. Yeah. I mean, we
+started with 75. I was looking.
+Yeah. So, I mean, like they like they
+really just needed somebody to be out
+there and be loud and make people like
+just like know that this stuff exists.
+And like, you know, luckily I have
+another like at foundation I had Jacob
+Cree who was incredible um more
+technical than I am. And now I have
+another uh his name's Mike Cisto. He's
+the de for Slenom Mobile. He's actually
+incredible. So, it's like we got a
+strong duo, you know, like I'm just
+we're going to be running that same
+playbook back. Um, and today we just
+announced a like mobile focused
+hackathon that will fast follow Coliseum
+targeting people who have already built
+apps to convert those to mobile and ship
+to the DAP store. So, pretty excited
+about just like starting from scratch
+again. Feels good. What type of
+developers are you looking to get on
+board? Are these like primarily people
+building apps or you're much more
+focused on developers first? Um, I think
+probably like just considering
+the in order for Seeker and Solano
+Mobile to succeed, there has to be
+compelling apps, there has to be
+compelling use cases, there has to be
+all of those things like out of the
+gate. So initially my like you know
+there's going to be some of the larger
+apps that are going to be porting over.
+I always consider myself small dev BD.
+Colum runs these super incredible
+competitions. 40 teams win. You've got
+about 100 maybe more now that are just
+barely missed winning. And the goal here
+would be to they've already have a
+business. They already have a pitch
+deck. They already have like apps. All
+you have to do is drink a bunch of
+Monster over a weekend and com convert
+your web app to mobile. Depending if you
+build native or if you do React mobile,
+you you could probably do it in a
+weekend longest a week if you and a
+couple buddies just sat down and
+crunched that out. So to answer your
+question, it's more usable apps that
+like belong in an app store initially. I
+think you know maybe that strategy
+changes, but as Seeker launch
+approaches, we need apps and we need
+apps that people want to use. Yeah. And
+also the secret itself is such a vital
+playground to show what consumer crypto
+could be like, right? So I this reminds
+me of when when the Apple App Store
+launched, there were apps like, you
+know, drink a beer.
+What was the what was the fun? There was
+like a fart app that was like one of the
+most popular apps like in the app store.
+So yeah, it's the same model. What blows
+my mind because of these the app store
+like duopoly with like Apple and Google
+that crypto has been like frozen. The
+majority of people in the world do not
+have computers. Like the large majority
+do not. They're all on their phones.
+Almost everybody in the world has a
+phone now. And like they're basically
+not able to really use crypto outside of
+like a wallet right now. So they don't
+get exposure. And it's really silly to
+think that it'll be like that
+forever, you know? Like I don't think it
+it's going to be something like we will
+not be using crypto on our only on our
+computers forever. Something has to
+change, you know, and Anatoli's vision
+is like let's break this up. Maybe it
+doesn't happen today. Maybe it doesn't
+happen with Seeker, but it will happen.
+We will all be fully mobile using our
+crypto and not be using our computers
+for the most part anymore. Does it mean
+you're also interested in apps that do
+not necessarily have a crypto component,
+but then they're just tired of paying
+the 30% cut to Google or Apple. They
+could still launch on secret. I think
+that's a like that would be nice, you
+know, like it would be nice to have
+non-crypto apps that like, you know,
+something that that people could use
+that's non-cryptoreated, but like I
+don't know if there's a compelling maybe
+there is a pitch, but you know, they
+don't have access to the millions and
+hundreds of millions
+eventually. Yes. I think if you have a
+successful phone um and like you start
+to have a bunch Yeah, it would be nice
+to have like Evernote or or like notion
+or or some of these apps on there for
+sure. Um just things that you use in
+your daily tasks because sure you have
+this crypto device and you do crypto
+things, but like if you want to use it
+as your daily phone, you probably also
+want to have like like Slack and Notion
+and all these other apps as well.
+I'm curious to know um the first uh
+mobile phone um what kind of adoption
+did it have? Do you have do you track
+metrics around 20,000 people bought? Um
+I mean I I don't personally have access
+to that but I will tell you that like
+there was very little users after the
+sort of like you know the bonk like
+airdrop sort of reinvigorated that but
+it's it just never caught that adoption
+level. the app the the number of apps
+the level of apps and experiences were
+not really there and compelling enough
+you know I think this time around things
+are a little bit different you know like
+we have a lot more builders we have a
+lot more founders we have a lot more
+people that probably see the vision to
+to do that you know and like mobile apps
+offer some specific things like that you
+don't have with computers like you know
+like GPS what what is that thing that
+you use for motion like it's Okay. Yeah.
+So, there's things unique to cell phones
+that you can create crypto-related
+things around that you can't really do
+with a computer. Um, and it's like
+tapping into those unique things to
+create certain experiences I think will
+will be helpful. But at the end of the
+day, people are still going to be like
+trading fartcoin on hump fun like you
+know like this is like it's it's just
+the early stages of that. But if I can
+do that on the go on my mobile phone
+then like I think people are will be
+compelled to actually use that. Yeah. I
+think this that it reminds me of this
+argument some
+famous you know VC made when mobile was
+just after iPhone was launched in 2007.
+It was like mobile makes a future of
+computing is mobile because humans are
+mobile, right? Like people move around.
+They do. How often are people sitting at
+like a desk all day, you know? Like I'm
+a little bit of a boomer. I sit at a
+desk more than most people. But I think
+on the go is the way that people are
+work. People are working. If your job is
+not engineering, you can work directly
+off your phone and a lot of people do.
+Slack, Telegram, all those things. This
+is like I don't want to pull out my
+clunky computer to go like trade or or
+do whatever I want need to do. You don't
+have to anymore.
+Yeah. Also, also it's pretty much a
+generational thing, right? If you look
+at a lot of the younger
+generation, you know, kids, they
+might they probably never even open to
+use something on a website or a desktop.
+At the most, at the most they have an
+iPad with a keyboard. Yeah. Maybe.
+Exactly. If it's not a mobile app and
+you're a consumer app, you don't really
+have us use it. Yeah. My son who's like
+who's 15 like like to get him to use a
+computer for stuff. He's just like
+doesn't want to do it. He was like,
+"Why? I just have an iPad. I have my
+phone." Like those generations are just
+like, "Why? I don't need all of these
+things anymore." And they don't. He's
+They're right. They don't. I think
+they're a signal where the future is
+headed and it's 100% headed to mobile.
+Yeah, mobile has a very big chicken and
+egg problem which I'm sure you saw with
+the first uh you know mobile phone as
+well. Uh which I'm assuming is if there
+aren't enough apps then a lot of people
+won't use u you think this is the
+biggest unlock here if if you have the
+best apps viral apps on the phone to
+expand. I think that's probably the
+most important thing is to have a suite
+of apps like at the very minimum your
+daily driver applications that you're
+going to be using like the wallets of
+course they're they're they're allowed
+in the other stores for like they have
+their own rules apparently but I think
+like make sure that you have a nice
+trading app and make sure that you have
+these different like sort of crypto apps
+that you have
+like the same crypto apps that you would
+have as your web apps exist on those
+phones because you know
+humans their first impression of that
+phone they open up that DAP store and
+it's empty or has uninteresting things
+they're like okay I'm going to tuck this
+in the corner and wait for my airdrops
+to roll in so having those DAPs and
+having good ones is is going to be
+extremely important I think right do you
+think uh most of the volumes will go to
+you know web apps that are already doing
+well like Jupiter will build their
+mobile app pump.com will build a mobile
+app. Everyone will go there. How can a
+new developer try to build gain value
+from this? I actually think that the
+large majority of the medium to large
+share mentality apps are not going to
+invest time into those things right now.
+I'm not 100% certain, but like it has to
+be, you know, they already have gained
+market share beyond the mass majority.
+So I think it it's I see this as the
+reverse in that market competing on the
+web app crypto scale. You're competing
+against every blockchain and against
+every app in those different ecosystems.
+With Seeker, you're going to have 150
+potential power Salona users who have
+money, who know how to use crypto and
+like and then a lot of people that are
+going to wait for the signal to join
+that DAP store before they actually put
+those resources. So I see these early
+movers, these guys even before Secret
+comes out, the Seeker and Saga DAP store
+are exactly the same DAP store. So you
+can submit today that secret launches
+you are competing against a small subset
+of people. So the newer developers
+actually let's say no let's let me give
+an example let's say no dexes launch on
+like seeker from day one some guy who
+has a deck and just decides to ship to
+seeker that's that it's not drift or
+it's not any of these big ones on day
+one people are like I want to trade on a
+deck they'll just use this new
+developers decks because that's their
+option on that phone so I see this as an
+opportunity for newer apps newer
+developers newer for founders to get
+access to users easier and whenever
+there's not a ton of competition because
+once the big guys start to port over the
+mind share is directed towards them. So
+I see this is probably like the reverse
+is like the way that you were possibly
+thinking about it is this is an
+opportunity to compete in a in a in an
+area that's not as broad as the whole
+crypto ecosystem. it's just Salana and
+it's just those apps in that DAP store
+from day one and all those big guys
+aren't going to do it until it's
+compelling enough for them to do it.
+Yeah. And also another category that I'm
+very interested in is games and
+entertainment because now so far if you
+took any web 3 game you were restricted
+by what you could do in a browser the
+majority of the gaming today especially
+hyper casual ones or on mobile. So I'm I
+wonder what do do you at all think
+gaming as like a major category or is it
+is it something that you guys are
+actively pursuing? I mean there's a lot
+of people I've actually whenever I
+announced that I was doing Salana mobile
+I got a ton of messages from people that
+are like building games right now
+looking to build like if you look if you
+I mean like you're like you're from
+India like if you look at places like
+India or like a lot of places in like
+South Asia and like just like Asia in
+general people are on their phones
+they're playing mobile games all the
+time and like there's there's no reason
+why eventually that's not going to um
+that's not going to happen. But I think
+initially right now we're just still
+like crypto is still in it degenerate
+gambler phase. But those that that those
+are all just primitives to experiment
+with the ideas where the actual real
+[ __ ] gets built like a layer up from
+that sort of uh from the from that
+degeneracy some real [ __ ] begins to
+happen. And we're seeing that happen
+with cryp like institutional adoption
+right now. I think gaming is is going to
+make it at some point, but right now it
+just seems like most people are
+interested in like making a lot of money
+very quickly.
+Yeah, that makes sense. Speaking of
+which, I I saw you guys announced a
+token called Seeker. Yeah. And also very
+confusingly sounding deep and what
+exactly is that? So, this is all brand
+new to me. So I won't be able to answer
+that very uh very um technically for you
+right now but um yeah so I I don't have
+enough information that the token itself
+also I was I was only made aware of that
+recently. So okay but it sounds like a
+lot of that is going to be somehow like
+as is as is helping to to be the glue
+for the crypto economy within the mobile
+universe. you know, like um those sorts
+of things like in incentive mechanisms
+are are what what helped crypto
+bootstrap itself. So, and and also
+legally, I don't know what I can say
+about this stuff. So, I'll probably
+avoid most of that topic right now. But
+I think one thing that they did mention
+though is um is a play is that like the
+the hardware is one thing, but like
+selling the software and the DAP store
+and the things behind Seeker and a play
+on like the OEM sort of stuff is also in
+the equation. It's like we don't have to
+sell hardware devices forever. we can
+prove it out on our hardware and then
+get into these other devices and like
+hopefully maybe that like you know like
+once you get inside there and they start
+to see like what the possibilities are
+that maybe breaks up that barrier that
+you can't really get into initially. So
+like I I do think the hardware device is
+a a stepping stone. You can continue
+building those devices, but you can also
+try to get into other distribution
+networks by like pitching the software,
+the secure the security of the device,
+and then just like with a little bit of
+luck and like the way that things shift
+over the next like 12 to 24 months, I
+think that, you know, people are going
+to be a lot more open to that. You know,
+the genius bill is about to pass with
+the stable coin stuff. I think more
+phones who were very conservative about
+the way that they handle crypto could
+very much change. Um it could change
+like that. Um so you know it's always a
+a lot of hard work and a little bit of
+luck. Um so with that I think there's
+there's a lot of potential.
+What are your top five project ideas or
+maybe three project ideas for people to
+build for the Oh my goodness. I don't
+even know if I could do that. If I were
+to if I were to
+um like I said, I think we're going to
+mainly focus like we want anybody to
+build those apps, but I think I think
+simple apps obviously like the what's
+hot right now is the meme coins and I
+don't endorse it, but like this is just
+what what people are really liking. But
+if I had to build something, I I would
+think very deeply about the types of
+things people do on their devices every
+day. Like for
+me like just simply like you know I want
+if I want to trade I would like to have
+a Robin Hood style application like
+especially if you're trying to pull in
+non-crypto people the interface is so
+different that I don't know if you guys
+have used Robin Hood before but the
+interface to to trade stocks on there is
+so different. It has all this
+information about these things. So it's
+it's like a lot different of process.
+So, I would try to like figure out a way
+to simplify sort of like, you know, the
+the the mystery and the complexities of
+of crypto. If I had something that I
+could
+go, Tinder is a good example, swipe
+left, swipe right, if there was
+something that I could implement like
+that in trading, um, I would do it. Like
+the less steps a user has to do, the
+better. So, while I'm not a product guy
+or a business guy, I think like creating
+simple ideas just like we talked about
+earlier about the fart apps that were
+successful in the in the Apple store in
+the early days, you should think that
+same way with crypto. Swipe left, right,
+up, down. Like, that should be the user
+experience. Because if you got these
+complex apps built into these things and
+people's got to do 10 different things
+to do, it's it's you're going to have a
+hard time just keeping a user from like
+you you might lose them before they even
+make it to the final step of your app. I
+think it's simplicity is the most
+important thing when we're talking about
+mobile cuz who who out here uses wants
+to use a complex app? I open Twitter, I
+type a word, I I [ __ ] post, tweet, boom.
+Like sometimes crypto, I think we get a
+little too complex with our ideas.
+That makes sense. I would love a
+blogging app.
+A blogging one. Somebody must be
+building.
+Yeah.
+I If anyone wants to build a blogging
+app, all the code is available on the
+GitHub. Please take t take into whatever
+you want. I would actually I personally
+would like use a journaling like
+blogging app if it was launching. Uh but
+the question is
+like it's hard for somebody to build
+that because what's the business model
+behind like a blogging app? Yeah. Put a
+token on it.
+Yeah. And also I think some other cool
+ideas could be to you know take
+advantage of things that are uniquely
+possible on Seeker like how you had
+things that are only possible on Salana
+because this the only place where you
+could do first transaction is probably
+the only place where you have access to
+a seed wall and and that potentially
+opens up like
+you know different possib different
+application possibilities like things
+that you want to keep ultra secure. For
+example, a a journal
+which where you want to keep everything
+private and completely on your
+completely on your device without it
+ever going to the cloud. And I agree and
+like I'm not like just to be honest, I'm
+never giving up my iPhone. This is my
+daily phone. But what I do not like
+personally is I do not like having my
+crypto finances on my personal daily
+driver when I'm traveling in my
+backpack. If I want to do crypto stuff,
+if I want like my secure like like the
+secure storage on there to keep like
+larger sums of money and also be able to
+interact with Salana apps, I would
+rather I don't want to do that on my
+computer. Like let's say I'm at a coffee
+shop or the airport. I don't want to
+pull out my computer to do all that
+stuff. I would prefer to just have a
+crypto phone and this is where all my
+crypto finance stuff belongs. This is
+this is where I trade. This is where I
+do all these different things. I don't
+want that on my iPhone. You know, I have
+my wallet on my iPhone, but like I would
+prefer it wasn't. I would prefer that my
+wallet, you know, like my phone's open
+in my my normal phone's open in my hand.
+I'm walking around texting all the time.
+Somebody can grab that phone and like
+get access to that. This other one that
+you sort of use in a different setting
+where you're like conscious of it,
+you're sitting down, you're like, I'm
+ready to do some salon. Um, and you pick
+up your phone and here's where all my
+stuff is. I really don't want that on my
+on my like daily phone. Yeah. And also
+another type of apps which could be fun
+or and can uniquely leverage crypto is
+things like AI labeling stuff, right?
+Where today if you have to label
+something you have to log to your
+computer, pull a batch of task then
+manually do it. But it would it would be
+very very cool for an app
+to you know send you a push notification
+of one single image that you have to say
+yes or no or like the Tinder style right
+swipe left or swipe right based on if
+this is classified the correct way or
+not. Then you also get paid paid in USDC
+or whichever token because now you have
+a wallet natively embedded into the
+form. Yeah. in terms of and I just had a
+random idea pop up is like you know like
+with a with something like Seeker that's
+cryptonative that you can integrate
+tokens into like you could you could
+create things like you know there's
+people you ever heard of geocaching.
+It's basically like people will go hide
+um an item somewhere in like the middle
+of a tree and they provide like GPS
+coordinates and clues. You could
+basically do digital sc like digital
+like scavenger hunts. you take a picture
+that's locked into the GPS. So like you
+know like just creative ideas like that
+because that only works because I have a
+phone and a GPS inside of that phone and
+then crypto integrated into that. So I
+could go somewhere take a picture of
+this and it's like go find it and like
+you could put some tokens inside of
+there. Obviously, it's like not the
+greatest business idea in the world, but
+you could see where you could probably
+build off of that where a brand could
+essentially like pay promotions to like
+create these digital token scavenger
+hunts like around a city or something
+like that. Yeah, I just made that up. I
+don't know. But and also it kind of
+tracks well to this has been true for
+any new mobile ecosystem, right? For
+example, going back to how solo mo was a
+thing where everyone was building like
+social, local and mobile because these
+this uniquely leverages what a mobile
+has to offer. You want them people use
+mobile to communicate with others or
+send text messages. So it's inherently
+social and also because your mobile you
+also have location. So we feel like a
+lot of this consumer apps, you know, or
+these type of fun
+things have the higher potential to take
+off and could bring in net new people.
+Yeah. Right. And also I I wonder if it
+would be interesting if
+people don't just launch on secret but
+also at the same time take the same apps
+and launch to other other stores as well
+and kind of do something sneaky like
+what Apple does with green bubbles etc.
+So that you kind make it uh attractive
+for people who are not in the seeker
+ecosystem to go get a seeker. Yeah.
+Yeah. Actually that's that's that's an
+interesting idea. I do I do think
+that you like you know everybody's tried
+social like on crypto. Most of them all
+of them if not all have mostly been
+failure. I think the I don't even know
+if you call it social but time. Fun has
+actually done really well. they've have
+a unique idea and it seems to be working
+but you have a much higher probability I
+think of having a successful social
+application if it's mobile you know like
+with on the computer no but like if you
+have a special like you can socialize
+tons of different things and if it's
+like you said everybody's on the go
+everybody's mobile if this app is like
+who of my secret friends are near me
+right now you know like people I
+friended and I can like see that they're
+in the city like oh my salon people are
+here then like that's more compelling to
+use than like something like and it's
+not a knock on them like forecaster you
+know what I mean which is super niche
+and you there's no mobile app as far
+maybe there is maybe I'm wrong but like
+I think mobile has much greater odds to
+succeed in in the social world whatever
+the social type there's tons of
+different types of social apps but I
+think mobile was where those would
+succeed time fun mobile app is sounds
+like a great idea if I can just buy
+totally hours and then call him directly
+at links as so they you know they just
+announced it. They're basically like
+they're about to launch um a mobile app.
+Okay. I think I think what happened was
+that Mer probably was like I'm I'm on my
+phone all the time. I'm meeting all the
+time. Please launch an app so I don't
+have to get on my computer to do
+timeconf. Very cool. I don't know if
+that's true but probably.
+All right. I have one last question. Um
+so Solana has great docs and videos for
+learning Solana and go um is that true
+for Solana mobile as well. Now where do
+people go and learn or just need to
+learn Android? Uh actually not really. I
+think the major the mass so number one
+the docs for Salonomo are actually
+pretty nice. Um I've I've gone through
+them. Most people seem to be favorable.
+They can improve obviously but
+docs.solon salon
+salonmobile.com that actually even
+includes like the process to like that's
+where you go submit to the DAP store. Um
+but the mass majority of people are not
+going to go and learn Android. They're
+going to basically build in like like
+React Native mobile. Um and or you
+basically just build progressive PWAs
+which are progressive web apps. You know
+you can build you know like they're not
+the most incredible. They don't they
+I've seen some they can feel really
+close to native but the way that I view
+this is like
+just if just ship something get a PWA
+it'll you could it's on the web you can
+convert it to an APDK very easily like
+with very little effort if you if you
+design it properly and then once that's
+done like let's say V0 of your mobile
+app is like picking some traction maybe
+you get a little check from somebody to
+continue building that out, then go find
+yourself an Android dev to build like
+the next iteration of that. So, I think
+it's perfectly fine to like, you know,
+ship something that like it's good
+enough that users will like it. It's
+userfriendly enough that like it's not
+going to like be a like you don't want
+to ship a shitty like PWA that's like
+horrible to use and it doesn't feel
+native at all because you know, you're
+just hurt harming yourself. But if you
+can build one that's reasonably feels
+close to native, I think that's fine.
+And also like your your time, you don't
+need to go learn. You don't go need to
+learn cotlin. You basically just ship
+with what you know. This is like the
+early days when people were doing
+Seahorse and Python even though it
+doesn't exist anymore or really but
+there were some people that I know that
+were onboarded to see to Salana Rust
+with Python who eventually were like I
+need to take this further and then they
+learn Rust and it's the same process
+here gateway talk like exactly and a lot
+of people b combed about like being like
+no we don't we need people to build rust
+python is this I was like listen you
+don't understand the reason for this is
+not the ones you think. It's to allow
+people to access things they would
+normally wouldn't do because the
+learning curve is so strict. Suck them
+in, get them excited, and then they'll
+go eventually once they get far enough
+and they'll basically delve way more
+deeply into that. Y makes sense.
+Awesome. I have one last question. Okay,
+let's go. What are you most excited
+about?
+Um, for me personally, from my own
+personal perspective, like when I joined
+Salana in in early 2021, the chances of
+success were very low unless you were
+not building any VM. Like it was
+literally like Salana is nothing. Nobody
+cares. Nobody's going to learn Rust. You
+guys have zero chance. The thing I'm
+most excited about Salana mobile is
+proving people wrong. Once again, that's
+the thing. It's not about the phone
+itself. It's being like, listen, you
+want to sit there and be a doubter and
+not do anything and not build anything,
+well, we will go ahead and do that.
+Awesome. Yeah, with that, let's go, man.
+Yeah, exactly. Such a high note to end
+the podcast. Yeah. Thank you, Chase.
+Thank you. Thank you so much for joining
+us. For sure. It's been fantastic. See?
+All right.

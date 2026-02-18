@@ -1,0 +1,1382 @@
+Transcript:
+I didn't know what Solana was. So I
+heard a Dely Digital podcast about it.
+There's no profiler that shows you which
+parts of your code are generating more
+like raw instructions. So it's a
+different kind of profiling. It's not
+adding time around a function. Our goal
+is to make a different set of trade-offs
+from Fire Dancer and Agave. Our goal is
+to try to trade off to keep resource
+consumption to a minimum. And how can we
+still verify at home? It's it's the only
+place where you could also make money
+doing it because open source is a very
+very viable career path in crypto.
+>> Hello hello hello hello. Welcome to
+another episode of only devs podcast.
+Today we have with us Rohan popularly
+known as sexon on Twitter and also on
+GitHub. Welcome to the podcast Rohan.
+>> Thank you. Thanks for having me. is the
+co-founder of overclock validator and
+also he's a prolific open source
+contributor in the SA ecosystem and also
+crypto at large. So today is going to be
+a fascinating conversation with Rohan
+about one of the projects that he is
+actively contributing to Bonsol
+which is an offchain computing infra on
+Salana. So with that, let's head right
+into it.
+>> Rohan, do you want to introduce yourself
+to the audience?
+>> Yeah. Yeah, for sure. And I mean, as
+Shek said, uh my name is Rohan. I'm
+known as 006 on Twitter and on GitHub.
+And I've been like I originally started
+off as a software engineer and for like
+I used to prefer mainly working for
+startups and then uh I like from
+software engineering I moved into DevOps
+and infra that's how I ended up meeting
+seven layer and we started running like
+the Solana validator around like mid
+2022ish
+like uh and yeah since then I've been
+like involved in the Solana ecosystem. I
+started off running the validator but
+then the technical aspects of Solana
+started like you know there were not too
+many people it was mostly Ethereum and
+not too many people on Twitter and not
+that much knowledge either. So we could
+ask like dumb questions in discord and
+uh slowly get to know more about Solana.
+And I found it actually very interesting
+how like there was a engineering first
+approach and like the first thing that
+fascinated we me was like how is it able
+to do 400 millisecond blocks when the
+only other chain I know is doing like
+you know like 15-second blocks and
+everything. So that's how I got more
+interested in the technical side. But
+yeah, since then I've like I've also
+worked at Sovereign Labs which is a app
+like an application rollup framework
+that's chain agnostic. So that's where I
+actually got to know more about zero
+knowledge and everything. And now I'm
+full-time I'm doing overclock and
+overclock is also developing mithril
+which is the
+uh golang client for Salana but I also
+spend my time with like bonsole and zk
+stuff in general. So, so that that's
+where I am.
+>> So, that sounds great. Um, amongst you
+mentioned many things. Um, I'm very
+curious to know when did you start the
+validator? Were you amongst the initial
+people?
+>> Um, definitely not among the initial
+people like uh because like not not like
+when Zan and Lane and all those guys
+were there, but Zan and a couple of them
+did help me and seven layer get started.
+So we like I have to check exactly but I
+think it's like
+mid uh 2020
+two uh 2023. Yeah. Um early 2023 I
+think. So we weren't there for the very
+first outage that happened in 2021. We
+were there the year after that. So yeah
+2022. So we've been running it since
+then. And uh yeah.
+>> Got it. What made you transition into
+web 3? Uh you mentioned you were from a
+traditional software engineering
+background. Um
+>> um honestly the technical work was just
+interesting originally. It's like you
+know crypto is like fascinating and
+everyone is talking about it because in
+2021 so I ended up like getting into
+some random NFTs and everything and then
+like uh it was the technical side was
+actually very fascinating because uh I I
+think yeah it was basically just this
+like I didn't know what Solana was so I
+heard a Deli digital podcast about it
+and they were talking about building a
+claw bond chain so I was like that
+requires like extremely high
+performance. So I was wondering how they
+were even doing it. So that was when I
+started looking into serum and then uh I
+I think fundamentally it's all like
+there's originally Solana had these like
+eight things that make Solana unique
+kind of uh so they introduce everything
+like proof of history and then seale I
+mean accounts DB I think they called it
+something else back then but it never
+stuck. uh and including the BPF virtual
+machine actually that was so I told you
+I was part of infra right so DevOps and
+infra so you typically use BPF and eBPF
+for inserting probes and tracing like uh
+you know like per performance issues or
+debugging so and pack like basically BPF
+is originally a packet filter and ebpf
+is like a more generalized virtual
+machine right so that's how I knew about
+it and I'm like wait they're actually
+using that as like they're using the
+main kernel sandboxing properties that
+you get for like blockchain safety like
+you know they don't want they want a
+sandbox where code cannot exit the
+machine and like corrupt it in any way
+and if it crashes the main process
+should still be okay. Those are all like
+security requirements for a kernel right
+because if you like insert custom code
+into a kernel and it hangs your entire
+system freezes. So it was very
+interesting to me that they were using
+that and it made sense because uh the
+and it was also like a register based
+virtual machine whereas the other ones I
+was familiar with like um this uh you
+know Ethereum is like a stack based VM
+right so so was so that was interesting
+and I think the other thing that was
+interesting to me was turbines
+specifically like how are they able to
+disseminate data that fast so the double
+like okay I'll spread my packets among
+ong this neighborhood and have them
+reshare. So it was it was like I think
+it was the first technical project where
+you know Bitcoin was very cool in terms
+of like hash cache and everything but I
+think Solana was the first one that made
+me really want to dig in on the
+engineering side and I think the very
+interesting thing to me was there was a
+lot of uh engineering focused content in
+Solana where I didn't need to know too
+much about like cryptographic proofs and
+everything. So it was like a lot of
+performance that they were getting was
+purely around let's just get the
+hardware out of the way of like software
+right and for me being from infra that
+was always appealing like I always liked
+so I got into infra at like a very
+strange period when it was bare metal
+and everything was transitioning to more
+and more abstraction like okay from bare
+metal you go to EC2 from EC2 to elastic
+beanto and then you have containers and
+then kubernetes and then like finally
+serverless. So finally you got to a
+point where the infra is so hidden away
+and like I lived through a lot of those
+inefficiencies now a lot of those
+projects are good but I think with
+crypto and especially Solana I really
+like the fact that like you know this
+was like raw performance like this was
+okay I have 256GB of RAM I have 32 cores
+how can I exploit them as much as
+possible and how can I build like a
+global distributed computer that that
+that was an Catalie's goal from the
+beginning, right? Like compute at the
+speed of like your only limitation is
+the speed of light. So everything
+appealed to me like the people in the
+ecosystem were engineering focused and
+it was always like okay why can't you do
+this right and uh yeah I I think the
+engineering first mindset really
+appealed to me and being from infra like
+I liked looking at all of these like
+okay they're using UDP because TCP has
+like latency issues so how are they
+optimizing for that okay they're using
+erasure coding to compensate for packet
+loss and they want like very good
+latency so that you know the the big
+issue with TCP or any error correct like
+you know retransmission is you have
+round trips for transmitting packets
+again right so like Solana was using the
+same technology that like a lot of
+streaming services and everything used
+so I felt like this was very much at the
+forefront in terms of like not too many
+people do this kind of optimization like
+mostly HFT people and it's that's
+usually not very open source right it's
+all usually more behind closed doors
+proprietary and
+So and you know that turned out to be
+correct because finally we do have a HFT
+firm which is building fire dancer using
+the same knowledge right they also
+realized the same thing like this is
+just hardcore engineering this is
+hardcore like exploit hardware as much
+as possible wherever you can to overcome
+limitations. So that that for any you
+know crack systems engineer in the
+audience this should be like music to
+your to your ears. Sena is probably the
+place where you could permissionlessly
+work on some of the hardest
+systems problem that exist out there and
+and and also it's it's the only place
+where you could also make money doing it
+because open source is a very very
+viable career path in crypto right
+do you want to touch upon you know how
+you know you gotten nerd sniped with
+everything that's happening in terms of
+engineering. You read the blog post and
+you also decided you wanted to run a
+validator, right? And now you're working
+full-time in crypto. Um, and you also
+contribute to a lot of open source
+projects. Could you kind of
+talk about
+how does one go about making a career in
+open source? Yeah, I I think you just
+need a starting point honestly like if
+there's a problem that you're interested
+in solving like people are very like you
+know there are a lot of devs but there
+is still like you know there's always
+more demand for devs right like if you
+look at a lot of people who got into
+open source it's fundamentally I am
+interested in this thing is there
+something that solves this or so for me
+I can tell you my very first open source
+in crypto was okay I was running the
+validator I did the setup and I had a
+lot of questions for people. So even
+something as simple as getting started
+by writing an article around it which is
+what like a lot of good validators I
+know do which is like you know just
+explain the steps and the next logical
+step was okay why not automate this with
+anible or something like somebody could
+find it useful right so that anible
+repository ended up getting picked up by
+a lot of people and then even GTO also
+approached to like okay can we use this
+for the validator setup so if like if
+you'll find even some of the GTO commits
+on the autoc clock is what we called it
+because you know for overclock that's
+the anible scripts and when we started
+writing the anible scripts and during
+setup we were like okay the snapshot
+download is taking a lot of time so we
+started searching if there are scripts
+that actually analyze latency and
+download snapshots from the nearest
+machine and that's how it starts and
+then you have like obviously like
+modding and stuff right like monitoring
+tools for validators like watchtower
+alerting like a lot of people who build
+useful things in crypto it's like uh
+like Solana compass for example is like
+a very good website and then lane's uh
+stake wiz which all of us use for
+checking validators and stake and
+everything. So I I feel like as long as
+you have a starting point, crypto ends
+up pushing you into open source
+regardless. Like if you say, "Okay, I
+want to run a validator or I want to do
+like I I think a a lot of people I get
+in touch with from the validator side
+are also like people who run uh like
+people who are interested in me or
+arbitrage, right? So that is something
+that I find appeals to a lot of
+engineers especially people who are
+focused on performance because there's a
+direct line between how skilled am I and
+how much money can I make. So that's
+like very satisfying to a lot of people
+who feel like they're not like valued in
+their existing careers or who feel that
+they have more potential and stuff. But
+you know if you do anything related to
+ME you'll end up touching like GTO which
+is another brilliant like example of an
+open source project that has like
+billions of dollars like sitting on top
+of it right so uh yeah I I think just
+finding a starting point ends up like
+giving you avenues like obviously like
+hackathons and everything like Solana
+does value people who contribute to open
+source right and there's also like a
+recent tweet that I found by Dean uh
+Danm M little like the ZS network guy
+that was very like I liked it quite a
+bit which is like you know if you want
+to solve any problem or you want to make
+something even 1% better go ahead and do
+it right nobody's going to stop you and
+if you like don't ask like why not but
+just go ahead and do it kind of thing so
+like I find like a lot of people you
+write useful things then there are a lot
+of people willing to help you because
+when we started uh Mithril the go client
+which overclock is building as Like the
+fire dancer people were like very
+excited and they were like okay did you
+start getting bank hash matches you can
+use our conformance test suite like
+everyone is usually like you know
+Anatoli is like the number one champion
+of anybody who does an open source
+project right so if you do anything cool
+and you post it on Twitter or something
+he's more than happy to boost it and
+like other people are happy to reach out
+if it solves their problem so I I feel
+like a lot of projects ended up getting
+picked up that way just by boosting in
+and just the community being you know
+happy about it. So yeah, I'm not sure if
+that answers your question, but yeah,
+typically I think if you find an entry
+point, crypto does let you do it. And
+even at Sovereign Labs, the first
+version of Sovereign SDK was completely
+open- source. And we were using Risk
+Zero, which was also like an open-
+source project. And I noticed that they
+didn't really have a profiler and uh you
+know that printed out like the like in I
+mean we'll get into this a bit more I
+guess but in risk zero the way you do it
+is you write a rust program and risk
+zero is basically a prover zk proof
+system built on top of risk 5. So you
+write code like Solana compiles to BPF
+right? So similarly risk zero is just
+risk 5. So it's an target architecture
+set. So you write rust code it compiles
+to risk 5 then the prover system then
+you execute that code. So you feed like
+fun inputs into a function and when you
+execute it there's an execution trace
+which is like okay like the raw assembly
+instructions for one single execution.
+That trace is basically what is proven.
+So one thing to note is that if your
+code compiles to more like if your code
+produces more instructions in the trace
+then that's directly proportional to the
+prover time because every line in the
+trace needs to gets proven. So one
+interesting thing that we noticed that
+sovereign and something that we wanted
+to open source was there's no profiler
+that shows you which parts of your code
+are generating more like raw
+instructions. So it's a different kind
+of profiling. It's not adding time
+around a function, but it's more like,
+okay, how sensitive am I? Like if I do
+this function call, if it's generating
+like 1,000 cycles, how bad is it?
+Because the, as I said, the bigger your
+execution traces, the longer the proof
+time takes. So you want to try and
+optimize that as much as possible. So
+that's actually what succinct SP1 and a
+lot of others do. they look at the
+intermediate execution trace and they
+like uh transpile it into another format
+that does some roll-ups and everything
+and have a different prover system
+sitting on top. So it is basically like
+the go the starting point is still risk
+five for them as well. So the I I I just
+mentioned this as a context of something
+useful that came out which was like the
+profiler like the risk zero profiler and
+like the sussing team also picked it up
+and sovereign still maintains it. So I
+feel like if you just if you start
+getting involved at some point you'll
+find that there are a lot of things that
+are not done or that can be done better
+and I just say like go ahead and do it
+right like 90% of the things that I see
+people do are like things that they try
+to solve for themselves and very
+unsurprisingly other people have the
+same problems. So like people who write
+monitoring tools or people who write
+like validator automation or uh like I
+know like margin like uh Kevin from
+there wrote like the light SVM and a
+bunch of things which are like you know
+if you try to run try to develop using
+the regular Solana test validator
+locally it's not very clean right and
+that's how even like anchor and
+everything started which is like you
+know writing raw smart contracts has so
+much boilerplate let me write something
+that makes it easier. So yeah, so one
+thing I personally believe in is that
+nobody should discourage anybody from
+doing anything open source. Like when
+someone says something like, "Oh, why
+are you building this?" That's that's a
+little annoying to me. I'm like, you
+know, you you should never stop anybody
+from building anything, right? And
+Solana is very welcoming to that. So I
+I've never seen anybody discourage
+anybody like, "Okay, don't do this.
+Someone else is doing this." Like you
+never hear that. So I'm, you know, more
+than happy to. That's why that that's
+Yeah, I guess for me getting in was
+easier because the community was
+supportive.
+>> That's awesome.
+Can you tell us more about what Bonso
+is, how it works?
+>> Yeah. Yeah, absolutely. So as I said
+before like risk zero is like the prover
+system that uh bonsole is built on top
+of and actually I don't know if you saw
+the vitalik post where he said that
+ethereum should move away from or like
+EVM should be reimplemented in risk 5
+one of the reasons for that was like the
+fact that risk 5 is a generalized
+architecture so the way it works with
+rust is like it's an ll like lbm based
+compilation process right so you have an
+llvm front end that takes rust and
+converts it to LLBM intermediate and
+then from there uh risk 5 is just an
+LLVM target. So you get like the code
+compiled to a risk 5 elf which can be
+executed in a risk 5 virtual machine and
+there are a lot of provers written on
+top of that including like risk zero
+being the most famous one and obviously
+SP1 and I think there's a few others as
+well like uh Jensen's groth I remember
+like from growth 16 he also ended up
+like having something like that. Um so
+if you try to use the prover you don't
+need to know any of the like if you want
+if you try to use the proof system you
+don't really need to know any of the
+math but you do find yourself copy
+pasting a lot of like curve parameters
+and everything there are raw crypto
+libraries like arcbn and everything in
+rust and they're like okay this is curve
+verify so you either have to use
+somebody else's functions which risk 5
+does have like risk zero does have a few
+helper functions but ultimately you do
+end up uh utilizing like a lot. So, risk
+zero produces like a stark proof, right?
+The problem with stark proofs is they're
+a little larger. Not little, they're
+like larger, but there's like a another
+process above it called a stark to snark
+which is like wrapping like the stark
+circuit and a snark circuit to compress
+the proof further and that is finally
+what is verified on Solana. So maybe
+this is interesting in case people don't
+know it but the core thing that enables
+any of this on Solana is the altbn 128
+sys call which got added in 1.16. So
+with that Solana is basically like
+equivalent to Ethereum in terms of
+feature set. So you know you can
+technically build rollups on top of
+Solana as well like ZK rollups. So it's
+I mean we don't need it right now but
+it's completely doable. So in in this
+entire process that I described risk
+zero handles like the start start part
+but then you have another tool that you
+use for snark to start and the
+verification process on Solana is like
+you know it's basically like a very
+low-level pairing curve call. So when
+you're writing the code okay I have this
+proof now how do I verify it? you have
+to write a lot of code and that's kind
+of where Bonsol comes in like their goal
+is like you know okay you can do all of
+this but in order to verify like the
+core function you're verifying is like
+100 lines but you're writing about like
+500 lines of plumbing around it so
+Bonsol is entirely like let me take all
+of this and make it easier on Solana so
+as a business like as a developer who
+wants to use the prover system you don't
+need to care about curve parameters. you
+don't need to care about um what sis
+calls need to be called to verify the
+proof like all of that like bonsole is
+basically I I'd say something like uh on
+the verifier side and on the prover side
+there are a lot of things to do bonso's
+job is you know submit a proof request
+and everything gets handled including
+the incentives for who picks up because
+proving is a expensive process so like
+you need GPUs which make it faster and
+now probably in the future A6 as well.
+So there needs to be an incentive layer
+because nobody wants to give that
+massive compute for free, right? So it's
+like you submit a proof request, you
+upload your ELF or your code that needs
+to be proven along with the inputs and
+like there's an entire and bonsole also
+has like abstractions to submit like
+private proofs like risk zero itself has
+it as well. But that's kind of what
+Bonsol gives you. It's like this
+complete infrastructure
+and incentive layer as well as onchain
+programs that try to hide as much of the
+stuff you need to do as possible. So
+your goal becomes let me write this code
+and let me use the bonsole CLI to do a
+few automated things and then onchain
+you fire off like one call basically
+which is saying like okay it actually
+cues up a request because Bonsol's own
+incentive layer and its own like queuing
+system and everything is also maintained
+in contracts Solana contracts which is
+hidden from you and then you have Bonsol
+worker nodes which pick up these
+requests download the elves and then
+like provers end up like actually
+generating the proof and submitting it
+to an onchain contract which also
+verifies the proof and does a cross
+program invocation to your program. So
+it feels like just making a call and
+getting a call back and all the
+verification curve parameters because
+there's also like when uh this is
+exactly how I got into bonsole because I
+was writing all of this and I'm like I'm
+writing an example program which is like
+multiplication. So why like I'm having
+to do so much of this and I think that's
+how I even met like like Obot because I
+was using some of his stuff for the st
+the stock to snark conversion and he's
+like if you use Bonso we're trying to
+hide all of this. So that's that's
+basically where Bonso comes in. And they
+also want to be like prover agnostic.
+Right now it supports risk zero. But in
+case you want to use like SP1 or any new
+prover that comes up, they just want to
+kind of make it easier for Solana
+developers. Like I think the vision for
+Bonsol is to make ZK proving as easy as
+possible on Solana. So Risk Zero
+accomplishes some of that, but even
+after that you'll end up having to do a
+lot of plumbing work. So yeah that
+that's basically what Bonsol is. It's
+like a complete infrastructure layer for
+proving and verification on Solana and
+trying to make it as easy as possible.
+>> You mentioned elves right? So are these
+Solana program elves or
+these are like offchain pro offchain
+programs or offchain code that exists
+and that gets compiled down to an else?
+>> Yeah this this is offchain. So this elf
+format is very different from BPF right.
+So BPF is so the way Solana compiles is
+very similar to the way risk zero
+compiles. Both of them take rust code
+and they compile it to LLVM intermediate
+but after that they diverge. Solana
+targets like the BPF or specifically now
+the SVM because it's like the like BPF
+is like an open like there's a set of
+instructions like 36 assembly op codes
+to which you can compile but Solana
+added its own sys calls right. So there
+is like more things that it's doing and
+if you try to run a SANA elf on a
+regular BPF VM it'll fail. It'll be like
+I do not know what this assembly
+instruction you provided is and I don't
+know how to handle it. It's similar and
+here it diverges to risk 5 and risk 0 is
+also like a risk 5. So basically when
+you write code in risk zero it gets
+compiled to an elf. This elf is only
+relevant to risk zero like it's not
+really like solana doesn't understand
+that elf. So you can hash the elf and
+that becomes like the image of the
+program and you can give it to somebody
+and when you generate a proof with that
+elf. So let's say I write a program like
+this is actually a very good and very
+simple example, right? I want to write a
+program that uh compresses like 1,000
+signatures into like one proof or
+something. So I write like a function.
+The first parameter will be like the
+thousand public keys, the thousand
+signatures and the one message that all
+of these private keys have actually
+signed. So inside my code, what do I do?
+I basically loop over like let's assume
+there's like you know like zip zip
+mapping. So zero corresponds to zero
+signature. So I loop over the signatures
+sig of zero I verify with like pub key
+of zero and message and then that's
+true. So I just do that like a bunch of
+times thousand times or something and
+then I return true. Right? So that's
+like my program and if I feed this into
+risk zero it says okay this is the code
+and here is the 32 byt
+commitment or hash that corresponds to
+this program I can put it on solana and
+now what I do is I feed this program
+like this I when I compile it I get an
+right so there is like risk zero has a
+way to feed inputs into elf and get the
+proof out of it that's what risk zero
+solves for us so now I'm like okay here
+are 1,00 public keys and Here are 1,000
+signatures and here is the common
+message that all of them signed which
+can be a Solana hash or something. So
+now risk zero and the stark to snark
+ends up generating like a proof like
+which is like a certain number of bytes.
+I think it's 196 bytes or something. But
+this proof all this this is like a
+receipt because it has the proof. It has
+a commitment to the inputs because you
+need to know that these inputs have not
+been tampered with by the prover. You
+just take this and you submit it to
+Solana and Solana is like okay because
+the proof is also valid only for that
+hash the proof also contains like when
+you do verification it's able to verify
+that this proof belongs to this image
+that it's not like nobody tampered it
+and said okay if any one of them matches
+then return true that image will be
+different it's fundamentally just
+hashing right so that proof won't work
+so they can't tamper with that so if if
+Solana onchain knows who these thousand
+people are and their public keys. It can
+like the code can also commit to a
+Merkel route of these public keys and if
+that's present in the receipt then the
+Solana program also knows that hey these
+public keys have not been tampered with.
+These are really the keys that are
+saying that sign this message. Okay here
+so Solana's input is basically the image
+hash the Merkel root of these public
+keys and a hash of the text that they're
+signing with these. It's just able to in
+constant time verify like a call saying
+that okay this computation has been done
+correctly. Right? So the beautiful part
+about this is that verifying thousand
+signatures would require like 1,000
+transactions on Solana. But if you
+actually did this with ZK then you're
+able to do all you're able to compress
+all of that compute into a single allb
+and 128 sys call. So you need to do some
+setup earlier which is like store the
+hashes of these inputs in a smart
+contract or something but as long as the
+Solana program has this information it
+can verify that computation was done
+correctly. So I mentioned ED25519 but
+imagine that there's an other signature
+scheme that is maybe user friendly they
+have like their own identity derivation
+or something right and you want to
+verify that you can do that as well.
+Solana doesn't have like a like okay
+let's take uh BLS 12381 or something for
+whatever reason people have BLS public
+keys and they want to verify those
+signatures so Lana can't natively verify
+this cryptographic scheme but with zero
+knowledge compute you can write a
+generalized circuit for anything like I
+mentioned something like verifying
+10,000 or 1,000 ED25519 signatures but
+it can be any cryptographic protocol it
+can be whatever you want it can even be
+like game logic which says here is the
+initial state. These are all the turns
+that people have done like like chess
+moves, right? For example, like it's a
+deterministic like chess is like a
+deterministic game where you have a
+start state and when each player like
+turn by turn does a sequence of moves,
+you always end up with the same final
+state. So you can prove all of like you
+can prove an entire chess game was done
+correctly. The rules engine will check
+all the validity of the moves and the
+winner. And if you just submit a proof,
+you can give like a token to whoever won
+the game or something. So the
+compression part is actually very
+underrated because I know Solana is
+trying to increase the compute limit and
+everything but this basically makes it
+almost infinite. So how muchever you
+want to prove your verification is still
+just like once a call. So that's
+actually the real value in using ZK on
+Solana. So to I I mean I went on a huge
+tangent, but the elf is what you asked
+about, right? So it's basically like a
+risk 5 elf, a custom risk 5 target elf.
+So Solana doesn't care about that elf.
+It only cares about the image of that
+elf which is relevant in terms of
+verifying a risk zero proof.
+>> But this is super fascinating, right? So
+basically what it enables is on Salana
+you have like a very every block there's
+only so much amount of compute unit that
+you can have but then the real world is
+such that there's infinite amount of
+compute that you can do. So moving that
+off chain you you are able to kind of
+elegantly create a proof for any
+computation that you have done and
+>> bring it on to solant and verify it
+right so this definitely opens up so for
+example in like you mentioned games or
+even any complicated maybe anything uh
+say running a fraud deduction algorithm
+or some kind of an ML model right so
+that also becomes
+So that I that also brings up another
+question and before that I have one more
+question that I wanted to ask. You
+mentioned
+wrapping a stark in a snark. So what
+what exactly does it mean to wrap this
+that is
+>> oh
+it's actually quite simple. I mentioned
+that you can write any generalized
+program right. So the start to snark
+snapper is literally like code that says
+here is a like I said uh that our
+example had 1,00 public keys 10,00
+signatures and a single message and
+you're verifying that as part of your
+circuit right your rust function that
+gets compiled by risk zero. This stark
+to snack wrapper is literally like
+something similar to that where you have
+a start proof which has its own
+parameters. So you're basically
+generating a snark proof that this start
+proof is valid. So this function takes
+like this
+>> program which does the
+>> Yeah, exactly. It's just a one level of
+in like it's another layer on top that
+says like in in the case one we are
+proving that 1,00 signatures,00 public
+1,000 keys correctly signed a message.
+Here you you have a circuit that
+basically says here is like the code to
+like I'm getting my stark as an input
+and here is a snark that the stark is
+valid. So the benefit of that is starks
+are login which is like they're larger
+the proof size is larger and everything.
+Snarks are smaller so and they're
+constant time so you know the size is
+smaller and everything and Solana
+already has the orb BN128 sys call so
+you can use that for so yeah
+>> interesting I think that that brought up
+another interesting point right these
+programs could also be proven
+recursively for example basically in
+what what you said right you have two
+functions and you're pro one and then
+you're composing with another one. Now
+>> as a combination of these two, you have
+generated another proof and it doesn't
+really matter what the proof system is.
+You can
+>> Exactly. From one to another. Wow,
+that's so elegant.
+>> Yeah. Yeah, it is. That's actually how
+uh risk zero and bonsol handle private
+inputs as well because if you're
+generating the proof on your local
+machine you can decide to so this is
+also what enables privacy by the way
+like if you take a general math
+computation as like y= f of abc you can
+choose which of the abc you reveal and
+which ones you don't. So you can say I
+only want to reveal C and you generate a
+proof and then you're basically saying I
+know a b such that f of abc results in a
+specific y. A simple example of that is
+if I want to prove to you that I know
+the factors of any number. So let's say
+I want to tell you I know the factors of
+36. Right? So this can be written by a
+function that takes f of abc and inside
+the logic it's literally c double equals
+a into b right. So I'm only going to
+reveal c to you and I'm going to
+generate like I'm going to call this
+function locally with f of 94 and 36. So
+9/4s is 36 right? So I don't need to
+reveal the 94 to you. I'm revealing to
+you 36 and I'm revealing to you the
+image of this function that I wrote
+which is f of like you know uh y like c
+equals c double equals boolean like just
+a comparison couble equals a star b and
+committing to the output there's some
+logic so I reveal to you this in image
+of this code I can't tamper with this
+because that's already been committed to
+and I reveal to you 36 and I reveal to
+you a proof so now by verifying this you
+know that I know some maybe that that
+can multiply to C but I don't need to
+tell you that I picked 9 and four right
+and this is precisely what enables most
+of zero like hiding information it's
+like knowledge of pre-image so what I
+explained with like multiplication can
+also be done with hashing which is I
+know some text that hashes to this but I
+don't need to reveal that text to you so
+without ZK the way you verify if I say
+that you know my name is Rohan
+and I it hashes to like some 32-bit
+value and I give you the 32-bit value
+without zero knowledge. You'd be like
+okay you need to give me like your my
+name is Rohan I'll hash it and I'll
+verify it but then I'm already revealing
+to you the data right here I don't need
+to do that I can say I know some data
+that you know uh actually commits to
+this hash and I can give you the hash
+and the proof and I don't need to reveal
+that. So privacy is one effect of zk
+which is zero like they're commonly
+called like you know uh zk snarks and zk
+starks right the zk stands for zero
+knowledge but the s is the part that
+stands for succinct which means you
+don't like in order to verify
+that I did the computation correctly you
+don't need to do the entire computation
+on your own again you just need to
+verify a proof which is typically
+smaller it's either login in the case of
+starts or constant time in the case of
+snarks. So that that compression that uh
+the succinctness property is what
+enables like the compression of compute
+that we're talking about infinite
+scalability and generalized computation
+proving proof of correct computation and
+hiding the inputs is what enables
+privacy. So you can build privacy based
+applications as well as you know like
+heavily like you know you can do things
+and also the other beautiful part about
+this is risk zero works with risk 5
+which is a standard LLVM back end right
+so if somebody wanted to write a program
+in any other language they can do that
+as well it just they just need an LLVM
+front end for that and you can compile
+it down to risk 5 and prove it so all
+you need like risk zero only cares about
+the back end like how solar cares about
+BPF and there are multiple ways to
+generate like a valid Solana BPF, right?
+Some people like writing in raw BPF.
+Some people use the anchor SDK and rust.
+You can use Rust and C to write Solana
+code, right? That's something you see in
+the example. So, you can you can do that
+with Risk Zero as well. Like if there's
+some interesting language you want to
+write in, you can go ahead and do that.
+It just needs to be compilable. So,
+>> fascinating. There's I you brought up
+one thing that I'm actually curious
+about. For example, typically when you
+deal with hash uh the the most common
+hash function like SH 256, you're
+essentially dealing with static inputs
+and then that's what a hash is produced.
+Typically functions functions that are
+parameterized and have branches or etc
+have there is variability and also it's
+parameterized right so how do you how
+does this hash function work if I were
+to namely think of like a hash function
+that works on static inputs
+>> okay um uh I did I mean here the proof
+you're generating is so the static part
+is like the static code but when you
+generate a proof you're generating it
+for a set of inputs against that. So
+that's like so the same proof system and
+the code you're writing for a hash
+function can work for any input right
+like it can work for any text. So your
+hash function code in risk zero or risk
+5 would basically look like uh my hash
+of like input and then inside the code
+you're you can import rust like sh 256
+crypto library and you can call sh 256
+on that input to calculate the hash. So
+now you have your elf that you compiled.
+The elf is actually static. The risk
+zero works on the execution trace. In
+order to prove it, you need to execute
+the elf first. So to answer your
+question, the first step of any proof
+system is you actually run the execution
+with a certain with whatever inputs you
+want. If you want to generate the proof
+for your name and I want to generate it
+for mine, both of us just run the same
+like the elf is already there. The ELF's
+image is there on Solana. Both of us
+have our dynamic inputs. We are
+independently feeding it into the prover
+system on our own computers. Our proofs
+will look different because our inputs
+are different. But both these proofs can
+be verified on Solana. So it's basically
+proof of it to be honest like I think
+risk zero or like risk 5 and all of this
+this concept is very similar to a
+signature scheme like even if you don't
+know what happens behind the scenes like
+I mean I read ED25519 at some point but
+I don't remember any of it. So but I can
+still use an AD25519 library right to
+generalize like verify signatures on any
+private key any so risk zero risk 5 is
+the same it's just that instead of the
+verify function having signature public
+key and message it has like image proof
+input send a bunch of other things so
+and whatever receipt is. So ultimately
+the core abstraction is the same as
+verifying a signature. It's just that
+there are more steps involved in
+everything. So yeah I I hope that
+answers your question like regarding the
+dynamic part of it. I
+>> I was curious about it from the
+perspective of for example if I have a
+piece of function
+>> Mhm. And that function has say branching
+right. Um how do you generate a unless
+Oh okay so you're saying after you
+execute you would know the execution
+trace
+>> execution trace exactly you don't care
+what is in the function that's the
+beauty of it you can use other libraries
+but they need to be compatible with no
+std because the LLVM compiler needs to
+know like if you use memory allocation
+or something risk 5 doesn't natively
+support that so it'll just break when
+you're generating the proof but as long
+as you have pure rust or any like
+limited std function like vectors and
+everything that you're using similar to
+Solana because in Solana you'd notice
+anybody who's tried to write smart
+contracts if you import some libraries
+it'll just say I don't know like stack
+error or something it'll say right so
+it's very similar to that you can do as
+much branching in your code as possible
+uh this is actually what rollups do
+honestly like a rollup is basically the
+core component of it is a state
+transition function right a state
+transition function is something that
+says this is my beginning state I apply
+this block and this is my output state.
+Uh they want to be one level above that
+because your initial state is massive.
+It's like a set of accounts in your
+database. So what you can do is you can
+say this is my input Merkel route. This
+is the block that I want to execute the
+10 transactions after I execute it this
+is the output Merkel route I get. So
+when you commit to that then you're
+basically proving the execution of a
+block with a start route and an end
+route. That's fundamentally how roll-ups
+work. They apply it on a chain of
+executions and submit as you said
+recursively. So you can prove that like
+you know you did like uh you know the
+state changed from S to S prime when you
+applied block one S prime to SP prime
+when you applied block two. So you have
+a initial state final state and you can
+generate a proof of all that
+computation. So risk zero risk 5 they
+don't care how much branching logic you
+have. They don't care what you do
+inside. You can even panic and
+everything. Ultimately risk yeah because
+the beauty of it is risk 5 is so
+generalized it just generates an
+execution trace and the risk 5 virtual
+machine like any of these instruction
+set virtual machines if you look at it
+they're basically like a set of
+registers a set of memory so
+>> I have a code that compiles to
+>> exactly it should just work
+>> it should just work and risk zero the
+way it works is what I said how
+blockchains work you have some initial
+state in terms of register values. Risk
+5 has like 32 registers or something and
+like a static slab of memory and there's
+some initial state and as you execute
+instructions these registers keep
+getting flipped. Right? So that's
+actually what risk zero is proving. It's
+proving this is the start state, this is
+the end state and when you panic one of
+these registers will get set. So that's
+how you can prove that the code panicked
+as well. So it's it's actually you can
+yeah you can write whatever you want
+inside and you can prove it.
+>> Awesome.
+Yeah,
+>> switching gears a bit. You mentioned uh
+you're also working on uh a go client
+for Solana. Um
+>> yeah,
+>> so would love to know the kind of
+challenges that come in building. I
+guess this is this probably the fourth
+client then on Solana. Uh or are there
+more?
+>> Seems accurate because you have Agave
+the Rust one, you have Fire Dancer, you
+have Sig, which is the Zig one,
+>> you have Mithril. I think there I don't
+know if there are others.
+>> Got it. It's like a pretty challenging
+task. Um so would love to know why Go to
+begin with and then uh what it takes to
+build a client on Salana.
+>> Yeah. Yeah. Okay. That that's actually a
+very good question. So first for in
+terms of why Go um
+like I think Go has like I personally
+like Rust quite a bit. I don't like Go
+in the context of like Go semantics, but
+Go's tool chain and performance are like
+undeniable at this point. like uh I
+think in terms of pure like go also
+compiles straight to like I don't know
+how much you know about this and maybe
+some of the viewers might not but
+typically most languages have
+dependencies on libby and everything
+right if you and like if you're building
+a new language you try to build it by
+using libby to make library calls I
+think go because they were like people
+who created like the plan 9 operating
+system they knew kernels very well and
+they're like let's just remove like
+library calls and we'll make direct SIS
+calls. So when you compile go you get a
+fat binary that is like directly uh like
+you it doesn't have any dependencies you
+can throw that on any Linux kernel and
+it can work. So I not just any Linux
+kernel but Go's cross compilation is
+pretty good. Like if you have code you
+can and as long as it's pure Go code you
+can generate binaries that work for like
+ARM. You can generate binaries that work
+for x86 uh like the OS architecture
+targets are very good. So the tool chain
+being very good is one reason we like
+go. The second reason is we did want to
+enable client diversity because you
+already have C and you already have
+Rust, right? Um, one thing that we
+particularly cared about is like
+Ethereum actually has like a lot of Go
+developers and Rust is seen by a lot of
+people as having a high entry barrier.
+Honest, and this is like for any viewers
+who might be thinking about it. Rust
+does not like like if you go through all
+the Solana code I don't think you'll
+find lifetimes particularly like
+anywhere like I think purely from type
+safety you get like a lot of benefits
+from Rust so I'd encourage everybody to
+just give it a try and not be
+intimidated by the memory safety
+features and everything but that being
+said Rust does take a little bit of
+getting used to we do know there are a
+lot of like you mentioned systems
+engineers right go is like still very
+popular and we wanted to have an easyto-
+read implementation that they can
+follow. So what Mithril does that's
+different from what Agawe and Fire
+Dancer do is Agaw and Firedancer are
+full-fledged validator clients that do
+voting block production and everything.
+Our goal with Mithril was very simple.
+Let's just do the bare minimum that you
+need for the state transition function.
+So if you have some initial state, what
+are the core rules of the protocol that
+determine the validity of this block and
+produce the next valid state. So if you
+look at Solana code, you'll find like
+initially it'll do a lot of network
+setup, set up the bank and everything.
+Uh we wanted something that was much
+simpler. I'm pretty sure even in Agave
+you can try to isolate these components
+but it's not that easy to use it. And as
+I said like targeting go the go
+ecosystem was something that we were
+interested in. We wanted to provide an
+easy entry point for people who are like
+and that's actually if you look at the
+reasons why they developed Go as well.
+That's one of the reasons they wanted
+like a simple language that anybody
+fresh out of college like you can learn
+Go in like a day or two like if you just
+because the I'm I'm not dismissing Go
+that way. I think talented programmers
+do need to like you know you have
+extremely talented programmers in go
+like Richard who's an works at fire
+dancer is like the best example of like
+he's actually what started like Mithril
+technically he originally created
+radiance which was basically the BPF
+virtual machine he started implementing
+like the Solana virtual machine and
+Golang like any VM implementation is
+basically uh you have a set of like it's
+what I said you have registers you
+create an array to hold the state of
+those registers. You create some memory
+and create like some kind of an
+addressing and the the the language or
+the instruction set has like a
+specification saying load will end up
+moving from register zero to memory or
+like things like that. So if you
+implement all of that you have a virtual
+machine. So that's basically and in
+addition to that you need the sys calls
+as well. So client diversity was one
+thing. Uh the other thing was we wanted
+a pure Go client that could potentially
+be compiled to other architectures. Uh
+we didn't want to be tied to any Linux
+features or anything. So we're trying to
+be I mean obviously you know the goal is
+to get something working first and then
+you iterate right. So there are still
+some components there that might not be
+pure Go. They jump into CGO which has a
+lip dependency. But to a large extent I
+think we want to try to be archite
+architecture
+away from architecture a little bit so
+that uh so that easy to read get
+ethereum or people who are more familiar
+with like rust and go are the two
+biggest languages used in blockchain
+right so and solana is for everyone so
+we definitely wanted the gobs also to be
+like at home uh but other than that
+mithril's personal goal is to be to
+enable this verification to happen at
+home or on much smaller hardware. This
+was something an atali used to tell
+right from the beginning when people
+from Ethereum and everything used to say
+things like uh oh you can't run you need
+like massive hardware to run Solana. The
+thing is you need massive hardware to
+run a very performant Solana validator.
+But if you want to just verify the chain
+or if your goal is not to produce blocks
+or your goal like instead of being like
+100 milliseconds away from the tip, if
+you're okay with like being one or two
+seconds away from the tip and if you
+fall behind like catch up in like large
+sections like by playing parallelly I
+think all of that like Mithril that's
+what we demoed at accelerate as well
+that can be done on significantly
+smaller hardware. So because it is the
+same core logic of Salana applied here
+like if you exploit hardware to its
+fullest ultimately what you're doing is
+you're executing a bunch of transactions
+against state on disk and you can do
+that in reasonable time. So as an
+engineering challenge our goal is to
+optimize our goal is to make a different
+set of tradeoffs from fire dancer and
+agave. Our goal is to try to trade off
+to keep resource consumption to a
+minimum and how can we still verify at
+home because as much as we talk about
+risk zero and everything a full node is
+the only definition of like trustless
+access to a chain because even if you
+use zk proof to prove state transitions
+and everything like you're still
+layering trust assumptions the trust
+assumption here is the zk knowledge
+system and there is a concrete
+mathematical definition like there's one
+like discrete log is like for signatures
+right similarly for snarks you have like
+uh I don't know like bilinear defy
+helman or something so you're trusting
+that the protocol is implemented
+correctly and you're trusting like in
+the hardness of the bilinear defy helman
+problem or like k like there's a few
+other trust assumptions for snarks so a
+full node is the only trustless way to
+access it it's like the baseline
+anything else you do on top of that adds
+more assumptions so that's trust
+minimized so our goal was that we do
+need to have like a reference
+implementation and Solana and all they
+they continuously keep adding more
+features around uh networking and
+everything right which are technically
+out of protocol so they don't change the
+core state transition function so we
+wanted like a implementation that is
+detached and has the core protocol
+isolated and all the networking stuff is
+pushed to the side so that can get
+upgraded and we can use like like call
+into Solana like the Agave client for
+that. But the core state transition
+function, we wanted to keep it clean,
+have it in go, have anybody understand
+it. And yeah, that's basically the goals
+of Mithril as well as like why we pick
+Go.
+>> Got it. That makes sense. Um,
+>> yeah.
+>> Thank you so much, Rohan. This was super
+insightful. Shake, do you have any other
+questions?
+>> No, I'm I'm good. Thank you so much for
+joining us on this part and it's been
+like super both informational and also
+extremely educative. So,
+>> thank you. Thank you so much.
+>> Hopefully I'm pretty sure the audience
+are going to love this podcast.
+>> Love.
+>> Yeah. I mean, I'm always available for
+Yeah. Yeah. Anytime I'm available for
+questions, you can join like the pawn
+soul telegram if you want to learn more
+about ZK stuff. I'm happy to I'm always
+answering questions there. So, if
+anybody has any questions or want to get
+started with ZK and they join like the
+Bonsole Telegram chat, they can even tag
+me. I'm more than happy to guide them on
+it. So, yeah. Awesome. Thank you so
+much.
+>> Yeah. Thank you. Thank you guys.
+>> Thank you everyone. See you. Bye.

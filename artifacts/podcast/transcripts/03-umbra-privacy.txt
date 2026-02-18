@@ -1,0 +1,720 @@
+Transcript:
+How old are you?
+>> Uh I am I just turned 20 like uh one and
+a half week back.
+>> Like second year of college or
+>> uh third third year fifth year fifth
+semester.
+>> Okay.
+>> Before like Umbra like throughout my
+first year and like first year first and
+like one 1.5 years I was like a regular
+web two dev. So during my first year I
+qualified for Gox. So I really loved
+systems programming from like day one.
+Yeah.
+>> Did you guys expect to raise what what
+was exactly going through the team's
+mind when you you know saw that you guys
+were trying to raise 750k? From 750 it
+went to 110 it went to 20 and all the
+way to 150 by the time you guys stop. Uh
+so what what was going through your
+mind? What was it like?
+>> Honestly like I'll be I'll be very
+honest over this one. And like our raise
+had just started and when we logged on
+to like the website to see what's
+happening the website had crashed and we
+were like okay something's like up.
+>> Hello everyone welcome to another
+episode of one devs podcast. Today we
+have with us Cal co-founder of Umbra.
+Umbra has been they have done a lot of
+amazing things and they have been part
+of the news cycle in the past couple of
+days much more especially because they
+raised $153 million when they set out to
+raise
+750k or you know it's this is a special
+story because these are all super team
+India members who submitted into
+coliseum and completely turned around
+the course of their project in the
+matter of four months. So,
+welcome welcome to the show, Cal.
+>> Thank you. Super super glad to be here.
+I think I met both of you like guys at
+like Only Devs and Apex, but but super
+glad to be here.
+>> Amazing. We love to kick things off with
+uh how do you get into crypto and you
+know um when did you start doing that?
+You're pretty young for the audience.
+He's just 20. So would love to know what
+was your addiction story.
+>> Right. So I mean I started crypto last
+year I think around November. Uh the
+thing was like there was Ethereum India
+at the time. So from my university like
+a lot of teams go out. So a lot of my
+seniors were going for Ethereum India
+and that time I had like zero idea about
+cryptography or crypto in general. I had
+just picked up the book Mastering
+Bitcoin and I was like okay this is like
+some really really interesting book and
+I was just reading through it. So that
+time Ethereum India's uh like you know
+registration forms had come out. So it
+was like one and a half week before
+Ethereum India and then we sort of had
+like registered for it and we had gotten
+through it and that was like my first
+time learning anything related to
+blockchain. So it was like in those one
+two two weeks we basically speed ran
+like mastering Bitcoin a lot of books
+are mastering Ethereum things like that.
+So it was like I started off in
+Ethereum. I learned solidity at the
+hackathon mostly but uh we basically
+were like trying to build something
+pretty fun like we were at the time
+trying to book tickets over here for
+like a concert and there was like a lot
+of black market ticket scalping going on
+and we were like this is so painful. So
+for the hackathon we ended up building a
+product to fix that. So on the way we
+picked up a lot of stuff like I picked
+up a lot of cryptography. We made use of
+this thing called zero knowledge proofs.
+At the time I did not know too much
+about it just how to write one. I did
+not know anything about it but we built
+something out of it and it end up ended
+it ended up pretty good. We got a prize
+at the Ethereum India hackathon and that
+was like I think the starting point of
+my like trajectory into crypto and like
+why I got into it. So
+>> after
+>> this was around when
+>> uh this was last year November like 2024
+November December. So the Ethereum India
+hackathon was in December and we had
+registered somewhere in November as far
+as I remember. So we had attended the
+event at Bangalore and from then I
+started thinking that okay this could be
+like something I'm really interested in.
+It really called out like I just liked
+doing crypto. I like doing cryptography.
+So then I started just going into it
+more. I first started going more into
+maths rather than you know dev. Uh
+that's like sort of I guess
+unconventional if you can call it but I
+just really like the math. So I started
+reading a lot about it and I started
+going more into cryptography than
+cryptodev. So it ended it started like
+that. I started cryptography. I learned
+all these fundamentals of cryptography.
+I read like a few books and everything.
+I got into this field called MPC and
+like I reached out for an like a
+research internship at IAC and during
+the time I started like you know
+learning all about this MPC crypto
+Solana Ethereum what like everything
+that's there out there in crypto. So
+while I was actually registering for my
+internship at IA I was actually in my
+room. Okay. So I was in my room and I
+was filling out the form and like my
+co-founder like now co-founder that time
+roommate he was just like what are you
+filling out you know and I was like you
+know I'm filling this out this research
+internship for cryptography and at the
+time he had just spoken to my other
+co-founder and they had spoken about you
+know this idea of building privacy on
+chain and they were like they had spoken
+about MPC he had never spoken to me
+about it and then when he saw me filling
+out the form he's like dude you know we
+were talking about this idea that time
+and I think this might be the same thing
+do you want to sort of like talk about
+it and like look at how things go and
+then I got in touch with crew I got in
+touch with prer we started discussing
+and at the time I had zero Solana
+experience so I actually started Solana
+after they told me about the idea so
+they told me that okay we want to build
+this out on Solana and then I went back
+to my room and I was like okay time to
+learn Solana and then that's how I sort
+of sort of started learning Solana so I
+did anchor first I did like I did a lot
+of the Solana docs and that's pretty
+much how I started into crypto a small
+bit of like rust experience I'd gotten
+because I was trying to apply for summer
+of bitcoin as well. So there was this
+bitcoin mining pool that I was
+contributing to called braid poolool. So
+I was like an early contributor there
+but then I sort of stopped contributing
+to focus on this. So that's sort of like
+how I got into crypto and solana dev
+itself.
+>> Super interesting. Um and you mentioned
+in this journey um you know I'm sure you
+worked on more projects before this. I
+don't know. Um but do you want to talk
+about them before you started to work on
+IC and Umbra?
+>> Yes. So before like Umbra like
+throughout my first year and like first
+year first and like one 1.5 years I was
+like a regular web 22v. So during my
+first year I had qualified for GSO. So I
+really loved systems programming from
+like day one. Since like school times I
+like used to do Java. So that time like
+you know after coming to college I was
+like okay I really really want to do
+systems. So I learned C++ and I started
+contributing to this organization. It
+was called Haiku. It was basically a C++
+operating system more like a project
+that was just building for really really
+like not powerful computers like really
+really low specifications. So I learned
+a lot of file systems dev and C++. So I
+was very much in systems on the side. I
+also did freelance for web development.
+So I was also a web to developer for
+nextjs and you know the normal mst stack
+nextjs thing. I actually did watch a lot
+of your videos. So I used to like watch
+them and used to like go learn new stuff
+and sort of do it. But I was like a web
+to developer. I've built a few projects
+two two three in C++ one or two in
+cryptography and then sort of from there
+then I jumped to you know Ethereum dev
+and in the meantime some hackathons here
+and there as well one in one in my
+university one like you know in the
+nearby universities and then my third
+hackathon was Ethereum India
+>> very interesting so you guys met for the
+first time like from East India to you
+know your telling you about all the NPC
+stuff that you know crew is working on.
+So was this just around the previous
+coliseum hackathon?
+>> Like what were could you talk about like
+what was your thought process when you
+were you know competing for the
+hackathon
+>> like this I think when crew and like
+crew and me and prren had the call. It
+was I think like just before the
+coliseum hackathon I think one one month
+around then. So that time when we had
+started out we we did not aim to build
+this out just as a hackathon product. It
+was never meant to be that at the start
+itself we like we knew that this is a
+problem and it's going to be solved
+somehow or the other. So from day one
+itself when we started building out we
+had the thing that okay we want to build
+this as a product we want to build this
+as a company but we will also apply for
+like the coliseum hackathon to gain
+traction and to you know gain gain
+support basically and at the time I did
+not know Solana Dev as well. So I
+started Solana dev just like just after
+crew had mentioned like this. So even my
+experience in Solana was like really
+really low. So I just started anchor at
+the time. So when we submitted to
+Coliseum as well I'm pretty sure my code
+was a bit shaky as well. Now it's gotten
+a lot better since it's like six 7
+months. But yeah at the time it was like
+slow defe and then we sort of just built
+out like around a month of this. We
+focus a lot on our front end as well. So
+we wanted to make it super seamless and
+that's sort of like an idea we've gone
+with now as well. So we've always
+focused on you know backend code smart
+program code should be really well
+written but like our front-end
+experience should be just as good like
+people should not know that they're
+interacting with like an encrypted
+application but they should be using
+one. So that was sort of like when we
+started out like and how we approached
+coliseum as like a hackathon itself.
+>> Nice. I think K it's also worth talking
+about you know what Umbra is and what
+Umbra does
+>> right. Uh so in short basically Umbra
+what we're building at Umbra is the
+incognito mode for your Solana. So
+essentially right now on the blockchain
+everything is like a it's basically a
+public ledger right you can sort of see
+everything that goes on on the
+blockchain and that's sort of why it it
+it is that way since you need to verify
+like you know transitions you need to
+verify the state of the blockchain. So
+everything on on the blockchain is
+public so if I transfer let's say to you
+10 soul or you know one soul or whatever
+everyone can sort of see that this
+address sent to this address and this
+much amount. Now obviously addresses are
+pseudo like you know they're semi
+anonymous but in a lot of cases you do
+get docks right like people do associate
+people's wallets because let's say we
+three have gone on like a lunch or
+something okay and one of us has paid
+and like the other two pay back or
+something like that and now I have your
+addresses so it's so easy now now I have
+your addresses I can like write a simple
+script that gives me whatever like you
+know whatever goes on behind the scenes
+or whatever you're doing on the Solana
+blockchain and that's like a huge
+problem so what we're building at Umbra
+is like your incognito mode where it
+hides all of your transaction. It hides
+all of your addresses. So essentially
+when you deposit into like Umbra, your
+Solana address is unlin from another
+address. So you deposit into an Umbra
+address but no one can see what Solana
+address deposited into it. Behind Umbra
+when you transfer to another Umbra
+address, it's fully confidential. So no
+one can see the amount that was sent. So
+let's just say I sent 10 to you. No one
+would be able to see that it was 10 cuz
+it would be fully hidden. But it would
+still be like, you know, done in in this
+way where we use MPC. Now the reason why
+we went with NPC is because it's
+obviously a lot more decentralized. The
+whole point is to remain decentralized
+and secure, right? So essentially what
+goes on is like a set of computers each
+get random bits of data and they sort of
+add and subtract balances without
+knowing what they're doing. So it's like
+I'm computing something but I don't know
+what I'm computing but I'm giving you
+back a result and it's just adding and
+subtracting balances. So essentially
+that's what Umbra does. It hides your
+onchain D5 activity. As of now we have
+done transfers. We're working on swaps
+and that should be out pretty soon.
+We're on the devet right now and we will
+be launching to the mainet soon and we
+are built on top of another like infra
+company called Arum which provides us
+with MPC technology. On our side we
+build zero knowledge proofs along with
+this MPC technology to give you like the
+best of both worlds. So it's like fast
+transactions without like the you know
+cumbersome computations that go into ZK
+proofs. So it's like the best of two
+worlds.
+>> Got it. So let's unpack. You said
+something very interesting, right? Is
+the incognito mode for your Solana
+transactions. So what does it mean? Is
+it like does it is it a new wallet or is
+it something a new mode that you can
+enable in any wallet?
+>> Right. So it's like uh on Amra you get
+like a new address. So the thing is like
+regular mixers what they used to do is
+you deposit into a mixer you withdraw
+into another you know Solana address or
+like another wallet but all of these are
+public balances. With Umbra what happens
+is when you deposit into an Umbra
+address you first deposit into the pool
+and that works like a regular mixer. But
+the interesting part is what happens
+when you claim out of this pool. When
+you claim out of this pool essentially
+no one can see what you claimed as well.
+So it's like no one can see what amount
+was claimed and no one can see which
+address it went into. So which address
+it came from. So let's just say my
+Solana address is there. I have like
+let's say so much in Soul or so much in
+USDC and I deposit this into a mixer
+pool. When I claim out of this mixer
+pool, no one will be able to know how
+much I claimed out of it or which Solana
+address it came out of as well. So it
+breaks your link between your Solana
+address and a confidential balance. Now
+when you transfer between two
+confidential balances, it's just like
+you know a hidden amount that transfers
+between two of these. We also have the
+feature of sending out of the pool. So
+you can send from an Umbra address to a
+Solana address and from a Solana address
+to an Umbra address. So we are working
+on integrations right now and we do
+envision this like how you mentioned
+like a toggle mode that says send
+privately and it just sort of sends. So
+that's essentially what we're we're
+going for.
+>> Got it. So wallet should technically be
+able to integrate with Umbra. So you
+know whenever they want to transact
+privately they can just do do so via
+>> I have a question. So how much of this
+is like onchain? How much of this is
+offshore? When I deposit to an umbra
+address, what does it mean?
+>> Okay, so when you deposit to an umbra
+address, what first happens is like an
+instruction goes out that deposits into
+a pool and then it creates this thing
+called a commitment. We host all of this
+onchain. So this Merkel tree, we build a
+Merkel tree of these commitments and
+this is stored onchain. Your claim
+procedure is also stored on chain though
+a computation is sent out to an MPC
+cluster. So first what happens is a zero
+knowledge proof is verified and then a
+computation is sent to an MPC cluster.
+This MPC cluster the nodes itself are
+running offchain but everything
+regarding scheduling execution all of
+that stuff is maintained onchain and
+this is done by RM. So they they host
+all they have their own program which
+manages all the scheduling execution
+layers and everything. So apart from the
+nodes that are actually calculating your
+amounts everything else is onchain. So
+your Merkel trees your nullifiers
+everything are stored on chain. So the
+most of it is onchain. Just the nodes
+themselves since they're not validators.
+They are MPC nodes themselves. Those are
+those are running offchain but
+everything about their execution is
+onchain.
+>> Makes sense. How big is your team now?
+Are you just starting to hire or you
+know have you been uh which is the
+founders right now?
+>> So right now team size is six. So we
+have uh two like three of us are
+developers and three of us are
+non-technical. So uh crew is like our
+lead designer. He comes up with all our
+UIUX same along with Pran. So both of
+them work on like UIUX operations all of
+that stuff. We have a we have one team
+member who's working from Spain. He
+manages all of our marketing, social
+media, discord, all of that stuff. And
+there are three developers. As of now
+I'm like the sole backend developer and
+I manage all the cryptography, smart
+programs, SDKs, all of that stuff. While
+we also have two front-end developers.
+One of these developers also aids like a
+fullstack developer basically. So all
+three of us know fullstack development.
+Solana as well as web two. But majority
+of the backend work is done by me and a
+dev manages mobile devs like separately
+and one manages like our web application
+and all of our like packages basically.
+So it's a team size of six right now.
+And like I had mentioned to you, we we
+do plan on hiring. we are looking for
+like one or maybe you know one or two
+devs uh mostly relating to Solana
+programming circom programming so like
+circum is this language for zk proofs
+like I'm I'm sure a lot of people know
+about this one so a lot of our zk like
+our zk circuits are written in circom so
+basically like we're looking for like a
+circom plus rust dev and that's sort of
+what we're going for but it's a pretty
+small team we all are based like five of
+us are based off of based in India and
+one of us is like in Spain and it's
+pretty like why be like a YB team is all
+I can say.
+>> Got it. Did you have like do you do
+scrum planning sprints? Do you have I
+don't know cycles of engineering when
+you're interviewing or or is it like
+pretty ad hoc right now?
+>> Uh so there it's like right now during
+this ICO sprint and like getting to
+mainet it's more or less ad hoc at the
+moment. We did have this cycle of
+sprints during right after coliseum. So
+we had one like monthly cycles of like
+this month we're going to accomplish
+this no matter how and like that. But
+right now since like we're going forward
+with audits and things like that things
+are pretty ad hoc at the moment though
+we will be shifting back to sort of like
+a release cycle sort of situation pretty
+soon.
+>> Awesome.
+So how do how do you how do you envision
+the you know Umbra
+in the future right? So is the goal to
+grow a standalone as the app itself like
+the Umbra the mobile app or you want or
+you're thinking about you know an API or
+a platform play where other wallets
+could integrate directly with you.
+>> Like at the moment we're actually taking
+both the roots. So like we have an SDK
+that we're building inhouse. So this SDK
+is like super easily integraable into
+other applications. So what they can do
+is interact with our smart program
+without understanding any of the
+technicalities that go into sending you
+know transactions, building these,
+managing all the ZKS on client side. We
+basically are building out this SDK so
+that other teams can sort of use umbra
+inside of their applications. So let's
+just say like a quick example be if
+you're building out a store, right? So
+if you're building out a store on chain
+and you sort of need like a payments
+thing where you're paying using Solana
+addresses. So what you could do is you
+could integrate our SDK and make your
+payments private. So they could have
+like umbra addresses that are paying and
+it's all confidential payments. Apart
+from that our mobile app will be always
+in depth. So we're planning on releasing
+new features and like new UI to make
+this like super seamless. So like I'm
+pretty sure like if you have seen like
+the very early UI of Umbra and like how
+it's now it's very very different. That
+time we just had like boxes and stuff
+but now it's gotten sort of like a much
+smoother experience and we're hoping to
+increase this as time goes on. So our
+mobile will our mobile application will
+also be our focus but we will also be
+having our own SDK which other teams can
+integrate into.
+>> Awesome. Is it is there somewhere people
+can try the Umbra app today or is
+>> yes is it coming soon?
+>> We have like an open beta going on right
+now. So you can sort of download our
+application and you can try out with
+DevNet soul. We also have a faucet. We
+have like our own you know fake mints on
+the DevNet sort of to mimic all of these
+other tokens so that you can sort of
+mimic how a USDC transfer would look. We
+also do have a web application. So if
+you go to our landing page right now
+which is umbra privacy.com our landing
+page is the transfer page. So you can
+sort of deposit and transfer. Obviously
+all of this is on devet right now since
+RKM is also on the devet but we will be
+moving to mainet soon and that time the
+application will be out for everyone to
+use as well.
+>> Since it's also wallet right how do you
+do you know
+plan to work with like wallet adapter so
+that you know you could connect it to
+any DAP or
+that is number one. Number two is since
+it's also you know you either you're
+operating on top of the confidential SPL
+tokens from RPM or they're or whatever
+NPC primitives that they provide. I
+wonder how it would work with any any
+third party tab you would connect to
+because today for example when you
+connect phantom or backpack to a third
+party app it can the the expectation for
+a user experience is it is a is a
+certain thing right versus when you're
+connecting it via incognito mode then
+the expect then the expectation is
+different but but then in order to
+ensure that both work similarly the
+internal plumpings are very different.
+So have you guys thought about or is or
+is that like a problem way down the
+future and you don't worry about it now?
+Like as of right now uh there's a small
+distinction right now we are not yet a
+full wallet we like as of now we are not
+a wallet you cannot generate a key pair
+using the Umbra app like other wallets
+you could generate like a key pair and
+everything right for a Solana wallet you
+cannot generate one using umbra right
+now you connect another wallet so right
+now we are a
+>> so as of now we haven't like gone and
+thought too much about how we're going
+to change into a wallet if we go down
+that route but as of now we are like a
+payments app like sort of like Venmo or
+like Google Pay. Basically, you would
+not uh generate a keypad using us. You
+would connect an existing wallet
+already. So, you would have your Phantom
+Soulflare and then you would connect to
+Umbra using that.
+>> Got it. I have one last question.
+>> Yeah.
+>> Did you guys expect to raise what what
+was exactly going through the team's
+mind when you, you know, saw that you
+guys were trying to raise 750K? From 750
+it went to 1 and then it went to three
+and then it went to 10. I remember,
+you know, chatting with crew on the day
+of your the day of the ICO, it went all
+the way to 10 and then from 10 it went
+to 20 and all the way to 150 by the time
+you guys stopped. Uh so what what was
+going through your mind? What was it
+like?
+>> Honestly, like I'll be I'll be very
+honest over this one. We were at Apex,
+right? And we were like we were
+downstairs in the lobby and like our
+rays had just started and when we logged
+on to like the website to see what's
+happening the website had crashed and we
+were like okay something's like up and
+then we sort of like opened it like
+after 10 minutes okay like we were just
+trying to reload for like 10 minutes
+thinking oh what's happened but
+then after 10 minutes when we loaded it
+the green bar just went like in like
+super fast like and and by and in like
+10 minutes it was hitting 2 mil and we
+were like what is even happening? Right.
+None of us had really expected it cuz
+like we me crew and all like we had like
+this these sort of like fun bets saying
+you know in 4 days we'll raise this much
+and we were like you know we had bets
+key after 2 and a half days maybe we'll
+raise we'll reach 500k or maybe we'll
+reach 600k and then we saw it all go in
+like 2 3 minutes and we were like blown
+up and then even like when we came back
+to c like when we were in like Mumbai
+during the time and we came back to
+campus since we were like we flew back
+to our university the next day and like
+every day we're sort reloading it and
+it's like going up by numbers. But no,
+we definitely did not expect that. The
+like our plan for our ICO was set pretty
+early on that if we did raise it, we
+were going to cap it at this much no
+matter what. Which is why we actually
+did cap it at the same amount. That
+decision had not changed throughout. But
+seeing the numbers climb was quite quite
+fun. M I can't that it was pretty it was
+pretty like
+>> and also it's probably this this is
+probably the only possible on crypto and
+on you know the internet capital market
+rails right imagine you know building
+the same product going to y cominator or
+going to one of those accelerators and
+going through the ringer where you
+it's going to be a you know while before
+you see anything like that so
+it's definitely [laughter]
+a experience and also
+>> shows what really is possible if you're
+working on the right set of problem
+statements with right intentions.
+>> Exactly. So that that's pretty cool like
+the community support like has been
+quite like it's it's been pretty good
+for the team like all of our like
+motivations productivity is you know
+there's always that small factor of
+linkage that you know people like what
+you're building so it sort of gives you
+that push key okay let me push that one
+extra feature before going to sleep. So
+it's always it's always really nice to
+see like all the support that we reached
+like we got on Salana and I like I I
+hope we keep getting this as we go on to
+the future.
+>> Awesome.
+>> Amazing. On that note, Cal, thank you so
+much for joining and congratulations
+again.
+>> All the best for the product, the best
+for the hiring.
+>> Thank you so much once again for joining
+us, Cal. Congratulations and all the
+best. It's like the
+you know not there is lot more to
+>> Yes.
+>> see from here.
+>> Yeah.
+>> Thank you. Thank you.
+>> And thank you for raising the bar.
+>> Thank you. Awesome. Such
+>> kind words. Thank you for having me. It
+was very very nice.

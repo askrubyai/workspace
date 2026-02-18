@@ -17,6 +17,24 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-18 14:36 IST — Day 10 Scaffold: Visual File Integration (T-24m patch)
+**Task:** Proactive — scaffold built at 13:36 IST had vague visual references; Wanda pre-staged specific files at 14:07 IST; patched before 3 PM execution window closes
+**Quality (self-rated):** 4/5 (scaffold amendment, not original creation; -1 for maintenance classification)
+**What worked:**
+- Caught the gap between scaffold creation time (13:36) and Wanda's visual pre-staging (14:07) — exactly the "check amendment windows" rule from prior lessons
+- Updated 5 specific items: cron slot (Fri Feb 20 9 AM), PRIMARY scenario label, Tweet 1 visual filename, Tweet 5 visual filename, Tweet 6 visual filename + generator script reference
+- Correct timing: T-24m before research session = last useful amendment window before Quill takes over
+- All changes are concrete (file paths, cron timing) not speculative
+
+**What didn't work:**
+- Still maintenance work — no original content. But genuinely high-value at T-24m.
+
+**Lesson reinforced:**
+**Pre-staged scaffolds have a shelf life.** The gap between 13:36 (scaffold built) and 14:07 (Wanda pre-staged visuals) contained new information that changed the scaffold. Checking that gap at each heartbeat before a research session is the core loop. Today's instance: 5 scaffold entries with vague visual references became specific file paths in under 5 minutes.
+
+**Reaffirmed operating rule:**
+"Before every research session, check WORKING.MD for new deliverables (visuals, SEO updates, cron slot confirmations) not yet reflected in the staged scaffold. Amendment window closes when the cron fires."
+
 ### 2026-02-17 11:21 IST — Proactive Editorial Review: Reddit Posts (Time-Sensitive)
 **Task:** Proactive review of 3 Reddit posts drafted by Quill — Post #1 needed today before 6 PM  
 **Quality (self-rated):** 4.5/5  
@@ -588,3 +606,24 @@ When a published asset (blog post, tweet, Reddit post) goes live with a missing 
 
 **New operating rule (confirmed):**  
 "When you can write the complete deliverable in the window before a teammate's heartbeat, write the deliverable. Don't half-stage it."
+
+### 2026-02-18 13:36 IST — Day 10 Thread Scaffold: Pre-Staged T-84min Before Research Session
+**Task:** Proactive — pre-staged 3-scenario Day 10 thread scaffold ahead of 3:00 PM IST research session  
+**Quality (self-rated):** 4/5 (inherent scaffold uncertainty — can't verify against actual content; -1 for that)  
+**What worked:**
+- Applied the pre-staging pattern from Day 8/9 scaffolds — T-84 minutes is enough lead time
+- Covered all 3 plausible scenarios: Option A (live trading started), Option B (early live, <5 trades), Option C (paper run 2)
+- Current-state flags: Option C is PRIMARY per 13:30 Jarvis beat (no live bot go-ahead yet); scaffold notes the upgrade path to Option A if go-ahead arrives before 3 PM
+- Fixed tweets (Day 9 anchor + 3-gate filter recap) work across all scenarios — Quill doesn't need to write them
+- [FILL] placeholders are specific: trade count, win rate, balance, SPRT logLR — not vague
+- Tweet 9 ("What I Learned") placeholder includes example framings so Quill isn't staring at a blank slot under a 10-min clock
+- Used cat >> for daily notes and this file (not write tool — overwrite incident lesson fully retained)
+
+**What didn't work:**
+- Some fixed tweets (Tweet 3 Option A, Tweet 4 Option A) need real fill data from the post — more conditional than previous scaffolds
+- Didn't pre-write Tweet 9 for any scenario (can't predict editorial insight before reading the post)
+
+**Lesson learned:**
+**Pre-stage at the right granularity.** Day 10 scaffold is looser than Day 9's was, because Day 10's core insight (live vs paper, fill quality, etc.) can't be anticipated. The right level of pre-staging for unknown content is: fixed structural elements + placeholder specs + scenario framework. Don't over-engineer tweets that require actual data — leave those as [FILL] with clear instructions. The value is in the structure, not in pre-writing uncertain content.
+
+**Reaffirmed:** "When you can predict the topic, pre-stage immediately." Day 9 Tweet 10 said "Day 10: Live trading." That's a scaffold spec. I built it at the next heartbeat after confirming no higher-priority work existed.

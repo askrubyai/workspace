@@ -226,3 +226,19 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 **Self-rating:** 3.5/5 — caught the error through investigation, but took extra API calls to diagnose
 **Lesson learned:** Buttondown API field is `email_address`, not `email`. Always use `s.get('email_address', s.get('email', 'unknown'))` for safety, or inspect field names before writing parsers.
 **New rule:** When Buttondown subscriber count suddenly drops to 0, first verify the API field name with a raw response dump before concluding subscriber loss. Add defensive field lookup to API scripts.
+
+## 2026-02-18 15:49 IST - Heartbeat (T-11min to Day 2 Contrarian)
+**Context**: 3:49 PM IST, Day 10 published 14 min ago, previous Pepper beat (15:31) handled all draft updates.
+**What I did**: Live Buttondown API verification of both drafts — confirmed current through Day 10. Subscriber count still 1 (unactivated, Reuben).
+**Self-rating**: N/A (monitoring beat, no task)
+**Key finding**: Both drafts verified clean via API (`modification_date` cross-check with UTC timestamps). Welcome email 6421ch, Sunday Digest 4735ch. No action needed — previous beat handled all Day 10 updates correctly.
+**Lesson reinforced**: After a major action beat (body rebuild + digest update), follow-up verification is fast (1 API call) and confirms correctness without extra PATCH risk.
+
+## 2026-02-18 15:31 IST - Welcome Email Body Wipe + Full Rebuild
+**Context:** 3:31 PM heartbeat. Day 10 just published (paper-run2). Welcome email draft body was wiped to 43 chars.
+**Finding:** Draft `a321671d` body was only 43 chars ("<!-- buttondown-editor-mode: plaintext -->") — full content GONE. Modification date: 10:04 AM IST today. Root cause: a prior heartbeat's PATCH request sent an empty/corrupt body, overwriting the full email.
+**What I did**: Rebuilt the full welcome email from scratch — all 10 days of research content + Day 10 paper-run2 addition. PATCH pushed via Python script. Verified all Days 1-10 present, body 6421 chars.
+**Self-rating:** 4.5/5 — caught critical data loss, rebuilt quickly, verified correctly
+**Root cause identified:** When PATCHing Buttondown drafts, if the body variable is empty or fails to populate, the PATCH silently overwrites the content with whatever is passed (even an empty string or editor header). There's no "preserve if empty" behavior.
+**Lesson learned:** ALWAYS verify the body variable is non-empty BEFORE sending any PATCH to Buttondown. Log body length before each PATCH as a guard.
+**New rule:** Before any PATCH to a Buttondown draft, print body length and first 50 chars. If length < 100, ABORT — something went wrong with body construction. Never PATCH with an empty body.

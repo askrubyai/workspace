@@ -1,0 +1,1204 @@
+Transcript:
+hi everyone and welcome to a new pod
+today we have Richard from tensor and
+Vector if you are in the salana
+ecosystem you've probably heard of
+tensor it's a meme coin trading platform
+that's doing incredibly well in this
+video we'll understand his journey from
+starting out as a Quant then pivoting to
+do a startup why he chose web3 as the
+industry he wanted to start up in the
+ups and downs the lows and highs
+especially when Solana was going through
+a bear a lot of grit throughout the bear
+to build one of the biggest nft
+marketplaces and then once nfts began to
+Plate they pivoted to building a meme
+coin trading platform which was the
+Alpha in the last few months if you're a
+Dev you'll understand the engineering
+principles at tensor and Vector how they
+hire how big is their team and inside
+look into the architecture of vector and
+tensor and how an X Quant researcher got
+into the salana ecosystem and made it
+big let's get into the Pod tensor is one
+of the biggest nftd marketplaces on
+Solana think of it as a social network
+for Traders when you download Vector and
+you open it up it actually looks very
+much like X like Twitter combined with a
+wallet user on vector or you know use
+signups or people completely new to
+crypto a lot of this is for newer and
+newer users coming on to crypto right
+Market inside or product insight there
+this almost s like everything a wallet a
+deck trade meme coins if nfts are back
+I'm sure you add NS in there so people
+can trade nfts um this seems like one
+app that you do everything you can
+follow each other you can comment you
+can copy trade them so that's that's
+actually the special part of
+it hi everyone and welcome to the only
+Dev spad today we have Richard with us
+uh he's the CTO at tensor tensor is one
+of the biggest nft marketplaces on
+Solana and now they've recently pivoted
+to another product called Vector which
+is a token Launchpad we'll understand
+their background how did they start
+tensor how did they get into Solana and
+all the technical challenges that come
+in building one of the biggest nft
+marketplaces and now token launch pad on
+top of salana so with that Richard can
+you give us a brief background about
+yourself yeah thanks for having us um on
+guys so maybe a brief background about
+myself um I'm one of the co-founders and
+CTO of tensor um as you mentioned we've
+built two products so far tensor and
+Vector um I started the company with my
+co-founder ilmy three years ago before
+that I was actually I I did a bunch of
+software engineering internships when I
+was in school at big companies like
+Shopify Google a startup and then a
+trading firm called Citadel and when I
+graduated I actually did Quant for about
+3 years so actually was more on the
+resarch side than software side um long
+story short just after Co I had the
+startup itch and I wanted to go start my
+own company and that's when I left my uh
+Quant trading job to actually work on
+tensor with my co-founder um so very
+non-traditional where I went from
+software to research back to software um
+but it's all the same thing got it that
+makes a l sense U would you mind taking
+us through briefly whatever you can talk
+about during your Quant experience what
+does a Quant they look like yeah Quant
+research is basically well specifically
+for what I did um there are obviously
+different Quant research roles um at
+different companies um so Google
+actually has their own Quant research
+and that's actually more to do with
+advertising or things that Google are
+working on than what I was doing which
+is Quant research for trading um tldr
+you are creating models whether they are
+statistical or ml based or deep learning
+based to try to predict stock returns um
+and try to make money off of that and so
+what I did was basically um Alpha
+research which means you are trying to
+extract um signal and convert that to
+predictions on where the stock price is
+going for thousands of stocks I can't go
+into like details of the exact methods
+but they're not too um dissimilar from
+you know stuff you would read in books
+um you know it could be linear models
+like linear regression models it could
+be ml models it could be deep learning
+models how did the I'm kind of curious
+about your crypto story from Quant to
+crypto that that is specifically nfts
+how did that transition happen or and
+also during that I remember reading one
+of alien's blog post about to tweet
+about you know how you guys tried out
+many ideas before you came on to tensor
+so I'm really curious to hear about the
+you know the journey from Quant to nft
+yeah it almost sounds ridiculous
+where um where you know I was doing
+Equity um research U for us equities and
+we were actually using quite a lot of
+sophisticated techniques and a lot of
+data to predict stock returns which is
+quite an efficient market um and then
+going into nfts um it seems like there's
+a disconnect there but actually so what
+got me into crypto initially was the
+idea that crypto is basically the next
+generation's financial system um in
+hindsight it almost seems in INE
+inevitable I don't think this was as
+clear to me when I first started but now
+it's like now that I've been in the
+trenches for three years it's it's even
+more obvious to me that crypto will
+become the next financial system um in
+in due time um but when I started I I
+wanted to be in crypto because I could
+be one of the pioneers of the new
+Financial system instead of working in
+the existing system where all the rules
+and basically that the infrastructure
+and all that stuff was already set up
+and you're just kind of this small Cog
+in this large system there's not really
+much you can do to innovate because
+everything is just so rigid and Legacy
+crypto completely changed that for me
+and that was the opportunity I was going
+after and then the reason why we went
+into nfts was we felt that nfts at the
+time the asset class was very
+underly under financialized compared to
+defi defi summer had just just happened
+in 2021 there were a lot of interesting
+Primitives that people were working on
+um obviously pers came around that's you
+know uh I guess pers came around during
+bit mex's time but pers onchain came
+around um serum serum was the thing was
+the first onchain order book so there's
+a lot of like sophisticated things
+happening in D5 but that wasn't
+happening with nfts which we felt like
+was the next big AET class outside of
+just fungible tokens and so we wanted to
+basically build all the financialization
+Primitives for nfts and be the category
+King there got it that makes a lot of
+sense and this was when I would assume
+there was there was some volume some
+interest in uh nfts there were other
+people working on similar marketplaces U
+so were there other ideas you were
+pursuing or it was very obvious that nft
+Marketplace is the way to work yeah this
+is sort of um insight into how windy the
+path of a startup is so we initially
+started off with a completely different
+idea to an nft Marketplace it was still
+in nfts but it was it it was very like
+nerd snipy so we wanted to build our
+first idea was we wanted to build a
+pricing Oracle for nfts which meant if
+you're familiar with defi there are
+Oracle services like pith like
+switchboard um chain link that will
+provide you with reliable price feeds um
+in order for someone to do liquidations
+or for someone to build perss on top
+it's like a very fundamental piece of
+Defi and we felt like if nft
+financialization was going to be a thing
+the Oracle was going to be a core
+component of it and we want to win that
+first and so we spent about a month
+building this Oracle for nft pricing and
+we tried to sell it to a bunch of these
+protocols that were doing lending some
+of them were doing um fractionalization
+and so they all needed this Oracle for
+nfts and we came to realization that you
+know after a month and a bit only one
+protocol was willing to pay us money and
+the other protocol the other protocols
+were so very early on like they hadn't
+found product Market fit
+and we realize okay this is
+not the timing isn't there yet and this
+is actually a recurring theme that you
+hear across startups is like having the
+right idea is not sufficient you also
+need to have the right timing and we
+just didn't have the right timing for
+building this Oracle there just wasn't
+enough demand for it and ultimately we
+quickly we pivoted away from that and
+decided hey given that we've dealt we've
+worked with nfts and nft data um for for
+a month or two why don't we try to Pivot
+into something that we can leverage our
+skills and the stuff that we've built um
+into a new product and so that's when we
+decided to build an nft aggregator and
+ultimately an nft
+Marketplace that makes a lot sense and
+what are the technical challenges in
+building something like this is it it
+like fairly simple once the contract is
+out it's out and you know you just have
+to index the I guess other marketplaces
+and yourself and make sure people can
+buy and sell is it a lot of front
+challenges is it one smart contract is
+it many smart contracts initially we
+built an nft aggregator and that's
+important
+because um with any Marketplace there's
+sort of this problem called the codar
+problem where a Marketplace has two
+sides you have the the buyers or I guess
+the demand side people who are showing
+up and buying nfts and then you have the
+people who are listing nfts to sell and
+that that's the supply side and
+generally it's more difficult to
+bootstrap the side like you need to
+convince people to list their nfts on
+your completely new Marketplace when
+there are no buyers and vice versa
+people are not going to show up if there
+are no nfts to buy and the cold star
+problem is how do you like how do you
+get past the initial critical mass that
+you need in order to have a fully like a
+useful Marketplace and every Marketplace
+company in the past have faced this like
+eBay um Airbnb Uber they've all faced
+this problem and one way to actually
+solve it is you ignore one side or you
+you try to like um hack one side so in
+this case we hack the supply side by
+just being an aggregator and so we just
+aggregated all these existing
+marketplaces Supply or nfts into one
+interface and we just um tried to build
+up the demand
+side the challenge with that is at the
+time there were three four marketplaces
+that had nfts and we have to aggregate
+all of them and The Untold Truth about
+blockchains especially on salana is that
+the data is very messy where all these
+marketplaces they have their
+own um account format so I guess for
+those who may not be familiar on salana
+data is stored into these accounts and
+you actually have to manually parse them
+bite forbite and all these marketplaces
+have different bite format and they
+generally don't publish what that is so
+you have to reverse engineer them um in
+order to get historical data you
+basically have to parse all of their
+historical transactions and again
+they're all in arbitrary bite format and
+so you have to again reverse engineer
+them what's even worse this is the third
+thing that's a killer is all of these
+marketplaces at any time can change
+their format um historically and because
+everything lives permanently on the
+blockchain you have to deal with these
+historical artifacts and so that's you
+know it's it's not hard but it's just
+very annoying to deal with it it's like
+trying to parse an unknown wire format
+um that can change at any point in time
+I also remember during the you know in
+during the hay days of nfts if I may say
+that uh theot some some Marketplace I
+remember this Twitter thread where
+people are talking about you know how uh
+one per One nft Marketplace would also
+put their account stage behind an API
+key so that even if you even if a user
+wanted to for example from an aggregator
+if you wanted to you know execute a sell
+or a buy you can't do that without and
+the API without the AP key or whatever
+their cosigner signing it right so how
+did you guys like deal with it I think
+we are told in this by being in crypto
+that everything what's nice about it is
+everything is permissionless you can
+compose on top of anything without
+talking to
+someone
+but like yes with an AS that if a
+protocol or I guess in this case a
+platform wants to decide who gets to use
+their Marketplace who gets to aggregate
+on top of them they can put in things
+like you mentioned the cosigner um that
+requires you going through their API and
+they can decide who to give an API key
+to and who who not um without getting
+into like two specifics we actually ran
+into this issue with the biggest
+Marketplace at the time um you know they
+basically felt threatened that we might
+take away market share and so they
+actually used this um strategically
+against you know us from aggregating
+their
+Marketplace um and T is like there's no
+real good way around it um basically
+what what it came down to is when that
+happened to us when they said like hey
+you know we're no longer giving you an
+API key you can no longer aggregate
+us um we had to move fast and try to get
+to critical mass at with our own
+liquidity before we were completely
+wiped out because users couldn't
+directly buy nfts off of this
+Marketplace on our website um so that
+was actually probably the the darkest
+time when we were building the nft
+marketplace when you know this
+Marketplace cut off our access and we
+had basically a timer like essentially
+Runway where we had to figure out how do
+we get enough liquidity on our own
+Marketplace or else people will stop
+coming people will stop using our
+aggregator and we ultimately die um and
+we we ultimately figured out you know a
+way to quickly gain momentum which are
+sort of our points in season program and
+you know we were able to get past that
+critical mass to survive you mentioned
+it was the darkest times right I'm kind
+of curious to know what the you know how
+how the team was like what was the
+mindset of the team during that and not
+just the founders but also the early
+engineer you know the early founding
+team like what was going through your
+minds and how are you like quickly
+adapting to changes the reason I'm
+asking this is to kind of you know get a
+peek into the culture and how actually
+it is in the fenes for days this is
+actually an important
+lesson there's a lesson to be learned
+here which is early on before product
+Market fit you basically don't you
+shouldn't be hiring you shouldn't need
+to scare your team there only very few
+exceptions to that
+rule um but to answer your question it
+was basically just me and my co-founder
+literally there's there was no one else
+we were building the product just us two
+we didn't hire anyone we were running
+off of of um
+hackathon prize money to pay for AWS
+bills and that was it right um it wasn't
+until after we got to like 10% market
+share and we started seeing a bit of
+momentum when we made our first hire and
+that hire was a be person um so we
+actually didn't have to deal with the
+problem of like having to Pivot multiple
+times or having to like on being in this
+dark time and having a bunch of uh
+employees or contributors on our team
+that we had to also you know talk to and
+make sure that they're okay um so the
+important Yeah so basically the
+important lesson here is don't hire
+until you see some inkling of product
+Market fit and you need to hire people
+because you're just completely slammed
+with too many responsibilities makes
+sense um very cool so initially you
+mentioned you are an aggregator U now
+you're uh marketpl in itself so just to
+understand here U is there just one
+contract that you had to write once
+deploy it and you know good to go audit
+it once and then deploy it and
+everything else is just front end
+challenges or I don't know indexes that
+you're building um I remember you guys
+introduced something for shorting nfts I
+forgot the name uh is eventually removed
+um I forgot the name uh where you could
+yeah there you go price locks um I would
+assume that's another smart contract to
+deploy but is that so how often are you
+guys deploying smart contracts and what
+are the engineers working on other than
+that smart contracts one thing you
+realize is I think in the last
+generation basically in defi
+summer the smart contract was probably
+the bulk of of what people were what
+devs were building and teams were
+building and then the front end was a
+very thin layer that was s like early
+defi where people were like okay um most
+of the hard hard hard part of it is like
+figuring out what the amm mechanic is or
+figuring out how to build serum an
+onchain order book and then you have a
+very thin front end um for nft
+marketplaces is actually the complete
+opposite where the smart contract is
+actually very simple it it's building an
+like a Marketplace is like you literally
+just deposit the nft um and then you
+have a price attached to it and someone
+can buy that nft and you just make sure
+that the price that you're paying
+matches what they listed it for and then
+you you know send the nft to the other
+person that's a very simple contract
+there's no complicated math um there's
+no like you know risk analysis unlike
+you know a lending protocol or a purose
+protocol the hard part is actually the
+the data pipelines and ingesting in our
+case every single nft transaction that
+has ever occurred on salana since the
+beginning of time tracking all the
+existing listings on all of these other
+Marketplace contracts that's actually
+pretty non-trivial if you don't know um
+the account formats of all the these
+marketplaces and you also have to have
+historical data so people can look up
+like hey what was the sale history of
+this nft all of that stuff the data the
+data part was actually the hardest and
+the most timec consuming part um you
+just have to build the stuff one to
+scale to the throughput of salana so if
+there's thousands of transactions coming
+in on chain you still have to go through
+all of them pick up the ones that are
+nft related and then discard the rest
+and then the front end of course we had
+a pretty sophisticated front end because
+we were building an nft Marketplace for
+pros which meant we had to have a live
+feed of every transaction that was
+coming in we had to make our listings
+update in real time it's not hard but it
+just requires a bit of finesse and
+requires you know very like a lot of
+attention to detail and then we also
+have like a trading view historical
+price chart and of course like the data
+pipeline that goes into it is quite
+annoying to get right um so like TDR is
+we spent probably 80% 90% of our
+engineering time building the web 2
+stuff which is the front end the backend
+data pipelines and we spent maybe 10% of
+the time writing the smart contract
+interesting and I would assume there's
+not a lot of development needed intenser
+anymore um the product is there and you
+know unless you're introducing a new
+feature on a day-to-day an engineer
+doesn't have to really look at anything
+other than maintenance this is true for
+the nftd marketplace but not for the
+reasons of like hey there's not much we
+can do here there's actually quite a ton
+we can do with
+nfts but as you alluded to earlier we we
+started working on a second product
+because we pivoted we decided we have to
+Pivot out of the nft market about 9
+months ago we felt that the nft market
+was basically stagnating there was a
+very Grim outlook on whether or not
+it'll come back and it was entirely out
+of
+control like yes we could basically
+spend 100% of our time and really think
+like how do we grow this Market how do
+we like bring back the excitement to the
+nft mark uh to to the nft market that's
+like a play in task it's like saying
+like how do we make people around the
+world trade more crypto it's something
+that is very like very much out of the
+control of a single startup and so we
+decided like okay let's not waste any
+more time on a market that is completely
+out of our control let's pivot into a
+new product in a market that is 10x 100
+times bigger and that's when we decide
+to build Vector um which is actually a
+uh a token trading app um
+so at tldr at the time we we saw that
+Meme coins were picking up all the
+attention from our existing user base of
+nft Traders they were essentially they
+stopped trading nfts and just started
+trading mcoins and we were like hey we
+have you know half a million a million
+monthly active users they all stopped
+doing this one thing which is trading
+nfts and now they're trading me coins
+can we leverage our distribution and
+build something interesting in in the
+space of meme coins and tokens and so
+that's when we decided to work on Vector
+so you started N9 months ago very
+interesting um I guess you launched very
+recently three months ago is is that
+right got it um so would love to you
+said it's it's not oh I thought it's a
+token launch but you're saying it's a
+token trading platform so I'm assuming
+people can swap tokens buy them um
+launch them um so would love to know
+again the same thing uh how much of it
+is smart contract logic I would assume
+there's more than nft Marketplace here
+and and there is also a mobile app that
+I saw so you know basically how much
+engineering time is going into front end
+mobile app back end and smart contracts
+yeah it's even more asymmetric in terms
+of the amount of time we spend on web 2
+stuff like front end backend apis versus
+smart contract smart
+contracts until recently it's basically
+zero and the reason is Vector is really
+a front-end aggregator on top of all of
+the dexes
+the launchpads for example pump
+fun um and then Bridges which we're
+adding in right now it's basically a
+front end that wraps it all into a nice
+mobile form factor so that anyone can
+ape mem points um directly from their
+phone um with their friends that's
+that's the whole premise is you can
+trade mem coins socially with your
+friends on this
+app um what it is maybe just to give
+your audience a bit of insight think of
+it as a social network for Traders when
+you download
+Vector um and you open it up it actually
+looks very much like X like Twitter
+combined with a
+wallet so it's a wallet in that you can
+do the same trades you can trade any
+token on all the chains that we support
+um instantly so any token on salana that
+gets minted you can trade it on Vector
+any tokens that get minted on ethereum
+on base on abstract which we just added
+and eventually all of the other major
+chains you can trade that directly in
+Vector without having to you know go to
+a website connect your metam Mas or
+connect your Phantom and you know click
+a button that's assigned transaction
+instead everything happens within the
+the mobile app and then the social part
+is you can actually share these trades
+with other people that follow you or
+just people in general on the app in a
+public timeline that's sort of the key
+Insight we came to which is we can we
+can build a nice mobile trading app for
+tokens and for mean points but what are
+people actually doing behind the scenes
+once they make these me Point trades
+they're sharing it with their friends
+they're sharing it on Twitter they're
+sharing it in telegram group chats
+they're sharing it in Discord and we
+want to basically package all of this
+social activity into a single app that's
+very interesting that sounds like a
+social media app and like can people
+message each other follow each other
+follow their trades things like these
+you can follow each other you can
+subscribe to each other so you get push
+notifications directly to your your
+phone as soon as someone makes a
+trade um you can comment on their trades
+and engage so you can like like or
+dislike their their trade um you can
+copy trade them so that's that's
+actually the special part of it is when
+you see your friend trade you might want
+to like jump in and join the fund and
+buy the same token that they just bought
+um but there isn't messaging right now
+um we feel like we we didn't want to get
+in the game of competing with all these
+great messaging apps like telegram or
+scored they've spent years and years
+making an awesome chat experience and we
+don't want to compete directly with that
+um I think eventually we'll have group
+chats eventually we will have live chat
+and eventually we'll have onetoone
+messaging um but that's maybe a bit
+further down the road this almost sounds
+like everything a wallet a deck trade
+meme coins if nfts are back I'm sure you
+add nfts in there so people can trade
+nfts um it seems like one app that can
+you know do everything um I would love
+to know about private Key Management
+here since people can copy trades while
+they're sleeping I'm assuming you guys
+are having access to the private key in
+some form of fashion is that right we do
+not have access to the private key maybe
+I'll give you some insights to listeners
+um in crypto the previous generation of
+uh mobile wallets and mobile trading
+apps actually I wouldn't even say mobile
+trading apps because I would say you we
+are the first major crypto trading app
+that's built like a trading app versus
+built like a wallet and we also talk on
+the wallet part most mobile wallets of
+the previous generation they ask you to
+write down a seed phrase and they'll
+keep the private key in local storage
+that lets you sign transactions within
+the app and then it you know it stores a
+private key in local storage and then in
+theory like the app itself can access it
+or they shouldn't access it and
+everything is local and so even if
+there's a hack uh on the wallet's API
+servers your private key isn't exposed
+downside of course is you have to write
+down a seed phrase you know it could be
+12 to 24 words and a lot of people who
+are not Crypton native like they don't
+know they don't really know what to do
+with it they might write their seed
+phrase in like uh a notepad that or like
+a online document and they accidentally
+share that and they leak their seed
+phrase and all their money gets trained
+we didn't like that experience so we
+actually looked into a lot of embedded
+wallet Solutions these are effectively
+non-custodial
+Frameworks or services that are offered
+by these companies these Services
+basically lets you log in with Anil
+email or OA have a private key generated
+behind the scenes on your local device
+and all that being securely stored so in
+our case we use something called privy
+they use something called um Shamir
+secret sharing SSS to do all this fancy
+cryptography so that the private key is
+never exposed to us nor privy private
+key is still entirely local to device
+when it does signing and it's very very
+difficult if not impossible to
+compromise that so that's what we use
+you log in with an email on vector or
+you log in with Twitter or you log in
+with Google or you log in with Apple ID
+um and a private key gets generated for
+you and you are in control of that
+private key we can't access it privy
+can't access it only you can access it
+go it and as as long as I have access to
+my email um I have access to the private
+key correct and then you can of course
+add like stuff like MFA like two Factor
+authentication um you can even go
+further and self uh um add in recovery
+mode which makes it even more difficult
+for any potential compromises to get to
+your key and at that point you're
+effectively like you effectively have
+like like full self custody if not even
+stronger guarantees than just writing
+down your seed phrase in like a notepad
+or something got it very cool and and
+you're saying py doesn't let you let you
+guys even initiate transactions the user
+has to initiate the transaction since
+they're signing it on their local device
+correct everything has to be user
+initiated on vector I'm kind of curious
+to know you know how many of the users
+on vector or you know new signups or
+people who are completely new to crypto
+because whatever you just said about you
+know the packaging this entire
+experience
+together feels like a lot of this is for
+newer and newer users coming on to
+crypto right so I'm curious to know what
+that split looks like or is there any
+like Market insert or product insert
+there we very intentionally made it so
+onboarding was as seamless as possible
+because our ambition is to reach
+eventually a million if not a billion
+people if not a couple billion people
+and become a Facebook size company right
+where every single person in the world
+can use vector and the only way to do
+that is not have that friction High
+friction crypto native onboarding
+experience where you're writing down a
+seed phrase that being said as of right
+now most of our users are still crypto
+native and that's because we're
+leveraging our existing distribution
+from our Marketplace getting all of
+those users onto Vector first they tend
+to be higher volume they tend to have
+higher um spending habits right because
+they're used to spending thousands and
+thousands of dollars on nfts now you're
+just spending thousands and thousands of
+dollars on mem coins um and then we'll
+we'll basically move out in layers if
+you think of an onion like this the core
+is basically our Crypton native uh user
+base and then we want to move um out
+outwards to adjacent layers so the next
+set of users you might go to are people
+who are on centralized exchange maybe
+they've never been on chain but they've
+used a coinbase before or binance and
+they want to start trading mean coins on
+chain and so we we'll get those on board
+and it's very easy because it's still
+email login Google off they don't have
+to write down any seat phrase and after
+those set of users you might go onto um
+people that have maybe never touched
+crypto before on a centralized exchange
+but maybe they've shaded stocks um and
+they can easily on board to Vector
+because it's again it's just an email
+login so that's how we're thinking about
+expanding our user base initially from a
+core of Crypton native users since
+you're oh since you're aggregating
+things from everywhere uh what What's
+your you already monetize or what's your
+plan of monetizing eventually um you
+don't have any know any of the finance
+there only yourself yep so the app takes
+um a fee on top
+it is a 1% fee which means that every
+time um you do you know if you swap $100
+from salana to I don't know
+fcoin um one $1 of that goes to um
+vector and then the rest of the $100 get
+swapped on shade um it one thing that's
+to note here is 1% seems high right most
+trading apps or actually most trading
+exchanges traditionally charge a much
+smaller percent um for example binance I
+think has their their highest I guess
+the lowest tier like the default tier is
+25 bips or 0.25% coinbase's Pro offering
+charges 0.5% coinbase's retail offering
+is actually different it actually
+charges 2.5% so it's nearly five times
+as large as a pro offering and the
+reason is retail is less sensitive to
+fees and if you can provide value on the
+frontend by providing interesting
+features that you can't get anywhere
+else in our case we provide social
+features where you can share your trades
+you can copy trade people all of that is
+stuff people value on top of the utility
+of just trading and that's why 1% is
+actually pretty reasonable because you
+get to share your trades with other
+people you get to have other people
+follow you and if they copy trade your
+trades you actually earn a part of their
+fees um that's why people are willing to
+pay 1% to use Vector whereas if you're
+just building a simple front end that
+connects to a DEX no way you're charging
+1% okay I have a very weird question I'm
+unsure if you thought through this and
+other people who use privy but U privy
+seems like a mildly centralized company
+even though they don't host your private
+key but what if the government tells
+them to block uh signing in in the
+future or something like that do people
+really own their crypto or is this
+something that's been thought through uh
+when because a lot of people are using
+privy like every other company we've
+talked to Jupiter we talk to they're
+using privy for ap. pro which is the new
+product U so is there something that can
+happen if the government wants to block
+in Vector we let people export the
+private key for people who know what
+they're doing they can always export
+their private key as soon as they log in
+they could again write it down put it
+into like a secure place um and then
+they'll always have access to their
+funds privy the way that so anytime you
+have something that connects to
+something web to um yes there is always
+that tail risk of censorship um if if
+the government really want to go to
+Apple or you know whatever and say shut
+down your servers they can always do
+that and you lose access to everything
+they could in theory go to privy their
+us company and say like shut down
+everything don't let anyone access the
+crypto anymore um but we thought thought
+through this carefully and we there's
+always an escape hatch in Vector which
+is the exporting the private key yeah
+and also you have this uh with threshold
+you have this two out of three
+combination right like as long as you
+have two shars of the key you should
+still be good so the real scary scenario
+is like uh the government goes after
+like all three entities then you're kind
+of
+like uh screwed but yeah LS of that are
+fairly low Rich I'm kind of curious so
+from from you know starting tensor as
+like you know
+uh you like a so kind of solo team you
+and the co-founder just a Founder only
+team and you know growing it out into a
+it it didn't tenser into a very
+Marketplace and then pivoting to Vector
+it's been quite a journey right I'm
+curious to uh learn more about how has
+the team shaped up how you guys
+approached you know building up a team
+that reflects how you guys are right so
+I'm curious to know what the culture at
+tensor is and how you guys built the
+team yep maybe I'll talk on the culture
+part and then maybe the hiring part so
+the culture at tensor
+all startups I would say are more
+fast-paced in general and more intense
+than a big company so if you compare you
+know any seed stage series a startup and
+their culture it's any successful seed
+stage and series a a startup to the
+culture of maybe like a company like
+Google or
+Microsoft for sure you'll notice a
+difference where startups you are live
+or die every single day you have to move
+fast or else you just the company goes
+out of business um that's a case yes for
+tensor but I would even say we take that
+a step further where I would say our
+culture is even more
+intense we feel
+like we want to work with the best
+people the best technical Talent the
+best marketing Talent go to market
+Talent the best in class for all of the
+functions that we need at
+tensor and we want to drive that by
+having a high performance
+culture which means
+um you know everything is Guided by are
+you outputting results and if you are
+then you'll be rewarded greatly you know
+in comp and in in responsibilities and
+if you're not then maybe there's you
+know a different role for you or maybe
+it's not going to work out and we make
+that very clear at the beginning of all
+of our hiring processes where yes we
+know that sensor is very intense it's
+not for everyone but if you're a high
+achiever this might be the place for you
+to really
+shine and and what that means what that
+implies for a hiring process is we tend
+to be more
+lean um and try to work with a a smaller
+team versus a larger team but the
+smaller team has a higher density of
+talent and higher density of
+Independence and so actually like for
+for a company of of our that's
+generating as much revenue as we are
+currently from fees you know you might
+say like hey you should start hiring you
+know 50 you know 70 Engineers given that
+you have this much runway but we're the
+complete opposite where we don't want to
+become a large slow moving organization
+and have a bunch of like overhead
+because you have to manage 50 70
+Engineers um in fact we want everyone
+all
+Engineers to basically run independently
+to feel like they don't need to be
+managed to feel that they have a ton of
+autonomy in what they can do
+um and keep that team small so that we
+can run as fast as possible and pivot if
+we need to Pivot at pivot uh you know a
+slightly New Direction in the product or
+a slightly new tech that we need to
+build out without having to go through a
+bunch of organization that's very cool
+how how big is your engineering team
+right now we currently have 14
+full-timers um we actually grew from 10
+to 14 within the last month and that's
+that's because we saw quite positive
+momentum from Vector that we felt like
+we needed to scale a bit faster just to
+make sure that we're ready we're ready
+to continue scaling vector and dealing
+with all of this growth so we're about
+we're 14 full-time
+engineers and are you guys hiding for
+more
+RS we are doing it opportunistically so
+you actually see on our job posting
+board that there there is no engineer
+role and that's because we are
+opportunistically hiring folks that we
+either know through our Network or we've
+heard of that is really great and we
+reach out to them opportunist Jak do you
+have anything else yeah so what what
+does the makeup of the you know the 14
+member team look like so again like
+going from a tensor used to be like you
+know a website under front and heavy
+trading product to Vector a mobile app
+so I
+also I would say maybe I'm wrong here
+but Vector is a much much more uh social
+experience it's I would say it's much
+more similar to building Instagram or
+Tik Tok versus uh you know building
+a building tensor right
+so how did
+you I'm curious to know what the how the
+team transitioned or how did you guys
+kind of like bring through the changing
+mindset I don't think it's too difficult
+I think they're both ultimately still
+consumer
+products you still have
+to I think the process of building the
+product is more important than like the
+domain of the product like in theory we
+I mean hypothetically let's say we
+decided to just build a social media app
+no crypto involved I think we can do a
+pretty good job at it and that's because
+it's a process of fast iteration trying
+out experiments getting feedback from
+users and having that type feedback loop
+that makes building that that makes a
+team successful in building a consumer
+product um and I would say the process
+that we applied when building the nft
+marketplace is a is very similar
+obviously we've learned a lot since then
+and so we we have we're doing stuff
+slightly differently that's improved but
+it's it's very similar to how we're
+building Vector where there's constant
+um back and forth between our users
+between internally where we thinking of
+like okay what do we build next based on
+what our users have given feedback on um
+and I think the crypto component
+obviously there's there's crypto in the
+nft marketplace there's crypto in Vector
+um that definitely helps if you have
+domain expertise and because we know
+salana so deeply now it just lets us
+move faster on building out the trading
+features of this um of vector okay I I
+mean so if I were to summarize this the
+the principal reason why you guys are so
+successful at you know building
+something like the people want is one
+Relentless focus on
+execution ship as quickly as possible
+and
+also very very tight feedback loop into
+the product right so so that your
+quicker iteration knowing what works
+exactly maybe the one difference between
+building the nft marketplace which was
+for the most part like a utility product
+versus building Vector which leans more
+heavily into social and basically
+entertainment is that social and
+entertainment figuring out what to build
+is actually pretty difficult because
+it's not as clear-cut as building more
+utility we just know that you know what
+Traders want is more advanced order
+types they want limit orders they want
+amm pools for nfts they want more
+complicated filtering they want to be
+able to see you know this stat and that
+stat and this chart and this visual
+visualization but for
+social it is more the opposite where
+less doing less is actually better for
+the product you don't want to make it
+too complicated we have 15 different
+things going on and someone who signs up
+to Vector for the first time doesn't
+know where to focus their attention on
+um and you'll see this with like all
+major social media apps except maybe for
+Faceook Facebook where Instagram it's
+very simple right it's literally just a
+single feed and then you can post photos
+and like photos that's the that's 90% of
+what people do on the app same thing
+with Tik Tok 90% of the time you are
+watching videos just scrolling and
+liking videos and maybe commenting so
+one thing common the lowest the common
+denominator amongst all of these apps
+that you mentioned is that they are
+incredibly sticky right they have
+extremely high recall PE people keep
+coming back so
+I compared to something like you know
+trade Vector people still do trade I
+think the stickiness there is people
+making money but if the markets and so
+you have two things right one you have a
+market structure where not everyone of
+course can make money because in order
+for some lot of people want to have that
+100x pay off there's probably a few who
+are on that as exit liquidities so I'm C
+would love to to know how you are
+thinking about you know this trade-off
+between the stickiness that is required
+for a social app because you want to
+have like extremely high attention
+versus a trading app where you know
+people are there because they want to
+make money our advisor and maybe some of
+you guys know him Nikita beer um he he's
+a big personality on Twitter he's known
+for creating like ultrav viral social
+apps that go from like zero to like a
+few million users in like 10 days he
+basically told he's actually like you
+know somewhat adjacent to crypto like he
+he keeps up with the industry and he
+keeps up with like all of these meme
+coins and stuff and he basically said
+that trading in his opinion is 51%
+flexing and 49% profit he argues that
+people actually like trading meme coins
+and sharing their trades more because
+they're they want to flex any massive
+gain where they want to like share lost
+porn if they lose a ton of money then
+the ACT ual profit itself that being
+said like obviously it's great to have
+both it's great to have it's great to
+flex and great to make a ton of money
+but I would say one thing that we
+captured well with Vector you might
+potentially lose money and that sucks
+but at least you have the social
+component that you can still hold on to
+and and you know Flex all these cool
+trades that you've made and in a way
+you're effectively paying you might be
+losing you know a bit of profit um
+because you know maybe you're not as
+good of a Trader as some other folks but
+at the very least you still get value
+out of the entertainment from the social
+aspect of it if if plays right you know
+this sounds kind if you know if there's
+one mainstream application it might be
+this so I'm curious to see how it plays
+out in the upcoming months um with that
+I have one last question what does your
+day-to-day look like Rich are you still
+coding are you reviewing code uh are you
+still architecting yeah it's it's
+drastically changed in the last couple
+of months basically when we went from uh
+maybe like four five six Engineers to 10
+to
+14 um and I think like the company is at
+a point where my time is is no longer
+best spent writing code all day um I
+still do write code like there there are
+a few things that I might fix here and
+there that I noticed in the code base um
+I definitely review code not all not
+every PR because there's like 14 people
+training out code every day and there's
+no way I could do 14 PR like 14
+full-time Engineers worth of PR reviews
+every single day but you know it's very
+important for a CTO for anyone who is
+you know in management at a company to
+still be in the weeds in the details
+know exactly what's going on roughly in
+the code base and I would say I have a
+pretty good understanding of the code
+base overall like I could literally jump
+in and start writing code but my time
+isn't best spent there um at this point
+I'm I'm context switching between you
+know doing these calls um doing product
+planning doing higher level strategic
+planning with my co-founder that it's
+just hard for me to get heads down time
+to turn out like code at an effective
+speed um and so to answer your question
+I would say most of my time is spend
+planning and
+architecting making sure that all the
+difficult problems on the engineering
+and product side I can be there and
+solve them as as fast as possible I am
+essentially the the firefighter on the
+product side if if there's uncertainty
+around an implementation around a
+product feature then I'm there to put
+out the fire thank you so much for
+joining us Richard this was this was
+fantastic you know listen listening to
+the actual stories From The Trenches
+people only see see you know the other
+side of the chart you know the what
+actually goes on behind the scenes to
+keep it running it's a ton of sleepless
+nights and I'm pretty sure lots of
+coffee and Dread bull but thank you so
+much for building such a great product
+and thank you so much for joining us on
+this podcast

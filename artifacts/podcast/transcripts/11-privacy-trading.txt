@@ -1,0 +1,824 @@
+Transcript:
+when I deposit my funds go into a
+contract right if I'm depositing a
+Solana or a USDC that transaction can be
+tracked the first transaction
+>> I wish we can remove that we have
+thought it a lot but
+>> can you tell us why privacy is important
+>> it is something which I want to use is
+freedom
+>> the way I want to place trades I don't
+want to reveal many I'm a very secretive
+person
+>> USDC has a very specific address and the
+authority for that is circuit the token
+contract will ensure that they are the
+only ones that are ever allowed to mint
+it. But then when you are creating an
+encrypted version, it would be a new
+mint. How can anyone interacting with
+this token understand that your
+encrypted version is actually the
+canonical and it's not something else?
+>> This is very similar to shielded assets.
+Every transfer is just an addition and a
+subtraction, right? That is done through
+proofs and attestations.
+>> When you say proofs, what type of proofs
+are these testations? Right? Now,
+>> how exactly does that work? So basically
+like
+[Music]
+hello everyone welcome to the season 2
+of on leaders podcast. So today we have
+with us the cipher team. So they are
+super team members and also really
+really devs from web 2 that have made
+their journey to web 3. They also
+recently won the coliseum hackathon.
+Congratulations on that. Welcome to the
+podcast Nisha.
+>> Thank you.
+>> Cool. Thank you.
+>> Thank you for being here. Would love to
+dive deeper into your journey. Maybe
+even before starting in cipher. What
+were you doing before this?
+>> Yeah. So I graduated like in 201
+straight out of college. I joined
+Goldman Sachs. I was in the AI space
+before this. I graduated like having a
+different degree but I was very much
+interested in the AI space. So I was
+working on AI for a long time. After
+Goldman like I worked there for 2 years.
+While I was at Goldman, I was
+moonlighting at different web3 startups.
+So I was very much interested in the
+cryptography and this guest space and
+that's when I while I was interning at a
+startup which was one of our mutual
+friend and mine I met him and then we
+started working together on different
+projects. We took part in several
+hackathons as well and that's when like
+one of our projects took off. It was
+called banana wallet at first and it was
+like a zk plus account abstraction thing
+with you know with wallets and yeah we
+got into some accelerators got some
+funding that gave us the you know
+capacity to quit our full-time job and
+then do this on a you know daily basis.
+That's how company got started. It was
+like around two years ago 2.5 years ago
+and yeah since then we have worked
+extensively in the cryptography and the
+space like worked with companies like
+you know aail in solving zk through
+aggregation problems working with
+companies like polygon maiden which is
+like a privacy layer 2 in building fully
+onchain based games and yeah a lot of
+problems around this general MPC FHE and
+privacy enhancing technologies area. So
+yeah that's how we got the idea of
+incipher as well. It was around like 1.5
+years ago while we were working with
+these companies and yeah since then we
+have been developing over in cipher
+talking to users and trying to improve
+it.
+>> Vish has already covered like the
+journey like how we actually started
+like how we met and how we got where we
+are right now. A bit a little bit about
+me like I have been in this space like
+from last 4 years now and before that
+like I worked at mathworks. At Matox I
+was working with like building B2B
+solutions like for 500 companies post
+that sort of like started participating
+in hackathons first sort of like
+learning about new stuff every day and
+then as Risha mentioned like one of our
+mutual friend has been working on
+something cool some cool stuff like with
+regards to account abstraction. So I
+really like that a lot and joined
+science with him and there I met Rishop
+and then our journey sort of like
+started and like from last three plus we
+have been like extremely extensively
+working with like distributed systems
+and in general like cryptographic has
+been what you're building today is you
+you have been working on like core
+cryptographic primitives and then
+naturally like you mentioned you have
+been gravitating a lot towards the
+towards ZKN cryptography. So h how did
+all of this like come towards nipher and
+what does ncipher do
+>> maybe a tlddr first right now what
+ncipher is it's enabling private trading
+on jupiter and anybody who has you like
+most of the solana folks have used
+jupiter and right now what whatever
+trades you place they are public in
+nature so what we figured out a way is
+that you can trade on Jupiter using the
+best price execution which jupitter
+gives but the trade which you place is
+not public in nature. So nobody can make
+sure that which trade you are placing,
+which tokens you are buying, which
+tokens you are selling. But the idea or
+this exact positioning was figured out
+from a very you know a lot of failures
+or I would say iterations as I mentioned
+earlier like it started like 1.5 years
+ago and that at that time we were still
+in the idea maze trying to see what can
+work what cannot work trying to talk to
+a lot of users but we were very
+convinced that this is something which
+is a very huge gap in the space and we
+wanted to solve that that's how the idea
+started and we started with a different
+very different approach like at first
+encipher was entirely different that you
+see right now. It was somewhere like we
+even thought of creating a you know
+creating our own rollup but soon after
+talking to a lot of users we realized
+that nobody like wants a different chain
+or a different execution environment
+just for getting privacy onto their
+applications and users or may
+specifically retail users most of the
+businesses also but they will only value
+privacy as a feature and when it is
+deployed or basically given it given as
+a feature on their chain or their
+execution environment and their
+applications. So that's how we got into
+this idea that let's think of something
+how we can enable this on existing
+chains like Ethereum, Solana and all
+these bigger chains who already have
+volume. So that's how we got the idea
+and we start you know developing things
+on top of it and we got into the idea of
+the co-processor which I think you can
+explain better but that was the start of
+everything like in this whole process
+like it was very painful I would say
+because talking to the users and getting
+those insights and get then iterating on
+top of them is really really really hard
+I guess but yeah I guess that's the
+process that the IDM that everyone has
+to go through I will still say that we
+have like it's not PMF that we have
+achieved the PMF but I think that this
+idea of what positioning that we have is
+having that capacity.
+>> Yeah, it would be helpful for viewers to
+you know if you could show what N cipher
+does.
+>> Yep. So I mean this is the application
+that it's released like two weeks ago or
+3 weeks ago in a private beta and we are
+still improving a lot but there is an
+access code which is needed just to you
+know use the application but after you
+enter the application you need to
+deposit some assets whatever you want to
+trade on Jupiter. So I'm already having
+some assets over here. So I'm not going
+to do it. But over here you can search
+the assets as well. And you you are
+shown whatever assets you are having on
+your wallet that you have connected
+with. And after you deposit, it takes
+very less time to deposit the assets.
+And you can see the asset page. It will
+show you all the things that you have in
+in cipher application deposited or
+basically you have encrypted. So the
+cool thing is that whenever you
+deposited in cipher, those assets are
+not visible on chain now. So all these
+assets that are there with me which you
+see in the list if you see my address
+and see it on chain you'll not be able
+to see that my address holds this much
+amount of monk or this much amount of
+USDC or juke or soul. So that's the like
+that's the power of encrypted assets.
+Nobody knows how many assets you are
+holding and if I want to take make a
+trade as well. So let's assume I am
+buying soul for 100 USDC and I can also
+like send it to another address or
+another wallet which I'm having. I
+confirm like all these all these and the
+very good thing about this is that all
+the rates and all the fees or everything
+is fetched from Jupiter. So whatever
+they are providing we only provide that
+and we charge a small fees like a 0.1%
+fees on top of it right now. So the
+trade is executing right now. The thing
+needs to be improved is like the timing
+right now is around 20-ish seconds as
+it's done. But we need to improve this a
+lot and it will be good time because
+code will be improving with time. So if
+I go to the asset page then I can see my
+assets over there. Yep. So this is the
+transaction that happened right now for
+buying soul. You can buy any asset that
+you want. I can buy any memecoin that I
+want or fartcoin or whatever assets is
+listed on Jupiter. It basically is here
+to trade upon and even like stocks which
+happened like I think last week. So we
+integrated it within like 2 three hours
+at night so that people are able to buy
+like Tesla with fartcoin maybe. So that
+was a huge thing. So yeah this is a very
+small demo.
+>> Very cool.
+>> The couple of things that you mentioned
+right that I'm actually curious to
+curious to learn more about. One thing
+that you mentioned was for example you
+showed your assets and also said that if
+you go to the you know look up the same
+address on on an explodered it wouldn't
+show these balances yet they exist as
+assets right so now how how exactly does
+that work so so basically like with all
+the tokens visible over here like so
+maybe starting like from the a bit of a
+beginning so whenever user deposits
+certain tokens the platform via deposit
+workflows what we do is we wrap those
+tokens to it encrypted equivalent tokens
+so for example let's say if I'm
+depositing thousand USDC right now so
+what what receives like 1,000 equivalent
+of like some tokens now now like the
+secret sauce here is like a th00and has
+been encrypted so what value you can see
+on chain is certain gibberish value out
+of which like you can never make sense
+that this particular value could be USD
+and now Rishab could use this
+particular,000 USD value to praise the
+certain trades over Jupiter So like with
+time as more and more people deposits
+it's became really difficult for an
+external party to sort of like figure
+out that this particular trades has been
+placed by this particular users who
+might have made like this particular
+deposits. So that's how we sort of like
+our offiscation mechanism works because
+like we are actually encrypting the
+values and because like by encryption if
+you are transferring zero USDC or 10
+USDC it's just a random hash. No one can
+figure out that how much amount has been
+actually deposited and how much has been
+actually transferred. So that's sort of
+like the foundational offiscation
+guarantees and the mixing guarantees we
+are sort of like working with.
+>> Just to add one point also like all
+these assets are first deposited as you
+mentioned in a central program right and
+then you basically have that encrypted
+value or encrypted assets onto your
+account. Now at the end of the day when
+everything is done let's assume there
+was only one participant in the starting
+shake you were there and you want to
+transfer you deposited or made like
+1,000 USDC encrypted you transfer like
+700 to hurricane and when wants to
+withdraw those assets he's also having
+an encrypted USDC and you are also
+having encrypted USDC now you prove to
+the program that he's having like Harit
+when he wants to withdraw he proves that
+yeah I am having this much amount of
+value and from that program I can claim
+back like 700 when he wants to withdraw
+or whatever amount he he wants to
+withdraw. So that's how it works like
+that change in encrypted values is
+basically happening so that at the end
+of the day the user of those or the
+holder of those tokens can claim that
+token as well.
+>> One curious question few curious
+questions I guess. First was you
+mentioned when I deposit my funds go
+into a contract right if I'm depositing
+a Solana or a USDC I'm assuming that
+transaction can be tracked the very
+first transaction.
+>> Yeah. Yeah, I wish we can remove that.
+We have thought it a lot. But on public
+chains, it's so hard to bring privacy at
+a programmable level so that you know
+nobody can track whatever happens. But
+the deposit and the withdraw
+transactions sadly will be public for
+now at least unless and until the core
+blockchain or the core execution client
+makes a change in themsel.
+>> Yeah, we probably need a very
+discussionable hard fork to enable that.
+So yeah,
+>> makes sense. That makes sense. Okay. So
+when you deposit, you mentioned, if I
+understand this correctly, you wrap that
+token which I'm assuming you you issue
+another token that's I don't know a
+wrapped USDC
+>> version. That version
+>> sounds good. And you mentioned the
+quantities are hash. Is that what you
+mentioned?
+>> Yeah, you can you can consider that the
+quantities are hash. That's sort of like
+the one explanation which sort of like
+works works for us. It's just that like
+the quantities are now sort of like
+pointers to cipher text which exists
+like in some DA
+>> which exists in some DA. So there's like
+some off-chain component here where the
+amounts are actually stored and what's
+stored on chain is a encrypted version
+of that. Is that right?
+>> Yes.
+>> Okay. Onchain you basically have hashes
+whatever hash that execution client
+supports and the pointer to that cipher
+text whose hash it is we don't even
+store the value we store the cipher
+text.
+>> Got it. I'm very curious about this data
+layer. Then what is this some server
+that you have? Was this something else
+where you're you know storing the
+decrypted versions of these hashes.
+>> No we are not using we're not storing a
+decrypted version of this. These are the
+cipher text which we are storing within
+the DDA layer. Ju just before that I I
+also have one more question which is
+these typic when you hash or when you
+encrypt something the you know these
+tend I mean most of these hashing
+functions tend to have like a very large
+avalanche effect in the sense that you
+change one value you know it changes the
+out the the cipher text like
+drastically. So given that given that is
+the case, how do you actually
+differentiate between the input being
+you know 100 versus 500. I'm assuming
+you would need in order to be able to
+successfully match without or even
+execute this particular transaction
+without actually seeing what is inside
+the encrypted text. You would need to
+know this, right? So how are you guys
+doing it or is it that the part that the
+other question is like for example you
+mentioned since it is on are you able to
+like decrypt it at some point and then
+execute it. So the way we are doing it
+like we have defined some sort of DSL
+and like what I what I mean is like tell
+is like it's not a different DSL which
+developers have to learn or do anything
+like that. It's sort of like inherent
+libraries which developer have to sort
+of like let's say import it on their
+programs which sort of like exposes
+certain functions. So basically like we
+have this foundational arithmetic
+primitives we have this foundational
+control flows we have this foundational
+switch placements and flex placement
+multiplex things like that. So what we
+have did like we have built a sort of
+like the wrapped version for this
+foundational primitive which works on
+top of these harshes. So for example
+let's say if I'm using n cipher and and
+if I want to express some of my intent
+or some of my program logic what I can
+do is I can just import this
+foundational primitive from this
+libraries and can encode that particular
+logic using those foundational primitive
+as just a normal function call and every
+foundational primitive let's say for
+let's for for example let's say addition
+operation what it does it it has like
+certain hash derivation function which
+basically calculates a certain hash
+which would be outputed when two input
+hashes have been provided and the same
+computations happens within the
+co-processor as well that the resultant
+hash for both the operation which has
+been performed onchain and which has
+been performed offchain should be
+similar should be equal to explain like
+the offchain co-processor a bit so right
+now like our execution client don't have
+the capabilities to work with all this
+encrypted data because like to to enable
+that we'll have to have like multiple
+hardworks and we need like multiple
+system programs and pre-ompise to enable
+that so that's Why we have like this
+off-chain verifiable co-processor which
+basically helps this execution client to
+perform computation on the encrypted
+data parallelly so that this execution
+client can just deal with the result and
+hash computation where the final
+encrypted rate result should be stored
+and our offchain co-processor should be
+able to work actually work on top of
+this encrypted data and calculate this
+like counterfactual hashes which will be
+calculated ideally with the same hashes
+should be calculated ideally on chain
+and assigns the relevant cipher vertex
+as the resultant output to that
+particular hash. Now this particular
+offchain co-processor is sort of like a
+back end entity. It could leverage
+multiple ts. So multiple pet infra it
+could be FG it could be D it could be
+any sort of like homorphic encryption
+algorithms any any sort of like pet
+infra which you want to enable compute
+we can do that it's modular enough
+>> yeah I mean we started with FHE and then
+move towards right now we are experiment
+or basically building with TE's the
+co-processor is operating on that model
+that it calculates the encrypted
+computation takes place inside the TE's
+and it was it can be like changed in
+future as well. How hard is it to rent T
+environments compared to a cloud
+provider? I mean at at scale I don't
+know if you've hit scale yet, but is
+that a challenge like a an H100 or is
+that easy?
+>> No, the thing is that like the
+underlying encryption algorithm we are
+right now using like with this is
+efficient enough like they have been
+like already used in lots of production
+environment. So that's not a major
+challenge for us. And with with regards
+to like T's availability, there have
+been like lots of new hardware
+development H100 A like lots of lots of
+new GPU firmware and system softwares
+have been like built around like with T
+supports. So with regards to T support
+things are scaling on that that
+direction. So that like for us
+horizontal scaling is not an issue. I
+>> I'm curious to check out the transaction
+that you just did the swap transaction
+and you know what do we see on
+>> I can see see send you my wallet
+address. Just try to see it. That's your
+wallet address.
+>> Yeah, this was the one which I executed.
+>> So this transaction happened a day ago.
+So is one of these the deposit
+transactions? Let's say this one.
+>> This is the withdraw one. I withdraw
+like some assets yesterday. I guess
+that's the that's the one
+>> from a user's perspective, right? There
+is no place for me to go and you know
+actually verify this transaction that
+happened. And right now I'm looking at
+the app, right? So what and also these
+are I'm assuming the mints that you
+have. These are your own wrapped
+versions. So technically anyone could
+anyone could take a USDC and create a
+wrapped version of that USD of that USDC
+doesn't really need I mean it doesn't
+need need circle as an authority it
+doesn't need the signature right so I'm
+kind of curious how you are thinking
+about establishing trust in whatever
+you're doing for all for all you know
+this entire thing is blackbox right so
+it you can you could be taking USDC and
+you know minting some minting something
+else, right? So, how are you how are you
+thinking about verifiability? So like
+British like answering the first
+question with regards to how I can like
+being a sort of like the user of this
+protocol how can I make sure that I have
+the access to those particular
+transaction whose the transaction which
+I initiate like from my wallet right so
+to tackle that like we have a certain
+ACL contracts deployed uh we are still
+sort of like working on making it bit
+more robust but sort of like a version
+one of those contracts have been
+deployed which which makes sure that
+whatever cipher text which is being
+generated by your wallet. You should be
+having access to those cipher texts
+because alone having these cipher text
+onchain won't help going to help us to
+build a sort of like a fully secure
+protocol because at certain time like
+any user could just reuse those cipher
+text could reuse those hash and maybe
+make some like malicious or faulty
+transaction. We need to have some form
+of access control that this particular
+hashes or this particular cipher text
+which have been generated during this
+particular duration or by this
+particular wallet should only be
+accessible in terms of like viewing
+those cipher texts and in terms of
+actually computing on top of those
+cipher text via certain addresses. So
+that's like one of the protocol which we
+have deployed we call it we call it ACL
+contracts and that also helps us with
+post transaction checks because now what
+we can do is we could have like certain
+auditor entities for example let's say
+the way we have built this Jupyter
+protocol now every hash which is being
+generated in this Jupyter protocol now
+we could have like certain auditor
+entity who has like access to all these
+hashes now this particular auditor
+entity might like in future if like c
+certain malicious things happen in into
+our protocol this particular ACL could
+help us prove that we we were the we
+were the on party like we weren't this
+particular users weren't involved in
+this particular trade activities or
+malicious activities.
+>> Yeah. The second one was around the the
+mint. For example, USDC has a very
+specific mint address and the authority
+for that is circle, right? You can they
+are the only one because the the token
+contract will ensure that they are the
+only ones that are ever allowed to mint
+it. But then when you are creating an
+encrypted version, it's it would be a
+new mint, right? So how do you how can
+anyone interacting with this token
+understand that the your encrypted
+version is actually the canonical and
+it's not something else.
+>> The thing is that these programs or
+these smart contracts will be public. So
+most of the people who like it will be a
+normal contract which is deployed on
+chain and people can see that this is
+the contract that USDC or basically
+encrypted USDC mints encrypted USDC and
+if they are like we'll be making it
+official obviously in the website that
+this is the contract that is that mints
+official encrypted USDC and you should
+be interacting with this only obviously
+it's not a standard that everybody will
+be accepting encrypted USDC on day one
+but this is something which will be used
+by our application. So this is very
+similar to shielded assets which is
+being used by when you use zero
+knowledge groups the shielded assets you
+also have a particular asset type which
+basically that application uses. So you
+can take an example of rail gun it's
+very pretty similar to that that asset
+is only having validity or usage with
+that with that application environment.
+The application doesn't assume or
+basically say or even demands that other
+application applications should be
+accepting this. If anybody wants they
+can use this they can integrate it. They
+should be using this contract address to
+make sure that everything is verifiable
+and only assets issued from here or this
+contract address should be used by them.
+So that can be done but at when we start
+like we have to make those contracts by
+ourself or those programs by ourself
+which basically makes onetoone relation
+from every asset to every encrypted
+asset and obviously like when every
+transfer there will be a proof
+verification or an attest attestation
+verification which makes sure that every
+transfer of asset or every like every
+transfer is just an addition and a
+subtraction right so that is done
+properly that is done through proofs and
+attestation.
+>> When when you say proofs, what type of
+proof?
+>> Attestation. Basically, the attestations
+right now
+>> just just a subset of the cipher text
+validity proof and the range proof
+>> that whatever value the user is sending
+as a cipher text to us is it's not
+malicious and we verify that yeah this
+is the hash or basically this is the
+cipher text corresponding to the
+original message and there is no
+collusion in the process of calculating
+this cipher text.
+>> Have you built something similar on
+other chain as well? Is this like your
+first implementation or is this
+implementation done on other chains?
+This is the first Solana implementation.
+>> We have been there in the EVM space for
+a long time. So we have deployed some
+versions on arbitra and base and world
+chain. The offchain entity, the
+verifiable co-processor remains the
+same. The only thing that changes are
+onchain contracts and the primitives
+that are being used in the execution
+environment. The off-chain entity is
+pretty agnostic of the execution
+environment over here. Obviously like we
+are focusing on one right now. Obviously
+we'll be expanding vertically going deep
+inside it but it's pretty agnostic of
+the execution environment.
+>> You guys want to colossium what's your
+plan after this?
+>> Hopefully we will be expanding more on
+getting users right now. We are focusing
+a lot on the GTM right now to get as
+many users as possible. So if anybody is
+watching and wants privacy please get in
+touch. We really think that we can solve
+your problems and like the like
+personally I have been talking to a lot
+of users and I really have come to a
+conclusion that yeah these are the
+personas that are required privacy what
+are these personas trying to have what
+kind of applications what kind of
+features these each person needs that
+they will be benefited and so and trying
+to implement them inside incipher so
+right now getting users and getting more
+feedback from them will help us improve
+because it's in private beta So the
+target is not to have bigger volumes
+right now. Obviously bigger volumes is
+are good. Obviously they are good but
+with feedback we'll improve and then
+when we go public mainet that will
+basically make sure that we get to the
+you know we get the we will get PMF or
+not that will be decided. How do you
+hire? Are you hiring right now? And what
+do you look for in a candidate
+specifically a developer?
+>> So like an important where in very
+non-negotiable capability which
+capability of let's say it's sort of
+like the motivation which I look for is
+like does this problem statement excites
+you and are you ready to break the
+barriers which we are currently facing.
+If if if your answer sort of like
+convinces me and if I get excited after
+hearing your your answers then you are
+hired. That's that's only two things I
+sort of like look for into a candidate.
+>> Yeah. Obviously there are technical
+questions that we make sure that we give
+you one problem that you are able to
+solve or basically help us understand
+the codebase or anything that we are
+trying so we try to make sure that
+anything that we are trying to work on
+right now and if it is very generic we
+try to make sure that you are able to
+explain this or help us in that and I
+also make sure that for technical or
+non-technical roles we give them some
+timeline that let's work for this
+timeline let's see that how you fit in
+the culture because hiring is one of the
+biggest things in the early stage
+startups you basically need to hire
+those people you keep for a long time
+and especially the core team and like
+things get very tough sometimes like we
+I still know where we we have been
+through and there are some times where
+you don't know specifically what you are
+going to do like you don't have any idea
+what you are building you don't know
+what you will be building or basically
+whether you will be building or not but
+you need to give you need to be
+optimistic and the people need to trust
+you as a founder that yeah this guy will
+figure out something I just need to give
+him some time and at that time the
+biggest thing is that you are not even
+getting paid properly. So you know that
+in web 3 everyone is making you know a
+lot of money but you know that I am not.
+That is the thing that's important to me
+that right now whatever you are getting
+paid I will make sure that you are rich
+afterwards. So just trust me on that.
+>> Are you guys actively hiring for any
+roles? Yes, for dev roles we are hiring
+one I think one opening is there but I
+think Nanchu can expand on that but it's
+for a position where we want to have
+like a very experienced person who can
+basically help us in you know
+productionizing many things regarding
+the cryptographic infrastructure that we
+are having or the system design and
+everything
+>> like we are mostly looking for all
+rounder protocol engineer who can help
+us scale our infrastructure get things
+audited build sort of like a proper
+deployment pipelines so that like with
+huge loads we won't or only for our own
+bottleneck. So like that's sort of like
+the highest requirement we have right
+now.
+>> Got it. That sounds great.
+>> We are towards the end of the podcast.
+Can you tell us why privacy is
+important? Like
+>> it is something which I want to use.
+That's the shortest answer.
+>> Yeah. And for me like privacy is
+freedom.
+>> I really want to use I mean this has
+been the from day one like I really want
+to use D5 the way I want to play trades.
+I don't want to reveal many things. So
+I'm a very secretive person basically. I
+have like faced a couple of crypto
+attacks like based on my like based on
+my public financing which is their
+onchain. So that's why like I'm building
+the solution for myself. I want to keep
+those private.
+>> Thank you so much for joining us Natan
+Shu and Tisham. And now once again
+congratulations on winning the coliseum
+hackathon. Super excited for all the
+cool cryptographic things that you guys
+are building.
+>> Thank you. Thank you so much guys. Thank
+you so much for having us. This was
+great.
+>> Thank you. I will go with

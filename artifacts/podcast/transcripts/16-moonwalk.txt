@@ -1,0 +1,766 @@
+Transcript:
+all right let me set the context for
+today's video today we have soul from
+moonwalk moonwalk is a walk to earn
+crypto application where you get
+rewarded with crypto based on the number
+of steps that you're taking in a day how
+do you go from running a non- crypto
+agency into the web3 world SW has also
+been super active in the Ven and Bon
+coin ecosystem so we'll understand his
+journey over there as well as always we
+have a $1,000 Bounty the Bounty is for a
+accountability as a service application
+a mobile application where you can come
+pool in money with your friends let's
+say $300 each and have a goal by the end
+of it let's say 500 steps a day the
+people who hit the goal get their money
+back and the people who don't they get
+the money from the other participants so
+it's like a battle application where you
+battle for accountability accountability
+could be in terms of the number of steps
+that you're taking the number of
+push-ups that you're doing a specific
+the number of hours that you're coding
+and in the end The Winner Takes It All
+Linked In the description is a detailed
+requirement dock for the application I
+hope to see a few of you on the Bounty
+and with that let's get into the part
+how do you prevent people from like
+gaming the metrics we have definitely
+people arriving to is there anything
+specifically very challenging um in
+building something like this or is this
+more of a we two Challenge and a smart
+contract on
+top well the uh smart contract is very
+simple it's essentially escrow um but it
+is challenging because you mentioned
+like you're working on you see a lot of
+analytics data also you're training your
+own model St like you know it's such a
+buzzword right now we're um
+um Ai and everything how do you build
+the mindset within your team especially
+the engineering team it's I one would
+imag imagine that it's not easy to put
+your heart and soul into building this
+that entire feature it's a a spiritual
+[Music]
+experience hello hello hello everyone
+welcome to the One D podcast with SW SW
+so is currently the CTO of moonwalk he
+has worked on so several of the most
+impactful projects in solo from Bon to
+venco to Goin it's so great to have you
+here SW oh great to be here awesome to
+be here I love that there's a room for
+for us for us devs you know the the
+people behind the
+curtain y it's good to be here thank you
+love to know your background world seems
+like you've worked on a lot of things
+starting off from you know Bon which is
+one of the biggest be points today so
+what's your story there what happened
+how did you move to V then we would love
+to know about
+that yeah oh absolutely so you know I um
+I started doing um design and
+programming the left brain right brain
+at the same time oneman shop uh as a
+hobby uh you know I was just very
+interested in software technology um web
+apps web applications the hobby ended up
+becoming um an agency uh in the United
+States and ended up uh with very large
+customers like uh you know customers
+that you Fortune 500 customers and
+employees and became start I started a
+corporation um and have uh provided
+consultation to very uh famous companies
+and also nonprofit
+organizations and then um web 3 came
+around and I was like what
+this you know cuz I was already like a a
+a a a Trader by Hobby just you know U
+getting into Finance uh and also getting
+into art because uh art is f so so the
+first for me the F uh first wave was the
+nft world um so I was like oh wow this
+is Art it's finance and it's
+cryptography and programming like this
+is amazing so um I took a risk I I I
+took my company to web 3 I said you know
+what this is cool let's go over here no
+customers no
+nothing and started working on um uh
+various NFD projects like uh s cyber
+Samurai and qux and uh you know bunch of
+things that people will call rug
+whatever but they weren't rug they're
+just
+we tried um and then uh you know one
+thing led to another and I ended up uh
+doing some consultation with the with
+the Bon team and that led to uh an idea
+of it's like hey how do we um how do we
+give back to the world how we how do we
+do something that's really interesting
+that's not just like a defi project
+where you where you arrive and you you
+trade and you short or you go long or
+like I mean those are cool too I do
+those also but but how do we do
+something that like my neighbor could
+use that's on web 3 or even my mom and
+how do we improve the the world and
+people's mental health and your phys
+physique so that's where we came up with
+moonwalk uh moonwalk Fitness so we're we
+were like okay let's do this we need to
+give back like huge success with boncoin
+fantastic but like what are we going to
+do with that um and so uh through with
+Bon's help and um and lots of devs lots
+of Dev work and we'll get into that um
+we created uh moonwalk Fitness which is
+a fitness app built on top of
+Solana uh it's a it's a game where you
+get your friends together and uh you all
+deposit if you do your steps you get
+your money back at the end of the game
+um which already is pretty cool because
+that's like accountability to yourself
+like I'm going to do my fitness and I'll
+get my deposit back at the end if some
+of your friends don't do the the goal
+for any given day there's a deduction
+and the winners of the game split the
+deduction so like there's actually a
+little there's a profit to it um profit
+aspect and that was like already really
+interesting it's like wait a minute we
+just created yield without anything
+weird without any like Ponzi economics
+tokenomics without inflation nomics with
+we with with without paying for it as an
+entity like this literally is a smart
+contract there's there's no centralized
+Authority paying people the the friends
+are paying each other I was like well
+this is amazing like uh I mean it's
+already marketed and and it's really to
+to really help people and their Fitness
+and stay accountable to their goals uh
+but then there's also a profit aspect to
+it and uh and it's just like when I came
+to nfts I was like oh wow art
+Finance programming perfect now it's
+Fitness you know uh
+Finance motivation mental health all
+that and and so yeah moonwalk we
+launched this thing we put it on
+salana um it's it's doing it's doing
+great uh we have huge goals for it we're
+very early we just launched our app we
+already have 108,000 users um and it's
+pretty cool because the Third most
+requested country to our servers is
+India and I imagine that in India
+there's quite a few people that want
+Fitness finance and who walk a lot uh
+maybe not in the middle of uh summer but
+but you know you know walking can be
+done also on a treadmill too but uh
+anyways um you know that that's kind of
+like my story and how I got to to
+moonwalk I'm also because I'm um also
+the uh CEO of a of an agency that's
+still running I'm also uh uh running
+other projects as well and a an lead
+tech adviser for another really cool
+project called golfin which is also
+built on salana and it's taken the game
+of golf and it's adding rewards and uh
+this will come out in April uh we're
+doing some fun things for the when coin
+we're building a AI uh agent which is
+basically all of meta right now
+um and AI is super fun it's just like
+where is this going to go it's it's it's
+awesome and um you know close to my
+heart is boncoin um that's you know
+that's I I'm involved on the dev side
+for many things there's lots of devs for
+Bon like I'm not the dev for Bon I'm
+just one of the
+contributors um yes there you go I'm
+rambling that's like kind of like the
+history where we are today and lots of
+um uh topics there that I'm happy to go
+deeper
+into yeah I mean before we dive in I
+really have to thank you for Bon I think
+it came it came in a time when you know
+when it the entire salana ecosystem were
+were going through the worst kind of
+thing possible post FDX it it came as a
+you know breath of fresh sh and the
+morale boost for a lot of the devs I was
+also one of the devs who received them
+received it though I paper handed it
+though I paper handed it like you know
+oh fairly soon but yeah this is
+something I you know my wife always
+keeps telling me about you you literally
+just paper handed a house well you think
+about it you actually did the smart
+thing because most of the time that's
+the right thing to
+do but yeah you never
+know well yeah oh go ahead yeah go see
+yeah so speaking speaking of moonwalk
+right uh it's kind of fascinating what
+the what the maturity has been from the
+last cycle to this last cycle we saw you
+know play to earn with taxi and then
+from play to earn we came into this
+place where you know you can now do step
+walk to earn with stepen and so on and
+now now it's actually you know you kind
+of got to do the actual it you actually
+have to not just game this but actually
+take care of your fit Fitness right so I
+imagine uh how do you prevent people
+from like gaming the metrics for example
+let's say you want to get like 30,000
+steps like how do you actually know that
+you know these 30,000 steps came
+from our actual steps or you know they
+just put it on a bike or something yeah
+yeah no cheaters yeah so um we have uh
+we have definitely people arriving to
+farm because they think you know oh
+bankk um uh and they're also receiving
+funding from
+binance oh what let's get our rewards so
+they're you know they're setting up
+multip accounts and we see all the data
+don't they understand we see the
+data it's it's going to be hard for them
+in the long run to outsmart a Dev team
+that sees everything like so um in the
+very beginning we just actually let it
+run because uh we're training our our
+models to to understand uh to for the
+det
+detection um and you you know a little
+bit of Word of Mouth right now can't
+hurt we're just trying to build up build
+it up and if people are telling their
+friends oh something's coming you should
+do this get go get a device or whatever
+like a little bit of that buzz is okay
+as long as we're monitoring it and we
+don't let it affect the Optics of the
+game and the rewards at the end and so
+people are getting flagged I mean it's
+people are boasting about cheating on
+Twitter and they're posting it and and
+like wondering why they're they're
+flagged like two seconds later like I
+don't know um it's just going to be
+there it's going to be like X percentage
+of people are trying to take advantage
+especially in the you know dgen world
+it's just part of this culture um our
+goal is really to make it like you know
+95%
+pure yeah inter you mentioned like
+you're working on you see a lot of
+analytics data also you're training your
+own models right like if that is
+something that you if you would like to
+talk about we could just go a little bit
+deeper into it uh yeah so I mean right
+um you know it's such a buzz word right
+now word um um Ai and everything at the
+very beginning you're just trying to
+gather the the inputs you know and um
+before AI is just one big switch
+statement right you don't need AI for
+that you could dump all the data into um
+you know a postris database and do it
+the old way but what we're looking at is
+you know how do we use some of these
+open- Source models to um come up with
+the answer for us without a very large
+switch statement and um yeah and you
+know it's all in exper irental phase um
+we're really excited about uh the open
+source projects that are out there
+obviously Eliza is very interesting um
+it gives developers like us very easy
+access with typescript to training the
+models and um and then the plugins and
+the you know the ways that you know it's
+it's I feel like uh Eliza OS is uh
+really the uh the future connection for
+web 3 salana and not just Solana um to
+to get involved with with the you know
+all the new technology that's coming out
+um until you know in in uh you know like
+how are we exactly using it in Moonwalk
+right now it's R&D we're just as long as
+we can record that that's it I mean I
+don't know if you've probably train
+tried to work with models yourselves if
+you give like 20 inputs to your model I
+mean you you have garbage like it it's
+AI doesn't know how to invent content
+you can only create content or Answers
+by context and the more contexts like if
+you train it uh 20 things 200 things
+2,000 things okay now we're talking
+about something so it's like a dog can
+bark but if you want it to do tricks
+like you you need to train it right um
+and so that you mean that's it and
+that's um like this this year is
+obviously or this last year this or this
+part of the year um before uh uh you
+know presidential memes is is AI meta
+right
+so we're as devs you have to pay
+attention to that um you know um I have
+I have some friends uh who you know that
+are here in the same city that I live in
+that um are behind the Griffin project
+and and so like we're all just talking
+and you know just exploring and um you
+know sharing uh a little bit of info
+with each other and in and trying to
+expand this see where it can go
+right very cool um so for U something
+like moonwalk um I'm assuming it's not a
+lot of like considering you've run an
+agency it's not a lot of challenges like
+it's probably one smart contract um that
+everyone's hitting and you know other
+than that it's a mobile application and
+a web application Shake left I don't
+know what happened there um but uh is
+there anything specifically very
+challenging um in building something
+like this or is this more of a web two
+Challenge and a smart contract on
+top well the uh smart contract is very
+simple it's essentially escro um but it
+is challenging because
+we're uh we feel like we're doing
+something that hasn't been done we're
+trying to give an adapt to your mom so
+your mom doesn't know what a token
+account is doesn't know what gas is
+doesn't know what failed transactions
+are doesn't know uh any of these things
+and um you know I feel like the water
+has gotten warmer and warmer and we've
+all gotten used to all sorts of friction
+and crap but you can't really uh you
+can't really put a a mainstream through
+so this is the challenge of moonwalk
+getting your mom to use a
+Dap um got it yeah so does
+that go ahead yeah on that note I I saw
+that you guys launch your mobile app
+like I I was able to try out the
+moonwalk app and it test
+fly so first of all great experience uh
+how do you speaking about taking these
+applications especially you know
+something like a fitness tracker it's
+extremely mainstream everybody works and
+everybody would want to be healthy right
+so how do you how do you make decisions
+around prod experiences or how do you
+prioritize what feature to you know to
+ship out
+because when you're building a normal
+consumer product you have like a clear
+path laid out for you a clear set of uh
+questions for you to ask so I'm curious
+to understand from you know since you're
+not not only with moonwalk but also with
+C like it's like very broad-based
+consumer experiences right so how do you
+think
+about product development in these
+contexts especially making it
+mainstream well uh it's inspired by web
+to for sure like you know building
+products and
+features is it's it's the old it's the
+old story uh but it's different because
+there's some
+trailblazing like you know we feel like
+we are uh trying to push the boundary of
+what's possible for um for Consumer apps
+uh it our goal is that the salana
+blockchain is just behind the scenes you
+don't even know that it's there like
+it's it's just the tech and and then you
+have a very fluid experience um inside
+the app and it feels like any app uh
+that you would expect uh that and so
+that means all of the features are
+regular web 2 Concepts and reg regular
+product development and then it's like
+up for the dev team you know to like go
+ah like how do we make this work um you
+know and and you have to you can't think
+of it like what's the possibility of
+Solana and then build a product you got
+to go the other
+way how do we get people to move their
+ass every day
+and you know and what inspires them to
+to get that achievement badge or I mean
+you know that that's it like we we need
+to look to the people before us who've
+done very good jobs like dualingo and
+straa and I mean that's where we're
+going people say oh is this like
+steeping I'm
+like uh yeah you you're competing you're
+you know there's crypto element but like
+no this we we want you to compare it to
+a web two app not to a web 3 app so I
+mean that's the challenge but it's also
+um it's also uh you know speaks to to
+that like what how do we go about our
+features um we have people in our team
+that aren't web 3 devs that are are uh
+brainstorming features that's that's the
+trick right like like we we are going to
+think of it different they're going to
+be like oh no we can only have certain
+amount of instructions per transaction
+and uh you know we're going to like
+approach it totally different like you
+just welcome someone to the room that is
+like just pure web 2 and and you you
+know that's where you that's how you
+approach
+this W that's actually great in great
+Insight I'm curious to like understand
+it for you know as you constructed your
+team M what what what is this like a
+core guiding principle for you that is
+like the problem statement is the main
+thing and everybody comes on or in
+service of that yeah yeah uh so yeah we
+we have a small team we have
+um um marvus who's uh he's not a a Dev
+um you know and he's on the team he's an
+idea guy like you know he's and that's
+what we want we want him to remain
+objective you know we want him to to
+visualize um where this could go uh we
+also have Caitlyn she's engaging with
+real people all the time and can uh get
+the feedback from the from the users and
+and that's it like as smart as we think
+we are no like the customer is right
+like you know um you can't waterfall
+your way into uh a a success you have to
+Sprint your way to success and so um I
+you know that's the cheesy thing and
+people do Agile and all this stuff but
+it really works like we we can only see
+two weeks at a
+time we and and so we throw it all into
+Sprints and we're adapting and changing
+as we go and it's it's not how you start
+it's how you adapt right right like the
+very first Instagram was not even called
+Instagram it was called Bourbon and it
+had like 10 features and photo filters
+was like buried down it was like one
+feature and then they look at the data
+and they're like oh this is what
+everyone's using how much time did it
+take their devs to make the nine other
+features it was probably their highest
+priority they scrapped it and just went
+with the most popular feature um you
+know Tik Tok was musically musically was
+a pretty complicated big huge thing way
+more than uh what Tik Tok ended up so I
+can't tell you what Moonwalks going to
+look like in six months we're not
+waterfalling here we are uh we're we're
+going to adapt and build as we go and uh
+and and you just have to never be
+satisfied like uh you mentioned you're
+on test flight like test flight are
+happening every day we're releasing test
+flights every single day and uh you know
+and that's you just never satisfied
+always make it better you you're fixing
+bugs you're adding features you're
+trying to break it you're trying to
+remain cynical you're trying to remain
+objective and um and and know that you
+haven't earned anything just keep going
+keep going like you might pivot you
+might pivot one day like wait a minute
+you know let's do this instead like
+stuff like that can happen for
+sure makes
+sense yeah I I
+think it's I have one more followup
+question to that I think this is like so
+true for building consumer apps
+especially you know I would probably put
+it like largely consumer somewhere in
+the category of consumer social right
+like you need millions and millions of
+user lot of da use if you don't so the
+the journey towards that is like you
+know paved with a ton of abandoned
+features or you know ton of engineering
+work that gets
+shelled so I'm curious to hear about
+like how do
+you one how do you build the mindset
+within your team especially the
+engineering team it's not I one would
+imagine imagine that it's not easy to to
+put your heart and soul into building
+that that entire feature because you're
+there you're also working on a crunch
+time right you want to get this feature
+out as quickly as possible so that you
+you would test it so
+um for especially the reason I'm asking
+this question is for especially for
+younger Engineers who want to work at
+like hyperscale
+startups uh how should they think about
+you know putting so much am of effort
+into building a fature that might so
+happen you know that might just get
+shelled yeah I mean it's you it's it's a
+a spiritual experience like it's like
+impermanence like impermanence is real
+you just you put your best effort you
+build you make magic but you you know
+what like just look at just look at how
+often you have to upgrade your your
+laptops and your phones like the the
+cables don't even work from X years ago
+like all these tech companies are just
+like oh my God we just spent all this
+money on USB and now it's USBC and
+like you have to break it and make it
+better all the time and I mean that's I
+every single day you it's different like
+um I I don't know what challenges are
+going to happen today every day is like
+technology is changing every single
+day and and you you can't you can't ever
+you're never content in in development
+and
+programming and um you know developers
+out there are attracted to programming
+because they're like oh I can make money
+doing programming but you have to
+realize like you have to love problem
+solving for the problem solving part of
+it
+right you're not putting trophies on
+your wall you every single day is a new
+problem like why does my npm not build
+uh I wasn't expecting that today like
+why is why are the um uh transactions on
+Solana not Landing today wasn't
+expecting that uh you know every day is
+is
+unknown every moment is unknown
+that makes sense um yeah I agree I think
+as a developer 90% of my code hasn't
+really touched production ever um so
+it's like part of being a developer is
+you know knowing your code will get
+migrated um depreciated or you know
+never reach praud um I'm I'm interested
+to know you mentioned you're building a
+very web to experience um so that my
+mother can use it U so are they expected
+to have a phantom wallet or are you guys
+doing private Key Management on your
+side yeah so uh we we're trying to if
+we're trying to mirror
+like I can't I don't think I can look at
+Tik Tok today but maybe you can but if
+you go to the login page you'll see
+continue
+with they just have all the login
+options and so that was our approach to
+um instead of forcing someone to uh to
+Phantom or to phone number or email or
+we just try to have as many as possible
+possible and um so the way we've divided
+it is internal wallets versus external
+wallets external wallets are Phantom
+Soul flare backpack and the tip link
+wallet which is connected to a Google
+account um the internal wallets are um
+email phone and uh Apple ID and and and
+Google and they're using uh privy yeah
+so we don't manage the uh which is great
+privy is just fantastic they already
+made a huge um U name for themselves in
+the eth world uh they came over to
+salana just last year moonwalk was uh
+one of the first beta testers of this of
+the salano product and um you know of
+course uh privy
+is they're they were behind friendtech
+so they have a very good reputation and
+um and it's uh honestly really easy for
+a Dev to connect to it you just it's
+there's
+a um fantastic SDK and um and it just
+works out of the box um which is rare
+these days you know web 3 development is
+it's so new that there's like bugs
+there's like like a lot of a lot of
+platforms you can connect with you can
+just tell that it doesn't have that web
+to polish right like imagine connecting
+to stripe you would be surprised if
+there was a bug right right it feels
+professional in web three it's like
+anything is possible like you know and
+um and when we tried uh privy it was it
+was actually a kind of like a strip like
+experience yeah
+very cool yeah that makes sense I think
+every team we've talked to who are doing
+wallet as a service are using preview or
+web3 or one of these underhood so yeah
+and there's other fantastic companies
+we're using privy um you know the cool
+thing about moonwalk is you don't have
+to be loyal to your wallet um you know
+we can add additional options onto our
+list got it that's awesome I think em
+wallers are one of those critical you
+know kind of these friction layers if
+they did not exist you can't really make
+it easy for you know people like my mom
+to use use the app I think they're
+they're really good on prev a great
+product
+yeah so when we started moonwalk privy
+wasn't on
+Solana and we tested some other products
+that were really good they were like 80%
+there but you can tell they were still
+working on it as
+well but we're you know that's this goes
+back to our previous conversation we
+want an app that works for your mom the
+dev team is going uh but it doesn't
+exist well it does now right
+like yeah so that's awesome yeah I'm
+going to go I'm going to go get my mom
+to use one work now going to put it on
+our
+phone let's
+go okay uh Switching gears like we are
+almost towards the end we are entering
+the end stage of our wow podcast
+uh so one thing that I would love to uh
+are you hiring for any roles there close
+to I I think they're close to 500k
+subscribers are going to be watching
+this so a lot of
+devs you know if you're hiring for any
+roles we could put it out
+there I mean we're always looking for
+talent I'm always looking for talent I
+run an agency software agency as well um
+and consult on many projects um I'm very
+easy to find you know uh I'm SW soul on
+telegram I'm SW soul on Twitter follow
+me DM me um you know I'm not actively
+looking for a specific role I just love
+to build relationships um with people
+and and and and if it's not for me it's
+like you know it's expanding our Network
+you know um this is an amazing
+opportunity and for devs out there like
+if you want to be a Toy Story toy on a
+shelf next to all a million other toys
+that all say I do react I do react I do
+go ahead but if you get into web 3
+you're you're going to be the special
+toy that everybody wants and uh because
+this is an emerging it's emerging
+industry it's uh still the ground floor
+it's still so much upside um you know it
+you know this this the world this is the
+future right now and so uh this is the
+time to make all your
+contacts um you know reach out to me
+I'll be one of your
+contacts but uh don't stop there you
+know talk to people don't be shy uh
+that's how you're going to get your next
+role in some really cool
+project that's great I think that's a
+great note to end the podcast on um it
+was very nice talking to you Soul um if
+you don't mind thank you do you mind
+jamming for us a bit I don't think me
+and Shake play at all but if you have a
+minute oh yeah yeah we are happy to keep
+our guitar in the scen for
+one why why all have guitars near their
+[Music]
+Des yeah just uh you gota you got to
+have a guitar you got to do you have to
+do Hobbies like we're programming all
+the time and we're chasing after those
+problems remember we said that like it's
+very addictive it's like okay next
+problem next problem next problem what
+it's 8:00 at night oh wait one more
+problem to solve one more problem wait
+wait wait wait you gotta like enjoy life
+too like you gotta play guitar you got
+to go for a walk you got to get your
+exercise whatever makes you happy
+right what a great
+note that's awesome thank you so much
+for joining us so we could post one with
+the guitar for the
+thumbnail
+okay oh hey wait wait yeah well this is
+for the yeah all right wa same position
+all right let's go
+lfg
+lfg
+lfg all right thank you all right take
+care
+awesome all right enjoy thank you
+appreciate y'all all right I'm out SW
+soul out thank you so much SW bye

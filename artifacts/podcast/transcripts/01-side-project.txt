@@ -1,0 +1,454 @@
+Transcript:
+Hi everyone and welcome to a new pod. In
+this pod we have CLA. Claire recently
+made a project called eBPF linker that
+became very viral on Twitter. If you
+want to know more about how ebpf works
+compiler engineering um if you want to
+understand slightly more low-level stuff
+specific to Solana in this case but
+generally I think this is more Linux
+stuff than Solana stuff then this mod is
+for you. With that let's get into it.
+When I started uh studying CS when I was
+in the CS program, compilers give me a
+shortcut to learn things. When you work
+with compilers, you need to get involved
+with two things at different side of
+spectrum.
+>> Anyone wants to get involved in the
+contribute to SPF flinker project or you
+know uh even work bring some of their
+compiler skills to Salano. What what are
+some places that they can contribute to?
+So that's also another reason why I
+enjoy working on compilers. I kind of
+use this as a core skill to to explore
+many different technology. My first
+compiler gig was at uh a quantum
+computing lab working on a compiler for
+a quantum computing language to compile
+it to CASM quantum assembly.
+>> Our program can programmers like create
+sana programs using any language. Now
+hello everyone welcome to another
+episode of the one day devs podcast.
+Today we have with us Claire from Blue
+Shift. Claire is also the creator of SBP
+of Flinker Project which went extremely
+vital on Twitter and also on GitHub a
+couple of weeks ago and we are very very
+excited to have you on the show today
+CLA. Welcome to the show.
+>> Yeah, thanks for having me. I'm happy to
+be here. This is my first ever podcast.
+>> So this is kind of our podcast edition.
+And we ask this question to every guest
+who comes on the show. So what what's
+your what what's your background like?
+What pulled you into crypto?
+>> Right. Yeah. So uh I've worked on
+compilers for a couple of years and
+around like last year I got interesting
+in crypto in or in blockchain. Um I
+realized you can you know run things on
+blockchain as if you run things on a
+computer and that idea of decentralized
+digital system um really attracted me. I
+just curious about how things work and
+so I started looking into uh you know
+fun things to do in crypto. I had a
+full-time job at the time so I just um
+looking for like a side gig and then
+since I work on compilers I really want
+like continue the path. So I was like
+specifically looking for um like a
+compiler work um in crypto and I guess
+for some weird magical reason I met
+Dean. Dean is like one of the first
+people I met in the space. Um, and so
+how we met was was kind of interesting
+cuz I'm originally from Taiwan and then
+he moved to Taiwan like two three years
+ago. And so I uh I moved to two years
+like a couple of years ago but I still
+go back every year to you know spend
+time with family. And so while I was in
+Taiwan like uh last December visiting my
+family, I was just asking around friends
+um who I know who have been crypto or
+like still in crypto know any startup or
+like team has might have a project for
+me to do. And so I actually first met um
+uh the CTO of Zeus uh another company
+that Dean co-ounded. So I talked to
+their CTO Jim first. I was like, "Hey,
+I've got a compiler background and I'm
+looking for, you know, something
+interesting to do." And he was like,
+"Yeah, I might know a guy for you." And
+then so a week or two later, I I met
+Dean at um Zeus office in Taipei. And
+then so uh since I work on compilers, so
+we like naturally started talking about
+about compilers. And so he was like,
+"Yeah, Sona compiler isn't very good."
+And I actually didn't buy what he said
+at the first place because it's like you
+know I work on compilers I I know what
+it's capable of but modern compilers are
+like can run sophisticated analysis and
+then to can do crazy things and also
+like some compiler use LVMS back end
+right so then it's like the most popular
+compiler framework out out there so
+there are many things you can leverage
+so it could just be like you know you
+can probably tweak it in the way you on
+to do things that you wanted to do. So,
+so yeah. So, I was just like, you know,
+trying things out um and to like see uh
+to see like, you know, just poke poke
+things around and then cuz everything
+was new to me like uh I didn't even know
+no rust and so I was just uh following
+the documentation on Salana to see like
+how to how to develop a simple hello
+world program. And so I just follow the
+steps. Download the platform tools um
+and then try to compile it. Got it
+compiled. Great. Try to deploy it. Cool.
+And then so everything seems working
+fine. So then I just um the most like
+straightforward way to see to like
+evaluate the compiler is just to look at
+the generated code to see you know if
+there's any pattern can be improved if
+there's any sketchy things. And so I um
+I used another tool developed by Dean
+ECBPF to disassemble the program. I was
+like boom, 1700 lines of code. And I was
+like what is going on? Why does like why
+does a simple hello world need so many
+lines of code to execute? And then he
+was like yeah now you know that you know
+what I mean by the compiler is bad. So
+yeah things kind of like started from
+there. he started sharing his um idea of
+building a assembler without any
+dependency on the tool chain and then I
+was like hey I like this is essentially
+a simpler compiler like I I know how to
+make this I know how to make it happen.
+So then yeah I just went on um working
+on the assembler and then so yeah that
+becomes my like first crypto gig.
+>> Awesome. So kind of backtracking a
+little bit right for a lot of our
+audience are you know majorly people who
+have been working at the quote unquote
+application side or you know somewhat m
+and some folks are on the back end. So
+uh it it's very rare that most of the
+audience get to hear from someone who
+has a background in compilers right. So
+it it would be really you know it would
+be really awesome if you could talk
+about you know what what does it mean to
+be a compiler engineer or what were the
+type of projects that you were working
+on when you were working on compilers
+>> right um so I actually didn't start
+coding until like very late I uh until I
+was 20 something I didn't major
+engineering in college and so when I uh
+when I started uh studying CS when I was
+in the CS program. I feel like compilers
+give me a shortcut to learn things
+because it's like when you work on work
+with compilers you need to get involved
+with two things at different side of
+spectrum like at one end you need to
+learn uh study algorithm data structures
+to learn how to design an IR
+intermediate representation we use in
+the compiler and then to you know uh
+write analysis write optimization pass
+but then the other end you need to work
+with hardware it's like you you can't
+avoid working with hardware when you
+work on compilers so I feel like when
+you have these two pillars you know
+there isn't really anything you can't
+self-taught and then so that's also
+another reason why I work why I enjoy
+working on compilers I kind of use this
+as a core skill to to explore many
+different technology so uh my first
+compiler gig was at uh quantum computing
+lab working on a compiler
+uh uh for a quantum computing language
+to compile it to CASM quantum assembly
+and then uh I landed a job at the uh a
+company called math works and so I've
+been doing uh for past around like five
+six years I've been doing uh FPJ
+optimizations for um a compiler
+targeting HDL and then now I'm now I'm
+in crypto Awesome.
+So comp compilers are especially useful
+when you when you you know you're
+targeting a very specific ISA or you
+know a very specific set of uh hardware
+right so now what what was it that
+Solana was doing differently why why was
+having SPF SPF linker such a big deal
+>> right so um Salana use um BPF Um and but
+then how we are using it is we created
+you know forks for BPF uh for SPF and
+then we also create a fork for the
+compiler for the LVM and so yeah we just
+like sort of create all these forks and
+doing our own thing. So for for
+developers they need to like download
+our own platform tools and then to use a
+different command to compile code and
+but then and then also like there are um
+like we use LVM so there are many like
+LVM tools out there but then since we're
+also doing our own thing so we can't
+like leverage those tools for example
+like the LVM object dump doesn't work on
+Salana programs So it all relies on the
+fork uh maintained by by our own people.
+Um but then EPF also has evolved a lot.
+So um but then we're also not getting
+those improvements because it takes time
+to like pull those changes in. Um but
+then it's actually like not that hard to
+work from eBPF. If you look at the Jed
+code from SPF for EBPF, you would be
+surprised like how simple how like yeah
+how simple the EPF program is.
+>> Interesting. I mean if I may interject
+uh the I'm curious why why was there a
+need to first fork LVM fork RC C and
+also
+fork RBPF and maintain it separately.
+Right? So what what what were what was
+happening here that you know these
+things couldn't be upstream?
+>> Yeah. Um that's a good question and uh
+that's a a question I have as well. I
+think that's just sort of a design
+choice uh when they when they created
+Salana.
+So I don't yeah to be honest like I
+don't know much like historical
+background there.
+>> Got it. So if I unders if I understand
+correctly so you know B eBPF and SPF are
+not so divergent that it doesn't
+necessarily need to be separate folks
+but then there's actually a path for
+them to be one one streamlined thing and
+that's where the linker works. it could
+take the EVPF and then link it to SPF's
+uh instructions and
+is is that is is that right? I mean
+>> um sort of but um yeah I think like one
+reason is that EPF is for for kernel
+work and then the kernel like verify is
+very strict
+>> but then SPF has like a many um is like
+from the constraint side is is very uh
+it's kind of different from eBPF. So for
+example like um the uh you can have you
+can loop too much uh in eBPF but then in
+SPF is kind of like a metered by uh by
+CU and also like the stack size
+constraint is different. SBPF has
+definitely like the largest stack size
+but then uh lows are like configurable
+in the compilers actually and so yeah
+there are things like we know there are
+few things from upstream ePF that's not
+um that's not doing as good as SPF for
+example um ebpf doesn't uh allow
+misalignment memory and so it does
+everything bite by bite and And then in
+SPF that's kind of like uh modified to
+allow misalignment. Um so yeah that's
+but then that's one thing that we're
+we're working on like we know there are
+a few things that's not uh working as
+good as SPF but then we know how to get
+there like we know we know how to
+address those issues.
+>> So now now how does SPF work? So it's
+like a separate so I mean when when I
+install platform tools so for most
+Salana developers would be familiar that
+you know when they start on Salana they
+install along with installing the local
+test validator they also install the
+platform tools which contains its own
+there is a rusty fork and this is the
+primary reason why you know whenever you
+try to there is a new update to Russ and
+then that's not been ported into the
+fork and so you start encountering very
+very weird errors and also at the same
+time if your dependencies are not uh to
+you know was compiled with the right
+trust C then you again encounter
+you know specific problems right that's
+why and to a point where people you know
+keep passing around specific you know
+cargo lock files just so that the thing
+works so essentially Because now that we
+have this linker, all of that goes away
+and you could just simply work with any
+Rust installation. How does it I also
+one thing that I keep hearing is that
+like uh when people talk about um SP I
+mean this coding without platform tools
+why does it need to be no standard?
+Currently, EPF is the tier two uh sorry
+is a tier three EPF is a tier three
+target for Rust and then that is because
+um it still takes some more work to do
+to support um core lip and we're kind of
+working on that but then at the moment
+um it has to be uh no standard because
+um it there are things in core library
+that um that ebpf doesn't support right
+now. So for example like functions with
+uh more than five arguments um it can't
+like because like the the stack size or
+the register is pretty constraint so you
+can't like you have to put things in the
+stack in order to pass the function
+around. Uh that's one thing and then
+and then yeah there are some other
+things that I can't think of right now.
+Yeah, but that's kind of the the the
+status of things
+>> in terms of the rusty fork. It can work
+with core lib because it is the
+compilation for that to you know spf
+target is supported. What happens to the
+the linker project from here? Now is
+does it mean that now that this is
+possible the
+now programmers have a new way to
+develop Solana smart contracts
+technically any LLVM front end is now
+you know can become you can create
+Solana programs with any language that
+has an LLVM uh back end. Yeah. Yeah. So,
+so I I mean also I've been seeing
+people, you know, create like very
+interesting uh versions of that. There
+is a zig lana and then someone created
+in fact a cobalt lana. So
+what what does it really mean now? Can
+are are program can programmers like
+create sana programs using any language
+now?
+>> Um right. So how SPF linker works is uh
+the first step is called BPF linker
+written by Alessandro and then he added
+that when he added the uh BPF target to
+Rust and so um so essentially uh so how
+BPF linker works is it takes um bit code
+LVM bit code as input and then link it
+to an object file and then uh our linker
+takes the object file uh and then like
+sort repackage it into a bode format
+that u SBM understand and um yeah since
+um it takes LVM bit code as input. So
+then ideally uh theoretically any
+language with LVM back end or if like
+any language that you can transpile with
+LVM um can like be compatible can like
+use this workflow to compile to object
+file and then relink it to to a bode
+format that SBF uh SVM understands.
+>> Got this. You you mentioned BPF linker
+right like so so as I understand there
+are two linkers. one is a BPF linker and
+the other one is the SPF linker right so
+what what do these two and you know it's
+like how do what does the compilation
+workflow look like and how do they line
+up for example let's say I take a
+language like you know typescript or go
+and someone creates a program in you
+know wants to create a program in this
+language what how is how Can a developer
+like go from that to uh you know SPF
+executable?
+So the if you do just do a cargo uh
+nightly build on the BPF target uh not
+for like Salana it uh it use BPF linker
+to link it to object file and so that's
+like what you get and uh our SBF linker
+is a wrapper around BPF linker and um a
+linker I wrote or like I built on top of
+um assembler I added for SPF
+Um
+so then like the like the first project
+I mentioned um earlier um it's actually
+like very similar thing the as assembler
+and the linker uh the core part is an a
+and abstract syntax tree of the program
+and then like it knows how to like you
+know resolve labels to do dynamic
+relocations for sys calls that's how SVM
+uh does sys calls and um so yeah it's
+just that the assembler is parsing a
+string file and then parse it to a st
+but then the linker is uh parsing from a
+object file which is a bite array but
+then both like after parsing they go
+through the exactly the same workflow.
+Um so yeah that's basically how it does
+uh the the linker takes um the object
+file parse it and then repackage it into
+into a salana program.
+>> How how does some for example if anyone
+wants to get involved in the contribute
+to SPF linker project or you know uh
+even work bring some of their compiler
+skills to to Solano. what what are some
+places that they can contribute to?
+>> Yeah. So, if there's still a lot of
+interesting compiler things, you know,
+find me on Twitter, find Blue Shift on
+Twitter. Um there there are some work to
+some more work to be done. Um as I
+mentioned, uh Alessandro plan to make
+BPF a tier 2 target for Rust. So, when
+that happens, just cargo build instead
+of cargo nightly build. Uh but then,
+yeah, there are some more work to to to
+get it there. And so yeah, find me on
+Twitter and like we'll find you stuff to
+do. And um the SPF linker is open source
+from day one. And so um and like
+actually we've we've seen like with all
+the XYZ Lana project we've seen you know
+people just to try it out and um to do
+crazy experiments and so yeah um look
+into our GitHub and then see like if you
+can you can learn anything from there or
+like reach out to us and then we'll find
+you stuff to do.
+>> Awesome. Thank you so much for joining
+us CLA. This has been fantastic and I'm
+pretty sure our audience learned
+something very new compared to what they
+are typically used to. So, thank you so
+much for joining us.
+>> Okay, great. Thank you.

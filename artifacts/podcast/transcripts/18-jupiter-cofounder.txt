@@ -1,0 +1,1420 @@
+Transcript:
+all right let me set the context for the
+video in this video we have seong song
+is the co-founder and CTO at Jupiter
+Jupiter is one of the biggest teex
+aggregators in the world probably the
+biggest one right now um they're
+primarily on Solana they let people swap
+assets from one asset to another for
+example if you want to convert your
+Solana to usdc or vice versa and you
+want to do all of this on chain you use
+Jupiter for it in some form or fashion
+even if you're swapping via a wallet
+like Phantom or backpack under the hood
+your requests get routed via Jupiter um
+they have built this very solid pmf of
+price Discovery where they're sitting on
+top of a bunch of dexes metora is a DEX
+Orca is a DEX they find the best prices
+for a specific asset on that Dex and let
+you swap of course they take a fee in
+the middle how big are they exactly U
+well in the last 24 hours I'm seeing
+this right in front of my screen they
+did around 1.8 billion in volumes that
+means $1.8 billion were swapped on their
+platform or via apis on Jupiter U and if
+you take like a humble cut for them I
+think the number is around
+0.05% that you know amounts to a lot of
+money if I'm doing the math right I know
+somewhere between half a mil to a mil uh
+in the last 24 hours uh so it's a great
+product to build as long as the chain
+gets a lot of volumes and if you're the
+biggest Dex aggregator or even a DEX on
+that chain um you know it's a good time
+to be alive in these markets in the spot
+we'll go through their Journey how did
+they start Jupiter what did the initial
+version of Jupiter look like highly
+technical uh what what are the
+challenges that they faced what does
+Jupiter V6 look like and how is it
+different from the very first versions
+of Jupiter we're also opening two
+bounties the first one is to build a
+payment Gateway on top of Solana um and
+the way you're going to integrate
+Jupiter here is payment Gateway needs to
+allow any token as an input that means
+if you want to sell a t-shirt people
+should be able to pay you in let's say
+Trump coin and you need to immediately
+convert the Trump coin to usdc um if
+you're ever creating a payment Gateway u
+a t-shirt seller would want to get paid
+in usdc but it's not necessary that the
+other party has USC uh whoever is buying
+the T-shirt so it builds like a clean
+way for someone to pay via a trump token
+or Solana and the merchant to get paid
+bya usdc that's the first one there are
+a bunch of technical challenges here
+specifically deposits and withdrawals
+are generally very hard if someone is
+paying you figuring out which Merchant
+they're trying to pay in the end hitting
+the web hook of the merchant and letting
+the merchant know that the successful
+transaction has been done that's a
+little challenging and of course the
+Second Challenge here is making sure as
+soon as the money hits you um you're
+able to convert almost immediately to
+usdc if you don't do that and there's a
+very big price impact if the price of
+the Trump token drops by a lot then you
+won't be able to pay your end merchants
+in usdc the second problem statement is
+a slightly more sophisticated trading
+tool on top of Jupiter I think Jupiter
+already has a bunch of these things but
+for now the platform needs to support uh
+limit orders that means you can place
+not just an immediate order to buy
+Solana but you can place a limit order
+that says I want to buy Solana as soon
+as it drops to let's say $150 and
+slightly more sophisticated tools like
+taking profit and stop losses so a user
+should be able to come to your platform
+lock in some usdc let's say 150 usdc and
+they should be able to put certain
+conditions that I want to buy Solana as
+soon as it hits 150 usdc and I want to
+sell it as soon as it reaches 200 and I
+also want to stop my loss in case it
+drops below $125 so this would involve a
+bunch of smart contracts where you need
+to lock the user tokens um talking to
+oracles to get price Discovery and you
+know understand what the price of salana
+is at a certain point and making sure
+the transactions actually happen um
+whenever the price targets are hit
+you'll find a link in the description to
+both of these mounties I would urge you
+to try them out and make a submission
+the total price pool of these mounties
+is around $800 with that context let's
+get into the Pod how do you make these
+product decisions on what should get
+built right and also like what does the
+typical SPL the software development
+cycle look like so back then the
+building process is very different like
+we were trying to be more conservative
+because of the you were Run Fly iio and
+you of course sign out of compute so you
+moved to AWS where the bills were really
+high now you're running you know at 100K
+month bill that's all that you're
+burning on compute for the execution lb
+I mean and if you think about this 100K
+a month we are serving almost 20,000
+requests per second 20 to
+30,000 that's very cool the code is not
+open source how does that work
+everything that we do on the how you
+guys tackle that problem and what were
+some of the obstacles you face along the
+way as and like you mentioned since you
+guys were not with me to RBS yeah I mean
+it's actually very good questions right
+if you think about it the very first
+jupter AG dator is a very simple
+contract um I think we are on version
+six right now of the contract then we
+realize like okay like it works pretty
+well
+[Music]
+but cool let me set the context a little
+bit so we're doing this podcast series
+with a bunch of technical folks so like
+usually CTO of companies
+trying to understand you know the
+engineering principles how did they
+build what they build what were the
+technical challenges in building you
+know a product like this I think Jupiter
+is probably a great example of you know
+highly technical product so we'll take
+that in that direction hello hello
+welcome to another episode of only T
+podcast today we have with us song from
+Jupiter Jupiter is one of the most
+widely used applications on
+Solana I think to an extent why it's
+probably
+a fast statement to St that Jupiter is
+the homepage of salana like Google is
+the homepage of the
+internet so
+welcome welcome to inviting
+me great I think to kick things off U it
+would be great if you could give us a
+high level overview of what all Jupiter
+offers at the moment I think everyone
+knows the swap aggregator but are there
+other products that jupter is actively
+working on yes so uh so so at the
+beginning I think has been slightly more
+than four years right now you launch as
+a swoft aggregator they're aggregating
+all the amm and you know different a
+books on on salana then after that we
+have based on the sof product we launch
+on you know limit order DCA VA so all
+these are the products that built around
+the swap product we also have a future
+product the Perpetual product as well
+which is a very different than uh you
+know the aggregator it's uh it's also
+very different than a typical order book
+based future so the way it works is that
+you have the lp there you know the lp
+the glp S like giving the liquidity for
+the traders to trade on then I cow fees
+to the the the the what we call the JP
+pool um yeah then now we also have the
+mobile app as well you know yeah uh and
+obviously a pro um another product for
+you know the people who are in the
+trenches to to trade fast and you know
+at the at the speed that they want
+yeah just just jumping right into it
+right like there is like literally quite
+almost a dozen different products that
+are that are in you know in the buffet
+options that Jupiter has to an extent
+where you know Jupiter is Def super
+right so I'm curious to I'm really
+curious to understand how you guys
+approach building products like how do
+you make these product decisions on what
+should get built
+right and also like what does the
+typical SP the software development
+cycle look
+like um the team is much bigger right
+now I think a year ago when the token R
+life we have about 15 people so back
+then the building process is very
+different right you know like we just
+based on like we were trying to be more
+conservative because of the you know
+like you know be bare Market all these
+different like you know things like back
+then most of the times being spend all
+like okay like how do we conserve uh you
+know like resources instead of like
+spending like you know doubling out on
+like products so most of the time it's
+just like you know like look at products
+that we think will be helpful in the
+salana ecosystem and things that we
+think can do better um but obviously
+bare markets can be helpful as well
+because a lot less noise in the market
+people can can be more focused on
+Building Products so I would say like
+over the year like especially 20 2023
+you know like after FTX went down late
+22 the whole year of 2023 is just
+basically a very small team you know
+heads down Building Product um During
+the period That's when you know most of
+the products came out from U you know
+the future product theature GP po um um
+like the a DCA you know uh va8 and uh
+limit order so all those product came
+out around the time um and if you if you
+look at how we do it right it's like DCA
+va8 and uh you know limit all
+it's a technically it's not very
+complicated product you know just like
+um it's whatever we build on top of the
+the swap aggregator because we can help
+you define the you know the the best the
+best the best price to execute on um
+then you using that routing engine we
+basically build limit order you know DCA
+ba so those efforts are very like you
+know I wouldn't say like very high like
+high efforts but mostly a low efforts
+but we can see pretty high reward from
+that
+but obviously like uh at the time like
+we also feel like there's no good future
+perfecture product on on Solana that's
+why we decided to spend more time
+building that product I would say most
+of the
+2023 um you know most products are built
+with like just one or two people and
+like you know based on the resources
+that we have like just like you know
+like Just Launch fast and move fast yeah
+uh obviously now sorry yeah yeah yeah
+please continue please continue yeah so
+now now you know like then 2024 happened
+right you know it's like mean token then
+now ai tokens like all these different
+things um I was just uh sharing like
+earlier this afternoon in the sector we
+we went from uh seeing like you know
+like maybe less than less than new 10
+new tokens a day to like now what 5 to
+10,000 new tokens a day right it's a
+very different scale and very different
+uh thing right now along the way our
+team has to scale with the with the
+demand that we are getting um we also
+see our user base from like what like 50
+I mean I was just looking at the number
+of jupy that's coming out we we have to
+reward 10x more users right now compared
+like basically like the first juper was
+users that have been using Jupiter for
+what 3 years before the token was live
+and this juper is basically like you
+know the one whole last year of uh
+activities and it's 10x more users right
+like 10x more user than the three years
+before combined so you can look at the
+scale not just Solana I mean not just
+Jupiter right Solana in general right um
+um like obviously the team need to grow
+together with it as well we have to be
+more careful on everything last time if
+things go down you know people we can
+really tolerate but now it's like we
+have a lot more users like we have to be
+engineering have to be more responsible
+on like you know what to ship and be
+careful of what to ship as well because
+like even small change that we make
+might you know you know might AFF even
+though it might be like 10 users or 20
+like 100 users but they might complain
+that because the way you think about
+this like okay like 100 users are not
+using it like [ __ ] it we can just close
+it like turn it off but there's always
+one person who is using it like one good
+example is like we ear off a w so
+swapping uh like two weeks ago but
+immediately we have to turn it on
+because uh you know like even though
+it's a user it's a feature that like 90
+I would say like 99% of user are not
+using it but that 1% of user would be
+like okay like do like why you turn it
+on like like this is the only thing I
+use here right um which is very uncommon
+for typical user course not many people
+use W so to trade and keep it in W so
+without unwrapping it right um so that's
+one example then uh obviously product
+now can get more complex so something
+like a proo can launch because if you
+look at a pro it's not just a simple
+product you have like you know using
+swap to swap tokens obviously um but you
+need the data on the graph you know you
+need like uh all the holders data you
+you need to show like you know potential
+people rugging then we have to rebuild
+the whole real time chart on the UI as
+well like it's a it's a more much more
+complex product uh but luckily we we you
+know we have the help from two teams
+that report soana FM and also coin HW
+they help us to build the product yes
+yeah well it's it's like I I think you
+can significantly see that in terms of
+the maturity of the prodct and also like
+the maturity of the Deep kind of like
+goes hand in hand right so for there are
+like a lot of developers who are you
+know would be tuning into this podcast
+so it would be interesting from their
+perspective to hear about what do you
+look for when you onboard new members
+into your team like what are the
+qualities that are extremely important
+to you as you know with the culture of
+the Jupiter and like you know or rather
+what it takes to be successful at
+Jupiter um
+I'll say like in the early days it's
+like you know like like we have a bunch
+of like product Engineers like people
+who just can build product fast but now
+at this stage we're actually looking at
+both frag now you know people can build
+product fast at the same time people can
+scale product fast as well and they
+really can like you know come in and fix
+problems like uh you know like as a as a
+you know like like really expert at the
+problem we
+solving I would love to live a little
+bit deeper into this what is the exact
+textt when you say product engineer uh
+that's joining the team so product
+Engineers means uh you know we don't
+have product managers most products
+driven by the engineer so the way we do
+it is that like you know if you're
+product Engineers means like you really
+understand you you're obviously you're
+not just the user of the product
+yourself you have to know okay this is
+something that you know like Mak sense
+and you know I like C like I really want
+to see this product um to be in the
+market then you will build it up for
+yourself and also for the people that
+you think will be useful that's how
+limit order DCA or came out from it's
+basically like okay ourg has been doing
+this like you know limit order with
+their own script like using jupyter API
+he was like okay let let's just put it
+on the website you know so that other
+people can use the same script doing the
+same thing as well right so that's one I
+would say that's one type of like what I
+mean by product Engineers it might not
+be the best as like you know just doing
+Contracting but they understand
+everything from the you know end user
+all the way to like contract dual bam
+right so they can do everything um same
+thing for our routing engine our routing
+engine was like you know multiple
+version as well the first version was
+like everything on the front L we craw
+the whole J I mean we call our PC get
+all the data across back then maybe 100
+pools or 200 pools everything can happen
+like quite easily on the front end um
+then we pull the data we find you the
+best route but obviously from the
+JavaScript front end then we have to
+move it to the R back end even for the
+rust backend right not I would say like
+for the original team none of us are
+native Russ Engineers right um but now
+like you know we at this stage that like
+when I say really deep expert what I
+mean is like you know you might not even
+know Sana Contra you might not even know
+like you know JavaScript front end you
+might not even know like you know what
+user like use the product for but you
+can go into the like the back end to
+really optimize
+the whole back end to be much faster
+because you spend like years of you have
+years of experience on like tuning like
+a really like you know High skill like
+high performance uh routing AG
+yeah got
+it so I'm I'm curious to to go like you
+mentioned right like for example you
+were doing in the initial days you would
+just meet Cary call directly from the
+frontend to get the Agate the routes and
+present it to the user and going from
+that to an API like like system where
+you have your own R back in that
+probably also meets that you have to run
+a fairly large infrastructure where as
+the number of tokens keep growing the
+number of liquidity pools keep going
+it's like a the data pipeline that you
+need to have to index all of these
+events a as you know as and then these
+events
+happen could I mean it's like a
+tremendous amount of and that's a
+tremendous ining task right would love
+to hear more about like how you guys
+tackled that problem and what were some
+of the obstacles you face along the way
+as like you mentioned since you guys
+were not with NATO R books yeah I mean
+it's actually very good questions right
+if you think about it like like our our
+our our face of like growing the product
+right you know like U the very first
+duper aggregator is a very simple
+country um
+I think we are on version six right now
+of the contracts uh but the very first
+one just like contract is one thing
+Finance one or the front end or we call
+the routing engine is that L the very
+first version is like okay you come to
+the Jupiter website we actually call our
+PC of all the pools that you have um U
+you know for example if you try to route
+from you know like you sold to usdc
+right then we basically look at all the
+pools that support So in usdc download
+the download the data that we want and
+calculate it on the go for you all on
+the all on the UI on JavaScript and like
+nothing even on the back end they
+realize it's like okay like it works
+pretty well but you know a lot of time
+the data is duplicated all these things
+like you know like front end you have to
+do with like some some you know sometime
+the you call a PC too frequent then the
+user get banned like IP get restricted
+rate limited all these different things
+right that we move the JavaScript uh fin
+C to backend to start serving in from uh
+from the backend um like you know like
+someone called a like some basically is
+calling API instead of like everything
+is being on the front end so that Sol
+the like problem a little bit you know
+it's always like this the latency slowly
+go up okay now we need to fix some
+problem may go down again then you know
+like more pools more rout more whatever
+then theyy start going up again so then
+from the JavaScript back end uh serving
+with API then realize that okay like
+it's uh it's hitting a bottom neck right
+now so suddenly all JavaScript Engineers
+become a rust Engineers so we all have
+to learn how to build a rust service
+from that um you know um like you has to
+like start doing like a like at the at
+the at the very first version of the
+rust engine is actually quite dumb as we
+just we have a we we just keep pulling
+the you know the the state because there
+still not many pools and we just you
+know it's just a tight Loop but you you
+know how many pools that we have to call
+uh I think it was like 200 something
+pool so for us to refresh a pool take
+like you know almost less than a second
+uh is basically how fast the sonana slot
+is being so we don't have to worry about
+that problem at all so you know we don't
+have to worry about Ste problem data is
+being steal whatever so we can just keep
+doing a t and keep refreshing the data
+um just keep doing it then every C come
+in so that we can save the RPC call to
+all this RPC because we have a local
+catch on the on the on the on the server
+um but good thing is that we are using
+service like fly. IO we could uh have
+the same instances around the world so
+we have I think at one point we have
+like 14 locations or serving out our our
+our request right um it was scaling
+quite well until like one day um we
+realized that like okay there are two
+many pools right now a tight Loop takes
+a dou like you know more than a second
+so we might miss lock and data might get
+steal right so that's not great so we
+have to turn this whole thing into a
+real time update directly from the
+validator so when data change we
+immediately update the m m po right so
+there's another engineering change as
+well um it told us a while about we got
+that then now we have this real time
+engine that you know data is coming in
+like we can swim up real time update
+into the pool into the pool in the
+memory then code be directly Cote from
+that okay then you know you thought the
+problem is solved like you don't have to
+start woring about problem then okay 5.
+iio we are scaring so fast that they ran
+out of machines for us they were like
+okay like in certain regions like for
+example uh Singapore even some Europe
+regions that they have just like oh okay
+like because we're serving so many
+requests right now we need uh you know
+20 Eng they're like okay we only have uh
+at the biggest instance we only have
+like five there's no more instances that
+we can give you yeah okay [ __ ] like now
+we need to start thinking about like how
+to do this right then we have to start
+moving a lot of our infra into AWS U
+even on AWS right at one point was
+scaling so fast that AWS don't have the
+machine for us as well they were like
+okay like this region we run off the
+biggest instance then we have to start
+realizing like we have to start thinking
+like okay um maybe the problem is uh you
+know we are spending too much money on
+like getting expensive uh CPU you know U
+machines that we could just get uh
+someone could really look into the code
+and optimize for the CPU um then we have
+this guy like you know really came in I
+think it's like two weeks of like cut
+all M shift from like a you know like a
+I think it's like
+192 uh X machines on awx into like
+something that like we can run with like
+32 CPU machines that was amazing like
+you know this guy like basically save
+our bill by 75% a month but just come in
+and just do do we were paying like
+almost like half a million in AWS bill
+every month then this guy came in like
+cut a bill to like 100,000 I said okay
+how much you know how much car you want
+like
+give I know you just to make sure that
+like all this happening but yeah bring
+guy who came in like your talk keep like
+he doesn't even know Sana how Sana works
+and I just came in I look at the Cod
+okay like I think this is not right you
+know this GM could be optimized um yeah
+but for him it's like I think it took
+him one like two two two weeks to one
+month basically fix everything um you
+know our bill went from like half a
+million to like 100,000 a month yeah and
+like now we can use a smaller machine as
+well then like you know ads as small
+machine for the for for the smaller
+instances compared to like large
+instances um yeah so with that um yeah
+basically multiple iterations but the
+team still remain pretty small um five
+like we say like five to six like four
+to five people right now um and this guy
+is not even working on it anymore it's
+just like basically went in I look at
+the like unoptimized code fix it now he
+move on onto other projects he working
+on other things right now yeah and it's
+just like like it doesn't even know it's
+I don't care I just want to like fix
+interesting problem like yeah it's
+amazing um to see how like you know like
+people talk about DX engineer this is
+the the the guy that been talking about
+right yeah yeah are there any like hard
+problems that you're dealing with now
+that could be like you know an open
+invitation that we could put out to the
+listeners of this
+podcast um I would say like you know he
+was engine right now like can be I think
+you know there are poppy places that can
+be optimized and you we just need people
+to go in to really see you know what are
+the place that like you know even
+algorithm wise even like you know like
+CU sometime it's just not no no longer
+just algorithm problem right like for
+others um you know best price is not
+just the best price anymore because um
+best price can come with different many
+different factors you know like I can
+find it the best price but if you're
+late at executing it then the my best
+price might disappear so for someone who
+are on on the website right you know you
+can see the best price but usually it
+can be on a shallow pool if someone swap
+the best price away from you then your
+next s will be like you know you will
+hit the cage will be a very awful
+experience so now it's actually more
+like a multifactors u problem right now
+because best price is just one factor
+then we have to make sure that you know
+it's a deep liquidity pool that's one
+factor need to make sure that you know
+SE page is not being set cool high
+obviously you can set like 20% SE page
+but you might get sandwich by the the
+nvv right so we have to optimize the s p
+as well then at the same time we have to
+optimize priority fees because you know
+like if the chain is not like hot right
+now why would you pay like you know high
+priority fees
+so that's I now it's I would say that's
+why I I wouldn't say we are offering the
+best price because now the problem can
+be more complicated than what it is
+right now I would just say that we offer
+the
+best possible executing price out there
+yeah which means uh not just the best
+like sometime can be the best price
+sometime you know it will be it might
+not be the best at the current moment
+but we make sure that you know you can
+let you can a stock and you don't have
+to worry about saage you don't have to
+worry about
+too higher fees you don't have to worry
+about M yeah got it this is super
+interesting um so to summarize the
+journey uh you started off with a
+completely client side implementation
+hitting a lot of rpcs run into a bunch
+of problems so you move to a JavaScript
+pend where all these things moved to a
+back end you would do that and then
+JavaScript became a bottleneck so you
+moved to rust um once you did that you
+were on fly IO and you of course ran out
+of compute so you moved to AWS where the
+bills were really high and eventually
+someone came optimized it and now you're
+running you know at 100K a month bill
+that's all that you're burning on
+compute for the execution layer yeah I
+mean and if you think about this 100K a
+month we are serving almost 20,000
+requests per second 20 to 30,000
+requests per second yeah that's very
+cool and so if I understand this
+correctly you're saying the core system
+of Jupiter that's aggregating the swaps
+is a web to system deployed on ews yeah
+oh very interesting I don't know why I
+assumed that you know you're doing onsan
+like you have an onsean contract that's
+figing out no no so every so to find the
+route is all of chain but to executing
+the route is on chain yeah got it of
+course that makes sense um very cool and
+is this engine open source uh no the Ed
+is not open source yeah even the
+contract is not open
+source got
+it so if someone wants to you know get
+involved in J as Shake mentioned like uh
+what is the problem that you're you're
+currently facing the motivation behind
+that was is can someone from the
+community come and you know solve
+something for you that could be you know
+some extra function that you need in the
+salana v three.js or some the rust TDK U
+any any problem that you know someone
+comes for example 500k to 100K bill is a
+great problem that someone came and solv
+yeah is there something similar that's
+open source that people you know from
+the community can work on I I don't know
+so far um I mean I feel like the
+documentation alone is like you know
+it's uh is is something that a lot of
+people can
+yeah uh you know it really help to
+improve like how we can do the stuff you
+know obviously a lot of people say that
+like oh I think your thing is not OP
+Source you know like how can like we
+have all the finding code like the the
+client code is all open source that you
+know people can come in contribute but
+at the same time it's like you know like
+engineer these days are very interesting
+as well like you know I'm not even sure
+that engineer say Okay um I check gbt
+but it doesn't really tell me how to do
+it like how can I do it but that's like
+okay um like how can one to help you if
+if you don't even know like you know the
+basic stuff right like I think I mean to
+be honest I think CH is helpful but for
+sure it make you more productive but the
+same time if you just real on me it's
+like like like they don't documentation
+anymore they just like okay like I try
+to continue it doesn't tell me this so I
+guess like but I be here asking you the
+question right now I say okay
+fine that's bad uh and I feel like a lot
+of times uh you know uh performance one
+thing right obviously like I I feel like
+um you know if you put it out someone
+might contribute to it but in the end of
+the day it's like I'm not sure how many
+people W because I do believe that
+unless there's certain incentive it's
+very hard for people to do it unless you
+know like people used to show off or you
+know like I will contribute to my SQ to
+make my SQ fast right but at the same
+time it's like I feel like routing
+engine and crypto is very different
+because the the incentive is not about
+bragging right anymore the incentive is
+all about how you can make money if I if
+you open source the engine right then
+they will probably optimize it and just
+for them to use like they don't want to
+give the alpha to any people because
+it's so fast that you can immedately get
+profit from it like why should I share
+the the work with other people but last
+time on like last time on my SQ you know
+like postgress or anything like there's
+no obvious way to to make money from it
+the only way you can make money from it
+is like you contribute to it then you
+get a job offer from like some big
+company you ask you keep booking on it
+right and they were they're willing to
+pay you like you know couple hundred, a
+month because you're so good at the the
+the one librarian they they they depend
+on right like now just like okay like I
+have a routing engine right now I build
+it up I open source it they can come in
+like you know optimize it and uh you
+know get a lot of gain from it without
+even sharing
+it that
+love so one thing on on the topic right
+one thing that I'm curious on is that
+that is
+chup Dow right so that is a token that's
+like it's working towards decentralizing
+Jupiter it's a f a protocol so now with
+how is that how does that work in in the
+sense that for example the the code is
+CL the code is not open source like
+there's one specific team that has like
+right access to the these Vos and then
+there is like to that is you know about
+decentralizing the protocol right so H
+how do
+you how do you think about this or how
+do you uh
+approach I was say I say I say is very
+different right you know like like you
+know like there's no like there's no
+word that like you know we can just call
+it a doubt then we all just leave the
+job and not care about it like just say
+that everything's open source and like
+we don't run the AWS we don't run
+everything right like I would think
+about it as like you know we are we are
+the you know we SC the engine we still
+you know manage the whole thing um the
+Dow B he own the tokens they can do
+whatever with the token obviously
+everything incentive is being driven by
+you know like or everything they be do
+on the activities are you know they
+drive to the the token
+yeah
+awesome so slightly going back to the
+previous integration but but to answer
+your questions like uh we we want to
+open source up
+some of the stuff as like for example
+our ifq contracts open source oh it just
+that certain things that we don't think
+that we should open source and you know
+if the doubt decided to like okay let's
+open source this we don't mind open
+source it but I pretty sure people
+understand like these are the things
+that if you open source like you know it
+will actually drive the the economical
+value down more than what it is today
+yeah yeah it's fair I also follow the
+argument so one one thing that curious
+curious about is like uh when moving for
+example you mentioned there were only a
+finite number of liquidity pools to deal
+with and then from there it went there
+were many more there were many point
+right and also there are newer and newer
+protocols that keep getting launched
+every day so how do you make sure that
+they
+also you know integrated into your
+system because when you execute this
+cont there is for example especially
+when there is no ideal that is no type
+by Cod or whatever so we do we do share
+some like uh idea of like how they can
+integrate like we have like a sample
+code out that you know like we do it we
+opens up the radio integration we open
+source out the um you know like Oka V
+pool Integrations there are a lot of
+different example you can look at and we
+would also wrote like a simple example
+for people to take a look at as well um
+but most of the time right it's just
+uh like we are very behind like to be
+honest even even we open source listing
+up right we still very behind on
+implementations but some sometimes you
+look at it right the problem is not just
+us because we look at the code right
+like this new protocol like you know
+they are writing contract they don't
+really use check like you know it's like
+okay obvious overflow problem is right
+there in the contracts is like okay like
+you know like like do you really not
+care about this thing and you want us to
+put this code into our library so that
+like this whole thing would just crash
+like you know we have to sometime we
+just have to like but obviously we can
+just say like okay this this part of the
+code one overflow is fine but like it's
+very hard for us to tell them then they
+they have like then we have to give like
+black statements like yo like just you
+check math everywhere right you know I
+think it's unfair but at the same time
+it's like you know it's like I feel like
+it's a way to just save everyone time
+instead of you like arguing me okay this
+this part won't overlow then then I I
+find one part that's overflow that's oh
+s like you know like like I will fix
+this part then I was like am I going to
+be the guy who just Ral every part of
+your code and like you know like tell
+you like what is happening what is like
+the problem and like every single thing
+right then and also the user probably
+doesn't know where it came from right
+they're just going to blame you or
+something yeah exactly exactly we are we
+are the one who to all the reputation
+race like you know they still care like
+what this new whatever X amm like you
+know like is routing my too right and we
+have to make sure that like and we also
+have to make sure that like whatever
+code they say is quoting the number is
+actually matching the exact number that
+we can thr on right if I if I start
+integrating amm say Okay always tell me
+a better code but when the price execute
+it's always a worst code then it's like
+okay something is wrong here right so is
+it like because the code that you Cote
+me like give me is wrong or like you
+modify contract like you know
+differently yeah like a lot of people
+blame us like yo like you guys are very
+St and the great thing but like they
+don't really understand like what is the
+problem what is the you know like thing
+as well then uh we also have people come
+to us is like yo like you know if you
+don't integrate us we would doubt it was
+like like do you see the problem there
+like you know like like what is like
+like like should I even integrate a Alm
+that would die soon or like then
+basically like us putting this in the
+thing then you might rock as well you
+know all these different problems right
+then it's like you just become a very
+problem then they start beding and like
+yo like but if you don't integr we will
+die you know we are like whatever like
+we just two Engineers like you know like
+living on Ramen whatever like if you
+don't do this like you know we will like
+we won't be getting any tractions like
+we won't be like making any money I was
+like I'm pretty sure you don't know like
+how swap B you need to get a lot more
+volume to actually make money and stuff
+like that at the same time like it's not
+very convincing to tell me that like you
+know you might just shut it down next
+month like you know because you don't
+get more want is
+right like like how can we even help at
+this point right
+yeah how how was like I curious to hear
+about pump's impact on the scale that
+jup sees like PRP to pump you probably
+had like very very fewer number of
+tokens launching per de along you know
+Along Comes pump that just send it
+vertically every USD is like you know
+probably 10 thousands of tokens that are
+getting launched right so there are also
+means that like New Pools New token pass
+to for you to
+track so um I mean yeah we we we have
+real time tractor on all the pumps U but
+before that we we would just before that
+we have an engine that just make sure
+that the pool hit certainity then we
+only this it but before this like you
+know pan came along like the alpha is
+very different people want to trade the
+put right at the can't launch so we have
+to modify the engine to make sure that
+you know okay uh we have to monitor
+whatever contract is on pump fund if
+there's a new pool we immediately L it
+yeah even listing it right we have to
+but before that we treat every single
+amm as like every single pool as like a
+One requirement whether you get listed
+or you don't get listed now we have
+multiple requirement you know if you P
+fund token like is it's being listed but
+we don't do a lot optimization on it
+when I say that it means uh you know you
+can only do but and let's say you can do
+simple you know pump fund to like some
+high liquidity so USBC route so that you
+can buy pump fund with f but we don't do
+like you know it's because it's the new
+pan pan to we put it to all the routing
+well it doesn't really make sense right
+even
+though like it will just slow the
+routing engine now because it's
+basically a single pool on P fun maybe
+with the pool bet and all this thing
+right like but is like two pools that
+doesn't really make sense to even route
+through or like being aggregated as part
+of the as part of the routing entry but
+it makes sense for you to buy P fund
+with usdc because you know any P fund
+token usdc because you know like it's
+support so only like but I do want to
+use usdc to buy any token that's on P
+fun right now so we do aggregation like
+that but we don't put it into the C
+aggregation of everything yeah so now we
+have like different like we call
+different group type based on what kind
+of tokens they are or what kind of pool
+they have yeah awesome at what point was
+but this also go back to the same
+problem that we talk about right this
+has everything to do with like sorry I
+cut you off a little bit but like let me
+continue on the part yeah yeah yeah
+absolutely so this also go back to the
+thing where like we can always find you
+the best price but can you can this best
+price being executed on train or not is
+a problem right um yeah so these are the
+things that we have to do with because
+you know High liquidity pull OB
+obviously a lot safer to trade like like
+you know even normal like let's say lstd
+right you like jup so to zto so but some
+you rout through you can you can rout
+through like a a real random pool that's
+like you know low liquidity and you know
+if I do LSD LSD I I I will be h i I'll
+be hoping that like execution rate is
+high like you know the FI rate is almost
+close to zero like it's not like some
+crazy like tokens that will swing out of
+R even know it's like just so to so like
+how how crazy the price can be but based
+on our experience if we just throw any
+post into the routing it will just R
+through like crazy routing to find you
+the best price they sometime might be
+10% better but we know like you know if
+you're not like running like a high
+frequency like I be charging bought on
+salana there's no way you can get this
+price even though at one particular time
+stamp at once a particular snapshot we
+do see the best price that's 10% better
+yeah so I think what I'm saying is like
+uh yeah now it's multiac problems like
+more than just PR
+right in a way this is almost like for
+example when you know in the initial
+days of Google you as long as you're
+showing something that is that has a
+good amount you know that's
+minimally relevant to whatever keyword
+that you're searches for but then people
+start to be you know doing this all this
+SEO optimization and canalizing other
+keyword so that theirs appear higher but
+still for as far as the user is
+concerned for in order for them to have
+a good user experience the relevance has
+to be very very high right and also
+naturally the user Behavior how they
+what they expect out of the product
+keeps going up as you have more users so
+it's kind of in very very interesting to
+see the all the breadth of the things
+that you need to worry about in a
+product that you know when you are like
+at you know when you at the vertical
+scale yeah exactly
+yeah so you mentioned like the pump
+thought the how pump you know was like
+uh it was like a lot of tokens very
+different scale to what you had to do
+right I'm curious to also you guys
+recently launched ap. Pro so I'm curious
+to hear more about you know the
+transition like what was the how do you
+guys start about a. Pro what was the
+product decision behind it yeah so so
+it's actually very simple uh you know
+people come to Jupiter with their own
+custody War right it's very common
+common thing right it's like okay your
+Phantom wall you have you know s flare
+wallet now you have the Jupiter wallet
+as well like the mobile apps you come to
+it your custody is on your own then you
+just do the swap right it's very easy um
+sometime you will come and buy like some
+you know um you know like some Min
+tokens that mostly
+graduating but then P fun came along
+right the the the game changed a little
+bit like people don't mind paying like
+Bots like 1% fees as long they
+guaranteed the executing price that they
+want and they don't mind coming in and
+out to fast right these are the thing we
+can find the pool for you but at the
+same time it's tough for us to to Really
+uh to really put 20% slip on our UI you
+know what I mean like we we we need to
+protect the user by not setting 20% and
+uh we cannot say that okay everything
+will be trans transmitting on zto and
+like everything is just like you know we
+have your wallet we can just you know
+sign the transaction for you for for
+this kind of trading experience right
+you know you seriously just want it to
+be fast like really fast and you don't
+mind paying 1% fees you don't mind doing
+20% SI page all right so then we realize
+that like this big Market that like you
+know people are doing that we are not
+very good at um I think it's also good
+that like we we like we went into it
+March April I think the data that we
+collect always
+been I think it's very helpful for us to
+optimize the routing engine as well to
+do what I call the best attributing
+price not just the bad not not not just
+the best price but the best way to land
+your transaction the best priority fee
+the best way to protect you from maybe
+the best way to yeah to do the cage for
+you yes
+very cool so what you're saying is a.
+proo uh lets you you guys are doing
+custody and uh people don't have their
+own private keys or what yeah would love
+to know how do you build this you know
+private Key Management uh yeah yeah like
+we know we are not the expert to it like
+you know we actually pay some mon like
+you know we use weet tree off to do like
+to do it but you know like like like if
+you look into it right A lot of these
+people just like you know like they
+don't tell you what how they do it it's
+kind of scary um yeah that's one thing
+that we make sure that from day one okay
+we are not the expert on it like we are
+not doing the claim that like we can
+help you to secure the ballet key very
+securely that's why we reach out to a
+provider I say okay these are the things
+that we need can you can help us with it
+then yes yeah
+all very cool aome Shake mentioned
+initially you were in the initial YC bch
+with Skype is that true yeah yes yes
+that was uh a long time ago my my yeah
+my my backround uh I was in byc 2009
+um when you know PG everyone was still
+there um yeah um and uh yeah strike the
+co-founder was you know strip was in my
+bch summer 2009 um M Panner as well so
+here miss Panner uh um I think who else
+back in the batch that people were still
+remember I would say like big span is
+still around and I also St is still
+around um the people remember
+um yeah then I yeah then the company I
+work at UH eventually get bought out by
+uh Sam the current CEO open AI so Sam
+was my boss for a little bit uh yeah for
+like a year then I couldn't get my Visa
+but I was international student in us
+then I have to like go back to college I
+went back to college uh finish on my
+college then came back out to the m area
+started another company yeah um yeah the
+company the company is still running
+right now my room technically my
+roommate started it I was just helping
+him out then uh you know um like two of
+us the company grew to like uh like now
+I think like 100 something people uh
+he's still running it uh I left right
+around the Sera um I was there for the
+SE round then Ser say the last round
+valuations was like 1.5 billion uh they
+raised 150 million for it yeah that's
+very good you think there's some Network
+effects that come from you know being in
+yc9 is it motivation people you know uh
+that you know lead to such heavy
+outcomes over like a span of a decade I
+don't know I don't know it's more than a
+decade right now it's like 22 I think I
+started wife 153 yeah 15 years 23 now
+I'm like
+27 28 yeah 15 years yeah and uh I would
+say like uh um back then is very
+difficult because you know internet yeah
+that's internet but there's no much
+content as what it is today right you
+know even I mean now even crazier you
+have GPT you have like you know cloud
+like you know who can just do everything
+us tell you everything like the chance
+of using Google is even harder like you
+basically like this you basically have
+PG next to you telling you like you know
+you can just ask any question that you
+want you know like right you can even
+like tell Che activities like yo can you
+re all the PG
+essay like like do this personality and
+tell me like like how advise me on
+problems right you know like you can do
+things like that back then it's like
+startup is a very opaque world right you
+know okay what does it even mean to
+start the tech company other than like
+you hear bog you hear all this thing
+like everything's happening in Silicon
+value you just have no idea so YC
+definitely helps open the door like or
+to realize that okay all these thing are
+just people solving problem you know
+with technology engineering like stuff
+like that
+yeah very cool what will you into crypto
+like from you know being WIS no9 to
+crypto with like I think 202k or 20s on1
+like what P you into crypto I mean proba
+I'm just guessing I mean a lot of things
+that funny right you know back then you
+know uh we were in YC we will get like a
+bunch of like s credits for free from
+the company so it's like you know like
+Ona is when the Bitcoin white paper came
+out so a lot of people just like okay
+[ __ ] it just like you know we free
+credits might as well to run minor on
+the server stuff like that yeah so
+that's like you know we I mean like
+lucky at the at the time right you know
+9 my YC B is exactly when the Bitcoin
+paper came out especially you're in you
+know ccom Valley you're like in computer
+science you are in like you know
+engineering it's like that's what I was
+talking about like if you're in a
+computer science school like you walk
+around so yo like have you seen this
+Bitcoin paper it's talking about money
+that like you know using all this like
+decentralized way of like doing stuff
+like you know making sure that no one
+can own but you have to like pay to like
+you know you have to do use CPU to Mone
+the token like
+most of the people I know running them
+the minor program on the on the on their
+CPU like you know on the laptops I see
+where know you could still get Bitcoin
+like just even running on your on your
+laptop back then so it's like it was
+like a thing for for me that's how I got
+to it like was say like like first of
+all I just lucky because I was in
+college I was in the Bay Area when the
+Bitcoin white Pap came out so I want was
+talking about it um then after that
+obviously it's like when you really get
+into it right you like everyone oh like
+this is very cool you can build stuff on
+it like you know internet money and a
+programmable money then you look at it
+it's like [ __ ] it's like nothing you
+could build on bitcoin it's like it's a
+very cool idea like you know you you it
+wasn't like a simple thing you want to
+build have to go through like all this
+complex uh uh you know like things right
+then after that we were like okay [ __ ]
+it uh like there's nothing I could do
+then obviously eal came Longs like for
+305 or something like that there
+everyone like [ __ ] like it's actually a
+final like finally a program a money
+that you canri on then I started playing
+with you know um um ethereum but
+obviously same thing as well like you
+know like I was just have you know just
+happened to be in in San Francisco like
+you know coinbase was there everyone was
+there um and like I I I used do Ruby
+areas which is basically the same
+language that coinbase was built on so
+like I get a lot that CH pop a lot of
+people there because of the Ruby stuff
+oh but like a lot of cross fan used to
+work there like I remember like ethereum
+was like doing a weekend class like
+coinbase to teach people how to do
+ethereum you know programming but I sign
+up for it was a temp class you know like
+I like but the thing is I was like okay
+like I think this like you know like
+this guy probably not like like don't
+know what the [ __ ] he's talking about
+anyway so I I decided not to go go go
+for the weekend but I remember there
+opportunity like this all over the Bara
+like you will go into a random meet up
+to like people talk about like crypto
+stuff so it's very easy to get used to
+right um that was like 2015 2016 2017
+2018 and I came back to Malaysia trying
+to like after I left the Bay Area came
+back to Malaysia trying to like figure
+out
+okay like what can I actually do with
+crypto it took me two years finally
+stumble upon um I was like okay I want
+to Lear like you know Ruby is kind of
+boring to me you know evm is like fun
+but it's a solty it's like you know it's
+like solity so you know just JavaScript
+like oh this things using BR I be like
+I've been telling me myself that I want
+to learn brush for the longest time but
+like I was like okay now now is the fine
+like you know like a really good
+opportunity for me to do BR on salana
+that's how yeah that me I mean me and I
+know each other since the Bay Area times
+like the things like 2010 until now it's
+like 15 years then he just asked me y
+like you want the view of I was like
+yeah let's let's do something together
+you know this program langage sounds
+cool I really want to learn it as well
+yeah awesome
+yeah I think it's it's always
+interesting to see how you know rust is
+kind of the Gateway Dr salana yeah for
+me also it was a very simpler story I
+was programming in tore and then I saw
+oh you know there's actually something
+that I know that I could use here let's
+get into
+all yeah
+exactly very cool uh see if you have
+more questions Shake do you have more
+questions no I think we we are good and
+we also cutting close to time thank you
+so much for joining s right
+we on the podcast so it's been an
+absolute pressure and I I I think this
+is going this will turn out to be very
+well I yeah thank you thank you yeah I
+think I think yeah I mean I'm looking
+for I mean last you know like if you
+give you like a 10 second to to to share
+it like you know I'm looking basically
+I'm looking at uh you know like we are
+trying to P like a you know we different
+work group right we Al group to handle
+our content we have the co-working group
+to hander all the community stuff um I'm
+I'm looking at to start the developer
+relationship of group so basically like
+you know like a call group of maybe two
+three Engineers or like you know outage
+people who can really like you know
+educate more Engineers it doesn't have
+to be like pure Jupiter stuff it can be
+S stuff as well but basically just to
+activate more people start trading on
+Jupiter and also start using Solana as
+well yeah absolutely I think we'll
+yeah I we definitely get a lot of good
+inbounds from the podcast and also I I
+think as the podcast goes out right we
+will make sure to add like a JD or some
+kind of a written description of the
+work group so that people have like a
+strong CDA to click on yeah and also
+like you know when but it's ready let me
+know so that I can share with the work
+group as well so that they can push it
+all as well awesome that' be good cool
+thank you thanks so nice to meet meet
+you have a good day so nice to meet you
+have a good day bye have a good day bye

@@ -1,0 +1,28 @@
+In this video, Harkirat and Shek sit down with Dr. Blocks, CTO of Switchboard, to explore how oracles power the crypto ecosystem. We cover Dr. Blocks’ journey from Google to building Switchboard, how it became one of the fastest and most secure oracle networks on Solana, and why it now secures over $4B in DeFi. You’ll learn what oracles are, why speed and security matter for on-chain trading, and how Switchboard is shaping the future of decentralized finance.
+DoctorBlocks Twitter: https://x.com/DoctorBlocks
+Switchboard Website: https://switchboard.xyz/
+Switchboard Github: https://github.com/switchboard-xyz
+Timestamps:
+00:00 - In this video
+01:00 – The problem with oracles today
+02:00 – Making data streaming faster and smoother
+06:03 – Creating your own data feeds without permission
+08:04 – How feeds stay secure and validated
+12:29 – The Mango exploit & risks in DeFi
+14:49 – Why ETH lending can be risky
+18:50 – Cutting down transaction delays
+20:51 – How validators might handle oracle updates
+23:49 - Pull vs Streaming Oracle Updates
+24:40 – New model for faster on-chain confirmations
+26:36 – What SAIL is and why it matters
+30:26 – Oracle AMMs and their impact on trading
+35:59 – Community, open source, and what’s next
+🔗 𝗜𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝗟𝗶𝗻𝗸𝘀:
+Website → https://app.100xdevs.com
+GitHub → https://github.com/code100x
+Twitter → https://x.com/100xDevs
+LinkedIn → https://www.linkedin.com/company/100xdevs
+Instagram → https://www.instagram.com/100xdevsofficial/
+Discord → https://discord.com/invite/WAaXacK9bh
+Telegram → https://t.me/kirat_internal_group
+Whatsapp → https://whatsapp.com/channel/0029Va98SYeHrDZhfxCT6s0a

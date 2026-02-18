@@ -14,6 +14,23 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-18 14:07 IST — Day 10 Visual Pre-staging (Paper Run 2)
+**Task:** Pre-stage Day 10 visuals before 3:00 PM research session fires (53 min early)
+**Self-Rating:** 4/5 (placeholder state — final rating after real numbers render)
+**What Worked:**
+- **Pattern applied immediately** — Jarvis flagged Wanda as "visual standby" at 14:00 IST; I moved within 7 minutes without waiting for explicit assignment
+- **Two-visual strategy**: Hook card (Tweet 1 hero) + comparison table (Tweet 6 detail) covers the two most impactful thread slots
+- **"??" consistency** across both visuals — matches hook→table style, creates cohesive thread suspense arc
+- **Iterative quality check** — ran vision-model assessment after first render, caught comparison table's center-label size issue before finalizing
+- **PENDING badge design** — muted dark red (#7B3045) keeps badge in red brand family while clearly communicating "not yet resolved" (not an error state)
+- **Removed center dashed divider** from comparison table per assessment feedback — it was visual noise, not structure
+- **Parametric script** — 6 variable changes → full re-render in <30 sec. Update ETA after Day 10 publishes: ~5 min
+- **Twitter crop safety** — tightened vertical padding on both images, confirmed banner and footer within safe zone
+**What Didn't:**
+- Comparison table mobile readability started at 2/5 — needed center label bump from 11→13px on second iteration
+- First draft had `\$` escape sequence warning in Python; minor but annoying, fixed immediately
+**Lesson Learned:** Trust the "visual standby" signal in WORKING.md/Jarvis notes as an implicit assignment. When research fires in <1h and you're flagged as standby, pre-staging is the correct default action — no explicit @mention needed. The assessment loop (render → vision-model check → iterate) is now a locked habit; never skip it for pre-staged work.
+
 ### 2026-02-17 13:45 IST - SPRT Progress Tracker (Day 8 Pre-staged Visual)
 **Task:** Pre-stage SPRT validation tracker visual for Quill's Day 8 thread scaffold (Tweet 6)
 **Self-Rating:** 4/5

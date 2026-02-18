@@ -1,7 +1,8 @@
 # Day 10 SEO Pre-Staging — Going Live: First Real USDC Trade on Polymarket
 
 *Pre-staged by Vision | 02:38 IST Feb 18 (Wed)*
-*Execute within 10 min of 1:30 AM Thu Feb 19 publish*
+*⚠️ TIMING UPDATE (Vision 13:23 IST): Execute within 10 min of **3:00 PM TODAY (Wed Feb 18)** — NOT 1:30 AM Thu. Research session `b71a6e79` fires at 3 PM IST.*
+*⚠️ SCENARIO UPDATE: Reuben has NOT given live bot go-ahead as of 13:15 IST. Treat **Template C (paper run 2)** as PRIMARY scenario. Upgrade to Template A if go-ahead arrives before 3 PM.*
 
 ---
 
@@ -76,22 +77,27 @@ Polymarket live bot day 1. Day 10 of building a quant system in public.
 
 ## OG Image Strategy
 
-### Best options (check `/artifacts/design/` at publish time)
-Priority 1: **Live balance screenshot / CLOB trade confirmation visual**
-- If Wanda creates: show $10.49 → new balance, trade count, live SPRT logLR
-- Format: dashboard-style card (dark navy, stats in large font)
+### ✅ UPDATED 14:23 IST — Wanda pre-staged Day 10 visuals at 14:07 IST
 
-Priority 2: **Signal filter → live order flow diagram**
-- Gate 1/2/3 → CLOB order → fill confirmation
-- Shows the full pipeline from signal to real money
+**Wanda's Day 10 assets** (in `/artifacts/design/`):
+- `day10-paper-run2-hook.png` — Tweet 1 hero card (placeholder "??" state → updated ~3:05 PM)
+- `day10-run-comparison.png` — Run 1 vs Run 2 comparison table (updated ~3:05 PM)
+- `day10-generate-visuals.py` — parametric generator, updates 6 numbers post-publish (~5 min)
+- `day10-visual-assets.md` — update guide and integration notes
 
-Priority 3: **SPRT fresh-start chart**
-- New logLR starting from 0, first data points plotted
-- Continuation of the SPRT story from Day 7
+**For Template C (paper run 2) — PRIMARY scenario:**
+Priority 1: `day10-run-comparison.png` — **USE THIS after Wanda runs the script with real numbers (~3:05 PM)**
+  - Run 1 vs Run 2 comparison directly illustrates Day 10's content
+  - Copy to blog post directory: `cp artifacts/design/day10-run-comparison.png posts/[slug]/`
+Priority 2: `day10-paper-run2-hook.png` — alternate (hero card with trade count/WR/balance)
+Priority 3: `day9-signal-filter.png` — fallback if Wanda's update is delayed (3-gate filter works for either scenario)
 
-### Fallback:
-- Use `day9-signal-filter.png` from Wanda (staged in design artifacts) — acceptable visual
-- Or `day9-sprt-accepted.png` — works as "what we proved" context for live run
+**For Template A (live trading) — UPGRADE if Reuben gives go-ahead before 3 PM:**
+Priority 1: Live dashboard visual from Wanda (30 min build — alert Wanda immediately if go-ahead arrives)
+Priority 2: `day10-run-comparison.png` (still relevant — shows what paper predicted vs. live reality)
+Priority 3: `day9-signal-filter.png` — fallback
+
+**EXECUTION TIMING**: Wanda updates script with real numbers after you identify [N]/[Z]/[W] from the post (~3:02 PM). Wanda's ~5 min update window → you use updated PNG, not the placeholder. If in doubt, use `day9-signal-filter.png` immediately and update the OG image in a follow-up commit.
 
 ### YAML format:
 ```yaml
@@ -134,7 +140,7 @@ Day 9 currently ends with: *"The $10→$100 challenge starts tomorrow."* — Day
 
 ---
 
-## 7-Step Execution Checklist (Thu 1:30 AM publish)
+## 7-Step Execution Checklist (Wed 3:00 PM publish — TODAY)
 
 1. **Identify slug** → `ls /Users/ruby/.openclaw/workspace/projects/ruby-blog/blog/posts/ | tail -1`
 2. **Read Day 10 content** → live trading (Template A/B) or paper run 2 (Template C)?
@@ -181,5 +187,6 @@ Live trading results have **fundamentally different SEO dynamics**:
 
 ---
 
-*Created: Vision | 02:38 IST Feb 18 | Execute Thu 1:30 AM Feb 19*
+*Created: Vision | 02:38 IST Feb 18 | Updated: Vision | 13:23 IST Feb 18 (timing correction + scenario update)*
+*Execute: Wed 3:00 PM Feb 18 (TODAY — not Thu 1:30 AM)*
 *Previous prep: `/artifacts/seo/day9-seo-prep.md`*

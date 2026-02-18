@@ -1,0 +1,987 @@
+Transcript:
+What was your first gig or job or how do
+you get into crypto?
+>> First crypto gig, I actually started
+doing freelance EVM development before I
+had a full-time job. We were very much
+strict on our process partially for
+security reasons and also partially just
+we want people that can read directions
+and and follow rules. You have some open
+source programs or libraries, anything
+related to Salana that you think people
+should go through, try to contribute to
+that are good signals um to get hired.
+uh specifically adding token 2022
+support um as well as like other utility
+functions that exist in Salana program
+create or the Salana SDK. Uh there
+there's a lot of open source
+opportunities there. I'm very much a
+techno optimist and view AI as like a
+very valuable tool that people should be
+using and I think it's a mistake if
+you're not experimenting with it. I just
+think you need to understand what it's
+good at. Right now there's probably like
+six useful types of contracts. Like if
+we think about like what a blockchain is
+and what it's really good at. Hi
+everyone and welcome to a new pod. Today
+we have Taylor. Taylor is the co-founder
+at Exo and Exo is a dev shop uh out of
+the US. They primarily work with Solana
+companies. They help existing Solana
+companies build products on Salana. They
+also help other EVM companies move to
+Salana. Um if someone requires expertise
+in Solana if they're trying to build a
+smart contract or something more deeper,
+Exo is one of the companies on Salana
+that helps you do it. Um, we'll
+understand what does the day-to-day look
+like at EXO, what kind of projects are
+they working on, what are the technical
+challenges in building something like
+this, how do they hire and everything
+around Salana. With that, Taylor,
+welcome to the pod. Would love to know
+more about yourself.
+>> Thank you so much for having me. Quick
+background myself. I've been an engineer
+for the last 10 years or so. Got started
+in crypto about 9 years ago. Um, started
+working on EVM stuff, tinking around,
+but then switched to Salana in 2020. uh
+and had some success with some early
+DeFi protocols, winning a hackathon and
+and ultimately, you know, starting a few
+different projects from there.
+>> Got it. Very first question we ask
+people is, uh, what was your first gig
+or job or how do you get into crypto?
+>> First crypto gig, I actually started
+doing freelance EVM development before I
+had a full-time job. Um, there was a
+this is back in 2016ish or so. Um, I
+think Zerox had just launched as a DEX
+relayer on on the EVM side of things.
+Um, and there was a team that wanted to
+build I think it was like a relay
+aggregator. Uh, and so started doing
+some freelance development for EVM smart
+contracts helping them build an
+aggregator of Zerox re layers.
+>> Got it. Um, and when so from 2016
+onwards, have you just been working in
+cryptos?
+>> Yeah, full-time in crypto. Yeah, I got
+pulled into a group called Blockfolio
+back in 2017. I was there for a few
+years. That was eventually bought by
+FTX. So, I was at FTX for a couple
+years. Um, and then started a couple
+projects while while there and and
+started, you know, full-time in Salana
+in 2021.
+>> Oh, super interesting. Uh, very curious
+to know about your what did you do at
+FDX? Were you on the trading side? Uh,
+uh, are you were you working on a
+different product than the core
+exchange? So Blockfolio, I was leading
+mobile development. Uh and so when when
+FTX bought B bought Blockfolio, you
+know, they're very much looking at
+acquiring the user base. Uh I came over
+as part of helping, you know, continue
+build out the mobile application,
+transitioning it from Blockfolio to the
+FTX app, which you know was a very
+controversial thing for for those folks
+that were pretty hardcore on on
+Blockfolio. Um and then started just
+helping out more general like retail
+strategy. So, but mostly focused on
+front end development, helping build out
+our our product suite.
+>> Got it. And like, did you leave FDX
+midway or when it ended is when you, you
+know, uh, thought of moving on to your
+next thing,
+>> right?
+>> Uh, so I resigned, you know, shortly
+when there were rumors going around that
+that something was going on and
+obviously had had no idea what was going
+on and decided, you know what, if if I
+don't understand what's going on and I'm
+working here, I, you know, can't be a
+part of this company. Um and then
+ultimately went back to working with my
+brother full-time on salon projects.
+>> Very interesting. Um would love to know
+what happened after that. Like have you
+guys experimented with a few projects
+since or was the exo the first company
+that you stuck in?
+>> No. So I mean we've been experimenting
+on Salana since 2020. Uh we started with
+some DeFi protocols. We built an options
+protocol that traded on top of serum. Uh
+and that was just a hackathon project.
+Uh and then
+uh after pivoting well actually we we
+acquired another team out of Singapore
+that that took over most of the
+derivatives stuff. Uh and then we
+started pivoting to uh like governance
+infrastructure and tokconomics
+infrastructure. And so when we started
+building that we we launched a product
+suite called Armada. And that was
+basically helping teams launch tokens.
+Uh helping teams manage uh liquidity
+with thirdparty market makers in a
+decentralized way. Uh and then also um
+handle like tokconomics like staking uh
+and protocol revenue distribution or
+whatnot. Part of that like we actually
+help build bonk rewards uh and build the
+smart contracts there uh and help them
+kind of launch their you know how they
+distribute their protocol revenue to to
+stakers. Uh and then after that we kind
+of bumped into some regulatory issues
+which Tommy has talked about extensively
+over over a few different interviews and
+whatnot. But after that decided to step
+away from the project uh and focus on
+consulting. We just saw a need in the
+market for for strong Salana engineers.
+We you know some of the most experienced
+since building on sauna since 2020 uh
+and realized that we could help fill
+that gap.
+>> Got it. I want to dive deeper into that
+um into you know what do you work at on
+at EXO um but before that while you're
+building EXO do you ever feel the FOMO
+of you know building your own product or
+you know something of your own compared
+to helping other people do it? Yeah,
+absolutely. Like we're we're very much
+founders at heart and it's it's
+interesting growing a services company,
+right? Because you can only scale as
+much as you hire talent because you can
+only, you know, bring on more clients if
+you have enough resources to to service
+those clients. And so it's definitely
+has its own unique challenges and can
+sometimes be frustrating where, you
+know, a product is not easier to scale
+per se. Um, but you don't have to hire
+people to scale, right? And so I think
+there's there's definitely part of that
+that is alluring to going back to to
+building product. And I think for us
+like the reason we decided to jump into
+consulting and building out this dev
+shop was, you know, we didn't know
+exactly what we wanted to do yet. You
+know, we didn't have conviction on any
+one single product that we came up with.
+Um, and we felt that not taking a job
+and instead building out our own, you
+know, dev shop allows us to get a
+different vantage point of the market,
+talk to other teams, see what problems
+they're facing, and then, you know,
+maybe ultimately come up with another
+product that we want to build ourselves.
+So, for us, it was, you know, a a great
+way to keep opportunities open and not
+not close any doors.
+>> Makes sense. And I was using uh as a
+company like this you get a lot of
+inbound from you know ambitious ideas
+that haven't been tried and some tested
+tried ideas as well. Um and so you're at
+the center of a lot of attention. I
+guess you can always you know build a
+product whenever you want to yourself.
+Um so I'm curious now what kind of
+projects you guys work on. Uh if you
+could talk about a few of them you know
+the ones that shine and the ones that
+you can share on the portly. Yeah. So,
+we work on a wide range of of products
+like all different verticals. Uh, you
+know, we work we we've got a few
+different teams that we work with over a
+long period of time. GTO being one of
+them. Um, you know, for them we're we're
+you know, essentially seen as like an
+extension of their engineering team and
+help work on on different projects they
+might have. Um, I know some of our team
+has like helped update some of their,
+you know, restaking some of their chip
+router programs and and whatnot. And
+this is all like a lot of smart contract
+work as well as backend infrastructure
+work. Um other teams are more like DeFi
+teams. Um you know we'll work with some
+RWA issuers. Um we've worked with I
+think like the most notable or one that
+we can talk about has been Agora the
+stablecoin protocol. We've helped work
+with them on on helping bridge their you
+know EVM contracts to SVM. Uh, and then
+we've also done some some deep pin work,
+working with deep pin teams, helping
+them build out their tokconomic
+strategy, building out the smart
+contracts for it. Um, yeah, we we work
+with a wide range of verticals. I'd say
+right now that the most common one we're
+getting inbound for has been RWAS. I
+think there's just a lot of a lot of
+institutions and other financial you
+know technology firms that want to
+experiment with with RWAS and and
+tokenization and you know those are the
+teams that don't have the tech talent in
+house but they definitely have the
+funding to help pay for you know
+external resources. So that's definitely
+where we found a a lot of traction. And
+then we also have, you know, a strong
+background in, you know, understanding
+legal compliance, KYC, like that's
+definitely where part of my background
+being from, you know, having spent some
+time at an exchange is helpful. Uh, and
+then also understand the, you know,
+onchain side of things. How do we build
+those, uh, you know, systems on chain to
+work with the off-chain systems that
+are, you know, required?
+>> Got it. Yeah, that makes sense. Um would
+love to know how do you guys hire and
+what kind of talent do you guys look
+for? How what's the interview process
+like? Things like these.
+>> So how we hire everything comes from our
+job board. If if you haven't gone
+through our careers page and you try to
+like DM us on LinkedIn, email, whatever.
+Like we're just going to ignore it. Like
+we we're very much strict on our
+process. Partially for security reasons
+and also partially just we want people
+that can read directions and and follow
+rules. Um so we're pretty strict on
+that. Um but the first thing we do is
+you know if you've come come through our
+you know application we'll we'll scan
+your resume look at your background look
+at your GitHub try to you know look at
+for relevant experience I think right
+now you know we're definitely hiring
+more for for more senior level roles and
+so we'll looking for you know relevant
+Salana experience um even if that's open
+source contributions we definitely look
+at you know people's GitHubs and if they
+have open source contributions to to
+relevant projects that's a very strong
+indicator of one that they know exact
+they know what they're doing, but two
+they're high agency and willing to to
+kind of take their own steps to to you
+know prove themselves and and kind of
+add value to other parts of the
+ecosystem. So we we rank that very
+highly. Uh from there we do a quick
+phone interview for for cultural you
+know perspective. We want to make sure
+that this person is a strong
+communicator. Uh we want to make sure
+that they're you know easy to get along
+with, easy to work with, work well in a
+team and whatnot. So we'll do we'll do a
+30-minute like cultural screening. Then
+from there we have two technical
+screenings. Uh these are very much meant
+to like mimic exactly what you'd be
+doing day-to-day at XO. The first is an
+architectural interview. Uh so we have a
+prompt for for folks to uh pseudo code
+uh a Salana Spar contract architecture.
+So basically designing like what kind of
+state are you storing on chain? How are
+you thinking about the instructions set
+and whatnot? And it's meant to be
+interactive. Like essentially we're the
+client and you know the developers the
+person asking us like hey you mentioned
+that you want this you know there's a
+couple different design decisions I can
+make implementing it. You know what do
+you think? And so it's meant to be a bit
+interactive. And then finally we have
+you know a coding interview that's an
+hourong interview where we have a
+repository set up. Uh we'll have them
+get access to it and you know it's
+missing some functionality that they
+need to go ahead and and implement and
+and add tests for.
+Got it. Um, and so what from what I can
+tell right now, both of these are like
+smart contract assignments. They're
+supposed to architect a smart contract
+and then code a smart contract to the
+next level.
+>> The the first is architecting. The
+second is is actually writing code for
+for a smart contract.
+>> Got it. Makes sense. So is that the sort
+of uh talent that you're looking for at
+the moment like people who can write
+programs on or is an engineer doing
+something else also? um you know which
+would be like front ends, back ends,
+client side, writing flight libraries
+>> for yeah that's definitely the easiest
+thing for us to screen for is more so
+because we feel like it's the one where
+there's less people like if you know
+like through throughout that process
+especially in the coding portion we'll
+very quickly be able to tell whether you
+know Rust or not and so like we write
+most of our backends in Rust uh we we do
+some TypeScript depending on the client
+and and how they want testing and and
+whatnot, but we'll very quickly know
+whether you have strong technical chops
+from from that interview process. So, we
+don't necessarily screen per se for
+specific like backend stacks and and
+whatnot, but as long as you have strong
+engineering fundamentals, like we're
+pretty confident you'll be able to fit
+into our our process. And I think the
+other thing is like, you know, people
+talk about how LM LLMs are, you know,
+kind of evening the playing field for
+someone. Well, when it comes to like
+Salana, the SDKs are constantly
+changing. Uh, I mean this is really true
+for for most web 3 or whatnot, but so
+the LLMs are definitely less helpful
+there. And so at least like we need to
+screen for the thing that's going to be
+the most difficult for for the person to
+pick up. Uh, and so we're we're more
+confident someone could pick up backend,
+you know, engineering work on the fly
+versus picking up Salana engineering
+work on the fly.
+>> Yep, that makes sense. Do you have some
+open source programs or libraries
+anything related to Salana that you
+think people should go through try to
+contribute to that are good signals um
+to get hired?
+>> I think
+yeah I mean there's there's not a ton
+that come to mind. I I guess like one I
+would say is Pinocchio. I think that's
+but that's more of like something that's
+still very much in in its infancy. And
+if you understand how Salana works and
+you understand it enough to be able to
+like contribute to the Pinocchio uh you
+know repository then that's like a very
+strong signal. There's also a lot of
+work that still needs to be done there.
+Uh specifically adding token 2022
+support um as well as like other utility
+functions that exist in Salana program
+create or the Salana SDK. Uh there
+there's a lot of open source
+opportunities there. Um, so it's
+definitely like you're going to be
+getting a little bit more deeper into
+the, you know, into the stack, a little
+bit more lower level, but that would
+definitely be one where if we saw
+someone that's been contributing
+Pinocchio and and they're looking for a
+job, like we're we're more likely than
+going to hire them.
+>> Got it.
+>> Yeah. Go ahead, S. Yeah.
+you you mentioned the majority of the
+you you know the kind of clients that
+you are most of the clients that are
+coming are like RWA companies or some of
+this traditional asset issuers who want
+to issue asset on Salana so I'm curious
+to I mean I'm curious about what what
+their real need is because when they
+want to issue a token the smart
+contracts for that already exist like
+you know either the SPL token program or
+the token 22 programs and and also all
+of those extensions already exist on
+chain. So uh and I'm curious to
+understand from what you see what are
+they really looking for? Is it like a
+newer exotic transfer cooks that it you
+know adheres to their specific needs or
+it's
+it's much more like vanilla that they
+can do with the do directly with the
+existing tokenistic I guess. Yeah,
+that's that's a great question. Yeah, so
+when we originally started working with
+RW RWA issuers, we thought, man, what a
+what a great product it would be to
+productize, you know, them minting their
+their tokens and whatnot. And it should
+be super easy cuz like you said, Jake,
+like there's a lot of the tools already
+exist, but what we quickly realized when
+we started working with multiple of them
+is that, you know, every single issuer
+has very different compliance and legal
+needs. And so it's not the minting of
+the token that is difficult and you know
+the issuing of it. It's really making
+sure that they have the correct
+role-based access control systems on
+chain that that they require. Making
+sure that they have the correct
+compliance systems on chain that that
+they you know that their compliance team
+requires and whatnot. So it's not so
+much of the hey how do we get this token
+out there and create it. It's a lot more
+of the administrative and operational
+overhead that that these teams require.
+And so and and especially because a lot
+of them the ones that have been around
+for a while they're very much stuck in
+their ways in a sense that they have uh
+you know internal off-chain systems that
+you know they already use for tracking
+you know what investors are holding
+their tokens have they you know met KYC
+you know requirements and and whatnot
+and they're not willing you know they're
+they're not necessarily going to change
+that just to get a tokenization strategy
+out there. And so it's very much trying
+to like fit this new system in with
+their old legacy systems and making sure
+that the onchain components can fit with
+the off-chain components. So it's a lot
+more on like the legal compliance side
+and and operational, you know, overhead.
+>> Interesting. So how what does it
+actually manifest as right? For example,
+you guys worked extensively on the
+attestation service and and how how do
+you go about doing for example, if you
+want to do an onchain KYC or ensure that
+only a person who is authorized to hold
+this token or interact with this token
+is
+is actually the person doing it. How how
+do you how do you do that?
+Yeah. So there's there's a handful of
+different ways and again it depends on
+you know what the financial institution
+is comfortable with doing right so
+everyone's going to have a different
+strategy like one strategy is hey we
+have some sort of allow and block list
+on chain um you could just you know
+create that using PDAs whatnot right
+infinitely scalable it works well um and
+then you could check it ver you know
+using transfer hooks that might work for
+some but then if they're like hey you
+know we actually need a lot of you know
+downstream integrations with other DeFi
+protocols
+As we've come to learn over the last
+year is the transfer hooks are pretty
+prohibitive of that, right? There's been
+a lot of push back on the developer
+experience from from transfer hooks from
+D5 protocols. And so now a lot are
+moving towards this um using the default
+account state uh setting it you know to
+default to being frozen uh and then
+deciding you know oh if someone has
+passed KYC on their um you know internal
+system sending a trans transaction on
+chains you know acknowledging that this
+person has you know finished KYC and
+either un you know unfreezing or thawing
+the account um or just marking it in
+some sort of allow or block list that
+that it is you know thawable. So it's
+you know it's a bit different but you
+know just got to make sure that that it
+fits with their existing system. So
+there is some offchain authority that
+that gets to decide whether they have
+met the requirements. Not every there
+are also some teams that you know want
+to have you know certain data on chain.
+They're now they're not going to put
+like personal you know information on
+chain but they might want to know like
+what country the user is and store that
+on chain so that way that could be used
+in some manner downstream. So some, you
+know, go beyond just allow and block
+list and say, you know, I need to have,
+you know, almost like a like a KYC
+profile for this user on the chain and
+tag it to their wallet. So they'll go
+through this offchain process going
+through normal KYC document
+verification,
+etc. And then the, you know, the
+institution will send a transaction
+onchain storing what kind of information
+they have verified and and need to need
+to have on chain.
+>> What does, how do you decide who works
+on what? Like I'm assuming you have like
+five clients and maybe 10 engineers. Um
+so is it like one engineer is working on
+a project at a time. Um then once the
+company goes are they benched for a few
+weeks or do they move to a different
+project? Do you work make them work on a
+personal project which usually you know
+um happens in consult. So I'm very
+curious towards the execution of a devop
+um when it comes to employee um you know
+arrangements.
+>> Yeah definitely the resourcing has been
+interesting or resource allocation has
+been interesting to say the least. I
+think that's one of been one of our
+biggest learning curves is you know
+working on on a services company. Um
+it's definitely very much of okay who's
+who's got availability availability
+coming up such that it fits with the
+timeline of the prospective client. Um
+that's that's number one. Um like we
+can't just shift we can't just take
+someone who's been working on a project
+for two months and shift them off the
+project if they're like even if they're
+the best fit for it. Uh but then number
+two is like you know if we have multiple
+engineers available for a project and we
+only need you know a couple or you know
+one or two or whatever it is you know
+we'll we'll look at who's got the best
+skill set to to match that that project.
+Have they done some have they worked on
+something similar? You know that's a big
+indicator whether they can handle it.
+Have they in you know if that client
+needs to integrate with other protocols?
+Has this you know engineer interacted
+with those protocols? Have they
+integrated with those protocols before?
+And so I think that's that's generally
+like kind of how we look at is like
+who's going to be the best fit that's
+available? And then in terms of like how
+we how we work with the clients. Um you
+know we usually have at least two
+engineers. Um, so it's at least one
+engineering manager, which is usually
+myself or Tommy or one of the engineers
+on a team who has, you know, three,
+four, almost five years of experience on
+Salana. Uh, they're usually doing, you
+know, helping with architecture, PR
+reviews, etc., making sure, you know,
+the the program quality is or code is
+quality. Um, and then we'll have, you
+know, one to two, sometimes more,
+depending on how big the project is, but
+most if it's just a, you know,
+short-term smart contract, like those
+usually get done with one to two
+engineers, we'll have, you know, those
+engineers focused on actual
+implementation. And so we usually spend,
+you know, one to two weeks uh,
+architecting the the program, working
+with the client to make sure that, you
+know, all the features are met. if it's
+if they have an EVM contract that we
+need to port over, you know, that
+usually takes a bit longer, but we'll
+read all the EVM code and then map it
+out for what we need to do on on the SVM
+side of things.
+And then, you know, once we've done the
+architecture side, then we start
+breaking down into tasks and and going
+into development.
+>> Got it. Yeah, makes sense. I think
+that's what the question.
+>> How big is a team right now cares to
+understand how the team is set up,
+right? like like you mentioned like in
+in most cases in dev shops like with
+resource allocation is
+the major problem you want to make sure
+that you know your client the number of
+incoming projects and the number of uh
+resources that you have are like in
+line.
+>> Yeah, that's definitely been been one of
+like our toughest challenges. Right now
+we're a team of eight including both
+Tommy and I or team of eight engineers
+and then we have we have a marketing
+person as well but you know we've we've
+been trying to grow responsibly like we
+don't want to get into a place where we
+ever you know if there's a downturn in
+the market where we have to let people
+go like we hire folks on a contractual
+basis but we you know treat everyone
+like full-time employees. Um that
+includes you know like even though like
+we we'll give people pay PTO if they
+need to like take time off and and
+whatnot. Um, but with that said, you
+know, we want to make sure that we grow
+responsibly because we treat people like
+they're full-time employees. Uh, and so
+to do that, you know, we need to make
+sure that we're not overhiring too
+quickly to the point that, you know,
+sometimes we're actually telling clients
+that, you know, we can't take them on or
+if they have or really if they have too
+tight of a timeline, like we're just not
+going to be a fit for them. Um, or we
+have to kind of delay their, you know,
+delay starting their project if that's
+acceptable to them. So it it's led us to
+to turning people down when we try to
+grow slowly. Um but with that you know
+like we have tried to bring on clients
+in a manner where we kind of have some
+sort of balance like the way I explain
+is like we take a barbell approach. So
+on one side we have like larger teams.
+These are your uh you know hundreds of
+millions to billions of FDV type
+protocols uh or teams that have raised
+significant amount of capital with with
+large valuations that you know have some
+sort of stability and these are longer
+term agreements. These are you know 6 12
+or even you know 6 to 12 month or even
+indefinite contracts. Um these are like
+GTO Salana Foundation etc.
+And those, you know, like those are the
+teams that like if a bare market hits,
+they're not they're not just going to
+turn away. You know, they're still
+pushing forward on all of their
+initiatives. And then on the other side,
+you have your more shorter term uh
+startupy like clients that are, you
+know, three to four month projects. Uh
+you know, maybe you know, ideally raised
+a series A or more. Uh but you know, if
+the bare market hits, you know, they
+haven't they maybe not have found
+product market fit yet and they're more
+likely to churn. And so we try to find
+balance in that barbell approach where
+we bake in stability to our overall team
+by having those longerterm larger
+clients. Uh but then also uh make sure
+that we are utilizing all of our
+resources effectively, you know, all of
+our engineers effectively by having um
+you know these these other shorter term
+contracts.
+>> Interesting. I'm curious to hear about
+your thoughts on AI or AI assisted
+coding because
+I mean I understand that for a lot of
+the spec and the API of things that are
+core to Salana or in programs and also
+the web 3.js that that keeps changing
+and LS may not do a good job job with it
+but things that are external plumping
+right so how how do you do you are you
+leveraging AI or you still feel that
+they're not you know not adequate enough
+where you could fully use them what's
+your
+because now you're using AI if it works
+means that you know your profit margins
+are a lot higher Yeah.
+>> Yeah. Yeah. Very much depends what we're
+working on. Like I personally don't
+utilize it a lot. I'd say I probably
+utilize it maybe like 10% of the time,
+maybe 15%. And that's really only if I'm
+doing, you know, some mundane tasks.
+Like I started using it for some like
+DevOps stuff the other day, just like
+helping write like cloud formation
+scripts and and other sort of things.
+Um, but I haven't I don't use it a ton
+on the Salana side. At least this time
+last year or even like beginning of this
+year, it was really rough. The LMS would
+hallucinate anytime you were acquiring
+it about, you know, some sort of Salana
+specific code. Um, I know there's been a
+lot of work done for um like MPC servers
+on Salana and other sort of things to
+help uh you know improve the the
+learning or feedback loop for these
+outlines, whatever you want to call it.
+Uh, so there's definitely a few models
+I'm I'm looking or more fine-tuned
+models that I'm looking to like start
+experimenting with. Um, I don't actually
+know how much of, you know, I don't
+think a lot of our team uses it on the
+Salana side, but I I wouldn't be
+surprised if we're using it when we're
+building like front-end applications and
+and maybe even some sort of backend
+components. But yeah, I think like on
+this the smart contract side, they're
+they're just not there yet to to be
+useful. I feel like I end up like if I
+copy pasta their code over, I'm ending
+up spending more time fixing it versus
+I've been writing Salana code long
+enough that my brain's just going to be
+faster than the LM at this point.
+>> Yeah, I think a lot of people other than
+mundane tasks, I think even when you're
+writing backends that are not crypto, um
+where it gets more complex, beyond, it's
+just easier to write it yourself.
+>> Yeah. And that's that's not to say that
+we don't view it as or I don't view it
+as like an existential threat or or
+something like I I'm very much a techno
+optimist and view AI as like a very
+valuable tool that people should be
+using and I think it's a mistake if
+you're not experimenting with it. I just
+think you need to understand what it's
+good at right now. Project what it's
+going to be good at in the future and
+then you know under try to try to figure
+out like when it's optimal to use and
+and when it's not. Like there's there's
+a time and a place for every tool. Right
+now for like salon smart contracts like
+I haven't found the right tool for it
+and I haven't found the right LM for it.
+But that's not to say that that it'll
+happen in the future and then we'll
+probably re-evaluate you know how does
+it like I don't I don't think I'd ever
+want to get to the point where we have
+to let people go because of an AI. I
+think it's more of it's going to help
+speed people up. And so what that would
+then do is allow us to probably take on
+more clients. You know keep the same
+amount of engineers but take on more
+clients. uh just because we might be
+able to churn through contracts faster
+and things like that. And then maybe you
+know we might have to adjust how we do
+pricing. Like right now all of our
+clients like we bill on a monthly basis.
+We don't do project based billing um
+just because that's been problematic in
+the past. But you know maybe we'd have
+to do project based billing because we
+could churn through projects a lot
+quicker because we're we're you know
+leveraging AI to to code really fast.
+Got it. I have a fairly controversial
+question for you Taylor tooling keeps
+saying there are only in in all six
+useful smart contracts ever but a lot of
+the work you seem to be doing you know
+revolves around building smart contracts
+for other clients right so
+it it I mean that these two seem to be
+at like you know at the polar ends of uh
+what you actually need with smart
+contracts. So, I'd love to hear your
+thoughts on that. Are there only six
+useful smart contracts or is it
+infinity?
+>> Love the question. I think I would
+rephrase it to that there's probably
+like six useful types of contracts. Like
+if we think about like what a blockchain
+is and what it's really good at, uh, you
+know, the trustlessness helps us
+financialize everything, right? like as
+we start seeing this wave of
+tokenization, we're seeing how we can
+tokenize or, you know, financialize
+anything. There's been a lot of wacky
+experiments on the blockchain. Um, and
+so I I think I would say that yeah,
+there's probably like six useful types
+of contracts, but not necessarily six
+contracts, right? Like the the first
+contract written for one type is not
+going to be the best. there might be
+other types of fe there might be other
+features um other mechanisms that that
+you know have certain benefits in
+certain scenarios. So I I think I think
+there's going to be always be more than
+just you know six more contracts that
+are that are worth using.
+Just so double clicking on that right
+what are you when you say Thai are you
+talking about like for example now token
+to SPL token to P token both are same
+interface same functionality
+but then theation is completely
+different right one is an optimization
+of the other do you mean to say in that
+manner or or you were talking about you
+know the interface remains the same but
+then the behavior is slightly different
+because you
+something more nuanced.
+I was thinking a little bit more nuance
+like the the SPL token to P token is is
+an interesting one but but I think less
+on the optimizations because in theory
+like if SPL token was not uh immutable
+then they could just upgrade it to be P
+token and it's still the same contract
+right I think more of what I'm thinking
+is okay you have very different types of
+AMMs you have you know constant products
+you have different types of of curves on
+constant products and so I I don't think
+that they're just always going to be one
+AMM M but I do, you know, I think AMM is
+one of the core types of smart contracts
+that make sense to have and and will be
+widely used. So I think it's more
+there's going to be variations on on
+these types of contracts.
+Interesting. And also one interesting
+trend that I've been observing is that
+now with dark amn,
+you know, the the the topic of the past
+couple of months. So they to my
+understanding is that they do a lot of
+their things offchain and that they have
+like a very low cost oracle update
+that's pretty much what they do right so
+you you start you're also kind of
+starting to see this hybrid architecture
+where a lot of the heavy lifting is
+upchain and you're kind of executing in
+a maybe a trusted in a trusted
+environment and then you move the most
+the least complicated part onchain
+So
+yeah. So do you feel like that also
+reduces the surplus area for what kind
+what type of computation you eventually
+want to run on chain?
+>> I I mean so the yeah the the prop amms
+are are super interesting. I mean like I
+think it's an evolution that that makes
+sense and and mostly because you know
+the reason it's possible is because
+Salana is so cheap. It's very cheap to
+to make these oracle updates. It's more
+expensive to move liquidity around
+especially concentrated liquidity. So I
+think it's an evolution that makes
+sense. I still think there's a world
+where you know that that takes a lot of
+active market making on the offchain
+side of things. So there's still a lot
+of infrastructure and overhead there.
+And so I still think that there's going
+to be value in having a, you know,
+constant product AMM that is, you know,
+more for longtail assets. That's not to
+say prop AMMs aren't getting into
+longtail assets. They certainly are and
+certainly will, but they're going to be
+very focused on the ones that are doing
+high volume, closer, you know, closer to
+blue chip uh than than like very long
+tail. So I I think both will exist. Uh
+but it's definitely a market evolution
+that that makes a lot of sense.
+>> Yeah, that makes sense.
+Do you have anything else? More
+questions questions.
+>> Thank you so much, Taylor, for your
+time. This was super insightful. I'm
+sure people learned a lot from it. Um,
+>> do you have any parting thoughts for the
+audience? Anyone else be looking to, you
+know, get into salana development?
+>> Oh, if you're looking to get into
+development, definitely check out blue
+shift.gg. I really like those guys that
+they're they're awesome and I think the
+platform they built is really cool. Um,
+also just use the Salana docs. feel free
+to reach out to me on Twitter. My handle
+is NFTT Taylor. Um I'm always happy to
+like, you know, help people along in
+their their Salana journey. Um but no,
+other than that, thanks so much, guys.
+This was uh super fun and and for anyone
+that's, you know, looking for for a job,
+feel free to apply on our on our job
+board, Exote.
+>> All right, thank you everyone. Have a
+good day.
+>> Thank you so much for joining us. And
+>> thank you.
+>> Cool. Thanks, guys.
+>> Right. Thank you. Have a good day. I

@@ -1,0 +1,1154 @@
+Transcript:
+What was your first crypto gig job
+whatever you did? The first crypto gig
+job is actually super team earn and also
+why why does a customer want to access
+it via bank Jupyter mobile or even a
+centralized exchanges directly available
+to them right
+>> I need USDC in the first place versus in
+a bank if I want to buy let's say Solana
+bank will transfer AD and allow you to
+buy with AD in your bank account
+>> for example in a centralized exchange
+it's very common to have like an anomous
+wallet where you have one wallet which
+manages all of your treasury right and
+also especially important if you're
+using cold wallets otherwise you'll end
+up with many wallets to manage.
+>> If a bank is doing this they need to
+have a custody license but getting a
+custody license is very simple for a
+bank. It's not a factor of what the bank
+wants. It's more about the insurance.
+>> Hello everyone welcome to another
+episode of the Monex podcast. Today we
+we have Shrian the CTO of use and also
+one of my very good friends and also one
+of the early members of super team.
+Welcome to the podcast Shien.
+>> It's thanks a lot shik. Awesome. Shan,
+uh, so one of the questions that we
+typically start with is like you have a
+very strong tech background, right? Like
+I kur and then Microsoft research, then
+Goldman, and then you had a startup of
+your own. So like
+when was the switch like why did you
+decide to what pulled you into crypto?
+So I I think I can take two answers. One
+is super team. uh but I got into love
+with crypto a little before superdeada.
+This is when I was working at Goldman.
+We were building liquidity provisioning
+algorithms. The idea was to do liquidity
+provisioning in 10 nconds.
+Then Ethereum came by and then you see
+Ethereum wherein you don't require
+sophisticated people to do liquidity
+provisioning. You have an AMM it is
+automatically rebalancing. The fact that
+there's a world computer wherein
+automatically you can go and trade which
+will run independent of thousands of
+devs running it completely blew my mind.
+Uh we were spending a lot of time doing
+algorithms in private silos but then you
+could just do it on chain. Uh that was
+when the love came in. That is when I
+read about the unis swap formula. That
+is when I realized that you can deploy
+these programs. You don't need AWS.
+It'll just run out of the box. That's
+how I got interested in crypto. After
+that it became a problem of distributed
+systems. How do you do consensus?
+Baantine fault tolerance like at the
+core crypto and blockchain is
+distributed systems. Is trying to solve
+a problem which was never solved before
+Bitcoin. Uh and the cool concepts that
+Satoshi introduced to solve the BFD
+problem.
+>> Very interesting. What was your first
+crypto gig job whatever you did?
+>> The first crypto gig job was actually
+super team earn. Um before that I was
+working on my own startup which was an
+edtech startup called All Round. Uh and
+I had heard of Super Team. I had seen
+the podcast uh I think it was called
+Super Pumped back then. Then it became
+super team. The first gig was actually
+building out the front end for Super
+Team Earn. We were racing for I think
+the Mumbai hacker house and it was cash
+me Yash Pratik Dolani and we were
+building this cool platform wherein
+people could come and do gigs
+themselves. Uh it's a fun interesting
+thing that okay we are building
+something for gigs. Uh before that
+technically I did a small thing for Neil
+wherein we were doing the Instagrams
+online. Uh it was not crypto per se but
+that was my proof of work wherein I
+helped him build build the bot which
+would automatically give Instagrams. Uh
+but building out super team earn the
+first layer of it how we had
+attestations how people could commit all
+of that was the first crypto gig that I
+did.
+>> Very interesting. Um I remember when we
+met in Delhi uh I think you were
+wrapping up your old startup and still
+figuring things out. Um I'd love to know
+what made you transition to fuse
+finance. It also seems like a contrarian
+bet. You didn't start up in India, you
+started up in Dubai. Well, I guess it's
+not very contrary in crypto.
+>> Uh but it's a big uh challenge I guess
+maybe not again in crypto. Uh but would
+love to know this initiation story of
+Fuse Finance. So I think fuse finance
+comes from the fact that 2022 was
+probably the worst in crypto for most of
+us right first you get hit by Luna and
+three arrows capital then when you're
+recovering from Luna and Three Arrows
+Capital FTX pulls off something that
+completely shocked the crypto world
+right I still remember that um by the
+start of one week before FTX happened
+and that entire week I was in shock like
+this is the first time I believe that
+someone is good and they were not. So
+SPF completely blew my mind. Um so the
+bet for fuse finance comes mostly from
+in 2022 we realize that u defi is great
+but it's never go going to become
+mainstream like the number of defi users
+will always be these frontier people who
+want to play around with money but if
+you really want crypto and the power
+that it had uh to be used by everyone in
+the world you need to do something with
+regulated financial institutions so in
+that sense UAE was a way ahead because
+they had regulatory regime teams over
+there. They had VA, they had uh
+different organizations which are coming
+up with guard rails so that you can
+actually form a regulated entity and
+then service banks. Uh the GTM was also
+simple. If you service banks and if you
+service these fintex directly, they will
+be able to offer these to their
+consumers maybe in a way wherein the
+consumers don't know they're using
+crypto. And today that is happening with
+like stable coins all across the world.
+Uh so that was a core bet that we'll get
+a regulatory license which will allow us
+to service a bigger base and once that
+bigger base comes into crypto they could
+possibly on ramp themselves to DeFi but
+we wanted the crypto rails to completely
+revolutionize banking and I think in
+2025 it has happened right now because
+stable coin banking is a reality
+everyone is using stable coins that
+completely changes what fintech is
+earlier fintech was a layer on top of
+like banking infrastructure now fintech
+can be built on top of crypto and banks
+can start using like the relationship
+between banks and fintex is completely
+flipped. Now
+>> you mentioned uh GTM was getting a v
+license. Um how difficult is it or I
+guess was it to get a v license back
+then? Uh what does one need if you know
+they want to start a similar
+institution? So number one getting a
+regulatory license is a capital
+constraint problem right? So one you
+have to pay the supervision fees uh
+supervision fees every year. You have to
+have like upfront capital that you need
+to give. You need to have like the right
+people in place compliance legal
+operations uh on boarding risk to
+actually get the license. So it's not a
+simple task. When we started we started
+in November of 2022. We did not have our
+license for at least 18 months. So we
+were building the entire stack. I think
+we got our license in 2023. Yeah.
+Actually it took us one year. uh we
+still one of the faster companies that
+got our license. We never went
+operational before last year. So Jan 1st
+2024 is when we went operational. For
+the first 13 14 months of our existence,
+we were building in silo applying for
+the license that requires us to fill in
+lot of documentation. That is not
+something that I would ask a typical
+startup to do. Uh it takes a lot of time
+and VA was also still new when we
+applied. Now V is an established
+institution and there are hundreds of
+thousands of companies applying
+including like the Bits of the world,
+the Binance of the world. So it's become
+more difficult. So now there's a big
+queue for people to apply. Uh so one you
+need the capital, you need more than the
+technical knowhow to get a licensing.
+You need the right kind of corporate
+structure, legal officers, compliance
+officers and money to actually get it
+done. But once it's done, it allows you
+a fair bit of first moves advantage
+because no one else can service the same
+customers that you get. the core bet was
+that you know stable coins and crypto
+will pull banking into the in into a
+newer dimension. So I'm curious to you
+know learn hear from you how banks act
+you know banks and older financial
+institution actually received your ideas
+or received your offerings and you had
+to tell them hey you know what this is
+like
+this new new thing called stable coins.
+So this was back in 2022 and 2023 right
+way before the genius act. So curious to
+hear about what was their reaction like
+and how did they
+>> the first few banks said that uh it's
+not going to happen right so it was not
+like everyone just opened the doors and
+like oh come on let's do crypto um we
+had to do a lot of convincing for people
+to start accepting uh what we're doing
+right so it took us like the first bank
+went live last year in November so it
+took us 2 years to convince one bank and
+this is a digital only bank VO is a bank
+which is live right know they took the
+deep dive that hey we will enable crypto
+and now uh we have many more banks rack
+rag bank went live last month uh they
+went live with bit panda um other banks
+through it app live has gone live uh
+more banks are going to go live we have
+five or six banks lined up who will go
+live in the next 6 months uh so now the
+tide has shifted and people have
+realized that crypto is something they
+should adopt but this is more of buy
+sell hold crypto uh we still seeing
+adoption in the area of using stable
+coins for more products like using
+stable coin for payments for which the
+licensing regime has now come in uh
+using stable coins for remittance which
+I think a lot of fintexs are now doing
+um in different corridors across the
+world or just using stable coins to top
+up balances right that's a big use case
+right now that happens with grab in
+Singapore wherein you can use stable
+coins to top up balances it's just a
+much better mechanism than swift and in
+terms of if you think about what what it
+entails for consumers. A lot of
+consumers want uh do not want to go
+through swift. It takes 3 or 5 days.
+Sometimes it takes weeks. The money
+doesn't land you have to follow up.
+There is no transparency like stable
+coin transfer any kind of crypto
+transfer is completely transparent like
+you know when it got transferred who got
+it when they did when did they get it
+you can actually do AML KYC checks. So
+that fundamental shift has now happened.
+Banks are looking at different ways to
+do it. uh they're looking at tokenized
+deposit, they're looking at tokenized
+bonds, how do they drive efficiency
+using like the stable coins.
+>> So when VO or any of these banks offer
+crypto services, right? What exactly are
+they uh offering to their customers and
+also why why does a customer want to
+access it via bank versus you know when
+uh something like Jupiter mobile or even
+a centralized exchange is directly
+available to them, right? So I'm curious
+how this consideration set for a
+customer.
+>> So I think the biggest problem is
+on-ramp, right? So if I have to buy
+anything on Jupiter mobile, I need USDC
+in the first place versus in a bank if I
+want to buy Solana, then I can
+immediately the bank will transfer AED
+and allow you to buy with AED in your
+bank account. The offramping problem is
+a big problem in crypto which completely
+gets solved with banks. So the flow is
+so smooth that I go on the app I have
+let's say 10,000 dirhams I want to buy
+Solana worth 100s I can immediately buy
+it there is no friction part and that is
+two with centralized exchanges also you
+need to get the USDC first or you need
+to transfer through swift so you've gone
+back in circles like to actually get the
+money in you need swift again which is a
+problem or you need a or you need fed
+wire all of these are very slow
+mechanisms so banks will in the future
+after the genius act I banks will just
+do one click convert to the bank stable
+coin. So what will happen is let's say I
+have a chase account in chase I have USD
+in one click I'll get USD that can then
+be transferred to Jupiter and then the
+flow is complete but as of today the
+flow is very broken so you need a bank
+in between I think banks become more
+powerful with stable coins they will
+have Chase USD that will go you'll have
+to have some kind of clearing mechanism
+which converts all kinds of USD into
+like one USDC or one USDT or whatever
+you want but this mechanism then will
+solve the major problem in crypto as of
+today which is on ramp and off ramp.
+>> How does a bank look at it from a bank's
+perspective? Is this like a new product
+offering for them? Just like you know
+how if you go to HDFC or ICIC you get a
+DMAT account or you know in the US you
+get a brokerage account. So it's are
+they looking at it as part of their
+entire wealth management portfolio? Is
+that is is that where they are coming
+from? So they have two different use
+cases of this right for the wealth
+management they are more looking into
+bitcoin like offering these frontier
+assets which are not accessible to
+investors. Uh so these are HNI people
+who are qualified investors. So they
+will sell them Solana, Bitcoin, ETH
+whatever is there. On the other side is
+the normal banking like the day-to-day
+banking. There you will have stable
+coins which is for payment means just
+for like medium of exchange. Uh so there
+are two different segments and different
+segments of the banks are looking at
+differently. People are looking at
+people already for example a lot of
+cryptonative folks have Solana. So banks
+want to offer loans against Solana for
+them. They're looking at hey we get
+these onchain assets and we want to
+underwrite loans. Uh they're looking at
+other things like can we have clearing
+houses on chain? Can we trade different
+kinds of assets on chain? Uh can we take
+the deposits which are already there?
+For example, I might have some deposits
+on HDFC. Can I get it converted to
+tokenized deposits and use that for
+something else? Uh that these are the
+use cases banks are interested in. All
+verticals are covered. It is insurance.
+So people want to ensure your bitcoin,
+it is investing, uh it is payments, it
+is insurance. So all different verticals
+are being done right now.
+>> For example, if I deposit BTC or Solana
+into a bank into a bank account. So do I
+still have the custody of my assets or I
+have given the custody to the bank. So
+how do they you've given the custody to
+the bank. So you give up self custody
+over here uh for extra guarantees. That
+is the like essentially that is a
+dilemma right. So do you want to give up
+the custody of assets or not? I think in
+the future banks will allow you to
+withdraw to your own custody. But a lot
+of the banks are now developing their
+own custody stack. It's just like
+custodying money, right? They've always
+been custodian of your assets. You give
+them cash and you get a digital
+representation. Now they're going to
+build their own custody stack wherein
+they will be custoing your Bitcoin, your
+Solana. Then they will also give you
+some staking rewards. So the good thing
+is banks are also looking into staking
+and they want to give the staking
+rewards back. They'll probably charge a
+small commission on top, but they're
+open to all of these mechanisms. They're
+also open to taking the USDC that you
+have, deploying it in DeFi and giving
+you a cut back. Um so banks have very
+like at least in the UAE all banks have
+a head of digital assets and they are
+very forwardthinking folks. They are
+looking at what all needs to be done
+with what all is evolving the crypto
+space. what all features can we give but
+also in a safe way because I think a lot
+of the retail customers they want to be
+very careful before introducing anything
+to them which might cause them losing
+the principle
+>> that is probably much more important
+right in the sense that the it's so
+especially when you're dealing with
+newer protocols or you know just cryp
+even customing crypto in general all you
+need is like one simple mistake so that
+>> so that shows up either as regulatory
+your complaints cost or you you solve it
+with technology, right? So
+I'm curious to uh hear more about how
+you actually think about think about
+this. Is custody part of your uh product
+offering or is it something that banks
+are taking on themselves?
+>> So it's I think it's both. Uh banks are
+also taking out themselves. U mostly
+banks want to do custody themselves
+because that's their forte. They have
+teams which are taking care of cold
+custody. They employ qualified
+custodians. What banks end up doing over
+here is they will manage like we'll
+probably have some hot custody but at
+the end of the day the cold custody will
+lie with the bank so that all the funds
+are stored with them. Uh there are a lot
+of qualified custodians in the world
+which will give you insurance provided
+it's completely cold. Uh cold custody is
+an interesting topic because it's
+completely secured no online activation.
+We use what we do in these particular
+cases is we run the RPC nodes and we get
+the balances by quering the blockchain
+addresses. Uh so we don't need an API
+integration. That's an architectural
+decision that you take because once you
+have an API integration that's another
+vector that you want to avoid in
+security. So different banks have their
+own different uh cold custody stack. We
+just tend to fetch the balances using
+the blockchain uh and then we just
+report it on onto the bank. uh
+especially in a lot of locations custody
+is becoming mandatory in the region that
+they are like we are talking to Turkish
+banks they are hosting their own custody
+UAE banks are now hosting their custody
+I'm pretty sure that's going to happen
+with us as well a lot of these custody
+providers cold custodians will be
+acquired with banks who will then become
+the primary custodians of crypto
+>> I actually would love to double pick on
+their custody mod their accounting model
+right so for example in a centralized
+exchange it's very common to have like a
+anomous wallet where you have one wallet
+which manages all of your treasury,
+right? And also especially important if
+you're using cold wallets otherwise
+you're going you'll end up with many
+wallets to manage. So how does a bank
+typically does it? So is it like an
+omnibus wallet? If it is an omnibus
+wallet, how do how are they thinking
+about things like proof, you know,
+actually having the reserves?
+Because from a centralized exchange to
+bank, they operate in very different
+levels of regulations, right?
+>> Yes. So, um again, if a bank is doing
+this, they need to have a custody
+license. But getting a custody license
+is very simple for a bank because
+they're already doing with uh fiat
+money. Now usually it's not a factor of
+omnibus in terms of what the bank wants.
+It's more about the insurance right. So
+you split up a wallet into multiple
+pieces because it's easier to insure
+individual uh individual cold wallet.
+Most of the insurance providers will not
+provide insurance more than 100 million.
+So the maximum asset you'll have is the
+quantum of insurance that you have. So
+they will insure multiple different
+wallets each for like 50 million. So
+that is a strategy that you do only
+depending on the insurance. So it's not
+mandated by what I want. It's mandated
+by how much insurance coverage I'll get.
+Uh it's a very different consideration
+for banks, right? So it's not a
+technical challenge. It's how do we make
+sure that accidentally one of these
+wallets get hacked, we can still recover
+all of the funds.
+>> Where does Fuse Finance come into the
+picture here? Like what tech are you
+building? If we can dive a little deeper
+into this um
+>> yes
+>> for banks. So uh what we've done is we
+built like an API stack which offers a
+lot of these features that banks would
+want right so let's say the use case of
+buying selling old crypto uh we embed
+directly into the banking app and you
+can buy or sell crypto using that uh
+what our stack does is it exposes a
+unified API it has an account structure
+anyone can create an account create a
+user they have to give some KYC
+documents according to the regulation
+and then once the account is ready uh
+you can start trading for that account
+Um we abstract all of the blockchain
+components. So we have an open loop just
+like Privy does wherein you can use Fuse
+Finance APIs to orchestrate your own
+wallets and you can then buy crypto,
+sell crypto on ramp, off-ramp all
+automated fashion. So we have
+connectivity with different banking
+providers. So you can provision a bank
+account wherein you can transfer the
+funds. Once the funds are hit, you get a
+web hook. Uh from the web hook, then you
+know that okay, I have now 10,000
+dirhams. You can start trading on it. Um
+so in a nutshell we provide this entire
+API stack which looks like a simple web
+to AP rest API to manage all of your
+crypto. Uh it the API is so simple that
+you can also trade fiat or you can trade
+stocks on it. Uh it's in an exchange API
+you usually have convert BTC to USDT. In
+an API you'll have convert BTC to USD or
+BTC to AD. Uh we've built it on AWS. So
+I think the engineering that went into
+this is very interesting on we've
+abstracted out different components. We
+have one whole custody service which can
+connect to the multiple custodians that
+we have. We have to support multiple
+custodians because we have to support
+the bank custody providers also. So if a
+bank has a hard custody wallet, we need
+to abstract it out and integrate with
+our custody provider. Uh we built a
+completely event based mechanism. Uh
+it's a popsup mechanism that scales
+really well. That was also what we had
+at Goldman. So everything is an event.
+You have API servers distributed across
+multiple availability zones. Uh so that
+if one of them goes down, you can always
+have another come up. BCP is a term
+which is very common with banking. So
+they need to make sure that you're
+always up. You need to have a 99.99%
+uptime. So we built it on multiple ACS.
+Um what ends up happening is API server
+is the front end when it gets a request
+converts it to an event message
+publishes it to the event bus then the
+multiple consumers will consume the
+message and act on it. Uh we have
+different consumers we have for orders
+we have different servers for payments
+we have for notification audit. So we
+built a big u big cluster of services
+microservices which are doing it. We've
+all done it on a monor repo though. So
+it's not it's not like a true
+microservices. It's like a monorreo
+having a popsub consumer architecture. I
+think that that scales really well.
+>> You're the ones who are providing the
+swaps to the bank. So where do you
+source liquidity from?
+>> Once you get an API server message, it's
+an order request. It goes to a consumer
+which is an order service
+>> that has something we call the smart
+order route
+>> that will go and ser get liquidity from
+multiple different venues. So we work
+with regulated uh liquidity providers be
+the falcon connects, winter mute, B2C2
+all of these major liquidity providers
+across the world. We source liquidity
+whoever gives the best price. One of the
+regulatory constraints that we have is
+best execution. So we have to make sure
+that the price that we get is the best
+in the market provided there are
+constraints and slippage. So we do not
+take that decision actively. Whoever
+gives us the best code depending upon
+risk limits we source it from there. Uh
+there's no risk over here. So first we
+confirm that the order has been executed
+by the liquidity provider and then we
+give it back.
+>> So interesting. So this looks this
+sounds very close to an exchange um only
+um you're serving it in a B2B fashion.
+Uh when you say you source liquidity u
+from you know winter mute or or any of
+these market makers um does that mean
+you get an can users only place market
+orders is I guess my question or is this
+like a pure trading platform?
+>> So uh right now we support market
+orders. We are now opening up limit
+orders as well. uh that is also based on
+a similar model wherein you place it on
+an order book. Uh from the order book
+the liquidity is sourced from multiple
+different liquidity venues and then the
+order gets ex uh executed or it might
+get executed between the orders on our
+platform itself. But right now it's only
+market orders. So limit order is
+experimental. We're trying to figure out
+how to best support it. The other order
+we support is an OTC order. It's called
+a RFQ order wherein you can place an
+order and ask for let's say a big chunk.
+uh this is what mostly HNIs and private
+uh wealth offices end up using.
+>> I guess the other thing here is uh
+deposit and withdrawal stack right um
+whenever uh your users can probably
+withdraw to the blockchain and deposit
+from the blockchain. Is that true?
+>> Not for the banking integration right
+now. That's usually closed loop. Uh it
+will eventually become open loop
+provided the banks want to do it. We
+allow it but the banks have a risk
+tolerance and slowly and steadily
+they'll start opening it up.
+>> It's very close to what happens in India
+which is you can convert fiat to crypto
+crypto. Yes. Yes. But we also have an
+OTC test wherein you can uh withdraw
+crypto freely.
+>> Would love to know the engineering
+principles. How do you hire? What kind
+of people do you look for? The tech
+stack things like these.
+>> Uh so the tech stack is uh for better or
+worse. The text right now is touchcript.
+Uh it scales really well. Like I think
+people think that you can't have really
+fast services. Our P99 latencies is like
+30 mconds. Uh which you can get on
+Typescript if you architect it really
+well. Now we are adding because it's a
+pubsub based architecture. We want to
+have some of the consumers written in
+Golang or Rust or whatever is required.
+Golang is the first one we want to do
+because it seems to be cool. U like I
+don't really care about the language I
+have written in Python, C++, JavaScript,
+whatever solves the purpose at the end
+of the day is the language that you have
+to use. Uh I think we have a very simple
+hiring process. We actually hired
+someone in 48 hours last week. Um after
+I had a very bad incident when someone
+didn't join. Uh I I was going to say
+that one guy called Adita said that he's
+not going to join. We got another Adita
+in like 48 hours and we I think we got
+the better Adita here in like the last
+48 hours. Um so we have five rounds. Uh
+the first round is a small chat with me.
+That small chat is just 15 minutes and I
+just want to test if that person is a
+good fit for the company or not. In that
+I'm looking for like team like culture
+fit. Is he is like a vibe check more or
+less. I want to see if people have the
+hustle. they want to work hard. I don't
+really care where you're from. As long
+as you have a innate thirst to actually
+learn and you have that hunger to learn,
+that's all that I really care about,
+right? You want to know that if this
+person joins the team, everyone will be
+better off or not. Uh we don't like to
+hire like I think a brilliant jerks, we
+like to hire people who are consistent
+and hardworking. I don't want people who
+will be aspos to anyone else in the
+team. Uh we don't have anyone like that.
+I think the two principles that I hire
+for is you need to be like very
+independent. Uh it's a very flat
+hierarchy. There is no micromanagement.
+You should not block people. So you
+should be someone who actually goes out
+and helps people rather than blocking
+them. Uh we try to be have a very
+collaborative approach to programming
+over here because we are remote first
+team. Uh we don't have in in office. So
+we want people who actually help each
+other out. Uh the f after that we have
+two or three interviews with the
+different engineering teams. We focus
+more on real world development skills.
+So what kind of production quality code
+you've written? What is your previous
+experiences? How to do system design.
+DSA is not usually covered. We will ask
+them to write some piece of code which
+is production ready, some data structure
+or algorithm which is more what you'll
+write in a real world environment rather
+than an abstract environment of like
+dynamic programming. Uh so it's more
+realistic that way. If someone actually
+we think is good but fails an interview,
+we ask them to do it again in a few
+weeks. uh if we think that someone is
+like we try to give multiple
+opportunities to people who might just
+come under stress because people try to
+think interview as a stressful
+environment. It is okay for us for
+people to retry. Uh we do not say that
+hey once you fail you cannot retry for
+fuse. Uh so that's a different approach
+that we have. Then one of my co-founders
+talks to the engineer if they're like
+senior level and if everything goes well
+we just or hire them. Doesn't take more
+than two to three weeks to actually
+close the process. We've done it much
+quicker like we did for 48 hours last
+week.
+>> That's amazing. U are you still hiring?
+We I think a few folks could be a good
+fit.
+>> How big is the team right now? I also
+see you guys are post series B now,
+right?
+>> So we are post series A. Uh I don't know
+what it means. You raised enough. I
+don't know the capital number is very
+weird but uh the total team is 75
+people. Uh the engineering team now is
+16 people going to 20 which is far
+bigger than I anticipated it to be. like
+I want I prefer small teams but we have
+so many things to solve that we went
+ahead we still hiring for people and I
+think I like to talk to people and if
+they are good we don't hire from a
+scarcity mindset so we don't really hire
+people that hey like everything is going
+bad we need to hire people we try to
+talk to people and figure out that if
+they are good we find a position in the
+team I think that works better wherever
+I've hired from a mindset that hey we
+need to hire someone right now it's
+always been a bad hire so We are open to
+hiring people. If someone is like
+someone is smart who can pick up things
+work independently we are more than
+happy to figure out how they can work
+with fuse.
+>> Are you guys supports yet or you know
+margin trading or is that on the charts?
+>> So those are things that we want to do
+but that requires a different license.
+Uh so the interesting thing about the
+domain we are in is if you want to do
+anything derivatives you need a
+different license and the capital
+requirement for license is very
+different. So in this particular case in
+margins etc you need a different kind of
+envir like capital requirement to
+actually do it. The biggest challenge
+that we have is our balance sheet uh
+like how much can you actually do with a
+limited amount of balance sheet. Uh this
+is solved if you become a big player
+like Galaxy Digital who's one of our
+investors as well or let's say a Binance
+which has like billions of dollars in
+balance sheet. We are adding more order
+types. We are adding more banking
+partners. We are adding more custodians.
+Uh so we doing all of these uh with a
+small team right now but there's a lot
+of things that we want to build out.
+>> It seems like you're operating in a very
+tightly regulated space. Every not just
+your one your engineering your entire
+architecture your all the systems that
+you build need to adhere to a certain
+compliance standard. Not only that but
+any new priority decisions or even a
+future that you need to consider has to
+go via the regulator right so that means
+a completely different process so how do
+you how do you I I'm curious how you
+think through technical decisions and
+also how you think about product
+decisions given that you are operating
+in a very highly constrained environment
+regulator wise
+>> a lot of the principles have been set
+into the architecture right um because
+it's an event- based mechanism. Every
+event is audited automatically. Uh we do
+not allow roll backs. So in the sense
+that once you do an order, it is
+unlikely that the order can be
+cancelled. You'll have to trade away.
+Like we built the system such that it
+kind of it's fat fingerproof that if you
+do a mistake, it should not like like
+you need multiple checks to make sure
+that everything is right. Um and I'm not
+like we spoke about deposit and
+withdrawals. It's not just a dep a
+deposit and withdrawal has multiple
+layers to it. So when you withdraw a
+fund when you are in a regulated
+environment you have to check that the
+final wallet destination has to be
+screened. So we screen whether this is
+an address which has been used by any
+illicit activities. Has it used it used
+by any hacker collective? If it has we
+do not process the withdrawal. So that
+is called KY know your transaction. So
+we do address cleaning and KY using
+elliptic chainsis. These are the
+multiple tools you can after that uh
+people don't know that every time you do
+a transfer you have to do something
+called a travel rule uh wherein you
+actually encode the information about
+who encrypt the information about who
+the sender and receiver is and you match
+that information. So let's say if you
+deposit into the fuse platform uh we get
+a deposit you say that it has come from
+arkat but it's actually come from so we
+will match that information from the
+sender and make sure that it is actually
+correct information. So all of these
+things have to be built into the system.
+Fortunately, we are very API and
+automation driven. So we try to automate
+as much as possible. We've automated all
+of these checks. Uh so we don't want to
+have like manual like we're a small team
+handling a lot of these things because
+we've automated as many things as
+possible. Uh then there are other things
+like in terms of just the architecture
+we have multiple side cars. Uh we
+partnered with players like exop
+uh we sell for a lot of things. So we
+selfose graphana, we self host
+telemetry, we self host appsmith,
+metabase, all of these tools are
+self-hosted. We use our own VPN
+solution. We use tail scale uh to
+self-host all of this. So we don't shy
+away from doing a lot of the heavy
+lifting in dev sec ops to make sure that
+our end to end pipeline is really
+secure. Like one of the things that I
+love doing, I still spend 30 to 40% of
+my time coding. uh I do most of the
+releases with the with everyone look at
+whatever the code changes are because I
+I think the joy of automating writing
+code is still there uh people will say
+that AI will come in write a lot of code
+but that just makes it much more fun
+right you don't write the smaller bits
+of code you think about the larger
+architecture pieces on how to
+orchestrate everything together um being
+in a regulated environment is not like
+yes you have the reporting requirements
+but if you use the right architecture if
+you have all of these tools in place and
+you build with the building blocks in
+place to actually adhere to compliance,
+it becomes much more simpler.
+>> What does your typical release cycle
+look like, right?
+>> We release three or five times a day. Uh
+like it's all CI/CD.
+>> Uh and I think that is one of the
+interesting things that we built. We use
+ECS right now. Uh the problem with ECS
+is coordinating between different
+services and ECS is hard. Uh it does not
+come out of the box. They don't support
+blue green deployment out of the box. Uh
+so we've built an architecture on top
+which does that like because the event
+based like it's an event based popsup
+mechanism what we do is um we have a
+coordinated we have a coordinator as
+soon as the coordinator is getting
+restarted it blocks all the other
+consumers um and all the other consumers
+will only consume the existing message
+and then go on a stop they will only
+start consuming message when they
+restart in the next version so we've
+built a blue green and a rolling
+deployment mechanism on top of ECM
+to do multiple deployments in a day
+without losing messages. Um, and we
+wanted to do multiple deployments in a
+day because there's this book called the
+Phoenix Project uh which I'm inspired a
+lot by over there. The idea is as soon
+as you stop deploying daily
+automatically deployments become hard
+because you have to coordinate
+everything for one entire week or entire
+month. Instead, if you deploy daily and
+multiple times, the release failures go
+down. Uh, so we try to deploy as many
+times as possible. This is one of the
+biggest change that had to be done to my
+engineering team. Uh earlier they were
+hesitant and now all of them are like
+yeah let's just deploy. So that change
+of attitude that you can deploy every
+day that gives you a lot of freedom.
+That also gives you the freedom that if
+something breaks you can roll back. Uh
+usually things don't break because we
+have multiple E2A integration tests
+which run on the four different
+environments. We have we have a
+development staging pre-pro and prod
+environment. So every environment has
+E2E tests which run throughout the day.
+As soon as something fails, you know
+that something has failed. But you have
+also the ability to immediately deploy
+anything very quickly. Uh again, our
+automation helps. We have GitHub
+actions. We use really fast GitHub
+action runners. We have coverage which
+is more than 99% for most of the the
+things. Most companies will not focus on
+unit test coverage. I focus a lot
+because that set it's the broken window
+theory, right? Once you have 60%
+coverage, no one wants 90%. But once you
+have 99% going down is always going to
+be painful. Uh so that works really
+well. It is a little pedantic. Uh a lot
+of people hate me for just pushing the
+coverage up but in the long term it
+works really well
+>> especially in a startup you want to kind
+of move fast and break things which it's
+one of those things that you just can't
+afford to do because of the nature of
+the industry. Right. So
+>> but you can break in dev staging and
+pre-pro right if you catch it early. you
+can just break as much things as
+possible in development. Like if you
+have pipelines, so in in our case, a
+developer makes a change, pushes it into
+development. Uh if everything is good,
+it goes to stating, you have three
+layers which will actually automatically
+catch any error. Uh so even before
+production, there are multiple points in
+which you know if this is breaking, you
+will not release it. Then finally, when
+a release happens to production, you
+manually review the code again. So this
+is the third time you're reviewing. you
+actually do a risk impact assessment
+whether there is any critical component
+which is getting affected or not.
+Obviously you have different SLAs's uh
+let's say in our particular case we have
+internal tools if you deploy something
+in an internal tool breaks that's okay
+right you can fix it later or you can
+have something that patches it but if a
+core use case for a bang breaks that's
+not okay so we try to also evaluate what
+is the risk of a release uh we are
+always backwards compatible like we try
+to make sure that we never do a breaking
+change like that is one of the things
+that we keep on talking about how to
+make sure that we will not break and
+that requires two three releases right
+first release is backwards compatible
+making sure everything gets migrated and
+then deploying the next release wherein
+everything is clean. Uh it's a process
+it's a acumen that most engineers
+develop but once you develop it it's
+just good engineering. Uh people think
+that writing code is just writing code
+but there's a lot that goes into writing
+code at production scale which is going
+to handle hundreds of thousands of
+millions of dollars. Uh it's an
+interesting technical problem. I think
+the one thing that I'm really proud of
+is the way we do releases right now. Uh
+it's a really good mechanism and it took
+us a while to come to the position that
+we are right now. But earlier we were a
+little afraid because there are these
+corner cases. Now most of the corner
+cases are handmade.
+>> It's interesting. You also mentioned you
+guys are a you it's a monolith, right?
+Sorry, not a monolith but a monor repo.
+So,
+>> so how do you maintain like you know it
+must take like a tremendous amount of
+discipline to make sure must take a
+tremendous amount of discipline to make
+sure nothing goes wrong especially with
+the monor repo right these don't break
+in a monor repo because when you have
+type checking so you know that one layer
+is already done um you have services
+which if you change one part of the code
+you immediately know the contract is
+broken on another part If you have
+microservices and because we have a
+consumer architecture and whenever you
+do this event based mechanism you don't
+send messages on the queue you send ids
+on the queue. So everything is postgress
+is still our ultimate source of truth.
+You have a message that this has
+processed. You check the ID. You go to
+the DB and now you know what the newest
+state is. Then you process it. Um I
+think once you have microservices, you
+might end up deploying a micros service
+which changed the API contract and other
+microser might not have an updated
+contract and things might break. If you
+have a monorreo with a consumer popsub
+mechanism and you know that there's only
+one source of information and everything
+else is a sync you can coordinate much
+better. It's a much better programming
+model in my mind because if one of the
+contracts changes in one part of the
+code the other part will start doing a
+type check error. Uh we also make sure
+that there are no any there are no
+unknowns it is like strictly typed. So
+you know that something breaks you
+immediately get to fix it. Second thing
+that happens in this particular contract
+is because only ids are going you know
+what the state machine is. Um and
+because we are backwards compatible um I
+think the other thing that comes into
+play is if you deploy too many times
+rather than deploying once a week
+automatically your change quantum is
+very small. So whenever something goes
+in even though we have hundreds of
+thousands of lines of code at max you're
+touching five or six files. So if five
+or six files are being affected, you
+know what can go wrong. Like you can
+really plan what is going wrong. If 100
+files are being affected, no one knows
+what's going to go wrong in the system.
+So it's much more predictable if the
+quantum of changes is smaller.
+So I'm a big believer of even deploying
+a single file. Like if there's a small
+file change, you can just deploy it.
+Deploy hundreds of times of a day. Uh we
+don't do that 100 times because like ECS
+is slow. So it takes like 20 minutes to
+do a deployment which is the only
+constraint factor that we have right
+now. We have as parallel as possible but
+still it takes some time.
+>> Now I understand like the typescript and
+the monor repo explains why your build
+you you had tweeted about your build
+time being like taking 20 minutes on
+GitHub actions.
+>> Now I understand that was the case.
+>> Yeah. Yeah. No, so the thing is we use
+just so we use just on rust. So we do
+SWC. The problem is we have 5,000 test
+cases. uh across like hundreds of files
+and over 3 years it started taking a lot
+of time but now I've just put M4 Max so
+I'm like just put hardware to the
+problem why should I care about it
+that's the Solana philosophy right
+better hardware is just the solution to
+a lot of scaling problems it's now down
+to 2 minutes again which is okay
+>> thank you so much for joining us it was
+fantastic having you
+>> thanks a bar shake.

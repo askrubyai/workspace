@@ -1,0 +1,1199 @@
+Transcript:
+right let me set the context in this
+video we have Nick from helas helas is
+one of the biggest validators on Solana
+today and also one of the biggest RPC
+infra companies if you've ever used an
+RPC to build an application you've
+probably heard of helas or used them in
+some form or fashion in this video we'll
+understand the technicals that go behind
+building something like this core RPC
+infrastructure how do you bring up
+validators how do you scale up
+validators how difficult is it to become
+one of the biggest validators on Solana
+and also help a bunch of Solana
+companies bring up rpcs as always there
+is a $1,000 Bounty Linked In the
+description the Bounty is to build a
+platform on top of helus web hooks the
+platform should allow users to sign up
+give their postgress database
+credentials and what they want to index
+on the Solana blockchain it could be
+things like the currently available bids
+on an nft or the current prices of an
+nft or the currently available tokens to
+lend or buy the current price of a
+specific token on various Texs the user
+can come provide their postest
+credentials and select one of these
+groups and we'll start to fill their
+postgress database for them it takes
+away the headache of running your own
+RPC or even worrying about any webbook
+infrastructure you give a postgress
+database it gets filled with whatever
+data you want your job is to make sure
+to build a platform where people can
+come and simply provide what they want
+and focus on the application you fill
+the data for them you index the
+blockchain for them and you use Helia s
+books to facilitate that the boun is
+linked in the description with that
+let's get right into it how how did you
+guys approach your indexing
+infrastructure yeah I mean I guess I can
+answer that in two ways I can answer
+like how do we kind of do it today for
+this indexing infrastructure only um you
+just need one RPC uh running uh that's
+constantly indexing the chain and maybe
+another one for repairs uh but is that
+all you need yeah I guess like it really
+comes down to what you call you said you
+said you have a few uh servers running
+but do you have to Auto scale from time
+to time and if the answer is yes how do
+you do that on bare metal um is there
+something that the cloud provides provid
+or have you built the Autos scal
+infrastructure
+yourself I mean as a provider like how
+do we scale our systems y it's all just
+capacity planing hello hello hello
+welcome to the one Des podcast today we
+have with us Nick from
+helus hel if you are in the Solana
+ecosystem it's it's very very likely or
+rather it's unlikely that you don't know
+about helus helus is one of the largest
+RPC providers on Solana and so somewhat
+cheekily when your transaction doesn't
+land they're the one to get blamed on
+Twitter
+so so yeah welcome
+Nick everyone happy to be
+here
+awesome
+so I so you guys started
+out when you started out with he I know
+if feel look at some of the the growth
+of Solana and growth of helas kind of
+has been in lock step for example you
+know when we when compression came out
+first helus was the first provider to
+actually roll up the sleeves and build
+all the necessary infrastructure
+around you know the Das and actually
+taking D to production
+and deploying into production and Then
+followed by you know all your work with
+z compression and even with stake weer Q
+so I would kind
+of would love to go deeper into how you
+guys you know would love to hear about
+your journey of scaling with
+Solana sure yeah um is there anywhere
+you want to start or you kind of want to
+just go from the
+top from the top would be good I think
+yeah the top okay um yeah I mean well
+well I guess first things first helas
+was
+founded because we found it was too hard
+to build on salana and on crypto in
+general and for it was too hard
+for L Engineers or startups and
+companies to build user faing
+ANS and the first thing that we found
+that was kind of ridiculous is that when
+you were looking at the read apis for G
+like salana um it was really hard to
+understand what's happening who's
+sending who money is it a f purchase
+sale is it a token swap like you really
+have is it staking you have no clue and
+you don't really know there was not
+really many docks or resources at the
+time we started off tackling that we
+built like a um and I'll go maybe a
+little bit more technical than I usually
+do because of the nature of this podcast
+but we started off actually like
+building an adbs with a very kind of
+like I wouldn't say microservices but
+you're more kind of like traditional
+back gy sort of thing where we had this
+we're essentially like a middleware we
+used our PC providers um we got the data
+we transform it store some of the stuff
+in databases enrich it with parsers and
+stuff and then serve that back to people
+we also quickly came up with the idea
+that people needed better event-driven
+systems so we added in web books so
+people can kind of Say Hey I want to
+just get all the I don't know all the
+token swaps that happen on you know I
+don't know radium liquid deols or
+something and then you get those events
+but like we were using rpcs ourselves
+and you know we faced a lot of problems
+with it um again going a little more
+technical here because what we even had
+is we had this whole like this like
+internal I don't know I wouldn't call it
+a load balancer but basically we had
+this wrapped RPC client that would go
+and basically SW detect issues with rpcs
+and switch between them and we had this
+whole like logic of how we kind of like
+fail over in different cases to handle
+the different issues that we saw across
+different uh providers ERS and also our
+customers at the same time too are like
+hey we have a he subscription we like
+that we also have to have an RPC RPC
+subscription it's kind of annoying they
+just wanted one single subscription so
+then we started offering um rpcs we kind
+of got into running our own nodes we
+started doing that um what that looked
+like for us is shifting a lot of stuff
+out of the cloud because you have to run
+for those unfamiliar you have to run
+Salon validators or at least it's best
+to run them on bare metal they don't run
+as well virtualized um so to move a lot
+of architecture away from um away from
+the cloud and even then even the cloud
+didn't work that well for salana infra I
+think even ignoring that fact just
+because um the data through puts so high
+you get just destroyed by the egress
+fees if you're like vending out things
+like data streams to to customers um and
+anyways that we got into the RPC side
+and we started doing that we started
+kind of seeing the problems existed
+there and we started kind of um you know
+productionizing and catching up I
+suppose to the exist RPC providers like
+how can we basically offer a reliable
+RPC at low cost that's really the
+problem we were trying to do because
+part of the reason we even got into it
+is because the prices were quite high
+for us to find a reliable RPC in the
+first place when we were using it as a
+customer so we wanted to kind of give a
+lowc cost but you know higher quality um
+alternative so we set up doing that and
+there's I can talk about that later but
+then as we were doing that our whole
+mission isn't Mission never was to build
+an RPC the RPC is just just like a means
+to an end it's something people need the
+mission is to actually make it easy to
+build in salana and well like when
+impression came around we kind of were
+like okay well this is this does solve a
+interesting use case that people can
+benefit from also it included the you
+know metaplex authored the authored it
+and the original it also covered nfts
+and allowed you to instead having do
+these like convoluted queries using the
+native apis you could just say oh get me
+all the nfts at someone else okay this
+is this is really logical this makes
+sense so we decided to start uh running
+that for those reasons and as you
+already alluded to like you know it does
+take it t takes a lot of work to go from
+sort of the initial implementation of
+something towards something that just
+works all the time 100% in prod without
+problems there was you mentioned a lot
+of issues kind of productionizing it
+debugging it work we worked a lot with
+initial doops of compression um you know
+namely like helium dialect um a few
+others the kind of smoothing everything
+out um that was part of the puzzle and
+as we kept kind of moving along I guess
+on the compression front since you
+mentioned that already we kind of
+realized well twofold one thing is that
+people wanted to use compression but for
+more than just the nfts it actually got
+to the point where using compression was
+so kind of tricky if you want to use
+like the base primitive that people
+started actually like putting their
+account data into like the URI of the
+cnft because that was like they could
+just use the existing
+infrastructure um and there are a few
+kind of poor problems I think with the
+first ver version of compression and the
+the the problem is that it doesn't
+support pdas for those unfamiliar with
+pdas it's a program derived address and
+the nice property that it has is it's
+essentially like a deterministic account
+address so I would I would make it kind
+of I make the uh comparison to if you're
+used to working with like dictionaries
+or hashmaps where you could say like you
+know I have this username so I have my
+program which is kind of like I don't
+know the school program and I have a a
+teacher's name so I want to find their
+the class by the teacher's name or
+something I can make a PDA that's like
+takes my program takes the teacher's
+name and then I get to I could find like
+the data about this class or certain um
+some school school gr but anyways that
+behavior is really nice and you can't do
+that with normal compression because all
+the accounts have dynamically generated
+account IDs which means that ahead of
+time you can't know what the account ID
+will be which completely breaks a lot of
+design patterns you do as a
+developer the big breakthrough is CK
+compression that the uh big brains over
+at light protocol figured out um using
+some fancy Merkel tree stuff is a way to
+have that same behavior but with
+compressed accounts um and then as soon
+as you saw that like okay this this
+solves that problem
+and now the only problem that's left to
+solve is how do you make a generalized
+indexer for this system do you make it
+so that people can go in how do you
+adjust the ux in a way so that's
+relatively easy or understandable for
+someone to say hey I want to open up bu
+press accounts I want them to do these
+these certain
+things and then have a very logical API
+to work with it so we we really
+intentionally designed CK compression in
+a way so that it mimicked the salon
+experience so that it's less friction to
+go from regular compression to or
+regular Salon development to the
+compressor of CK um and built up that
+indexer so yeah that that's one of the I
+guess products um we have others that we
+are have worked on and are um new ones
+that we are also working on today
+um yeah I guess we can kind of go really
+wherever you want from there quite a lot
+to talk about I could talk for I think
+one of the the the common denominator of
+most of the things that you mentioned is
+like having a robust infrastructure to
+index events as they come in be it an
+event happening on any you know on any
+PD on Sal or you know a compressed even
+get just getting emitted directly onto
+the LED right it all boils them to
+having a robust infrastructure to index
+events and so can we spend a little bit
+of time talking about that how how did
+you guys approach your indexing
+infrastructure yeah I mean I guess I can
+answer that in two ways I can answer
+like how do we kind of do it today what
+do we like to see today and also kind of
+I could also answer it more from how we
+got to where we are today and I guess
+I'll do the ladder um we started by
+making all the same sort of I guess
+mistakes that everyone else would do
+and through those mistakes we kind of
+end up having to go for further and
+further sort of down the stack so the
+first thing we did we wanted to do some
+like basic indexing is like okay well
+it's pretty you know logical that if I
+and trying to get the history of X I'll
+just use the get signatures for account
+method for all that data and then and
+fill it that way but that's super slow
+it's it's not very efficient to work to
+do it like that at all you have a lot of
+accounts too it doesn't really make
+sense you have to start going block by
+block for like back fills and that sort
+of stuff and then if you're in index
+indexing you could do like a polling
+strategy is okay but it runs into some
+problems of like you could get you could
+fall behind and such and um the latency
+could be kind of high in some cases and
+so we played around with
+um doing the Ping strategy and then we
+started doing geyser those unfamiliar
+geyser is this like plugin mechanism for
+Salon validators essentially you adhere
+to the spec you get this um
+binary you basically put it under valid
+validator and say hey here's my plugin
+and it loads that plugin and then it the
+plugin runs some of your code as part of
+the validator and what you do with that
+the common pattern is that you use it to
+stream events to do some sort of
+processing so a very common like Das for
+example has a plugin it listens to all
+the account changes for nfts and tokens
+and then sends those to a stream where
+they can get picked up later by the end
+deer so we worked with that as well um
+and that is very low latency but it's a
+huge pain to work with the reason is
+because that if you ever want to change
+your plugin code well there's now hot
+reloading but I guess the part that's
+ultimately makes it hard to keep it more
+brief is that it's tied to the validor
+itself and so you don't really have nice
+redundancy and you have a tied to one
+RPC node what you you would prefer is to
+have kind of some stream that is robust
+back by a couple different RPC nodes so
+you have this weird trade-off I guess in
+the current um situation between doing
+polling where you can kind of pull be
+pull against RPC which is naturally
+redundant or you could have like a
+single screen coming from the skyer node
+which is inherently riskier because on
+rpcs are kind of finicky to run for for
+many
+reasons um and then so now what we tend
+to do is we tend to use this thing
+called um erpc
+streams and so um the team at at tridon
+authored the first uh grpc plugin and
+essentially it's this um streaming
+mechanism where it's kind of like
+websockets but it's a little bit better
+for backend code I guess the way I'd
+keep it kind of simple you can say hey I
+want to get you know all the block
+updates uh but the subset of data you
+could be kind of specific what you get
+you get that screen that comes to you
+and then so internally we do that we
+have a pool of shared nodes that all run
+the grpc plugin then we have some this
+sort of like various Health detections
+that we use to make sure that if any of
+them ever kind of fall behind or have
+any sort of like problems we detect that
+and we switch over to a different one um
+now there still is that problem though
+that when one has an issue you switch to
+another you could have a gap in your
+data we still have to go and repair it
+so our current architecture and what I
+think most people's AR texure is right
+now is a mix of like streaming plus like
+some sort of like uh repair system to
+repair missing data using historical
+stuff and that works but it's also kind
+of suboptimal it's like extra complexity
+like who's going to want to build that
+you know from scratch um at least as an
+app developer you probably don't want to
+as an info company yeah it's comes with
+the territory that we get it but for
+anyone else they probably don't want to
+do it so that is something that we're
+also working on as well
+um I won't prob I can't say too much
+there but basically we're working on a
+product that makes this whole problem a
+lot easier and it's all based off our
+learnings and pain points and then we're
+kind of just building what exactly what
+we want and then just selling it to
+everyone else so they can use
+it got it super interesting uh I have a
+few questions here with the first one
+being uh do you since for this indexing
+infrastructure only um do you just need
+one RPC uh running uh that's constantly
+indexing the chain and maybe another one
+for repairs but is that all you
+need yeah I guess like it really comes
+down to what you call ID defying need
+right it's like how much would NC do
+want to have in your system I would I
+would never run with one for streaming
+and one for rpcs and also we have to
+have replic this replicated in a couple
+different regions because we anything we
+store any sort of indexed data we tend
+to do in m regions as well just for
+better latency
+um I think polling so here's the thing
+is
+that yeah it's very it's very
+system
+dependent typically what makes sense for
+most applications I would say it makes
+sense to have a few nodes for the RPC
+calls because you can you also your
+applications probably going use rpcs for
+other stuff as well and you can just be
+redundant against those and then usually
+just one for streaming uh when we used
+to use like geyser nodes we'd have
+probably two of them but the issue with
+that is that there's no you basically
+just stream from both you have to have
+like a d d duplication setup or have
+your like indexing set up in a way so
+that it's um uh like item poent like
+basically when you see the same record a
+second time it doesn't take an action or
+the action is not detrimental what
+you're doing so different ways to do it
+I
+guess got it and for your standard RPC
+provider uh you said you said you have a
+few uh servers running but do you have
+to Auto scale from time to time and if
+the answer is yes how do you do that on
+bare metal um is there something that
+the cloud provider provides or have you
+built the autoscaling infrastructure
+yourself well you mean as a provider
+like how do we scale our systems yep
+it's all just capacity planning we're
+closer to a cloud provider than the
+other way around so we just
+yeah we just plan ahead essentially got
+it so if you have bursts there's no way
+to Auto scale
+um not really we leave a lot of room
+available for that we calibrate our
+limits and everything ahead of time we
+do a lot of like orders of
+infrastructure providers um months in
+advance and such so and then if there is
+any sort of like more aggressive
+bursts then we always could do like
+pretty emergency measures but you could
+always take like resources from you know
+they're doing say there's a big burst
+you can take resources away from one
+area and shift it over so you can
+basically reorganize your inventories um
+in emergency scenarios to address those
+um bursts but I'd say like as you grow
+like the bigger and bigger that you
+become the less like dramatic the bursts
+become because that it's sort of like
+a individual actors start becoming more
+of a drop in the bucket you have like
+the overall load of the system
+um gets quite high so as one person
+unless you're paying for a you know
+custom plan with like very very high
+rate limits you're probably not going to
+come close to making it
+done got it and so in that case you're
+saying you over provision from time to
+time um does that mean uh you don't like
+is there Engineers sitting and bringing
+up servers or you have some pipeline to
+you know uh scale up whenever you want
+to in
+advance yeah I mean like once the heart
+was the hardware is in and it's like you
+know configured and stuff it's that's
+just is just available servers so the
+scaling process isn't the same as you
+might see if you're used to using like
+cloud service where it's kind of like oh
+we just scale up like we would run with
+a lot more capacity than you would in a
+cloud but the difference is that we have
+such low margins with everything because
+we use bare metal it's so much cheaper
+than the cloud that like part of the
+reason the cloud the cloud gives you
+this benefit of being able to scale but
+then they have to do what we're doing so
+then you pay for that premium right um
+and so we have a really good discount
+doing it this way um so we're able to
+over provision a little bit and it
+becomes just a optimization really I
+guess that we get the price low for
+ourselves and customers and give us
+enough room on the automation side we do
+have a lot of we do have a in internal
+system we've built for automating all
+these these servers so if you want to go
+say like hey take these 10 switch them
+to the salana version um run them with
+this config we can go and like roll out
+that change
+relativly yeah I also like I think it
+would be if I'm not wrong like the team
+also has background working at AWS right
+so I'm curious to hear about you know
+your also in your in the conversation
+you mentioned that youus is much more
+closer to a cloud provider than uh you
+know Services Pro service provider
+directly so I'm very curious to hear
+about that thought process behind you
+know hey you know what we know what it
+takes and just deciding to go with bat
+metal yeah I mean so yeah I was the one
+that worked at ABS um the other
+technical co-founder Liam he worked at
+Amazon he worked on the ads side so he
+did a lot more kind of like big data
+stuff there um there's a lot of
+similarities though
+um like I worked at RDS so that's for
+those those unaware that's like the
+managed relational database Services
+it's basically like postres and such as
+a service Marb service Etc um a lot of
+similarities with that and how it works
+and also running
+rpcs um you have the similar concept of
+having essentially like your you know
+kind of like control plane data plane
+architecture have this like control
+system that's responsible for you know
+provisioning stuff scaling up changing
+like basically or it's like the
+orchestrator then you have um the data
+plane which in our case is pretty simple
+it's just the actual RPC server and it's
+config um data plan's a bit more
+involved in the relational database side
+because there's there's a lot that goes
+into you know tuning and configuring
+managing a a database instance but um
+regardless of overall kind of
+architecture the high level architecture
+actually has its
+similarities yeah it's awesome I I I
+mean it's kind of like a natural fit
+right because a lot of what helus does
+is to scaling the read layer and making
+sure a lot of this data is available as
+quickly as possible so it's not a I mean
+to anyone looking at it from outside
+it's not as surprise that you know there
+is so very very specific unfire
+advantage in team itself speaking of him
+I'm curious to uh you know hear more
+about what is your what is the
+engineering culture
+at helus like I mean if if he go by m
+twet he speaks about you will you'll
+work you know as hard as you would ever
+word that he is there like a lot of L
+around load that people see on Twitter
+right but it would
+be it will be hear from you as you you
+know there in the trenches and what what
+engineering culture ad he is is like and
+how you guys approach uh hiring team Etc
+ATS yeah sure
+um I think
+the culture if I were to kind of distill
+it down is really focused on results and
+but results in the right area so it's
+on it's basically on customer impact
+like that's what everything kind of
+comes back to that even we talked about
+road map and such like all our decisions
+on road map like whether do compression
+or not it's like will this help out
+developers will that make sense or not
+and so the like the measuring stick for
+whether or not something's good enough
+is does it does it help people does it
+simple enough all those sort of things
+and so when we're talking like workload
+for example like there's definitely a
+lot of times where you need to push and
+your startup and startups are
+competitive but also because that the
+measuring stick is like customer success
+like I say it's the you know is the
+product working well enough for
+customers that means that there's
+problems say there scaling concerns say
+all of a sudden you might have a problem
+where someone's doing some new query
+pattern that's just causing some
+problems in this new newest version of
+Sal and you can have a really tough week
+because that now of a sudden there's
+these like incidents that are happening
+and the incidents for us they happen a
+lot more we try to have them happen
+internally a lot earlier before like
+customers see it right so you have a lot
+of like a alarms and various things you
+have a situation where maybe like 15% of
+the fleet is you know having some sort
+of problem right now customer traffic's
+not going to those 15% we know if this
+problem keeps getting worse and worse
+and worse eventually it will trickle
+over to customers so it's in those cases
+where then you have to like it's quite
+stressful and you have to work really
+hard because you know it's at stake you
+know that if
+you know something continues going wrong
+or you don't figure out the the root
+cause here then it will trickle and then
+it will cause big customer impact and it
+will cause problems for the ecosystem um
+and I think that adds that adds a lot of
+stress I guess um but I think it also
+comes with the
+territory right like if you're doing
+something impactful you're building
+something important then there is
+inherently a lot of stake too um so yeah
+and I guess the other thing I guess I'll
+add is tying into that it's very just
+just sort of like I don't know I guess
+the word would be like like no BS it's
+just very like blunt straightforward
+communication there's not a lot of
+meetings it's just a lot of focused on
+just like you're responsible for X
+feature needs to get out the door the
+next month build it and then you just go
+and build it
+um yeah that's pretty much it I mean
+it's it's not uh it's not super fancy
+but it's just basically what works and
+nothing
+else it's basically people have
+ownership and they are expected to get
+done they they want yeah the
+decision that they make end to end and
+if it if it impacts customers in a
+positive way it's good if it impacts in
+a negative way they take the ownership
+and go back and fix
+it yeah exactly there's a lot of um
+opportunity for ownership a lot of
+opportunity to voice your opinions um
+and even the culture I kind of I try
+to give as much decision- making is
+possible to the engineers even if it
+comes to process for example like I
+won't say I don't know we need to follow
+scrum or we need to do caman or we need
+to have some weekly planning meeting um
+those decisions belong more to the
+engineers so if they want to have a
+daily meeting for standup then sure I
+don't mind if they want to have it as a
+as just a thing they put in slack or
+something else that also works for me
+um it's good to let give them all the O
+all the opportunities to pick and make
+those decisions and then if they don't
+make any decisions or whatever I'm sure
+I'll make one for them but they can
+always be overridden if the team prefers
+something
+else awesome the I think what one one
+one thing that would also be like good
+to go down into is how do you guys
+approach hiring uh is it like very is it
+the typical F style hiring where you
+know you have several rounds of lead
+code followed by you know a b Riser
+which Amazon you know famously used to
+do is it like yeah because of your do
+you follow a similar process or is it
+some something
+different yeah hiring is tough um you
+know we've we've learned a bunch
+throughout the our process and we sort
+of have adjusted the way that we hire
+and approach it um over the years um
+trying to kind of converge onto the sort
+of signals that we
+find lend kind of are the best
+indicators of whether not they'll
+succeed in the
+role um and so it's not exactly a Fang
+style but it's not exactly something all
+all that different um it's pretty
+relatively simple what we tend to do is
+we first start off by doing a like kind
+of like a 30 minute screen and usually
+also like an online test that's not
+particularly gamey it's more actually
+intentionally actually hold is actually
+asks for a lot more opinions um it gives
+you a signal of who they are based on
+just the opinions they hold and the
+preferences and how they like view
+things there isn't really as many right
+answers it's more just that I guess if
+you I guess the best way to word it is
+that if you don't demonstrate certain
+degree of passion or experience or those
+sort these certain characteristics will
+sort of directly manifest themselves
+through this sort of assessment um if
+you have those strengths rather than
+actually try to quiz those strengths
+those things directly because then
+people are just going to plug it into
+chat GPT and whatnot and then solve that
+way um chat GPT is not great for
+opinions it's not a person it tends it's
+always gives kind of Wishy watchy
+answers um so that's kind of the first
+thing and then we also kind of screen to
+make sure like you know why are they
+interested in Sonic why they interested
+in crypto what's their background we
+kind of look for people who have a mix
+of I guess it'd be skills that would
+either directly relate or are kind of in
+the the sin people we currently doing
+and that can have demonstrated the
+ability to learn really fast to take a
+lot of ownership we really look for
+people who have high agency High
+ownership um self- select where they're
+kind of ready for the sort of pressure
+of having that
+responsibility um and then we also then
+measure just like Mel chops and I guess
+we do that via you know system design
+and I guess like coding interviews but
+it's I have a certain opinion on on leak
+code that I think that LE code and a lot
+of coding interviews are performed
+they're not performed correctly so I
+actually don't have a problem with like
+aite code style question I think you
+should try to make one that's a little
+more specific to the real world but it's
+but you also can't make it too specific
+because then it gives like an unfair
+advantage or disadvantage so one just
+hasn't seen that particular thing before
+generic enough but then relatable enough
+to the real world and then it becomes
+more of an exercise on how does someone
+communicate how do they solve problems
+how do they think what edge cases do
+they
+consider extend to the real world and
+you talk about things like you Rel
+something like how would you handle um
+like learning and monitoring in this
+case how were are some failure modes you
+could experience and how that translate
+to cuss for impact and I actually put on
+that hat and think about things that way
+um it doesn't really matter if you can
+do the it's more than just the kind of I
+don't know puzzly leap code stuff right
+that's that's like that in itself isn't
+enough of a signal because you have
+people can just grind those um and then
+it's just a slightly different skill set
+I'd
+say and just curious what are the roles
+that you're actively hiding for right
+now yeah so the main roles that we're
+hiring for right now is really just like
+a backend
+back in engineering I probably right now
+look for about two more people to
+do build on the work on the product side
+essentially um we do have like an active
+role we're looking for as well on the
+platform side it's just a little less um
+urgent for us right now I suppose so the
+platform platform basically being the I
+guess you can word it this way the
+platform's team so the platform's
+customers is the helas engine
+so they're building the tools that the
+other Engineers use to build their
+products Nick so in in the way you're
+structuring the interview you mentioned
+that whether they would actually be
+useful and impactful at their daily job
+is like an important filter for you
+right one way to figure that out could
+be you know there does
+their if they were to send a PR say to
+and open source rppo is it does it solve
+a problem is just is it worthy of
+merging so in that V I'm just curious
+are there open- Source reports of helas
+that you know people could contribute to
+that could go a long way and you know
+fulfilling the roles you that you are
+hiring
+for yeah I'd say
+um yes and no I'd say most of our core
+stuff like
+doesn't for now some of the most like
+the bigger projects are not um open
+source and I think there'll be a day
+when they do become open source but
+there's like a different conversation
+there's there's a lot needs to be done
+before then
+um but the thing about like just doing
+some PRS or some contributions and stuff
+that could
+be in some roles depending on what the
+the the repo is it be really valuable
+especially if they do a lot of it
+they're really actively actually working
+on the project and that's like a great
+indicator CLE PRS itself is a little
+tougher to say because what I don't it
+kind of comes back to like take-home
+assignments some people really like
+take-home assignments I I personally
+don't love them and it's a point of
+debate between different people and the
+reason I don't like them is because that
+um not everyone has the same amount of
+time to do them so if you give someone
+like a week on something they could
+someone could SN like 20 hours and it's
+absolutely brutal to then reject them
+after they sunk 20 hours but then how do
+you compare someone who doesn't have 20
+hours I feel like what if they're
+working a demanding job themselves is it
+fair for them to now have to s a huge
+amount of time to this assignment theing
+also with the pr is like if you're
+working at another startup kind of like
+elas you have the time to do a whole
+bunch of like open source PRS to our
+thing um what if we're working at a like
+a competitor or something and maybe you
+don't want to be publishing a bunch of
+PRS to to your competitor right so those
+are also some factors um but I guess
+like the way I word it is that all these
+indicators kind of form a story so not
+there's very few things that by
+themselves is a guarantee of a good
+candidate but you piece a bun of these
+things together then you have a much
+better picture so if they did if they
+you know have good behavioral um they
+they kind of good behavioral indicators
+they did fine the coding interview and
+they have a bunch of PRS and stuff like
+that that's a great you know overall
+package
+Mak
+sense uh do we have more questions Shake
+L of questions here yeah I think we we
+can talk about helas as validator if
+that's something that you want to talk
+about okay so one of
+the for con has been a huge problem for
+Solana right and and stick we qos has
+been something that's like some people
+you know where some people really hate
+it because it changes the mechanism for
+where traffic could come from it changes
+the landscape a little bit right so from
+Helio's perspective I understand that is
+actually puts you at A major advantage
+because now not you because rtcs are
+Commodities now you have a you have a
+way to Stand Out by actually tapping
+into some of the network effects of
+stake that is number one the number two
+also so it's like much more directly to
+the users it helps you provide them
+better quality of service right now if
+naturally people blame the RPC if a
+transaction doesn't land so it actually
+is the it inevitably becomes the rpc's
+problem then that means that you have to
+solve it so in a way I look at I mean
+stay created Q comes across in this
+spectrum I would love to hear you talk
+about like how you think about this like
+purely from a technical solution
+standpoint and how it atts to the
+customer uh so how it atts to you know
+the customer
+experience sure
+um I'd say
+that bway qos
+is in its current form kind of a
+Band-Aid for
+congestion it's just a way
+to it's a sort of like a puristic to
+help select better quality traffic but
+it's not necessarily a guarantee of
+better traffic it's like who's to St is
+because I have more stake I'm going to
+send I'm not going to send junk there
+there's no actual direct
+correlation or like between that there's
+just it's just an indicator right um and
+so when you're an RPC then you're
+basically just middl Manning so now your
+if your customer send a bu of then
+you're boarding that over to the
+validator so
+um it helps provide stability in tough
+times and I don't really think it was
+the wrong decision to introduce it to
+help spond develop but it's no one I
+think no one really views it in its
+current form as the long-term that's
+something that's here to stay um and
+even ourselves even that we have kind of
+um I suppose you could argue an
+advantage by having a large amount of
+stake it also causes to some extent like
+certain problems
+because it's like um when I word it it's
+like it becomes a problem of okay how do
+you allocate that state across customers
+how do you provide and withth and I
+think like for us
+the mentality to go back to the mission
+is to make it easy for developers to
+build things and I have found it really
+hard to translate the technical
+requirements of how Stateway Qs is
+imposed on us into something that makes
+sense as a product for customers and
+that's Pleasant to use um so for that
+reason I actually really like it even
+though it's yes we have steak and that's
+good but it's like it it's hard for us
+to build the best product with with it
+and yeah for that reason I'd be happy to
+see it kind of like go
+away awesome so so what do you think
+like reply
+well what do you think replacers takeway
+that Q is or what's the better way to
+solve this problem right for example if
+a sandwich attacker wants to use
+uh you know bad MVB actor wants to use
+he RPC nodes to send their traffic
+now now you prioritize their traffic by
+virtue of them being a hired paying
+customer versus
+uh versus you know the nature of the
+traffic itself right yes we talk about
+like good and bad that can be many
+different things um so
+the we talk about good and bad from the
+perspective of stake bqs and what I
+meant earlier I was talking about just
+the the uh quality of the transaction in
+terms of the revenue it'll yield for the
+valador so basically is what's the fee
+and will it land so for example if I
+send a transaction that is like
+malformed it's going to go and have to
+go through a couple steps and at some
+point it's going to fail some some sort
+of check like say say you're
+transferring um your the fee payer for
+the transaction is out of money well
+then or the fee pair doesn't even exist
+then what's going to happen is that
+transaction Will Never Land it it won't
+even execute it'll just drop if someone
+bombards you with like a million TPS of
+that that's just pure like you're that's
+taking away resources that can go
+towards people are actually trying to do
+something so now if you enter that
+sphere of like people who are doing
+something you then also have the sort of
+like sandwich stuff versus like apps
+versus Traders and all that sort of
+stuff and um the sandwi swiching is a
+much different problem which is a whole
+rabbit hole we can talk about but the
+majority of sandwiching happens via
+usually bundles so usually via jeta
+which is different than Stak weight qos
+because they have a different priority
+mechanism you pay with the goo tips
+there's different prioritization there
+and um yeah it's a I don't want to go
+too off topic when the sandwich R it's a
+very very lengthy conversation which I'm
+totally happy to talk about um but to go
+back to State week Qs and I think what
+you're talking about in the first place
+is what would replace it and um
+so first first and foremost I guess it's
+the question of like
+capacity um and it's a mix of demand and
+capacity so if you have a certain amount
+of capacity of how many transactions you
+could basically process within the
+validator I don't mean necessarily put
+into a block basically just filter
+because a lot of them filter and you're
+like oh it's already already landed or
+it has a bad you know a bad signature or
+whatever
+um that capacity and then you have also
+the demand of the
+network if the demand is higher than
+that capacity that's where things like
+stateb Qs kind of make sense um in some
+form and I think first and foremost what
+needs to happen what is currently
+happening is just increasing that
+capacity in the first place there's a
+lot of initiatives that are going to
+increase that capacity first there's
+just a lot of straight up bug fixes that
+are going to the validator there's a lot
+of inefficiencies so it has a lot of
+constraints in there that are just come
+from Pure inefficiencies as you increase
+like the capacity then all of a sudden
+the need for something to St Q us
+becomes less important because people
+are no longer fighting and the thing is
+as soon as people start feeling
+constrained they start spamming and it
+creates this like vicious Cascade effect
+um next I guess if you then were asked
+okay well what if there was constraints
+then how would you kind of the whole
+problem is like you have an auction
+house and it's like who do you let into
+the auction house that's kind of the the
+way you could describe it
+and I'd have to think this a bit more
+but I think what would be the nicest way
+to do it is to have the Q be based off
+of who is sending the who's actually
+sending the transactions so some sort of
+identifier like the um maybe the fee
+payer now all these things are also kind
+of gameable but I'd like to not not be
+the middleman and the reason why is
+because if you keep sending the same
+junky transaction it'd be nice for it to
+just kind of recognize that this person
+keeps sending this junky transaction we
+we start kind of basically we just tell
+them to back off for a little while
+building that actually into the valider
+would help a lot um and to kind of go
+one step further is this kind of goes in
+the direction of if you've heard of
+double zero um those that aren't
+familiar with double zero the idea of it
+is to kind of a lot of this whole
+blockchain stuff that happens over the
+Internet um public internet and the idea
+of double zero is two things first off
+it's like it's a kind of basically a
+dpin where it's a network of dedicated
+bandwidth for blockchain where basically
+the performance of that network is
+measured via uh hardware and so you
+could as some as someone who has extra
+bandwidth you could join the double zero
+Network help connect together salana and
+then you can get reward for that if you
+perform well enough now that's the first
+step the second step what they're trying
+to do and this is where it kind of ties
+into stake Qs and this sort of stuff is
+that it can basically provide a field
+for all the stuff that isn't going to
+land which is by far the biggest problem
+and what happens right now is you have
+multiple leaders right different nodes
+around the world and what happens is
+that if someone's spamming stuff out
+they're sending it to all of these
+ones um and so means each individual
+node has to be responsible for for load
+shedding all of the junk now if you
+instead you have the double zero network
+do the load that do that kind of load
+sheding filtering out that bad stuff and
+then only forwarding the good stuff that
+means is now that um you end up
+basically it becomes a lot it decreases
+the load on the actual validator and has
+something else that's purpose built for
+filtering that out and then that
+purpose-built filtering is now spread
+across um a whole network which is a lot
+harder to overload than that one Val
+basically all the all the traffic around
+the world is all going to one spot but
+if instead you have this whole network
+and then each node of that network is
+then filtering stuff out then sending
+the good stuff to the
+validator um that make sense yeah that's
+actually so cool in the sense that the
+the problem with condition was that you
+since you know the who the slot leader
+is ahead of time people can just bombard
+that one node with all you know whatever
+bandwidth that they have now you know
+with double z kind of dissipated
+throughout the whatever is the actual
+bandwidth of the network itself right so
+yeah it feels like a very natural fit
+and excited for it to play out yeah that
+brings us to the end of this podcast
+thank you so much for joining us n it
+was so uh great to hear about you know
+what actually goes behind the scene of
+making sure the transaction lands and
+all the status available and building on
+Solana is it's actually easy thank you
+so much for joining right thanks so much
+for having me guys absolutely thank you
