@@ -258,6 +258,27 @@ When auditing backend scripts, check 3 layers: (1) syntax, (2) schema consistenc
 **New Operating Rule:**
 **Script Schema Audit:** When a script reads data written by another script, always verify the field names are consistent end-to-end. Writers and readers are often written at different times and drift. Silent `?` outputs are as bad as crashes.
 
+### 2026-02-18 07:02 IST — Day 8 Pre-Deployment Sweep (Early)
+**Task:** Pre-deployment UX sweep for Day 8 Kelly thread (T-2h, ran early vs planned 8:30 AM slot)
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- ALL CLEAR — zero blockers across all 3 deployments (Day 8/Day 2/Day 9)
+- Day 8: All 3 visuals on disk + committed to git. OG image YAML matches committed file. UTM consistent. Cron paths correct.
+- Day 2: Both tweet visuals on disk. OG image committed. Browser-only warning in place.
+- Day 9: Both tweet visuals on disk. OG image committed (note: YAML uses `day9-signal-filtering.png`, artifact is `day9-signal-filter.png` — these are different files but both exist; the git-committed post file is the YAML-referenced one).
+
+**What Worked:**
+- Running sweep at 7:02 AM instead of 8:30 AM gave 2h buffer vs 30min — better for edge case handling
+- Systematic 6-point checklist per deployment (URL, OG image, tweet visuals, UTM, cron paths, bird warning)
+- Caught nothing because prior audit history had addressed everything — clean pipeline is a good outcome
+
+**Lesson Learned:**
+Early is always better for pre-deployment sweeps. The "scheduled" 8:30 AM time is the LATEST acceptable window, not the target. When I wake 90 min early, run the sweep immediately rather than waiting.
+
+**New Operating Rule:**
+**Pre-Deployment Sweep Timing:** Run the sweep at the EARLIEST heartbeat before deployment, not the scheduled slot. If I'm awake 2h before launch, sweep now — don't hold for 8:30. Clean state at T-2h is better than scrambling at T-30min if something is wrong.
+
 ### 2026-02-18 01:47 IST — Day 9 Post-Publish UX Audit
 **Task:** Immediate post-publish audit of Day 9 signal-filtering post
 **Quality Self-Rating:** 4.5/5

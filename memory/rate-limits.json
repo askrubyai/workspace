@@ -1,22 +1,22 @@
 {
   "alertsSent": [],
-  "lastCheck": "2026-02-18T00:01:00+05:30",
+  "lastCheck": "2026-02-18T06:01:00+05:30",
   "providers": {
     "anthropic": {
       "status": "healthy",
-      "activeSessions": 1050,
+      "activeSessions": 996,
       "modelBreakdown": {
         "claude-sonnet-4-5": "primary (vast majority)",
         "claude-opus-4-6": "secondary (heartbeat/standup sessions)"
       },
       "lastError": null,
       "lastRateLimit": null,
-      "note": "All sessions completing normally. Token usage 14k–181k/session. Zero 429 or quota errors detected."
+      "note": "All sessions completing normally. Token usage 13k–181k/session. Zero 429 or quota errors detected."
     }
   },
   "status": "all_healthy",
   "sessionCheck": {
-    "totalSessionsAnalyzed": 1050,
+    "totalSessionsAnalyzed": 996,
     "sessionsWithErrors": 0,
     "errorTypes": {
       "401_auth": 0,
@@ -24,14 +24,14 @@
       "quota": 0
     },
     "providersRateLimited": [],
-    "timestamp": "2026-02-18T00:01:00+05:30"
+    "timestamp": "2026-02-18T06:01:00+05:30"
   },
   "recentLogs": {
     "rateLimit429Errors": 0,
     "quotaErrors": 0,
     "authErrors": 0,
     "noProviderRateLimits": true,
-    "lastLogCheck": "1050 sessions scanned. All cron/heartbeat sessions completing with normal token usage. Zero rate limit events. 25+ hours stable operation."
+    "lastLogCheck": "996 sessions scanned (last 24h+). All cron/heartbeat sessions completing with normal token usage. Zero rate limit events."
   },
   "systemStatus": {
     "gateway": "healthy",
@@ -40,5 +40,5 @@
     "warnings": [],
     "critical": 0
   },
-  "trend": "stable - 25+ hours of healthy operation, zero rate limit events"
+  "trend": "stable - 26+ hours of healthy operation, zero rate limit events"
 }
