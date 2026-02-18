@@ -15,11 +15,11 @@ Key differences from paper-bot-multifactor.py:
   - min_bet_usd = $5.00 (Polymarket live minimum)
   - DRY_RUN mode: default True — set to False to enable real USDC trading
 
-⚠️  PARAMETERS PENDING DAY 9 RESEARCH ⚠️
-The following are PLACEHOLDERS — update after Day 9 publishes at 1:30 AM:
-  - signal_threshold: 0.65 (estimated from Day 9 signal filtering analysis)
-  - SPRT p1:          0.65 (calibrate to post-filter win rate from Day 9)
-  - backtest_win_rate: TBD (Day 9 will refine from paper run data)
+✅  PARAMETERS UPDATED — Day 9 Signal Filtering (published 2026-02-18 01:46 IST)
+  - signal_threshold: 0.30 (Gate 1 composite score threshold; 60% of signals below this)
+  - SPRT p1:          0.65 (Gate 2 win rate gate — testing for ≥65% win rate)
+  - backtest_win_rate: 0.70 (conservative; paper run achieved 89.3%, expect regression)
+  Updated: 2026-02-18 02:30 IST (Jarvis — commits 5cbd269 + b5589bd)
 
 Built: 2026-02-18 01:00 IST (Friday — live trading infrastructure)
 Wallet: 0x2FC6896bDFB507002D1A534313C67686111cDfdA (Polygon)
