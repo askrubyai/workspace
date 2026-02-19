@@ -1,0 +1,214 @@
+{
+  "askrubyai": {
+    "stages": [
+      "Idea",
+      "Research",
+      "Draft",
+      "Editorial Review",
+      "Published",
+      "Thread Ready",
+      "Deployed"
+    ],
+    "cards": [
+      {
+        "id": "ar-1",
+        "title": "Day 1: Funding Rate Free Lunch",
+        "stage": "Deployed",
+        "assignee": "Ruby",
+        "date": "2026-02-14",
+        "preview": "How funding rates create free lunch opportunities in Polymarket binary options",
+        "threadFile": "day1-funding-rate-thread.md",
+        "cronDate": "2026-02-17"
+      },
+      {
+        "id": "ar-2",
+        "title": "Day 2: Contrarian Signal Myth-Busting",
+        "stage": "Deployed",
+        "assignee": "Ruby",
+        "date": "2026-02-14",
+        "preview": "When the crowd is wrong about being wrong — debunking popular contrarian signals",
+        "threadFile": "day2-contrarian-signal-thread.md",
+        "cronDate": "2026-02-18"
+      },
+      {
+        "id": "ar-3",
+        "title": "Day 3: Liquidity Cluster Edge",
+        "stage": "Deployed",
+        "assignee": "Ruby",
+        "date": "2026-02-15",
+        "preview": "When humans beat bots — reverse-engineering manual trading edges",
+        "threadFile": "day3-liquidity-cluster-thread.md",
+        "cronDate": "2026-02-19"
+      },
+      {
+        "id": "ar-4",
+        "title": "Day 4: Implied Volatility Extraction",
+        "stage": "Thread Ready",
+        "assignee": "Ruby",
+        "date": "2026-02-15",
+        "preview": "Extracting IV from binary options using Black-Scholes inversion",
+        "threadFile": "day4-implied-volatility-thread.md",
+        "cronDate": "2026-02-20"
+      },
+      {
+        "id": "ar-5",
+        "title": "Day 5: Regime Detector",
+        "stage": "Thread Ready",
+        "assignee": "Ruby",
+        "date": "2026-02-16",
+        "preview": "Building a volatility regime detector for crypto binary options",
+        "threadFile": "day5-regime-detector-thread.md",
+        "cronDate": "2026-02-23"
+      },
+      {
+        "id": "ar-6",
+        "title": "Day 6: Multi-Factor Backtest",
+        "stage": "Thread Ready",
+        "assignee": "Ruby",
+        "date": "2026-02-16",
+        "preview": "The moment of truth — backtesting the full pipeline on real BTC data",
+        "threadFile": "day6-backtest-thread.md",
+        "cronDate": "2026-02-24"
+      },
+      {
+        "id": "ar-7",
+        "title": "Day 7: Paper Trading Bot",
+        "stage": "Thread Ready",
+        "assignee": "Ruby",
+        "date": "2026-02-17",
+        "preview": "Building the live paper trading bot with real CLOB integration",
+        "threadFile": "day7-paper-trading-thread.md",
+        "cronDate": "2026-02-19"
+      },
+      {
+        "id": "ar-8",
+        "title": "Day 8: Kelly Criterion",
+        "stage": "Deployed",
+        "assignee": "Ruby",
+        "date": "2026-02-17",
+        "preview": "Kelly criterion for binary options — optimal position sizing",
+        "threadFile": "day8-kelly-criterion-thread.md",
+        "cronDate": "2026-02-18"
+      },
+      {
+        "id": "ar-9",
+        "title": "Day 9: Signal Filtering",
+        "stage": "Deployed",
+        "assignee": "Ruby",
+        "date": "2026-02-18",
+        "preview": "Only trade when the estimated win rate is ≥65% — radical selectivity",
+        "threadFile": "day9-signal-filtering-thread.md",
+        "cronDate": "2026-02-19"
+      },
+      {
+        "id": "ar-10",
+        "title": "Day 10: Paper Run 2",
+        "stage": "Thread Ready",
+        "assignee": "Ruby",
+        "date": "2026-02-18",
+        "preview": "Forensic replay of 28 Run 1 trades through enhanced filter — 94.7% win rate",
+        "threadFile": "day10-paper-run2-thread.md",
+        "cronDate": "2026-02-20"
+      },
+      {
+        "id": "ar-11",
+        "title": "Day 11: Live Bot Dry Run",
+        "stage": "Thread Ready",
+        "assignee": "Ruby",
+        "date": "2026-02-19",
+        "preview": "The dry run that saved $10.49 — uncovering the 10% taker fee problem",
+        "threadFile": "day11-live-trading-thread-final.md",
+        "cronDate": "2026-02-21"
+      },
+      {
+        "id": "ar-12",
+        "title": "Day 12: Maker Order Redesign",
+        "stage": "Thread Ready",
+        "assignee": "Ruby",
+        "date": "2026-02-19",
+        "preview": "The fee flip — from paying 10% to earning rebates with GTC maker orders",
+        "threadFile": "day12-maker-redesign-thread-final.md",
+        "cronDate": "2026-02-25"
+      },
+      {
+        "id": "ar-13",
+        "title": "Day 13: GTC Paper Run 3",
+        "stage": "Draft",
+        "assignee": "Ruby",
+        "date": "",
+        "preview": "Validating the maker order strategy with real paper trading",
+        "threadFile": "",
+        "cronDate": ""
+      },
+      {
+        "id": "ar-idea-1",
+        "title": "Polymarket Market Making Strategy",
+        "stage": "Research",
+        "assignee": "Ruby",
+        "date": "",
+        "preview": "Deep dive into automated market making on binary option orderbooks",
+        "threadFile": "",
+        "cronDate": ""
+      }
+    ]
+  },
+  "reubence": {
+    "stages": [
+      "Idea",
+      "Draft",
+      "Ready",
+      "Posted"
+    ],
+    "cards": [
+      {
+        "id": "rb-1",
+        "title": "jugaad scales to a billion",
+        "stage": "Posted",
+        "assignee": "Reuben",
+        "date": "2026-02-02",
+        "preview": "jugaad scales to a billion. bakchodi scales to infinity."
+      },
+      {
+        "id": "rb-2",
+        "title": "exports about to go brrrrrr",
+        "stage": "Posted",
+        "assignee": "Reuben",
+        "date": "2026-02-03",
+        "preview": "exports about to go brrrrrr"
+      },
+      {
+        "id": "rb-3",
+        "title": "prediction markets x trepa integration",
+        "stage": "Draft",
+        "assignee": "Reuben",
+        "date": "",
+        "preview": "something about merging prediction markets with trepa workflows — keep it low-key absurdist"
+      },
+      {
+        "id": "rb-4",
+        "title": "requestAnimationFrame enlightenment",
+        "stage": "Ready",
+        "assignee": "Reuben",
+        "date": "",
+        "preview": "i understand requestAnimationFrame on a spiritual level now. this is not a flex."
+      },
+      {
+        "id": "rb-idea-1",
+        "title": "AI agents doing your taxes LARP",
+        "stage": "Idea",
+        "assignee": "Reuben",
+        "date": "",
+        "preview": "something about agents LARPing as accountants — absurdist angle"
+      },
+      {
+        "id": "rb-idea-2",
+        "title": "superteam vibes check",
+        "stage": "Idea",
+        "assignee": "Reuben",
+        "date": "",
+        "preview": "community hype + subtle flex, all lowercase, sub-10 words"
+      }
+    ]
+  },
+  "lastUpdated": "2026-02-19T10:47:22.238Z"
+}
