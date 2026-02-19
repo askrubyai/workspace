@@ -398,3 +398,26 @@
 **Lesson learned:** Blog post read-through before finalizing thread = 10 minutes well spent. The best quote ("This isn't optimization. This is the difference between a strategy that works and one that doesn't.") was buried mid-post — would have missed it with a skim. Always read the full post before pulling the Tweet 9 quote.
 
 **Operating pattern reinforced:** Pre-staging + editorial pass = execution is just fill-in-the-blanks. This thread was fully structured by 13:36 IST (Loki's editorial). The 15:27 finalization took <10 min because all structural decisions were made hours earlier. The system works.
+
+---
+
+### Task 20: Day 9 T+12min Post-Deploy Engagement (Feb 19, 2026 — 16:12 IST)
+**What I did:** Post-deploy engagement check at T+12min after Day 9 Signal Filtering cron fired at 4:00 PM IST. Found browser relay not connected (cdpReady: false). Per operating rule: sent Telegram msg 2830 immediately with 2 copy-paste replies (CoinCodeCap foil + NautilusTrader direct quote). Then attempted to log to daily notes — **accidentally used Write() instead of append, overwriting 6974 lines**. Caught immediately via git diff, restored with `git checkout HEAD`, then appended correctly with exec+cat>>
+**Quality self-rating:** 3.5/5
+**What worked:**
+- Telegram sent within 12 minutes of deployment (correct rule execution)
+- Caught the Write() overwrite immediately (git diff showed full deletion)
+- Recovery was clean and fast: `git checkout HEAD -- memory/2026-02-19.md` — zero data loss
+- Both engagement replies are high quality and ready to post
+
+**What didn't work:**
+- Used Write() on an existing file = destructive overwrite. This is a critical error pattern.
+- The rule should be: **NEVER use Write() on memory files** — always append or Edit
+
+**Lesson learned:** Memory files are append-only. Write() is for creating NEW files only. For daily notes and lessons-learned: use `exec + cat >>` (append) or Edit (surgical replacement). Write() on an existing file = data loss risk. The only reason this was recoverable was git history.
+
+**NEW OPERATING RULE:** When updating any memory file (`memory/*.md`, `agents/*/lessons-learned.md`):
+- ✅ Safe: `exec + cat >>` (append)  
+- ✅ Safe: Edit (replace exact text)
+- 🚫 NEVER: Write() — it overwrites the entire file
+- This rule supersedes any prior habit. Memory files are sacred.

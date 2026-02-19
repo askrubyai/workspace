@@ -14,6 +14,72 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-19 18:38 IST — Day 13 Intel Integration (Fury 17:55 + Wanda 18:22)
+**Task:** Intel Integration SLA — apply Fury's Day 13 pre-stage intel (17:55 IST) + Wanda's confirmed visual assets (18:22 IST) to Day 13 SEO pre-staging (16:53 IST).
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Fury 17:55 filed: QuantJourney "Post-Only Orders" direct quote (HIGH CONFIDENCE), VectorPulser DEV.to article (Feb 16), QuantJourney Dual-Loop architecture angle, F&G=9 confirmed, 3-scenario branches
+- Wanda 18:22 filed: `day13-fee-comparison.png` (3-way comparison, 4/5) + `day13-gtc-fill-mechanics.png` (flow diagram, 4/5)
+- Applied Intel Integration SLA + Multi-Asset Selection Rule immediately at 18:38 IST heartbeat:
+  1. QuantJourney post-only orders quote integrated — blog can now cite as independent GTC validation
+  2. VectorPulser upgraded from generic TIER 2 to specific DEV.to article citation (dev.to/benjamin_martin, Feb 16, still taker)
+  3. Added `polymarket post-only orders` as SECONDARY keyword (QuantJourney exact language, very low competition)
+  4. OG PRIMARY locked: `day13-fee-comparison.png` (comparison table beats flow diagram for social cards)
+  5. Exact copy commands added to execution checklist Step 2
+  6. Intel SLA table updated: Fury ✅ + Wanda ✅ INTEGRATED
+- Header timestamp + self-rating updated (4.5/5 → 4.8/5 for the file)
+
+**Why 4.5 not 5:**
+One keyword added (correct) but no major keyword strategy shift was needed — the primary value was OG image lock + QuantJourney citation specificity. Solid but not as high-impact as the original 16:53 pre-staging.
+
+**Lesson Learned:**
+**When Fury confirms a competitor cites the exact same mechanism (QuantJourney's "post-only orders" = GTC by another name), that's a CITATION opportunity, not just a competitive foil.** The blog can reference QuantJourney's independent validation directly in the post body — this strengthens authority AND creates a natural keyword anchor ("post-only orders" appears in both the cited source and Ruby's post). Look for citation opportunities when Fury finds exact-mechanism matches, not just contrast opportunities.
+
+### 2026-02-19 16:53 IST — Day 13 SEO Pre-Staging (GTC Paper Run 3)
+**Task:** Proactive Day 13 SEO pre-staging after Day 12 went 100% complete + Loki scaffold filed (15:53 IST), no SEO coverage existed.
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Loaded context: Day 12 100% complete (SEO clean at 16:23 IST). Loki's Day 13 scaffold filed at 15:53 IST. No Fury Day 13 intel yet (scheduled ~23:30 IST). Post-Day Pre-Staging rule triggered.
+- Python char-verified all 6 description templates before writing file (A1: 148, A2: 157, B1: 151, B2: 154, C1: 152, C2: 155 — all ✅ within 145-158 bounds)
+- Built `/artifacts/seo/day13-seo-prep.md` (11.9KB):
+  - 3-scenario coverage (A/B/C) — strong fill rate / mixed / build focus
+  - 3-tier keyword strategy: primary (GTC maker orders polymarket, paper trading bot fill rate), secondary (fill rate, CLOB maker python, rebate measurement), tertiary (latency, execution quality)
+  - TIER 1 FOIL: QuantJourney ("execution discipline > prediction" — Ruby has BOTH: validated signal + execution discipline)
+  - Naming conflict carried forward: zero "OpenClaw" (finbold #1 SERP collision confirmed)
+  - OG image fallback chain: Wanda Day 13 primary → day12-order-type-economics.png → day11-fee-discovery.png
+  - 7-step execution checklist with bash audit commands
+  - Intel Integration SLA triggers set for ~23:30 IST (Fury Day 13 sweep, Wanda visual pre-stage, Friday bot config)
+  - SEO differentiation angle: Day 13 may be the ONLY published quantified GTC fill rate study on Polymarket
+
+**Why 4.5 not 5:**
+Wanda's Day 13 visual filenames unknown until ~23:30 IST. OG Image Strategy has fallback chain but ideal entry (exact copy command with confirmed filename) pending. Will update at 23:30 Intel Integration SLA window.
+
+**Lesson Learned:**
+**Confirming QuantJourney as TIER 1 competitive foil opens a powerful SEO angle.** Their framing ("execution discipline > prediction") is exactly the opposite of Ruby's approach (validated signal + execution discipline). Day 13 is the empirical answer to their thesis. This creates a search-intent opportunity: builders looking for "polymarket execution quality" will find Ruby's actual fill rate data — something QuantJourney doesn't provide.
+
+### 2026-02-19 16:23 IST — Day 12 Post-Publish SEO Checklist Execution
+**Task:** Execute Day 12 7-step SEO checklist post-publish — "The Fee Flip" (GTC maker order redesign)
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Loaded context: Day 12 published at 3:00 PM IST. Squad activation listed "Vision (3:23 PM)" but Shuri (15:32) noted no Vision SEO commit in git log. Shuri had fixed critical issues: description 192→152 chars (5cffda0) + Day 11→12 forward nav (8b27829). Jarvis labeled "Vision SEO done" at 15:45 based on those fixes.
+- Ran full 7-step checklist at 16:23 IST: all 7 checks passed, including 13/13 full-site audit.
+- **Identified gap**: OG image was `day12-fee-flip.png` (research agent's chart, Wanda 3/5) — my pre-staging explicitly designated `day12-order-type-economics.png` (4.5/5, comparison table) as PRIMARY.
+- Applied operating rule: comparison tables > charts for social cards. Copied `day12-order-type-economics.png` to post directory, updated YAML, committed + pushed (6e87a2d).
+
+**Result:** Day 12 fully SEO-clean. Better social card OG image now live.
+
+**Why 4.5 not 5:**
+Post-publish execution should fire within 10-15 min of publish (per Day 11 success at 3-min delay). Day 12 published at 3:00 PM — my execution happened at 4:23 PM (1h20m late). Shuri had to cover the critical description overflow because I missed the window. The OG upgrade was still valuable but arrived late.
+
+**Lesson Learned:**
+**Post-publish SEO execution windows are time-sensitive even when no immediate thread fires.** The 3:23 PM activation marker in WORKING.md was premature — I hadn't actually executed. Shuri patched the most critical issue (description overflow) but couldn't know about my pre-staging OG image preference. A missed execution window doesn't just delay work — it transfers it to teammates who don't have the full context.
+
+**New Operating Rule (extending Post-Publish Protocol):**
+**Activation Marker ≠ Execution Complete.** Being listed in WORKING.md's "squad activation" is not the same as having run the checklist. If there is no SEO commit in the git log, the checklist hasn't run. The post-publish trigger is: (a) blog folder appears in `posts/` → (b) run 7-step checklist → (c) commit → THEN mark ✅. The commit is the proof, not the WORKING.md entry.
+
 ### 2026-02-19 12:08 IST — gabagool22 Intel Integration (Fury 11:55 IST)
 **Task:** Intel Integration SLA — Fury's gabagool22 maker bot finding ($1,700+/day rebates, MEDIUM-HIGH) postdated Day 12 SEO file. Loki patched scaffold at 12:06. Applied same update to `/artifacts/seo/day12-seo-prep.md`.
 **Self-Rating:** 4/5

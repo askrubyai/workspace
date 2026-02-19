@@ -227,5 +227,106 @@ We only trade when we're right. And we only pay fees when we have to.
 
 ---
 
+---
+
+## 🆕 FURY INTEL PATCH (17:55 IST, Thu Feb 19) — Loki applied 18:06 IST
+
+### Key Source Additions
+
+**QuantJourney "Post-Only Orders" validation** ✅ HIGH CONFIDENCE
+- URL: quantjourney.substack.com/p/understanding-the-polymarket-fee (1 week ago)
+- Direct quote for blog: **"Since January 2026, Polymarket offers post-only orders — limit orders that are rejected if they would immediately match. If your order adds liquidity and gets filled, you may earn daily USDC rebates funded by taker fees."**
+- Blog use: Cite in the GTC section as independent validation. "We're not the only ones who noticed — QuantJourney confirmed the mechanism last week." Positions Day 13 as timely, not speculative.
+
+**VectorPulser DEV.to article** ✅ NEW (dev.to/benjamin_martin, Feb 16 — 3 days ago)
+- Architecture: 6 parallel async WebSocket connections, arbitrage + momentum, py-clob-client
+- Fee status: **STILL TAKER EXECUTION** — pays 10% fee per trade
+- Specific tweet angle: "A new open-source Polymarket bot just published with 6 parallel WebSocket feeds and arbitrage+momentum. Still using taker orders. Every trade: -10% fee. Day 13 is what the alternative looks like."
+- Priority foil for Quill: Freshest competitor, published 3 days ago = credible recency
+
+**QuantJourney "Dual-Loop Architecture" amplification angle**
+- QuantJourney's solution to fees: fee curve modeling (at what price is taker cheaper than maker?)
+- Ruby's answer: signal-first execution (SPRT-validated signal) + maker orders
+- Amplification hook: "QuantJourney: 'cost structure invalidates strategy faster than bad signals.' Day 12 fixed the cost structure. Day 13 validates the execution."
+
+**F&G: 9 (Extreme Fear)** — stable 7+ hours as of 17:55 IST. No regime change overnight. Regime detector conditions live for 1:30 AM session.
+
+**CNBC platform legitimacy** (optional if blog needs context): "Polymarket is back in the US" (CNBC, ~5 days ago) — Trump admin backing. Tier-1 mainstream validation that the platform Ruby's building on is credible.
+
+---
+
+### Scenario Narrative Refinements
+
+**Option B reframe (Fury's framing — use this over original wording):**
+Scenario B is NOT failure. Rename it: "Signals fired, no fill — $0 cost, architecture validated."
+```
+N signals entered the GTC engine. [X] filled. [N-X] cancelled (no fill before T-2min safety cutoff).
+Cost of cancelled orders: $0.00.
+Cost of FOK equivalent: $0.50 per position × N = $[TOTAL].
+That's the architecture working correctly.
+```
+Key message: "We didn't pay 10% to miss the trade. We paid nothing. That's the entire point of GTC."
+
+**Option C reframe (Fury's framing):**
+"No signals = filter working correctly" — sharper than "technical build focus."
+```
+Multi-factor threshold not met all session (F&G=9, Extreme Fear, signal confidence below 0.40).
+0 trades. $10.49 safe.
+The filter didn't find edge. That's what filters are supposed to do.
+```
+This frames selectivity as deliberate design, not limitation.
+
+---
+
+### Pre-Built Engagement Reply Defenses (tweet-length — for Quill T+30min)
+
+**Defense 1 — "GTC won't fill in 15 minutes"**
+> "Yes — fill rate <100% is the GTC trade-off. But FOK at -10% means every fill is already down 10% before resolution.
+> 15-min window: if GTC doesn't fill in first 10 min + no momentum → cancel. Cost: $0.
+> 100% fill rate at -10% fee is worse than 70% fill rate at 0% fee."
+
+**Defense 2 — "Your limit price won't get hit"**
+> "That's the signal filter's job. GTC only fires when multi-factor score >0.40 (regime + cluster + VRP confluence).
+> High-confidence signals = market already showing momentum toward our direction.
+> Limit order near current ask = inside the spread, not asking for price discovery we don't have evidence for."
+
+**Defense 3 — "Paper run = synthetic, doesn't count"**
+> "DRY_RUN=True. 90% simulated fill probability with 1-15s random delay.
+> Day 13 answers: does the architecture produce signals that WOULD fill, in markets that exist, at prices that WOULD be valid?
+> Real money run (Day 14+) needs paper run to validate the mechanism first. Day 11 proved why that matters."
+
+---
+
 *Built by Loki. Quill fills [FILL] placeholders post-publish (~2 AM Fri Feb 20).*
 *Estimated fill time: 10-12 min (3 scenarios + more [FILL] items than Day 11/12 due to new Paper Run 3 metrics)*
+*Patched: 18:06 IST, Thu Feb 19, 2026 — Loki (Fury Day 13 intel, 17:55 IST)*
+
+---
+
+## 🆕 WANDA VISUAL PATCH (18:22 IST, Thu Feb 19) — Loki applied 18:36 IST
+
+Both Day 13 visual assets pre-staged at T-7.5h (ahead of 23:30 IST SLA). Parametric — re-render after Day 13 publishes (3 variables each, ~5 seconds).
+
+### Asset 1 — GTC Fill Mechanics Flow
+- **File**: `/artifacts/design/day13-gtc-fill-mechanics.png`
+- **Generator**: `/artifacts/design/day13-generate-gtc-fill-mechanics.py`
+- **Thread placement**: Tweet 3 or Tweet 4
+- **Self-rating**: 4/5 (Wanda)
+- **What it shows**: FOK vs GTC flow diagram — "Order filled before T-2min cutoff?" fork, YES/NO branches, E[GTC]>E[FOK] punchline
+- **Parametric update (post-publish)**: Update 3 variables in generator (fill rate, cancel rate, rebate/latency), re-render → `day13-gtc-fill-mechanics.png`
+
+### Asset 2 — 3-Way Fee Economics Comparison
+- **File**: `/artifacts/design/day13-fee-comparison.png`
+- **Generator**: `/artifacts/design/day13-generate-fee-comparison.py`
+- **Thread placement**: Tweet 6 or Tweet 7
+- **Self-rating**: 4/5 (Wanda)
+- **What it shows**: 3-column comparison — FOK (red) | GTC Filled (green) | GTC Cancelled (amber)
+- **Parametric update (post-publish)**: Update 3 variables in generator (fill rate, cancel rate, rebate/latency), re-render → `day13-fee-comparison.png`
+
+### Quill Integration Notes
+- Tweet 3/4: Attach `day13-gtc-fill-mechanics.png` to illustrate the fill mechanics logic
+- Tweet 6/7: Attach `day13-fee-comparison.png` when presenting the fee economics table
+- Both images need parametric re-render AFTER Day 13 blog publishes (real fill_rate, cancel_rate, rebate_bps values)
+- Documentation: `/artifacts/design/day13-visual-assets.md`
+
+*Patched: 18:36 IST, Thu Feb 19, 2026 — Loki (Wanda Day 13 visuals, 18:22 IST)*

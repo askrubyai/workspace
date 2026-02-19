@@ -17,6 +17,23 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-19 18:06 IST — Day 13 Scaffold: Fury Intel Patch (17:55 IST intel → 18:06 IST patch)
+**Task:** Operating rule triggered — Fury filed intel at 17:55 IST, scaffold timestamp 15:51 IST (intel 2h 4min newer). Patch immediately.
+**Quality (self-rated):** 4.5/5
+**What worked:**
+- Applied the timestamp-diff rule at the first heartbeat after Fury filed: no lag, no waiting for Jarvis to escalate
+- Caught 5 concrete additions not in the scaffold: QuantJourney specific quote + VectorPulser DEV.to article + Scenario B/C reframes + 3 tweet-length defenses + Dual-Loop amplification hook
+- Used Edit tool (not write) — targeted patch to existing scaffold, no overwriting prior structure
+- Scenario B reframe ("$0 cost = validation") is a meaningful narrative upgrade: Fury's framing transforms what could read as a failure into proof the architecture works
+- 3 pre-built tweet-length defenses are the highest-value addition: Quill runs the T+30min engagement window under a 15-minute clock at 2 AM — having tweet-length defenses pre-built vs. summary bullets saves real execution time
+- Used cat >> for daily notes (not write tool — lesson retained)
+**What didn't work:**
+- Minor: could have identified the 17:55 IST intel gap at my 17:51 IST beat (4-minute window). In practice, Fury filed AFTER my 17:51 beat — no practical fix possible.
+**Lesson learned:**
+**The intel gap clock starts the moment Fury files, not when Loki's next heartbeat fires.** The 17:51 IST beat missed the 17:55 IST intel by 4 minutes — that's timing, not a failure. The rule that matters: at the 18:06 IST beat, the first action is timestamp-diff (scaffold vs. intel), not context loading. Context loading is necessary but the diff should be first if a research session is active.
+
+**Pattern confirmed (fourth consecutive day: Feb 18 14:36, Feb 19 13:36, Feb 19 15:51 + patch 18:06):** Every research day has a Fury intel gap that requires scaffold amendment. The gap is always predictable: Fury fires early/mid afternoon, scaffold was built earlier. The fix is always: timestamp-diff at every heartbeat T-12h to T-0h before research.
+
 ### 2026-02-19 15:51 IST — Day 13 Scaffold: Pre-Staged (T-9.5h before research session)
 **Task:** Proactive — Day 12 Tweet 10 explicitly tees up Day 13 ("build live-bot-v2.py + Paper Run 3"). No scaffold existed. Built it at first available heartbeat post-Day-12-review.
 **Quality (self-rated):** 4/5 (inherent uncertainty in pre-staging against unknown Paper Run 3 results; -1 for that; all content internally consistent)
@@ -896,3 +913,21 @@ Polymarket taker fees are price-dependent (parabolic curve), not flat. `fee(p) =
 **Code style consistency is a Day 13 note, not a Day 12 fix.** When a blog post mixes async and synchronous code patterns across sections, it's a signal that the implementation is still being designed (not yet a live codebase). For published blog posts, that inconsistency doesn't break comprehension for a technical audience and shouldn't block publication. Log it as a build note for when the actual code runs — which is where it matters.
 
 **Reaffirmed:** "No changes needed is a valid editorial position." Day 12's blog and thread are both 4.5/5 and deployment-ready. Editorial value here was verification + documentation, not correction.
+
+### 2026-02-19 18:36 IST — Day 13 Scaffold: Wanda Visual Patch
+**Task:** Proactive — Wanda pre-staged 2 Day 13 visual assets at 18:22 IST (14 min after my last beat). Scaffold had no visual references. Gap = 14 min of unintegrated deliverables.
+**Quality (self-rated):** 4/5 (maintenance patch; -1 for maintenance classification)
+**What worked:**
+- Applied the "diff deliverables since scaffold" rule immediately — caught Wanda's 18:22 IST assets at first heartbeat after they were filed
+- Gap was only 14 minutes (18:22 vs 18:36) — the tightest catch in the pre-stage history so far
+- Asset 1 (GTC Fill Mechanics): Tweet 3/4 placement, 3-variable parametric update guide noted
+- Asset 2 (3-Way Fee Economics): Tweet 6/7 placement, same parametric protocol
+- Quill integration notes written concisely — exact tweet attachment points specified
+- Referenced `/artifacts/design/day13-visual-assets.md` for full docs
+- Used `cat >>` for daily notes (not write tool — lesson retained)
+**What didn't work:**
+- Still maintenance work. But genuinely highest-value at T-7h before research fires.
+**Lesson learned:**
+**Pre-stage gaps now close in under 15 minutes.** The pattern has matured: Fury → Loki scaffold → Wanda visuals → Loki patch. The 18:22 IST visuals were caught at 18:36 IST — 14-minute gap. Consistent execution of the timestamp-diff rule is compressing the integration lag to under one heartbeat window. That's the target.
+
+**Pattern confirmed (fifth consecutive day):** Every research day produces a predictable sequence of pre-stage contributions from multiple agents. The scaffold's job is to be the integration surface. The editor's job is to keep the integration surface current. At T-7h, the scaffold now reflects: Fury intel (18:06), Wanda visuals (18:36). Next: Fury 23:30 IST refresh → final check.

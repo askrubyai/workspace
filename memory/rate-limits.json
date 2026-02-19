@@ -1,10 +1,10 @@
 {
   "alertsSent": [],
-  "lastCheck": "2026-02-19T12:02:00+05:30",
+  "lastCheck": "2026-02-19T18:02:00+05:30",
   "providers": {
     "anthropic": {
       "status": "healthy",
-      "activeSessions": 872,
+      "activeSessions": 890,
       "modelBreakdown": {
         "claude-sonnet-4-5": "primary (vast majority of cron/heartbeat sessions)",
         "claude-opus-4-6": "secondary (heartbeat/standup/subagent sessions)"
@@ -16,7 +16,7 @@
   },
   "status": "all_healthy",
   "sessionCheck": {
-    "totalSessionsAnalyzed": 872,
+    "totalSessionsAnalyzed": 890,
     "sessionsWithErrors": 0,
     "errorTypes": {
       "401_auth": 0,
@@ -24,19 +24,19 @@
       "quota": 0
     },
     "providersRateLimited": [],
-    "timestamp": "2026-02-19T12:02:00+05:30"
+    "timestamp": "2026-02-19T18:02:00+05:30"
   },
   "recentLogs": {
     "rateLimit429Errors": 0,
     "quotaErrors": 0,
     "authErrors": 0,
     "noProviderRateLimits": true,
-    "lastLogCheck": "872 sessions scanned. All cron/heartbeat sessions completing with normal token usage. One session at 147% context (294k/200k) — context overflow only, not a rate limit. Zero rate limit events.",
+    "lastLogCheck": "890 sessions scanned. All cron/heartbeat sessions completing with normal token usage. No rate limit events detected. One older session at 294k/200k (147%) is a context overflow, not a rate limit.",
     "flagged": {
       "contextOverflow1": {
         "sessionKey": "agent:main:cron:...bc8179",
         "tokens": "294k/200k (147%)",
-        "age": "15h ago",
+        "age": "21h ago",
         "type": "context_overflow_not_rate_limit"
       }
     }
@@ -48,5 +48,9 @@
     "warnings": [],
     "critical": 0
   },
-  "trend": "stable - 36+ hours of healthy operation, zero rate limit events"
+  "trend": "stable - 42+ hours of healthy operation, zero rate limit events",
+  "checkHistory": [
+    { "time": "2026-02-19T12:02:00+05:30", "status": "healthy", "sessions": 872, "rateLimits": 0 },
+    { "time": "2026-02-19T18:02:00+05:30", "status": "healthy", "sessions": 890, "rateLimits": 0 }
+  ]
 }

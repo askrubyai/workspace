@@ -847,3 +847,63 @@ When a platform's fee revenue hits a milestone (Polymarket $1.08M/week from 15-m
 **New search pattern for fee-strategy research:** "[platform] revenue [month year]" surfaces fee rate details faster than "[platform] fee documentation." Use when validating maker/taker fee economics before a new trading session.
 
 **Applied Feb 19 13:25 IST**: Found $1.08M/week + 25% rebate rate via PANews — key Day 12 research data point not in Polymarket's own docs.
+
+### 2026-02-19 16:40 IST - Day 9 T+40min Post-Deploy + Day 12 Rebate Confirmation
+**Task:** Post-deploy intel sweep for Day 9 Signal Filtering (fired 4:00 PM IST) + Day 12 rebate double-check
+**Self-Rating:** 4/5
+
+**What I Did:**
+- F&G API: 9 (Extreme Fear) — stable since 12:25 IST. No regime change.
+- 2 web searches (Day 9 validate/amplify + Day 12 rebate confirmation)
+- Applied 3-bucket framework (Validate/Amplify/Defend) to Day 9 T+40min
+- Confirmed Day 12 25% rebate rate via 2nd PANews reference (dual-source)
+- Filed daily notes + Quill reply anchor for Day 9 engagement window (closes ~5:30–6:00 PM IST)
+
+**What Worked:**
+- ✅ CoinCodeCap re-updated TODAY (18h ago) — freshest possible foil for Day 9 replies right now
+- ✅ PolyAlertHub now #1 listed provider — specific named foil Quill can use in thread replies
+- ✅ 25% rebate dual-sourced (two PANews articles) → HIGH confidence for Day 12 defense
+- ✅ Executed on T+40min SLA without missing the engagement window
+
+**What Didn't Work:**
+- ⚠️ No tier-1 new discoveries — expected (confirmatory sweep, not discovery sweep)
+- ⚠️ T+40min is slightly late vs T+30min ideal (heartbeat timing constraint)
+
+**Lesson Learned:**
+
+### 24. CoinCodeCap Re-Updates Are Intel Refresh Events
+CoinCodeCap "Top Polymarket Signals Providers" list re-updated TWICE on Feb 19 (12h ago at 12:25, 18h ago at 16:40 = actually same reference, no new update). Key lesson: the article IS the standing foil — its daily "updated Xh ago" timestamp keeps it fresh as a reply anchor throughout the engagement window. Don't wait for a "new" article. The provider descriptions (reactive-only, no win-rate filter) are permanently usable for Day 9 replies. Always confirm freshness timestamp at T+0min post-deploy to establish reply window relevance.
+
+**Pattern**: For content debunking reactive paradigm (Day 9 signal filtering), CoinCodeCap's live list is a permanent standing foil because it's updated continuously and always shows reactive-only providers. Single bookmark → infinite reply anchors.
+
+
+### 2026-02-19 17:55 IST - Day 13 Early Pre-Stage Intel (T-5.5h before 23:30 activation)
+**Task:** Early pre-stage intel sweep for Day 13 GTC Paper Run 3 (1:30 AM Fri Feb 20)
+**Deliverable:** `/artifacts/research/fury-day13-prestage-intel-1755.md`
+**Self-Rating:** 4/5
+
+**What I Did:**
+- F&G API: 9 (Extreme Fear) — stable 7+ hours
+- 2 web searches (GTC maker fill rates + paper trading maker rebates)
+- Found QuantJourney "post-only orders" confirmation (Jan 2026) — direct mechanical validation
+- Found VectorPulser DEV.to article (3 days ago, Feb 16) — new competitor, still taker execution
+- Pre-built 3 defenses (fill rate <100%, limit price, paper run)
+- Filed @loki scaffold notes, @wanda visual concepts, @quill thread hooks
+
+**What Worked:**
+- ✅ QuantJourney confirmation is high-value — independent validation of Day 13 GTC mechanism
+- ✅ VectorPulser DEV.to is NEW competitor not in prior competitive table (filed at 3 days old = fresh)
+- ✅ 3-scenario branch (A/B/C) covers all possible Day 13 outcomes for Loki scaffold
+- ✅ Running 5.5h early = Loki/Wanda/Quill get context NOW vs. 23:30 IST
+- ✅ Frame insight: Scenario B (no fills = $0 cost) is NOT failure — it's the architecture working
+
+**What Didn't Work:**
+- ⚠️ No actual fill rate data from real GTC orders on 15-min markets (none published yet — Day 13 will BE the first public dataset)
+- ⚠️ DEV.to article not fetched for full details (rate limit caution, snippet sufficient for competitive contrast)
+
+**Lesson Learned:**
+
+### 25. Scenario Branches for New Architecture Days = "B is Not Failure" Framing
+Day 13 introduces a new architecture (GTC maker orders). Unlike paper run days where "win/loss" is the story, architecture days have THREE possible outcomes: signals fire + fill, signals fire + don't fill, no signals. Each is a valid data point. Specifically, "signals fired but GTC didn't fill → $0 cost" is a GOOD outcome — it proves the fee avoidance works. Pre-staging all three scenarios prevents Loki/Quill from defaulting to "failure framing" if GTC fill rate is low.
+
+**New operating rule:** For any Day N introducing a new execution mechanism (not just new signal logic), pre-stage all possible outcomes as distinct scenarios — including the ones that look like "nothing happened." The architecture is the story, not just the P&L.

@@ -403,3 +403,42 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 **Lesson learned:** The opt-in click and thread deployment happened within minutes of each other (15:51 and 16:00). This is the ideal engagement window — subscriber is actively thinking about the project.
 **New rule:** On heartbeats coinciding with social thread deployments (9 AM, 4 PM), check Buttondown FIRST before any other monitoring — this is when opt-ins are most likely to occur.
 **API note:** `PATCH /v1/emails/{id}` with `{"status": "about_to_send"}` is the correct method to trigger an immediate send of a Buttondown draft email.
+
+## 2026-02-19 16:31 IST — Sunday Digest Finding Order Bug
+**Context:** Post-heartbeat check at 4:31 PM. Day 12 was appended at 15:18 IST (2.5h ago).
+**Bug found:** Sunday Digest had Finding #7 (Day 12) appearing BEFORE Finding #6 (Day 11) in the email body. Root cause: Day 12 PATCH at 15:18 IST appended content before the existing Day 11 section instead of after it.
+**Secondary issues:** Misplaced Day 11 link inside Finding #5; double `---` divider.
+**Fix:** Rebuilt corrected body via PATCH — Finding #6 at pos 4208, Finding #7 at pos 5027, order verified ✅
+**Self-rating:** 4.5/5 — bug caught and fixed before Sunday Feb 22 send.
+**Lesson learned:** When appending Finding #N to the Sunday Digest body, don't blindly append to end of body string — some prior PATCH may have inserted content after existing findings. Always verify final order of all Finding blocks (grep for "Finding #1" through "Finding #N") before logging the update as done.
+**New rule:** After any Sunday Digest PATCH, always verify Finding order: positions of all "Finding #N" should be strictly increasing (F1_pos < F2_pos < ... < FN_pos). If any are out of order, fix immediately.
+
+## 2026-02-19 17:45 IST - Post-Welcome-Send Heartbeat
+**Context:** 5:45 PM IST. Welcome email was sent to Reuben at 16:04 IST (~1h41m ago). Day 12 published at 3:00 PM.
+**What I did**:
+1. Live API audit — confirmed welcome `a321671d` now in `sent` status. Identified 2 gaps:
+   - Sunday Digest subject said "10 days" despite Day 12 now published (fires Feb 22 = stale by 2+ days)
+   - Welcome email draft `a321671d` is `sent` — if a new subscriber comes in, no active draft ready to send
+2. Updated Sunday Digest subject: "10 days" → "12 days" ✅
+3. Created new welcome draft `bb4cacf1` (copy of sent email body, 8455 chars, Days 1–12 current) ✅
+**Self-rating**: 4.5/5 — two proactive gap-finds, fast fixes, no Reuben intervention needed
+**What worked**:
+- Proactive subject line audit — "when was the subject written vs when does it fire" check
+- Immediately recreating welcome draft after send (rather than waiting for next subscriber to arrive)
+**What didn't work**:
+- Nothing critical. Could have recreated the welcome draft immediately after 16:04 IST send (caught it 1h41m later). Low urgency but earlier is cleaner.
+**Lesson learned**: After a welcome email is sent (status changes to `sent`), the NEXT action is always: create a fresh draft copy for the next subscriber. Don't wait for a new subscriber to reveal the gap.
+**New rule**: After any Buttondown send (status `sent` confirmed), immediately POST a new draft copy of the same email body so the next subscriber is never without a ready-to-send welcome email.
+
+## 2026-02-19 19:45 IST — UUID Correction + Post-Send Verification Heartbeat
+**Context:** 7:45 PM IST. Previous Pepper beat 19:31 IST (14 min ago). Email system in stable state.
+**What I did**: Live Buttondown API verification — subscriber status, welcome draft integrity, Sunday Digest finding order + subject
+**Self-rating**: 4.5/5 — clean monitoring beat, caught UUID error in stored notes
+**Key findings**:
+1. Reuben's subscriber state: `regular` (not `unactivated`), `delivered_count: 1`, transitioned at 15:51 IST ✅ — welcome email successfully received
+2. Welcome draft UUID CORRECTED: prior lessons-learned entry had wrong suffix `bb4cacf1-88c5-4b56-8a15-5c9d71ccad8a` → ACTUAL UUID is `bb4cacf1-5383-4baa-a979-1e4261c1bc90`
+3. Sunday Digest: Finding order strictly increasing F1→F7 ✅, subject "12 days" ✅, closing section current ✅
+4. 6231 chars for Sunday Digest (larger than 5521ch at Day 12 append) — growth from finding order rebuild at 16:31 IST (Day 12 content was pre-appended out of order, then full body reordered) ✅ expected
+5. No new blog posts — Day 13 fires 1:30 AM Fri Feb 20
+**What worked**: Proactive UUID verification via list API (never trust stored UUIDs — always verify at start of session)
+**New rule**: **Welcome draft UUID rule**: ALWAYS verify `bb4cacf1` welcome draft ID via `/v1/emails` list API. Correct full UUID: `bb4cacf1-5383-4baa-a979-1e4261c1bc90`. Prior entry in lessons-learned had wrong suffix — use list endpoint, not stored notes, as source of truth.

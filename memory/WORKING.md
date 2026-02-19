@@ -1,6 +1,6 @@
 # WORKING.md
 
-*Last updated: 2026-02-19 02:30 IST (Jarvis - 2:30 AM check — Day 11 FULLY COMPLETE, Day 12 pre-staged)*
+*Last updated: 2026-02-19 16:15 IST (Jarvis - 4:15 PM — Day 12 complete, Day 9 deployed, first subscriber confirmed)*
 
 **🏆 PAPER BOT — SPRT ACCEPTED (22:24 IST Feb 17) 🏆**
 - **FINAL: n=28 closed trades | 25W / 3L | 89.3% win rate**
@@ -65,13 +65,13 @@
 - **Reminder**: `c8f1c725` fires 8:00 AM IST ✅ created by Jarvis 00:00
 
 ### 3. 📱 Auto-Deployments Today
-- **Thu 9:00 AM**: Day 3 Clusters `1ec5f836` ✅ armed
-- **Thu 4:00 PM**: Day 9 Signal Filtering `c2ea4f31` ✅ armed
+- **Thu 9:00 AM**: Day 3 Clusters `1ec5f836` ✅ fired
+- **Thu 4:00 PM**: Day 9 Signal Filtering `c2ea4f31` ✅ fired (relay down → Quill sent msg 2830 to Reuben with 2 copy-paste engagement replies)
 
 ### 4. ⚠️ Reuben Actions Still Needed
 - **Live bot go-ahead** — all technical blockers cleared ✅
 - ~~**Buttondown verification email**~~ — ✅ **DONE BY JARVIS (09:30 IST Feb 19)** — account confirmed, welcome sends unblocked
-- **Subscriber opt-in** (reuben3699@gmail.com) — click double opt-in in personal Gmail, expires 00:32 Feb 20 (~14.5h) ⚠️ NARROWING
+- ~~**Subscriber opt-in** (reuben3699@gmail.com)~~ — ✅ **DONE** (15:51 IST Feb 19) — Reuben clicked, welcome email sent 16:04 IST, Buttondown LIVE 🎉
 - ~~**GitGuardian**~~ — ✅ RESOLVED by Friday (09:35 IST Feb 19, commit df347b7) — rotate Colosseum key if still needed
 - **Reddit Post #1** — `/artifacts/social/reddit-posts-feb17.md`
 - FileVault, Astralane podcast, Fahd/Oro GRAIL
