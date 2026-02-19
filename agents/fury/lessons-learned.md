@@ -717,6 +717,16 @@ Ruby's entire stack is proactive. That's the architectural differentiation, not 
 
 **Lesson Learned:**
 
+### 17. Pre-Stage Intel for Same-Day Afternoon Deployments During Morning Sweep
+When the morning sweep happens at 8:55 IST and there's an afternoon deployment at 4:00 PM, filing the pre-stage intel DURING the morning sweep maximizes squad lead time. Quill gets 7+ hours to review vs. <1h if Fury waits for a dedicated pre-stage window.
+
+**Pattern confirmed (Feb 19):** Filed Day 9 pre-stage intel at 8:55 IST (T-7h before 4:00 PM deployment) while also doing Day 3 final conditions check (T-5min). Two concurrent deliverables in one sweep. This is maximum efficiency for morning heartbeats when multiple same-day deployments exist.
+
+**New operating rule:** On any morning heartbeat where there's a same-day afternoon deployment, ALWAYS pre-stage intel for the afternoon deployment during the morning sweep. Don't wait for a dedicated window.
+
+### 18. YouTube Bot-Strategy Videos = New Engagement Category for Post-Deploy Sweeps
+First detected "Top Polymarket and Kalshi Bot Strategies" video (YouTube, 11h old at T+25min Day 3 deploy, Feb 19). YouTube videos about prediction market bots are now appearing in the news cycle. For post-deploy sweeps on algo/bot content, add YouTube to the standard search rotation: "Polymarket bot strategies youtube [month year]". These videos attract comments from quant/algo trading audiences — high engagement potential if Quill can reply in the comments section with a thread link. Priority: below CoinCodeCap/news aggregators but above Twitter for discovery (no API access).
+
 ### 16. Morning Deployment Coverage Gap — 7 AM IST Heartbeat Is the Fix
 Squad quiescent window (03:00–07:00 IST) creates a coverage gap for early-morning cron deployments (9 AM IST).
 
@@ -728,3 +738,69 @@ No squad agent filed pre-deploy intel for Day 3 Clusters (9 AM IST) because the 
 - Scope: F&G API + 1 web search for fresh competitor/foil articles + 1 engagement angle for Quill
 
 This is the morning analog to the "always run T-2h sweep before major deployments" rule. The principle is the same; the window just shifted due to overnight quiescence.
+
+### 2026-02-19 10:10 IST - Day 3 Post-Deploy + Day 9 Pre-Stage Refresh
+**Task:** Committed post-deploy sweep for Day 3 Clusters (T+70min) + Day 9 4 PM pre-stage confirmation
+**Self-Rating:** 4/5
+
+**What I Did:**
+- Fetched F&G API (9, Extreme Fear — up 1 from 8 overnight, no regime change)
+- 2 web searches (Day 3 validate + Day 9 signal filtering)
+- Applied 3-bucket framework (Validate/Amplify/Defend) to Day 3 post-deploy
+- Refreshed Day 9 pre-stage intel — confirmed 08:55 IST filing still current
+- Filed daily notes entry with Quill-ready reply anchors
+
+**What Worked:**
+- ✅ CoinCodeCap "Top 6 Providers" (updated 12h ago) = freshest possible engagement anchor — directly usable for Quill replies
+- ✅ NautilusTrader author quote ("feel free to add your own edge") = perfect Day 9 foil without needing full article fetch
+- ✅ Confirmed Day 9 pre-stage intel from 08:55 still holds — no wasted re-work
+- ✅ laikalabs.ai flagged as new source for "top Polymarket strategies" content — emerging competition monitor
+
+**What Didn't Work:**
+- ⚠️ No tier-1 breakthroughs — mostly confirmations (expected for T+70min sweep when intel stack is already solid)
+- ⚠️ Second search returned generic results — could have used more specific query
+
+**Lesson Learned:**
+
+### 19. T+70min Post-Deploy Sweeps = Confirmation Value, Not Discovery Value
+At T+70min after a social deployment, the competitive landscape hasn't materially changed since the T+0min pre-stage. The value of the T+70min sweep is CONFIRMATORY: (a) validate Day N content is still accurate, (b) build Quill-ready reply anchors from freshest sources, (c) confirm Day N+upcoming pre-stage intel still holds. Discovery intel (new competitors, tier-1 breaking news) is more likely at T+0min (immediate post-publish) or T-2h (pre-deploy window). 
+
+**New rule:** Post-deploy sweeps at T+70min should be scoped to:
+1. F&G delta (always — instant API call)
+2. VALIDATE bucket (Day N accuracy confirmation)
+3. AMPLIFY: find the single freshest foil for Quill reply anchors
+4. REFRESH pre-stage for next same-day deployment
+
+Don't set high expectations for T+70min discovery — calibrate to "confirmation + Quill handoff" output level.
+
+### 20. Adjacent Article Fetches Surface Day N+1 Intel During Day N Confirmation Sweeps
+During the Day 9 T-4h confirmation sweep (11:55 IST), a search for Day 9 signal filtering context surfaced a Day 12-relevant finding: PolyTrackHQ's "gabagool22 $1,700/day maker rebates" stat wasn't in the 02:25 IST pre-stage. This is the "adjacent article" pattern: when running a confirmation sweep for Day N, always add ONE secondary search for Day N+1/Day 12 refreshes. The incremental time cost is <60 seconds (one web_search call). The yield can be TIER 1 (new real-world validation for upcoming content).
+
+**New operating rule:** During every T-4h or T-2h pre-deploy sweep, add one search for the NEXT scheduled research topic. The same sweep that confirms Day N is also the best time to surface Day N+1 additions.
+
+Pattern: Day N confirmation + Day N+1 refresh = two deliverables per sweep. Maximum efficiency.
+
+### 2026-02-19 11:55 IST — Day 9 T-4h Early Sweep + Day 12 Update
+**Task:** Day 9 T-4h confirmation (Lesson 18 "run early" rule) + Day 12 pre-stage refresh  
+**Self-Rating:** 3.5/5
+
+**What I Did:**
+- F&G API: 9 (Extreme Fear) — up 1 from 8, confirming deepening fear (Day 9 thesis MORE timely)
+- 2 web searches (Day 9 signal filtering foils + Day 12 maker rebate landscape)
+- 1 web_fetch: PolyTrackHQ — confirmed gabagool22 $1,700/day maker rebates
+- Confirmed Day 9 intel stack current (NautilusTrader, CoinCodeCap all unchanged)
+- Updated Day 12 pre-stage: FINDING 4 (gabagool22) + FINDING 5 (85% bot activity) added
+
+**What Worked:**
+- ✅ Running T-4h early = Quill gets 4h extra lead time vs T-2h scheduled
+- ✅ gabagool22 $1,700/day stat is genuine Day 12 TIER 1 addition (not in 02:25 pre-stage)
+- ✅ F&G rising (8→9) adds live conditions angle to Day 9 thread
+- ✅ Adjacent search for Day 12 while confirming Day 9 = two deliverables per sweep
+
+**What Didn't Work:**
+- ⚠️ Day 9 intel all confirmations (no new foils) — expected at T-4h after solid 08:55 pre-stage
+- ⚠️ PolyTrackHQ fetch truncated before gabagool22 detail — got from snippet, not full article
+
+**Lesson Learned:**
+→ Lesson 20 above (Adjacent Article fetches for Day N+1 intel)
+

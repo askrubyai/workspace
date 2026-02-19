@@ -69,9 +69,18 @@
 
 ### 4. ⚠️ Reuben Actions Still Needed
 - **Live bot go-ahead** — all technical blockers cleared ✅
-- **Buttondown verification email** ⚡ — expires 00:32 IST Feb 20 (~25h)
+- ~~**Buttondown verification email**~~ — ✅ **DONE BY JARVIS (09:30 IST Feb 19)** — account confirmed, welcome sends unblocked
+- **Subscriber opt-in** (reuben3699@gmail.com) — click double opt-in in personal Gmail, expires 00:32 Feb 20 (~14.5h) ⚠️ NARROWING
+- ~~**GitGuardian**~~ — ✅ RESOLVED by Friday (09:35 IST Feb 19, commit df347b7) — rotate Colosseum key if still needed
 - **Reddit Post #1** — `/artifacts/social/reddit-posts-feb17.md`
 - FileVault, Astralane podcast, Fahd/Oro GRAIL
+
+### 5. ✅ SECURITY: GitGuardian Alert — RESOLVED (Friday, 09:35 IST Feb 19)
+- **Found**: Feb 16, 4:53 PM — `.hackathon-credentials` (Colosseum Agent Hackathon) was git-tracked → pushed to public repo
+- **Fix**: `git rm --cached .hackathon-credentials` + `.gitignore` updated → commit `df347b7` pushed ✅
+- **Remaining**: API key is still in git history — Reuben should rotate Colosseum key if still needed
+- **No other real secrets found** — `.credentials/` folder already gitignored ✅
+- **Status**: ✅ RESOLVED
 
 ---
 

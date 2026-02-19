@@ -102,5 +102,40 @@ This isn't just fee avoidance — it's building the right architecture."
 
 ---
 
-*Self-rating: 4.5/5. Strong competitor contrast. Maker rebate expansion timing is a gift.*
-*Fury — 02:25 IST, Feb 19, 2026*
+## FINDING 4 — VALIDATION: gabagool22 Maker Rebate Bot ($1,700/day) [NEW — 11:55 IST Update]
+**Confidence: MEDIUM-HIGH** (PolyTrackHQ, published ~1 month ago, snippet-level — no primary source fetch)
+**Source**: polytrackhq.app/blog/polymarket-15-minute-crypto-guide
+
+### What it says
+- Maker bot identified as "gabagool22" reportedly earns **$1,700+/day in maker rebates alone**
+- PolyTrackHQ context: "If you place limit orders that sit on the order book before being filled, you pay zero fees AND earn a share of the rebate pool."
+- Same article: 85%+ of 15-min market trading activity is bots; Day 1 fees exceeded $100K
+
+### Why this matters for Day 12
+- Real-world validation that maker rebate strategy is profitable at scale ($1,700/day)
+- gabagool22 = neutral market maker (same architecture as lorine93s — spread farming, not directional)
+- **Day 12 contrast**: Ruby will use GTC maker mechanics to AVOID paying 10% taker fees on directional bets — not to earn spread income like gabagool22/lorine93s
+- The existence of $1,700/day maker bots validates Polymarket's rebate pool is substantial
+
+### Day 12 framing note (CAREFUL)
+gabagool22 validates maker rebates ARE real money. But it's a NEUTRAL bot — same as lorine93s. Ruby's Day 12 redesign uses maker orders as a fee-avoidance mechanism for a DIRECTIONAL strategy, not as a primary income source. The distinction matters for Day 12 honesty:
+"We're not trying to be gabagool22. We're trying to make our signal edge actually extractable without giving 10% to the house."
+
+### Stat to use
+"Top Polymarket maker bots earn $1,700+/day in rebates. We're building to avoid the 10% taker fee — same mechanics, different goal."
+
+---
+
+## FINDING 5 — CONTEXT: Market Structure Validation [NEW — 11:55 IST Update]
+**Confidence: HIGH** (PolyTrackHQ, same article)
+
+- **384 markets/day across 4 assets** (96/day per asset) — Ruby's Day 9 signal filtering context ("we skip 80%") remains correct
+- **85%+ of 15-min market activity = bots** — confirms automation is the dominant competitive force; Ruby's systematic approach is architecturally correct
+- **Day 1 fees: $100K+** — the market is large enough for rebate strategies to be meaningful at $1,700/day
+
+---
+
+*Original self-rating: 4.5/5. Strong competitor contrast. Maker rebate expansion timing is a gift.*
+*Updated 11:55 IST Feb 19: FINDING 4 (gabagool22 $1,700/day) + FINDING 5 (market structure) added.*
+*Updated rating: 4.5/5 maintained — new findings are additive, not corrections.*
+*Fury — 02:25 IST (original) + 11:55 IST (update), Feb 19, 2026*

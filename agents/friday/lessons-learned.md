@@ -832,6 +832,26 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 **Verdict:** Nothing urgent. Infrastructure healthy. Paper bot collecting high-quality Day 9 data. Standing down.
 **Self-Rating:** 5/5
 
+## Heartbeat: Feb 19, 2026 08:34 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442, 4D+ uptime — HTTP 200, 0% CPU (39.5MB)
+- ✅ Mission Control UI: pid 843, 38h uptime — HTTP 200, 0% CPU (32.2MB)
+- ✅ ngrok: pid 88657, running stable via config file (port 5174 hardcoded)
+- ✅ No @friday mentions since last beat (07:04 IST) — zero delta
+- ✅ No assigned Mission Control tasks (Convex unavailable — consistent)
+- ✅ Day 11 blog: `2026-02-19-live-bot-dry-run/` LIVE on disk ✅ — squad delivered by 02:25 IST
+- ✅ live-bot-v1.py: NOT running (correct — DRY_RUN, awaiting Reuben --live go-ahead + fee economics)
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED)
+- ✅ All crons armed: Visa 8 AM `c8f1c725` | Day 3 9 AM `1ec5f836` | Day 9 4 PM `c2ea4f31` | Day 11 thread Sat `5d527d4a` | Day 12 research 1:30 AM Fri `efb8d151`
+- ✅ Day 12 pre-stage: FULLY LOCKED (Fury ✅ | Quill ✅ | Wanda ✅ | Loki ✅ | Vision ✅)
+- Zero delta from 07:04 IST beat — fully quiescent
+
+**Verdict:** Nothing urgent. Infrastructure fully healthy. No dev work queued. Next dev action: Day 12 GTC maker order redesign session 1:30 AM Fri Feb 20.
+**Self-Rating:** 5/5
+
+---
+
 ## Heartbeat: Feb 19, 2026 07:04 IST
 
 **Status Check:**
@@ -1638,3 +1658,44 @@ Also: Markdown parsing is inherently fragile. For production, real task manageme
 
 **Verdict:** Nothing urgent. Infrastructure fully healthy. Day 11 session in progress. Standing down.
 **Self-Rating:** 5/5
+
+---
+
+## Heartbeat: Feb 19, 2026 09:49 IST
+
+**Status Check:**
+- ✅ Mission Control API: pid 10442 — HTTP 200, 0% CPU
+- ✅ Mission Control UI: pid 843 — HTTP 200, 0% CPU
+- ✅ ngrok: pid 88657, port 5174 hardcoded via config — stable
+- ✅ No @friday mentions since 08:49 IST beat — zero delta
+- ✅ No assigned Mission Control tasks (Convex unavailable — consistent)
+- ✅ GitGuardian: RESOLVED (df347b7, 09:35 IST) — `.hackathon-credentials` removed from tracking
+- ✅ live-bot-v1.py: NOT running (correct)
+- ✅ paper-bot: NOT running (correct — SPRT ACCEPTED)
+- ✅ Day 12 pre-stage: FULLY LOCKED
+- ✅ All crons armed: Day 9 4 PM | Day 11 Sat 9 AM | Day 12 research 1:30 AM Fri
+
+**Verdict:** Nothing urgent. Infrastructure healthy. Zero delta from 08:49 IST beat. Next dev action: Day 12 GTC maker order redesign 1:30 AM Fri Feb 20.
+**Self-Rating:** 5/5
+
+## 2026-02-19 11:19 IST — daily-cost-check Cron Timeout Fix
+**Task:** Fix cron timing out silently (Jarvis flag: 2 consecutive errors)
+**Self-rating:** 4/5
+
+**Root cause:**
+- `daily-cost-check` (`eb1ace33`) had `timeoutSeconds: 120`
+- `lastDurationMs: 120004` = hitting timeout EXACTLY every run (2 consecutive)
+- Anthropic console page requires browser login + full render — consistently >120s
+
+**Fix:**
+- `timeoutSeconds: 120 → 240`
+- Added explicit 60s per-page-load cap in prompt
+- Added graceful fallback: "Send partial data rather than timing out silently"
+- Job will now send "unavailable — console timeout" instead of dying silently
+
+**What could be better:**
+- Root fix would be a headless API-based cost check (no Anthropic billing API available yet)
+- Could also add a `consecutiveErrors > 2` alert to Jarvis
+
+**New Rule (Operating Rule #10):**
+When `lastDurationMs == timeoutSeconds × 1000` for a cron job, the job is ALWAYS timing out — not occasionally slow. Fix both: increase timeout AND add explicit step-level time budgets + graceful fallback. Silent timeout failures are worse than partial data.

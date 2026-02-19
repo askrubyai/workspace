@@ -86,10 +86,59 @@
 ## Day 9 Signal Filtering Thread
 
 **Deployment**: 4:00 PM IST (cron `c2ea4f31`)
-**Pre-deploy intel**: TBD — Fury runs pre-deploy sweep ~2:30 PM IST
+**Pre-deploy intel**: ✅ Fury filed at 08:55 IST — `/artifacts/research/fury-day9-prestage-intel-0855.md`
 **Check window**: 4:30 PM IST (T+30min)
+**Updated**: 09:57 IST — Quill pre-staged from Fury morning sweep
 
-Engagement drafts TBD after Fury's 2:30 PM sweep.
+---
+
+### PRIORITY 1 — CoinCodeCap Reply (T+30min, HIGH)
+
+**Why**: CoinCodeCap published "Top 6 Polymarket Signals Providers" updated THIS MORNING (11h ago as of 08:55 IST). All 6 providers are REACTIVE — price alerts, whale activity, odds movement. Zero use win-rate estimation. Day 9 closes this exact gap.
+
+**Target**: Reply to Day 9 thread Tweet 1 or Tweet 7 (selectivity + filter math tweets)
+
+**Reply text (copy-paste ready)**:
+
+> There are 6 published Polymarket signal providers (CoinCodeCap listed them this morning).
+>
+> They all send alerts when something moves. None estimate win rate before entry.
+>
+> That's the gap Day 9 closes — filter first, enter only when estimated WR ≥ 65%.
+>
+> signals.coincodecap.com/polymarket-signals-providers
+
+**Why it works**: Grounds Day 9 thesis against a published, named comparison article (updated same day). "Reactive vs proactive" is the cleanest differentiation. Not bashing anyone — just describing the gap.
+
+**Deployment requirement**: Browser relay required. If NOT connected → Telegram Reuben immediately.
+
+---
+
+### PRIORITY 2 — NautilusTrader Contrast (T+30min, MEDIUM)
+
+**Source**: Fury 08:55 IST — Medium article (3 days ago). NautilusTrader uses single-factor >70% threshold. No multi-factor scoring. No SPRT. Described by Fury as "vibe coded."
+
+**Reply text**:
+
+> NautilusTrader's Polymarket bot uses a single-factor threshold: >70% signal strength, enter.
+>
+> Day 9 uses 3 factors → win rate estimate → 65% threshold → SPRT acceptance criteria.
+>
+> Same concept (selectivity), completely different architecture.
+
+**Why it works**: validates Day 9 concept (threshold filtering is right idea) while showing Ruby's approach is architecturally stronger. No personal criticism.
+
+---
+
+### PRIORITY 3 — Counter-Argument Defence (on demand)
+
+**If someone says "why 65%? arbitrary":**
+> 65% isn't arbitrary — it's where Kelly criterion becomes mathematically positive at maker fees. Below 65% = negative expected value. Above = edge. Day 8 covers the math. (↑ links in thread)
+
+**If someone says "you're so selective you'll never trade":**
+> Correct. 1 out of 1,400 signals in 24h. Paper run 1: 28 trades, 89.3% WR. Post-filter run 2: 19 trades, 94.7% WR. Fewer trades, higher win rate. That's the filter working, not failing.
+
+---
 
 ---
 
