@@ -229,12 +229,12 @@ const statusBadge = {
 };
 
 function TaskCard({ task }: { task: { id: string; title: string; status: string; priority: string; assignee?: string; issueNumber?: string; labels: string[]; description?: string } }) {
-  const badge = statusBadge[task.status];
+  const badge = statusBadge[task.status as keyof typeof statusBadge];
   return (
     <div className="bg-surface-1 rounded-xl p-4 border border-border-subtle active:scale-[0.98] transition-transform">
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-start gap-2 min-w-0">
-          <span className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${priorityDot[task.priority]}`} />
+          <span className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${priorityDot[task.priority as keyof typeof priorityDot]}`} />
           <div className="min-w-0">
             <div className="flex items-center gap-2">
               {task.issueNumber && <span className="text-xs text-text-muted font-mono">{task.issueNumber}</span>}
