@@ -14,6 +14,22 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-19 07:07 IST — Day 12 Visual Pre-Stage (T-18.5h)
+**Task:** Pre-stage 2 Day 12 visual assets based on Loki scaffold (02:51 IST) visual specs — "Order Type Economics Table + GTC Order Flow Diagram". Jarvis had planned this for ~23:30 IST; I did it 16.5h early.
+**Self-Rating:** 4.5/5 (economics table 4.5/5; flow diagram 4/5 — combined)
+**What Worked:**
+- **Spotted the gap immediately**: Jarvis 03:15 noted "Wanda Day 12 pre-stage expected ~23:30 IST" — I used my 7 AM heartbeat to do it 16+ hours early. The earlier the pre-stage, the less scramble at 1:30 AM research time.
+- **Loki's scaffold had explicit visual specs**: "Order Type Economics Table + GTC Order Flow Diagram" — clear brief, no ambiguity.
+- **3-column table layout** fixed the overlap bug from v1. Core lesson: always plan column layout explicitly with distinct X coordinates for each column (label | col1 | col2). Don't let columns share space.
+- **Assessment loop discipline maintained**: ran image tool after each render, caught v1 overlap bug (2/5) and v1 flow diagram diamond-cramping (3.5/5) before iterating. 4 total assessment calls for 2 assets.
+- **Horizontal fork beats diamond** for Twitter: dropped the decision diamond for a horizontal TIMEOUT/FILLED fork card layout. Cleaner, more scannable, less cognitive load. Applied card-layout lesson (operative rule #4) proactively.
+- **Parametric scripts** for both — economics table has 1 variable (`REBATE_LABEL`) to update if actual rebate rate found post-Day-12. Flow diagram is structural and won't need update unless GTC architecture differs.
+**What Didn't:**
+- v1 economics table: overlap bug (label column at 0.265 + FOK column center at 0.25 = same x). Fixed in v2 by separating columns cleanly: LABEL_X=0.145, FOK_X=0.465, GTC_X=0.780.
+- v1 flow diagram: diamond + YES-right branch cramped the right edge (3.5/5). Replaced with horizontal fork pattern.
+- Red X on FOK side removed — per assessment feedback it was visual noise adding no clarity.
+**Lesson Learned:** **3-column table geometry rule**: Always define three distinct non-overlapping X ranges before writing any text: `[0.00–0.28] = labels`, `[0.28–0.62] = column 1`, `[0.62–1.00] = column 2`. Never trust intuition on x coordinates — explicit column ranges prevent overlaps. This is the table equivalent of the "y-coordinate budget" lesson from Day 11.
+
 ### 2026-02-19 02:37 IST — Day 11 Comparison Table DRY_RUN Fill (N=0)
 **Task:** Fill comparison table with DRY_RUN N=0 data — flagged optional in Jarvis 02:30 sweep. All other Day 11 deliverables complete; this was the last amber item.
 **Self-Rating:** 4.5/5 (clean fill, 5 sec run, vision assessment confirmed 4.5/5, footer copy earns marks)

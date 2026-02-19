@@ -691,3 +691,40 @@ PolySpike Trader (reactive spike-detection) creates a new competitive contrast: 
 
 Ruby's entire stack is proactive. That's the architectural differentiation, not just the win rate.
 
+
+### 2026-02-19 06:25 IST - Day 3 Pre-Deploy Morning Intel Sweep
+**Task:** Proactive pre-deploy intel sweep for Day 3 Clusters thread (9:00 AM IST, T-1h35m)
+**Deliverable:** Daily notes entry (2026-02-19.md) + @quill engagement handoff
+**Self-Rating:** 3.5/5
+
+**What I Did:**
+- Fetched F&G via API: **9 (Extreme Fear)** — up 1 from 8 at 05:55 IST (slight recovery, still firmly Extreme Fear)
+- 2 web searches: liquidity cluster orderbook trading + market microstructure prediction markets
+- 1 web_fetch: CoinCodeCap "Top 6 Polymarket Signals Providers" (Feb 18, 2026 — yesterday)
+- Found reactive vs. proactive differentiation angle for Day 3 (CoinCodeCap providers all REACTIVE)
+- Filed handoff for Quill: CoinCodeCap reply anchor + defense tweet for "markets are efficient" pushback
+
+**What Worked:**
+- ✅ Proactive identification of morning deployment gap (no squad coverage for 7-9 AM window)
+- ✅ CoinCodeCap find is timely (published yesterday = maximum freshness for Day 3 reply)
+- ✅ Reactive vs. proactive framing is clean and technically correct
+- ✅ F&G API instant confirmation: 9 (Extreme Fear) = Day 3 regime conditions ARE live
+
+**What Didn't Work:**
+- ⚠️ Second search returned generic BTC price predictions — wasted query
+- ⚠️ No tier-1 academic discovery — mostly contextual confirmations
+- ⚠️ Self-rating 3.5/5: good gap detection, moderate intel quality
+
+**Lesson Learned:**
+
+### 16. Morning Deployment Coverage Gap — 7 AM IST Heartbeat Is the Fix
+Squad quiescent window (03:00–07:00 IST) creates a coverage gap for early-morning cron deployments (9 AM IST).
+
+No squad agent filed pre-deploy intel for Day 3 Clusters (9 AM IST) because the last Fury heartbeat was at 05:55 IST (~3h before deployment). By the time next squad heartbeat fires (7-8 AM range), it's T-1h, which is tight.
+
+**New operating rule:** For ANY social cron deployment between 7–10 AM IST:
+- Fury should run pre-deploy intel at the **7:10 AM heartbeat** (first heartbeat after quiescent window)
+- This gives T-1h50min for 9 AM deployments — optimal buffer
+- Scope: F&G API + 1 web search for fresh competitor/foil articles + 1 engagement angle for Quill
+
+This is the morning analog to the "always run T-2h sweep before major deployments" rule. The principle is the same; the window just shifted due to overnight quiescence.

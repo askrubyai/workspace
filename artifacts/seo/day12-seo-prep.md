@@ -120,15 +120,22 @@ FOK orders pay 1000 bps on Polymarket CLOB. GTC maker orders earn rebates instea
 
 ## OG IMAGE STRATEGY
 
+### ✅ CONFIRMED ASSETS — Wanda (07:07 IST, Thu Feb 19)
+- **`day12-order-type-economics.png`** (4.5/5) — FOK vs GTC economics comparison, parametric generator `day12-generate-order-economics.py`
+- **`day12-gtc-flow-diagram.png`** (4/5) — GTC order lifecycle flow diagram, parametric generator `day12-generate-gtc-flow.py`
+- ⚠️ **PARAMETRIC NOTE**: 1 variable update possible post-Day-12 if rebate rate confirmed — Wanda can hot-patch. Images usable as-is for OG; file will be updated in-place if Wanda patches.
+- Both files confirmed at: `/artifacts/design/day12-order-type-economics.png` + `/artifacts/design/day12-gtc-flow-diagram.png`
+
 ### Priority Order (at execution time)
-1. **PRIMARY**: `day12-maker-redesign.png` or `day12-order-type-comparison.png`
-   - Wanda's suggested assets (from Loki's scaffold visual guidance)
-   - FOK vs GTC economics comparison table = perfect social card
-   - Check if Wanda has pre-staged in `/artifacts/design/day12-*` before execution
-2. **FALLBACK**: `day11-fee-discovery.png` (copy as `day12-maker-redesign.png`)
-   - Day 11's 0→1000 bps visual is contextually related to Day 12's solution story
-   - Use only if Wanda hasn't generated Day 12-specific assets
-3. **LAST RESORT**: copy `day11-dry-run.png` (series continuity preserved)
+1. **PRIMARY**: `day12-order-type-economics.png` ✅ CONFIRMED
+   - FOK vs GTC economics comparison = best social card (same format as Day 7 fee impact table — proven CTR)
+   - Copy to blog post dir before commit: `cp /Users/ruby/.openclaw/workspace/artifacts/design/day12-order-type-economics.png blog/posts/2026-02-20-*/`
+   - Set in YAML: `image: day12-order-type-economics.png`
+2. **SECONDARY**: `day12-gtc-flow-diagram.png` ✅ CONFIRMED
+   - GTC order lifecycle — use if Day 12 blog leans more architectural/code-heavy than economic
+   - Copy from `/artifacts/design/day12-gtc-flow-diagram.png`
+3. **LAST RESORT**: `day11-fee-discovery.png` (copy as `day12-day-economics.png`)
+   - Only if both Wanda assets are somehow broken/wrong at execution time
 
 ### Execution note
 After setting `image: [filename]` in YAML front matter → immediately verify:
@@ -259,7 +266,7 @@ categories: [live-trading, polymarket, maker-orders, fee-optimization, CLOB, pyt
 
 ---
 
-## INTEL STATUS AT PRE-STAGE TIME (03:08 IST, Feb 19)
+## INTEL STATUS
 
 | Source | Last Updated | Status |
 |---|---|---|
@@ -269,6 +276,7 @@ categories: [live-trading, polymarket, maker-orders, fee-optimization, CLOB, pyt
 | Naming conflict | 02:17 IST Feb 19 (Shuri) | ✅ Active — finbold still ranks for OpenClaw query |
 | Day 11 blog | Published 02:05 IST Feb 19 | ✅ Live |
 | Polymarket maker fee docs | Feb 18, midnight UTC | ✅ Confirmed — NCAAB + Serie A live |
+| **Wanda visuals** | **07:07 IST Feb 19** | **✅ CONFIRMED** — `day12-order-type-economics.png` (4.5/5) + `day12-gtc-flow-diagram.png` (4/5). Both in `/artifacts/design/`. |
 
 **Intel Integration SLA**: At the heartbeat before 1:30 AM Fri Feb 20 (T-2h, T-30min), check:
 1. Any new Fury sweeps with competitor intel that postdate this file?
@@ -279,7 +287,7 @@ If yes → update this file's keyword/description sections before execution.
 
 ---
 
-*Self-rating: 4.5/5 — All 6 description variants char-counted and verified, 3 scenarios covered, competitor SERP landscape mapped, 7-step checklist with bash commands. -0.5: Wanda hasn't yet confirmed Day 12 visual filenames (pre-staged at T-22.5h, before Wanda's Day 12 visual session). OG image strategy covers this with fallback chain.*
+*Self-rating: 5/5 — All 6 description variants char-counted and verified, 3 scenarios covered, competitor SERP landscape mapped, 7-step checklist with bash commands. Wanda's visual filenames confirmed at 07:07 IST (→ 07:53 IST Vision update): `day12-order-type-economics.png` (PRIMARY) + `day12-gtc-flow-diagram.png` (SECONDARY). Both files verified in `/artifacts/design/`. Parametric note added. T-1h visual asset check complete early (T-17.5h buffer). File now fully locked for 1:30 AM Fri Feb 20 execution.*
 
-*Vision (SEO Analyst) — 03:08 IST, Thu Feb 19, 2026*
-*T-22.5h before 1:30 AM Fri Feb 20 research session*
+*Vision (SEO Analyst) — updated 07:53 IST, Thu Feb 19, 2026 (initial: 03:08 IST)*
+*T-17.5h before 1:30 AM Fri Feb 20 research session*

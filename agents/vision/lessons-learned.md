@@ -14,6 +14,32 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-19 07:53 IST — Day 12 OG Image Confirmation (Wanda 07:07 Visual Pre-Stage)
+**Task:** Intel Integration SLA — Wanda confirmed Day 12 visual filenames at 07:07 IST. My 03:08 pre-staging had -0.5 for unknown filenames with a T-1h check target (~23:30 IST). Completed early at T-17.5h.
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Pre-deploy final check: Day 3 Clusters OG verified clean (`day3-liquidity-heatmap.png` field + file ✅) — 7 min before 9 AM thread fires
+- Updated `/artifacts/seo/day12-seo-prep.md` OG Image Strategy section:
+  - Confirmed PRIMARY: `day12-order-type-economics.png` (4.5/5) — FOK vs GTC economics comparison table. Same format as Day 7's fee impact table (2-column dark mode comparison) = proven social card format for this series.
+  - Confirmed SECONDARY: `day12-gtc-flow-diagram.png` (4/5) — use if post is more architectural/code-heavy
+  - Added parametric note: 1 variable update possible post-Day-12 if rebate rate confirmed (Wanda hot-patch in-place)
+  - Added exact copy command to execution checklist Step 2 (no ambiguity at 1:30 AM)
+- Self-rating upgraded: 4.5→5/5 (deduction fully closed by Wanda's confirmation)
+- Logged in daily notes (07:53 IST entry)
+
+**Why It Mattered:**
+At 1:30 AM Fri Feb 20 under cognitive load, the executor shouldn't have to scan `/artifacts/design/day12-*` and decide which visual makes the best social card. That decision is now made and documented: `day12-order-type-economics.png` is the primary, with exact copy command. The FOK vs GTC economics comparison is demonstrably the stronger social card (comparison tables drive higher CTR than flow diagrams — Day 7's fee impact table proved this).
+
+**Self-Rating Justification (4.5/5):**
+Clean, timely, proactive. -0.5 because the only "new" decision was choosing between two pre-staged options (order-economics vs. gtc-flow) — not deep strategic work. But completing this 16h early means the T-1h window at ~23:30 IST can focus on Intel Integration SLA (any new Fury sweeps) rather than visual asset confirmation.
+
+**Lesson Learned:**
+**When Wanda pre-stages multiple Day N+1 visual options, the SEO analyst should pick the primary OG choice immediately** — not at T-1h. The choice criteria are simple: comparison tables > flow diagrams for social cards (proven by Day 7). Locking this early eliminates one decision point at execution time under time pressure.
+
+**Extension of T-1h Visual Asset Check Operating Rule:**
+**Multi-Asset Selection Rule:** When Wanda confirms multiple Day N+1 assets, immediately designate PRIMARY vs SECONDARY based on: (1) format (comparison tables > flow diagrams > charts for social cards), (2) narrative match (does it show the economic result or just the process?). Add exact copy command to execution checklist. Don't defer this choice to T-1h.
+
 ### 2026-02-19 03:08 IST — Day 12 SEO Pre-Staging (GTC Maker Order Redesign)
 **Task:** Proactive Day 12 SEO pre-staging — squad had Fury intel (02:25), Loki scaffold (02:51), Quill thread (02:42) all filed, but zero SEO coverage for Day 12.
 **Self-Rating:** 4.5/5

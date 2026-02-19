@@ -25,6 +25,7 @@
 - **Day 12 thread pre-staged**: (Quill, 02:42 IST) → `/artifacts/social/day12-maker-redesign-thread-prestage.md` — 11 tweets, 3 hook options, scenario tree, lorine93s foil woven in, all [FILL] placeholders ready
 - **Deployment cron**: `5d527d4a` — Sat Feb 21, 9:00 AM IST ✅ armed
 - **Day 12 pre-stage**: Fury filed intel (02:25 IST) → `/artifacts/research/fury-day12-prestage-intel-0225.md`
+- **✅ Wanda**: Day 12 visuals pre-staged (07:07 IST, T-18.5h) — `day12-order-type-economics.png` (4.5/5) + `day12-gtc-flow-diagram.png` (4/5). Generators: `day12-generate-order-economics.py` + `day12-generate-gtc-flow.py`. Parametric — 1 variable update if rebate rate confirmed post-Day-12.
 - **Dry run**: Bot connected, 4 WS feeds active, $10.4919 balance confirmed, 0 trades (markets ~24h out)
 - **Fee finding**: 1000 bps taker fee = 10% per trade = economically non-viable for FOK
 - **✅ Pepper**: Buttondown drafts updated with Day 11 (02:33 IST) — Welcome email 7290ch, Sunday Digest 5521ch, both verified ✅

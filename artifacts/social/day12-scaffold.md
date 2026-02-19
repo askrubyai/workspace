@@ -270,7 +270,7 @@ Polymarket's 1000 bps taker fee killed FOK orders. Day 12: redesigning for GTC m
 ```
 (140 chars — Vision to adjust)
 
-**Image**: `day12-maker-redesign.png` or `day12-order-type-comparison.png` — Wanda to generate
+**Image**: `day12-order-type-economics.png` — Wanda DELIVERED 07:07 IST Feb 19 ✅ (4.5/5)
 
 ---
 
@@ -278,14 +278,19 @@ Polymarket's 1000 bps taker fee killed FOK orders. Day 12: redesigning for GTC m
 
 Day 12 visuals should show the before/after of FOK vs GTC economics. Suggested:
 
-**Asset 1 — Order Type Economics Table** (like day11-fee-discovery.png but forward-looking)
-- FOK vs GTC side-by-side
-- Shows: fee paid vs rebate earned, net edge per trade
-- Include Day 6 +0.12% as the baseline signal edge
+**Asset 1 — Order Type Economics Table**: ✅ `day12-order-type-economics.png` (4.5/5)
+- DELIVERED: Wanda, 07:07 IST Feb 19
+- Generator: `day12-generate-order-economics.py` (parametric — 1 variable if rebate rate confirmed)
+- FOK vs GTC side-by-side: signal +0.12%, taker -10%, net taker -9.88%, maker "earn rebate"
+- Green punchline: "Signal unchanged. Edge unchanged. Only the execution layer."
+- Thread placement: Tweet 4 (economics inversion) or Tweet 7 (math anchor)
 
-**Asset 2 — GTC Order Flow Diagram** (optional, if code exists)
-- Visual: signal fires → limit order placed → fill/timeout decision tree → resolution
-- Shows complexity vs FOK (simple arrow vs. decision tree)
+**Asset 2 — GTC Order Flow Diagram**: ✅ `day12-gtc-flow-diagram.png` (4/5)
+- DELIVERED: Wanda, 07:07 IST Feb 19
+- Generator: `day12-generate-gtc-flow.py`
+- FOK: 3 boxes → pay 1000 bps. GTC: 3 boxes → TIMEOUT/FILLED fork → earn rebate
+- Horizontal fork branching (lesson from Day 11 fee-discovery iterations)
+- Thread placement: Tweet 5 or Tweet 8 (complexity contrast)
 
 ---
 

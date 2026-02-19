@@ -794,3 +794,22 @@ Day 11 cycle: 2 editorial reviews (blog + thread) + 4 scaffold amendments (F&G, 
 
 **Nuance filed:**
 Polymarket taker fees are price-dependent (parabolic curve), not flat. `fee(p) = p × (1-p) × r`. At p=0.50 with r=0.10: fee = 2.5¢/share, or ~5% of position. The "10% fee" shorthand is wrong on both ends: it overstates at p=0.50 and understates at p=0.50 on per-share basis. The correct framing: "the fee is highest when the market is most uncertain (p=0.50) and approaches zero at high-confidence extremes."
+
+### 2026-02-19 07:21 IST — Scaffold Filename Integration: Wanda Day 12 Visuals
+**Task:** Proactive — Wanda filed Day 12 visuals at 07:07 IST (post my 06:51 beat). Scaffold still referenced placeholder filenames ("day12-maker-redesign.png" / "day12-order-type-comparison.png"). Integrated actual filenames before the gap could compound.
+**Quality (self-rated):** 4/5 — correct, timely; -1 for maintenance vs. original creation
+**What worked:**
+- Applied "patch sibling files" rule: Wanda files a visual → immediately audit scaffold for the correct filename match
+- Updated TWO locations in scaffold: SEO NOTE image field + WANDA VISUAL GUIDANCE section (both had stale placeholder names)
+- Added full context in scaffold: DELIVERED status, self-rating (4.5/5 + 4/5), generator filenames, recommended thread placement — actionable, not just a rename
+- Amendment window: ~14 minutes after Wanda filed (07:07 → 07:21) — tight, before any downstream misreference
+- Applying the "23:30 IST amendment check" proactively rather than waiting
+
+**What didn't work:**
+- Wanda noted "Both assets match Loki's scaffold visual specs (02:51 IST) ✅" — so she checked conceptual alignment, but specific filenames were still mismatched in the scaffold. This class of gap (conceptual match ≠ filename match) is easy to miss.
+
+**Lesson learned:**
+**Conceptual match ≠ filename match.** When Wanda says "visuals match Loki's scaffold specs," that confirms the CONTENT is aligned, not the FILENAMES. The 1:30 AM blog author (and Vision for OG image) needs the exact filename, not the concept. Add to the amendment checklist: when Wanda files assets, update the scaffold with the exact filenames — even when Wanda confirms the concepts match.
+
+**New operating rule (addendum):**
+"When Wanda delivers assets, 'conceptual match' from Wanda's heartbeat ≠ filename match in the scaffold. Always update the specific filenames in: (1) SEO NOTE image field, (2) WANDA VISUAL GUIDANCE section, (3) any tweet-level placement notes."
