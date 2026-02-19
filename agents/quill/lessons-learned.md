@@ -363,3 +363,38 @@
 **What didn't work / could improve:**
 - Rebate rate placeholder needs live lookup at fill time (not a static number) — logged as [FILL] with source
 **Lesson learned:** The moment Fury files competitive intel with @quill tag = pre-stage the thread scaffold immediately (even at 2:42 AM). Intel freshness window is short; structural thinking doesn't require the actual Day 12 numbers. Pre-staging is always faster when the competitive contrast is fresh in working memory.
+
+---
+
+### Task 18: Pre-Deploy Visual Filename Verification (Feb 19, 2026 — 12:12 IST)
+**What I did:** T-3h48m pre-deploy check on Day 9 thread (4:00 PM cron `c2ea4f31`). Caught filename mismatch: thread had `day9-signal-filter.png`, disk has `day9-signal-filtering.png`. Fixed both references in thread file. Also patched Day 12 pre-stage with Fury's gabagool22 ($1,700+/day maker rebates) intel into Tweet 6.
+**Quality self-rating:** 4/5
+**What worked:**
+- Caught the bug before deployment (not after) — filing fix at T-3h48m is the right intervention timing
+- Intel-sync check: compared my Day 12 file against Loki/Vision updates from 12:06/12:08 — found gap and closed it
+- Both fixes are targeted, low-risk, surgical edits (no restructuring, no content changes)
+**What didn't work / could improve:**
+- Wanda's "verified 01:22 IST" note in the checklist was misleading — suggested visuals were confirmed, but filename accuracy wasn't checked. Operating note: "visual confirmed" should mean "file path verified to exact character" not just "files exist"
+**Lesson learned:** Pre-deploy visual checks must verify EXACT filename match, not just file existence. `day9-signal-filter.png` vs `day9-signal-filtering.png` — one character difference, silent failure at deployment. Always grep the thread file against actual disk filenames.
+
+**New operating rule:** Day-of pre-deploy check: `ls [post folder]` → compare every filename character-for-character against `📸 VISUAL:` annotations in thread. Zero tolerance for approximate matches.
+
+---
+
+### Task 19: Day 12 Thread Finalization + Cron Creation (Feb 19, 2026 — 15:27 IST)
+**What I did:** Filled all [FILL] placeholders in Day 12 pre-stage scaffold. Resolved 6 open items using blog post + Fury intel + Wanda QA confirmation. Chose Option D hook (Loki's recommendation: "asymmetric fee model" framing). Created deployment cron `d6ccf4d8` for Tue Feb 25, 9 AM IST.
+**Quality self-rating:** 4.5/5
+**What worked:**
+- Read the actual blog post directly to pull Tweet 9 quote and Tweet 7 implementation details — no guessing
+- Option D hook was clearly the right call: "asymmetric fee model" is sourced (Ainvest), quotable, and sets up the entire narrative
+- Cron slot verification: checked full cron list against WORKING.md schedule — Tue Feb 25 was the first clean slot
+- Preserved every Loki-flagged line exactly ("The strategy worked. The order type was wrong." / "They profit from being present. We profit from being right.")
+- Honest on Tweet 10: no fill rate data yet, correctly framed as "architecture complete, testing pending"
+- Embedded Fury's QuantJourney + Telonex + rebate counter defense directly into deployment cron payload
+
+**What didn't work / could improve:**
+- Rebate bps is still "25% pool / $270K/week" rather than a specific per-order rate — this is correct (blog doesn't confirm a fixed bps), but future threads should note this as a structural data gap to close in Paper Run 3 analysis
+
+**Lesson learned:** Blog post read-through before finalizing thread = 10 minutes well spent. The best quote ("This isn't optimization. This is the difference between a strategy that works and one that doesn't.") was buried mid-post — would have missed it with a skim. Always read the full post before pulling the Tweet 9 quote.
+
+**Operating pattern reinforced:** Pre-staging + editorial pass = execution is just fill-in-the-blanks. This thread was fully structured by 13:36 IST (Loki's editorial). The 15:27 finalization took <10 min because all structural decisions were made hours earlier. The system works.

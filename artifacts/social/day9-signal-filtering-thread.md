@@ -88,7 +88,7 @@ Selectivity accelerated convergence 4×.
 
 ---
 
-**Tweet 5** — The Raw Numbers | 📸 VISUAL: `day9-signal-filter.png`
+**Tweet 5** — The Raw Numbers | 📸 VISUAL: `day9-signal-filtering.png`
 ```
 What 6 hours of live data looked like:
 
@@ -204,7 +204,7 @@ Day 10: live trading starts tomorrow.
 - [x] Blog slug confirmed: `2026-02-18-signal-filtering`
 - [x] ⚠️ Math inconsistency ($0.15 EV figure) EXCLUDED — not in thread
 - [x] Day 8 cron `dc27da24` (9:00 AM IST) — runs first, do not conflict
-- [ ] Quill: visual check — `day9-signal-filter.png` + `day9-sprt-accepted.png` confirmed in post folder ✅ (Wanda verified 01:22 IST)
+- [x] Quill: visual check — `day9-signal-filtering.png` + `day9-sprt-accepted.png` confirmed in post folder ✅ (Wanda verified 01:22 IST; filename corrected by Quill 12:12 IST)
 - [x] Deployment cron: `c2ea4f31` — Thu Feb 19, 4:00 PM IST (Jarvis created 02:00 IST)
 - [x] Quill: final review + confirm ready to deploy ✅ (02:12 IST Feb 18)
 

@@ -94,13 +94,15 @@
 
 ### PRIORITY 1 — CoinCodeCap Reply (T+30min, HIGH)
 
-**Why**: CoinCodeCap published "Top 6 Polymarket Signals Providers" updated THIS MORNING (11h ago as of 08:55 IST). All 6 providers are REACTIVE — price alerts, whale activity, odds movement. Zero use win-rate estimation. Day 9 closes this exact gap.
+**Why**: CoinCodeCap published "Top 6 Polymarket Signals Providers" (~16h ago at 4 PM fire time per Fury 14:25 IST confirmation — maximum freshness). All 6 providers are REACTIVE — price alerts, whale activity, odds movement. Zero use win-rate estimation. Day 9 closes this exact gap.
+
+**Fury 14:25 IST intel note**: "Best reply: '6 Polymarket signal providers listed here. None filter by win rate. That's Day 9's thesis.'" — timing-agnostic framing preferred (avoids stale "this morning" language).
 
 **Target**: Reply to Day 9 thread Tweet 1 or Tweet 7 (selectivity + filter math tweets)
 
-**Reply text (copy-paste ready)**:
+**Reply text (copy-paste ready — UPDATED 14:27 IST per Fury 14:25 confirmation)**:
 
-> There are 6 published Polymarket signal providers (CoinCodeCap listed them this morning).
+> There are 6 published Polymarket signal providers (CoinCodeCap listed them).
 >
 > They all send alerts when something moves. None estimate win rate before entry.
 >
@@ -108,29 +110,55 @@
 >
 > signals.coincodecap.com/polymarket-signals-providers
 
-**Why it works**: Grounds Day 9 thesis against a published, named comparison article (updated same day). "Reactive vs proactive" is the cleanest differentiation. Not bashing anyone — just describing the gap.
+**Why it works**: Grounds Day 9 thesis against a published, named comparison article. "Reactive vs proactive" is the cleanest differentiation. Not bashing anyone — just describing the gap. Timing-agnostic language stays evergreen through the engagement window.
 
 **Deployment requirement**: Browser relay required. If NOT connected → Telegram Reuben immediately.
 
 ---
 
-### PRIORITY 2 — NautilusTrader Contrast (T+30min, MEDIUM)
+### PRIORITY 2 — NautilusTrader Direct Quote (T+30min, HIGH → UPGRADED)
 
-**Source**: Fury 08:55 IST — Medium article (3 days ago). NautilusTrader uses single-factor >70% threshold. No multi-factor scoring. No SPRT. Described by Fury as "vibe coded."
+**Source**: Fury 12:40 IST — full quote retrieved (previously only paraphrased). Escalated by Jarvis 12:45 IST.
+**Upgrade reason**: Direct quote is stronger than paraphrase — quote-reply anchors to the author's own words.
 
-**Reply text**:
+**Author quote** (Aule Gabriel, NautilusTrader article, 4 days ago):
+> *"if your trading strategy is not profitable putting on a trading bot will not make it profitable"*
 
-> NautilusTrader's Polymarket bot uses a single-factor threshold: >70% signal strength, enter.
+**Reply text (UPGRADED — use this, NOT the prior paraphrase)**:
+
+> He's right: "putting on a trading bot won't make a bad strategy profitable."
 >
-> Day 9 uses 3 factors → win rate estimate → 65% threshold → SPRT acceptance criteria.
+> Day 9 is about building the profitable strategy layer first.
 >
-> Same concept (selectivity), completely different architecture.
+> 84% signal skip rate. 89.3% win rate. The filter is the strategy.
+>
+> [Day 9 blog link]
 
-**Why it works**: validates Day 9 concept (threshold filtering is right idea) while showing Ruby's approach is architecturally stronger. No personal criticism.
+**Why it's upgraded**: Author VALIDATES Day 9 thesis in his own words — but his solution was a single >70% direction threshold. Day 9's 3-gate filter IS the profitable layer he says you need. Quote-reply format = zero editorializing, just letting his words do the work. More credible than paraphrase.
 
 ---
 
-### PRIORITY 3 — Counter-Argument Defence (on demand)
+### PRIORITY 3 — PolyBot Pro / Generic Stack Contrast (on demand, MEDIUM-NEW)
+
+**Source**: Fury 12:55 IST — PolyBot Pro (PolyCatalog.io, 1 day ago). Standard automation architecture (data ingestion → signal processing → order execution → monitoring). No win-rate threshold. No SPRT. No selectivity filter. Fits the "execution-first" segment.
+
+**When to use**: If someone engages asking about bot infrastructure or comparing approach to existing tools.
+
+**Reply text**:
+
+> PolyBot Pro and most automation tools solve the execution layer — data ingestion, order routing, monitoring.
+>
+> Day 9 asks a different question: *should* you place this bet?
+>
+> 84% of signals get rejected. The 16% that pass have a 89.3% win rate.
+>
+> Architecture is commodity. Signal quality is the edge.
+
+**Why it works**: Clean "execution vs. signal" split. No criticism — just a genuine architectural difference.
+
+---
+
+### PRIORITY 4 — Counter-Argument Defence (on demand)
 
 **If someone says "why 65%? arbitrary":**
 > 65% isn't arbitrary — it's where Kelly criterion becomes mathematically positive at maker fees. Below 65% = negative expected value. Above = edge. Day 8 covers the math. (↑ links in thread)

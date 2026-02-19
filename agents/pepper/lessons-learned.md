@@ -352,3 +352,54 @@ When another agent audits your work, integrate fixes IMMEDIATELY into deployment
 - 33min lag from blog publish (02:05) to this heartbeat (02:33). Prior plans said "2:00 AM" but the 2:00 AM beat spent time investigating blog availability (folder empty at 02:04), and the heartbeat schedule puts me at :00 not :33.
 **Lesson learned**: Post-publish email updates should start at the NEXT heartbeat after blog publish is confirmed — don't wait for a "nice round time." If blog publishes at 02:05, check at 02:15 (next available) and update then, not at 02:33.
 **New rule**: Post-publish update SLA is "next heartbeat after blog confirmed published." Check for Day N blog folder at start of every heartbeat during active research sessions.
+
+## 2026-02-19 12:33 IST - Heartbeat (Midday check)
+**Context:** 12:33 PM IST. Last Pepper beat was 02:33 IST (10h gap). Day 11 drafts updated at 02:33. Day 12 fires 1:30 AM Fri.
+**What I did:** Live Buttondown API check + subscriber audit + opt-in deadline alert to Reuben
+**Self-rating:** 4.5/5
+**Key findings:**
+1. Subscribers: 1 unactivated (Reuben, `reuben3699@gmail.com`) — type: `unactivated`, expiry **00:32 IST Feb 20** = **12.0h remaining** at 12:33 IST ⚠️
+2. Welcome email `a321671d`: 7290 chars, Days 1-11 confirmed ✅, Day 12 preview ✅, fully current
+3. Sunday Digest `fd03f1f4`: 5521 chars, Days 1-11 confirmed ✅, Day 12 preview ✅, fully current
+4. No new blog posts since Day 11 — Day 12 fires 1:30 AM Fri Feb 20. No draft update needed.
+5. Day 9 Signal Filtering thread deploys at 4 PM IST today (cron `c2ea4f31`) — may drive subscriber traffic
+**Action taken:** Sent Reuben Telegram message (msg 2812) warning about opt-in expiry deadline
+**What worked:** Proactive opt-in expiry alert — Reuben may not be tracking this given visa appointment at noon. 12h window is still actionable, 0h is not.
+**What didn't work:** Nothing — clean monitoring beat
+**Lesson learned:** Opt-in expiry deadlines need progressive escalation: warn at 24h (Jarvis did), warn again at 12h (this beat), and again at 6h if still unactivated. Each beat closer to deadline should increase urgency of the alert.
+**New rule:** When subscriber opt-in is within 12h of expiry, send direct Telegram alert regardless of other squad comms. Within 6h, flag as URGENT in daily notes AND alert Jarvis.
+
+## 2026-02-19 15:18 IST - Day 12 Post-Publish Draft Update
+**What I did**: Updated both Buttondown drafts with Day 12 content — "The Fee Flip: From Paying 10% to Earning Rebates"
+**Self-rating**: 4.5/5
+**What worked**:
+- Applied "update all drafts together" rule correctly — both drafts in same PATCH session
+- Fast turnaround: Day 12 published ~15:04-15:10 IST, drafts updated by 15:18 IST (~8-14 min post-publish) ✅
+- Welcome email Day 12 section follows established format (hook + table + key stat + read link)
+- Sunday Digest Finding #7 correctly numbered (checked existing count before appending — #6 was last)
+- Removed stale "Next Sunday: Top 3 findings" closing from welcome email (it was a forward-looking placeholder that expired with Day 12's publication)
+- Removed stale "Next week: Day 12 redesigns..." from Sunday Digest (Day 12 is now published)
+- Both verified via API read-back before logging complete
+**What didn't work**:
+- Nothing critical. Clean execution.
+**Lesson learned**: When a blog post's "preview" language appears in pre-staged email drafts, replacing it with the actual content at publish time is equally important as adding the new day's content. Both actions are part of the same atomic update.
+**No new operating rule** (existing "update all drafts together" rule covers this cleanly)
+
+## 2026-02-19 16:04 IST — First Welcome Email Sent 🎉
+**What I did**: Detected Reuben's double opt-in (15:51 IST), confirmed 0 deliveries, sent welcome email at 16:04 IST (13 min after opt-in)
+**Self-rating**: 5/5
+**Context:**
+- Reuben subscribed via homepage form on Feb 17. Was `unactivated` for 45+ hours.
+- Clicked opt-in at 15:51 IST — 9 minutes BEFORE Day 9 Signal Filtering thread fired at 4:00 PM
+- Previous beats monitored expiry (00:32 IST Feb 20, 8.5h remaining) but opt-in happened before escalation cron
+- PATCH to `/v1/emails/{id}` with `status: "about_to_send"` triggered immediate send ✅
+**What worked:**
+- Live API check at every heartbeat: subscriber_type transition `unactivated` → `regular` caught immediately
+- "Full subscriber details including transitions array" — exact opt-in timestamp visible in API response
+- Sent welcome email while Reuben is actively engaged (Day 9 thread firing at same time = high engagement window)
+- 13-minute delivery: opt-in → welcome email received. Best possible first impression.
+**What didn't work:**
+- Nothing critical. Could have caught this if I'd run API checks at 4:00 PM on the dot (instead of 4:01) — but minimal difference
+**Lesson learned:** The opt-in click and thread deployment happened within minutes of each other (15:51 and 16:00). This is the ideal engagement window — subscriber is actively thinking about the project.
+**New rule:** On heartbeats coinciding with social thread deployments (9 AM, 4 PM), check Buttondown FIRST before any other monitoring — this is when opt-ins are most likely to occur.
+**API note:** `PATCH /v1/emails/{id}` with `{"status": "about_to_send"}` is the correct method to trigger an immediate send of a Buttondown draft email.

@@ -804,3 +804,46 @@ Pattern: Day N confirmation + Day N+1 refresh = two deliverables per sweep. Maxi
 **Lesson Learned:**
 → Lesson 20 above (Adjacent Article fetches for Day N+1 intel)
 
+
+### 2026-02-19 12:25 IST — Day 9 T-1h35m Final Pre-Deploy Confirmation Sweep
+**Task:** Mandatory T-2h-equivalent confirmation before Day 9 4 PM deployment
+**Self-Rating:** 4/5
+
+**What I Did:**
+- F&G API: 9 (Extreme Fear) — stable, Day 9 thesis live
+- 2 web searches (signal filtering foils + selectivity/win-rate threshold)
+- Confirmed NautilusTrader + CoinCodeCap foils still valid
+- Found CoinCodeCap re-updated 14h ago (morning of Feb 19) — maximum freshness for 4 PM reply window
+- New competitor cataloged: r/VibeCodeDevs BTC sniper bot (speed-execution class, not signal-filter class)
+- Filed Quill-ready reply anchors + defense tweets
+
+**What Worked:**
+- ✅ Three-bucket framework (Validate/Amplify/Defend) applied cleanly
+- ✅ F&G stable (9) — confirmed Day 9 conditions live before deployment
+- ✅ CoinCodeCap freshness upgrade (14h ago vs 12h at 11:55) = better Quill reply anchor
+- ✅ New competitor correctly classified as "speed game" not "signal game" — no Day 9 narrative change needed
+- ✅ Zero rate limits — efficient 2-search sweep
+
+**What Didn't Work:**
+- ⚠️ No tier-1 discoveries (expected at T-1h35m after solid pre-staging)
+
+**Lesson Learned:**
+
+### 21. T-2h Pre-Deploy Sweeps for Afternoon Deployments = Run at :10 Heartbeat Within T-2h Window
+For afternoon deployments (4 PM IST), the ideal sweep window is 12:10–12:20 IST (T-1h40m to T-1h50m). My heartbeat fires at :10, and today I fired at 12:25 IST (T-1h35m). Within 5 minutes of optimal timing. Key result: CoinCodeCap article had updated AGAIN (14h ago at 12:25, vs 12h ago at 11:55) — even 30 minutes of recency matters for engagement anchors.
+
+**Rule refined:** For any 4 PM IST deployment, target the T-2h sweep at the **12:10 IST heartbeat**. Don't wait for 12:25 — the :10 heartbeat is the natural window. Same principle as 7:10 AM for 9 AM deployments (Lesson 16).
+
+### 23. "Execution Discipline vs. Signal Quality" = Recurring Counter-Narrative in Quant PM Trading
+QuantJourney Substack explicitly frames their PM trading strategy as: "execution discipline — not prediction — is the primary source of edge." This is the strongest competing thesis to Ruby's signal-first approach.
+
+Ruby's Day 12 answer: "we have BOTH." Multi-factor signal (SPRT-validated edge) + maker execution (fee avoidance). QuantJourney has the execution half but not the signal half. Every time this "execution > signal" counter-narrative surfaces, the response is "we're not choosing — the full stack requires both."
+
+**New operating rule:** When scanning for Day N+1 foils on quant content, always search for "execution vs. signal quality" framing in prediction market research. This is the #2 recurring debate (after "fees kill strategies"), and it surfaces consistently in advanced PM trading communities.
+
+### 22. Platform Revenue Articles = Rebate Rate Intel (Not Just Platform Context)
+When a platform's fee revenue hits a milestone (Polymarket $1.08M/week from 15-min crypto markets), it also reveals the rebate structure: PANews confirmed "makers receive 25% rebate" alongside the revenue figures. Revenue articles are more actionable for fee-strategy research than fee documentation pages, because docs update slowly while revenue reporting reflects the live economic model.
+
+**New search pattern for fee-strategy research:** "[platform] revenue [month year]" surfaces fee rate details faster than "[platform] fee documentation." Use when validating maker/taker fee economics before a new trading session.
+
+**Applied Feb 19 13:25 IST**: Found $1.08M/week + 25% rebate rate via PANews — key Day 12 research data point not in Polymarket's own docs.

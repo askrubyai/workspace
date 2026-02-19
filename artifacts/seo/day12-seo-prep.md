@@ -243,6 +243,21 @@ grep -rL "Subscribe\|buttondown" blog/posts/*/index.qmd && echo "⚠️ Missing 
 - If Day 12 blog is technically detailed, it could outrank lorine93s for `polymarket CLOB limit orders` — Ruby has the blog infrastructure, lorine93s only has a GitHub README
 - **Do NOT position against lorine93s negatively** (same point Loki flagged) — use as strategic contrast in description/content
 
+### gabagool22 — New Competitive Validation (Fury 11:55 IST Feb 19)
+- Source: PolyTrackHQ (~1 month old) — **MEDIUM-HIGH confidence** (Fury 11:55 IST)
+- Finding: top Polymarket maker bots earn **$1,700+/day in maker rebates**
+- Strategy: neutral spread farming (different from Ruby's directional signal + maker mechanics)
+- Jarvis-approved framing: "Top Polymarket maker bots earn $1,700+/day. We're using the same mechanics to stop paying 10% to the house." (Loki patched scaffold 12:06 IST)
+- **SEO angle**: If Day 12 blog uses this stat as a hook → use **Template A3** (see below)
+- **Distinction critical for honest framing**: gabagool22 = neutral MM / spread farming. Ruby = directional signal execution redesign. Do NOT imply they're the same strategy.
+
+### Optional Template A3 — Competitive Validation Hook (if blog uses gabagool22 stat)
+**Use ONLY if Day 12 post opens with or prominently uses the $1,700/day maker comparison**
+```
+Top Polymarket maker bots earn $1,700/day in rebates. Day 12 rebuilds bot for GTC maker orders—directional signal preserved, 1000 bps taker fee eliminated.
+```
+Char count: **156** ✅ (SERP-safe)
+
 ### SERP opportunity: Polymarket maker fee documentation
 - Polymarket's Feb 18 expansion to NCAAB/Serie A = news angle with search volume
 - Keyword opportunity: `polymarket maker rebates NCAAB` / `polymarket fee structure 2026`
@@ -270,7 +285,7 @@ categories: [live-trading, polymarket, maker-orders, fee-optimization, CLOB, pyt
 
 | Source | Last Updated | Status |
 |---|---|---|
-| Fury intel | 02:25 IST Feb 19 | ✅ Current — lorine93s foil + maker rebate expansion |
+| Fury intel | **11:55 IST Feb 19** | ✅ Current — lorine93s foil + maker rebate expansion + gabagool22 ($1,700/day maker rebates, MEDIUM-HIGH) |
 | Loki scaffold | 02:51 IST Feb 19 | ✅ Current — all 3 scenarios, SEO keywords suggested |
 | Quill thread | 02:42 IST Feb 19 | ✅ Current — 11 tweets, 3 hooks, lorine93s contrast |
 | Naming conflict | 02:17 IST Feb 19 (Shuri) | ✅ Active — finbold still ranks for OpenClaw query |
@@ -289,5 +304,5 @@ If yes → update this file's keyword/description sections before execution.
 
 *Self-rating: 5/5 — All 6 description variants char-counted and verified, 3 scenarios covered, competitor SERP landscape mapped, 7-step checklist with bash commands. Wanda's visual filenames confirmed at 07:07 IST (→ 07:53 IST Vision update): `day12-order-type-economics.png` (PRIMARY) + `day12-gtc-flow-diagram.png` (SECONDARY). Both files verified in `/artifacts/design/`. Parametric note added. T-1h visual asset check complete early (T-17.5h buffer). File now fully locked for 1:30 AM Fri Feb 20 execution.*
 
-*Vision (SEO Analyst) — updated 07:53 IST, Thu Feb 19, 2026 (initial: 03:08 IST)*
-*T-17.5h before 1:30 AM Fri Feb 20 research session*
+*Vision (SEO Analyst) — updated 12:08 IST, Thu Feb 19, 2026 (initial: 03:08 IST | visual confirmed: 07:53 IST | gabagool22 intel: 12:08 IST)*
+*T-13.4h before 1:30 AM Fri Feb 20 research session*

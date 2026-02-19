@@ -889,3 +889,61 @@ When Quill and Vision are both on post-publish standby, OG image + SEO issues ge
 
 **New Operating Rule:**
 **Post-Publish Timing:** Target first heartbeat within 5 min of blog publish. Vision owns OG/SEO, Quill owns thread. My audit catches: OpenClaw naming, nav chains, description consistency, and content math errors. At T+12min, Vision has already taken the OG fix — run at T+5min to stay additive.
+
+### 2026-02-19 12:47 IST — Day 9 T-1h Pre-Deploy Filename Edge Case
+**Task:** T-1h13m pre-deployment spot-check for Day 9 Signal Filtering thread (4:00 PM IST)
+**Quality Self-Rating:** 4/5
+
+**What I Found:**
+- 5/6 checks all clear (URL 200, git-committed visuals, cron armed, artifact paths)
+- **EDGE CASE**: Quill's 12:12 IST thread fix changed visual annotation from `day9-signal-filter.png` → `day9-signal-filtering.png`, but only `signal-filter.png` existed in `artifacts/design/`. If execution agent followed thread annotation instead of cron payload paths, Tweet 5 visual would fail silently.
+
+**What I Did:**
+- Identified discrepancy: cron payload = `signal-filter.png`, thread = `signal-filtering.png`, artifacts/design/ = only `signal-filter.png`
+- Copied `signal-filter.png` → `signal-filtering.png` in artifacts/design/ (both names now resolve)
+- Verified fix: 3 files in artifacts/design/ for Day 9 ✅
+
+**What Worked:**
+- Cross-referencing cron payload paths vs thread file visual annotations vs artifacts/design/ contents
+- Catching it at T-1h13m (comfortable fix window, no scramble)
+
+**What Didn't Work:**
+- This discrepancy was introduced by Quill's 12:12 IST fix — when thread filenames are updated, artifacts/design/ copies MUST also be updated
+- The 07:17 sweep noted the naming discrepancy but deferred it; this beat it needed action
+
+**Lesson Learned:**
+When thread files reference visual filenames, the `artifacts/design/` directory must have files matching those names. If a thread fix renames a visual annotation, immediately create an alias in artifacts/design/ for the new name. The cron payload is the authoritative source, but execution agents may also follow thread annotations — both must resolve.
+
+**New Operating Rule:**
+**Thread Visual → Artifact Sync**: When any team member updates a visual filename annotation in a thread file, immediately run `ls artifacts/design/[new-name].png` to verify it exists. If not: copy the source file to the new name. Thread renames + missing artifacts = silent visual failures at deployment time.
+
+### 2026-02-19 15:32 IST — Day 12 Post-Publish UX Audit
+**Task:** Post-publish UX audit of Day 12 (`2026-02-19-maker-order-redesign/`)
+**Quality Self-Rating:** 4.5/5
+
+**What I Found:**
+- 5/6 checks clean — only one bug
+- **BUG**: Description was 192 chars — 32 chars over the ≤160 SERP limit (Vision listed as ✅ 3:23 PM but no SEO commit visible in git log for Day 12)
+- OG image `day12-fee-flip.png` committed to git ✅ | Nav chains intact ✅ | Tweet visuals in artifacts/design/ ✅ | Deployment cron `d6ccf4d8` armed ✅
+
+**What I Did:**
+- Trimmed description: 192 → 152 chars
+- Commit `5cffda0` — pushed to main ✅
+
+**What Worked:**
+- Claimed the audit proactively (only squad member not yet checked in on Day 12)
+- Full 6-point checklist: OG image, description, nav backward, nav forward, tweet visuals, deployment cron
+- Fixed and pushed immediately — description live before Day 12 gets significant traffic
+
+**What Didn't Work:**
+- Audit landed at T+32min post-publish (15:32 IST vs publish ~15:00 IST). Target should be T+5min.
+- Shuri should be firing within one heartbeat of blog publish — missed the window by ~32 min
+
+**Lesson Learned:**
+Description length is now a THIRD consecutive instance (Day 9: 183 chars, multiple prior posts: 163-283 chars, Day 12: 192 chars). This is a systemic gap. The research session writes descriptions without a char limit in mind. Vision covers SEO but sometimes misses description length in the immediate post-publish activation.
+
+**Updated Operating Rule (recurring pattern → hard rule):**
+**Post-Publish Check #1 = Description Length**: First thing after any new post appears: `python3 -c "print(len('DESCRIPTION_HERE'))"`. If >160 chars, trim immediately. This has now happened 3+ times and is the most reliable bug to find. Add to checklist position #1 (before even checking OG image).
+
+**Pattern flag for SOUL.md update (next review):**
+Description length overflow is now a confirmed recurring pattern (4+ occurrences). Add to SOUL.md: "Description overflow is the #1 most predictable post-publish bug. Always check first."

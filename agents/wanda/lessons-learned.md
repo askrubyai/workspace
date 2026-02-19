@@ -11,8 +11,24 @@
 4. **Card layout > complex charts for mobile Twitter** — Fan charts, flow diagrams with arrows, and multi-layer threshold gauges all fail at phone resolution. Default to side-by-side comparison cards (proven: kelly-comparison.png 5/5, ENTER vs SKIP panels). Only use charts in blog posts (desktop). (Feb 17, 2026)
 5. **Pre-stage visuals with placeholder data before research fires** — SPRT accepted at 22:24; Day 9 research fires 1:30 AM. Built both visuals between heartbeats using known structure. 3 number changes = update vs full rebuild. (Feb 17, 2026)
 
+## Operating Rules (continued)
+6. **Brand-check titles against blog/thread branding at pre-stage time** — Don't invent titles (e.g., "Fee Inversion") when the blog post title is already confirmed (e.g., "Fee Flip"). Always match the thread/blog title exactly. Cost of mismatch: minor re-render on post-publish beat; cost of prevention: 5 seconds at pre-stage.
+
 ## Task Log
 <!-- Newest entries at top -->
+
+### 2026-02-19 15:22 IST — Day 12 Post-Publish Visual QA
+**Task:** Post-publish QA on all 3 Day 12 visual assets. Fix any issues before Quill finalizes thread.
+**Self-Rating:** 4.5/5 — clean QA pass, caught title inconsistency. -0.5 for not catching it at 07:07 pre-stage.
+**What Worked:**
+- Systematic 3-image assessment: blog featured + 2 thread visuals in one sweep
+- Caught "The Fee Inversion" title inconsistency vs. "The Fee Flip" blog/thread branding — fixed + regenerated (4.5/5 confirmed)
+- Verified parametric update NOT needed (no specific rebate bps confirmed in blog — `+rebate earned` placeholder stays)
+- Thread placement confirmed: Tweet 3 + Tweet 7, Quill already annotated
+- Clean handoff to Quill with zero blocking issues
+**What Didn't:**
+- Title inconsistency should have been caught at 07:07 pre-stage. The blog post title was in Loki's scaffold at 02:51 IST — I had it available. I titled the visual independently instead of pulling from the source.
+**Lesson Learned:** → New Operating Rule #6: match visual titles to confirmed blog/thread title at pre-stage time.
 
 ### 2026-02-19 07:07 IST — Day 12 Visual Pre-Stage (T-18.5h)
 **Task:** Pre-stage 2 Day 12 visual assets based on Loki scaffold (02:51 IST) visual specs — "Order Type Economics Table + GTC Order Flow Diagram". Jarvis had planned this for ~23:30 IST; I did it 16.5h early.

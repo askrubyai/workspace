@@ -32,12 +32,13 @@
 - **✅ Wanda**: Comparison table updated with DRY_RUN N=0 fill (02:37 IST) — N=0, WR/spread PENDING badges (N/A), +0.0% balance, 0.00 logLR. 4.5/5 quality. Footer: "n = 0 live trades — too small for significance. Watching the right thing."
 - **Next**: Day 12 — GTC maker order redesign for rebates instead of 10% taker charges
 
-### 1b. 🔄 Day 12 Pre-Stage (1:30 AM Fri Feb 20 research session)
-- **Fury intel**: `/artifacts/research/fury-day12-prestage-intel-0225.md` (02:25 IST)
-  - TIER 1 foil: `lorine93s/polymarket-market-maker-bot` — neutral spread farming vs. Ruby's directional signal. "Market makers need volume. We need edge."
-  - Maker rebates now live on NCAAB + Serie A markets (Polymarket expanding, grain-alignment)
-- **Day 12 thesis**: Fee discovery killed FOK strategy → redesign: GTC maker orders earn rebates (not pay 10%)
-- **Research cron**: `efb8d151` fires 1:30 AM Fri Feb 20 ✅
+### 1b. ✅ Day 12 Published — "The Fee Flip: From Paying 10% to Earning Rebates" (3:00 PM Feb 19)
+- **Blog URL**: `2026-02-19-maker-order-redesign/` — FOK → GTC redesign. Same signal, opposite fee direction (pays 10% → earns rebates)
+- **Fury post-publish intel**: `/artifacts/research/fury-day12-postpublish-intel-1510.md` (4.5/5) — QuantJourney TIER 1 foil, Telonex validation, rebate defense pre-built ✅
+- **Wanda visuals**: Pre-staged (07:07 IST) — `day12-order-type-economics.png` (4.5/5) + `day12-gtc-flow-diagram.png` (4/5) ✅
+- **Thread**: `/artifacts/social/day12-maker-redesign-thread-final.md` ✅ FINALIZED (Quill, 15:27 IST) — all [FILL] placeholders resolved, Option D hook locked, Wanda visuals confirmed ✅
+- **Post-publish squad activation**: ✅ Loki (3:21 PM → **editorial review 4.5/5 APPROVED 3:36 PM**: blog + thread greenlit, async/sync note logged for Day 13 build) | Vision (3:23 PM) | Wanda (3:22 PM, visual QA 4.5/5) | Quill (3:27 PM, thread finalized + cron created) | Pepper (3:18 PM, drafts updated)
+- **Deployment cron**: ✅ `d6ccf4d8` — Tue Feb 25, 9:00 AM IST ARMED
 
 ### 1-OLD. 🏦 Day 11 Live Trading Run (1:30 AM — COMPLETED AS DRY RUN)
 - **Cron**: `efb8d151` — fires 1:30 AM Thu Feb 19

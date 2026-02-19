@@ -237,6 +237,24 @@ Find the sentence that generalizes — one that a quant trader would screenshot 
 
 ## COMPETITIVE CONTEXT (Loki notes for author)
 
+### gabagool22 — Real-World Maker Rebate Validation [NEW — Fury 11:55 IST Feb 19]
+Confidence: MEDIUM-HIGH (PolyTrackHQ, ~1 month ago)
+
+- Earns **$1,700+/day in maker rebates** on Polymarket
+- Architecture: neutral market maker — spread farming, no directional signal
+- Same mechanics as lorine93s (places YES+NO passively, earns rebate pool)
+- **Day 12 contrast**: Ruby uses maker mechanics to *avoid* paying 10% taker fees on directional bets — not to earn spread income
+
+**Why it matters for Day 12**: gabagool22 proves Polymarket's rebate pool is real and substantial. But the goal is different:
+> "Top Polymarket maker bots earn $1,700+/day in rebates. We're using the same mechanics to stop paying 10% to the house."
+> — Jarvis-approved framing, 12:00 IST Feb 19
+
+**Placement**: Brief mention in Section 4 (Competitor Contrast) alongside lorine93s. Keep the same framing — we're not competing with maker-bots, we're using their infrastructure for a different purpose.
+
+**Market structure note** (same Fury sweep): Day 1 fees on Polymarket = $100K+. The rebate pool is large enough for $1,700/day extractors. This validates the scale of the program.
+
+---
+
 ### lorine93s/polymarket-market-maker-bot
 Filed by Fury (02:25 IST, Feb 19). HIGH confidence.
 

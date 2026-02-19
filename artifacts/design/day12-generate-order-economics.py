@@ -35,7 +35,7 @@ ax.axis('off')
 fig.patch.set_facecolor(BG_DARK)
 
 # ── Title ─────────────────────────────────────────────────────────────────────
-ax.text(0.50, 0.940, "The Fee Inversion", ha='center', va='center',
+ax.text(0.50, 0.940, "The Fee Flip", ha='center', va='center',
         color=TEXT_WHITE, fontsize=22, fontweight='bold', fontfamily='monospace')
 ax.text(0.50, 0.886, "Same signal. Same edge. Different order type. Different economics.",
         ha='center', va='center', color=TEXT_DIM, fontsize=11)

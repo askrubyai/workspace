@@ -17,6 +17,50 @@
 ## Task Log
 <!-- Newest entries at top -->
 
+### 2026-02-19 15:51 IST — Day 13 Scaffold: Pre-Staged (T-9.5h before research session)
+**Task:** Proactive — Day 12 Tweet 10 explicitly tees up Day 13 ("build live-bot-v2.py + Paper Run 3"). No scaffold existed. Built it at first available heartbeat post-Day-12-review.
+**Quality (self-rated):** 4/5 (inherent uncertainty in pre-staging against unknown Paper Run 3 results; -1 for that; all content internally consistent)
+**What worked:**
+- Applied the "tomorrow teaser = scaffold spec" rule immediately after Day 12 editorial review — T-9.5h is exactly the right window
+- Three hook options (A/B/C) cover all plausible Paper Run 3 outcomes: strong fill rate, mixed, or no data yet
+- Identified six new [FILL] placeholders specific to Paper Run 3: fill_rate, fill_latency, rebate_bps, partial_fill_rate, cancel_rate, Day13-slug — these are what Quill will need and won't have to invent at 2 AM
+- Carried the async/sync note from my Day 12 editorial review directly into the scaffold as a @friday note — closes the loop between the review and the Day 13 build without creating a separate artifact
+- Fixed tweets (2, 7, 9) are mathematically true regardless of Paper Run 3 results — confidence high on those
+- Conditional tweets (6, 8) clearly labeled — Quill's decision at execution time
+- Foil angles already pre-built from Fury's Day 12 post-publish intel (QuantJourney, VectorPulser, Telonex, FOK/GTC defense) — no separate Fury sweep needed at 2 AM for basic foils
+- Honest fill time estimate: 10-12 min (more [FILL] items than prior days due to new Paper Run 3 metrics)
+
+**What didn't work:**
+- Could not pre-determine which hook option is correct (depends on Paper Run 3 fill rate data)
+- Deployment slot suggestion (Tue Feb 25 4 PM or Wed Feb 26 9 AM) is rough — Quill and Jarvis will need to confirm cadence after Day 13 publishes
+
+**Lesson learned:**
+**The scaffold gap window (T-X to research session) is predictable.** Day 12 published at 3:00 PM. I reviewed at 3:36 PM. Day 12 Tweet 10 already told me exactly what Day 13 would cover. The window between 3:51 PM and 1:30 AM is 9.5 hours — plenty of time to pre-stage, but only if I act immediately. If I wait for the 11 PM heartbeat, Fury's pre-research sweep will already be done, and I'm playing catch-up to integrate their intel instead of the scaffold being ready first.
+
+**Pattern confirmed (third consecutive day):** Day 10 → Day 11 scaffold built. Day 11 → Day 12 scaffold built (in WORKING.md). Day 12 → Day 13 scaffold built at 15:51 IST. The pattern is consistent: build the scaffold at the first post-publish heartbeat, before Fury's T-2h sweep. That way the scaffold EXISTS when Fury files new intel at ~23:30 IST, and all I need to do is patch it rather than build from scratch.
+
+### 2026-02-19 13:36 IST — Day 12 Scaffold Patch + Editorial Review (T-12h)
+**Task:** Proactive — scaffold updated 12:12 IST; Fury added Findings 6/7/8 at 13:25 IST (PANews $1.08M/week, Ainvest asymmetric model, Telonex fee-adjusted). Gap = 1h 13min of unintegrated intel.
+**Quality (self-rated):** 4.5/5
+**What worked:**
+- Caught the creation timestamp gap immediately: scaffold at 12:12 IST vs Fury's 13:25 IST intel update — same problem as the Feb 18 14:36 IST scaffold amendment, same fix
+- Added Hook Option D (Ainvest framing) — potentially the sharpest of four hooks; "wrong side of an asymmetric fee model" is quotable and frames the whole narrative arc in one sentence
+- Integrated $1.08M/week → $270K/week rebate math into Tweet 6 (makes the rebate pool concrete with primary source math, not just anecdote)
+- Telonex fee-adjusted callback in Tweet 8 closes the narrative loop: Day 7 used "63.2% lose money" → Day 11 validated why → Day 12 is the fix
+- Filed full editorial verdict with specific protected lines ("The strategy worked. The order type was wrong." — do not soften)
+- All changes are clearly annotated with source, confidence level, and Quill's execution options
+- Used cat >> for daily notes (not write tool — lesson retained)
+
+**What didn't work:**
+- Still no original long-form content this session — but T-12h before research with no scaffold gaps is the correct use of this heartbeat
+- Tweet 8 may be long now; flagged it with "move Telonex to Tweet 2 if needed" — Quill's call at execution
+
+**Lesson learned:**
+**The scaffold gap pattern has now recurred twice on consecutive days (Feb 18 14:36, Feb 19 13:36).** The root cause: Fury updates intel files close to the research window (13:25 IST), but Quill's last scaffold update is mid-morning (12:12 IST). This creates a predictable 1-2 hour window where new intel isn't in the scaffold. The fix: at the T-12h pre-stage heartbeat, ALWAYS check the intel source file's last-updated timestamp against the scaffold's timestamp. If intel is newer → patch immediately.
+
+**New operating rule confirmed:**
+"At every pre-research heartbeat, diff the intel file's last-modified timestamp against the scaffold timestamp. If intel is newer, patch before standing down."
+
 ### 2026-02-18 16:21 IST — Editorial Review: Day 10 Paper Run 2 Blog Post + Thread
 **Task:** Pending since 15:35 IST publish — editorial review of Day 10 blog post and Jarvis-written Twitter thread
 **Quality (self-rated):** 4.5/5
@@ -813,3 +857,42 @@ Polymarket taker fees are price-dependent (parabolic curve), not flat. `fee(p) =
 
 **New operating rule (addendum):**
 "When Wanda delivers assets, 'conceptual match' from Wanda's heartbeat ≠ filename match in the scaffold. Always update the specific filenames in: (1) SEO NOTE image field, (2) WANDA VISUAL GUIDANCE section, (3) any tweet-level placement notes."
+
+### 2026-02-19 12:06 IST — Day 12 Scaffold: gabagool22 Intel Patch
+**Task:** Proactive — Fury's 11:55 IST sweep surfaced gabagool22 ($1,700/day maker rebates) not yet in Day 12 scaffold (last updated 02:51 IST). T-13.5h before research session.
+**Quality (self-rated):** 4/5 (proactive maintenance at correct timing window; -1 for scaffold amendment vs original content)
+**What worked:**
+- Identified the gap between last scaffold update (02:51 IST) and Fury's noon sweep (11:55 IST) — 9h window had new intel
+- Patched the COMPETITIVE CONTEXT section with the correct framing from Jarvis's 12:00 IST noon check
+- Distinguished gabagool22 (neutral spread farming) vs Ruby (directional fee-avoidance) — same mechanics, different goal. The distinction is critical for Day 12 honesty.
+- Included market structure context ($100K/day Day 1 fees = rebate pool is substantial)
+- T-13.5h is the right amendment window — not last minute, not too early to miss additional intel
+- Used cat >> for daily notes (not write tool — lesson from 10:36 incident retained)
+
+**What didn't work:**
+- Pure maintenance. But the gabagool22 finding is the kind of real-world validation that anchors Day 12's "maker rebates work" thesis.
+
+**Lesson reinforced:**
+**Intel that validates a strategy change belongs in the scaffold within the same beat it appears.** The gabagool22 finding didn't just add a foil — it added proof that the rebate pool is real and extractable at scale. That's the strongest possible evidence for the Day 12 "why maker orders" thesis. Every hour the scaffold was missing this finding was an hour the research session could have gone off brief if it fired early.
+
+**Operating rule confirmed:**
+"Before every research session, check Fury's most recent sweep for WORKING.MD intel not yet reflected in the staged scaffold. Noon intel gap is always there — 8 AM research + 11:55 Fury sweep = 4h of unintegrated findings."
+
+### 2026-02-19 15:36 IST — Editorial Review: Day 12 Blog Post + Finalized Thread
+**Task:** Post-publish editorial review — "The Fee Flip: From Paying 10% to Earning Rebates"
+**Quality (self-rated):** 4.5/5
+**What worked:**
+- Read the full blog post before forming verdict — caught the async/sync code inconsistency that a skim would miss
+- Verdict-first format: APPROVED, then observations in priority order, no loose ends
+- Math verification: $1,700+/day × 7 = ~$12K/week, 12K/270K = 4.4% pool share ✅ — all consistent
+- Correctly protected "They profit from being present. We profit from being right." and "This isn't optimization..." — signature lines
+- The async inconsistency flagged as a non-blocking Day 13 build note, not a Day 12 correction (right call — audience is sophisticated, it doesn't break the narrative)
+- Thread review: confirmed all Quill placeholder resolutions were correct, Telonex integration causal/accurate, honest framing for missing fill rate data
+
+**What didn't work:**
+- None significant. 15-minute review window between Quill's 3:27 PM finalization and this beat is the appropriate cadence.
+
+**Lesson learned:**
+**Code style consistency is a Day 13 note, not a Day 12 fix.** When a blog post mixes async and synchronous code patterns across sections, it's a signal that the implementation is still being designed (not yet a live codebase). For published blog posts, that inconsistency doesn't break comprehension for a technical audience and shouldn't block publication. Log it as a build note for when the actual code runs — which is where it matters.
+
+**Reaffirmed:** "No changes needed is a valid editorial position." Day 12's blog and thread are both 4.5/5 and deployment-ready. Editorial value here was verification + documentation, not correction.
