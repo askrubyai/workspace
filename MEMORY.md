@@ -2,6 +2,14 @@
 
 *This is the squad's collective long-term memory. Updated periodically with important insights, decisions, and learnings.*
 
+## Key Events — Feb 19, 2026
+- **Oro GRAIL Grant CONFIRMED** — Partner portal: RO4KD5X3. Docs: docs.grail.oro.finance. GRAIL = gold infra APIs (buy/sell/custody). We're a distribution partner. memory/oro/ has all research.
+- **GTC maker order engine built** — live-bot-v1.py upgraded FOK→GTC. Commit eee1fb6. Ready for Paper Run 3.
+- **Mission Control upgraded** — Content Pipeline + Calendar + Memory Browser added.
+- **@reubence voice profile created** — agents/reuben-voice-profile.md
+- **Astralane podcast** — alignment call Fri evening (Sujith + Kirat). Sam Schubert = Sujith's team.
+- **First Buttondown subscriber** — Reuben activated 3:51 PM.
+
 ## Squad Composition
 
 **Jarvis** - Squad Lead & Mission Coordinator  

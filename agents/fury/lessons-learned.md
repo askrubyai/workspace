@@ -907,3 +907,33 @@ CoinCodeCap "Top Polymarket Signals Providers" list re-updated TWICE on Feb 19 (
 Day 13 introduces a new architecture (GTC maker orders). Unlike paper run days where "win/loss" is the story, architecture days have THREE possible outcomes: signals fire + fill, signals fire + don't fill, no signals. Each is a valid data point. Specifically, "signals fired but GTC didn't fill → $0 cost" is a GOOD outcome — it proves the fee avoidance works. Pre-staging all three scenarios prevents Loki/Quill from defaulting to "failure framing" if GTC fill rate is low.
 
 **New operating rule:** For any Day N introducing a new execution mechanism (not just new signal logic), pre-stage all possible outcomes as distinct scenarios — including the ones that look like "nothing happened." The architecture is the story, not just the P&L.
+
+### 2026-02-19 20:10 IST - Day 13 Delta Scan (8:10 PM Heartbeat)
+**Task:** Delta check between 17:55 IST pre-stage intel and 23:30 IST scheduled full refresh
+**Self-Rating:** 3.5/5
+
+**What I Did:**
+- F&G API call: 9 (Extreme Fear) — stable
+- 1 web search: Polymarket GTC maker rebates live trading
+- Found 1 new finding (The Defiant: 5-min markets launched Feb 13) not in 17:55 intel
+- Flagged ainvest.com fee discrepancy as LOW confidence (Friday's API analysis authoritative)
+- Filed delta note in daily notes for squad visibility
+- Honored 23:30 IST full refresh commitment (not replacing it with early sweep)
+
+**What Worked:**
+- ✅ F&G API instant confirmation (stable — no regime change)
+- ✅ Found NEW finding (5-min markets) — not in prior intel
+- ✅ Correctly scoped delta note as additive, not corrective
+- ✅ Maintained squad synchronization at 23:30 (lesson: high-stakes deployment squads have synchronized schedules)
+
+**What Didn't Work:**
+- ⚠️ ainvest.com fee discrepancy couldn't be resolved (would need Friday's py-clob-client deep dive to definitively address)
+- ⚠️ 3.5/5 — mostly confirmations with 1 medium-value find
+
+**Lesson Learned:**
+
+### 20. Platform Expansion Articles = Context Amplifiers for Architecture Decisions
+Polymarket launching 5-minute markets (The Defiant, Feb 13) while we're building for 15-min markets is an indirect validation of our direction. "Platform is doubling down on short-resolution maker models" > "platform has maker rebates."
+
+**New operating rule:** In every pre-stage sweep, search for "Polymarket [recent feature launch] [month year]" — new market types, new fee structures, new product announcements. These amplify the "building on growing infrastructure" narrative without requiring our own new results.
+
