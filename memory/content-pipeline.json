@@ -18,7 +18,8 @@
         "date": "2026-02-14",
         "preview": "How funding rates create free lunch opportunities in Polymarket binary options",
         "threadFile": "day1-funding-rate-thread.md",
-        "cronDate": "2026-02-17"
+        "cronDate": "2026-02-17",
+        "threadExists": true
       },
       {
         "id": "ar-2",
@@ -28,7 +29,8 @@
         "date": "2026-02-14",
         "preview": "When the crowd is wrong about being wrong — debunking popular contrarian signals",
         "threadFile": "day2-contrarian-signal-thread.md",
-        "cronDate": "2026-02-18"
+        "cronDate": "2026-02-18",
+        "threadExists": true
       },
       {
         "id": "ar-3",
@@ -38,7 +40,8 @@
         "date": "2026-02-15",
         "preview": "When humans beat bots — reverse-engineering manual trading edges",
         "threadFile": "day3-liquidity-cluster-thread.md",
-        "cronDate": "2026-02-19"
+        "cronDate": "2026-02-19",
+        "threadExists": true
       },
       {
         "id": "ar-4",
@@ -48,7 +51,8 @@
         "date": "2026-02-15",
         "preview": "Extracting IV from binary options using Black-Scholes inversion",
         "threadFile": "day4-implied-volatility-thread.md",
-        "cronDate": "2026-02-20"
+        "cronDate": "2026-02-20",
+        "threadExists": true
       },
       {
         "id": "ar-5",
@@ -58,7 +62,8 @@
         "date": "2026-02-16",
         "preview": "Building a volatility regime detector for crypto binary options",
         "threadFile": "day5-regime-detector-thread.md",
-        "cronDate": "2026-02-23"
+        "cronDate": "2026-02-23",
+        "threadExists": true
       },
       {
         "id": "ar-6",
@@ -68,7 +73,8 @@
         "date": "2026-02-16",
         "preview": "The moment of truth — backtesting the full pipeline on real BTC data",
         "threadFile": "day6-backtest-thread.md",
-        "cronDate": "2026-02-24"
+        "cronDate": "2026-02-24",
+        "threadExists": true
       },
       {
         "id": "ar-7",
@@ -78,7 +84,8 @@
         "date": "2026-02-17",
         "preview": "Building the live paper trading bot with real CLOB integration",
         "threadFile": "day7-paper-trading-thread.md",
-        "cronDate": "2026-02-19"
+        "cronDate": "2026-02-19",
+        "threadExists": true
       },
       {
         "id": "ar-8",
@@ -88,7 +95,8 @@
         "date": "2026-02-17",
         "preview": "Kelly criterion for binary options — optimal position sizing",
         "threadFile": "day8-kelly-criterion-thread.md",
-        "cronDate": "2026-02-18"
+        "cronDate": "2026-02-18",
+        "threadExists": true
       },
       {
         "id": "ar-9",
@@ -98,7 +106,8 @@
         "date": "2026-02-18",
         "preview": "Only trade when the estimated win rate is ≥65% — radical selectivity",
         "threadFile": "day9-signal-filtering-thread.md",
-        "cronDate": "2026-02-19"
+        "cronDate": "2026-02-19",
+        "threadExists": true
       },
       {
         "id": "ar-10",
@@ -108,7 +117,8 @@
         "date": "2026-02-18",
         "preview": "Forensic replay of 28 Run 1 trades through enhanced filter — 94.7% win rate",
         "threadFile": "day10-paper-run2-thread.md",
-        "cronDate": "2026-02-20"
+        "cronDate": "2026-02-20",
+        "threadExists": true
       },
       {
         "id": "ar-11",
@@ -118,7 +128,8 @@
         "date": "2026-02-19",
         "preview": "The dry run that saved $10.49 — uncovering the 10% taker fee problem",
         "threadFile": "day11-live-trading-thread-final.md",
-        "cronDate": "2026-02-21"
+        "cronDate": "2026-02-21",
+        "threadExists": true
       },
       {
         "id": "ar-12",
@@ -128,7 +139,8 @@
         "date": "2026-02-19",
         "preview": "The fee flip — from paying 10% to earning rebates with GTC maker orders",
         "threadFile": "day12-maker-redesign-thread-final.md",
-        "cronDate": "2026-02-25"
+        "cronDate": "2026-02-25",
+        "threadExists": true
       },
       {
         "id": "ar-13",
@@ -187,7 +199,7 @@
       {
         "id": "rb-4",
         "title": "requestAnimationFrame enlightenment",
-        "stage": "Ready",
+        "stage": "Posted",
         "assignee": "Reuben",
         "date": "",
         "preview": "i understand requestAnimationFrame on a spiritual level now. this is not a flex."
@@ -210,5 +222,5 @@
       }
     ]
   },
-  "lastUpdated": "2026-02-19T10:47:22.238Z"
+  "lastUpdated": "2026-02-21T08:21:49.333Z"
 }

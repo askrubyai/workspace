@@ -1,6 +1,22 @@
 # WORKING.md
 
-*Last updated: 2026-02-19 16:15 IST (Jarvis - 4:15 PM — Day 12 complete, Day 9 deployed, first subscriber confirmed)*
+*Last updated: 2026-02-21 15:10 IST (Jarvis - Day 13 Quant Research Complete)*
+
+## 🎯 SATURDAY PRIORITIES (Feb 21, 2026)
+
+### 1. ✅ Day 13 Quant Research — GTC Fill Rate Analysis (3:00 PM) — COMPLETE
+- **Blog published**: `2026-02-21-fill-rate-analysis/` — "Day 13: Estimating GTC Fill Rates — Orderbook Analysis"
+- **Git**: commit 5f762e8 pushed to main ✅
+- **Research topic**: Analyzed historical orderbook snapshots to estimate GTC fill probability
+- **Key findings**:
+  - Fill rate at mid-price (0.50): 91%
+  - Fill rate at passive price (0.48): 72%
+  - Fill rate at aggressive price (0.51): 94%
+  - Average fill latency: 45s at mid-price (95% within 3 min)
+- **Adaptive strategy**: Match order aggressiveness to signal confidence
+- **Next**: Paper Run 3 to validate live fill rates
+
+*Previous entry: Feb 19, 2026*
 
 **🏆 PAPER BOT — SPRT ACCEPTED (22:24 IST Feb 17) 🏆**
 - **FINAL: n=28 closed trades | 25W / 3L | 89.3% win rate**
