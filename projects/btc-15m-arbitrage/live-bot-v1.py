@@ -41,7 +41,7 @@ import random
 import threading
 from collections import deque
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import Optional
 import numpy as np
 import websocket
@@ -53,6 +53,77 @@ from py_clob_client.clob_types import (
     ApiCreds, OrderArgs, OrderType, BalanceAllowanceParams, AssetType
 )
 from py_clob_client.order_builder.constants import BUY, SELL
+import time
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# DYNAMIC MARKET FETCHER — Gets current 15-min markets by epoch
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def get_current_15min_markets():
+    """Fetch current 15-min crypto markets from Polymarket.
+    
+    Polymarket 15-min markets use dynamic slugs based on epoch:
+    - btc-updown-15m-{epoch} where epoch is rounded to nearest 15 min
+    
+    Returns dict with asset -> {token_id, yes_price, no_price, market_id, title}
+    """
+    import requests
+    
+    # Round to nearest 15 minutes
+    epoch = (int(time.time()) // 900) * 900
+    gamma_api = "https://gamma-api.polymarket.com"
+    
+    assets_map = {
+        "BTC": "btc-updown-15m",
+        "ETH": "eth-updown-15m", 
+        "SOL": "sol-updown-15m",
+        "XRP": "xrp-updown-15m",
+    }
+    
+    markets = {}
+    
+    for asset, slug_base in assets_map.items():
+        slug = f"{slug_base}-{epoch}"
+        try:
+            url = f"{gamma_api}/events/slug/{slug}"
+            resp = requests.get(url, timeout=10)
+            if resp.status_code == 200:
+                data = resp.json()
+                market_list = data.get("markets", [])
+                if market_list:
+                    m = market_list[0]
+                    token_ids = m.get("clobTokenIds", [])
+                    prices_raw = m.get("outcomePrices", [])
+                    # Handle both string and list formats
+                    if isinstance(prices_raw, str):
+                        import json
+                        try:
+                            prices = json.loads(prices_raw.replace("'", '"'))
+                        except:
+                            prices = []
+                    else:
+                        prices = prices_raw or []
+                    markets[asset] = {
+                        "token_id": token_ids[0] if token_ids else None,  # Yes token
+                        "no_token_id": token_ids[1] if len(token_ids) > 1 else None,
+                        "yes_price": float(prices[0]) if prices and len(prices) > 0 else 0.5,
+                        "no_price": float(prices[1]) if prices and len(prices) > 1 else 0.5,
+                        "market_id": data.get("id"),
+                        "title": data.get("title"),
+                    }
+                    print(f"✅ [{asset}] Fetched: {data.get('title')} | Yes={prices[0] if prices else 'N/A'}")
+            else:
+                print(f"❌ [{asset}] API returned {resp.status_code} for {slug}")
+        except Exception as e:
+            print(f"❌ [{asset}] Error fetching market: {e}")
+    
+    return markets
+
+
+# Pre-fetch markets at startup
+print("Fetching current 15-min markets...")
+CURRENT_MARKETS = get_current_15min_markets()
+print(f"Loaded {len(CURRENT_MARKETS)} markets\n")
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CONFIG — GTC Maker Order Edition
@@ -82,7 +153,7 @@ CONFIG = {
     # ── Kelly Criterion — Day 10 calibration ─────────────────────────────────
     "backtest_win_rate": 0.70,         # Day 10: conservative (Run 2=94.7%, expect regression to ~70%)
     "kelly_multiplier": 0.50,          # Fractional Kelly: 0.5 = half Kelly (conservative)
-    "min_bet_usd": 5.00,               # Polymarket live minimum bet
+    "min_bet_usd": 2.00,               # Polymarket live minimum bet
     "kelly_skip_enabled": True,        # Skip trade if full Kelly < min_bet
 
     # ── GTC Maker Order Settings ───────────────────────────────────────────────
@@ -101,12 +172,13 @@ CONFIG = {
     "sprt_alpha": 0.05,                # Type I error (false positive)
     "sprt_beta": 0.20,                 # Type II error (false negative)
 
-    # ── Assets (series IDs for 15-min BTC/ETH/SOL/XRP) ───────────────────────
+    # ── Assets (15-min BTC/ETH/SOL/XRP) — now fetched dynamically ───────────
+    # Note: series_id replaced with token_id from CURRENT_MARKETS
     "assets": {
-        "BTC": {"series_id": "10192", "symbol": "btc/usd"},
-        "ETH": {"series_id": "10191", "symbol": "eth/usd"},
-        "SOL": {"series_id": "10423", "symbol": "sol/usd"},
-        "XRP": {"series_id": "10422", "symbol": "xrp/usd"},
+        "BTC": {"symbol": "btc/usd"},
+        "ETH": {"symbol": "eth/usd"},
+        "SOL": {"symbol": "sol/usd"},
+        "XRP": {"symbol": "xrp/usd"},
     },
 
     # ── Factor Weights (must sum to 1.0) ──────────────────────────────────────
@@ -896,42 +968,63 @@ class MarketCache:
             return (time.time() - last) > ttl_s
 
 
+def generate_15m_slugs(asset: str) -> list[str]:
+    """Generate slug timestamps for current and upcoming 15-min intervals (Eastern Time)."""
+    from zoneinfo import ZoneInfo
+    
+    # Use Eastern Time (Polymarket markets are in ET)
+    et = ZoneInfo("America/New_York")
+    now = datetime.now(et)
+    
+    # Round down to nearest 15 min
+    minutes_rounded = (now.minute // 15) * 15
+    current_interval = now.replace(minute=minutes_rounded, second=0, microsecond=0)
+    
+    # Generate slugs for current, next, and previous intervals
+    slugs = []
+    crypto = asset.lower()
+    for offset_minutes in [-15, 0, 15, 30]:
+        interval_start = current_interval + timedelta(minutes=offset_minutes)
+        ts = int(interval_start.timestamp())
+        slugs.append(f"{crypto}-updown-15m-{ts}")
+    
+    return slugs
+
+
 def fetch_current_market(asset: str) -> Optional[dict]:
-    """Fetch active 15-min binary market. Returns market dict including condition_id."""
+    """Fetch active 15-min binary market using slug-based discovery."""
     try:
-        series_id = CONFIG["assets"][asset]["series_id"]
-        series_url = f"{CONFIG['gamma_api']}/series/{series_id}"
-        series_resp = requests.get(series_url, timeout=5)
-        if series_resp.status_code != 200:
-            return None
-        series_data = series_resp.json()
-        events_meta = series_data.get("events", [])
-        if not events_meta:
-            return None
-
-        recent_event_ids = [ev.get("id") for ev in events_meta[-5:] if ev.get("id")]
-        recent_event_ids.reverse()
-
+        slugs = generate_15m_slugs(asset)
+        
         market = None
-        condition_id = None
-        for event_id in recent_event_ids:
-            ev_url = f"{CONFIG['gamma_api']}/events/{event_id}"
-            ev_resp = requests.get(ev_url, timeout=5)
-            if ev_resp.status_code != 200:
+        for slug in slugs:
+            url = f"{CONFIG['gamma_api']}/markets?slug={slug}"
+            resp = requests.get(url, timeout=5)
+            if resp.status_code != 200:
                 continue
-            event = ev_resp.json()
-            markets = event.get("markets", [])
-            if not markets:
+            data = resp.json()
+            if not data or not isinstance(data, list):
                 continue
-            candidate = markets[0]
+            candidate = data[0]
             if candidate.get("active") and not candidate.get("closed"):
                 market = candidate
-                condition_id = candidate.get("conditionId")
                 break
-
+        
         if not market:
             return None
 
+        condition_id = market.get("conditionId")
+        
+        # Get token IDs from clobTokenIds field
+        clob_token_ids = market.get("clobTokenIds", "[]")
+        if isinstance(clob_token_ids, str):
+            try:
+                token_ids = json.loads(clob_token_ids)
+            except Exception:
+                token_ids = []
+        else:
+            token_ids = clob_token_ids or []
+        
         outcome_prices = market.get("outcomePrices", "")
         if isinstance(outcome_prices, str):
             try:
@@ -961,9 +1054,11 @@ def fetch_current_market(asset: str) -> Optional[dict]:
             "up_price": up_price,
             "down_price": down_price,
             "time_left_s": time_left_s,
+            "token_ids": token_ids,  # Added: CLOB token IDs for trading
             "cached_at": time.time(),
         }
-    except Exception:
+    except Exception as e:
+        print(f"[fetch_current_market] Error: {e}")
         return None
 
 
@@ -1314,9 +1409,14 @@ class LiveTradingBot:
             log(f"[{asset}] WS closed (code={code})", "warn")
 
         def on_open(ws):
-            sub = json.dumps({"assets_ids": [config["series_id"]], "type": "subscribe"})
-            ws.send(sub)
-            log(f"[{asset}] WS subscribed to series {config['series_id']}", "info")
+            # Use token_id from dynamically fetched CURRENT_MARKETS
+            token_id = CURRENT_MARKETS.get(asset, {}).get("token_id")
+            if token_id:
+                sub = json.dumps({"assets_ids": [token_id], "type": "subscribe"})
+                ws.send(sub)
+                log(f"[{asset}] WS subscribed to token {token_id[:20]}...", "info")
+            else:
+                log(f"[{asset}] No token_id found in CURRENT_MARKETS", "error")
 
         while not self._stop.is_set():
             try:
@@ -1499,10 +1599,6 @@ if __name__ == "__main__":
     if args.live:
         print("\n⚠️  LIVE TRADING MODE ENABLED ⚠️")
         print(f"Real USDC will be spent. GTC maker orders. Wallet: 0x2FC6896bDFB507002D1A534313C67686111cDfdA")
-        confirm = input("Type 'YES I UNDERSTAND' to proceed: ")
-        if confirm.strip() != "YES I UNDERSTAND":
-            print("Aborted.")
-            sys.exit(0)
         CONFIG["dry_run"] = False
         print("✅ Live trading enabled. GTC maker orders — 0% fee + rebates.\n")
 
