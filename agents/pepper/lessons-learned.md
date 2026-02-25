@@ -1,4 +1,15 @@
-# Lessons Learned
+## 2026-02-22 05:15 IST - Sunday Digest Day 13 Update (Pre-Send)
+**Context:** Sunday Digest fires 9:00 AM IST. Day 13 published Feb 21 but digest only had Days 1-12.
+**What I did:** Added Finding #8 (GTC Fill Rate Analysis), updated "This week on the blog" (8 posts), updated "Next week" (Paper Run 3), updated subject to "13 days"
+**Self-rating:** 4.5/5
+**What worked:**
+- Proactive check caught stale content before send
+- Finding #8 follows established format (91% mid, 72% passive, 94% aggressive fill rates)
+- All 8 blog post URLs now included
+- Subject line corrected from "12 days" to "13 days"
+**What didn't work:**
+- Should have checked at 4:00 AM instead of 5:00 AM (earlier catch = more buffer time)
+**Lesson:** When a new blog post publishes the day before Sunday Digest fires, update the digest THAT SAME DAY or first thing the next morning — not hours before send.
 
 *Updated after every task. Re-read at session start.*
 

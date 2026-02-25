@@ -1,22 +1,43 @@
 {
   "alertsSent": [],
-  "lastCheck": "2026-02-19T18:02:00+05:30",
+  "lastCheck": "2026-02-25T12:01:00+05:30",
   "providers": {
     "anthropic": {
       "status": "healthy",
-      "activeSessions": 890,
+      "activeSessions": 0,
       "modelBreakdown": {
-        "claude-sonnet-4-5": "primary (vast majority of cron/heartbeat sessions)",
-        "claude-opus-4-6": "secondary (heartbeat/standup/subagent sessions)"
+        "claude-sonnet-4-5": "on_demand",
+        "claude-opus-4-6": "on_demand"
+      },
+      "lastError": "2026-02-21T09:00:00+05:30 (stale - recovered)",
+      "lastRateLimit": "2026-02-21T09:00:00+05:30",
+      "note": "Not in use currently. Historical rate limit from Feb 21 recovered."
+    },
+    "minimax": {
+      "status": "healthy",
+      "activeSessions": 95,
+      "modelBreakdown": {
+        "MiniMax-M2.1": "primary (vast majority)",
+        "MiniMax-M2.5": "secondary"
       },
       "lastError": null,
       "lastRateLimit": null,
-      "note": "All sessions completing normally. Token usage 13k–294k/session. Zero 429 or quota errors detected."
+      "note": "All sessions completing normally. Context usage up to 59%."
+    },
+    "openai_codex": {
+      "status": "degraded_config",
+      "activeSessions": 0,
+      "modelBreakdown": {
+        "codex-5.3": "config_error"
+      },
+      "lastError": "Unknown model - config issue",
+      "lastRateLimit": null,
+      "note": "Model not available. Jobs using codex-5.3 failing with config error."
     }
   },
   "status": "all_healthy",
   "sessionCheck": {
-    "totalSessionsAnalyzed": 890,
+    "totalSessionsAnalyzed": 99,
     "sessionsWithErrors": 0,
     "errorTypes": {
       "401_auth": 0,
@@ -24,33 +45,38 @@
       "quota": 0
     },
     "providersRateLimited": [],
-    "timestamp": "2026-02-19T18:02:00+05:30"
+    "timestamp": "2026-02-25T12:01:00+05:30"
   },
   "recentLogs": {
     "rateLimit429Errors": 0,
     "quotaErrors": 0,
     "authErrors": 0,
     "noProviderRateLimits": true,
-    "lastLogCheck": "890 sessions scanned. All cron/heartbeat sessions completing with normal token usage. No rate limit events detected. One older session at 294k/200k (147%) is a context overflow, not a rate limit.",
-    "flagged": {
-      "contextOverflow1": {
-        "sessionKey": "agent:main:cron:...bc8179",
-        "tokens": "294k/200k (147%)",
-        "age": "21h ago",
-        "type": "context_overflow_not_rate_limit"
-      }
-    }
+    "lastLogCheck": "99 sessions scanned at 12:01 IST (Feb 25). All MiniMax sessions completing normally. No active rate limits detected."
   },
   "systemStatus": {
     "gateway": "healthy",
     "channels": "telegram_ok",
     "cronJobs": "all_executing",
-    "warnings": [],
+    "warnings": ["openai_codex: codex-5.3 model unavailable - config issue"],
     "critical": 0
   },
-  "trend": "stable - 42+ hours of healthy operation, zero rate limit events",
+  "trend": "stable - no active rate limit issues",
   "checkHistory": [
     { "time": "2026-02-19T12:02:00+05:30", "status": "healthy", "sessions": 872, "rateLimits": 0 },
-    { "time": "2026-02-19T18:02:00+05:30", "status": "healthy", "sessions": 890, "rateLimits": 0 }
+    { "time": "2026-02-19T18:02:00+05:30", "status": "healthy", "sessions": 890, "rateLimits": 0 },
+    { "time": "2026-02-21T12:01:00+05:30", "status": "healthy", "sessions": 94, "rateLimits": 0 },
+    { "time": "2026-02-22T00:01:00+05:30", "status": "healthy", "sessions": 94, "rateLimits": 0 },
+    { "time": "2026-02-22T06:01:00+05:30", "status": "healthy", "sessions": 94, "rateLimits": 0 },
+    { "time": "2026-02-23T06:01:00+05:30", "status": "healthy", "sessions": 93, "rateLimits": 0 },
+    { "time": "2026-02-23T12:01:00+05:30", "status": "healthy", "sessions": 95, "rateLimits": 0 },
+    { "time": "2026-02-23T18:01:00+05:30", "status": "healthy", "sessions": 95, "rateLimits": 0 },
+    { "time": "2026-02-24T00:01:00+05:30", "status": "healthy", "sessions": 95, "rateLimits": 0 },
+    { "time": "2026-02-24T06:01:00+05:30", "status": "healthy", "sessions": 94, "rateLimits": 0 },
+    { "time": "2026-02-24T12:01:00+05:30", "status": "healthy", "sessions": 96, "rateLimits": 0 },
+    { "time": "2026-02-24T18:01:00+05:30", "status": "healthy", "sessions": 96, "rateLimits": 0 },
+    { "time": "2026-02-25T00:01:00+05:30", "status": "healthy", "sessions": 96, "rateLimits": 0 },
+    { "time": "2026-02-25T06:01:00+05:30", "status": "healthy", "sessions": 95, "rateLimits": 0 },
+    { "time": "2026-02-25T12:01:00+05:30", "status": "healthy", "sessions": 99, "rateLimits": 0 }
   ]
 }

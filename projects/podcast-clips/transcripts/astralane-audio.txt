@@ -1,0 +1,263 @@
+To a complete beginner, why would they want to use SLA or GTO compared to Killius?
+Whenever a user is using your particular application, they want that to response like that
+high speed response, so we provide the infrastructure stack which is really optimized for SLA.
+Other benefits that you have, which is like the fill quality.
+When you are using a train, you want to make sure that you get it at the best possible price for yourself.
+Hi everyone and welcome to a new pod. Today we have Sujeet. Sujeet is the co-founder of Astrolane.
+Astrolane is a company that's building high speed transaction infrastructure for SLA.
+He's also done crypto startups before this. In this video, we'll understand his journey.
+How did he get into crypto? What were the startups that he did before this?
+And how did they land eventually on Astrolane? What does Astrolane do?
+And what is the tech that goes behind building a company like this?
+With that, Sujeet, welcome to the pod. We'd love to know more about your background from the beginning.
+Thank you. Thank you so much for having me here, Kailat.
+So just to give a quick introduction, my name is Sujeet, one of the founders at Astrolane.
+At its core, at Astrolane, what we do is we build networking solutions for a lot of high performance operators,
+particularly dealing with distributed systems.
+It's kind of like a sexy version of what we do.
+But we deal with, let's say, if a certain client wants to place high-frequency trading orders
+in a club on the Solana chain, or even if they're in a region like Frankfurt itself,
+and they want to blast through orders into the same server in Frankfurt,
+then we help provide networking and software products for those situations.
+We currently work with some of the biggest applications in Solana,
+some of the biggest market-making forms, prop trading forms.
+Currently doing about two to three million trades per day,
+throughout Middleware, still a long way to go.
+We're scaling day-on-day. We provide like a couple of products for most of these traders.
+And that's like a quick control.
+Beautiful. One question we love to ask the audiences.
+What was your eureka moment? What made you get into crypto?
+Was your first gig-slash-drop directly into crypto?
+Or were you in standard web development before this?
+So my first entry into crypto was back in university,
+when we were sort of going around hacktons and figuring out orders.
+Interesting problems that could be solved with technology.
+We particularly had these sort of issues around the vehicle marketplaces in the buy,
+where there was a lot of misinformation, because when you're importing and exporting cars,
+you sort of like scrubbed the data. So we saw a big use case for blockchain networks,
+then where you could put that data on a network from the vendor side,
+and then when a buyer in another country buys that vehicle, he has access to that data.
+This was back in 2016, then smart contracts were not even like a proper thing,
+and no one was really building anything complicated on smart contracts.
+So one of the first couple of projects that we started,
+like my team started working on, was like an Algo stable,
+which was collateral backed on a centralized server. So you would deposit Fiat into a back account,
+and then that is like Algo stabilized on chain using ERC20 contracts.
+That picked up quite well, but then it had a lot of other nuanced issues,
+when it comes to KYC, getting user adoption, etc. But we still stuck to the industry,
+we were constantly trying to figure out problems which could be solved within the
+web space, and we found a niche within the insurance sector. So back in like 2018-2019,
+once smart contracts started becoming a thing, there was this huge foray of like people trying
+to fork different protocols, or like build different smart contract logic. But then there was
+a lot of volume flowing through those contracts, and they were getting exploited left-right on
+central. So we found this niche market where we could pull in resources or capital from people
+who wanted to provide security coverage to different smart contracts, where they had like certain
+trust in the auditors, certain trust in the way the tokenomics works, the protocol worked,
+and then we would use that to provide cover to normal users. So let's say if a big VC phone or
+a big fund wanted to deploy capital into that world, then we would provide an insurance cover
+for that. This was sort of like our first big protocol. At one point we were one of the top three
+biggest insurance protocols, on Ethereum it was called as Norey, and this was also our foray into
+the space of MF infrastructure as well. So this is actually a cool project that we had going back
+in Norey. So what we used to do was whichever protocol had like an insurance cover with us,
+we would have like a small circuit breaker implemented in this smart contract, which would be
+white listed. So if there is like let's say a big transaction in the mempool, in the public mempool,
+which is draining out those smart contracts, we would simulate it and see that drain is happening
+and then replay that transaction with a way higher gripe fees on the on the main net, right.
+Now theoretically this concept was supposed to work. We had done a bunch of tests, rolled it out
+in production into main net, and we did have some cases in like smaller protocols where we were
+able to save some of the capital, but what we truly understood through this exercise was that
+the space of MF infrastructure was quite complex. We were routing orders that were supposed to be
+privately routed like we were using these private RPCs, only to find out that there were people
+even seeing those transactions and overbidding us by copying our transaction. So we were trying to
+predict something and then they were trying to overbid that and then cause the exploit again. So
+we started building some of the the current stack under Astralin back in 2022 when we were
+experimenting with MF infrastructure. And then in 2023, we had a chance we got a good
+acquisition offer for our insurance protocol and the team was a lot more focused on the MF
+infrastructure side and that's how we sort of like started working on Astralin. Always Ben
+in crypto doing DeFi things and you know we are primarily off like a software engineering background.
+We like to solve like very hardcore deep software issues. At Astralin we mostly saw this from a
+networking point of view. We know that there are a lot of like market structure issues right now
+and so on as well. But what we want to focus on is that if someone wants to go from like point A to
+point B, introspective of what the scheduling logic is or the type of traffic, we want to make sure
+that path base like as has quick as possible. And right now there is one project already which
+is doing something similar which is double zero which does multi-cast but is primarily designed
+for validators. What we do is like we focus more on the use case side which is from an infrastructure
+point of view. So for things like transaction delivery optimizing on your read speed or if you want
+to work with certain applications on like take a prioritization or backgrounds for like autoflow
+arrangements then you could facilitate that to our infrastructure.
+Got it. That makes a lot of sense. To a complete beginner, how would they understand if they
+want to land a transaction let's say let's say why would they want to use Astralin or GTO
+compared to something like a helios as the RPC provider what is the big difference between these.
+So if you look at the main differences first is you have the speed
+when whenever user is using your particular application, if you're building an application and
+some user is using it, they want that response like that high speed response from the
+application whenever a trade is like submitted and this can only be facilitated if the underlying
+infrastructure is like optimized enough. We have engineers which come from like a very networking
+every background. Some of them have even worked on very high speed games over environments as well.
+Like you can see this in like probably the communities that run Minecraft servers you will
+see users complaining about like things speed or like you know latency of like players to the server
+and things like that. So we provide like a infrastructure stack which is really optimized for speed
+and then as a consequence of this speed are certain other benefits that you have which is like
+the fill quality. When you're lacing a trade you want to make sure that you get it at the best
+possible price for yourself no matter who you are right if you're a memecoin trader you
+will probably want the top of the block space right you would want your trade to land in the top
+of the block space because whenever the charts are moving on a trading terminal it updates on the
+bottom of block price so you don't want to place the trade at the end of the next block where the
+price could be significantly difference. Same applies to like market makers they're capturing like
+probably very small spreads which could be like three to four books which might be their entire
+profits and these prices change throughout the block right. I mean obviously there are certain
+nuances on our side where this affects as well but we sort of like help optimize them and also if
+you look at the current landscape of like RPC providers and block builders as well it's a bit
+complex like you will see trading games complain about spending like 70 to 80% of their time figuring
+out how to focus their execution stock like they're constantly keeping in update with the
+different scheduling policies different client types how do they submit orders and those
+particular scheduler types your type of order changes in each one of them right so what we do
+as an infrastructure provider is sort of like balance those out we give recommendations to our
+client based on their trading setup that okay this is what you pay we will optimize on the execution
+cost for you you the bus this particular amount and then let's say if you are able to capture
+back or save some cost for you you get that back as like rebates right this is like very niche
+product that you do then when you want to read data at a very high speed in in try to find the
+same problem happens a lot of the high speed access for high frequency traders are catered by
+license to data brokers right if you want to access like the high speed pathways to nest at for
+example you have to go through license for brokers or very expensive services like data vendor for
+example right which brings the you know it brings towards this like inability for like smaller
+trading teams to capture or get into the market so what we want to do is like provide infrastructure
+which is like very cost efficient so that if if there is a certain trading team which wants to
+you know capture a certain market opportunity then they have access to products where they can
+do that but they don't have to lock in for like huge licensing agreements with like validators or
+intra providers at like a very high cost point and yeah sometimes another big use case is that
+sometimes some of the bigger I don't want to name any names but like some of the bigger
+let's say infrastructure providers have certain restrictions which are
+because of how the foundation's policy works that prevents a lot of like experimentation factors
+that might be certain newer protocols which might want to experiment with different designs if
+you're working on like let's say your aggregator and you want to work with a certain market making
+team where you want to propagate data privately over TES right how do you facilitate that kind of
+infrastructure and how do you do it in a way that you don't have to maintain like a six percent
+DevOps team to like maintain that stack right so these sort of like order flow arrangements are
+now becoming more and more popular on Salona as well so that's also a market that we focus on
+correct you mentioned other providers on that I would like to ask how do you differentiate
+from GTO specifically is it on the prices on the execution quality is it on the protection
+so compared to GTO there is a lot of optimization that we do when you when it comes to like
+transaction landing quality when you're a trader when you want to submit transactions
+if you're sending to GTO for example you normally send it to the GTO block engine what we do is
+like we provide optimized pathways to directly the leader itself so sometimes you could send
+transactions just with the priority fee and then land your transaction that is one big use case
+you also so another very good product of GTO which they sort of like invented into the spaces
+that the shred streaming product they were the original inventors of the shred streaming product
+it's a way where you could get quick feedback on what execution that you did on chain directly
+from the leaders we also have like a complimentary service similar to this where we work together
+with valid leaders to propagate this data directly to this so I would say we're we're not really like
+a full blown competitor to GTO we have definitely complimentary lines of businesses as well
+we also work very closely with the GTO team give them feedback and because of that connection
+they also help us route some of our traffic through their block engines as well
+but at the end of the day what we want to do is we want to focus on the users which is the
+applications the traders we want to build better products for them which might not be always
+like possible for a blockchain. Got it. Make sense I would love to go behind the scenes
+what are your engineers doing on a day-to-day basis I would assume number one you're working
+with validators on one side maybe you're leasing lines you know through different providers and
+you're just aggregating all of this for your end users what other than the operational challenges
+with you know talking to validators and leaves line providers what software are your
+business building on day-to-day basis. Okay okay so the the course of your engineering is
+splittered to let's say one on one side you have the client core development team which is
+like constantly looking into what's happening in the latest baguette batches and the latest
+fired answer batches and the other is scheduler mods that are running out there with like unique
+scheduling logics how they're doing it what is the best way to integrate into it so that's like
+one portion of the site where there is quite a lot of like in-house data talent we have built
+upon like Rust and C++ site then you have the the networking team where a lot more of the focus
+is on how do you route packets in the best optimal way possible how do you do congestion control
+how do you do different forms of like broadcast like something that we have been recently trying
+out it's like a multi-hop broadcast system it's a bit different from multi-cast world you're not
+using that many pathways and you don't need like custom hardware so working with different
+networking concepts that are optimizing the stack studying like jitter around different
+lines for example and then tracking that it's it's more like a lot of like data analysis goes
+into this particular division and then you know little less of like engineering effort then
+you have the DevOps team which is more so like managing all the servers optimizing the hardware doing
+like CPU find tunings hardware find tunings at a network level as well provisioning fibers making
+sure that these fibers are healthy again as you mentioned like a lot of effort goes into like
+sometimes finding the right way to optimize traffic like let's say if we see a lot of demand
+coming from LA for example this was back in like June July last year we were seeing a lot of
+traffic come from LA so we were setting up figuring out the best data centers and LA then
+figuring out fibers which would go from like Tokyo or Frankfurt to LA and the problem is like
+sometimes you don't get the direct fibers so you have to find like pops in between setup servers
+there and then connect those fibers and then route it from there through multi-hop broadcast so
+setting all of those out that functions between like the networking team and the DevOps team
+and then yeah then we also have like even our business development team is like very engineering
+heavy what they do is like they look at like the client side optimization side as well if there
+is a new application or a trading team and they're saying that okay we are not able to get their
+orders through or they're saying like you know some orders fail then debugging that and
+figuring out where the latency is being caused it might even be something at like a very hard well
+level where the DC that they're working with has like a firewall increase which is like affecting
+the quick connections to us right so on the business development side itself we have like a lot
+of engineers for example right yeah that's that's mostly on the core side.
+Got it. When you guys hire what kind of questions do you generally ask what does the interview
+process look like? I would say the most important thing that we care about is like problems
+all the way. In general almost any skill can be acquired. Being in a space where let's say
+a lot of the information is like sometimes proprietary and it's hard to come by and some of the
+people that work within the industry are always on like very high paid packages and salaries
+and us being like a smaller skill startup we don't prefer to hire those kind of individuals so
+we try to look at like smaller individual problems always who have like their own unique way of
+thinking about problems it doesn't matter what background you're in you could be an electrical
+engineer or robotics engineer for all we care but if you have solved problems that like a very
+statistical approach and you were able to work with different systems where you lacked an
+understanding of it like from a very in-depth point of view but still were able to solve problems
+that is something that we look out for in the candidates. So the first interview call is just
+basically getting to know about the person what sort of problems they have solved and then
+we sort of like if that makes sense if the person has that quality then we look at the technical side
+okay like you know basic cross programming, C++ programming, basic Python for example data analysis
+is a core function across the org we are an infrastructure company we have like a ship like a lot
+of data processing through us so understanding and analyzing that is like a basic core skill so that
+gets looked at in the second stage. For it yeah that makes a lot of sense is there any technical
+problem that you're you've not solved at all are you struggling with the that you'd you know like
+to hire for it generally what is that one hard technical problem that you're yet to solve.
+Okay so right now what we're seeing is that a lot of problems are becoming opinionated within
+the especially within Solana and also like the wider trading space if you look at like the
+perpetual trading landscape there's a lot of like debates going around like how much speed
+pumps to give whether to even have a speed pump what is considered toxic versus non-toxic
+and then if you if you look at like the other markets like the applications themselves they want
+certain kind of like regime changes where the execution cost for their users is like very low
+so that they have like a competitive advantage and then sometimes they won't come monetize on
+like autoflow so there are like these problems which are being created I would probably classify them
+into a couple of different verticals so one of them is like certain sort of like autoflow products
+where people like there are application venues which want to work with trading teams but then
+they want to make sure that the trading team doesn't do anything malicious with that autoflow data
+and currently there is no privacy enabled to be to do that where let's say for trading team
+commits to running a certain set of code that code is not being maliciously changed to like profit
+more under certain behavior on the Ethereum side there are there's a lot more research work that
+is being done which is also foundation led to solve some of these problems using T's
+the GTO guys are doing a fabulous job at this but from what I understand it's not fully reached
+to a point where you can run like application specific logic on the T's yet but that is one area
+where we're seeing a lot of potential problem solving that could be done another problem solving
+this places the perpetuous we haven't seen a lot of like native high volume perpetual exchanges
+on Solana it could be due to a various set of like market structure issues there is currently
+an ongoing debate that allowing maker prioritization on chain is going to allow for better
+execution quality for the users which is going to bring a lot more volume to the public exchanges
+on Solana but this is like a it's a debated topic no one has tried and tested this out but it's
+going to be like execution in environment dependent I think there is room to grow in this base
+I know the guys at archery exchange are solving some of these problems as well using their
+their own auction models so that's interesting to see another big problem space which
+doesn't exist at the moment but could be interesting is around multiple concurrent proposals
+especially with Alpen glow getting shipped MCPS not so far away but once multiple concurrent
+proposals come into play there is a lot of things that have to be built up around that one of
+the main problems that is going to happen is like fork choice inclusion list look so let's say
+if there are different proposals we're creating different walks like what are the new rules around
+selecting the right fork this is like a business problem to solve not just like a software problem
+which then creates opportunities for teams to come together and figure out interesting ways to
+solve this for applications validators trading teams etc those also like other problems like
+block future auctions like for example if let's say you're seeing a certain time period within
+the next couple of like trading window where you might see like a big congestion happening due to
+like let's say a market news or like you know the US market opened the pricing in priority
+execution environment for that particular set of markets is going to be different from the rest
+of the markets and this pricing basis could be provided to a lot of market makers to understand
+how they can bid competitively currently a lot of these bigger market makers they're trying to build
+all of these pricing mechanisms in house but then they keep changing right so there could be
+infrastructure providers or like niche services within the pricing space where the pricing data
+is like packaged into a product and then provided as a streamable solution which is
+plug-and-layer for the market makers some of these problems we are solving as well but you know
+we're always open to collaborate with other teams which are solving similar problems as well
+all right thank you those are pretty dense answer and on that note how can people reach out to you
+if they want to collaborate work with you join as an engineer perfect the best way to reach out to us
+is our discord server I'm almost always active probably like 16 to 18 hours a day on our discord
+server so that's probably the best way to reach out just drop by the servers say hi or create a ticket
+another good way is probably my Twitter DMs as well if you guys have any questions technical
+non-technical general advice always always happy to help support builders in India
+all right with that thank you so much Susi the beautiful point and we'll see you guys the next one

@@ -473,8 +473,17 @@ class LiveEngine:
         """
         try:
             book = self.client.get_order_book(token_id)
-            bids = book.get("bids", [])
-            asks = book.get("asks", [])
+            # Handle both dict and object responses
+            if hasattr(book, 'bids'):
+                bids = book.bids if hasattr(book.bids, '__iter__') else []
+                asks = book.asks if hasattr(book.asks, '__iter__') else []
+            elif isinstance(book, dict):
+                bids = book.get("bids", [])
+                asks = book.get("asks", [])
+            else:
+                bids = []
+                asks = []
+            
             best_bid = float(bids[0]["price"]) if bids else 0.49
             best_ask = float(asks[0]["price"]) if asks else 0.51
             return best_bid, best_ask
@@ -1293,6 +1302,74 @@ class LiveTradingBot:
                 log(f"Market refresh error [{asset}]: {e}", "warn")
             time.sleep(15)
 
+    # ── REST polling fallback (when WebSocket fails) ────────────────────────
+
+    def _rest_poll_prices(self):
+        """Poll prices via REST API as fallback when WebSocket doesn't work."""
+        import requests
+        
+        while not self._stop.is_set():
+            try:
+                for asset in CONFIG["assets"]:
+                    market = fetch_current_market(asset)
+                    if not market:
+                        continue
+                    
+                    self.market_cache.set(asset, market)
+                    
+                    binary_price = market.get("up_price", 0.5)
+                    time_left = market.get("time_left_s", 0)
+                    
+                    if time_left <= 0:
+                        continue
+                    
+                    # Update signal state (same as WS would)
+                    state = self.signal_states.get(asset)
+                    if state:
+                        state.update_price(binary_price, time.time())
+                        
+                        # Check exits
+                        exits = self.engine.check_exits(market["market_id"], binary_price, time_left)
+                        for pos, reason in exits:
+                            win = pos.pnl and pos.pnl > 0
+                            decision = self.sprt.update(win)
+                            pos.sprt_decision = decision
+                            save_journal(self.engine, self.sprt)
+                            log(f"[{asset}] {self.sprt.summary()}", "sprt")
+                            if decision:
+                                self._handle_sprt_decision(decision)
+                        
+                        # Compute signal
+                        if time_left >= CONFIG["min_time_left_s"]:
+                            now_ts = time.time()
+                            self._signal_timestamps.append(now_ts)
+                            cutoff = now_ts - 3600.0
+                            recent = [t for t in self._signal_timestamps if t > cutoff]
+                            signal_rate_per_hour = len(recent)
+                            threshold = adaptive_threshold(self.engine.balance, signal_rate_per_hour)
+                            
+                            signal = compute_signal(state, binary_price, asset, threshold=threshold)
+                            
+                            if signal.direction != "NONE":
+                                log(f"[{asset}] SIGNAL conf={signal.confidence:.3f} | "
+                                    f"threshold={threshold:.2f} | rate={signal_rate_per_hour}/hr | "
+                                    f"factors={signal.factors} | dir={signal.direction} | "
+                                    f"t_left={time_left:.0f}s | src=REST", "signal")
+                                
+                                condition_id = market.get("condition_id")
+                                if condition_id:
+                                    trade = self.engine.execute_signal(
+                                        signal, market["market_id"], condition_id, time_left
+                                    )
+                                    if trade:
+                                        log(f"[{asset}] {'DRY_RUN ' if CONFIG['dry_run'] else ''}GTC ORDER PLACED: "
+                                            f"{signal.direction} | {trade.size:.2f} @ ${trade.price:.3f} | "
+                                            f"TP: ${trade.tp:.3f} | SL: ${trade.sl:.3f}", "trade")
+            except Exception as e:
+                log(f"REST poll error: {e}", "warn")
+            
+            time.sleep(2)  # Poll every 2 seconds
+
     # ── WebSocket handler ────────────────────────────────────────────────────
 
     def _on_message(self, ws, raw: str, asset: str):
@@ -1459,6 +1536,10 @@ class LiveTradingBot:
             t = threading.Thread(target=self._refresh_market, args=(asset,), daemon=True)
             t.start()
 
+        # Start REST polling as fallback (if WS fails)
+        rest_poll_thread = threading.Thread(target=self._rest_poll_prices, daemon=True)
+        rest_poll_thread.start()
+        
         ws_threads = []
         for asset in CONFIG["assets"]:
             t = threading.Thread(target=self._run_ws_for_asset, args=(asset,), daemon=True)

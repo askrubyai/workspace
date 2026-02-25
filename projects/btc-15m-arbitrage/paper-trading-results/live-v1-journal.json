@@ -1,16 +1,23 @@
 {
-  "updated_at": "2026-02-19T02:04:34.126104",
+  "updated_at": "2026-02-25T16:03:21.763342",
   "dry_run": true,
+  "order_type": "GTC",
+  "fee_bps": 0,
   "stats": {
-    "balance": 10.4919,
+    "balance": 2.6145,
     "total_trades": 0,
-    "open_positions": 0,
+    "open_positions": 3,
     "wins": 0,
     "losses": 0,
     "win_rate": 0.0,
     "total_pnl": 0,
-    "return_pct": 0.02,
-    "dry_run": true
+    "return_pct": -75.08,
+    "dry_run": true,
+    "order_type": "GTC",
+    "fee_bps": 0,
+    "partial_fills": 0,
+    "avg_fill_rate": 0.0,
+    "avg_fill_latency_sec": 0.0
   },
   "sprt": {
     "n_trades": 0,
@@ -23,6 +30,58 @@
     },
     "progress_pct": 35.97877069807146
   },
-  "open_positions": [],
+  "open_positions": [
+    {
+      "trade_id": "LT-0001",
+      "asset": "BTC",
+      "direction": "NO",
+      "entry_price": 0.41,
+      "size_usd": 3.8786,
+      "market_id": "1424879",
+      "condition_id": "0x38bfc4701a02a307212697a41a16050b8e213642b71e1ba0096bf0275397f4f7",
+      "clob_order_id": "DRY-LT-0001",
+      "order_status": "FILLED",
+      "fill_tracker": {
+        "filled_shares": 9.46,
+        "target_shares": 9.46,
+        "fill_ratio": 1.0,
+        "avg_fill_price": 0.41
+      }
+    },
+    {
+      "trade_id": "LT-0003",
+      "asset": "XRP",
+      "direction": "NO",
+      "entry_price": 0.46,
+      "size_usd": 2.001,
+      "market_id": "1424877",
+      "condition_id": "0xa4ed966183ece1562a5b5e38c4e025d72252e4979baf5245ec2020176edc1467",
+      "clob_order_id": "DRY-LT-0003",
+      "order_status": "FILLED",
+      "fill_tracker": {
+        "filled_shares": 4.35,
+        "target_shares": 4.35,
+        "fill_ratio": 1.0,
+        "avg_fill_price": 0.46
+      }
+    },
+    {
+      "trade_id": "LT-0004",
+      "asset": "SOL",
+      "direction": "YES",
+      "entry_price": 0.5,
+      "size_usd": 2.0,
+      "market_id": "1424878",
+      "condition_id": "0xdc63a5f74cecedcbcdda32222f67d63c35375dafd44802d34fcb8b42bb84c7ad",
+      "clob_order_id": "DRY-LT-0004",
+      "order_status": "FILLED",
+      "fill_tracker": {
+        "filled_shares": 4.0,
+        "target_shares": 4.0,
+        "fill_ratio": 1.0,
+        "avg_fill_price": 0.5
+      }
+    }
+  ],
   "closed_trades": []
 }
