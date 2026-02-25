@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-02-25T20:03:02.941787",
+  "updated_at": "2026-02-26T00:02:58.548188",
   "dry_run": true,
   "order_type": "GTC",
   "fee_bps": 0,
   "stats": {
-    "balance": 2.7252,
+    "balance": 3.5315,
     "total_trades": 0,
     "open_positions": 3,
     "wins": 0,
     "losses": 0,
     "win_rate": 0.0,
     "total_pnl": 0,
-    "return_pct": -74.02,
+    "return_pct": -66.33,
     "dry_run": true,
     "order_type": "GTC",
     "fee_bps": 0,
@@ -32,48 +32,48 @@
   },
   "open_positions": [
     {
+      "trade_id": "LT-0001",
+      "asset": "SOL",
+      "direction": "YES",
+      "entry_price": 0.5,
+      "size_usd": 2.75,
+      "market_id": "1426658",
+      "condition_id": "0x4ba8458ccaba4f58fa08820ef342637e5e771bc1e76040db46e21e02ee3c58c1",
+      "clob_order_id": "DRY-LT-0001",
+      "order_status": "FILLED",
+      "fill_tracker": {
+        "filled_shares": 5.5,
+        "target_shares": 5.5,
+        "fill_ratio": 1.0,
+        "avg_fill_price": 0.5
+      }
+    },
+    {
       "trade_id": "LT-0002",
-      "asset": "BTC",
-      "direction": "NO",
-      "entry_price": 0.43,
-      "size_usd": 3.7668,
-      "market_id": "1424879",
-      "condition_id": "0x38bfc4701a02a307212697a41a16050b8e213642b71e1ba0096bf0275397f4f7",
+      "asset": "XRP",
+      "direction": "YES",
+      "entry_price": 0.5,
+      "size_usd": 2.215,
+      "market_id": "1426655",
+      "condition_id": "0xcc3d57788a9ca973a699fd5bd054661019d6e7fe1943c6bc83ae740592e0e69d",
       "clob_order_id": "DRY-LT-0002",
       "order_status": "FILLED",
       "fill_tracker": {
-        "filled_shares": 8.76,
-        "target_shares": 8.76,
+        "filled_shares": 4.43,
+        "target_shares": 4.43,
         "fill_ratio": 1.0,
-        "avg_fill_price": 0.43
+        "avg_fill_price": 0.5
       }
     },
     {
       "trade_id": "LT-0003",
-      "asset": "XRP",
-      "direction": "NO",
-      "entry_price": 0.46,
-      "size_usd": 2.001,
-      "market_id": "1424877",
-      "condition_id": "0xa4ed966183ece1562a5b5e38c4e025d72252e4979baf5245ec2020176edc1467",
-      "clob_order_id": "DRY-LT-0003",
-      "order_status": "FILLED",
-      "fill_tracker": {
-        "filled_shares": 4.35,
-        "target_shares": 4.35,
-        "fill_ratio": 1.0,
-        "avg_fill_price": 0.46
-      }
-    },
-    {
-      "trade_id": "LT-0004",
-      "asset": "SOL",
+      "asset": "BTC",
       "direction": "YES",
       "entry_price": 0.5,
       "size_usd": 2.0,
-      "market_id": "1424878",
-      "condition_id": "0xdc63a5f74cecedcbcdda32222f67d63c35375dafd44802d34fcb8b42bb84c7ad",
-      "clob_order_id": "DRY-LT-0004",
+      "market_id": "1427231",
+      "condition_id": "0x539a3fc18101fde0ea4233009662659e27dfa3b3de24b5dd7567f557a78bcd3a",
+      "clob_order_id": "DRY-LT-0003",
       "order_status": "FILLED",
       "fill_tracker": {
         "filled_shares": 4.0,

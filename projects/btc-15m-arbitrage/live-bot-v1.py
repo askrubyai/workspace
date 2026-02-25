@@ -613,8 +613,10 @@ class LiveEngine:
                     side=BUY,
                     fee_rate_bps=0,   # 0 bps — maker orders pay no fee
                 )
-                signed_order = self.client.create_order(order_args, OrderType.GTC)
-                resp = self.client.post_order(signed_order)
+                # NOTE: create_order() 2nd arg is PartialCreateOrderOptions, not OrderType.
+                # Passing OrderType.GTC here causes: `'str' object has no attribute 'tick_size'`.
+                signed_order = self.client.create_order(order_args)
+                resp = self.client.post_order(signed_order, OrderType.GTC)
 
                 clob_order_id = resp.get("orderID") if isinstance(resp, dict) else None
                 if not clob_order_id:
