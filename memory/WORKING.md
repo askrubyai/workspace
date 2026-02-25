@@ -28,10 +28,10 @@
 
 ## 🏆 PAPER BOT STATUS (Feb 25)
 
-### Day 15 — Restarted (10:02 AM)
-- **Bot**: PID 22845, DRY RUN mode ✅
-- **Restarted**: 10:02 IST (previous got stuck)
-- **Status**: Running, generating signals
+### Day 15 — Restarted (5:35 PM)
+- **Bot**: PID 16587, DRY RUN mode ✅
+- **Restarted**: 17:35 IST (previous got stuck at 11:05)
+- **Status**: Running
 
 ---
 

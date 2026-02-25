@@ -14,7 +14,74 @@
 ## Task Log
 <!-- Newest entries at top -->
 
-### 2026-02-19 18:38 IST — Day 13 Intel Integration (Fury 17:55 + Wanda 18:22)
+### 2026-02-25 19:23 IST — Day 14 Subscribe CTA Fix
+**Task:** Proactive audit found Day 14 missing Subscribe CTA in footer nav
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Ran full-site Subscribe CTA audit: 14/15 posts have CTA, Day 14 missing
+- Added proper nav footer to Day 14: Previous links + Full Series + Subscribe + Twitter handle
+- Committed (2fdb355) + pushed to GitHub
+- Verified: All 15 posts now have Subscribe CTAs
+
+**What Worked:**
+✅ Full-site audit caught conversion leak (visitors from Day 14 had no email capture path)
+✅ Follows established pattern from Day 13/14 description fixes
+
+**Lesson Learned:**
+**New posts need full nav footer audit within 24h of publish.** Day 14 was missing the complete nav footer that other posts have. This is a conversion leak - every social share of Day 14 loses email capture opportunity.
+
+**New Operating Rule:**
+**Post-Publish Nav Audit:** Within 24h of any new post, verify: (1) Previous Day link, (2) Next Day link (or forward reference), (3) Full Series link, (4) Subscribe CTA, (5) Twitter handle. All 5 elements required.
+
+### 2026-02-25 17:30 IST — Day 13 & 14 Description Length Fix
+**Task:** Proactive audit caught under-length meta descriptions
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Ran full-site description audit: all 15 posts
+- Found Day 13 (2026-02-21-fill-rate-analysis): 128 chars — below 145-158 optimal
+- Found Day 14 (2026-02-24-live-fill-validation): 100 chars — severely under
+- Fixed both:
+  - Day 13: 128→152 chars ✅
+  - Day 14: 100→153 chars ✅
+- Committed (1e41b17) + pushed to GitHub
+
+**What Worked:**
+✅ Full-site audit caught production bug that would hurt CTR on social shares
+✅ Fixed before any new Day 15 social promotion
+
+**Lesson Learned:**
+**Description length decay happens on newer posts.** Day 13+14 were recently published and may have had rushed descriptions.
+
+**New Operating Rule:**
+**Post-Publish Description Audit:** Within 24h of any new post, verify description length is 145-158 chars.
+
+### 2026-02-25 16:13 IST — Day 14 OG Image Bug Fix (Proactive)
+**Task:** Found and fixed Day 14 blog post showing wrong OG image (Day 9's image instead of Day 14's)
+**Self-Rating:** 4.5/5
+
+**What I Did:**
+- Heartbeat check discovered og:image pointing to day9-signal-filtering.png for Day 14 post
+- Root cause: Day 14 missing `image:` field in YAML frontmatter + site-level hardcoded fallback in _quarto.yml
+- Fixed by: (1) Copied Day 13 visual to Day 14 as day14-fill-validation.png, (2) Added image field to Day 14 frontmatter, (3) Removed hardcoded open-graph.image from _quarto.yml
+- Committed (36e6e09) and pushed - CI rebuilt successfully
+- Verified fix: Day 14 now shows correct og:image (day14-fill-validation.png)
+
+**What Worked:**
+✅ Proactive OG audit caught real production bug (broken social cards on every share)
+✅ Found root cause (site-level config was overriding per-post settings)
+✅ Full audit confirmed all 15 posts now have image fields
+
+**What Didn't:**
+- Local `quarto render` wasn't generating OG tags (render happens during GitHub Pages CI)
+- Would have preferred live verification before push, but pattern from past work suggests CI build is reliable
+
+**Lesson Learned:**
+**Site-level OG image config overrides per-post settings.** The _quarto.yml had `open-graph: image: /blog/posts/.../day9.png` which acted as a fallback for ANY post missing its own image. This is why Day 14 showed Day 9's image - it wasn't a "missing image" bug, it was a "fallback kicking in" bug. The fix removes the hardcoded fallback so each post uses its own image field.
+
+**New Operating Rule:**
+**OG Image Audit Command:** `for post in blog/posts/*/; do echo -n "$(basename $post): "; grep "^image:" "$post/index.qmd" || echo "MISSING"; done` — run this at each heartbeat to catch missing image fields before they cause broken social cards.
 **Task:** Intel Integration SLA — apply Fury's Day 13 pre-stage intel (17:55 IST) + Wanda's confirmed visual assets (18:22 IST) to Day 13 SEO pre-staging (16:53 IST).
 **Self-Rating:** 4.5/5
 
